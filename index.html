@@ -1,62 +1,1685 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>ForeFurlongs Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ForeFurlongs Intelligence Terminal</title>
 
-    <style>
-        body {
-            background-color: #0f172a;
-            color: white;
-            font-family: Arial;
-            padding: 30px;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Sora:wght@500;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
-        .card {
-            background: #1e293b;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
+<style>
+:root {
+    --bg: #050914;
+    --panel: rgba(13, 23, 38, 0.94);
+    --panel2: rgba(17, 31, 52, 0.96);
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --line: rgba(148, 163, 184, 0.20);
+    --green: #22c55e;
+    --blue: #38bdf8;
+    --amber: #f59e0b;
+    --red: #ef4444;
+}
 
-        .score {
-            color: #22c55e;
-            font-size: 32px;
-            font-weight: bold;
-        }
+* { box-sizing: border-box; }
 
-        .title {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
+body {
+    margin: 0;
+    padding: 18px;
+    color: var(--text);
+    font-family: 'Inter', Arial, sans-serif;
+    background:
+        radial-gradient(circle at 8% 0%, rgba(34,197,94,.20), transparent 26%),
+        radial-gradient(circle at 95% 5%, rgba(56,189,248,.15), transparent 28%),
+        linear-gradient(180deg, #07111f 0%, #050914 100%);
+}
 
-        .badge {
-            background: #22c55e;
-            color: black;
-            padding: 5px 10px;
-            border-radius: 8px;
-            display: inline-block;
-            font-weight: bold;
-        }
-    </style>
+header, .hero, .briefing, .key, .performance, .container, footer {
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.brand-line {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.logo-mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    border: 1px solid rgba(34,197,94,.6);
+    background: linear-gradient(135deg, rgba(34,197,94,.35), rgba(56,189,248,.12));
+    display: grid;
+    place-items: center;
+    box-shadow: 0 0 24px rgba(34,197,94,.28);
+    font-family: 'Sora';
+    font-weight: 800;
+}
+
+.brand {
+    font-family: 'Space Grotesk';
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    color: #86efac;
+    font-size: 12px;
+}
+
+h1 {
+    font-family: 'Space Grotesk';
+    font-size: clamp(34px, 6vw, 64px);
+    margin: 18px 0 8px;
+    line-height: .95;
+}
+
+.sub {
+    max-width: 850px;
+    color: var(--muted);
+    line-height: 1.55;
+}
+
+.ticker {
+    max-width: 1180px;
+    margin: 20px auto;
+    border: 1px solid rgba(56,189,248,.28);
+    background: rgba(7,17,31,.74);
+    border-radius: 999px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ticker-track {
+    display: inline-block;
+    padding: 10px 0;
+    animation: ticker 28s linear infinite;
+}
+
+.ticker span {
+    margin-right: 34px;
+    color: #dbeafe;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+@keyframes ticker {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 28px;
+    border: 1px solid rgba(34,197,94,.35);
+    background: linear-gradient(135deg, rgba(34,197,94,.24), rgba(13,23,38,.98));
+    box-shadow: 0 0 55px rgba(34,197,94,.12);
+    padding: 26px;
+    margin-bottom: 18px;
+}
+
+.hero:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 45%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.10), transparent);
+    animation: sweep 5s ease-in-out infinite;
+}
+
+@keyframes sweep {
+    0%, 45% { left: -60%; }
+    100% { left: 120%; }
+}
+
+.hero-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 22px;
+    align-items: center;
+}
+
+.hero-label {
+    font-family: 'Sora';
+    color: #bbf7d0;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.hero h2 {
+    font-family: 'Space Grotesk';
+    font-size: clamp(30px, 5vw, 52px);
+    margin: 10px 0;
+}
+
+.hero-score {
+    font-family: 'Sora';
+    font-size: clamp(52px, 8vw, 88px);
+    color: var(--green);
+    font-weight: 800;
+    text-shadow: 0 0 28px rgba(34,197,94,.28);
+}
+
+.hero p { color: #d1fae5; line-height: 1.55; }
+
+.edge-badge, .signal-chip, .status {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    padding: 7px 11px;
+    font-size: 11px;
+    font-family: 'Sora';
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .045em;
+    border: 1px solid rgba(255,255,255,.12);
+}
+
+.elite {
+    color: #86efac;
+    background: rgba(34,197,94,.14);
+    box-shadow: 0 0 18px rgba(34,197,94,.25);
+}
+
+.good {
+    color: #bae6fd;
+    background: rgba(56,189,248,.13);
+    box-shadow: 0 0 16px rgba(56,189,248,.18);
+}
+
+.warn { color: #fde68a; background: rgba(245,158,11,.14); }
+.bad { color: #fecaca; background: rgba(239,68,68,.14); }
+.neutral { color: #cbd5e1; background: rgba(148,163,184,.12); }
+
+.briefing, .key, .performance {
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: rgba(13,23,38,.78);
+    margin-bottom: 18px;
+    padding: 18px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+}
+
+.section-title h2, .key summary {
+    font-family: 'Space Grotesk';
+    font-size: 22px;
+    margin: 0;
+}
+
+.brief-grid, .key-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.brief-item, .key-item {
+    border: 1px solid var(--line);
+    background: rgba(5,9,20,.52);
+    border-radius: 18px;
+    padding: 14px;
+}
+
+.brief-item strong, .key-item strong {
+    display: block;
+    font-family: 'Sora';
+    margin-bottom: 6px;
+}
+
+.brief-item p, .key-item p {
+    color: var(--muted);
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.key summary { cursor: pointer; }
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 26px;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    padding: 19px;
+    box-shadow: 0 16px 40px rgba(0,0,0,.30);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 22px 58px rgba(0,0,0,.38);
+    border-color: rgba(56,189,248,.36);
+}
+
+.scan-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, rgba(34,197,94,.95), transparent);
+    opacity: .8;
+    animation: scan 4.5s linear infinite;
+}
+
+@keyframes scan {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.card-top {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 18px;
+    align-items: start;
+}
+
+.profile-type {
+    color: var(--blue);
+    font-family: 'Sora';
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .10em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.card h2 {
+    font-family: 'Space Grotesk';
+    font-size: 29px;
+    margin: 0;
+}
+
+.race-line {
+    color: var(--muted);
+    margin: 7px 0 9px;
+}
+
+.archetype {
+    display: inline-block;
+    color: #e0f2fe;
+    background: rgba(56,189,248,.10);
+    border: 1px solid rgba(56,189,248,.20);
+    padding: 6px 9px;
+    border-radius: 10px;
+    font-family: 'Sora';
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .08em;
+}
+
+.signal-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+.score-panel {
+    min-width: 126px;
+    text-align: right;
+}
+
+.score-label {
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .10em;
+    font-family: 'Sora';
+}
+
+.score {
+    font-family: 'Sora';
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 1;
+    margin: 6px 0 9px;
+}
+
+.score.good { color: var(--green); }
+.score.warn { color: var(--amber); }
+.score.bad { color: var(--red); }
+
+.status-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 16px 0 10px;
+}
+
+.plain-summary {
+    color: #dbeafe;
+    line-height: 1.55;
+    background: rgba(56,189,248,.075);
+    border-left: 3px solid var(--blue);
+    padding: 13px 14px;
+    border-radius: 14px;
+}
+
+.telemetry {
+    margin: 16px 0;
+    border-radius: 20px;
+    border: 1px solid var(--line);
+    background: rgba(5,9,20,.52);
+    padding: 15px;
+}
+
+.telemetry-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.telemetry-head h3 {
+    font-family: 'Space Grotesk';
+    margin: 0;
+}
+
+.telemetry-head span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.edge-row {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 11px;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.edge-row span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.edge-bar {
+    height: 10px;
+    background: #1e293b;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.edge-bar div {
+    width: var(--w);
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--blue), var(--green));
+    box-shadow: 0 0 18px rgba(34,197,94,.32);
+    animation: growbar 1.15s ease both;
+}
+
+@keyframes growbar {
+    from { width: 0; }
+    to { width: var(--w); }
+}
+
+.metric-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.metric-box {
+    border-radius: 16px;
+    background: var(--panel2);
+    padding: 12px;
+}
+
+.metric-box span {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.metric-box strong {
+    font-family: 'Sora';
+    font-size: 16px;
+}
+
+details {
+    margin-top: 14px;
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+}
+
+summary {
+    cursor: pointer;
+    color: #dbeafe;
+    font-weight: 800;
+    font-family: 'Sora';
+}
+
+.detail h4 {
+    font-family: 'Space Grotesk';
+    margin-bottom: 5px;
+}
+
+.detail p {
+    color: var(--muted);
+    line-height: 1.55;
+    margin-top: 0;
+}
+
+footer {
+    margin-top: 24px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+@media (max-width: 760px) {
+    body { padding: 12px; }
+    .hero-grid, .card-top { grid-template-columns: 1fr; }
+    .score-panel { text-align: left; }
+    .brief-grid, .key-grid { grid-template-columns: 1fr; }
+    .metric-grid { grid-template-columns: repeat(2, 1fr); }
+    .edge-row { grid-template-columns: 1fr; gap: 5px; }
+    .card h2 { font-size: 25px; }
+}
+</style>
 </head>
 
 <body>
 
-    <h1>🔥 ForeFurlongs Dashboard</h1>
-
-    <div class="card">
-        <div class="title">Trojan Soldier</div>
-
-        <div class="score">65.2</div>
-
-        <p>Pontefract 7:52</p>
-
-        <div class="badge">ELITE CONSENSUS</div>
-
-        <p>DEI: A+</p>
-
-        <p>Field Rank: 1/12</p>
+<header>
+    <div class="brand-line">
+        <div class="logo-mark">FF</div>
+        <div>
+            <div class="brand">ForeFurlongs Intelligence</div>
+            <div class="sub">Racing context engine · Formula 1 telemetry inspired analytics</div>
+        </div>
     </div>
+
+    <h1>Contextual Racing Intelligence Terminal</h1>
+    <div class="sub">
+        A sports-analytics view of tomorrow’s racing. Built around race shape, distance suitability,
+        model alignment, hidden effort and contextual edges — not simple ratings alone.
+    </div>
+</header>
+
+<div class="ticker">
+    <div class="ticker-track"><span>⚡ 14 improving or progressive profiles detected</span> <span>◎ 9 elite distance-intelligence profiles</span> <span>◆ 8 dominant contextual edges</span> <span>▲ 10 high-chaos warnings</span> <span>● 0 strong model-alignment profiles</span> <span>⚡ 14 improving or progressive profiles detected</span> <span>◎ 9 elite distance-intelligence profiles</span> <span>◆ 8 dominant contextual edges</span> <span>▲ 10 high-chaos warnings</span> <span>● 0 strong model-alignment profiles</span></div>
+</div>
+
+<section class="hero">
+    <div class="hero-grid">
+        <div>
+            <div class="hero-label">Highest Contextual Edge</div>
+            <h2>Getreadytorumble</h2>
+            <p>Haydock · 3:30 · 5.0 · Class 1</p>
+            <p>The projected race shape points to strong early pressure, placing extra emphasis on efficiency and late-race energy. The tactical profile is best described as closer / hold-up profile. Current volatility read: high chaos.</p>
+            <span class="edge-badge elite">Dominant Edge</span>
+        </div>
+        <div class="hero-score">62.9</div>
+    </div>
+</section>
+
+<section class="briefing">
+    <div class="section-title">
+        <h2>Today’s Intelligence Briefing</h2>
+        <span class="status good">Updated 22/05/2026 22:44</span>
+    </div>
+
+    <div class="brief-grid">
+        <div class="brief-item"><strong>14</strong><p>Improving or progressive profiles detected across the top alerts.</p></div>
+        <div class="brief-item"><strong>9</strong><p>Elite distance-intelligence profiles identified.</p></div>
+        <div class="brief-item"><strong>8</strong><p>Dominant contextual edges compared with today’s fields.</p></div>
+        <div class="brief-item"><strong>10</strong><p>High-chaos warnings where race shape may reduce confidence.</p></div>
+        <div class="brief-item"><strong>0</strong><p>Profiles with strong multi-layer model alignment.</p></div>
+        <div class="brief-item"><strong>15</strong><p>Highest-ranked context profiles shown below.</p></div>
+    </div>
+</section>
+
+<section class="key">
+    <details>
+        <summary>🧠 How ForeFurlongs Intelligence Works</summary>
+        <div class="key-grid">
+            <div class="key-item"><strong>Distance Intelligence</strong><p>Measures suitability for today’s trip using previous time, efficiency and repeatability signals.</p></div>
+            <div class="key-item"><strong>Model Alignment</strong><p>Shows how many independent model layers agree. Strong alignment means the profile is not relying on one isolated factor.</p></div>
+            <div class="key-item"><strong>Edge vs Rivals</strong><p>Compares the horse’s contextual profile against today’s field rather than against a generic rating table.</p></div>
+            <div class="key-item"><strong>Race Fit</strong><p>Checks whether the horse matches the kind of historical profile normally required for this race type.</p></div>
+            <div class="key-item"><strong>Tactical Setup</strong><p>Reads whether the expected tempo and run style interaction are likely to help or hinder the horse.</p></div>
+            <div class="key-item"><strong>Hidden Effort</strong><p>Highlights runs with more merit than the finishing position alone suggests.</p></div>
+        </div>
+    </details>
+</section>
+
+<section class="performance">
+    <div class="section-title">
+        <h2>Model Performance Snapshot</h2>
+        <span class="status neutral">Tracker integration next</span>
+    </div>
+    <p>Upcoming module: strike rate, ROI, profit points, strongest contexts and best-performing signal combinations.</p>
+</section>
+
+<main class="container">
+    
+    <article class="card elite">
+        <div class="scan-line"></div>
+
+        <div class="card-top">
+            <div class="card-title-block">
+                <div class="profile-type">High Context Signal</div>
+                <h2>Getreadytorumble</h2>
+                <p class="race-line">Haydock · 3:30 · 5.0 · Class 1</p>
+                <div class="archetype">THE CLOSER</div>
+                <div class="signal-row"><span class="signal-chip elite">Dominant Edge</span><span class="signal-chip elite">Improving</span><span class="signal-chip elite">Distance Specialist</span><span class="signal-chip good">Tactical Advantage</span><span class="signal-chip good">Hidden Effort</span></div>
+            </div>
+
+            <div class="score-panel">
+                <div class="score-label">Context Edge</div>
+                <div class="score good">62.9</div>
+                <span class="edge-badge elite">Dominant Edge</span>
+            </div>
+        </div>
+
+        <div class="status-row">
+            <span class="status good">Moderate Reliability</span>
+            <span class="status bad">High Chaos</span>
+            <span class="status elite">Improving</span>
+        </div>
+
+        <p class="plain-summary">The projected race shape points to strong early pressure, placing extra emphasis on efficiency and late-race energy. The tactical profile is best described as closer / hold-up profile. Current volatility read: high chaos.</p>
+
+        <div class="telemetry">
+            <div class="telemetry-head">
+                <h3>Context Fingerprint</h3>
+                <span>model signal distribution</span>
+            </div>
+
+            <div class="edge-row"><span>Context Edge</span><div class="edge-bar"><div style="--w:94.35000000000002%"></div></div></div>
+            <div class="edge-row"><span>Distance Intelligence</span><div class="edge-bar"><div style="--w:77.2%"></div></div></div>
+            <div class="edge-row"><span>Model Alignment</span><div class="edge-bar"><div style="--w:0%"></div></div></div>
+            <div class="edge-row"><span>Edge vs Rivals</span><div class="edge-bar"><div style="--w:77.15384615384616%"></div></div></div>
+            <div class="edge-row"><span>Race Fit</span><div class="edge-bar"><div style="--w:100%"></div></div></div>
+            <div class="edge-row"><span>Tactical Setup</span><div class="edge-bar"><div style="--w:100%"></div></div></div>
+            <div class="edge-row"><span>Finishing Profile</span><div class="edge-bar"><div style="--w:40.0%"></div></div></div>
+            <div class="edge-row"><span>Historical Suitability</span><div class="edge-bar"><div style="--w:100%"></div></div></div>
+            <div class="edge-row"><span>Hidden Effort</span><div class="edge-bar"><div style="--w:63.0%"></div></div></div>
+        </div>
+
+        <div class="metric-grid">
+            <div class="metric-box"><span>Field Position</span><strong>1/13</strong></div>
+            <div class="metric-box"><span>Rival Separation</span><strong>+15.5</strong></div>
+            <div class="metric-box"><span>Distance Grade</span><strong>A</strong></div>
+            <div class="metric-box"><span>Evidence Quality</span><strong>MEDIUM</strong></div>
+        </div>
+
+        <details>
+            <summary>Open full intelligence read</summary>
+
+            <div class="detail">
+                <h4>Model Alignment</h4>
+                <p>Model alignment data is not available for this runner yet.</p>
+
+                <h4>Race Story Simulation</h4>
+                <p>The projected race shape points to strong early pressure, placing extra emphasis on efficiency and late-race energy. The tactical profile is best described as closer / hold-up profile. Current volatility read: high chaos.</p>
+
+                <h4>Handicap Context</h4>
+                <p>Handicap position looks broadly fair, with limited obvious margin from the peak rating evidence.</p>
+
+                <h4>Track DNA</h4>
+                <p>HAYDOCK PARK 5f (Turf): late-speed profiles favoured ·  draw impact unclear. Sample size 60 (HIGH confidence).</p>
+
+                <h4>Latest Evidence</h4>
+                <p>Dwelt start - towards rear - headway halfway - not clear run repeatedly over 1f out - switched right inside final furlong - ran on and went third final strides(op 5/1 tchd 7/1)</p>
+            </div>
+        </details>
+    </article>
+    
+    <article class="card elite">
+        <div class="scan-line"></div>
+
+        <div class="card-top">
+            <div class="card-title-block">
+                <div class="profile-type">High Context Signal</div>
+                <h2>Paladin</h2>
+                <p class="race-line">York · 5:00 · 7.0 · Class 4</p>
+                <div class="archetype">CONTEXT PROFILE</div>
+                <div class="signal-row"><span class="signal-chip elite">Dominant Edge</span><span class="signal-chip elite">Improving</span><span class="signal-chip good">Solid Distance Match</span><span class="signal-chip good">Hidden Effort</span><span class="signal-chip good">Finishing Signal</span></div>
+            </div>
+
+            <div class="score-panel">
+                <div class="score-label">Context Edge</div>
+                <div class="score good">58.2</div>
+                <span class="edge-badge elite">Dominant Edge</span>
+            </div>
+        </div>
+
+        <div class="status-row">
+            <span class="status good">Moderate Reliability</span>
+            <span class="status bad">High Chaos</span>
+            <span class="status elite">Improving</span>
+        </div>
+
+        <p class="plain-summary">The projected race shape points to strong early pressure, placing extra emphasis on efficiency and late-race energy. The finishing profile suggests late strength could become relevant if the race becomes a closing-speed test. Current volatility read: high chaos.</p>
+
+        <div class="telemetry">
+            <div class="telemetry-head">
+                <h3>Context Fingerprint</h3>
+                <span>model signal distribution</span>
+            </div>
+
+            <div class="edge-row"><span>Context Edge</span><div class="edge-bar"><div style="--w:87.30000000000001%"></div></div></div>
+            <div class="edge-row"><span>Distance Intelligence</span><div class="edge-bar"><div style="--w:71.25%"></div></div></div>
+            <div class="edge-row"><span>Model Alignment</span><div class="edge-bar"><div style="--w:0%"></div></div></div>
+            <div class="edge-row"><span>Edge vs Rivals</span><div class="edge-bar"><div style="--w:87.46753246753248%"></div></div></div>
+            <div class="edge-row"><span>Race Fit</span><div class="edge-bar"><div style="--w:100%"></div></div></div>
+            <div class="edge-row"><span>Tactical Setup</span><div class="edge-bar"><div style="--w:36.0%"></div></div></div>
+            <div class="edge-row"><span>Finishing Profile</span><div class="edge-bar"><div style="--w:88.0%"></div></div></div>
+            <div class="edge-row"><span>Historical Suitability</span><div class="edge-bar"><div style="--w:65.0%"></div></div></div>
+            <div class="edge-row"><span>Hidden Effort</span><div class="edge-bar"><div style="--w:63.0%"></div></div></div>
+        </div>
+
+        <div class="metric-grid">
+            <div class="metric-box"><span>Field Position</span><strong>1/22</strong></div>
+            <div class="metric-box"><span>Rival Separation</span><strong>+10.1</strong></div>
+            <div class="metric-box"><span>Distance Grade</span><strong>B</strong></div>
+            <div class="metric-box"><span>Evidence Quality</span><strong>MEDIUM</strong></div>
+        </div>
+
+        <details>
+            <summary>Open full intelligence read</summary>
+
+            <div class="detail">
+                <h4>Model Alignment</h4>
+                <p>Model alignment data is not available for this runner yet.</p>
+
+                <h4>Race Story Simulation</h4>
+                <p>The projected race shape points to strong early pressure, placing extra emphasis on efficiency and late-race energy. The finishing profile suggests late strength could become relevant if the race becomes a closing-speed test. Current volatility read: high chaos.</p>
+
+                <h4>Handicap Context</h4>
+                <p>Handicap position looks favourable: peak performance sits around 31lb above the current official mark.</p>
+
+                <h4>Track DNA</h4>
+                <p>YORK 7f (Turf): late-speed profiles favoured ·  draw impact unclear. Sample size 236 (HIGH confidence).</p>
+
+                <h4>Latest Evidence</h4>
+                <p>In touch with leaders - headway over 4f out - pressed leader over 2f out - led inside final 110yds - kept on</p>
+            </div>
+        </details>
+    </article>
+    
+    <article class="card elite">
+        <div class="scan-line"></div>
+
+        <div class="card-top">
+            <div class="card-title-block">
+                <div class="profile-type">High Context Signal</div>
+                <h2>Laureate Crown</h2>
+                <p class="race-line">Haydock · 2:20 · 8.0 · Class 2</p>
+                <div class="archetype">THE CLOSER</div>
+                <div class="signal-row"><span class="signal-chip elite">Dominant Edge</span><span class="signal-chip elite">Improving</span><span class="signal-chip elite">Distance Specialist</span><span class="signal-chip good">Tactical Advantage</span><span class="signal-chip bad">High Chaos</span></div>
+            </div>
+
+            <div class="score-panel">
+                <div class="score-label">Context Edge</div>
+                <div class="score good">55.6</div>
+                <span class="edge-badge elite">Dominant Edge</span>
+            </div>
+        </div>
+
+        <div class="status-row">
+            <span class="status warn">Unstable Evidence</span>
+            <span class="status bad">High Chaos</span>
+            <span class="status elite">Improving</span>
+        </div>
+
+        <p class="plain-summary">The projected race shape points to strong early pressure, placing extra emphasis on efficiency and late-race energy. The tactical profile is best described as closer / hold-up profile. Current volatility read: high chaos.</p>
+
+        <div class="telemetry">
+            <div class="telemetry-head">
+                <h3>Context Fingerprint</h3>
+                <span>model signal distribution</span>
+            </div>
+
+            <div class="edge-row"><span>Context Edge</span><div class="edge-bar"><div style="--w:83.475%"></div></div></div>
+            <div class="edge-row"><span>Distance Intelligence</span><div class="edge-bar"><div style="--w:84.2%"></div></div></div>
+            <div class="edge-row"><span>Model Alignment</span><div class="edge-bar"><div style="--w:0%"></div></div></div>
+            <div class="edge-row"><span>Edge vs Rivals</span><div class="edge-bar"><div style="--w:100%"></div></div></div>
+            <div class="edge-row"><span>Race Fit</span><div class="edge-bar"><div style="--w:100%"></div></div></div>
+            <div class="edge-row"><span>Tactical Setup</span><div class="edge-bar"><div style="--w:96.0%"></div></div></div>
+            <div class="edge-row"><span>Finishing Profile</span><div class="edge-bar"><div style="--w:40.0%"></div></div></div>
+            <div class="edge-row"><span>Historical Suitability</span><div class="edge-bar"><div style="--w:78.0%"></div></div></div>
+            <div class="edge-row"><span>Hidden Effort</span><div class="edge-bar"><div style="--w:0%"></div></div></div>
+        </div>
+
+        <div class="metric-grid">
+            <div class="metric-box"><span>Field Position</span><strong>1/17</strong></div>
+            <div class="metric-box"><span>Rival Separation</span><strong>+12.9</strong></div>
+            <div class="metric-box"><span>Distance Grade</span><strong>A</strong></div>
+            <div class="metric-box"><span>Evidence Quality</span><strong>LOW</strong></div>
+        </div>
+
+        <details>
+            <summary>Open full intelligence read</summary>
+
+            <div class="detail">
+                <h4>Model Alignment</h4>
+                <p>Model alignment data is not available for this runner yet.</p>
+
+                <h4>Race Story Simulation</h4>
+                <p>The projected race shape points to strong early pressure, placing extra emphasis on efficiency and late-race energy. The tactical profile is best described as closer / hold-up profile. Current volatility read: high chaos.</p>
+
+                <h4>Handicap Context</h4>
+                <p>Handicap position looks broadly fair, with limited obvious margin from the peak rating evidence.</p>
+
+                <h4>Track DNA</h4>
+                <p>HAYDOCK PARK 1m (Turf): late-speed profiles favoured ·  draw impact unclear. Sample size 158 (HIGH confidence).</p>
+
+                <h4>Latest Evidence</h4>
+                <p>Dwelt start - raced in last - steady headway going easily over 2f out - ridden to lead inside final 110yds - kept on(op 9/1 tchd 10/1)</p>
+            </div>
+        </details>
+    </article>
+    
+    <article class="card good">
+        <div class="scan-line"></div>
+
+        <div class="card-top">
+            <div class="card-title-block">
+                <div class="profile-type">High Context Signal</div>
+                <h2>Cool Hoof Luke</h2>
+                <p class="race-line">Salisbury · 7:15 · 6.0 · Class 1</p>
+                <div class="archetype">CONTEXT PROFILE</div>
+                <div class="signal-row"><span class="signal-chip good">Strong Edge</span><span class="signal-chip good">Progressive Signs</span><span class="signal-chip elite">Distance Specialist</span><span class="signal-chip good">Hidden Effort</span></div>
+            </div>
+
+            <div class="score-panel">
+                <div class="score-label">Context Edge</div>
+                <div class="score warn">52.8</div>
+                <span class="edge-badge good">Strong Edge</span>
+            </div>
+        </div>
+
+        <div class="status-row">
+            <span class="status good">Moderate Reliability</span>
+            <span class="status good">Low Chaos</span>
+            <span class="status good">Progressive Signs</span>
+        </div>
+
+        <p class="plain-summary">The race shape hints at a possible tactical advantage for runners able to control or sit close to the tempo. The tactical profile is best described as adaptable midfield profile. Current volatility read: low chaos.</p>
+
+        <div class="telemetry">
+            <div class="telemetry-head">
+                <h3>Context Fingerprint</h3>
+                <span>model signal distribution</span>
+            </div>
+
+            <div class="edge-row"><span>Context Edge</span><div class="edge-bar"><div style="--w:79.125%"></div></div></div>
+            <div class="edge-row"><span>Distance Intelligence</span><div class="edge-bar"><div style="--w:76.25%"></div></div></div>
+            <div class="edge-row"><span>Model Alignment</span><div class="edge-bar"><div style="--w:0%"></div></div></div>
+            <div class="edge-row"><span>Edge vs Rivals</span><div class="edge-bar"><div style="--w:29.5%"></div></div></div>
+            <div class="edge-row"><span>Race Fit</span><div class="edge-bar"><div style="--w:100%"></div></div></div>
+            <div class="edge-row"><span>Tactical Setup</span><div class="edge-bar"><div style="--w:48.0%"></div></div></div>
+            <div class="edge-row"><span>Finishing Profile</span><div class="edge-bar"><div style="--w:40.0%"></div></div></div>
+            <div class="edge-row"><span>Historical Suitability</span><div class="edge-bar"><div style="--w:37.375%"></div></div></div>
+            <div class="edge-row"><span>Hidden Effort</span><div class="edge-bar"><div style="--w:56.0%"></div></div></div>
+        </div>
+
+        <div class="metric-grid">
+            <div class="metric-box"><span>Field Position</span><strong>1/10</strong></div>
+            <div class="metric-box"><span>Rival Separation</span><strong>+1.8</strong></div>
+            <div class="metric-box"><span>Distance Grade</span><strong>A</strong></div>
+            <div class="metric-box"><span>Evidence Quality</span><strong>MEDIUM</strong></div>
+        </div>
+
+        <details>
+            <summary>Open full intelligence read</summary>
+
+            <div class="detail">
+                <h4>Model Alignment</h4>
+                <p>Model alignment data is not available for this runner yet.</p>
+
+                <h4>Race Story Simulation</h4>
+                <p>The race shape hints at a possible tactical advantage for runners able to control or sit close to the tempo. The tactical profile is best described as adaptable midfield profile. Current volatility read: low chaos.</p>
+
+                <h4>Handicap Context</h4>
+                <p>Handicap position looks workable: peak performance gives roughly 6lb of historical rating room.</p>
+
+                <h4>Track DNA</h4>
+                <p>SALISBURY 6f (Turf): late-speed profiles favoured ·  draw impact unclear. Sample size 221 (HIGH confidence).</p>
+
+                <h4>Latest Evidence</h4>
+                <p>Pulled hard - raced wide early - led after 1f - pushed along over 1f out - ridden and kept on well final 110yds - always doing enough(op 9/4 tchd 11/5 and tchd 3/1)</p>
+            </div>
+        </details>
+    </article>
+    
+    <article class="card warn">
+        <div class="scan-line"></div>
+
+        <div class="card-top">
+            <div class="card-title-block">
+                <div class="profile-type">High Context Signal</div>
+                <h2>Soldier&#x27;s Tree</h2>
+                <p class="race-line">Salisbury · 7:15 · 6.0 · Class 1</p>
+                <div class="archetype">FRONT-END CONTROLLER</div>
+                <div class="signal-row"><span class="signal-chip warn">Competitive Edge</span><span class="signal-chip good">Progressive Signs</span><span class="signal-chip good">Tactical Advantage</span><span class="signal-chip good">Hidden Effort</span></div>
+            </div>
+
+            <div class="score-panel">
+                <div class="score-label">Context Edge</div>
+                <div class="score warn">51.0</div>
+                <span class="edge-badge warn">Competitive Edge</span>
+            </div>
+        </div>
+
+        <div class="status-row">
+            <span class="status bad">Fragile Profile</span>
+            <span class="status good">Low Chaos</span>
+            <span class="status good">Progressive Signs</span>
+        </div>
+
+        <p class="plain-summary">The race shape hints at a possible tactical advantage for runners able to control or sit close to the tempo. The tactical profile is best described as front-end controller. Current volatility read: low chaos.</p>
+
+        <div class="telemetry">
+            <div class="telemetry-head">
+                <h3>Context Fingerprint</h3>
+                <span>model signal distribution</span>
+            </div>
+
+            <div class="edge-row"><span>Context Edge</span><div class="edge-bar"><div style="--w:76.5%"></div></div></div>
+            <div class="edge-row"><span>Distance Intelligence</span><div class="edge-bar"><div style="--w:45.25%"></div></div></div>
+            <div class="edge-row"><span>Model Alignment</span><div class="edge-bar"><div style="--w:0%"></div></div></div>
+            <div class="edge-row"><span>Edge vs Rivals</span><div class="edge-bar"><div style="--w:24.500000000000007%"></div></div></div>
+            <div class="edge-row"><span>Race Fit</span><div class="edge-bar"><div style="--w:90.0%"></div></div></div>
+            <div class="edge-row"><span>Tactical Setup</span><div class="edge-bar"><div style="--w:96.0%"></div></div></div>
+            <div class="edge-row"><span>Finishing Profile</span><div class="edge-bar"><div style="--w:40.0%"></div></div></div>
+            <div class="edge-row"><span>Historical Suitability</span><div class="edge-bar"><div style="--w:39.0%"></div></div></div>
+            <div class="edge-row"><span>Hidden Effort</span><div class="edge-bar"><div style="--w:56.0%"></div></div></div>
+        </div>
+
+        <div class="metric-grid">
+            <div class="metric-box"><span>Field Position</span><strong>2/10</strong></div>
+            <div class="metric-box"><span>Rival Separation</span><strong>N/A</strong></div>
+            <div class="metric-box"><span>Distance Grade</span><strong>D</strong></div>
+            <div class="metric-box"><span>Evidence Quality</span><strong>VERY_LOW</strong></div>
+        </div>
+
+        <details>
+            <summary>Open full intelligence read</summary>
+
+            <div class="detail">
+                <h4>Model Alignment</h4>
+                <p>Model alignment data is not available for this runner yet.</p>
+
+                <h4>Race Story Simulation</h4>
+                <p>The race shape hints at a possible tactical advantage for runners able to control or sit close to the tempo. The tactical profile is best described as front-end controller. Current volatility read: low chaos.</p>
+
+                <h4>Handicap Context</h4>
+                <p>Current mark may be demanding relative to the available peak rating evidence.</p>
+
+                <h4>Track DNA</h4>
+                <p>SALISBURY 6f (Turf): late-speed profiles favoured ·  draw impact unclear. Sample size 221 (HIGH confidence).</p>
+
+                <h4>Latest Evidence</h4>
+                <p>Pressed leader - led over 2f out - headed but pressed leader over 1f out - no extra inside final furlong(tchd 20/1 and 25/1)</p>
+            </div>
+        </details>
+    </article>
+    
+    <article class="card warn">
+        <div class="scan-line"></div>
+
+        <div class="card-top">
+            <div class="card-title-block">
+                <div class="profile-type">High Context Signal</div>
+                <h2>Prince Of India</h2>
+                <p class="race-line">Salisbury · 7:15 · 6.0 · Class 1</p>
+                <div class="archetype">THE CLOSER</div>
+                <div class="signal-row"><span class="signal-chip warn">Competitive Edge</span><span class="signal-chip elite">Improving</span><span class="signal-chip good">Solid Distance Match</span><span class="signal-chip good">Historical Match</span></div>
+            </div>
+
+            <div class="score-panel">
+                <div class="score-label">Context Edge</div>
+                <div class="score warn">50.5</div>
+                <span class="edge-badge warn">Competitive Edge</span>
+            </div>
+        </div>
+
+        <div class="status-row">
+            <span class="status warn">Unstable Evidence</span>
+            <span class="status good">Low Chaos</span>
+            <span class="status elite">Improving</span>
+        </div>
+
+        <p class="plain-summary">The race shape hints at a possible tactical advantage for runners able to control or sit close to the tempo. The tactical profile is best described as closer / hold-up profile. Current volatility read: low chaos.</p>
+
+        <div class="telemetry">
+            <div class="telemetry-head">
+                <h3>Context Fingerprint</h3>
+                <span>model signal distribution</span>
+            </div>
+
+            <div class="edge-row"><span>Context Edge</span><div class="edge-bar"><div style="--w:75.75%"></div></div></div>
+            <div class="edge-row"><span>Distance Intelligence</span><div class="edge-bar"><div style="--w:74.25%"></div></div></div>
+            <div class="edge-row"><span>Model Alignment</span><div class="edge-bar"><div style="--w:0%"></div></div></div>
+            <div class="edge-row"><span>Edge vs Rivals</span><div class="edge-bar"><div style="--w:23.07142857142858%"></div></div></div>
+            <div class="edge-row"><span>Race Fit</span><div class="edge-bar"><div style="--w:80.0%"></div></div></div>
+            <div class="edge-row"><span>Tactical Setup</span><div class="edge-bar"><div style="--w:66.0%"></div></div></div>
+            <div class="edge-row"><span>Finishing Profile</span><div class="edge-bar"><div style="--w:40.0%"></div></div></div>
+            <div class="edge-row"><span>Historical Suitability</span><div class="edge-bar"><div style="--w:100%"></div></div></div>
+            <div class="edge-row"><span>Hidden Effort</span><div class="edge-bar"><div style="--w:0%"></div></div></div>
+        </div>
+
+        <div class="metric-grid">
+            <div class="metric-box"><span>Field Position</span><strong>3/10</strong></div>
+            <div class="metric-box"><span>Rival Separation</span><strong>N/A</strong></div>
+            <div class="metric-box"><span>Distance Grade</span><strong>B</strong></div>
+            <div class="metric-box"><span>Evidence Quality</span><strong>MEDIUM</strong></div>
+        </div>
+
+        <details>
+            <summary>Open full intelligence read</summary>
+
+            <div class="detail">
+                <h4>Model Alignment</h4>
+                <p>Model alignment data is not available for this runner yet.</p>
+
+                <h4>Race Story Simulation</h4>
+                <p>The race shape hints at a possible tactical advantage for runners able to control or sit close to the tempo. The tactical profile is best described as closer / hold-up profile. Current volatility read: low chaos.</p>
+
+                <h4>Handicap Context</h4>
+                <p>Handicap position looks workable: peak performance gives roughly 8lb of historical rating room.</p>
+
+                <h4>Track DNA</h4>
+                <p>SALISBURY 6f (Turf): late-speed profiles favoured ·  draw impact unclear. Sample size 221 (HIGH confidence).</p>
+
+                <h4>Latest Evidence</h4>
+                <p>In rear - towards near side early - switched right 3f out - headway up the centre 2f out - hung right when bumped inside final furlong - kept on and went second towards finish(tchd 7/2)</p>
+            </div>
+        </details>
+    </article>
+    
+    <article class="card elite">
+        <div class="scan-line"></div>
+
+        <div class="card-top">
+            <div class="card-title-block">
+                <div class="profile-type">High Context Signal</div>
+                <h2>Dmaniac</h2>
+                <p class="race-line">Curragh · 5:25 · 6.0 · </p>
+                <div class="archetype">HISTORICAL MATCH</div>
+                <div class="signal-row"><span class="signal-chip elite">Dominant Edge</span><span class="signal-chip elite">Improving</span><span class="signal-chip elite">Distance Specialist</span><span class="signal-chip good">Hidden Effort</span><span class="signal-chip good">Historical Match</span></div>
+            </div>
+
+            <div class="score-panel">
+                <div class="score-label">Context Edge</div>
+                <div class="score warn">50.1</div>
+                <span class="edge-badge elite">Dominant Edge</span>
+            </div>
+        </div>
+
+        <div class="status-row">
+            <span class="status good">Moderate Reliability</span>
+            <span class="status bad">High Chaos</span>
+            <span class="status elite">Improving</span>
+        </div>
+
+        <p class="plain-summary">The projected race shape points to strong early pressure, placing extra emphasis on efficiency and late-race energy. The tactical profile is best described as adaptable midfield profile. Current volatility read: high chaos.</p>
+
+        <div class="telemetry">
+            <div class="telemetry-head">
+                <h3>Context Fingerprint</h3>
+                <span>model signal distribution</span>
+            </div>
+
+            <div class="edge-row"><span>Context Edge</span><div class="edge-bar"><div style="--w:75.225%"></div></div></div>
+            <div class="edge-row"><span>Distance Intelligence</span><div class="edge-bar"><div style="--w:84.75%"></div></div></div>
+            <div class="edge-row"><span>Model Alignment</span><div class="edge-bar"><div style="--w:0%"></div></div></div>
+            <div class="edge-row"><span>Edge vs Rivals</span><div class="edge-bar"><div style="--w:68.55900621118012%"></div></div></div>
+            <div class="edge-row"><span>Race Fit</span><div class="edge-bar"><div style="--w:100%"></div></div></div>
+            <div class="edge-row"><span>Tactical Setup</span><div class="edge-bar"><div style="--w:60.0%"></div></div></div>
+            <div class="edge-row"><span>Finishing Profile</span><div class="edge-bar"><div style="--w:40.0%"></div></div></div>
+            <div class="edge-row"><span>Historical Suitability</span><div class="edge-bar"><div style="--w:91.0%"></div></div></div>
+            <div class="edge-row"><span>Hidden Effort</span><div class="edge-bar"><div style="--w:63.0%"></div></div></div>
+        </div>
+
+        <div class="metric-grid">
+            <div class="metric-box"><span>Field Position</span><strong>1/23</strong></div>
+            <div class="metric-box"><span>Rival Separation</span><strong>+5.0</strong></div>
+            <div class="metric-box"><span>Distance Grade</span><strong>A</strong></div>
+            <div class="metric-box"><span>Evidence Quality</span><strong>MEDIUM</strong></div>
+        </div>
+
+        <details>
+            <summary>Open full intelligence read</summary>
+
+            <div class="detail">
+                <h4>Model Alignment</h4>
+                <p>Model alignment data is not available for this runner yet.</p>
+
+                <h4>Race Story Simulation</h4>
+                <p>The projected race shape points to strong early pressure, placing extra emphasis on efficiency and late-race energy. The tactical profile is best described as adaptable midfield profile. Current volatility read: high chaos.</p>
+
+                <h4>Handicap Context</h4>
+                <p>Handicap position looks broadly fair, with limited obvious margin from the peak rating evidence.</p>
+
+                <h4>Track DNA</h4>
+                <p>CURRAGH 6f (Turf): late-speed profiles favoured ·  draw impact unclear. Sample size 593 (HIGH confidence).</p>
+
+                <h4>Latest Evidence</h4>
+                <p>In touch with leaders - headway over 2f out - went second over 1f out - kept on final 110yds(op 13/2)</p>
+            </div>
+        </details>
+    </article>
+    
+    <article class="card elite">
+        <div class="scan-line"></div>
+
+        <div class="card-top">
+            <div class="card-title-block">
+                <div class="profile-type">High Context Signal</div>
+                <h2>Pilgrim</h2>
+                <p class="race-line">York · 2:40 · 5.0 · Class 2</p>
+                <div class="archetype">CONTEXT PROFILE</div>
+                <div class="signal-row"><span class="signal-chip elite">Dominant Edge</span><span class="signal-chip neutral">Stable Profile</span><span class="signal-chip elite">Distance Specialist</span><span class="signal-chip good">Hidden Effort</span><span class="signal-chip good">Finishing Signal</span></div>
+            </div>
+
+            <div class="score-panel">
+                <div class="score-label">Context Edge</div>
+                <div class="score warn">50.1</div>
+                <span class="edge-badge elite">Dominant Edge</span>
+            </div>
+        </div>
+
+        <div class="status-row">
+            <span class="status good">Moderate Reliability</span>
+            <span class="status bad">High Chaos</span>
+            <span class="status neutral">Stable Profile</span>
+        </div>
+
+        <p class="plain-summary">The projected race shape points to strong early pressure, placing extra emphasis on efficiency and late-race energy. The finishing profile suggests late strength could become relevant if the race becomes a closing-speed test. Current volatility read: high chaos.</p>
+
+        <div class="telemetry">
+            <div class="telemetry-head">
+                <h3>Context Fingerprint</h3>
+                <span>model signal distribution</span>
+            </div>
+
+            <div class="edge-row"><span>Context Edge</span><div class="edge-bar"><div style="--w:75.15%"></div></div></div>
+            <div class="edge-row"><span>Distance Intelligence</span><div class="edge-bar"><div style="--w:82.5%"></div></div></div>
+            <div class="edge-row"><span>Model Alignment</span><div class="edge-bar"><div style="--w:0%"></div></div></div>
+            <div class="edge-row"><span>Edge vs Rivals</span><div class="edge-bar"><div style="--w:69.5374149659864%"></div></div></div>
+            <div class="edge-row"><span>Race Fit</span><div class="edge-bar"><div style="--w:80.95238095238095%"></div></div></div>
+            <div class="edge-row"><span>Tactical Setup</span><div class="edge-bar"><div style="--w:48.0%"></div></div></div>
+            <div class="edge-row"><span>Finishing Profile</span><div class="edge-bar"><div style="--w:88.0%"></div></div></div>
+            <div class="edge-row"><span>Historical Suitability</span><div class="edge-bar"><div style="--w:52.0%"></div></div></div>
+            <div class="edge-row"><span>Hidden Effort</span><div class="edge-bar"><div style="--w:70.0%"></div></div></div>
+        </div>
+
+        <div class="metric-grid">
+            <div class="metric-box"><span>Field Position</span><strong>1/21</strong></div>
+            <div class="metric-box"><span>Rival Separation</span><strong>+1.1</strong></div>
+            <div class="metric-box"><span>Distance Grade</span><strong>A</strong></div>
+            <div class="metric-box"><span>Evidence Quality</span><strong>HIGH</strong></div>
+        </div>
+
+        <details>
+            <summary>Open full intelligence read</summary>
+
+            <div class="detail">
+                <h4>Model Alignment</h4>
+                <p>Model alignment data is not available for this runner yet.</p>
+
+                <h4>Race Story Simulation</h4>
+                <p>The projected race shape points to strong early pressure, placing extra emphasis on efficiency and late-race energy. The finishing profile suggests late strength could become relevant if the race becomes a closing-speed test. Current volatility read: high chaos.</p>
+
+                <h4>Handicap Context</h4>
+                <p>Handicap position looks workable: peak performance gives roughly 7lb of historical rating room.</p>
+
+                <h4>Track DNA</h4>
+                <p>YORK 5f (Turf): late-speed profiles favoured ·  draw impact unclear. Sample size 207 (HIGH confidence).</p>
+
+                <h4>Latest Evidence</h4>
+                <p>In touch with leaders towards near side - pushed along soon after start - waiting for room from 2f out - switched right and in the clear inside final furlong - ran on well and led narrowly towards finish - just prevailed(op 15/2)</p>
+            </div>
+        </details>
+    </article>
+    
+    <article class="card warn">
+        <div class="scan-line"></div>
+
+        <div class="card-top">
+            <div class="card-title-block">
+                <div class="profile-type">Emerging Context Edge</div>
+                <h2>Gstaad</h2>
+                <p class="race-line">Curragh · 3:40 · 8.0 · Class 1</p>
+                <div class="archetype">CONTEXT PROFILE</div>
+                <div class="signal-row"><span class="signal-chip warn">Competitive Edge</span><span class="signal-chip elite">Improving</span><span class="signal-chip elite">Distance Specialist</span><span class="signal-chip bad">High Chaos</span></div>
+            </div>
+
+            <div class="score-panel">
+                <div class="score-label">Context Edge</div>
+                <div class="score warn">49.4</div>
+                <span class="edge-badge warn">Competitive Edge</span>
+            </div>
+        </div>
+
+        <div class="status-row">
+            <span class="status bad">Fragile Profile</span>
+            <span class="status bad">High Chaos</span>
+            <span class="status elite">Improving</span>
+        </div>
+
+        <p class="plain-summary">The projected race shape points to strong early pressure, placing extra emphasis on efficiency and late-race energy. The tactical profile is best described as adaptable midfield profile. Current volatility read: high chaos.</p>
+
+        <div class="telemetry">
+            <div class="telemetry-head">
+                <h3>Context Fingerprint</h3>
+                <span>model signal distribution</span>
+            </div>
+
+            <div class="edge-row"><span>Context Edge</span><div class="edge-bar"><div style="--w:74.1%"></div></div></div>
+            <div class="edge-row"><span>Distance Intelligence</span><div class="edge-bar"><div style="--w:82.5%"></div></div></div>
+            <div class="edge-row"><span>Model Alignment</span><div class="edge-bar"><div style="--w:0%"></div></div></div>
+            <div class="edge-row"><span>Edge vs Rivals</span><div class="edge-bar"><div style="--w:22.999999999999993%"></div></div></div>
+            <div class="edge-row"><span>Race Fit</span><div class="edge-bar"><div style="--w:100%"></div></div></div>
+            <div class="edge-row"><span>Tactical Setup</span><div class="edge-bar"><div style="--w:60.0%"></div></div></div>
+            <div class="edge-row"><span>Finishing Profile</span><div class="edge-bar"><div style="--w:40.0%"></div></div></div>
+            <div class="edge-row"><span>Historical Suitability</span><div class="edge-bar"><div style="--w:52.0%"></div></div></div>
+            <div class="edge-row"><span>Hidden Effort</span><div class="edge-bar"><div style="--w:42.0%"></div></div></div>
+        </div>
+
+        <div class="metric-grid">
+            <div class="metric-box"><span>Field Position</span><strong>1/10</strong></div>
+            <div class="metric-box"><span>Rival Separation</span><strong>+1.0</strong></div>
+            <div class="metric-box"><span>Distance Grade</span><strong>A</strong></div>
+            <div class="metric-box"><span>Evidence Quality</span><strong>LOW</strong></div>
+        </div>
+
+        <details>
+            <summary>Open full intelligence read</summary>
+
+            <div class="detail">
+                <h4>Model Alignment</h4>
+                <p>Model alignment data is not available for this runner yet.</p>
+
+                <h4>Race Story Simulation</h4>
+                <p>The projected race shape points to strong early pressure, placing extra emphasis on efficiency and late-race energy. The tactical profile is best described as adaptable midfield profile. Current volatility read: high chaos.</p>
+
+                <h4>Handicap Context</h4>
+                <p>Handicap position looks broadly fair, with limited obvious margin from the peak rating evidence.</p>
+
+                <h4>Track DNA</h4>
+                <p>CURRAGH 1m (Turf): late-speed profiles favoured ·  draw impact unclear. Sample size 454 (HIGH confidence).</p>
+
+                <h4>Latest Evidence</h4>
+                <p>Raced centre - soon in touch with leaders - headway when groups merged over 3f out - briefly disputed lead over 1f out - soon edged right and went clear with winner - kept on but no match for winner(op 5/2)</p>
+            </div>
+        </details>
+    </article>
+    
+    <article class="card elite">
+        <div class="scan-line"></div>
+
+        <div class="card-top">
+            <div class="card-title-block">
+                <div class="profile-type">Emerging Context Edge</div>
+                <h2>King Of Light</h2>
+                <p class="race-line">York · 2:40 · 5.0 · Class 2</p>
+                <div class="archetype">CONTEXT PROFILE</div>
+                <div class="signal-row"><span class="signal-chip elite">Dominant Edge</span><span class="signal-chip elite">Improving</span><span class="signal-chip elite">Distance Specialist</span><span class="signal-chip bad">High Chaos</span></div>
+            </div>
+
+            <div class="score-panel">
+                <div class="score-label">Context Edge</div>
+                <div class="score warn">49.0</div>
+                <span class="edge-badge elite">Dominant Edge</span>
+            </div>
+        </div>
+
+        <div class="status-row">
+            <span class="status good">Moderate Reliability</span>
+            <span class="status bad">High Chaos</span>
+            <span class="status elite">Improving</span>
+        </div>
+
+        <p class="plain-summary">The projected race shape points to strong early pressure, placing extra emphasis on efficiency and late-race energy. The tactical profile is best described as adaptable midfield profile. Current volatility read: high chaos.</p>
+
+        <div class="telemetry">
+            <div class="telemetry-head">
+                <h3>Context Fingerprint</h3>
+                <span>model signal distribution</span>
+            </div>
+
+            <div class="edge-row"><span>Context Edge</span><div class="edge-bar"><div style="--w:73.5%"></div></div></div>
+            <div class="edge-row"><span>Distance Intelligence</span><div class="edge-bar"><div style="--w:82.2%"></div></div></div>
+            <div class="edge-row"><span>Model Alignment</span><div class="edge-bar"><div style="--w:0%"></div></div></div>
+            <div class="edge-row"><span>Edge vs Rivals</span><div class="edge-bar"><div style="--w:66.39455782312926%"></div></div></div>
+            <div class="edge-row"><span>Race Fit</span><div class="edge-bar"><div style="--w:61.904761904761905%"></div></div></div>
+            <div class="edge-row"><span>Tactical Setup</span><div class="edge-bar"><div style="--w:60.0%"></div></div></div>
+            <div class="edge-row"><span>Finishing Profile</span><div class="edge-bar"><div style="--w:40.0%"></div></div></div>
+            <div class="edge-row"><span>Historical Suitability</span><div class="edge-bar"><div style="--w:52.0%"></div></div></div>
+            <div class="edge-row"><span>Hidden Effort</span><div class="edge-bar"><div style="--w:42.0%"></div></div></div>
+        </div>
+
+        <div class="metric-grid">
+            <div class="metric-box"><span>Field Position</span><strong>2/21</strong></div>
+            <div class="metric-box"><span>Rival Separation</span><strong>N/A</strong></div>
+            <div class="metric-box"><span>Distance Grade</span><strong>A</strong></div>
+            <div class="metric-box"><span>Evidence Quality</span><strong>HIGH</strong></div>
+        </div>
+
+        <details>
+            <summary>Open full intelligence read</summary>
+
+            <div class="detail">
+                <h4>Model Alignment</h4>
+                <p>Model alignment data is not available for this runner yet.</p>
+
+                <h4>Race Story Simulation</h4>
+                <p>The projected race shape points to strong early pressure, placing extra emphasis on efficiency and late-race energy. The tactical profile is best described as adaptable midfield profile. Current volatility read: high chaos.</p>
+
+                <h4>Handicap Context</h4>
+                <p>Handicap position looks broadly fair, with limited obvious margin from the peak rating evidence.</p>
+
+                <h4>Track DNA</h4>
+                <p>YORK 5f (Turf): late-speed profiles favoured ·  draw impact unclear. Sample size 207 (HIGH confidence).</p>
+
+                <h4>Latest Evidence</h4>
+                <p>Held up in midfield - headway over 1f out - ridden and went second final 110yds - kept on but no match for winner(op 10/1)</p>
+            </div>
+        </details>
+    </article>
+    
+    <article class="card good">
+        <div class="scan-line"></div>
+
+        <div class="card-top">
+            <div class="card-title-block">
+                <div class="profile-type">Emerging Context Edge</div>
+                <h2>Valkyrie Storm</h2>
+                <p class="race-line">Windsor · 8:00 · 8.0 · Class 4</p>
+                <div class="archetype">CONTEXT PROFILE</div>
+                <div class="signal-row"><span class="signal-chip good">Strong Edge</span><span class="signal-chip elite">Improving</span><span class="signal-chip good">Hidden Effort</span></div>
+            </div>
+
+            <div class="score-panel">
+                <div class="score-label">Context Edge</div>
+                <div class="score warn">48.8</div>
+                <span class="edge-badge good">Strong Edge</span>
+            </div>
+        </div>
+
+        <div class="status-row">
+            <span class="status warn">Unstable Evidence</span>
+            <span class="status good">Low Chaos</span>
+            <span class="status elite">Improving</span>
+        </div>
+
+        <p class="plain-summary">The tempo looks relatively balanced, so overall suitability and execution may matter more than a single pace edge. The tactical profile is best described as pressure / prominent racer. Current volatility read: low chaos.</p>
+
+        <div class="telemetry">
+            <div class="telemetry-head">
+                <h3>Context Fingerprint</h3>
+                <span>model signal distribution</span>
+            </div>
+
+            <div class="edge-row"><span>Context Edge</span><div class="edge-bar"><div style="--w:73.125%"></div></div></div>
+            <div class="edge-row"><span>Distance Intelligence</span><div class="edge-bar"><div style="--w:49.45%"></div></div></div>
+            <div class="edge-row"><span>Model Alignment</span><div class="edge-bar"><div style="--w:0%"></div></div></div>
+            <div class="edge-row"><span>Edge vs Rivals</span><div class="edge-bar"><div style="--w:39.42857142857143%"></div></div></div>
+            <div class="edge-row"><span>Race Fit</span><div class="edge-bar"><div style="--w:77.77777777777779%"></div></div></div>
+            <div class="edge-row"><span>Tactical Setup</span><div class="edge-bar"><div style="--w:60.0%"></div></div></div>
+            <div class="edge-row"><span>Finishing Profile</span><div class="edge-bar"><div style="--w:40.0%"></div></div></div>
+            <div class="edge-row"><span>Historical Suitability</span><div class="edge-bar"><div style="--w:43.875%"></div></div></div>
+            <div class="edge-row"><span>Hidden Effort</span><div class="edge-bar"><div style="--w:56.0%"></div></div></div>
+        </div>
+
+        <div class="metric-grid">
+            <div class="metric-box"><span>Field Position</span><strong>1/9</strong></div>
+            <div class="metric-box"><span>Rival Separation</span><strong>+2.8</strong></div>
+            <div class="metric-box"><span>Distance Grade</span><strong>D</strong></div>
+            <div class="metric-box"><span>Evidence Quality</span><strong>LOW</strong></div>
+        </div>
+
+        <details>
+            <summary>Open full intelligence read</summary>
+
+            <div class="detail">
+                <h4>Model Alignment</h4>
+                <p>Model alignment data is not available for this runner yet.</p>
+
+                <h4>Race Story Simulation</h4>
+                <p>The tempo looks relatively balanced, so overall suitability and execution may matter more than a single pace edge. The tactical profile is best described as pressure / prominent racer. Current volatility read: low chaos.</p>
+
+                <h4>Handicap Context</h4>
+                <p>Current mark may be demanding relative to the available peak rating evidence.</p>
+
+                <h4>Track DNA</h4>
+                <p>WINDSOR 1m (Turf): late-speed profiles favoured ·  draw impact unclear. Sample size 305 (HIGH confidence).</p>
+
+                <h4>Latest Evidence</h4>
+                <p>Took keen hold - prominent on outer early - in touch with leaders over 4f out - pushed along and edged right 2f out - ridden to lead 1f out - kept on well final 110yds</p>
+            </div>
+        </details>
+    </article>
+    
+    <article class="card good">
+        <div class="scan-line"></div>
+
+        <div class="card-top">
+            <div class="card-title-block">
+                <div class="profile-type">Emerging Context Edge</div>
+                <h2>Pathein</h2>
+                <p class="race-line">Goodwood · 1:25 · 7.0 · Class 2</p>
+                <div class="archetype">CONTEXT PROFILE</div>
+                <div class="signal-row"><span class="signal-chip good">Strong Edge</span><span class="signal-chip good">Progressive Signs</span><span class="signal-chip elite">Distance Specialist</span><span class="signal-chip bad">High Chaos</span></div>
+            </div>
+
+            <div class="score-panel">
+                <div class="score-label">Context Edge</div>
+                <div class="score warn">48.8</div>
+                <span class="edge-badge good">Strong Edge</span>
+            </div>
+        </div>
+
+        <div class="status-row">
+            <span class="status warn">Unstable Evidence</span>
+            <span class="status bad">High Chaos</span>
+            <span class="status good">Progressive Signs</span>
+        </div>
+
+        <p class="plain-summary">The projected race shape points to strong early pressure, placing extra emphasis on efficiency and late-race energy. The tactical profile is best described as adaptable midfield profile. Current volatility read: high chaos.</p>
+
+        <div class="telemetry">
+            <div class="telemetry-head">
+                <h3>Context Fingerprint</h3>
+                <span>model signal distribution</span>
+            </div>
+
+            <div class="edge-row"><span>Context Edge</span><div class="edge-bar"><div style="--w:73.125%"></div></div></div>
+            <div class="edge-row"><span>Distance Intelligence</span><div class="edge-bar"><div style="--w:84.95%"></div></div></div>
+            <div class="edge-row"><span>Model Alignment</span><div class="edge-bar"><div style="--w:0%"></div></div></div>
+            <div class="edge-row"><span>Edge vs Rivals</span><div class="edge-bar"><div style="--w:49.87301587301589%"></div></div></div>
+            <div class="edge-row"><span>Race Fit</span><div class="edge-bar"><div style="--w:72.22222222222221%"></div></div></div>
+            <div class="edge-row"><span>Tactical Setup</span><div class="edge-bar"><div style="--w:60.0%"></div></div></div>
+            <div class="edge-row"><span>Finishing Profile</span><div class="edge-bar"><div style="--w:40.0%"></div></div></div>
+            <div class="edge-row"><span>Historical Suitability</span><div class="edge-bar"><div style="--w:37.375%"></div></div></div>
+            <div class="edge-row"><span>Hidden Effort</span><div class="edge-bar"><div style="--w:28.0%"></div></div></div>
+        </div>
+
+        <div class="metric-grid">
+            <div class="metric-box"><span>Field Position</span><strong>1/18</strong></div>
+            <div class="metric-box"><span>Rival Separation</span><strong>+5.3</strong></div>
+            <div class="metric-box"><span>Distance Grade</span><strong>A</strong></div>
+            <div class="metric-box"><span>Evidence Quality</span><strong>LOW</strong></div>
+        </div>
+
+        <details>
+            <summary>Open full intelligence read</summary>
+
+            <div class="detail">
+                <h4>Model Alignment</h4>
+                <p>Model alignment data is not available for this runner yet.</p>
+
+                <h4>Race Story Simulation</h4>
+                <p>The projected race shape points to strong early pressure, placing extra emphasis on efficiency and late-race energy. The tactical profile is best described as adaptable midfield profile. Current volatility read: high chaos.</p>
+
+                <h4>Handicap Context</h4>
+                <p>Current mark may be demanding relative to the available peak rating evidence.</p>
+
+                <h4>Track DNA</h4>
+                <p>GOODWOOD 7f (Turf): late-speed profiles favoured ·  draw impact unclear. Sample size 171 (HIGH confidence).</p>
+
+                <h4>Latest Evidence</h4>
+                <p>In touch with leaders - headway and challenging over 1f out - no extra final 110yds(op 7/2 tchd 3/1 and tchd 4/1)</p>
+            </div>
+        </details>
+    </article>
+    
+    <article class="card warn">
+        <div class="scan-line"></div>
+
+        <div class="card-top">
+            <div class="card-title-block">
+                <div class="profile-type">Emerging Context Edge</div>
+                <h2>Neolithic</h2>
+                <p class="race-line">Curragh · 3:40 · 8.0 · Class 1</p>
+                <div class="archetype">HISTORICAL MATCH</div>
+                <div class="signal-row"><span class="signal-chip warn">Competitive Edge</span><span class="signal-chip elite">Improving</span><span class="signal-chip good">Historical Match</span><span class="signal-chip bad">High Chaos</span></div>
+            </div>
+
+            <div class="score-panel">
+                <div class="score-label">Context Edge</div>
+                <div class="score warn">48.4</div>
+                <span class="edge-badge warn">Competitive Edge</span>
+            </div>
+        </div>
+
+        <div class="status-row">
+            <span class="status bad">Fragile Profile</span>
+            <span class="status bad">High Chaos</span>
+            <span class="status elite">Improving</span>
+        </div>
+
+        <p class="plain-summary">The projected race shape points to strong early pressure, placing extra emphasis on efficiency and late-race energy. The tactical profile is best described as front-end controller. Current volatility read: high chaos.</p>
+
+        <div class="telemetry">
+            <div class="telemetry-head">
+                <h3>Context Fingerprint</h3>
+                <span>model signal distribution</span>
+            </div>
+
+            <div class="edge-row"><span>Context Edge</span><div class="edge-bar"><div style="--w:72.6%"></div></div></div>
+            <div class="edge-row"><span>Distance Intelligence</span><div class="edge-bar"><div style="--w:43.45%"></div></div></div>
+            <div class="edge-row"><span>Model Alignment</span><div class="edge-bar"><div style="--w:0%"></div></div></div>
+            <div class="edge-row"><span>Edge vs Rivals</span><div class="edge-bar"><div style="--w:20.142857142857135%"></div></div></div>
+            <div class="edge-row"><span>Race Fit</span><div class="edge-bar"><div style="--w:90.0%"></div></div></div>
+            <div class="edge-row"><span>Tactical Setup</span><div class="edge-bar"><div style="--w:36.0%"></div></div></div>
+            <div class="edge-row"><span>Finishing Profile</span><div class="edge-bar"><div style="--w:40.0%"></div></div></div>
+            <div class="edge-row"><span>Historical Suitability</span><div class="edge-bar"><div style="--w:91.0%"></div></div></div>
+            <div class="edge-row"><span>Hidden Effort</span><div class="edge-bar"><div style="--w:42.0%"></div></div></div>
+        </div>
+
+        <div class="metric-grid">
+            <div class="metric-box"><span>Field Position</span><strong>2/10</strong></div>
+            <div class="metric-box"><span>Rival Separation</span><strong>N/A</strong></div>
+            <div class="metric-box"><span>Distance Grade</span><strong>E</strong></div>
+            <div class="metric-box"><span>Evidence Quality</span><strong>VERY_LOW</strong></div>
+        </div>
+
+        <details>
+            <summary>Open full intelligence read</summary>
+
+            <div class="detail">
+                <h4>Model Alignment</h4>
+                <p>Model alignment data is not available for this runner yet.</p>
+
+                <h4>Race Story Simulation</h4>
+                <p>The projected race shape points to strong early pressure, placing extra emphasis on efficiency and late-race energy. The tactical profile is best described as front-end controller. Current volatility read: high chaos.</p>
+
+                <h4>Handicap Context</h4>
+                <p>Handicap position looks broadly fair, with limited obvious margin from the peak rating evidence.</p>
+
+                <h4>Track DNA</h4>
+                <p>CURRAGH 1m (Turf): late-speed profiles favoured ·  draw impact unclear. Sample size 454 (HIGH confidence).</p>
+
+                <h4>Latest Evidence</h4>
+                <p>Led - headed and raced in second after 1f - led under 2f out - headed inside final furlong - lost second towards finish(op 5/2 tchd 10/3)</p>
+            </div>
+        </details>
+    </article>
+    
+    <article class="card elite">
+        <div class="scan-line"></div>
+
+        <div class="card-top">
+            <div class="card-title-block">
+                <div class="profile-type">Emerging Context Edge</div>
+                <h2>Perry Mason</h2>
+                <p class="race-line">Curragh · 2:30 · 10.0 · </p>
+                <div class="archetype">CONTEXT PROFILE</div>
+                <div class="signal-row"><span class="signal-chip elite">Dominant Edge</span><span class="signal-chip good">Progressive Signs</span><span class="signal-chip good">Hidden Effort</span><span class="signal-chip good">Finishing Signal</span><span class="signal-chip warn">Medium Chaos</span></div>
+            </div>
+
+            <div class="score-panel">
+                <div class="score-label">Context Edge</div>
+                <div class="score warn">48.3</div>
+                <span class="edge-badge elite">Dominant Edge</span>
+            </div>
+        </div>
+
+        <div class="status-row">
+            <span class="status warn">Unstable Evidence</span>
+            <span class="status warn">Medium Chaos</span>
+            <span class="status good">Progressive Signs</span>
+        </div>
+
+        <p class="plain-summary">The tempo looks relatively balanced, so overall suitability and execution may matter more than a single pace edge. The finishing profile suggests late strength could become relevant if the race becomes a closing-speed test. Current volatility read: medium chaos.</p>
+
+        <div class="telemetry">
+            <div class="telemetry-head">
+                <h3>Context Fingerprint</h3>
+                <span>model signal distribution</span>
+            </div>
+
+            <div class="edge-row"><span>Context Edge</span><div class="edge-bar"><div style="--w:72.44999999999999%"></div></div></div>
+            <div class="edge-row"><span>Distance Intelligence</span><div class="edge-bar"><div style="--w:37.0%"></div></div></div>
+            <div class="edge-row"><span>Model Alignment</span><div class="edge-bar"><div style="--w:0%"></div></div></div>
+            <div class="edge-row"><span>Edge vs Rivals</span><div class="edge-bar"><div style="--w:71.95918367346937%"></div></div></div>
+            <div class="edge-row"><span>Race Fit</span><div class="edge-bar"><div style="--w:95.23809523809523%"></div></div></div>
+            <div class="edge-row"><span>Tactical Setup</span><div class="edge-bar"><div style="--w:60.0%"></div></div></div>
+            <div class="edge-row"><span>Finishing Profile</span><div class="edge-bar"><div style="--w:88.0%"></div></div></div>
+            <div class="edge-row"><span>Historical Suitability</span><div class="edge-bar"><div style="--w:32.5%"></div></div></div>
+            <div class="edge-row"><span>Hidden Effort</span><div class="edge-bar"><div style="--w:77.0%"></div></div></div>
+        </div>
+
+        <div class="metric-grid">
+            <div class="metric-box"><span>Field Position</span><strong>1/21</strong></div>
+            <div class="metric-box"><span>Rival Separation</span><strong>+5.1</strong></div>
+            <div class="metric-box"><span>Distance Grade</span><strong>E</strong></div>
+            <div class="metric-box"><span>Evidence Quality</span><strong>VERY_LOW</strong></div>
+        </div>
+
+        <details>
+            <summary>Open full intelligence read</summary>
+
+            <div class="detail">
+                <h4>Model Alignment</h4>
+                <p>Model alignment data is not available for this runner yet.</p>
+
+                <h4>Race Story Simulation</h4>
+                <p>The tempo looks relatively balanced, so overall suitability and execution may matter more than a single pace edge. The finishing profile suggests late strength could become relevant if the race becomes a closing-speed test. Current volatility read: medium chaos.</p>
+
+                <h4>Handicap Context</h4>
+                <p>Handicap position looks broadly fair, with limited obvious margin from the peak rating evidence.</p>
+
+                <h4>Track DNA</h4>
+                <p>CURRAGH 1m2f (Turf): late-speed profiles favoured ·  draw impact unclear. Sample size 314 (HIGH confidence).</p>
+
+                <h4>Latest Evidence</h4>
+                <p>Midfield - switched right and headway towards far side over 2f out - hung right final 110yds - ran on well and went third final strides(op 6/1 tchd 5/1)</p>
+            </div>
+        </details>
+    </article>
+    
+    <article class="card elite">
+        <div class="scan-line"></div>
+
+        <div class="card-top">
+            <div class="card-title-block">
+                <div class="profile-type">Emerging Context Edge</div>
+                <h2>Havana Prince</h2>
+                <p class="race-line">York · 5:00 · 7.0 · Class 4</p>
+                <div class="archetype">HISTORICAL MATCH</div>
+                <div class="signal-row"><span class="signal-chip elite">Dominant Edge</span><span class="signal-chip elite">Improving</span><span class="signal-chip elite">Distance Specialist</span><span class="signal-chip good">Hidden Effort</span><span class="signal-chip good">Finishing Signal</span></div>
+            </div>
+
+            <div class="score-panel">
+                <div class="score-label">Context Edge</div>
+                <div class="score warn">48.1</div>
+                <span class="edge-badge elite">Dominant Edge</span>
+            </div>
+        </div>
+
+        <div class="status-row">
+            <span class="status good">Moderate Reliability</span>
+            <span class="status bad">High Chaos</span>
+            <span class="status elite">Improving</span>
+        </div>
+
+        <p class="plain-summary">The projected race shape points to strong early pressure, placing extra emphasis on efficiency and late-race energy. The finishing profile suggests late strength could become relevant if the race becomes a closing-speed test. Current volatility read: high chaos.</p>
+
+        <div class="telemetry">
+            <div class="telemetry-head">
+                <h3>Context Fingerprint</h3>
+                <span>model signal distribution</span>
+            </div>
+
+            <div class="edge-row"><span>Context Edge</span><div class="edge-bar"><div style="--w:72.225%"></div></div></div>
+            <div class="edge-row"><span>Distance Intelligence</span><div class="edge-bar"><div style="--w:80.25%"></div></div></div>
+            <div class="edge-row"><span>Model Alignment</span><div class="edge-bar"><div style="--w:0%"></div></div></div>
+            <div class="edge-row"><span>Edge vs Rivals</span><div class="edge-bar"><div style="--w:58.753246753246735%"></div></div></div>
+            <div class="edge-row"><span>Race Fit</span><div class="edge-bar"><div style="--w:68.18181818181817%"></div></div></div>
+            <div class="edge-row"><span>Tactical Setup</span><div class="edge-bar"><div style="--w:48.0%"></div></div></div>
+            <div class="edge-row"><span>Finishing Profile</span><div class="edge-bar"><div style="--w:88.0%"></div></div></div>
+            <div class="edge-row"><span>Historical Suitability</span><div class="edge-bar"><div style="--w:97.5%"></div></div></div>
+            <div class="edge-row"><span>Hidden Effort</span><div class="edge-bar"><div style="--w:70.0%"></div></div></div>
+        </div>
+
+        <div class="metric-grid">
+            <div class="metric-box"><span>Field Position</span><strong>2/22</strong></div>
+            <div class="metric-box"><span>Rival Separation</span><strong>N/A</strong></div>
+            <div class="metric-box"><span>Distance Grade</span><strong>A</strong></div>
+            <div class="metric-box"><span>Evidence Quality</span><strong>HIGH</strong></div>
+        </div>
+
+        <details>
+            <summary>Open full intelligence read</summary>
+
+            <div class="detail">
+                <h4>Model Alignment</h4>
+                <p>Model alignment data is not available for this runner yet.</p>
+
+                <h4>Race Story Simulation</h4>
+                <p>The projected race shape points to strong early pressure, placing extra emphasis on efficiency and late-race energy. The finishing profile suggests late strength could become relevant if the race becomes a closing-speed test. Current volatility read: high chaos.</p>
+
+                <h4>Handicap Context</h4>
+                <p>Handicap position looks workable: peak performance gives roughly 7lb of historical rating room.</p>
+
+                <h4>Track DNA</h4>
+                <p>YORK 7f (Turf): late-speed profiles favoured ·  draw impact unclear. Sample size 236 (HIGH confidence).</p>
+
+                <h4>Latest Evidence</h4>
+                <p>Raced far side - chased clear leader - led 1f out - kept on inside final furlong - 1st of 8 in group(op 16/1)</p>
+            </div>
+        </details>
+    </article>
+    
+</main>
+
+<footer>
+    ForeFurlongs Intelligence is a contextual racing analytics dashboard. It supports research and interpretation,
+    but does not guarantee outcomes or constitute financial advice.
+</footer>
 
 </body>
 </html>
