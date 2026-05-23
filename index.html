@@ -9,101 +9,518 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Sora:wght@600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-    --bg:#050914; --panel:rgba(12,22,36,.92); --panel2:rgba(17,31,52,.92);
-    --text:#f8fafc; --muted:#94a3b8; --line:rgba(148,163,184,.22);
-    --green:#22c55e; --blue:#38bdf8; --amber:#f59e0b; --red:#ef4444;
+    --bg:#050914;
+    --panel:rgba(12,22,36,.92);
+    --panel2:rgba(17,31,52,.92);
+    --text:#f8fafc;
+    --muted:#94a3b8;
+    --line:rgba(148,163,184,.22);
+    --green:#22c55e;
+    --blue:#38bdf8;
+    --amber:#f59e0b;
+    --red:#ef4444;
+    --violet:#a78bfa;
+    --gold:#f8d878;
 }
 * { box-sizing:border-box; }
 body {
-    margin:0; padding:18px; color:var(--text); font-family:Inter,Arial,sans-serif;
-    background:radial-gradient(circle at 8% 0%,rgba(34,197,94,.15),transparent 28%),
-               radial-gradient(circle at 92% 4%,rgba(56,189,248,.12),transparent 30%),
-               linear-gradient(180deg,#07111f 0%,#050914 100%);
+    margin:0;
+    padding:18px;
+    background:
+        radial-gradient(circle at 8% 0%,rgba(34,197,94,.15),transparent 28%),
+        radial-gradient(circle at 92% 4%,rgba(56,189,248,.12),transparent 30%),
+        linear-gradient(180deg,#07111f 0%,#050914 100%);
+    color:var(--text);
+    font-family:Inter,Arial,sans-serif;
+}
+body.page-bets {
+    background:
+        radial-gradient(circle at 10% 0%,rgba(214,184,90,.14),transparent 28%),
+        radial-gradient(circle at 95% 6%,rgba(34,197,94,.10),transparent 30%),
+        linear-gradient(180deg,#090b10 0%,#050914 100%);
 }
 a { color:inherit; text-decoration:none; }
-.topnav,.page-hero,.content,footer { max-width:1200px; margin-left:auto; margin-right:auto; }
-.topnav { display:flex; align-items:center; justify-content:space-between; gap:18px; margin:6px auto 22px; }
-.brand-lockup { display:flex; align-items:center; gap:12px; }
-.logo { width:40px; height:40px; border-radius:12px; display:grid; place-items:center; font-family:Sora; font-weight:800; border:1px solid rgba(34,197,94,.55); background:linear-gradient(135deg,rgba(34,197,94,.32),rgba(56,189,248,.11)); box-shadow:0 0 24px rgba(34,197,94,.22); }
-.brand-lockup strong { display:block; font-family:Space Grotesk; letter-spacing:.04em; }
-.brand-lockup span { color:var(--muted); font-size:12px; }
-.navlinks { display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
-.navlinks a { font-family:Sora; font-size:12px; padding:9px 12px; border:1px solid var(--line); border-radius:999px; color:#dbeafe; background:rgba(15,23,42,.46); }
-.navlinks a.active { color:#86efac; border-color:rgba(34,197,94,.45); background:rgba(34,197,94,.10); }
-.page-hero { border:1px solid rgba(56,189,248,.24); border-radius:30px; padding:28px; margin-bottom:18px; background:linear-gradient(135deg,rgba(13,23,38,.96),rgba(5,9,20,.90)); position:relative; overflow:hidden; }
-.page-hero:after { content:""; position:absolute; top:0; left:-50%; width:36%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent); animation:sweep 6s ease-in-out infinite; }
-@keyframes sweep { 0%,45% { left:-50%; } 100% { left:120%; } }
-.eyebrow { font-family:Sora; text-transform:uppercase; letter-spacing:.14em; color:#86efac; font-size:12px; font-weight:800; }
-h1,h2,h3,h4 { font-family:Space Grotesk; letter-spacing:-.02em; }
-h1 { position:relative; font-size:clamp(38px,6vw,72px); line-height:.94; margin:12px 0; max-width:900px; }
-.page-hero p { position:relative; color:var(--muted); max-width:850px; line-height:1.65; font-size:16px; }
-.content { display:grid; gap:18px; }
-.brief-grid,.race-intel-grid,.main-danger,.context-grid { display:grid; gap:12px; }
-.brief-grid { grid-template-columns:repeat(4,1fr); }
-.brief-card,.race-card,.horse-card,.panel { border:1px solid var(--line); border-radius:24px; background:var(--panel); box-shadow:0 16px 42px rgba(0,0,0,.24); }
-.brief-card { padding:16px; }
-.brief-card span,.race-intel-grid span,.main-danger span,.timing-context span,.metric-box span { display:block; color:var(--muted); font-size:12px; margin-bottom:6px; }
-.brief-card strong { font-family:Sora; font-size:28px; }
-.race-card { padding:20px; position:relative; overflow:hidden; }
-.race-card:before,.horse-card:before { content:""; position:absolute; left:0; top:0; width:100%; height:2px; background:linear-gradient(90deg,transparent,var(--blue),transparent); animation:scan 5s linear infinite; }
-@keyframes scan { 0% { transform:translateX(-100%); } 100% { transform:translateX(100%); } }
-.race-header,.horse-head { display:grid; grid-template-columns:1fr auto; gap:18px; align-items:start; }
-.race-header h2,.horse-head h3 { margin:5px 0; font-size:clamp(26px,4vw,42px); }
-.race-meta { color:var(--muted); margin:0; }
-.race-score,.horse-score { text-align:right; min-width:132px; }
-.race-score span,.horse-score span { color:var(--muted); font-size:11px; font-family:Sora; text-transform:uppercase; letter-spacing:.09em; }
-.race-score strong,.horse-score strong { display:block; font-family:Sora; font-size:48px; line-height:1; margin:6px 0; }
-.race-score em { display:block; font-style:normal; color:#dbeafe; font-size:12px; }
-.elite { color:#86efac!important; } .good { color:#bae6fd!important; } .warn { color:#fde68a!important; } .bad { color:#fecaca!important; } .neutral { color:#cbd5e1!important; }
-.race-intel-grid { grid-template-columns:repeat(4,1fr); margin:18px 0; }
-.race-intel-grid div,.main-danger div,.timing-context,.condition-record,.context-grid div { border:1px solid var(--line); background:rgba(5,9,20,.45); border-radius:18px; padding:14px; }
-.race-intel-grid strong,.main-danger strong { font-family:Sora; font-size:15px; }
-.synopsis { border-left:3px solid var(--blue); background:rgba(56,189,248,.07); border-radius:18px; padding:16px; margin:14px 0; }
-.synopsis h3 { margin:0 0 8px; }
-.synopsis p,.summary,.main-danger p,.runner-body p,.context-grid p { color:#cbd5e1; line-height:1.62; margin:0; }
-.main-danger { grid-template-columns:1fr 1fr; margin:14px 0; }
-.chip-row { display:flex; gap:8px; flex-wrap:wrap; margin:10px 0; }
-.chip { display:inline-flex; align-items:center; border-radius:999px; padding:7px 10px; font-family:Sora; font-size:11px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; border:1px solid rgba(255,255,255,.12); background:rgba(148,163,184,.11); }
-.chip.elite { background:rgba(34,197,94,.13); box-shadow:0 0 16px rgba(34,197,94,.18); }
-.chip.good { background:rgba(56,189,248,.12); } .chip.warn { background:rgba(245,158,11,.13); } .chip.bad { background:rgba(239,68,68,.13); }
-.horse-card { padding:18px; position:relative; overflow:hidden; }
-.bars { border:1px solid var(--line); background:rgba(5,9,20,.42); border-radius:18px; padding:14px; margin:14px 0; }
-.bar-row { display:grid; grid-template-columns:165px 1fr; gap:10px; align-items:center; margin:9px 0; }
-.bar-row span { color:var(--muted); font-size:12px; }
-.bar { height:9px; border-radius:999px; overflow:hidden; background:#1e293b; }
-.bar i { display:block; height:100%; width:var(--w); background:linear-gradient(90deg,var(--blue),var(--green)); border-radius:999px; box-shadow:0 0 16px rgba(34,197,94,.25); animation:grow 1.1s ease both; }
-@keyframes grow { from { width:0; } to { width:var(--w); } }
-details { border-top:1px solid var(--line); padding-top:12px; margin-top:12px; }
-summary { cursor:pointer; font-family:Sora; color:#dbeafe; font-weight:800; }
-.runner.compact { border:1px solid var(--line); border-radius:18px; padding:12px; background:rgba(15,23,42,.48); margin:10px 0; }
-.runner.compact summary { display:grid; grid-template-columns:1fr auto auto; gap:12px; align-items:center; }
-.runner-name { font-family:Space Grotesk; font-size:18px; }
-.runner-score { font-family:Sora; font-size:18px; }
-.runner-style { color:var(--muted); font-size:12px; }
-.runner-body { padding-top:12px; }
-.context-grid { grid-template-columns:repeat(2,1fr); margin-top:12px; }
-.timing-context { margin-top:12px; }
-.timing-context div { display:flex; justify-content:space-between; gap:12px; margin:4px 0; }
-.small-line { font-size:12px; color:var(--muted)!important; margin-top:8px!important; }
-.condition-record { margin-top:12px; }
-.mini-grid { display:grid; grid-template-columns:1fr auto; gap:6px 12px; margin:8px 0; }
-.mini-grid span { color:var(--muted); }
-.muted-card { opacity:.78; }
-footer { margin-top:28px; color:var(--muted); font-size:12px; line-height:1.6; }
+.topnav,.page-hero,.content,footer {
+    max-width:1200px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.topnav {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+    margin:6px auto 22px;
+}
+.brand-lockup {
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+.logo {
+    width:40px;
+    height:40px;
+    border-radius:12px;
+    display:grid;
+    place-items:center;
+    font-family:Sora;
+    font-weight:800;
+    border:1px solid rgba(34,197,94,.55);
+    background:linear-gradient(135deg,rgba(34,197,94,.32),rgba(56,189,248,.11));
+    box-shadow:0 0 24px rgba(34,197,94,.22);
+}
+.brand-lockup strong {
+    display:block;
+    font-family:Space Grotesk;
+    letter-spacing:.04em;
+}
+.brand-lockup span {
+    color:var(--muted);
+    font-size:12px;
+}
+.navlinks {
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+}
+.navlinks a {
+    font-family:Sora;
+    font-size:12px;
+    padding:9px 12px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    color:#dbeafe;
+    background:rgba(15,23,42,.46);
+}
+.navlinks a.active {
+    color:#86efac;
+    border-color:rgba(34,197,94,.45);
+    background:rgba(34,197,94,.10);
+}
+.page-hero {
+    border:1px solid rgba(56,189,248,.24);
+    border-radius:30px;
+    padding:28px;
+    margin-bottom:18px;
+    background:linear-gradient(135deg,rgba(13,23,38,.96),rgba(5,9,20,.90));
+    position:relative;
+    overflow:hidden;
+}
+.page-bets .page-hero {
+    border-color:rgba(214,184,90,.35);
+    background:linear-gradient(135deg,rgba(30,25,12,.96),rgba(5,9,20,.92));
+}
+.page-hero:after {
+    content:"";
+    position:absolute;
+    top:0;
+    left:-50%;
+    width:36%;
+    height:100%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);
+    animation:sweep 6s ease-in-out infinite;
+}
+@keyframes sweep {
+    0%,45% { left:-50%; }
+    100% { left:120%; }
+}
+.eyebrow {
+    font-family:Sora;
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    color:#86efac;
+    font-size:12px;
+    font-weight:800;
+}
+.page-bets .eyebrow {
+    color:var(--gold);
+}
+h1,h2,h3,h4 {
+    font-family:Space Grotesk;
+    letter-spacing:-.02em;
+}
+h1 {
+    position:relative;
+    font-size:clamp(38px,6vw,72px);
+    line-height:.94;
+    margin:12px 0;
+    max-width:900px;
+}
+.page-hero p {
+    position:relative;
+    color:var(--muted);
+    max-width:850px;
+    line-height:1.65;
+    font-size:16px;
+}
+.content {
+    display:grid;
+    gap:18px;
+}
+.brief-grid,.race-intel-grid,.main-danger,.metric-strip,.context-grid {
+    display:grid;
+    gap:12px;
+}
+.brief-grid {
+    grid-template-columns:repeat(4,1fr);
+}
+.brief-card,.race-card,.horse-card,.panel {
+    border:1px solid var(--line);
+    border-radius:24px;
+    background:var(--panel);
+    box-shadow:0 16px 42px rgba(0,0,0,.24);
+}
+.brief-card {
+    padding:16px;
+}
+.brief-card span,.race-intel-grid span,.main-danger span,.timing-context span,.metric-box span {
+    display:block;
+    color:var(--muted);
+    font-size:12px;
+    margin-bottom:6px;
+}
+.brief-card strong {
+    font-family:Sora;
+    font-size:28px;
+}
+.race-card {
+    padding:20px;
+    position:relative;
+    overflow:hidden;
+}
+.page-bets .race-card {
+    border-color:rgba(214,184,90,.24);
+}
+.race-card:before,.horse-card:before {
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:2px;
+    background:linear-gradient(90deg,transparent,var(--blue),transparent);
+    animation:scan 5s linear infinite;
+}
+.page-bets .race-card:before {
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+@keyframes scan {
+    0% { transform:translateX(-100%); }
+    100% { transform:translateX(100%); }
+}
+.race-header,.horse-head {
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:18px;
+    align-items:start;
+}
+.race-header h2,.horse-head h3 {
+    margin:5px 0;
+    font-size:clamp(26px,4vw,42px);
+}
+.race-meta {
+    color:var(--muted);
+    margin:0;
+}
+.race-score,.horse-score {
+    text-align:right;
+    min-width:132px;
+}
+.race-score span,.horse-score span {
+    color:var(--muted);
+    font-size:11px;
+    font-family:Sora;
+    text-transform:uppercase;
+    letter-spacing:.09em;
+}
+.race-score strong,.horse-score strong {
+    display:block;
+    font-family:Sora;
+    font-size:48px;
+    line-height:1;
+    margin:6px 0;
+}
+.page-bets .race-score strong,
+.page-bets .main-danger strong {
+    color:var(--gold)!important;
+}
+.race-score em {
+    display:block;
+    font-style:normal;
+    color:#dbeafe;
+    font-size:12px;
+}
+.elite { color:#86efac!important; }
+.good { color:#bae6fd!important; }
+.warn { color:#fde68a!important; }
+.bad { color:#fecaca!important; }
+.neutral { color:#cbd5e1!important; }
+.race-intel-grid {
+    grid-template-columns:repeat(4,1fr);
+    margin:18px 0;
+}
+.race-intel-grid div,.main-danger div,.metric-box,.timing-context,.condition-record,.context-grid div {
+    border:1px solid var(--line);
+    background:rgba(5,9,20,.45);
+    border-radius:18px;
+    padding:14px;
+}
+.race-intel-grid strong,.main-danger strong {
+    font-family:Sora;
+    font-size:15px;
+}
+.synopsis {
+    border-left:3px solid var(--blue);
+    background:rgba(56,189,248,.07);
+    border-radius:18px;
+    padding:16px;
+    margin:14px 0;
+}
+.page-bets .synopsis {
+    border-left-color:var(--gold);
+    background:rgba(214,184,90,.08);
+}
+.synopsis h3 {
+    margin:0 0 8px;
+}
+.synopsis p,.summary,.main-danger p,.runner-body p,.context-grid p {
+    color:#cbd5e1;
+    line-height:1.62;
+    margin:0;
+}
+.main-danger {
+    grid-template-columns:1fr 1fr;
+    margin:14px 0;
+}
+.chip-row {
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin:10px 0;
+}
+.chip {
+    display:inline-flex;
+    align-items:center;
+    border-radius:999px;
+    padding:7px 10px;
+    font-family:Sora;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(148,163,184,.11);
+}
+.chip.elite {
+    background:rgba(34,197,94,.13);
+    box-shadow:0 0 16px rgba(34,197,94,.18);
+}
+.chip.good {
+    background:rgba(56,189,248,.12);
+}
+.chip.warn {
+    background:rgba(245,158,11,.13);
+}
+.chip.bad {
+    background:rgba(239,68,68,.13);
+}
+.horse-card {
+    padding:18px;
+    position:relative;
+    overflow:hidden;
+}
+.bars {
+    border:1px solid var(--line);
+    background:rgba(5,9,20,.42);
+    border-radius:18px;
+    padding:14px;
+    margin:14px 0;
+}
+.bar-row {
+    display:grid;
+    grid-template-columns:165px 1fr;
+    gap:10px;
+    align-items:center;
+    margin:9px 0;
+}
+.bar-row span {
+    color:var(--muted);
+    font-size:12px;
+}
+.bar {
+    height:9px;
+    border-radius:999px;
+    overflow:hidden;
+    background:#1e293b;
+}
+.bar i {
+    display:block;
+    height:100%;
+    width:var(--w);
+    background:linear-gradient(90deg,var(--blue),var(--green));
+    border-radius:999px;
+    box-shadow:0 0 16px rgba(34,197,94,.25);
+    animation:grow 1.1s ease both;
+}
+@keyframes grow {
+    from { width:0; }
+    to { width:var(--w); }
+}
+details {
+    border-top:1px solid var(--line);
+    padding-top:12px;
+    margin-top:12px;
+}
+summary {
+    cursor:pointer;
+    font-family:Sora;
+    color:#dbeafe;
+    font-weight:800;
+}
+.runner.compact {
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:12px;
+    background:rgba(15,23,42,.48);
+    margin:10px 0;
+}
+.runner.compact summary {
+    display:grid;
+    grid-template-columns:1fr auto auto;
+    gap:12px;
+    align-items:center;
+}
+.runner-name {
+    font-family:Space Grotesk;
+    font-size:18px;
+}
+.runner-score {
+    font-family:Sora;
+    font-size:18px;
+}
+.runner-style {
+    color:var(--muted);
+    font-size:12px;
+}
+.runner-body {
+    padding-top:12px;
+}
+.context-grid {
+    grid-template-columns:repeat(2,1fr);
+    margin-top:12px;
+}
+.timing-context {
+    margin-top:12px;
+}
+.timing-context div {
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    margin:4px 0;
+}
+.small-line {
+    font-size:12px;
+    color:var(--muted)!important;
+    margin-top:8px!important;
+}
+.condition-record {
+    margin-top:12px;
+}
+.mini-grid {
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:6px 12px;
+    margin:8px 0;
+}
+.mini-grid span {
+    color:var(--muted);
+}
+.muted-card {
+    opacity:.78;
+}
+.grid-2 {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+.filter-panel {
+    border:1px solid var(--line);
+    border-radius:22px;
+    padding:16px;
+    background:rgba(5,9,20,.45);
+    display:grid;
+    grid-template-columns:1fr 1fr auto;
+    gap:12px;
+    align-items:end;
+}
+.filter-panel label {
+    display:block;
+    color:var(--muted);
+    font-size:12px;
+    margin-bottom:6px;
+}
+.filter-panel select,.filter-panel button {
+    width:100%;
+    border:1px solid rgba(148,163,184,.28);
+    border-radius:12px;
+    padding:11px 12px;
+    background:#07111f;
+    color:#f8fafc;
+    font-family:Sora;
+}
+.filter-panel button {
+    cursor:pointer;
+    color:#86efac;
+}
+.key-section {
+    padding:20px;
+}
+.key-section h2 {
+    margin-top:0;
+}
+.key-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+.key-item {
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:14px;
+    background:rgba(5,9,20,.44);
+}
+.key-item strong {
+    display:block;
+    color:#86efac;
+    font-family:Sora;
+    margin-bottom:6px;
+}
+.key-item p {
+    margin:0;
+    color:#cbd5e1;
+    line-height:1.55;
+}
+footer {
+    margin-top:28px;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.6;
+}
 @media (max-width:780px) {
     body { padding:12px; }
     .topnav,.race-header,.horse-head { grid-template-columns:1fr; display:grid; }
     .topnav { align-items:start; }
     .navlinks { justify-content:flex-start; }
     .race-score,.horse-score { text-align:left; }
-    .brief-grid,.race-intel-grid,.main-danger,.context-grid { grid-template-columns:1fr; }
+    .brief-grid,.race-intel-grid,.main-danger,.context-grid,.grid-2,.filter-panel,.key-grid { grid-template-columns:1fr; }
     .bar-row { grid-template-columns:1fr; gap:5px; }
     .runner.compact summary { grid-template-columns:1fr auto; }
     .runner-style { display:none; }
 }
 </style>
 </head>
-<body>
+<body class="page-home">
 
     <nav class="topnav">
         <div class="brand-lockup">
@@ -113,7 +530,7 @@ footer { margin-top:28px; color:var(--muted); font-size:12px; line-height:1.6; }
                 <span>Context creates performance</span>
             </div>
         </div>
-        <div class="navlinks"><a class="active" href="index.html">Home</a><a class="" href="racecards.html">Racecards</a><a class="" href="bet-races.html">Bet Races</a><a class="" href="top-horses.html">Top Horses</a><a class="" href="watchlist.html">Watchlist</a></div>
+        <div class="navlinks"><a class="active" href="index.html">Home</a><a class="" href="racecards.html">Racecards</a><a class="" href="bet-races.html">Bet Races</a><a class="" href="top-horses.html">Top Horses</a><a class="" href="watchlist.html">Watchlist</a><a class="" href="key.html">Key</a></div>
     </nav>
     
 <section class="page-hero">
@@ -197,6 +614,7 @@ footer { margin-top:28px; color:var(--muted); font-size:12px; line-height:1.6; }
     
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>The horse looks close to its known rating ceiling on the available figures. Latest RPR still compares favourably with the current OR.</p></div>
+                    <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 90.375 and average winning TS around 63.125. Runner benchmark comparison: RPR vs par 15.625 · TS vs par 12.875. Benchmark fit score: 5.4.</p></div>
                     <div><strong>Track DNA</strong><p>HAYDOCK PARK 5f (Turf): late-speed profiles favoured ·  draw impact unclear. Sample size 60 (HIGH confidence).</p></div>
                     <div><strong>Model alignment</strong><p>DEI: ✅ · Benchmark: ✅ · Memory: ✅ · Pace: ✅ · Commentary: ✅ · Sectionals: ❌</p></div>
                     <div><strong>Latest evidence</strong><p>Dwelt start - towards rear - headway halfway - not clear run repeatedly over 1f out - switched right inside final furlong - ran on and went third final strides(op 5/1 tchd 7/1)</p></div>
@@ -205,11 +623,11 @@ footer { margin-top:28px; color:var(--muted); font-size:12px; line-height:1.6; }
         </details>
     </article>
     </section><section class="panel" style="padding:20px;"><h2>Best Race Environments</h2><p class="summary">These are the races where the model sees the cleanest combination of race shape, field separation, contextual fit and tactical support.</p></section>
-    <article class="race-card elite">
+    <article class="race-card elite" data-course="Haydock" data-race="3:30 Haydock 5f">
         <div class="race-header">
             <div>
                 <div class="eyebrow">3:30 · Haydock</div>
-                <h2>Haydock — 5.0</h2>
+                <h2>Haydock — 5f</h2>
                 <p class="race-meta">Class 1 · Good To Soft · William Hill Temple Stakes (Group 2)</p>
             </div>
             <div class="race-score">
@@ -226,7 +644,7 @@ footer { margin-top:28px; color:var(--muted); font-size:12px; line-height:1.6; }
         </div>
         <section class="synopsis">
             <h3>Race Synopsis</h3>
-            <p>Top score 54.9; field edge 23.7; gap to 2nd 12.5; Hold-up profile in a projected pace-pressure race ✅</p>
+            <p>Context read: Haydock over 5.0 on Good To Soft with 13 runners. Race DNA: Pace-pressure sprint. Chaos read: Medium. The model expects genuine early pressure here, with 4 likely leader(s) and 3 prominent/pressing types. That raises the importance of energy conservation, finishing strength and tactical patience. Getreadytorumble is the leading contextual fit, rated 54.9. The edge to the field average is +23.7 and the gap to the nearest rival is +12.5. That gives this race a cleaner top-profile shape than a tightly compressed field. Tactical note: Hold-up profile in a projected pace-pressure race ✅</p>
         </section>
         <div class="main-danger">
             <div>
@@ -246,11 +664,11 @@ footer { margin-top:28px; color:var(--muted); font-size:12px; line-height:1.6; }
         </details>
     </article>
     
-    <article class="race-card elite">
+    <article class="race-card elite" data-course="Haydock" data-race="1:45 Haydock 10.5f">
         <div class="race-header">
             <div>
                 <div class="eyebrow">1:45 · Haydock</div>
-                <h2>Haydock — 10.5</h2>
+                <h2>Haydock — 10.5f</h2>
                 <p class="race-meta">Class 1 · Good To Soft · William Hill Epic Boost British EBF Hedge Of Oak Stakes (Listed Race)</p>
             </div>
             <div class="race-score">
@@ -267,7 +685,7 @@ footer { margin-top:28px; color:var(--muted); font-size:12px; line-height:1.6; }
         </div>
         <section class="synopsis">
             <h3>Race Synopsis</h3>
-            <p>Top score 47.2; field edge 21.2; gap to 2nd 16.0; Possible lone-leader setup ✅</p>
+            <p>Context read: Haydock over 10.5 on Good To Soft with 9 runners. Race DNA: Controlled tactical race. Chaos read: Low. The projected shape suggests one runner may get a relatively clean lead. Track position and early control could matter more than raw closing speed. Noche Clasica is the leading contextual fit, rated 47.2. The edge to the field average is +21.2 and the gap to the nearest rival is +16.0. That gives this race a cleaner top-profile shape than a tightly compressed field. Tactical note: Possible lone-leader setup ✅</p>
         </section>
         <div class="main-danger">
             <div>
@@ -287,11 +705,11 @@ footer { margin-top:28px; color:var(--muted); font-size:12px; line-height:1.6; }
         </details>
     </article>
     
-    <article class="race-card good">
+    <article class="race-card good" data-course="Haydock" data-race="2:20 Haydock 8f">
         <div class="race-header">
             <div>
                 <div class="eyebrow">2:20 · Haydock</div>
-                <h2>Haydock — 8.0</h2>
+                <h2>Haydock — 8f</h2>
                 <p class="race-meta">Class 2 · Good To Soft · William Hill Silver Bowl Handicap (Heritage Handicap)</p>
             </div>
             <div class="race-score">
@@ -308,7 +726,7 @@ footer { margin-top:28px; color:var(--muted); font-size:12px; line-height:1.6; }
         </div>
         <section class="synopsis">
             <h3>Race Synopsis</h3>
-            <p>Top score 48.1; field edge 44.2; gap to 2nd 8.4; Hold-up profile in a projected pace-pressure race ✅</p>
+            <p>Context read: Haydock over 8.0 on Good To Soft with 17 runners. Race DNA: Pace-pressure sprint. Chaos read: High. The model expects genuine early pressure here, with 25 likely leader(s) and 10 prominent/pressing types. That raises the importance of energy conservation, finishing strength and tactical patience. Laureate Crown is the leading contextual fit, rated 48.1. The edge to the field average is +44.2 and the gap to the nearest rival is +8.4. That gives this race a cleaner top-profile shape than a tightly compressed field. Tactical note: Hold-up profile in a projected pace-pressure race ✅</p>
         </section>
         <div class="main-danger">
             <div>
@@ -328,11 +746,11 @@ footer { margin-top:28px; color:var(--muted); font-size:12px; line-height:1.6; }
         </details>
     </article>
     
-    <article class="race-card good">
+    <article class="race-card good" data-course="Haydock" data-race="5:15 Haydock 8f">
         <div class="race-header">
             <div>
                 <div class="eyebrow">5:15 · Haydock</div>
-                <h2>Haydock — 8.0</h2>
+                <h2>Haydock — 8f</h2>
                 <p class="race-meta">Class 3 · Good To Soft · William Hill Each Way Extra Handicap</p>
             </div>
             <div class="race-score">
@@ -349,7 +767,7 @@ footer { margin-top:28px; color:var(--muted); font-size:12px; line-height:1.6; }
         </div>
         <section class="synopsis">
             <h3>Race Synopsis</h3>
-            <p>Top score 47.6; field edge 51.7; gap to 2nd 17.5; No obvious tactical edge from race shape</p>
+            <p>Context read: Haydock over 8.0 on Good To Soft with 15 runners. Race DNA: Pace-pressure sprint. Chaos read: High. The model expects genuine early pressure here, with 5 likely leader(s) and 15 prominent/pressing types. That raises the importance of energy conservation, finishing strength and tactical patience. Eternal Force is the leading contextual fit, rated 47.6. The edge to the field average is +51.7 and the gap to the nearest rival is +17.5. That gives this race a cleaner top-profile shape than a tightly compressed field. Tactical note: No obvious tactical edge from race shape</p>
         </section>
         <div class="main-danger">
             <div>
@@ -369,11 +787,11 @@ footer { margin-top:28px; color:var(--muted); font-size:12px; line-height:1.6; }
         </details>
     </article>
     
-    <article class="race-card good">
+    <article class="race-card good" data-course="Salisbury" data-race="8:45 Salisbury 12f">
         <div class="race-header">
             <div>
                 <div class="eyebrow">8:45 · Salisbury</div>
-                <h2>Salisbury — 12.0</h2>
+                <h2>Salisbury — 12f</h2>
                 <p class="race-meta">Class 4 · Good · Saunton Sands Hotel Handicap (GBBPlus Race)</p>
             </div>
             <div class="race-score">
@@ -390,7 +808,7 @@ footer { margin-top:28px; color:var(--muted); font-size:12px; line-height:1.6; }
         </div>
         <section class="synopsis">
             <h3>Race Synopsis</h3>
-            <p>Top score 40.7; field edge 16.8; gap to 2nd 7.1; Hold-up profile in a projected pace-pressure race ✅</p>
+            <p>Context read: Salisbury over 12.0 on Good with 10 runners. Race DNA: Balanced context race. Chaos read: Medium. The model expects genuine early pressure here, with 4 likely leader(s) and 1 prominent/pressing types. That raises the importance of energy conservation, finishing strength and tactical patience. Cinammon Coco is the leading contextual fit, rated 40.7. The edge to the field average is +16.8 and the gap to the nearest rival is +7.1. That gives this race a cleaner top-profile shape than a tightly compressed field. Tactical note: Hold-up profile in a projected pace-pressure race ✅</p>
         </section>
         <div class="main-danger">
             <div>
@@ -410,11 +828,11 @@ footer { margin-top:28px; color:var(--muted); font-size:12px; line-height:1.6; }
         </details>
     </article>
     
-    <article class="race-card good">
+    <article class="race-card good" data-course="York" data-race="3:15 York 14f">
         <div class="race-header">
             <div>
                 <div class="eyebrow">3:15 · York</div>
-                <h2>York — 14.0</h2>
+                <h2>York — 14f</h2>
                 <p class="race-meta">Class 1 · Good · William Hill Bronte Cup Fillies&#x27; Stakes (Group 3)</p>
             </div>
             <div class="race-score">
@@ -431,7 +849,7 @@ footer { margin-top:28px; color:var(--muted); font-size:12px; line-height:1.6; }
         </div>
         <section class="synopsis">
             <h3>Race Synopsis</h3>
-            <p>Top score 46.6; field edge 21.2; gap to 2nd 8.0; Hold-up profile may be pace-compromised ⚠️</p>
+            <p>Context read: York over 14.0 on Good with 7 runners. Race DNA: Slow-tempo positioning race. Chaos read: Low. The race does not look strongly run on paper. Closers may need luck or a pace injection, while tactical speed and being close enough turning in become more important. Rock N Roll Pinkie is the leading contextual fit, rated 46.6. The edge to the field average is +21.2 and the gap to the nearest rival is +8.0. That gives this race a cleaner top-profile shape than a tightly compressed field. Tactical note: Hold-up profile may be pace-compromised ⚠️</p>
         </section>
         <div class="main-danger">
             <div>
@@ -451,11 +869,11 @@ footer { margin-top:28px; color:var(--muted); font-size:12px; line-height:1.6; }
         </details>
     </article>
     
-    <article class="race-card good">
+    <article class="race-card good" data-course="York" data-race="2:05 York 6f">
         <div class="race-header">
             <div>
                 <div class="eyebrow">2:05 · York</div>
-                <h2>York — 6.0</h2>
+                <h2>York — 6f</h2>
                 <p class="race-meta">Class 3 · Good · Tomahawk EBF Restricted Novice Stakes (Bands A, B, C And D) (EBF Qualifier) (GBB Race)</p>
             </div>
             <div class="race-score">
@@ -472,7 +890,7 @@ footer { margin-top:28px; color:var(--muted); font-size:12px; line-height:1.6; }
         </div>
         <section class="synopsis">
             <h3>Race Synopsis</h3>
-            <p>Top score 23.4; field edge 15.8; gap to 2nd 12.4; Handy racer in a likely tactical race ✅</p>
+            <p>Context read: York over 6.0 on Good with 8 runners. Race DNA: Slow-tempo positioning race. Chaos read: Low. The race does not look strongly run on paper. Closers may need luck or a pace injection, while tactical speed and being close enough turning in become more important. Lake Muritz is the leading contextual fit, rated 23.4. The edge to the field average is +15.8 and the gap to the nearest rival is +12.4. That gives this race a cleaner top-profile shape than a tightly compressed field. Tactical note: Handy racer in a likely tactical race ✅</p>
         </section>
         <div class="main-danger">
             <div>
@@ -492,11 +910,11 @@ footer { margin-top:28px; color:var(--muted); font-size:12px; line-height:1.6; }
         </details>
     </article>
     
-    <article class="race-card good">
+    <article class="race-card good" data-course="Curragh" data-race="5:55 Curragh 10f">
         <div class="race-header">
             <div>
                 <div class="eyebrow">5:55 · Curragh</div>
-                <h2>Curragh — 10.0</h2>
+                <h2>Curragh — 10f</h2>
                 <p class="race-meta"> · Good To Yielding · O&#x27;Driscolls Irish Whiskey Irish EBF Maiden</p>
             </div>
             <div class="race-score">
@@ -513,7 +931,7 @@ footer { margin-top:28px; color:var(--muted); font-size:12px; line-height:1.6; }
         </div>
         <section class="synopsis">
             <h3>Race Synopsis</h3>
-            <p>Top score 29.1; field edge 23.3; gap to 2nd 18.1; Possible lone-leader setup ✅</p>
+            <p>Context read: Curragh over 10.0 on Good To Yielding with 17 runners. Race DNA: Controlled tactical race. Chaos read: Medium. The projected shape suggests one runner may get a relatively clean lead. Track position and early control could matter more than raw closing speed. Theorist is the leading contextual fit, rated 29.1. The edge to the field average is +23.4 and the gap to the nearest rival is +18.1. That gives this race a cleaner top-profile shape than a tightly compressed field. Tactical note: Possible lone-leader setup ✅</p>
         </section>
         <div class="main-danger">
             <div>
@@ -537,5 +955,24 @@ footer { margin-top:28px; color:var(--muted); font-size:12px; line-height:1.6; }
 <footer>
 ForeFurlongs Intelligence is a contextual racing analytics dashboard. It supports research and interpretation, but does not guarantee outcomes or constitute financial advice.
 </footer>
+<script>
+function updateCourseFilter() {
+    const course = document.getElementById("courseFilter")?.value || "ALL";
+    const race = document.getElementById("raceFilter")?.value || "ALL";
+
+    document.querySelectorAll(".race-card").forEach(card => {
+        const courseMatch = course === "ALL" || card.dataset.course === course;
+        const raceMatch = race === "ALL" || card.dataset.race === race;
+        card.style.display = (courseMatch && raceMatch) ? "" : "none";
+    });
+}
+function resetRaceFilters() {
+    const c = document.getElementById("courseFilter");
+    const r = document.getElementById("raceFilter");
+    if (c) c.value = "ALL";
+    if (r) r.value = "ALL";
+    updateCourseFilter();
+}
+</script>
 </body>
 </html>

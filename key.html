@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intelligence Key | ForeFurlongs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Sora:wght@600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg:#050914;
+    --panel:rgba(12,22,36,.92);
+    --panel2:rgba(17,31,52,.92);
+    --text:#f8fafc;
+    --muted:#94a3b8;
+    --line:rgba(148,163,184,.22);
+    --green:#22c55e;
+    --blue:#38bdf8;
+    --amber:#f59e0b;
+    --red:#ef4444;
+    --violet:#a78bfa;
+    --gold:#f8d878;
+}
+* { box-sizing:border-box; }
+body {
+    margin:0;
+    padding:18px;
+    background:
+        radial-gradient(circle at 8% 0%,rgba(34,197,94,.15),transparent 28%),
+        radial-gradient(circle at 92% 4%,rgba(56,189,248,.12),transparent 30%),
+        linear-gradient(180deg,#07111f 0%,#050914 100%);
+    color:var(--text);
+    font-family:Inter,Arial,sans-serif;
+}
+body.page-bets {
+    background:
+        radial-gradient(circle at 10% 0%,rgba(214,184,90,.14),transparent 28%),
+        radial-gradient(circle at 95% 6%,rgba(34,197,94,.10),transparent 30%),
+        linear-gradient(180deg,#090b10 0%,#050914 100%);
+}
+a { color:inherit; text-decoration:none; }
+.topnav,.page-hero,.content,footer {
+    max-width:1200px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.topnav {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+    margin:6px auto 22px;
+}
+.brand-lockup {
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+.logo {
+    width:40px;
+    height:40px;
+    border-radius:12px;
+    display:grid;
+    place-items:center;
+    font-family:Sora;
+    font-weight:800;
+    border:1px solid rgba(34,197,94,.55);
+    background:linear-gradient(135deg,rgba(34,197,94,.32),rgba(56,189,248,.11));
+    box-shadow:0 0 24px rgba(34,197,94,.22);
+}
+.brand-lockup strong {
+    display:block;
+    font-family:Space Grotesk;
+    letter-spacing:.04em;
+}
+.brand-lockup span {
+    color:var(--muted);
+    font-size:12px;
+}
+.navlinks {
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+}
+.navlinks a {
+    font-family:Sora;
+    font-size:12px;
+    padding:9px 12px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    color:#dbeafe;
+    background:rgba(15,23,42,.46);
+}
+.navlinks a.active {
+    color:#86efac;
+    border-color:rgba(34,197,94,.45);
+    background:rgba(34,197,94,.10);
+}
+.page-hero {
+    border:1px solid rgba(56,189,248,.24);
+    border-radius:30px;
+    padding:28px;
+    margin-bottom:18px;
+    background:linear-gradient(135deg,rgba(13,23,38,.96),rgba(5,9,20,.90));
+    position:relative;
+    overflow:hidden;
+}
+.page-bets .page-hero {
+    border-color:rgba(214,184,90,.35);
+    background:linear-gradient(135deg,rgba(30,25,12,.96),rgba(5,9,20,.92));
+}
+.page-hero:after {
+    content:"";
+    position:absolute;
+    top:0;
+    left:-50%;
+    width:36%;
+    height:100%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);
+    animation:sweep 6s ease-in-out infinite;
+}
+@keyframes sweep {
+    0%,45% { left:-50%; }
+    100% { left:120%; }
+}
+.eyebrow {
+    font-family:Sora;
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    color:#86efac;
+    font-size:12px;
+    font-weight:800;
+}
+.page-bets .eyebrow {
+    color:var(--gold);
+}
+h1,h2,h3,h4 {
+    font-family:Space Grotesk;
+    letter-spacing:-.02em;
+}
+h1 {
+    position:relative;
+    font-size:clamp(38px,6vw,72px);
+    line-height:.94;
+    margin:12px 0;
+    max-width:900px;
+}
+.page-hero p {
+    position:relative;
+    color:var(--muted);
+    max-width:850px;
+    line-height:1.65;
+    font-size:16px;
+}
+.content {
+    display:grid;
+    gap:18px;
+}
+.brief-grid,.race-intel-grid,.main-danger,.metric-strip,.context-grid {
+    display:grid;
+    gap:12px;
+}
+.brief-grid {
+    grid-template-columns:repeat(4,1fr);
+}
+.brief-card,.race-card,.horse-card,.panel {
+    border:1px solid var(--line);
+    border-radius:24px;
+    background:var(--panel);
+    box-shadow:0 16px 42px rgba(0,0,0,.24);
+}
+.brief-card {
+    padding:16px;
+}
+.brief-card span,.race-intel-grid span,.main-danger span,.timing-context span,.metric-box span {
+    display:block;
+    color:var(--muted);
+    font-size:12px;
+    margin-bottom:6px;
+}
+.brief-card strong {
+    font-family:Sora;
+    font-size:28px;
+}
+.race-card {
+    padding:20px;
+    position:relative;
+    overflow:hidden;
+}
+.page-bets .race-card {
+    border-color:rgba(214,184,90,.24);
+}
+.race-card:before,.horse-card:before {
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:2px;
+    background:linear-gradient(90deg,transparent,var(--blue),transparent);
+    animation:scan 5s linear infinite;
+}
+.page-bets .race-card:before {
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+@keyframes scan {
+    0% { transform:translateX(-100%); }
+    100% { transform:translateX(100%); }
+}
+.race-header,.horse-head {
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:18px;
+    align-items:start;
+}
+.race-header h2,.horse-head h3 {
+    margin:5px 0;
+    font-size:clamp(26px,4vw,42px);
+}
+.race-meta {
+    color:var(--muted);
+    margin:0;
+}
+.race-score,.horse-score {
+    text-align:right;
+    min-width:132px;
+}
+.race-score span,.horse-score span {
+    color:var(--muted);
+    font-size:11px;
+    font-family:Sora;
+    text-transform:uppercase;
+    letter-spacing:.09em;
+}
+.race-score strong,.horse-score strong {
+    display:block;
+    font-family:Sora;
+    font-size:48px;
+    line-height:1;
+    margin:6px 0;
+}
+.page-bets .race-score strong,
+.page-bets .main-danger strong {
+    color:var(--gold)!important;
+}
+.race-score em {
+    display:block;
+    font-style:normal;
+    color:#dbeafe;
+    font-size:12px;
+}
+.elite { color:#86efac!important; }
+.good { color:#bae6fd!important; }
+.warn { color:#fde68a!important; }
+.bad { color:#fecaca!important; }
+.neutral { color:#cbd5e1!important; }
+.race-intel-grid {
+    grid-template-columns:repeat(4,1fr);
+    margin:18px 0;
+}
+.race-intel-grid div,.main-danger div,.metric-box,.timing-context,.condition-record,.context-grid div {
+    border:1px solid var(--line);
+    background:rgba(5,9,20,.45);
+    border-radius:18px;
+    padding:14px;
+}
+.race-intel-grid strong,.main-danger strong {
+    font-family:Sora;
+    font-size:15px;
+}
+.synopsis {
+    border-left:3px solid var(--blue);
+    background:rgba(56,189,248,.07);
+    border-radius:18px;
+    padding:16px;
+    margin:14px 0;
+}
+.page-bets .synopsis {
+    border-left-color:var(--gold);
+    background:rgba(214,184,90,.08);
+}
+.synopsis h3 {
+    margin:0 0 8px;
+}
+.synopsis p,.summary,.main-danger p,.runner-body p,.context-grid p {
+    color:#cbd5e1;
+    line-height:1.62;
+    margin:0;
+}
+.main-danger {
+    grid-template-columns:1fr 1fr;
+    margin:14px 0;
+}
+.chip-row {
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin:10px 0;
+}
+.chip {
+    display:inline-flex;
+    align-items:center;
+    border-radius:999px;
+    padding:7px 10px;
+    font-family:Sora;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(148,163,184,.11);
+}
+.chip.elite {
+    background:rgba(34,197,94,.13);
+    box-shadow:0 0 16px rgba(34,197,94,.18);
+}
+.chip.good {
+    background:rgba(56,189,248,.12);
+}
+.chip.warn {
+    background:rgba(245,158,11,.13);
+}
+.chip.bad {
+    background:rgba(239,68,68,.13);
+}
+.horse-card {
+    padding:18px;
+    position:relative;
+    overflow:hidden;
+}
+.bars {
+    border:1px solid var(--line);
+    background:rgba(5,9,20,.42);
+    border-radius:18px;
+    padding:14px;
+    margin:14px 0;
+}
+.bar-row {
+    display:grid;
+    grid-template-columns:165px 1fr;
+    gap:10px;
+    align-items:center;
+    margin:9px 0;
+}
+.bar-row span {
+    color:var(--muted);
+    font-size:12px;
+}
+.bar {
+    height:9px;
+    border-radius:999px;
+    overflow:hidden;
+    background:#1e293b;
+}
+.bar i {
+    display:block;
+    height:100%;
+    width:var(--w);
+    background:linear-gradient(90deg,var(--blue),var(--green));
+    border-radius:999px;
+    box-shadow:0 0 16px rgba(34,197,94,.25);
+    animation:grow 1.1s ease both;
+}
+@keyframes grow {
+    from { width:0; }
+    to { width:var(--w); }
+}
+details {
+    border-top:1px solid var(--line);
+    padding-top:12px;
+    margin-top:12px;
+}
+summary {
+    cursor:pointer;
+    font-family:Sora;
+    color:#dbeafe;
+    font-weight:800;
+}
+.runner.compact {
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:12px;
+    background:rgba(15,23,42,.48);
+    margin:10px 0;
+}
+.runner.compact summary {
+    display:grid;
+    grid-template-columns:1fr auto auto;
+    gap:12px;
+    align-items:center;
+}
+.runner-name {
+    font-family:Space Grotesk;
+    font-size:18px;
+}
+.runner-score {
+    font-family:Sora;
+    font-size:18px;
+}
+.runner-style {
+    color:var(--muted);
+    font-size:12px;
+}
+.runner-body {
+    padding-top:12px;
+}
+.context-grid {
+    grid-template-columns:repeat(2,1fr);
+    margin-top:12px;
+}
+.timing-context {
+    margin-top:12px;
+}
+.timing-context div {
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    margin:4px 0;
+}
+.small-line {
+    font-size:12px;
+    color:var(--muted)!important;
+    margin-top:8px!important;
+}
+.condition-record {
+    margin-top:12px;
+}
+.mini-grid {
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:6px 12px;
+    margin:8px 0;
+}
+.mini-grid span {
+    color:var(--muted);
+}
+.muted-card {
+    opacity:.78;
+}
+.grid-2 {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+.filter-panel {
+    border:1px solid var(--line);
+    border-radius:22px;
+    padding:16px;
+    background:rgba(5,9,20,.45);
+    display:grid;
+    grid-template-columns:1fr 1fr auto;
+    gap:12px;
+    align-items:end;
+}
+.filter-panel label {
+    display:block;
+    color:var(--muted);
+    font-size:12px;
+    margin-bottom:6px;
+}
+.filter-panel select,.filter-panel button {
+    width:100%;
+    border:1px solid rgba(148,163,184,.28);
+    border-radius:12px;
+    padding:11px 12px;
+    background:#07111f;
+    color:#f8fafc;
+    font-family:Sora;
+}
+.filter-panel button {
+    cursor:pointer;
+    color:#86efac;
+}
+.key-section {
+    padding:20px;
+}
+.key-section h2 {
+    margin-top:0;
+}
+.key-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+.key-item {
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:14px;
+    background:rgba(5,9,20,.44);
+}
+.key-item strong {
+    display:block;
+    color:#86efac;
+    font-family:Sora;
+    margin-bottom:6px;
+}
+.key-item p {
+    margin:0;
+    color:#cbd5e1;
+    line-height:1.55;
+}
+footer {
+    margin-top:28px;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.6;
+}
+@media (max-width:780px) {
+    body { padding:12px; }
+    .topnav,.race-header,.horse-head { grid-template-columns:1fr; display:grid; }
+    .topnav { align-items:start; }
+    .navlinks { justify-content:flex-start; }
+    .race-score,.horse-score { text-align:left; }
+    .brief-grid,.race-intel-grid,.main-danger,.context-grid,.grid-2,.filter-panel,.key-grid { grid-template-columns:1fr; }
+    .bar-row { grid-template-columns:1fr; gap:5px; }
+    .runner.compact summary { grid-template-columns:1fr auto; }
+    .runner-style { display:none; }
+}
+</style>
+</head>
+<body class="page-key">
+
+    <nav class="topnav">
+        <div class="brand-lockup">
+            <div class="logo">FF</div>
+            <div>
+                <strong>ForeFurlongs Intelligence</strong>
+                <span>Context creates performance</span>
+            </div>
+        </div>
+        <div class="navlinks"><a class="" href="index.html">Home</a><a class="" href="racecards.html">Racecards</a><a class="" href="bet-races.html">Bet Races</a><a class="" href="top-horses.html">Top Horses</a><a class="" href="watchlist.html">Watchlist</a><a class="active" href="key.html">Key</a></div>
+    </nav>
+    
+<section class="page-hero">
+    <div class="eyebrow">ForeFurlongs Intelligence</div>
+    <h1>Intelligence Key</h1>
+    <p>A clear guide to the ForeFurlongs terminology, scores and context layers. Racing is all context: ground, draw, pace, class, trip, timing and how they interact today.</p>
+</section>
+<main class="content">
+
+<section class="panel key-section">
+    <h2>How to read ForeFurlongs</h2>
+    <div class="key-grid">
+        <div class="key-item"><strong>Opportunity Score</strong><p>A horse-level contextual score. It blends ability, current mark, race fit, pace setup, distance intelligence, draw confidence, benchmark fit, commentary signals and calibration. It is not a simple rating like RPR; it is a TODAY score.</p></div>
+        <div class="key-item"><strong>Race Confidence</strong><p>A race-level score measuring how bet-friendly the whole race looks: top-horse strength, separation from the field, tactical clarity, model agreement and likely chaos.</p></div>
+        <div class="key-item"><strong>DEI / Distance Intelligence</strong><p>Measures how well a horse appears suited to today’s trip using previous distance evidence, timing repeatability and distance-specific performance. Higher grades mean stronger evidence for today’s distance.</p></div>
+        <div class="key-item"><strong>Race DNA</strong><p>A plain-English label for the race’s likely shape, such as pace-pressure sprint, controlled tactical race or high-variance betting race.</p></div>
+        <div class="key-item"><strong>Chaos Index</strong><p>Flags how messy the race looks. Large fields, several pace rivals, weak model alignment and compressed scores increase chaos.</p></div>
+        <div class="key-item"><strong>Model Alignment</strong><p>Shows how many independent model layers agree: DEI, benchmark, memory, pace, commentary and sectionals.</p></div>
+        <div class="key-item"><strong>Benchmark Read</strong><p>Compares the horse’s ability evidence against what has historically been required to win this course/distance race type.</p></div>
+        <div class="key-item"><strong>Draw Confidence</strong><p>A small confidence modifier from draw-bias evidence. It is capped so it cannot overrule ability; it only nudges confidence up or down.</p></div>
+        <div class="key-item"><strong>Trajectory</strong><p>Indicates whether the horse appears improving, stable or regressing based on recent form, comments, memory profile and finishing signals.</p></div>
+        <div class="key-item"><strong>Approx Winning Time</strong><p>An estimated historical par for the race based on course/distance timing data where available. If unavailable, the timing layer is still developing.</p></div>
+    </div>
+</section>
+
+</main>
+<footer>
+ForeFurlongs Intelligence is a contextual racing analytics dashboard. It supports research and interpretation, but does not guarantee outcomes or constitute financial advice.
+</footer>
+<script>
+function updateCourseFilter() {
+    const course = document.getElementById("courseFilter")?.value || "ALL";
+    const race = document.getElementById("raceFilter")?.value || "ALL";
+
+    document.querySelectorAll(".race-card").forEach(card => {
+        const courseMatch = course === "ALL" || card.dataset.course === course;
+        const raceMatch = race === "ALL" || card.dataset.race === race;
+        card.style.display = (courseMatch && raceMatch) ? "" : "none";
+    });
+}
+function resetRaceFilters() {
+    const c = document.getElementById("courseFilter");
+    const r = document.getElementById("raceFilter");
+    if (c) c.value = "ALL";
+    if (r) r.value = "ALL";
+    updateCourseFilter();
+}
+</script>
+</body>
+</html>
