@@ -507,6 +507,104 @@ footer {
     font-size:12px;
     line-height:1.6;
 }
+
+.runner-meta-strip {
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:8px;
+    margin:12px 0;
+}
+.runner-meta-strip div {
+    border:1px solid var(--line);
+    background:rgba(5,9,20,.36);
+    border-radius:12px;
+    padding:9px;
+}
+.runner-meta-strip span {
+    display:block;
+    color:var(--muted);
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    margin-bottom:3px;
+}
+.runner-meta-strip strong {
+    font-family:Sora;
+    font-size:12px;
+}
+.previous-runs {
+    margin-top:12px;
+    overflow-x:auto;
+}
+.previous-runs > strong {
+    display:block;
+    font-family:Sora;
+    margin-bottom:8px;
+    color:#dbeafe;
+}
+.rp-table {
+    width:100%;
+    border-collapse:collapse;
+    min-width:720px;
+    overflow:hidden;
+    border-radius:14px;
+    border:1px solid var(--line);
+    background:rgba(5,9,20,.42);
+}
+.rp-table th {
+    background:rgba(15,23,42,.92);
+    color:#cbd5e1;
+    font-family:Sora;
+    font-size:11px;
+    text-align:left;
+    padding:10px;
+    border-bottom:1px solid var(--line);
+    white-space:nowrap;
+}
+.rp-table td {
+    padding:10px;
+    border-bottom:1px solid rgba(148,163,184,.13);
+    color:#e5e7eb;
+    font-size:12px;
+    vertical-align:middle;
+}
+.rp-table tr:nth-child(even) td {
+    background:rgba(148,163,184,.045);
+}
+.timing-pill {
+    display:inline-flex;
+    align-items:center;
+    border-radius:999px;
+    padding:5px 8px;
+    font-family:Sora;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.03em;
+    white-space:nowrap;
+}
+.timing-gold {
+    color:#fff7cc!important;
+    background:rgba(248,216,120,.18);
+    border:1px solid rgba(248,216,120,.55);
+    box-shadow:0 0 18px rgba(248,216,120,.28);
+}
+.timing-green {
+    color:#bbf7d0!important;
+    background:rgba(34,197,94,.16);
+    border:1px solid rgba(34,197,94,.48);
+    box-shadow:0 0 16px rgba(34,197,94,.20);
+}
+.timing-amber {
+    color:#fde68a!important;
+    background:rgba(245,158,11,.15);
+    border:1px solid rgba(245,158,11,.42);
+}
+.timing-grey {
+    color:#cbd5e1!important;
+    background:rgba(148,163,184,.12);
+    border:1px solid rgba(148,163,184,.22);
+}
+
 @media (max-width:780px) {
     body { padding:12px; }
     .topnav,.race-header,.horse-head { grid-template-columns:1fr; display:grid; }
@@ -515,6 +613,7 @@ footer {
     .race-score,.horse-score { text-align:left; }
     .brief-grid,.race-intel-grid,.main-danger,.context-grid,.grid-2,.filter-panel,.key-grid { grid-template-columns:1fr; }
     .bar-row { grid-template-columns:1fr; gap:5px; }
+    .runner-meta-strip { grid-template-columns:repeat(2,1fr); }
     .runner.compact summary { grid-template-columns:1fr auto; }
     .runner-style { display:none; }
 }
@@ -540,11 +639,11 @@ footer {
 </section>
 <main class="content">
 
-    <article class="race-card good" data-course="Leicester" data-race="4:50 Leicester 6f">
+    <article class="race-card good" data-course="Leicester" data-race="4:50 · Leicester · 6f">
         <div class="race-header">
             <div>
                 <div class="eyebrow">4:50 · Leicester</div>
-                <h2>Leicester — 6f</h2>
+                <h2>4:50 · Leicester · 6f</h2>
                 <p class="race-meta">Class 3 · Good · For Best Ticket Deals Book Online At leicester-racecourse.co.uk Handicap</p>
             </div>
             <div class="race-score">
@@ -556,7 +655,7 @@ footer {
         <div class="race-intel-grid">
             <div><span>Race DNA</span><strong>Controlled tactical race</strong></div>
             <div><span>Chaos Index</span><strong>Low</strong></div>
-            <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+            <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
             <div><span>Primary action</span><strong>POSSIBLE BET</strong></div>
         </div>
         <section class="synopsis">
@@ -585,6 +684,7 @@ footer {
                 <span class="runner-style">Front-end controller</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Roger Teal</strong></div><div><span>Jockey</span><strong>Jason Watson</strong></div><div><span>Age</span><strong>3</strong></div><div><span>Draw</span><strong>3</strong></div><div><span>OR</span><strong>86.0</strong></div><div><span>RPR</span><strong>83.0</strong></div><div><span>TS</span><strong>81.0</strong></div><div><span>Form</span><strong>114-6</strong></div></div>
                 <p>Pilu profiles as a front-runner with a stable trajectory. Distance intelligence grade is A. Model alignment is 4/6. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip good">Strong edge</span><span class="chip neutral">Stable</span><span class="chip good">Front-end controller</span><span class="chip elite">DEI A</span></div>
                 
@@ -600,11 +700,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">20.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>114-6</td>
+                        <td>Mounted in chute and taken down early - pressed leader early - led after 1f - disputed lead over 1f out - weakened gradually inside final 110yds(op 18/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>The current mark looks demanding against the available peak rating evidence.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 75.95 and average winning TS around 52.1. Runner benchmark comparison: RPR vs par 7.049999999999997 · TS vs par 28.9. Benchmark fit score: 7.0.</p></div>
@@ -620,6 +741,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Archie Watson</strong></div><div><span>Jockey</span><strong>Luke Morris</strong></div><div><span>Age</span><strong>3</strong></div><div><span>Draw</span><strong>6</strong></div><div><span>OR</span><strong>90.0</strong></div><div><span>RPR</span><strong>72.0</strong></div><div><span>TS</span><strong>91.0</strong></div><div><span>Form</span><strong>-77387</strong></div></div>
                 <p>Rogue Supremacy profiles as a midfield with a stable trajectory. Distance intelligence grade is D. Model alignment is 2/6. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip warn">Clear but not dominant</span><span class="chip neutral">Stable</span><span class="chip good">Context profile</span><span class="chip good">DEI D</span></div>
                 
@@ -635,11 +757,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">20.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>-77387</td>
+                        <td>Took keen hold - in touch with leaders - bit short of room after 2f - outpaced from 2f out(op 28/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>The current mark looks demanding against the available peak rating evidence.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 75.95 and average winning TS around 52.1. Runner benchmark comparison: RPR vs par 13.05 · TS vs par 38.9. Benchmark fit score: 9.0.</p></div>
@@ -655,6 +798,7 @@ footer {
                 <span class="runner-style">Distance specialist</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Richard Hannon</strong></div><div><span>Jockey</span><strong>Alec Voikhansky</strong></div><div><span>Age</span><strong>3</strong></div><div><span>Draw</span><strong>7</strong></div><div><span>OR</span><strong>89.0</strong></div><div><span>RPR</span><strong>89.0</strong></div><div><span>TS</span><strong>87.0</strong></div><div><span>Form</span><strong>83-645</strong></div></div>
                 <p>First Legion profiles as a closer with a stable trajectory. Distance intelligence grade is A. Model alignment is 4/6. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip warn">Clear but not dominant</span><span class="chip neutral">Stable</span><span class="chip good">Distance specialist</span><span class="chip elite">DEI A</span></div>
                 
@@ -670,11 +814,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">20.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>83-645</td>
+                        <td>Midfield on far side of group - steady headway over 2f out - bumped over 1f out - pressed leaders inside final furlong - no extra inside final 110yds(op 16/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>The horse looks close to its known rating ceiling on the available figures. Latest RPR still compares favourably with the current OR.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 75.95 and average winning TS around 52.1. Runner benchmark comparison: RPR vs par 13.05 · TS vs par 34.9. Benchmark fit score: 9.0.</p></div>
@@ -690,6 +855,7 @@ footer {
                 <span class="runner-style">Distance specialist</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Michael Appleby</strong></div><div><span>Jockey</span><strong>Robert Havlin</strong></div><div><span>Age</span><strong>3</strong></div><div><span>Draw</span><strong>4</strong></div><div><span>OR</span><strong>80.0</strong></div><div><span>RPR</span><strong>78.0</strong></div><div><span>TS</span><strong>68.0</strong></div><div><span>Form</span><strong>2218</strong></div></div>
                 <p>Ay Up Duck profiles as a prominent with a stable / positive signs trajectory. Distance intelligence grade is A. Model alignment is 4/6. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip warn">Clear but not dominant</span><span class="chip good">Stable / positive signs</span><span class="chip good">Distance specialist</span><span class="chip elite">DEI A</span></div>
                 
@@ -705,11 +871,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">20.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2218</td>
+                        <td>Prominent - bit short of room after 2f - led inside final furlong - kept on(op 7/2)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>The current mark looks demanding against the available peak rating evidence.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 75.95 and average winning TS around 52.1. Runner benchmark comparison: RPR vs par 2.049999999999997 · TS vs par 15.9. Benchmark fit score: 5.0.</p></div>
@@ -725,6 +912,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Simon &amp; Ed Crisford</strong></div><div><span>Jockey</span><strong>Jack Mitchell</strong></div><div><span>Age</span><strong>3</strong></div><div><span>Draw</span><strong>10</strong></div><div><span>OR</span><strong>85.0</strong></div><div><span>Form</span><strong>23-1</strong></div></div>
                 <p>Jazl profiles as a unclear with a improving trajectory. Distance intelligence grade is B. Model alignment is 1/6. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip warn">Clear but not dominant</span><span class="chip elite">Improving</span><span class="chip good">Context profile</span><span class="chip good">DEI B</span></div>
                 
@@ -740,11 +928,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">20.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>23-1</td>
+                        <td>No latest comment available</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Handicap context is limited because current mark or peak rating evidence is incomplete.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 75.95 and average winning TS around 52.1. Benchmark fit score: 0.0.</p></div>
@@ -760,6 +969,7 @@ footer {
                 <span class="runner-style">Late-energy finisher</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>George Scott</strong></div><div><span>Jockey</span><strong>Darragh Keenan</strong></div><div><span>Age</span><strong>3</strong></div><div><span>Draw</span><strong>2</strong></div><div><span>OR</span><strong>85.0</strong></div><div><span>RPR</span><strong>76.0</strong></div><div><span>TS</span><strong>74.0</strong></div><div><span>Form</span><strong>2587-0</strong></div></div>
                 <p>Front Line Fury profiles as a closer with a stable trajectory. Distance intelligence grade is B. Model alignment is 5/6. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip neutral">Marginal edge</span><span class="chip neutral">Stable</span><span class="chip good">Late-energy finisher</span><span class="chip good">DEI B</span></div>
                 
@@ -775,11 +985,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">20.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2587-0</td>
+                        <td>Towards rear throughout(tchd 14/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>The current mark looks demanding against the available peak rating evidence.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 75.95 and average winning TS around 52.1. Runner benchmark comparison: RPR vs par 0.04999999999999716 · TS vs par 21.9. Benchmark fit score: 5.0.</p></div>
@@ -795,6 +1026,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Ollie Sangster</strong></div><div><span>Jockey</span><strong>Shane Gray</strong></div><div><span>Age</span><strong>3</strong></div><div><span>Draw</span><strong>5</strong></div><div><span>OR</span><strong>83.0</strong></div><div><span>RPR</span><strong>82.0</strong></div><div><span>TS</span><strong>80.0</strong></div><div><span>Form</span><strong>5-3260</strong></div></div>
                 <p>Eternal Solace profiles as a prominent with a stable / positive signs trajectory. Distance intelligence grade is C. Model alignment is 3/6. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip neutral">Marginal edge</span><span class="chip good">Stable / positive signs</span><span class="chip good">Context profile</span><span class="chip good">DEI C</span></div>
                 
@@ -810,11 +1042,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">20.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>5-3260</td>
+                        <td>Slowly away - raced in last - headway inside final furlong - no impression (jockey said filly was slowly away)(tchd 5/2 and 3/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>The current mark looks demanding against the available peak rating evidence.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 75.95 and average winning TS around 52.1. Runner benchmark comparison: RPR vs par 6.049999999999997 · TS vs par 27.9. Benchmark fit score: 7.0.</p></div>
@@ -830,6 +1083,7 @@ footer {
                 <span class="runner-style">Distance specialist</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Warren Greatrex</strong></div><div><span>Jockey</span><strong>Billy Loughnane</strong></div><div><span>Age</span><strong>3</strong></div><div><span>Draw</span><strong>9</strong></div><div><span>OR</span><strong>82.0</strong></div><div><span>Form</span><strong>5130-</strong></div></div>
                 <p>Lope El Fuego profiles as a unclear with a stable / positive signs trajectory. Distance intelligence grade is A. Model alignment is 2/6. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip good">Stable / positive signs</span><span class="chip good">Distance specialist</span><span class="chip elite">DEI A</span></div>
                 
@@ -845,11 +1099,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">20.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>5130-</td>
+                        <td>No latest comment available</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Handicap context is limited because current mark or peak rating evidence is incomplete.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 75.95 and average winning TS around 52.1. Benchmark fit score: 0.0.</p></div>
@@ -865,6 +1140,7 @@ footer {
                 <span class="runner-style">Late-energy finisher</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>David Loughnane</strong></div><div><span>Jockey</span><strong>Rowan Scott</strong></div><div><span>Age</span><strong>3</strong></div><div><span>Draw</span><strong>1</strong></div><div><span>OR</span><strong>89.0</strong></div><div><span>Form</span><strong>1457-5</strong></div></div>
                 <p>Do Bronxs profiles as a unclear with a stable trajectory. Distance intelligence grade is A. Model alignment is 2/6. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip neutral">Stable</span><span class="chip good">Late-energy finisher</span><span class="chip elite">DEI A</span></div>
                 
@@ -880,11 +1156,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">20.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1457-5</td>
+                        <td>No latest comment available</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Handicap context is limited because current mark or peak rating evidence is incomplete.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 75.95 and average winning TS around 52.1. Benchmark fit score: 0.0.</p></div>
@@ -900,6 +1197,7 @@ footer {
                 <span class="runner-style">Distance specialist</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>William Muir &amp; Chris Grassick</strong></div><div><span>Jockey</span><strong>Lewis Edmunds</strong></div><div><span>Age</span><strong>3</strong></div><div><span>Draw</span><strong>12</strong></div><div><span>OR</span><strong>83.0</strong></div><div><span>Form</span><strong>4451-</strong></div></div>
                 <p>Enricher profiles as a unclear with a stable trajectory. Distance intelligence grade is A. Model alignment is 1/6. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip neutral">Stable</span><span class="chip good">Distance specialist</span><span class="chip elite">DEI A</span></div>
                 
@@ -915,11 +1213,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">20.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>4451-</td>
+                        <td>No latest comment available</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Handicap context is limited because current mark or peak rating evidence is incomplete.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 75.95 and average winning TS around 52.1. Benchmark fit score: 0.0.</p></div>
@@ -935,6 +1254,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Clive Cox</strong></div><div><span>Jockey</span><strong>David Probert</strong></div><div><span>Age</span><strong>3</strong></div><div><span>Draw</span><strong>11</strong></div><div><span>OR</span><strong>85.0</strong></div><div><span>Form</span><strong>19200-</strong></div></div>
                 <p>Inca Heights profiles as a unclear with a stable trajectory. Distance intelligence grade is E. Model alignment is 1/6. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip neutral">Stable</span><span class="chip good">Context profile</span><span class="chip good">DEI E</span></div>
                 
@@ -950,11 +1270,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">20.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>19200-</td>
+                        <td>No latest comment available</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Handicap context is limited because current mark or peak rating evidence is incomplete.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 75.95 and average winning TS around 52.1. Benchmark fit score: 0.0.</p></div>
@@ -970,6 +1311,7 @@ footer {
                 <span class="runner-style">Distance specialist</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Jamie Osborne</strong></div><div><span>Jockey</span><strong>Saffie Osborne</strong></div><div><span>Age</span><strong>3</strong></div><div><span>Draw</span><strong>8</strong></div><div><span>OR</span><strong>81.0</strong></div><div><span>Form</span><strong>11507-</strong></div></div>
                 <p>Amazing Journey profiles as a unclear with a stable trajectory. Distance intelligence grade is A+. Model alignment is 1/6. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip neutral">Stable</span><span class="chip good">Distance specialist</span><span class="chip elite">DEI A+</span></div>
                 
@@ -985,11 +1327,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">20.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>11507-</td>
+                        <td>No latest comment available</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Handicap context is limited because current mark or peak rating evidence is incomplete.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 75.95 and average winning TS around 52.1. Benchmark fit score: 0.0.</p></div>
@@ -1001,11 +1364,11 @@ footer {
         </details>
     </article>
     
-    <article class="race-card good" data-course="Redcar" data-race="2:57 Redcar 7f">
+    <article class="race-card good" data-course="Redcar" data-race="2:57 · Redcar · 7f">
         <div class="race-header">
             <div>
                 <div class="eyebrow">2:57 · Redcar</div>
-                <h2>Redcar — 7f</h2>
+                <h2>2:57 · Redcar · 7f</h2>
                 <p class="race-meta">Class 6 · Good · Book For Ladies Day - 20th June Handicap</p>
             </div>
             <div class="race-score">
@@ -1017,7 +1380,7 @@ footer {
         <div class="race-intel-grid">
             <div><span>Race DNA</span><strong>Pace-pressure sprint</strong></div>
             <div><span>Chaos Index</span><strong>Medium</strong></div>
-            <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+            <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
             <div><span>Primary action</span><strong>POSSIBLE BET</strong></div>
         </div>
         <section class="synopsis">
@@ -1046,6 +1409,7 @@ footer {
                 <span class="runner-style">Late pressure closer</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Tony Coyle &amp; Kaine Wood</strong></div><div><span>Jockey</span><strong>David Nolan</strong></div><div><span>Age</span><strong>4</strong></div><div><span>Draw</span><strong>11</strong></div><div><span>OR</span><strong>59.0</strong></div><div><span>RPR</span><strong>50.0</strong></div><div><span>TS</span><strong>61.0</strong></div><div><span>Form</span><strong>13-738</strong></div></div>
                 <p>Ey Up He&#x27;s A Star profiles as a closer with a stable trajectory. Distance intelligence grade is C. Model alignment is 4/6. Hold-up profile in a projected pace-pressure race ✅</p>
                 <div class="chip-row"><span class="chip elite">Dominant edge</span><span class="chip neutral">Stable</span><span class="chip good">Late pressure closer</span><span class="chip good">DEI C</span></div>
                 
@@ -1061,11 +1425,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">21.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>13-738</td>
+                        <td>Held up in rear - some headway over 1f out - no extra inside final furlong(op 6/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Peak RPR evidence suggests the mark remains workable, with around 7lb historical room.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 76.66666666666667 and average winning TS around 53.71428571428572. Runner benchmark comparison: RPR vs par -10.66666666666667 · TS vs par 7.285714285714278. Benchmark fit score: -1.0.</p></div>
@@ -1081,6 +1466,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Tim Easterby</strong></div><div><span>Jockey</span><strong>Jake Dickson(7)</strong></div><div><span>Age</span><strong>4</strong></div><div><span>Draw</span><strong>10</strong></div><div><span>OR</span><strong>58.0</strong></div><div><span>RPR</span><strong>63.0</strong></div><div><span>TS</span><strong>48.0</strong></div><div><span>Form</span><strong>97-321</strong></div></div>
                 <p>Perfidia profiles as a front-runner with a stable / positive signs trajectory. Distance intelligence grade is D. Model alignment is 2/6. Hold-up profile in a projected pace-pressure race ✅</p>
                 <div class="chip-row"><span class="chip good">Strong edge</span><span class="chip good">Stable / positive signs</span><span class="chip good">Context profile</span><span class="chip good">DEI D</span></div>
                 
@@ -1096,11 +1482,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">21.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>97-321</td>
+                        <td>Switched to far side soon after start - led but pestered - headed final 110yds - soon no extra - 2nd of 11 in group</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>The horse looks close to its known rating ceiling on the available figures. Latest RPR still compares favourably with the current OR.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 76.66666666666667 and average winning TS around 53.71428571428572. Runner benchmark comparison: RPR vs par -13.66666666666667 · TS vs par -5.714285714285722. Benchmark fit score: -4.0.</p></div>
@@ -1116,6 +1523,7 @@ footer {
                 <span class="runner-style">Late pressure closer</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Ivan Furtado</strong></div><div><span>Jockey</span><strong>Jason Hart</strong></div><div><span>Age</span><strong>5</strong></div><div><span>Draw</span><strong>8</strong></div><div><span>OR</span><strong>59.0</strong></div><div><span>RPR</span><strong>47.0</strong></div><div><span>TS</span><strong>45.0</strong></div><div><span>Form</span><strong>559890</strong></div></div>
                 <p>Brave Empire profiles as a closer with a regression risk trajectory. Distance intelligence grade is D. Model alignment is 2/6. Hold-up profile in a projected pace-pressure race ✅</p>
                 <div class="chip-row"><span class="chip warn">Clear but not dominant</span><span class="chip bad">Regression risk</span><span class="chip good">Late pressure closer</span><span class="chip good">DEI D</span></div>
                 
@@ -1131,11 +1539,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">21.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>559890</td>
+                        <td>Raced centre - never better than midfield(op 16/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Peak RPR evidence suggests the mark remains workable, with around 9lb historical room.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 76.66666666666667 and average winning TS around 53.71428571428572. Runner benchmark comparison: RPR vs par -8.666666666666671 · TS vs par -8.714285714285722. Benchmark fit score: -2.0.</p></div>
@@ -1151,6 +1580,7 @@ footer {
                 <span class="runner-style">Late pressure closer</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Julie Camacho</strong></div><div><span>Jockey</span><strong>Callum Rodriguez</strong></div><div><span>Age</span><strong>6</strong></div><div><span>Draw</span><strong>9</strong></div><div><span>OR</span><strong>57.0</strong></div><div><span>RPR</span><strong>41.0</strong></div><div><span>TS</span><strong>37.0</strong></div><div><span>Form</span><strong>0026-8</strong></div></div>
                 <p>Oscar&#x27;s Sister profiles as a closer with a stable trajectory. Distance intelligence grade is C. Model alignment is 1/6. Hold-up profile in a projected pace-pressure race ✅</p>
                 <div class="chip-row"><span class="chip neutral">Marginal edge</span><span class="chip neutral">Stable</span><span class="chip good">Late pressure closer</span><span class="chip good">DEI C</span></div>
                 
@@ -1166,11 +1596,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">21.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0026-8</td>
+                        <td>Took keen hold - held up in rear - hung right and no impression from over 1f out (jockey said mare ran too free)(op 25/1 tchd 33/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>The current mark looks demanding against the available peak rating evidence.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 76.66666666666667 and average winning TS around 53.71428571428572. Runner benchmark comparison: RPR vs par -35.66666666666667 · TS vs par -16.71428571428572. Benchmark fit score: -6.0.</p></div>
@@ -1186,6 +1637,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Michael Dods</strong></div><div><span>Jockey</span><strong>Connor Beasley</strong></div><div><span>Age</span><strong>4</strong></div><div><span>Draw</span><strong>2</strong></div><div><span>OR</span><strong>60.0</strong></div><div><span>Form</span><strong>5/37-0</strong></div></div>
                 <p>Mecca&#x27;s Symphony profiles as a prominent with a stable trajectory. Distance intelligence grade is E. Model alignment is 0/6. Draw data is a slight caution. Hold-up profile in a projected pace-pressure race ✅</p>
                 <div class="chip-row"><span class="chip neutral">Marginal edge</span><span class="chip neutral">Stable</span><span class="chip good">Context profile</span><span class="chip good">DEI E</span><span class="chip warn">Draw -2</span></div>
                 
@@ -1201,11 +1653,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">21.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>5/37-0</td>
+                        <td>Took keen hold - prominent - weakened over 1f out (jockey said filly lost her action)(op 33/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Handicap context is limited because current mark or peak rating evidence is incomplete.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 76.66666666666667 and average winning TS around 53.71428571428572. Benchmark fit score: 0.0.</p></div>
@@ -1221,6 +1694,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Julie Camacho</strong></div><div><span>Jockey</span><strong>Oisin Orr</strong></div><div><span>Age</span><strong>5</strong></div><div><span>Draw</span><strong>1</strong></div><div><span>OR</span><strong>57.0</strong></div><div><span>RPR</span><strong>62.0</strong></div><div><span>TS</span><strong>51.0</strong></div><div><span>Form</span><strong>-35833</strong></div></div>
                 <p>Mayo County profiles as a front-runner with a stable / positive signs trajectory. Distance intelligence grade is D. Model alignment is 1/6. Draw data is a slight caution. Hold-up profile in a projected pace-pressure race ✅</p>
                 <div class="chip-row"><span class="chip neutral">Marginal edge</span><span class="chip good">Stable / positive signs</span><span class="chip good">Context profile</span><span class="chip good">DEI D</span><span class="chip warn">Draw -2</span></div>
                 
@@ -1236,11 +1710,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">21.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>-35833</td>
+                        <td>Raced near side - in touch with leaders - headway and led group over 1f out - soon hung left - kept on but no chance with far side final 110yds - 1st of 3 in group(op 9/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Peak RPR evidence suggests the mark remains workable, with around 6lb historical room. Latest RPR still compares favourably with the current OR.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 76.66666666666667 and average winning TS around 53.71428571428572. Runner benchmark comparison: RPR vs par -13.66666666666667 · TS vs par -2.714285714285722. Benchmark fit score: -3.0.</p></div>
@@ -1256,6 +1751,7 @@ footer {
                 <span class="runner-style">Late-energy finisher</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Gemma Tutty</strong></div><div><span>Jockey</span><strong>Sam James</strong></div><div><span>Age</span><strong>8</strong></div><div><span>Draw</span><strong>4</strong></div><div><span>OR</span><strong>59.0</strong></div><div><span>Form</span><strong>2607-6</strong></div></div>
                 <p>Patontheback profiles as a unclear with a stable trajectory. Distance intelligence grade is C. Model alignment is 1/6. Draw data adds a small confidence boost. Hold-up profile in a projected pace-pressure race ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip neutral">Stable</span><span class="chip good">Late-energy finisher</span><span class="chip good">DEI C</span><span class="chip good">Draw +1</span></div>
                 
@@ -1271,11 +1767,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">21.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2607-6</td>
+                        <td>No latest comment available</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Handicap context is limited because current mark or peak rating evidence is incomplete.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 76.66666666666667 and average winning TS around 53.71428571428572. Benchmark fit score: 0.0.</p></div>
@@ -1291,6 +1808,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Gary Rutherford</strong></div><div><span>Jockey</span><strong>Rhys Elliott(5)</strong></div><div><span>Age</span><strong>4</strong></div><div><span>Draw</span><strong>3</strong></div><div><span>OR</span><strong>52.0</strong></div><div><span>TS</span><strong>33.0</strong></div><div><span>Form</span><strong>498-75</strong></div></div>
                 <p>Due Respect profiles as a front-runner with a stable trajectory. Distance intelligence grade is C. Model alignment is 1/6. Draw data is a slight caution. Hold-up profile in a projected pace-pressure race ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip neutral">Stable</span><span class="chip good">Context profile</span><span class="chip good">DEI C</span><span class="chip warn">Draw -2</span></div>
                 
@@ -1306,11 +1824,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">21.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>498-75</td>
+                        <td>Disputed lead - led at fast pace after 1f - headed under 2f out - weakened quickly from 1f out(op 14/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Handicap context is limited because current mark or peak rating evidence is incomplete.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 76.66666666666667 and average winning TS around 53.71428571428572. Runner benchmark comparison: TS vs par -20.71428571428572. Benchmark fit score: -3.0.</p></div>
@@ -1326,6 +1865,7 @@ footer {
                 <span class="runner-style">Distance specialist</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Alan Brown</strong></div><div><span>Jockey</span><strong>Sean Kirrane</strong></div><div><span>Age</span><strong>4</strong></div><div><span>Draw</span><strong>6</strong></div><div><span>OR</span><strong>52.0</strong></div><div><span>TS</span><strong>14.0</strong></div><div><span>Form</span><strong>5880-0</strong></div></div>
                 <p>Bantz profiles as a midfield with a regression risk trajectory. Distance intelligence grade is A. Model alignment is 2/6. Draw data adds a small confidence boost. Hold-up profile in a projected pace-pressure race ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip bad">Regression risk</span><span class="chip good">Distance specialist</span><span class="chip elite">DEI A</span><span class="chip good">Draw +1</span></div>
                 
@@ -1341,11 +1881,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">21.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>5880-0</td>
+                        <td>Took keen hold - in touch with leaders - dropped to midfield 4f out - weakened 2f out</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Handicap context is limited because current mark or peak rating evidence is incomplete.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 76.66666666666667 and average winning TS around 53.71428571428572. Runner benchmark comparison: TS vs par -39.71428571428572. Benchmark fit score: -3.0.</p></div>
@@ -1361,6 +1922,7 @@ footer {
                 <span class="runner-style">Late pressure closer</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>John Wainwright</strong></div><div><span>Jockey</span><strong>Cam Hardie</strong></div><div><span>Age</span><strong>7</strong></div><div><span>Draw</span><strong>7</strong></div><div><span>OR</span><strong>46.0</strong></div><div><span>RPR</span><strong>45.0</strong></div><div><span>TS</span><strong>34.0</strong></div><div><span>Form</span><strong>3-6655</strong></div></div>
                 <p>Elettaria profiles as a closer with a stable / positive signs trajectory. Distance intelligence grade is A. Model alignment is 3/6. Draw data adds a small confidence boost. Hold-up profile in a projected pace-pressure race ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip good">Stable / positive signs</span><span class="chip good">Late pressure closer</span><span class="chip elite">DEI A</span><span class="chip good">Draw +1</span></div>
                 
@@ -1376,11 +1938,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">21.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>3-6655</td>
+                        <td>Slowly away - in rear - switched to far side over 5f out - headway up the centre over 1f out - not reach leaders - 4th of 11 in group (jockey said mare was slowly away)(op 28/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>The current mark looks demanding against the available peak rating evidence.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 76.66666666666667 and average winning TS around 53.71428571428572. Runner benchmark comparison: RPR vs par -31.66666666666667 · TS vs par -19.71428571428572. Benchmark fit score: -6.0.</p></div>
@@ -1396,6 +1979,7 @@ footer {
                 <span class="runner-style">Late-energy finisher</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>David Thompson</strong></div><div><span>Jockey</span><strong>Barry McHugh</strong></div><div><span>Age</span><strong>9</strong></div><div><span>Draw</span><strong>5</strong></div><div><span>OR</span><strong>46.0</strong></div><div><span>RPR</span><strong>46.0</strong></div><div><span>TS</span><strong>26.0</strong></div><div><span>Form</span><strong>58-987</strong></div></div>
                 <p>Martin&#x27;s Brig profiles as a front-runner with a regression risk trajectory. Distance intelligence grade is B. Model alignment is 3/6. Draw data adds a small confidence boost. Hold-up profile in a projected pace-pressure race ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip bad">Regression risk</span><span class="chip good">Late-energy finisher</span><span class="chip good">DEI B</span><span class="chip good">Draw +1</span></div>
                 
@@ -1411,11 +1995,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">21.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>58-987</td>
+                        <td>Led - headed over 2f out - weakened from over 1f out(op 33/1 tchd 50/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>The horse looks close to its known rating ceiling on the available figures. Latest RPR still compares favourably with the current OR.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 76.66666666666667 and average winning TS around 53.71428571428572. Runner benchmark comparison: RPR vs par -30.66666666666667 · TS vs par -27.71428571428572. Benchmark fit score: -6.0.</p></div>
@@ -1427,11 +2032,11 @@ footer {
         </details>
     </article>
     
-    <article class="race-card good" data-course="Windsor" data-race="4:25 Windsor 10f">
+    <article class="race-card good" data-course="Windsor" data-race="4:25 · Windsor · 10f">
         <div class="race-header">
             <div>
                 <div class="eyebrow">4:25 · Windsor</div>
-                <h2>Windsor — 10f</h2>
+                <h2>4:25 · Windsor · 10f</h2>
                 <p class="race-meta">Class 3 · Good To Firm · Find Us At fitzdares.com Handicap (GBBPlus Race)</p>
             </div>
             <div class="race-score">
@@ -1443,7 +2048,7 @@ footer {
         <div class="race-intel-grid">
             <div><span>Race DNA</span><strong>Controlled tactical race</strong></div>
             <div><span>Chaos Index</span><strong>Low</strong></div>
-            <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+            <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
             <div><span>Primary action</span><strong>POSSIBLE BET</strong></div>
         </div>
         <section class="synopsis">
@@ -1472,6 +2077,7 @@ footer {
                 <span class="runner-style">Front-end controller</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>William Haggas</strong></div><div><span>Jockey</span><strong>Tom Marquand</strong></div><div><span>Age</span><strong>4</strong></div><div><span>Draw</span><strong>5</strong></div><div><span>OR</span><strong>95.0</strong></div><div><span>RPR</span><strong>89.0</strong></div><div><span>TS</span><strong>77.0</strong></div><div><span>Form</span><strong>2-2100</strong></div></div>
                 <p>First Principle profiles as a front-runner with a stable trajectory. Distance intelligence grade is E. Model alignment is 4/6. Draw data is a slight caution. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip elite">Dominant edge</span><span class="chip neutral">Stable</span><span class="chip good">Front-end controller</span><span class="chip good">DEI E</span><span class="chip warn">Draw -1</span></div>
                 
@@ -1487,11 +2093,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">28.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2-2100</td>
+                        <td>Midfield - hung left and weakened from over 1f out</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Peak RPR evidence suggests the mark remains workable, with around 7lb historical room.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 82.78571428571429 and average winning TS around 59.39285714285715. Runner benchmark comparison: RPR vs par 19.21428571428571 · TS vs par 17.60714285714285. Benchmark fit score: 9.0.</p></div>
@@ -1507,6 +2134,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Owen Burrows</strong></div><div><span>Jockey</span><strong>Rossa Ryan</strong></div><div><span>Age</span><strong>4</strong></div><div><span>Draw</span><strong>3</strong></div><div><span>OR</span><strong>96.0</strong></div><div><span>Form</span><strong>52130-</strong></div></div>
                 <p>Merveilleux Lapin profiles as a unclear with a stable trajectory. Distance intelligence grade is E. Model alignment is 0/6. Draw data is a slight caution. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip neutral">Marginal edge</span><span class="chip neutral">Stable</span><span class="chip good">Context profile</span><span class="chip good">DEI E</span><span class="chip warn">Draw -1</span></div>
                 
@@ -1522,11 +2150,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">28.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>52130-</td>
+                        <td>No latest comment available</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Handicap context is limited because current mark or peak rating evidence is incomplete.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 82.78571428571429 and average winning TS around 59.39285714285715. Benchmark fit score: 0.0.</p></div>
@@ -1542,6 +2191,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Mike Murphy</strong></div><div><span>Jockey</span><strong>Rob Hornby</strong></div><div><span>Age</span><strong>4</strong></div><div><span>Draw</span><strong>6</strong></div><div><span>OR</span><strong>95.0</strong></div><div><span>RPR</span><strong>89.0</strong></div><div><span>TS</span><strong>86.0</strong></div><div><span>Form</span><strong>5-4500</strong></div></div>
                 <p>Serengeti profiles as a prominent with a stable trajectory. Distance intelligence grade is D. Model alignment is 2/6. Draw data is a slight caution. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip neutral">Stable</span><span class="chip good">Context profile</span><span class="chip good">DEI D</span><span class="chip warn">Draw -1</span></div>
                 
@@ -1557,11 +2207,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">28.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>5-4500</td>
+                        <td>Taken down early - never better than midfield(tchd 66/1 and 100/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Peak RPR evidence suggests the mark remains workable, with around 10lb historical room.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 82.78571428571429 and average winning TS around 59.39285714285715. Runner benchmark comparison: RPR vs par 22.21428571428571 · TS vs par 26.60714285714285. Benchmark fit score: 9.0.</p></div>
@@ -1577,6 +2248,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Hugo Palmer</strong></div><div><span>Jockey</span><strong>Jack Nicholls(5)</strong></div><div><span>Age</span><strong>4</strong></div><div><span>Draw</span><strong>7</strong></div><div><span>OR</span><strong>85.0</strong></div><div><span>RPR</span><strong>90.0</strong></div><div><span>TS</span><strong>77.0</strong></div><div><span>Form</span><strong>436-46</strong></div></div>
                 <p>Seagolazo profiles as a closer with a stable trajectory. Distance intelligence grade is E. Model alignment is 2/6. Draw data is a slight caution. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip neutral">Stable</span><span class="chip good">Context profile</span><span class="chip good">DEI E</span><span class="chip warn">Draw -1</span></div>
                 
@@ -1592,11 +2264,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">28.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>436-46</td>
+                        <td>Towards rear - switched to far side after 1f - outpaced after 2f - headway over 1f out - went fourth inside final furlong - not pace to challenge(op 9/2)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>The horse looks close to its known rating ceiling on the available figures. Latest RPR still compares favourably with the current OR.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 82.78571428571429 and average winning TS around 59.39285714285715. Runner benchmark comparison: RPR vs par 7.214285714285708 · TS vs par 17.60714285714285. Benchmark fit score: 7.0.</p></div>
@@ -1612,6 +2305,7 @@ footer {
                 <span class="runner-style">Distance specialist</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Michael Bell</strong></div><div><span>Jockey</span><strong>Hector Crouch</strong></div><div><span>Age</span><strong>6</strong></div><div><span>Draw</span><strong>4</strong></div><div><span>OR</span><strong>92.0</strong></div><div><span>RPR</span><strong>94.0</strong></div><div><span>TS</span><strong>76.0</strong></div><div><span>Form</span><strong>000-04</strong></div></div>
                 <p>Greek Order profiles as a closer with a stable / positive signs trajectory. Distance intelligence grade is A. Model alignment is 4/6. Draw data is a slight caution. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip good">Stable / positive signs</span><span class="chip good">Distance specialist</span><span class="chip elite">DEI A</span><span class="chip warn">Draw -1</span></div>
                 
@@ -1627,11 +2321,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">28.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>000-04</td>
+                        <td>Dwelt start - in rear - headway over 1f out - went fourth inside final furlong - kept on(op 4/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>The horse looks close to its known rating ceiling on the available figures. Latest RPR still compares favourably with the current OR.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 82.78571428571429 and average winning TS around 59.39285714285715. Runner benchmark comparison: RPR vs par 11.21428571428571 · TS vs par 16.60714285714285. Benchmark fit score: 9.0.</p></div>
@@ -1647,6 +2362,7 @@ footer {
                 <span class="runner-style">Distance specialist</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Tom Dascombe</strong></div><div><span>Jockey</span><strong>Pierre-Louis Jamin</strong></div><div><span>Age</span><strong>7</strong></div><div><span>Draw</span><strong>1</strong></div><div><span>OR</span><strong>97.0</strong></div><div><span>Form</span><strong>2001-8</strong></div></div>
                 <p>Auld Toon Loon profiles as a unclear with a stable trajectory. Distance intelligence grade is A. Model alignment is 2/6. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip neutral">Stable</span><span class="chip good">Distance specialist</span><span class="chip elite">DEI A</span></div>
                 
@@ -1662,11 +2378,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">28.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2001-8</td>
+                        <td>No latest comment available</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Handicap context is limited because current mark or peak rating evidence is incomplete.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 82.78571428571429 and average winning TS around 59.39285714285715. Benchmark fit score: 0.0.</p></div>
@@ -1682,6 +2419,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Andrew Balding</strong></div><div><span>Jockey</span><strong>Callum Hutchinson</strong></div><div><span>Age</span><strong>4</strong></div><div><span>Draw</span><strong>2</strong></div><div><span>OR</span><strong>85.0</strong></div><div><span>RPR</span><strong>74.0</strong></div><div><span>Form</span><strong>/224-6</strong></div></div>
                 <p>Urban Glimpse profiles as a midfield with a stable / positive signs trajectory. Distance intelligence grade is E. Model alignment is 1/6. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip good">Stable / positive signs</span><span class="chip good">Context profile</span><span class="chip good">DEI E</span></div>
                 
@@ -1697,11 +2435,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">28.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>/224-6</td>
+                        <td>Never better than midfield(op 11/2 tchd 6/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>The current mark looks demanding against the available peak rating evidence.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 82.78571428571429 and average winning TS around 59.39285714285715. Runner benchmark comparison: RPR vs par -8.785714285714292. Benchmark fit score: -1.0.</p></div>
@@ -1713,11 +2472,11 @@ footer {
         </details>
     </article>
     
-    <article class="race-card good" data-course="Windsor" data-race="2:43 Windsor 6f">
+    <article class="race-card good" data-course="Windsor" data-race="2:43 · Windsor · 6f">
         <div class="race-header">
             <div>
                 <div class="eyebrow">2:43 · Windsor</div>
-                <h2>Windsor — 6f</h2>
+                <h2>2:43 · Windsor · 6f</h2>
                 <p class="race-meta">Class 4 · Good To Firm · Track Radio On Digital &amp; DAB Maiden Stakes (GBB Race)</p>
             </div>
             <div class="race-score">
@@ -1729,7 +2488,7 @@ footer {
         <div class="race-intel-grid">
             <div><span>Race DNA</span><strong>Controlled tactical race</strong></div>
             <div><span>Chaos Index</span><strong>Low</strong></div>
-            <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+            <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
             <div><span>Primary action</span><strong>POSSIBLE BET</strong></div>
         </div>
         <section class="synopsis">
@@ -1758,6 +2517,7 @@ footer {
                 <span class="runner-style">Front-end controller</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Ralph Beckett</strong></div><div><span>Jockey</span><strong>Hector Crouch</strong></div><div><span>Age</span><strong>3</strong></div><div><span>Draw</span><strong>5</strong></div><div><span>OR</span><strong>77.0</strong></div><div><span>RPR</span><strong>62.0</strong></div><div><span>TS</span><strong>50.0</strong></div><div><span>Form</span><strong>22-24</strong></div></div>
                 <p>Paradise Walk profiles as a front-runner with a stable trajectory. Distance intelligence grade is D. Model alignment is 2/6. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip good">Strong edge</span><span class="chip neutral">Stable</span><span class="chip good">Front-end controller</span><span class="chip good">DEI D</span></div>
                 
@@ -1773,11 +2533,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">46.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>22-24</td>
+                        <td>Prominent on far side of group - no extra inside final furlong(op 17/2 tchd 8/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>The current mark looks demanding against the available peak rating evidence.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 82.82608695652173 and average winning TS around 63.26086956521739. Runner benchmark comparison: RPR vs par -12.82608695652173 · TS vs par -13.26086956521739. Benchmark fit score: -6.0.</p></div>
@@ -1793,6 +2574,7 @@ footer {
                 <span class="runner-style">Late-energy finisher</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>George Baker</strong></div><div><span>Jockey</span><strong>Neil Callan</strong></div><div><span>Age</span><strong>3</strong></div><div><span>Draw</span><strong>2</strong></div><div><span>TS</span><strong>58.0</strong></div><div><span>Form</span><strong>8-3</strong></div></div>
                 <p>Trinculo profiles as a closer with a stable / positive signs trajectory. Distance intelligence grade is E. Model alignment is 3/6. Draw data is a slight caution. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip warn">Clear but not dominant</span><span class="chip good">Stable / positive signs</span><span class="chip good">Late-energy finisher</span><span class="chip good">DEI E</span><span class="chip warn">Draw -1</span></div>
                 
@@ -1808,11 +2590,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">46.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>8-3</td>
+                        <td>Towards rear - bit short of room over 4f out - headway up the centre 2f out - went third final 110yds - kept on(op 13/2 tchd 3/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Handicap context is limited because current mark or peak rating evidence is incomplete.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 82.82608695652173 and average winning TS around 63.26086956521739. Runner benchmark comparison: TS vs par -5.260869565217391. Benchmark fit score: -1.0.</p></div>
@@ -1828,6 +2631,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Henry Candy</strong></div><div><span>Jockey</span><strong>Tom Marquand</strong></div><div><span>Age</span><strong>3</strong></div><div><span>Draw</span><strong>3</strong></div><div><span>RPR</span><strong>74.0</strong></div><div><span>TS</span><strong>55.0</strong></div><div><span>Form</span><strong>3</strong></div></div>
                 <p>Space Party profiles as a midfield with a improving trajectory. Distance intelligence grade is E. Model alignment is 2/6. Draw data is a slight caution. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip elite">Improving</span><span class="chip good">Context profile</span><span class="chip good">DEI E</span><span class="chip warn">Draw -1</span></div>
                 
@@ -1843,11 +2647,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">46.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>3</td>
+                        <td>Midfield - headway over 2f out - went third inside final 110yds - kept on(op 25/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Handicap context is limited because current mark or peak rating evidence is incomplete.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 82.82608695652173 and average winning TS around 63.26086956521739. Runner benchmark comparison: RPR vs par -8.826086956521735 · TS vs par -8.26086956521739. Benchmark fit score: -2.0.</p></div>
@@ -1863,6 +2688,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Chris Dwyer</strong></div><div><span>Jockey</span><strong>Silvestre De Sousa</strong></div><div><span>Age</span><strong>3</strong></div><div><span>Draw</span><strong>1</strong></div><div><span>RPR</span><strong>54.0</strong></div><div><span>TS</span><strong>19.0</strong></div><div><span>Form</span><strong>52</strong></div></div>
                 <p>Percy&#x27;s Star profiles as a midfield with a stable trajectory. Distance intelligence grade is D. Model alignment is 0/6. Draw data is a slight caution. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip neutral">Stable</span><span class="chip good">Context profile</span><span class="chip good">DEI D</span><span class="chip warn">Draw -1</span></div>
                 
@@ -1878,11 +2704,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">46.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>52</td>
+                        <td>Took keen hold - in touch with leaders - on near side of group when weakened final furlong(op 50/1 tchd 80/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Handicap context is limited because current mark or peak rating evidence is incomplete.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 82.82608695652173 and average winning TS around 63.26086956521739. Runner benchmark comparison: RPR vs par -28.82608695652173 · TS vs par -44.26086956521739. Benchmark fit score: -6.0.</p></div>
@@ -1898,6 +2745,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Gary &amp; Josh Moore</strong></div><div><span>Jockey</span><strong>Paddy Bradley</strong></div><div><span>Age</span><strong>3</strong></div><div><span>Draw</span><strong>4</strong></div><div><span>RPR</span><strong>41.0</strong></div><div><span>Form</span><strong>70</strong></div></div>
                 <p>Moravian profiles as a closer with a stable trajectory. Distance intelligence grade is E. Model alignment is 1/6. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip neutral">Stable</span><span class="chip good">Context profile</span><span class="chip good">DEI E</span></div>
                 
@@ -1913,11 +2761,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">46.0 race sample · HIGH confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>70</td>
+                        <td>In rear - brief headway over 1f out - no impression</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Handicap context is limited because current mark or peak rating evidence is incomplete.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 82.82608695652173 and average winning TS around 63.26086956521739. Runner benchmark comparison: RPR vs par -41.82608695652173. Benchmark fit score: -3.0.</p></div>
@@ -1929,11 +2798,11 @@ footer {
         </details>
     </article>
     
-    <article class="race-card good" data-course="Windsor" data-race="3:18 Windsor 11.5f">
+    <article class="race-card good" data-course="Windsor" data-race="3:18 · Windsor · 11.5f">
         <div class="race-header">
             <div>
                 <div class="eyebrow">3:18 · Windsor</div>
-                <h2>Windsor — 11.5f</h2>
+                <h2>3:18 · Windsor · 11.5f</h2>
                 <p class="race-meta">Class 3 · Good To Firm · Fitzdares Telephone &amp; Text Betting Maiden Stakes (GBB/GBBPlus Race)</p>
             </div>
             <div class="race-score">
@@ -1945,7 +2814,7 @@ footer {
         <div class="race-intel-grid">
             <div><span>Race DNA</span><strong>Controlled tactical race</strong></div>
             <div><span>Chaos Index</span><strong>Low</strong></div>
-            <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+            <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
             <div><span>Primary action</span><strong>POSSIBLE BET</strong></div>
         </div>
         <section class="synopsis">
@@ -1974,6 +2843,7 @@ footer {
                 <span class="runner-style">Front-end controller</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Andrew Balding</strong></div><div><span>Jockey</span><strong>Callum Hutchinson</strong></div><div><span>Age</span><strong>3</strong></div><div><span>Draw</span><strong>5</strong></div><div><span>OR</span><strong>77.0</strong></div><div><span>RPR</span><strong>74.0</strong></div><div><span>TS</span><strong>49.0</strong></div><div><span>Form</span><strong>95-32</strong></div></div>
                 <p>Mythical Valentine profiles as a front-runner with a improving trajectory. Distance intelligence grade is E. Model alignment is 3/6. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip elite">Dominant edge</span><span class="chip elite">Improving</span><span class="chip good">Front-end controller</span><span class="chip good">DEI E</span></div>
                 
@@ -1989,11 +2859,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">Class/distance/going timing layer developing</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>95-32</td>
+                        <td>Raced in third - slightly hampered 8f out - short of room against far rail under 2f out - soon switched right - stayed on and went second inside final 110yds(op 7/4)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>The current mark looks demanding against the available peak rating evidence.</p></div>
                     <div><strong>Benchmark read</strong><p>Benchmark evidence is still developing for this course and distance.</p></div>
@@ -2009,6 +2900,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Andrew Balding</strong></div><div><span>Jockey</span><strong>Daniel Muscutt</strong></div><div><span>Age</span><strong>3</strong></div><div><span>Draw</span><strong>3</strong></div></div>
                 <p>Treble Nine profiles as a unclear with a stable trajectory. Distance intelligence grade is UNKNOWN. Model alignment is 0/6. Draw data adds a small confidence boost. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip neutral">Stable</span><span class="chip good">Context profile</span><span class="chip good">DEI UNKNOWN</span><span class="chip good">Draw +1</span></div>
                 
@@ -2019,11 +2911,17 @@ footer {
         
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">Class/distance/going timing layer developing</p>
     </div>
     
+                
+            <div class="previous-runs muted-card">
+                <strong>Previous runs</strong>
+                <p>Previous-run table awaiting detailed historical run feed.</p>
+            </div>
+            
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Handicap context is limited because current mark or peak rating evidence is incomplete.</p></div>
                     <div><strong>Benchmark read</strong><p>Benchmark evidence is still developing for this course and distance.</p></div>
@@ -2039,6 +2937,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>William Haggas</strong></div><div><span>Jockey</span><strong>Tom Marquand</strong></div><div><span>Age</span><strong>3</strong></div><div><span>Draw</span><strong>2</strong></div></div>
                 <p>Sea Canary profiles as a unclear with a stable trajectory. Distance intelligence grade is UNKNOWN. Model alignment is 0/6. Draw data adds a small confidence boost. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip neutral">Stable</span><span class="chip good">Context profile</span><span class="chip good">DEI UNKNOWN</span><span class="chip good">Draw +1</span></div>
                 
@@ -2049,11 +2948,17 @@ footer {
         
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">Class/distance/going timing layer developing</p>
     </div>
     
+                
+            <div class="previous-runs muted-card">
+                <strong>Previous runs</strong>
+                <p>Previous-run table awaiting detailed historical run feed.</p>
+            </div>
+            
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Handicap context is limited because current mark or peak rating evidence is incomplete.</p></div>
                     <div><strong>Benchmark read</strong><p>Benchmark evidence is still developing for this course and distance.</p></div>
@@ -2069,6 +2974,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Owen Burrows</strong></div><div><span>Jockey</span><strong>Finley Marsh</strong></div><div><span>Age</span><strong>4</strong></div><div><span>Draw</span><strong>4</strong></div><div><span>Form</span><strong>6</strong></div></div>
                 <p>Joanna Hiffernan profiles as a unclear with a stable trajectory. Distance intelligence grade is E. Model alignment is 0/6. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip neutral">Stable</span><span class="chip good">Context profile</span><span class="chip good">DEI E</span></div>
                 
@@ -2084,11 +2990,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">Class/distance/going timing layer developing</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>6</td>
+                        <td>No latest comment available</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Handicap context is limited because current mark or peak rating evidence is incomplete.</p></div>
                     <div><strong>Benchmark read</strong><p>Benchmark evidence is still developing for this course and distance.</p></div>
@@ -2104,6 +3031,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Ralph Beckett</strong></div><div><span>Jockey</span><strong>Edward Greatrex</strong></div><div><span>Age</span><strong>3</strong></div><div><span>Draw</span><strong>1</strong></div><div><span>Form</span><strong>55</strong></div></div>
                 <p>Aukus profiles as a midfield with a stable trajectory. Distance intelligence grade is E. Model alignment is 0/6. Draw data is a slight caution. Possible lone-leader setup ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip neutral">Stable</span><span class="chip good">Context profile</span><span class="chip good">DEI E</span><span class="chip warn">Draw -2</span></div>
                 
@@ -2119,11 +3047,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">Class/distance/going timing layer developing</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>55</td>
+                        <td>In touch with leaders - pushed along after 5f - weakened from over 4f out(op 16/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Handicap context is limited because current mark or peak rating evidence is incomplete.</p></div>
                     <div><strong>Benchmark read</strong><p>Benchmark evidence is still developing for this course and distance.</p></div>
@@ -2135,11 +3084,11 @@ footer {
         </details>
     </article>
     
-    <article class="race-card good" data-course="Leicester" data-race="5:23 Leicester 12f">
+    <article class="race-card good" data-course="Leicester" data-race="5:23 · Leicester · 12f">
         <div class="race-header">
             <div>
                 <div class="eyebrow">5:23 · Leicester</div>
-                <h2>Leicester — 12f</h2>
+                <h2>5:23 · Leicester · 12f</h2>
                 <p class="race-meta">Class 6 · Good · Racing Again Tomorrow Apprentice Handicap</p>
             </div>
             <div class="race-score">
@@ -2151,7 +3100,7 @@ footer {
         <div class="race-intel-grid">
             <div><span>Race DNA</span><strong>Balanced context race</strong></div>
             <div><span>Chaos Index</span><strong>Low</strong></div>
-            <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+            <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
             <div><span>Primary action</span><strong>POSSIBLE BET</strong></div>
         </div>
         <section class="synopsis">
@@ -2180,6 +3129,7 @@ footer {
                 <span class="runner-style">Distance specialist</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Tony Carroll</strong></div><div><span>Jockey</span><strong>Matthew Lloyd Slater(7)</strong></div><div><span>Age</span><strong>7</strong></div><div><span>Draw</span><strong>5</strong></div><div><span>OR</span><strong>55.0</strong></div><div><span>RPR</span><strong>60.0</strong></div><div><span>TS</span><strong>53.0</strong></div><div><span>Form</span><strong>833112</strong></div></div>
                 <p>Moon Over The Sea profiles as a midfield with a improving trajectory. Distance intelligence grade is A. Model alignment is 4/6. Balanced setup suits adaptable/prominent profile ✅</p>
                 <div class="chip-row"><span class="chip elite">Dominant edge</span><span class="chip elite">Improving</span><span class="chip good">Distance specialist</span><span class="chip elite">DEI A</span></div>
                 
@@ -2195,11 +3145,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">11.0 race sample · MEDIUM confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>833112</td>
+                        <td>Midfield - headway on outer over 2f out - edged left and ridden when led 1f out - kept on(op 5/2)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Peak RPR evidence suggests the mark remains workable, with around 6lb historical room. Latest RPR still compares favourably with the current OR.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 75.63636363636364 and average winning TS around 52.09090909090909. Runner benchmark comparison: RPR vs par -14.63636363636364 · TS vs par 0.9090909090909065. Benchmark fit score: -1.7.</p></div>
@@ -2215,6 +3186,7 @@ footer {
                 <span class="runner-style">Late-energy finisher</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Peter Winks</strong></div><div><span>Jockey</span><strong>Jack Dace(3)</strong></div><div><span>Age</span><strong>4</strong></div><div><span>Draw</span><strong>6</strong></div><div><span>OR</span><strong>46.0</strong></div><div><span>Form</span><strong>440-05</strong></div></div>
                 <p>Coverbridge profiles as a closer with a stable trajectory. Distance intelligence grade is E. Model alignment is 2/6. Balanced setup suits adaptable/prominent profile ✅</p>
                 <div class="chip-row"><span class="chip neutral">Marginal edge</span><span class="chip neutral">Stable</span><span class="chip good">Late-energy finisher</span><span class="chip good">DEI E</span></div>
                 
@@ -2230,11 +3202,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">11.0 race sample · MEDIUM confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>440-05</td>
+                        <td>Towards rear throughout(op 40/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Handicap context is limited because current mark or peak rating evidence is incomplete.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 75.63636363636364 and average winning TS around 52.09090909090909. Benchmark fit score: 0.0.</p></div>
@@ -2250,6 +3243,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Sheena West</strong></div><div><span>Jockey</span><strong>Rose Dawes</strong></div><div><span>Age</span><strong>8</strong></div><div><span>Draw</span><strong>4</strong></div><div><span>OR</span><strong>48.0</strong></div><div><span>RPR</span><strong>51.0</strong></div><div><span>TS</span><strong>46.0</strong></div><div><span>Form</span><strong>-56352</strong></div></div>
                 <p>Gearing&#x27;s Point profiles as a front-runner with a stable / positive signs trajectory. Distance intelligence grade is B. Model alignment is 4/6. Balanced setup suits adaptable/prominent profile ✅</p>
                 <div class="chip-row"><span class="chip neutral">Marginal edge</span><span class="chip good">Stable / positive signs</span><span class="chip good">Context profile</span><span class="chip good">DEI B</span></div>
                 
@@ -2265,11 +3259,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">11.0 race sample · MEDIUM confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>-56352</td>
+                        <td>In touch with leaders - headway 2f out - disputing third over 1f out - no extra inside final furlong(tchd 8/1 and tchd 9/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Peak RPR evidence suggests the mark remains workable, with around 7lb historical room. Latest RPR still compares favourably with the current OR.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 75.63636363636364 and average winning TS around 52.09090909090909. Runner benchmark comparison: RPR vs par -20.63636363636364 · TS vs par -6.090909090909093. Benchmark fit score: -3.4.</p></div>
@@ -2285,6 +3300,7 @@ footer {
                 <span class="runner-style">Late-energy finisher</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Jennie Candlish</strong></div><div><span>Jockey</span><strong>Harry Vigors(5)</strong></div><div><span>Age</span><strong>4</strong></div><div><span>Draw</span><strong>3</strong></div><div><span>OR</span><strong>51.0</strong></div><div><span>Form</span><strong>8464-0</strong></div></div>
                 <p>Rose Warrior profiles as a front-runner with a stable trajectory. Distance intelligence grade is E. Model alignment is 2/6. Balanced setup suits adaptable/prominent profile ✅</p>
                 <div class="chip-row"><span class="chip neutral">Marginal edge</span><span class="chip neutral">Stable</span><span class="chip good">Late-energy finisher</span><span class="chip good">DEI E</span></div>
                 
@@ -2300,11 +3316,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">11.0 race sample · MEDIUM confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>8464-0</td>
+                        <td>Midfield on outer - niggled along briefly halfway - dropped to rear over 4f out - eased from over 2f out - tailed off(op 10/1 tchd 9/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>Handicap context is limited because current mark or peak rating evidence is incomplete.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 75.63636363636364 and average winning TS around 52.09090909090909. Benchmark fit score: 0.0.</p></div>
@@ -2320,6 +3357,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Ian Williams</strong></div><div><span>Jockey</span><strong>Ryan Kavanagh</strong></div><div><span>Age</span><strong>4</strong></div><div><span>Draw</span><strong>7</strong></div><div><span>OR</span><strong>51.0</strong></div><div><span>RPR</span><strong>45.0</strong></div><div><span>TS</span><strong>35.0</strong></div><div><span>Form</span><strong>79-506</strong></div></div>
                 <p>Abila profiles as a closer with a stable trajectory. Distance intelligence grade is E. Model alignment is 2/6. Balanced setup suits adaptable/prominent profile ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip neutral">Stable</span><span class="chip good">Context profile</span><span class="chip good">DEI E</span></div>
                 
@@ -2335,11 +3373,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">11.0 race sample · MEDIUM confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>79-506</td>
+                        <td>In rear - not clear run over 3f out - some headway from over 1f out - never on terms(op 22/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>The horse looks close to its known rating ceiling on the available figures.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 75.63636363636364 and average winning TS around 52.09090909090909. Runner benchmark comparison: RPR vs par -23.63636363636364 · TS vs par -17.09090909090909. Benchmark fit score: -5.1.</p></div>
@@ -2355,6 +3414,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Marcus Tregoning</strong></div><div><span>Jockey</span><strong>Ashley Lewis(3)</strong></div><div><span>Age</span><strong>4</strong></div><div><span>Draw</span><strong>1</strong></div><div><span>OR</span><strong>50.0</strong></div><div><span>RPR</span><strong>48.0</strong></div><div><span>TS</span><strong>40.0</strong></div><div><span>Form</span><strong>732-65</strong></div></div>
                 <p>Little She profiles as a midfield with a stable trajectory. Distance intelligence grade is E. Model alignment is 1/6. Balanced setup suits adaptable/prominent profile ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip neutral">Stable</span><span class="chip good">Context profile</span><span class="chip good">DEI E</span></div>
                 
@@ -2370,11 +3430,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">11.0 race sample · MEDIUM confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>732-65</td>
+                        <td>In touch with leaders - dropped to midfield over 3f out - headway over 1f out - outpaced inside final furlong - rallied towards finish(op 12/1)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>The current mark looks demanding against the available peak rating evidence.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 75.63636363636364 and average winning TS around 52.09090909090909. Runner benchmark comparison: RPR vs par -27.63636363636364 · TS vs par -12.09090909090909. Benchmark fit score: -5.1.</p></div>
@@ -2390,6 +3471,7 @@ footer {
                 <span class="runner-style">Context profile</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Charlie Clover</strong></div><div><span>Jockey</span><strong>Liam Wright(3)</strong></div><div><span>Age</span><strong>4</strong></div><div><span>Draw</span><strong>2</strong></div><div><span>OR</span><strong>46.0</strong></div><div><span>RPR</span><strong>46.0</strong></div><div><span>TS</span><strong>32.0</strong></div><div><span>Form</span><strong>5-4654</strong></div></div>
                 <p>Clipsham Noble profiles as a midfield with a stable / positive signs trajectory. Distance intelligence grade is E. Model alignment is 1/6. Balanced setup suits adaptable/prominent profile ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip good">Stable / positive signs</span><span class="chip good">Context profile</span><span class="chip good">DEI E</span></div>
                 
@@ -2405,11 +3487,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">11.0 race sample · MEDIUM confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>5-4654</td>
+                        <td>Slowly away - in rear - headway from 2f out - kept on inside final furlong(op 13/2)</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>The horse looks close to its known rating ceiling on the available figures. Latest RPR still compares favourably with the current OR.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 75.63636363636364 and average winning TS around 52.09090909090909. Runner benchmark comparison: RPR vs par -29.63636363636364 · TS vs par -20.09090909090909. Benchmark fit score: -5.1.</p></div>
@@ -2425,6 +3528,7 @@ footer {
                 <span class="runner-style">Late-energy finisher</span>
             </summary>
             <div class="runner-body">
+                <div class="runner-meta-strip"><div><span>Trainer</span><strong>Philip Kirby</strong></div><div><span>Jockey</span><strong>Oliver Carmichael(5)</strong></div><div><span>Age</span><strong>6</strong></div><div><span>Draw</span><strong>8</strong></div><div><span>OR</span><strong>46.0</strong></div><div><span>RPR</span><strong>35.0</strong></div><div><span>TS</span><strong>27.0</strong></div><div><span>Form</span><strong>0-9006</strong></div></div>
                 <p>Wath Court profiles as a prominent with a regression risk trajectory. Distance intelligence grade is D. Model alignment is 2/6. Balanced setup suits adaptable/prominent profile ✅</p>
                 <div class="chip-row"><span class="chip bad">Fragile profile</span><span class="chip bad">Regression risk</span><span class="chip good">Late-energy finisher</span><span class="chip good">DEI D</span></div>
                 
@@ -2440,11 +3544,32 @@ footer {
     
                 
     <div class="timing-context">
-        <div><span>Approx winning time</span><strong>Timing par developing</strong></div>
+        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        
+        <p class="small-line">11.0 race sample · MEDIUM confidence</p>
     </div>
     
+                
+        <div class="previous-runs">
+            <strong>Previous runs</strong>
+            <table class="rp-table">
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Latest evidence</th>
+                        <th>FF Timing Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0-9006</td>
+                        <td>Held up in rear - no impression from 2f out</td>
+                        <td><span class="timing-pill timing-grey">GREY - awaiting timing feed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
                 <div class="context-grid">
                     <div><strong>Handicap read</strong><p>The current mark looks demanding against the available peak rating evidence.</p></div>
                     <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 75.63636363636364 and average winning TS around 52.09090909090909. Runner benchmark comparison: RPR vs par -40.63636363636364 · TS vs par -25.09090909090909. Benchmark fit score: -5.1.</p></div>
