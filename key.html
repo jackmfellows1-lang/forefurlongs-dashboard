@@ -507,6 +507,104 @@ footer {
     font-size:12px;
     line-height:1.6;
 }
+
+.runner-meta-strip {
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:8px;
+    margin:12px 0;
+}
+.runner-meta-strip div {
+    border:1px solid var(--line);
+    background:rgba(5,9,20,.36);
+    border-radius:12px;
+    padding:9px;
+}
+.runner-meta-strip span {
+    display:block;
+    color:var(--muted);
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    margin-bottom:3px;
+}
+.runner-meta-strip strong {
+    font-family:Sora;
+    font-size:12px;
+}
+.previous-runs {
+    margin-top:12px;
+    overflow-x:auto;
+}
+.previous-runs > strong {
+    display:block;
+    font-family:Sora;
+    margin-bottom:8px;
+    color:#dbeafe;
+}
+.rp-table {
+    width:100%;
+    border-collapse:collapse;
+    min-width:720px;
+    overflow:hidden;
+    border-radius:14px;
+    border:1px solid var(--line);
+    background:rgba(5,9,20,.42);
+}
+.rp-table th {
+    background:rgba(15,23,42,.92);
+    color:#cbd5e1;
+    font-family:Sora;
+    font-size:11px;
+    text-align:left;
+    padding:10px;
+    border-bottom:1px solid var(--line);
+    white-space:nowrap;
+}
+.rp-table td {
+    padding:10px;
+    border-bottom:1px solid rgba(148,163,184,.13);
+    color:#e5e7eb;
+    font-size:12px;
+    vertical-align:middle;
+}
+.rp-table tr:nth-child(even) td {
+    background:rgba(148,163,184,.045);
+}
+.timing-pill {
+    display:inline-flex;
+    align-items:center;
+    border-radius:999px;
+    padding:5px 8px;
+    font-family:Sora;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.03em;
+    white-space:nowrap;
+}
+.timing-gold {
+    color:#fff7cc!important;
+    background:rgba(248,216,120,.18);
+    border:1px solid rgba(248,216,120,.55);
+    box-shadow:0 0 18px rgba(248,216,120,.28);
+}
+.timing-green {
+    color:#bbf7d0!important;
+    background:rgba(34,197,94,.16);
+    border:1px solid rgba(34,197,94,.48);
+    box-shadow:0 0 16px rgba(34,197,94,.20);
+}
+.timing-amber {
+    color:#fde68a!important;
+    background:rgba(245,158,11,.15);
+    border:1px solid rgba(245,158,11,.42);
+}
+.timing-grey {
+    color:#cbd5e1!important;
+    background:rgba(148,163,184,.12);
+    border:1px solid rgba(148,163,184,.22);
+}
+
 @media (max-width:780px) {
     body { padding:12px; }
     .topnav,.race-header,.horse-head { grid-template-columns:1fr; display:grid; }
@@ -515,6 +613,7 @@ footer {
     .race-score,.horse-score { text-align:left; }
     .brief-grid,.race-intel-grid,.main-danger,.context-grid,.grid-2,.filter-panel,.key-grid { grid-template-columns:1fr; }
     .bar-row { grid-template-columns:1fr; gap:5px; }
+    .runner-meta-strip { grid-template-columns:repeat(2,1fr); }
     .runner.compact summary { grid-template-columns:1fr auto; }
     .runner-style { display:none; }
 }
@@ -552,7 +651,7 @@ footer {
         <div class="key-item"><strong>Benchmark Read</strong><p>Compares the horse’s ability evidence against what has historically been required to win this course/distance race type.</p></div>
         <div class="key-item"><strong>Draw Confidence</strong><p>A small confidence modifier from draw-bias evidence. It is capped so it cannot overrule ability; it only nudges confidence up or down.</p></div>
         <div class="key-item"><strong>Trajectory</strong><p>Indicates whether the horse appears improving, stable or regressing based on recent form, comments, memory profile and finishing signals.</p></div>
-        <div class="key-item"><strong>Approx Winning Time</strong><p>An estimated historical par for the race based on course/distance timing data where available. If unavailable, the timing layer is still developing.</p></div>
+        <div class="key-item"><strong>Approx Winning Time</strong><p>An estimated historical winning-time par matched as closely as possible by course, distance, class and going. Horse previous runs can be compared against this using the FF Timing Read.</p></div>
     </div>
 </section>
 
