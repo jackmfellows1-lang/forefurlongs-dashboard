@@ -3,620 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contextual Racing Intelligence | ForeFurlongs</title>
+<title>ForeFurlongs Intelligence | ForeFurlongs</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Sora:wght@600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-    --bg:#050914;
-    --panel:rgba(12,22,36,.92);
-    --panel2:rgba(17,31,52,.92);
-    --text:#f8fafc;
-    --muted:#94a3b8;
-    --line:rgba(148,163,184,.22);
-    --green:#22c55e;
-    --blue:#38bdf8;
-    --amber:#f59e0b;
-    --red:#ef4444;
-    --violet:#a78bfa;
-    --gold:#f8d878;
-}
-* { box-sizing:border-box; }
-body {
-    margin:0;
-    padding:18px;
-    background:
-        radial-gradient(circle at 8% 0%,rgba(34,197,94,.15),transparent 28%),
-        radial-gradient(circle at 92% 4%,rgba(56,189,248,.12),transparent 30%),
-        linear-gradient(180deg,#07111f 0%,#050914 100%);
-    color:var(--text);
-    font-family:Inter,Arial,sans-serif;
-}
-body.page-bets {
-    background:
-        radial-gradient(circle at 10% 0%,rgba(214,184,90,.14),transparent 28%),
-        radial-gradient(circle at 95% 6%,rgba(34,197,94,.10),transparent 30%),
-        linear-gradient(180deg,#090b10 0%,#050914 100%);
-}
-a { color:inherit; text-decoration:none; }
-.topnav,.page-hero,.content,footer {
-    max-width:1200px;
-    margin-left:auto;
-    margin-right:auto;
-}
-.topnav {
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:18px;
-    margin:6px auto 22px;
-}
-.brand-lockup {
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-.logo {
-    width:40px;
-    height:40px;
-    border-radius:12px;
-    display:grid;
-    place-items:center;
-    font-family:Sora;
-    font-weight:800;
-    border:1px solid rgba(34,197,94,.55);
-    background:linear-gradient(135deg,rgba(34,197,94,.32),rgba(56,189,248,.11));
-    box-shadow:0 0 24px rgba(34,197,94,.22);
-}
-.brand-lockup strong {
-    display:block;
-    font-family:Space Grotesk;
-    letter-spacing:.04em;
-}
-.brand-lockup span {
-    color:var(--muted);
-    font-size:12px;
-}
-.navlinks {
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-    justify-content:flex-end;
-}
-.navlinks a {
-    font-family:Sora;
-    font-size:12px;
-    padding:9px 12px;
-    border:1px solid var(--line);
-    border-radius:999px;
-    color:#dbeafe;
-    background:rgba(15,23,42,.46);
-}
-.navlinks a.active {
-    color:#86efac;
-    border-color:rgba(34,197,94,.45);
-    background:rgba(34,197,94,.10);
-}
-.page-hero {
-    border:1px solid rgba(56,189,248,.24);
-    border-radius:30px;
-    padding:28px;
-    margin-bottom:18px;
-    background:linear-gradient(135deg,rgba(13,23,38,.96),rgba(5,9,20,.90));
-    position:relative;
-    overflow:hidden;
-}
-.page-bets .page-hero {
-    border-color:rgba(214,184,90,.35);
-    background:linear-gradient(135deg,rgba(30,25,12,.96),rgba(5,9,20,.92));
-}
-.page-hero:after {
-    content:"";
-    position:absolute;
-    top:0;
-    left:-50%;
-    width:36%;
-    height:100%;
-    background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);
-    animation:sweep 6s ease-in-out infinite;
-}
-@keyframes sweep {
-    0%,45% { left:-50%; }
-    100% { left:120%; }
-}
-.eyebrow {
-    font-family:Sora;
-    text-transform:uppercase;
-    letter-spacing:.14em;
-    color:#86efac;
-    font-size:12px;
-    font-weight:800;
-}
-.page-bets .eyebrow {
-    color:var(--gold);
-}
-h1,h2,h3,h4 {
-    font-family:Space Grotesk;
-    letter-spacing:-.02em;
-}
-h1 {
-    position:relative;
-    font-size:clamp(38px,6vw,72px);
-    line-height:.94;
-    margin:12px 0;
-    max-width:900px;
-}
-.page-hero p {
-    position:relative;
-    color:var(--muted);
-    max-width:850px;
-    line-height:1.65;
-    font-size:16px;
-}
-.content {
-    display:grid;
-    gap:18px;
-}
-.brief-grid,.race-intel-grid,.main-danger,.metric-strip,.context-grid {
-    display:grid;
-    gap:12px;
-}
-.brief-grid {
-    grid-template-columns:repeat(4,1fr);
-}
-.brief-card,.race-card,.horse-card,.panel {
-    border:1px solid var(--line);
-    border-radius:24px;
-    background:var(--panel);
-    box-shadow:0 16px 42px rgba(0,0,0,.24);
-}
-.brief-card {
-    padding:16px;
-}
-.brief-card span,.race-intel-grid span,.main-danger span,.timing-context span,.metric-box span {
-    display:block;
-    color:var(--muted);
-    font-size:12px;
-    margin-bottom:6px;
-}
-.brief-card strong {
-    font-family:Sora;
-    font-size:28px;
-}
-.race-card {
-    padding:20px;
-    position:relative;
-    overflow:hidden;
-}
-.page-bets .race-card {
-    border-color:rgba(214,184,90,.24);
-}
-.race-card:before,.horse-card:before {
-    content:"";
-    position:absolute;
-    left:0;
-    top:0;
-    width:100%;
-    height:2px;
-    background:linear-gradient(90deg,transparent,var(--blue),transparent);
-    animation:scan 5s linear infinite;
-}
-.page-bets .race-card:before {
-    background:linear-gradient(90deg,transparent,var(--gold),transparent);
-}
-@keyframes scan {
-    0% { transform:translateX(-100%); }
-    100% { transform:translateX(100%); }
-}
-.race-header,.horse-head {
-    display:grid;
-    grid-template-columns:1fr auto;
-    gap:18px;
-    align-items:start;
-}
-.race-header h2,.horse-head h3 {
-    margin:5px 0;
-    font-size:clamp(26px,4vw,42px);
-}
-.race-meta {
-    color:var(--muted);
-    margin:0;
-}
-.race-score,.horse-score {
-    text-align:right;
-    min-width:132px;
-}
-.race-score span,.horse-score span {
-    color:var(--muted);
-    font-size:11px;
-    font-family:Sora;
-    text-transform:uppercase;
-    letter-spacing:.09em;
-}
-.race-score strong,.horse-score strong {
-    display:block;
-    font-family:Sora;
-    font-size:48px;
-    line-height:1;
-    margin:6px 0;
-}
-.page-bets .race-score strong,
-.page-bets .main-danger strong {
-    color:var(--gold)!important;
-}
-.race-score em {
-    display:block;
-    font-style:normal;
-    color:#dbeafe;
-    font-size:12px;
-}
-.elite { color:#86efac!important; }
-.good { color:#bae6fd!important; }
-.warn { color:#fde68a!important; }
-.bad { color:#fecaca!important; }
-.neutral { color:#cbd5e1!important; }
-.race-intel-grid {
-    grid-template-columns:repeat(4,1fr);
-    margin:18px 0;
-}
-.race-intel-grid div,.main-danger div,.metric-box,.timing-context,.condition-record,.context-grid div {
-    border:1px solid var(--line);
-    background:rgba(5,9,20,.45);
-    border-radius:18px;
-    padding:14px;
-}
-.race-intel-grid strong,.main-danger strong {
-    font-family:Sora;
-    font-size:15px;
-}
-.synopsis {
-    border-left:3px solid var(--blue);
-    background:rgba(56,189,248,.07);
-    border-radius:18px;
-    padding:16px;
-    margin:14px 0;
-}
-.page-bets .synopsis {
-    border-left-color:var(--gold);
-    background:rgba(214,184,90,.08);
-}
-.synopsis h3 {
-    margin:0 0 8px;
-}
-.synopsis p,.summary,.main-danger p,.runner-body p,.context-grid p {
-    color:#cbd5e1;
-    line-height:1.62;
-    margin:0;
-}
-.main-danger {
-    grid-template-columns:1fr 1fr;
-    margin:14px 0;
-}
-.chip-row {
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-    margin:10px 0;
-}
-.chip {
-    display:inline-flex;
-    align-items:center;
-    border-radius:999px;
-    padding:7px 10px;
-    font-family:Sora;
-    font-size:11px;
-    font-weight:800;
-    letter-spacing:.04em;
-    text-transform:uppercase;
-    border:1px solid rgba(255,255,255,.12);
-    background:rgba(148,163,184,.11);
-}
-.chip.elite {
-    background:rgba(34,197,94,.13);
-    box-shadow:0 0 16px rgba(34,197,94,.18);
-}
-.chip.good {
-    background:rgba(56,189,248,.12);
-}
-.chip.warn {
-    background:rgba(245,158,11,.13);
-}
-.chip.bad {
-    background:rgba(239,68,68,.13);
-}
-.horse-card {
-    padding:18px;
-    position:relative;
-    overflow:hidden;
-}
-.bars {
-    border:1px solid var(--line);
-    background:rgba(5,9,20,.42);
-    border-radius:18px;
-    padding:14px;
-    margin:14px 0;
-}
-.bar-row {
-    display:grid;
-    grid-template-columns:165px 1fr;
-    gap:10px;
-    align-items:center;
-    margin:9px 0;
-}
-.bar-row span {
-    color:var(--muted);
-    font-size:12px;
-}
-.bar {
-    height:9px;
-    border-radius:999px;
-    overflow:hidden;
-    background:#1e293b;
-}
-.bar i {
-    display:block;
-    height:100%;
-    width:var(--w);
-    background:linear-gradient(90deg,var(--blue),var(--green));
-    border-radius:999px;
-    box-shadow:0 0 16px rgba(34,197,94,.25);
-    animation:grow 1.1s ease both;
-}
-@keyframes grow {
-    from { width:0; }
-    to { width:var(--w); }
-}
-details {
-    border-top:1px solid var(--line);
-    padding-top:12px;
-    margin-top:12px;
-}
-summary {
-    cursor:pointer;
-    font-family:Sora;
-    color:#dbeafe;
-    font-weight:800;
-}
-.runner.compact {
-    border:1px solid var(--line);
-    border-radius:18px;
-    padding:12px;
-    background:rgba(15,23,42,.48);
-    margin:10px 0;
-}
-.runner.compact summary {
-    display:grid;
-    grid-template-columns:1fr auto auto;
-    gap:12px;
-    align-items:center;
-}
-.runner-name {
-    font-family:Space Grotesk;
-    font-size:18px;
-}
-.runner-score {
-    font-family:Sora;
-    font-size:18px;
-}
-.runner-style {
-    color:var(--muted);
-    font-size:12px;
-}
-.runner-body {
-    padding-top:12px;
-}
-.context-grid {
-    grid-template-columns:repeat(2,1fr);
-    margin-top:12px;
-}
-.timing-context {
-    margin-top:12px;
-}
-.timing-context div {
-    display:flex;
-    justify-content:space-between;
-    gap:12px;
-    margin:4px 0;
-}
-.small-line {
-    font-size:12px;
-    color:var(--muted)!important;
-    margin-top:8px!important;
-}
-.condition-record {
-    margin-top:12px;
-}
-.mini-grid {
-    display:grid;
-    grid-template-columns:1fr auto;
-    gap:6px 12px;
-    margin:8px 0;
-}
-.mini-grid span {
-    color:var(--muted);
-}
-.muted-card {
-    opacity:.78;
-}
-.grid-2 {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:18px;
-}
-.filter-panel {
-    border:1px solid var(--line);
-    border-radius:22px;
-    padding:16px;
-    background:rgba(5,9,20,.45);
-    display:grid;
-    grid-template-columns:1fr 1fr auto;
-    gap:12px;
-    align-items:end;
-}
-.filter-panel label {
-    display:block;
-    color:var(--muted);
-    font-size:12px;
-    margin-bottom:6px;
-}
-.filter-panel select,.filter-panel button {
-    width:100%;
-    border:1px solid rgba(148,163,184,.28);
-    border-radius:12px;
-    padding:11px 12px;
-    background:#07111f;
-    color:#f8fafc;
-    font-family:Sora;
-}
-.filter-panel button {
-    cursor:pointer;
-    color:#86efac;
-}
-.key-section {
-    padding:20px;
-}
-.key-section h2 {
-    margin-top:0;
-}
-.key-grid {
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-}
-.key-item {
-    border:1px solid var(--line);
-    border-radius:18px;
-    padding:14px;
-    background:rgba(5,9,20,.44);
-}
-.key-item strong {
-    display:block;
-    color:#86efac;
-    font-family:Sora;
-    margin-bottom:6px;
-}
-.key-item p {
-    margin:0;
-    color:#cbd5e1;
-    line-height:1.55;
-}
-footer {
-    margin-top:28px;
-    color:var(--muted);
-    font-size:12px;
-    line-height:1.6;
-}
-
-.runner-meta-strip {
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:8px;
-    margin:12px 0;
-}
-.runner-meta-strip div {
-    border:1px solid var(--line);
-    background:rgba(5,9,20,.36);
-    border-radius:12px;
-    padding:9px;
-}
-.runner-meta-strip span {
-    display:block;
-    color:var(--muted);
-    font-size:10px;
-    text-transform:uppercase;
-    letter-spacing:.08em;
-    margin-bottom:3px;
-}
-.runner-meta-strip strong {
-    font-family:Sora;
-    font-size:12px;
-}
-.previous-runs {
-    margin-top:12px;
-    overflow-x:auto;
-}
-.previous-runs > strong {
-    display:block;
-    font-family:Sora;
-    margin-bottom:8px;
-    color:#dbeafe;
-}
-.rp-table {
-    width:100%;
-    border-collapse:collapse;
-    min-width:720px;
-    overflow:hidden;
-    border-radius:14px;
-    border:1px solid var(--line);
-    background:rgba(5,9,20,.42);
-}
-.rp-table th {
-    background:rgba(15,23,42,.92);
-    color:#cbd5e1;
-    font-family:Sora;
-    font-size:11px;
-    text-align:left;
-    padding:10px;
-    border-bottom:1px solid var(--line);
-    white-space:nowrap;
-}
-.rp-table td {
-    padding:10px;
-    border-bottom:1px solid rgba(148,163,184,.13);
-    color:#e5e7eb;
-    font-size:12px;
-    vertical-align:middle;
-}
-.rp-table tr:nth-child(even) td {
-    background:rgba(148,163,184,.045);
-}
-.timing-pill {
-    display:inline-flex;
-    align-items:center;
-    border-radius:999px;
-    padding:5px 8px;
-    font-family:Sora;
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:.03em;
-    white-space:nowrap;
-}
-.timing-gold {
-    color:#fff7cc!important;
-    background:rgba(248,216,120,.18);
-    border:1px solid rgba(248,216,120,.55);
-    box-shadow:0 0 18px rgba(248,216,120,.28);
-}
-.timing-green {
-    color:#bbf7d0!important;
-    background:rgba(34,197,94,.16);
-    border:1px solid rgba(34,197,94,.48);
-    box-shadow:0 0 16px rgba(34,197,94,.20);
-}
-.timing-amber {
-    color:#fde68a!important;
-    background:rgba(245,158,11,.15);
-    border:1px solid rgba(245,158,11,.42);
-}
-.timing-grey {
-    color:#cbd5e1!important;
-    background:rgba(148,163,184,.12);
-    border:1px solid rgba(148,163,184,.22);
-}
-
-@media (max-width:780px) {
-    body { padding:12px; }
-    .topnav,.race-header,.horse-head { grid-template-columns:1fr; display:grid; }
-    .topnav { align-items:start; }
-    .navlinks { justify-content:flex-start; }
-    .race-score,.horse-score { text-align:left; }
-    .brief-grid,.race-intel-grid,.main-danger,.context-grid,.grid-2,.filter-panel,.key-grid { grid-template-columns:1fr; }
-    .bar-row { grid-template-columns:1fr; gap:5px; }
-    .runner-meta-strip { grid-template-columns:repeat(2,1fr); }
-    .runner.compact summary { grid-template-columns:1fr auto; }
-    .runner-style { display:none; }
-}
+    --bg:#030712; --panel:rgba(9,18,32,.78); --text:#f8fafc; --muted:#8ea3bb;
+    --line:rgba(180,205,235,.16); --green:#5DFFB1; --blue:#7dd3fc; --amber:#ffd166;
+    --gold:#f8d878; --red:#ff6673; --shadow:0 28px 90px rgba(0,0,0,.42);
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;padding:22px;min-height:100vh;color:var(--text);font-family:Inter,Arial,sans-serif;overflow-x:hidden;background:radial-gradient(circle at 8% -8%,rgba(93,255,177,.18),transparent 32%),radial-gradient(circle at 86% 0%,rgba(125,211,252,.16),transparent 30%),linear-gradient(180deg,#07111f 0%,#030712 58%,#02040a 100%)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.026) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.026) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.55),transparent 72%)}
+body.page-bets{background:radial-gradient(circle at 10% -8%,rgba(248,216,120,.17),transparent 32%),radial-gradient(circle at 86% 0%,rgba(93,255,177,.11),transparent 31%),linear-gradient(180deg,#0d0c10 0%,#050914 70%)}
+a{color:inherit;text-decoration:none}.topnav,.page-hero,.content,footer{max-width:1240px;margin-left:auto;margin-right:auto}
+.topnav{position:sticky;top:12px;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:18px;margin:4px auto 22px;padding:10px;border:1px solid var(--line);border-radius:22px;background:rgba(3,7,18,.68);backdrop-filter:blur(18px);box-shadow:0 18px 55px rgba(0,0,0,.25)}
+.brand-lockup{display:flex;align-items:center;gap:12px}.logo{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;font-family:Sora;font-weight:800;color:#04100b;background:radial-gradient(circle at 30% 15%,#fff,transparent 18%),linear-gradient(135deg,var(--green),var(--blue));box-shadow:0 0 34px rgba(93,255,177,.28),inset 0 0 18px rgba(255,255,255,.35)}
+.brand-lockup strong{display:block;font-family:Space Grotesk;letter-spacing:.035em;font-size:15px}.brand-lockup span{color:var(--muted);font-size:12px}
+.navlinks{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.navlinks a{font-family:Sora;font-size:12px;padding:10px 13px;border:1px solid var(--line);border-radius:999px;color:#dbeafe;background:rgba(255,255,255,.045);transition:.22s}.navlinks a:hover{transform:translateY(-1px);border-color:rgba(125,211,252,.42);background:rgba(125,211,252,.09)}.navlinks a.active{color:#06130d;border-color:transparent;background:linear-gradient(135deg,var(--green),var(--blue));box-shadow:0 0 24px rgba(93,255,177,.18)}
+.page-hero{position:relative;overflow:hidden;border:1px solid rgba(125,211,252,.22);border-radius:34px;padding:34px;margin-bottom:20px;background:linear-gradient(135deg,rgba(255,255,255,.085),rgba(255,255,255,.025)),radial-gradient(circle at 18% 0%,rgba(93,255,177,.16),transparent 38%),rgba(4,10,20,.74);backdrop-filter:blur(18px);box-shadow:var(--shadow)}
+.page-hero:after{content:"";position:absolute;inset:-1px;background:linear-gradient(115deg,transparent 0%,rgba(255,255,255,.10) 18%,transparent 34%);transform:translateX(-100%);animation:sweep 7s ease-in-out infinite}@keyframes sweep{0%,50%{transform:translateX(-100%)}100%{transform:translateX(125%)}}
+.eyebrow,.micro-label{font-family:Sora;text-transform:uppercase;letter-spacing:.16em;color:var(--green);font-size:11px;font-weight:800}h1,h2,h3,h4{font-family:Space Grotesk;letter-spacing:-.045em}h1{position:relative;font-size:clamp(44px,7vw,82px);line-height:.9;margin:12px 0;max-width:960px}.page-hero p{position:relative;color:#b8c7d9;max-width:880px;line-height:1.7;font-size:16px}.content{display:grid;gap:22px}
+.brief-grid,.race-intel-grid,.main-danger,.context-grid,.premium-grid{display:grid;gap:14px}.brief-grid{grid-template-columns:repeat(4,1fr)}.brief-card,.race-card,.horse-card,.panel{border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,255,255,.025));backdrop-filter:blur(16px);box-shadow:var(--shadow)}.brief-card{padding:18px}.brief-card span,.race-intel-grid span,.main-danger span,.timing-context span{display:block;color:var(--muted);font-size:11px;margin-bottom:6px;text-transform:uppercase;letter-spacing:.08em}.brief-card strong{font-family:Sora;font-size:32px}
+.race-card{position:relative;overflow:hidden;padding:24px}.premium-race-card{background:radial-gradient(circle at 8% 0%,rgba(93,255,177,.10),transparent 30%),radial-gradient(circle at 100% 0%,rgba(125,211,252,.11),transparent 28%),linear-gradient(145deg,rgba(10,22,38,.88),rgba(4,10,20,.78))}.race-card:before,.horse-card:before{content:"";position:absolute;left:18px;right:18px;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--blue),var(--green),transparent)}
+.race-header,.horse-head{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:start}.race-header h2,.horse-head h3{margin:5px 0 8px;font-size:clamp(32px,4.8vw,56px);line-height:.92}.race-meta{color:#9fb0c6;margin:0;font-size:15px}.race-score,.horse-score{text-align:right;min-width:150px}.race-score span,.horse-score span{color:var(--muted);font-size:10px;font-family:Sora;text-transform:uppercase;letter-spacing:.12em}.race-score strong,.horse-score strong{display:block;font-family:Sora;font-size:62px;line-height:.9;margin:7px 0;color:var(--gold);text-shadow:0 0 28px rgba(248,216,120,.18)}.race-score em{display:inline-flex;font-style:normal;color:#dbeafe;font-size:12px;border:1px solid var(--line);border-radius:999px;padding:7px 10px;background:rgba(255,255,255,.045)}
+.elite{color:var(--green)!important}.good{color:var(--blue)!important}.warn{color:var(--amber)!important}.bad{color:var(--red)!important}.neutral{color:#cbd5e1!important}.race-intel-grid{grid-template-columns:repeat(4,1fr);margin:22px 0}.race-intel-grid div,.main-danger div,.timing-context,.condition-record,.context-grid div{border:1px solid var(--line);background:rgba(2,6,15,.44);border-radius:20px;padding:15px}.premium-intel-grid div{min-height:88px;transition:.25s}.premium-intel-grid div:hover{transform:translateY(-2px);border-color:rgba(125,211,252,.32);background:rgba(125,211,252,.055)}.race-intel-grid strong,.main-danger strong{display:block;font-family:Sora;font-size:16px}.race-intel-grid small{display:block;margin-top:7px;color:#7f93aa;font-size:11px;line-height:1.35}
+.synopsis{border:1px solid rgba(125,211,252,.18);background:radial-gradient(circle at 0% 0%,rgba(125,211,252,.12),transparent 34%),rgba(125,211,252,.045);border-radius:24px;padding:18px;margin:16px 0}.premium-snapshot{display:grid;grid-template-columns:260px 1fr;gap:18px;align-items:start}.premium-snapshot h3{margin:6px 0 0;font-size:24px}.premium-snapshot ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}.premium-snapshot li{position:relative;padding-left:22px;color:#dbeafe;line-height:1.45}.premium-snapshot li:before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--blue));box-shadow:0 0 12px rgba(93,255,177,.35)}
+.summary,.main-danger p,.runner-body p,.context-grid p{color:#cbd5e1;line-height:1.65;margin:0}.main-danger{grid-template-columns:1fr 1fr;margin:16px 0}.premium-main-danger strong{color:var(--gold);font-size:18px}.chip-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.chip{display:inline-flex;align-items:center;border-radius:999px;padding:7px 10px;font-family:Sora;font-size:10px;font-weight:800;letter-spacing:.055em;text-transform:uppercase;border:1px solid rgba(255,255,255,.12);background:rgba(148,163,184,.10)}.chip.elite{color:#bbf7d0!important;background:rgba(93,255,177,.12);border-color:rgba(93,255,177,.28);box-shadow:0 0 18px rgba(93,255,177,.16)}.chip.good{color:#d8f3ff!important;background:rgba(125,211,252,.12);border-color:rgba(125,211,252,.24)}.chip.warn{color:#fde68a!important;background:rgba(245,158,11,.13)}.chip.bad{color:#fecaca!important;background:rgba(239,68,68,.14)}
+.horse-card{padding:22px;position:relative;overflow:hidden}.premium-horse-card{background:radial-gradient(circle at 0% 0%,rgba(93,255,177,.10),transparent 30%),linear-gradient(145deg,rgba(9,18,32,.86),rgba(4,10,20,.72))}.hero-score-stack{display:grid;gap:10px;justify-items:end}.ff-score-block{display:inline-grid;justify-items:center;min-width:108px;border:1px solid var(--line);border-radius:20px;padding:10px 14px;background:rgba(2,6,15,.52)}.ff-score-block span{font-family:Sora;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.13em}.ff-score-block strong{font-family:Sora;font-size:28px;line-height:1;margin-top:4px}.score-elite{border-color:rgba(93,255,177,.42);box-shadow:0 0 24px rgba(93,255,177,.14)}.score-good{border-color:rgba(125,211,252,.35)}.score-watch{border-color:rgba(255,209,102,.30)}.score-muted{opacity:.75}.score-elite strong{color:var(--green)}.score-good strong{color:var(--blue)}.score-watch strong{color:var(--amber)}.score-muted strong{color:#cbd5e1}
+.bet-badge{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:8px 12px;font-family:Sora;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);white-space:nowrap}.bet-primary{color:#06130d;background:linear-gradient(135deg,var(--green),var(--blue));border-color:transparent;box-shadow:0 0 22px rgba(93,255,177,.22)}.bet-value{color:#1e1400;background:linear-gradient(135deg,var(--gold),#ffae42);border-color:transparent}.bet-watch{color:#dbeafe;background:rgba(125,211,252,.10)}.bet-avoid{color:#fecaca;background:rgba(239,68,68,.13)}
+.runner-meta-strip{display:grid;grid-template-columns:repeat(9,1fr);gap:8px;margin:14px 0}.runner-meta-strip div{border:1px solid var(--line);background:rgba(2,6,15,.34);border-radius:14px;padding:10px}.runner-meta-strip span{display:block;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.10em;margin-bottom:5px}.runner-meta-strip strong{font-family:Sora;font-size:12px;color:#eaf7ff}
+.ff-intel-panel{margin:14px 0;border:1px solid rgba(93,255,177,.20);border-radius:22px;padding:16px;background:radial-gradient(circle at 0% 0%,rgba(93,255,177,.13),transparent 34%),rgba(2,6,15,.42)}.ff-intel-head{display:flex;justify-content:space-between;align-items:start;gap:12px;margin-bottom:14px}.ff-intel-head strong{display:block;margin-top:4px;font-family:Space Grotesk;font-size:24px}.ff-intel-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:12px}.ff-intel-metrics div{border:1px solid var(--line);border-radius:14px;padding:10px;background:rgba(255,255,255,.035)}.ff-intel-metrics span{display:block;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.1em}.ff-intel-metrics strong{display:block;margin-top:5px;font-family:Sora;color:#dffcff}.timing-strip{display:flex;justify-content:space-between;gap:14px;margin-top:13px;padding-top:12px;border-top:1px solid rgba(255,255,255,.09)}.timing-strip span{color:var(--muted);font-size:11px}.timing-strip strong{font-family:Sora;color:var(--gold)}
+.bars{border:1px solid var(--line);background:rgba(2,6,15,.34);border-radius:20px;padding:15px;margin:15px 0}.bar-row{display:grid;grid-template-columns:175px 1fr;gap:12px;align-items:center;margin:9px 0}.bar-row span{color:var(--muted);font-size:12px}.bar{height:9px;border-radius:999px;overflow:hidden;background:#111827}.bar i{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--blue),var(--green));border-radius:999px;box-shadow:0 0 18px rgba(93,255,177,.25);animation:grow 1.1s ease both}@keyframes grow{from{width:0}to{width:var(--w)}}
+details{border-top:1px solid rgba(255,255,255,.10);padding-top:13px;margin-top:13px}summary{cursor:pointer;font-family:Sora;color:#dbeafe;font-weight:800;list-style:none}summary::-webkit-details-marker{display:none}summary:before{content:"▾";display:inline-block;margin-right:7px;color:var(--green)}details[open]>summary:before{transform:rotate(180deg)}
+.runner.compact{border:1px solid var(--line);border-radius:22px;padding:14px;background:rgba(255,255,255,.035);margin:12px 0;transition:.25s}.runner.compact:hover{transform:translateY(-2px);border-color:rgba(125,211,252,.26);background:rgba(125,211,252,.045)}.runner.compact summary{display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center}.runner-summary-main{display:grid;gap:3px}.runner-name{font-family:Space Grotesk;font-size:21px;letter-spacing:-.02em}.runner-summary-main small{color:var(--muted);font-size:12px}.runner-body{padding-top:14px}.premium-grid{grid-template-columns:1fr 1fr;margin-top:12px}.context-grid{grid-template-columns:repeat(2,1fr);margin-top:14px}.timing-context{margin-top:12px}.timing-context div{display:flex;justify-content:space-between;gap:12px;margin:4px 0}.timing-context strong{color:var(--gold);font-family:Sora}.small-line{font-size:11px;color:var(--muted)!important;margin-top:9px!important}.condition-record{margin-top:12px}.mini-grid{display:grid;grid-template-columns:1fr auto;gap:6px 12px;margin:8px 0}.mini-grid span{color:var(--muted)}.muted-card{opacity:.78}
+.previous-runs{margin-top:14px;overflow-x:auto}.previous-runs>strong{display:block;font-family:Sora;margin-bottom:9px;color:#dbeafe}.rp-table{width:100%;border-collapse:separate;border-spacing:0;min-width:760px;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:rgba(2,6,15,.42)}.rp-table th{background:rgba(255,255,255,.055);color:#b9c8da;font-family:Sora;font-size:10px;text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);white-space:nowrap;text-transform:uppercase;letter-spacing:.08em}.rp-table td{padding:12px 10px;border-bottom:1px solid rgba(148,163,184,.10);color:#e5e7eb;font-size:12px;vertical-align:middle}.rp-table tr:hover td{background:rgba(125,211,252,.055)}.rp-table tr:last-child td{border-bottom:none}
+.timing-pill{display:inline-flex;align-items:center;border-radius:999px;padding:6px 9px;font-family:Sora;font-size:10px;font-weight:900;letter-spacing:.04em;white-space:nowrap}.timing-gold{color:#fff7cc!important;background:rgba(248,216,120,.20);border:1px solid rgba(248,216,120,.60);box-shadow:0 0 22px rgba(248,216,120,.30)}.timing-green{color:#bbf7d0!important;background:rgba(93,255,177,.15);border:1px solid rgba(93,255,177,.45);box-shadow:0 0 20px rgba(93,255,177,.20)}.timing-amber{color:#fde68a!important;background:rgba(245,158,11,.16);border:1px solid rgba(245,158,11,.44)}.timing-grey{color:#cbd5e1!important;background:rgba(148,163,184,.12);border:1px solid rgba(148,163,184,.22)}
+.filter-panel{position:sticky;top:92px;z-index:40;border:1px solid var(--line);border-radius:26px;padding:16px;background:rgba(3,7,18,.70);backdrop-filter:blur(18px);display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end;box-shadow:0 18px 55px rgba(0,0,0,.22)}.filter-panel label{display:block;color:var(--muted);font-size:11px;margin-bottom:7px;text-transform:uppercase;letter-spacing:.08em}.filter-panel select,.filter-panel button{width:100%;border:1px solid rgba(148,163,184,.25);border-radius:15px;padding:13px 14px;background:#050914;color:#f8fafc;font-family:Sora}.filter-panel button{cursor:pointer;color:#06130d;background:linear-gradient(135deg,var(--green),var(--blue));border:none}
+.key-section{padding:22px}.key-section h2{margin-top:0}.key-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.key-item{border:1px solid var(--line);border-radius:20px;padding:16px;background:rgba(255,255,255,.035)}.key-item strong{display:block;color:var(--green);font-family:Sora;margin-bottom:7px}.key-item p{margin:0;color:#cbd5e1;line-height:1.58}footer{margin-top:30px;color:var(--muted);font-size:12px;line-height:1.65;padding-bottom:20px}
+@media(max-width:900px){body{padding:12px}.topnav{position:relative;top:auto;align-items:start;display:grid}.navlinks{justify-content:flex-start}.page-hero{padding:24px;border-radius:28px}.race-header,.horse-head{grid-template-columns:1fr}.race-score,.horse-score,.hero-score-stack{text-align:left;justify-items:start}.brief-grid,.race-intel-grid,.main-danger,.context-grid,.premium-grid,.filter-panel,.key-grid,.premium-snapshot{grid-template-columns:1fr}.runner-meta-strip{grid-template-columns:repeat(2,1fr)}.ff-intel-metrics{grid-template-columns:repeat(2,1fr)}.bar-row{grid-template-columns:1fr;gap:5px}.runner.compact summary{grid-template-columns:1fr auto}.runner.compact summary .bet-badge{grid-column:1/-1;justify-self:start}.filter-panel{position:relative;top:auto}}
 </style>
 </head>
 <body class="page-home">
@@ -634,7 +60,7 @@ footer {
     
 <section class="page-hero">
     <div class="eyebrow">ForeFurlongs Intelligence</div>
-    <h1>Contextual Racing Intelligence</h1>
+    <h1>ForeFurlongs Intelligence</h1>
     <p>A race-first analytics dashboard built around pace, ground, draw, class, distance, timing and tactical environment. The aim is simple: explain why a horse is interesting today, not just whether it has a high rating.</p>
 </section>
 <main class="content">
@@ -646,20 +72,95 @@ footer {
     <div class="brief-card"><span>Improving / positive profiles</span><strong>17</strong></div>
 </section>
 <section class="panel" style="padding:20px;"><div class="eyebrow">Highest Contextual Profile</div>
-    <article class="horse-card">
-        <div class="horse-head">
+    <article class="horse-card premium-horse-card">
+        <div class="horse-head premium-horse-head">
             <div>
-                <div class="eyebrow">Context profile</div>
+                <div class="eyebrow">Premium runner profile</div>
                 <h3>First Principle</h3>
                 <div class="chip-row"><span class="chip elite">Dominant edge</span><span class="chip neutral">Stable</span><span class="chip good">Front-end controller</span><span class="chip good">DEI E</span><span class="chip warn">Draw -1</span></div>
             </div>
-            <div class="horse-score">
-                <span>Context Edge</span>
-                <strong class="warn">49.0</strong>
+            <div class="hero-score-stack">
+                
+    <div class="ff-score-block score-good">
+        <span>FF Edge</span>
+        <strong>49.0</strong>
+    </div>
+    
+                <span class="bet-badge bet-value">✅ VALUE WATCH</span>
             </div>
         </div>
-        <div class="runner-meta-strip"><div><span>Trainer</span><strong>William Haggas</strong></div><div><span>Jockey</span><strong>Tom Marquand</strong></div><div><span>Age</span><strong>4</strong></div><div><span>Draw</span><strong>5</strong></div><div><span>OR</span><strong>95</strong></div><div><span>RPR</span><strong>89.0</strong></div><div><span>TS</span><strong>77.0</strong></div><div><span>Form</span><strong>2-2100</strong></div></div>
-        <p class="summary">First Principle profiles as a front-runner with a stable trajectory. Distance intelligence grade is E. Model alignment is 4/6. Draw data is a slight caution. Possible lone-leader setup ✅</p>
+        
+    <div class="runner-meta-strip">
+        
+        <div>
+            <span>Trainer</span>
+            <strong>William Haggas</strong>
+        </div>
+        
+        <div>
+            <span>Jockey</span>
+            <strong>Tom Marquand</strong>
+        </div>
+        
+        <div>
+            <span>Age</span>
+            <strong>4</strong>
+        </div>
+        
+        <div>
+            <span>Draw</span>
+            <strong>5</strong>
+        </div>
+        
+        <div>
+            <span>OR</span>
+            <strong>95</strong>
+        </div>
+        
+        <div>
+            <span>RPR</span>
+            <strong>89.0</strong>
+        </div>
+        
+        <div>
+            <span>TS</span>
+            <strong>77.0</strong>
+        </div>
+        
+        <div>
+            <span>Form</span>
+            <strong>2-2100</strong>
+        </div>
+        
+        <div>
+            <span>Run Style</span>
+            <strong>Front-runner</strong>
+        </div>
+        
+    </div>
+    
+        
+    <div class="ff-intel-panel">
+        <div class="ff-intel-head">
+            <div>
+                <span class="micro-label">ForeFurlongs Intelligence</span>
+                <strong>First Principle</strong>
+            </div>
+            <span class="bet-badge bet-value">✅ VALUE WATCH</span>
+        </div>
+        <div class="ff-intel-metrics">
+            <div><span>DEI</span><strong>E</strong></div>
+            <div><span>Benchmark</span><strong>9.0</strong></div>
+            <div><span>Pace</span><strong>Front-runner</strong></div>
+            <div><span>Consensus</span><strong>STRONG</strong></div>
+        </div>
+        <p>First Principle profiles as a front-runner with a stable trajectory. Distance intelligence grade is E. Model alignment is 4/6. Draw data is a slight caution. Possible lone-leader setup ✅</p>
+        <div class="timing-strip">
+            <span>Winning Time Par</span>
+            <strong>Awaiting timing benchmark</strong>
+        </div>
+    </div>
+    
         <div class="bars">
     <div class="bar-row">
         <span>Context Edge</span>
@@ -692,9 +193,10 @@ footer {
     </div>
     </div>
         <details>
-            <summary>Open intelligence read</summary>
+            <summary>Open full intelligence read</summary>
             <div class="runner-body">
-                
+                <div class="premium-grid">
+                    
     <div class="condition-record">
         <strong>Today's distance intelligence</strong>
         <div class="mini-grid">
@@ -705,13 +207,14 @@ footer {
         <p><span>Last 3 trip positions:</span> 8</p>
     </div>
     
-                
+                    
     <div class="timing-context">
-        <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
+        <div><span>Approx winning time</span><strong>Awaiting timing benchmark</strong></div>
         <div><span>Last win at trip</span><strong>Awaiting historical win-time layer</strong></div>
-        <p class="small-line">28.0 race sample · HIGH confidence</p>
+        
     </div>
     
+                </div>
                 
         <div class="previous-runs">
             <strong>Previous runs</strong>
@@ -733,9 +236,9 @@ footer {
             </table>
         </div>
         
-                <div class="context-grid">
+                <div class="context-grid premium-context">
                     <div><strong>Handicap read</strong><p>Peak RPR evidence suggests the mark remains workable, with around 7lb historical room.</p></div>
-                    <div><strong>Benchmark read</strong><p>This race type usually requires average winning RPR around 82.78571428571429 and average winning TS around 59.39285714285715. Runner benchmark comparison: RPR vs par 19.21428571428571 · TS vs par 17.60714285714285. Benchmark fit score: 9.0.</p></div>
+                    <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 82.78571428571429 and winning TS par is around 59.39285714285715. Runner versus par: RPR edge +19.2 · TS edge +17.6. Benchmark fit: 9.0.</p></div>
                     <div><strong>Track DNA</strong><p>WINDSOR 1m2f (Turf): late-speed profiles favoured ·  draw impact unclear. Sample size 231 (HIGH confidence).</p></div>
                     <div><strong>Model alignment</strong><p>DEI: ❌ · Benchmark: ✅ · Memory: ✅ · Pace: ✅ · Commentary: ✅ · Sectionals: ❌</p></div>
                     <div><strong>Latest evidence</strong><p>Midfield - hung left and weakened from over 1f out</p></div>
@@ -744,30 +247,36 @@ footer {
         </details>
     </article>
     </section><section class="panel" style="padding:20px;"><h2>Best Race Environments</h2><p class="summary">These are the races where the model sees the cleanest combination of race shape, field separation, contextual fit and tactical support.</p></section>
-    <article class="race-card good" data-course="Leicester" data-race="4:50 · Leicester · 6f">
-        <div class="race-header">
+    <article class="race-card good premium-race-card" data-course="Leicester" data-race="4:50 · Leicester · 6f">
+        <div class="race-header premium-race-header">
             <div>
                 <div class="eyebrow">4:50 · Leicester</div>
                 <h2>4:50 · Leicester · 6f</h2>
                 <p class="race-meta">Class 3 · Good · For Best Ticket Deals Book Online At leicester-racecourse.co.uk Handicap</p>
             </div>
-            <div class="race-score">
+            <div class="race-score premium-race-score">
                 <span>Race Confidence</span>
                 <strong class="good">79</strong>
                 <em>✅ POSSIBLE BET</em>
             </div>
         </div>
-        <div class="race-intel-grid">
+
+        <div class="race-intel-grid premium-intel-grid">
             <div><span>Race DNA</span><strong>Controlled tactical race</strong></div>
             <div><span>Chaos Index</span><strong>Low</strong></div>
-            <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
-            <div><span>Primary action</span><strong>POSSIBLE BET</strong></div>
+            <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong><small>20.0 race sample · HIGH confidence</small></div>
+            <div><span>Primary Action</span><strong>POSSIBLE BET</strong></div>
         </div>
-        <section class="synopsis">
-            <h3>Race Synopsis</h3>
-            <p>Context read: Leicester over 6.0 on Good with 12 runners. Race DNA: Controlled tactical race. Chaos read: Low. The projected shape suggests one runner may get a relatively clean lead. Track position and early control could matter more than raw closing speed. Pilu is the leading contextual fit, rated 45.8. The edge to the field average is +17.8 and the gap to the nearest rival is +8.8. That gives this race a cleaner top-profile shape than a tightly compressed field. Tactical note: Possible lone-leader setup ✅</p>
+
+        <section class="synopsis premium-snapshot">
+            <div>
+                <span class="micro-label">Race Snapshot</span>
+                <h3>What the model sees</h3>
+            </div>
+            <ul><li>Controlled tactical race · chaos low</li><li>Likely lone-leader / tactical-control setup</li><li>Pilu leads the contextual model at 45.8</li><li>Clearer top profile: +8.8 gap to nearest rival</li></ul>
         </section>
-        <div class="main-danger">
+
+        <div class="main-danger premium-main-danger">
             <div>
                 <span>Main Context Fit</span>
                 <strong>Pilu</strong>
@@ -779,36 +288,43 @@ footer {
                 <p>Nearest contextual rival.</p>
             </div>
         </div>
+
         <details class="race-runners" >
             <summary>View full racecard intelligence</summary>
             <div class="runners-list"></div>
         </details>
     </article>
     
-    <article class="race-card good" data-course="Redcar" data-race="2:57 · Redcar · 7f">
-        <div class="race-header">
+    <article class="race-card good premium-race-card" data-course="Redcar" data-race="2:57 · Redcar · 7f">
+        <div class="race-header premium-race-header">
             <div>
                 <div class="eyebrow">2:57 · Redcar</div>
                 <h2>2:57 · Redcar · 7f</h2>
                 <p class="race-meta">Class 6 · Good · Book For Ladies Day - 20th June Handicap</p>
             </div>
-            <div class="race-score">
+            <div class="race-score premium-race-score">
                 <span>Race Confidence</span>
                 <strong class="good">79</strong>
                 <em>✅ POSSIBLE BET</em>
             </div>
         </div>
-        <div class="race-intel-grid">
+
+        <div class="race-intel-grid premium-intel-grid">
             <div><span>Race DNA</span><strong>Pace-pressure sprint</strong></div>
             <div><span>Chaos Index</span><strong>Medium</strong></div>
-            <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
-            <div><span>Primary action</span><strong>POSSIBLE BET</strong></div>
+            <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong><small>21.0 race sample · HIGH confidence</small></div>
+            <div><span>Primary Action</span><strong>POSSIBLE BET</strong></div>
         </div>
-        <section class="synopsis">
-            <h3>Race Synopsis</h3>
-            <p>Context read: Redcar over 7.0 on Good with 11 runners. Race DNA: Pace-pressure sprint. Chaos read: Medium. The model expects genuine early pressure here, with 4 likely leader(s) and 1 prominent/pressing types. That raises the importance of energy conservation, finishing strength and tactical patience. Ey Up He&#x27;s A Star is the leading contextual fit, rated 46.0. The edge to the field average is +28.5 and the gap to the nearest rival is +12.5. That gives this race a cleaner top-profile shape than a tightly compressed field. Tactical note: Hold-up profile in a projected pace-pressure race ✅</p>
+
+        <section class="synopsis premium-snapshot">
+            <div>
+                <span class="micro-label">Race Snapshot</span>
+                <h3>What the model sees</h3>
+            </div>
+            <ul><li>Pace-pressure sprint · chaos medium</li><li>Pace pressure expected — finishing efficiency matters</li><li>Ey Up He&#x27;s A Star leads the contextual model at 46.0</li><li>Clearer top profile: +12.5 gap to nearest rival</li></ul>
         </section>
-        <div class="main-danger">
+
+        <div class="main-danger premium-main-danger">
             <div>
                 <span>Main Context Fit</span>
                 <strong>Ey Up He&#x27;s A Star</strong>
@@ -820,36 +336,43 @@ footer {
                 <p>Nearest contextual rival.</p>
             </div>
         </div>
+
         <details class="race-runners" >
             <summary>View full racecard intelligence</summary>
             <div class="runners-list"></div>
         </details>
     </article>
     
-    <article class="race-card good" data-course="Windsor" data-race="4:25 · Windsor · 10f">
-        <div class="race-header">
+    <article class="race-card good premium-race-card" data-course="Windsor" data-race="4:25 · Windsor · 10f">
+        <div class="race-header premium-race-header">
             <div>
                 <div class="eyebrow">4:25 · Windsor</div>
                 <h2>4:25 · Windsor · 10f</h2>
                 <p class="race-meta">Class 3 · Good To Firm · Find Us At fitzdares.com Handicap (GBBPlus Race)</p>
             </div>
-            <div class="race-score">
+            <div class="race-score premium-race-score">
                 <span>Race Confidence</span>
                 <strong class="good">79</strong>
                 <em>✅ POSSIBLE BET</em>
             </div>
         </div>
-        <div class="race-intel-grid">
+
+        <div class="race-intel-grid premium-intel-grid">
             <div><span>Race DNA</span><strong>Controlled tactical race</strong></div>
             <div><span>Chaos Index</span><strong>Low</strong></div>
-            <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
-            <div><span>Primary action</span><strong>POSSIBLE BET</strong></div>
+            <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong><small>28.0 race sample · HIGH confidence</small></div>
+            <div><span>Primary Action</span><strong>POSSIBLE BET</strong></div>
         </div>
-        <section class="synopsis">
-            <h3>Race Synopsis</h3>
-            <p>Context read: Windsor over 10.0 on Good To Firm with 7 runners. Race DNA: Controlled tactical race. Chaos read: Low. The projected shape suggests one runner may get a relatively clean lead. Track position and early control could matter more than raw closing speed. First Principle is the leading contextual fit, rated 49.0. The edge to the field average is +20.8 and the gap to the nearest rival is +18.8. That gives this race a cleaner top-profile shape than a tightly compressed field. Tactical note: Possible lone-leader setup ✅</p>
+
+        <section class="synopsis premium-snapshot">
+            <div>
+                <span class="micro-label">Race Snapshot</span>
+                <h3>What the model sees</h3>
+            </div>
+            <ul><li>Controlled tactical race · chaos low</li><li>Likely lone-leader / tactical-control setup</li><li>First Principle leads the contextual model at 49.0</li><li>Clearer top profile: +18.8 gap to nearest rival</li></ul>
         </section>
-        <div class="main-danger">
+
+        <div class="main-danger premium-main-danger">
             <div>
                 <span>Main Context Fit</span>
                 <strong>First Principle</strong>
@@ -861,36 +384,43 @@ footer {
                 <p>Nearest contextual rival.</p>
             </div>
         </div>
+
         <details class="race-runners" >
             <summary>View full racecard intelligence</summary>
             <div class="runners-list"></div>
         </details>
     </article>
     
-    <article class="race-card good" data-course="Windsor" data-race="2:43 · Windsor · 6f">
-        <div class="race-header">
+    <article class="race-card good premium-race-card" data-course="Windsor" data-race="2:43 · Windsor · 6f">
+        <div class="race-header premium-race-header">
             <div>
                 <div class="eyebrow">2:43 · Windsor</div>
                 <h2>2:43 · Windsor · 6f</h2>
                 <p class="race-meta">Class 4 · Good To Firm · Track Radio On Digital &amp; DAB Maiden Stakes (GBB Race)</p>
             </div>
-            <div class="race-score">
+            <div class="race-score premium-race-score">
                 <span>Race Confidence</span>
                 <strong class="good">69</strong>
                 <em>✅ POSSIBLE BET</em>
             </div>
         </div>
-        <div class="race-intel-grid">
+
+        <div class="race-intel-grid premium-intel-grid">
             <div><span>Race DNA</span><strong>Controlled tactical race</strong></div>
             <div><span>Chaos Index</span><strong>Low</strong></div>
-            <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
-            <div><span>Primary action</span><strong>POSSIBLE BET</strong></div>
+            <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong><small>46.0 race sample · HIGH confidence</small></div>
+            <div><span>Primary Action</span><strong>POSSIBLE BET</strong></div>
         </div>
-        <section class="synopsis">
-            <h3>Race Synopsis</h3>
-            <p>Context read: Windsor over 6.0 on Good To Firm with 5 runners. Race DNA: Controlled tactical race. Chaos read: Low. The projected shape suggests one runner may get a relatively clean lead. Track position and early control could matter more than raw closing speed. Paradise Walk is the leading contextual fit, rated 30.5. The edge to the field average is +18.0 and the gap to the nearest rival is +11.5. That gives this race a cleaner top-profile shape than a tightly compressed field. Tactical note: Possible lone-leader setup ✅</p>
+
+        <section class="synopsis premium-snapshot">
+            <div>
+                <span class="micro-label">Race Snapshot</span>
+                <h3>What the model sees</h3>
+            </div>
+            <ul><li>Controlled tactical race · chaos low</li><li>Likely lone-leader / tactical-control setup</li><li>Paradise Walk leads the contextual model at 30.5</li><li>Clearer top profile: +11.5 gap to nearest rival</li></ul>
         </section>
-        <div class="main-danger">
+
+        <div class="main-danger premium-main-danger">
             <div>
                 <span>Main Context Fit</span>
                 <strong>Paradise Walk</strong>
@@ -902,36 +432,43 @@ footer {
                 <p>Nearest contextual rival.</p>
             </div>
         </div>
+
         <details class="race-runners" >
             <summary>View full racecard intelligence</summary>
             <div class="runners-list"></div>
         </details>
     </article>
     
-    <article class="race-card good" data-course="Windsor" data-race="3:18 · Windsor · 11.5f">
-        <div class="race-header">
+    <article class="race-card good premium-race-card" data-course="Windsor" data-race="3:18 · Windsor · 11.5f">
+        <div class="race-header premium-race-header">
             <div>
                 <div class="eyebrow">3:18 · Windsor</div>
                 <h2>3:18 · Windsor · 11.5f</h2>
                 <p class="race-meta">Class 3 · Good To Firm · Fitzdares Telephone &amp; Text Betting Maiden Stakes (GBB/GBBPlus Race)</p>
             </div>
-            <div class="race-score">
+            <div class="race-score premium-race-score">
                 <span>Race Confidence</span>
                 <strong class="good">68</strong>
                 <em>✅ POSSIBLE BET</em>
             </div>
         </div>
-        <div class="race-intel-grid">
+
+        <div class="race-intel-grid premium-intel-grid">
             <div><span>Race DNA</span><strong>Controlled tactical race</strong></div>
             <div><span>Chaos Index</span><strong>Low</strong></div>
-            <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
-            <div><span>Primary action</span><strong>POSSIBLE BET</strong></div>
+            <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong><small>Class/distance/going timing layer developing</small></div>
+            <div><span>Primary Action</span><strong>POSSIBLE BET</strong></div>
         </div>
-        <section class="synopsis">
-            <h3>Race Synopsis</h3>
-            <p>Context read: Windsor over 11.5 on Good To Firm with 5 runners. Race DNA: Controlled tactical race. Chaos read: Low. The projected shape suggests one runner may get a relatively clean lead. Track position and early control could matter more than raw closing speed. Mythical Valentine is the leading contextual fit, rated 38.5. The edge to the field average is +27.2 and the gap to the nearest rival is +32.5. That gives this race a cleaner top-profile shape than a tightly compressed field. Tactical note: Possible lone-leader setup ✅</p>
+
+        <section class="synopsis premium-snapshot">
+            <div>
+                <span class="micro-label">Race Snapshot</span>
+                <h3>What the model sees</h3>
+            </div>
+            <ul><li>Controlled tactical race · chaos low</li><li>Likely lone-leader / tactical-control setup</li><li>Mythical Valentine leads the contextual model at 38.5</li><li>Clearer top profile: +32.5 gap to nearest rival</li></ul>
         </section>
-        <div class="main-danger">
+
+        <div class="main-danger premium-main-danger">
             <div>
                 <span>Main Context Fit</span>
                 <strong>Mythical Valentine</strong>
@@ -943,36 +480,43 @@ footer {
                 <p>Nearest contextual rival.</p>
             </div>
         </div>
+
         <details class="race-runners" >
             <summary>View full racecard intelligence</summary>
             <div class="runners-list"></div>
         </details>
     </article>
     
-    <article class="race-card good" data-course="Leicester" data-race="5:23 · Leicester · 12f">
-        <div class="race-header">
+    <article class="race-card good premium-race-card" data-course="Leicester" data-race="5:23 · Leicester · 12f">
+        <div class="race-header premium-race-header">
             <div>
                 <div class="eyebrow">5:23 · Leicester</div>
                 <h2>5:23 · Leicester · 12f</h2>
                 <p class="race-meta">Class 6 · Good · Racing Again Tomorrow Apprentice Handicap</p>
             </div>
-            <div class="race-score">
+            <div class="race-score premium-race-score">
                 <span>Race Confidence</span>
                 <strong class="good">65</strong>
                 <em>✅ POSSIBLE BET</em>
             </div>
         </div>
-        <div class="race-intel-grid">
+
+        <div class="race-intel-grid premium-intel-grid">
             <div><span>Race DNA</span><strong>Balanced context race</strong></div>
             <div><span>Chaos Index</span><strong>Low</strong></div>
-            <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
-            <div><span>Primary action</span><strong>POSSIBLE BET</strong></div>
+            <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong><small>11.0 race sample · MEDIUM confidence</small></div>
+            <div><span>Primary Action</span><strong>POSSIBLE BET</strong></div>
         </div>
-        <section class="synopsis">
-            <h3>Race Synopsis</h3>
-            <p>Context read: Leicester over 12.0 on Good with 8 runners. Race DNA: Balanced context race. Chaos read: Low. The pace map looks fairly balanced. No single tactical angle dominates, so the race may be decided by which horse best handles today’s combined conditions: trip, ground, class, draw and rhythm. Moon Over The Sea is the leading contextual fit, rated 39.8. The edge to the field average is +21.5 and the gap to the nearest rival is +18.8. That gives this race a cleaner top-profile shape than a tightly compressed field. Tactical note: Balanced setup suits adaptable/prominent profile ✅</p>
+
+        <section class="synopsis premium-snapshot">
+            <div>
+                <span class="micro-label">Race Snapshot</span>
+                <h3>What the model sees</h3>
+            </div>
+            <ul><li>Balanced context race · chaos low</li><li>Balanced pace map — combined context matters</li><li>Moon Over The Sea leads the contextual model at 39.8</li><li>Clearer top profile: +18.8 gap to nearest rival</li></ul>
         </section>
-        <div class="main-danger">
+
+        <div class="main-danger premium-main-danger">
             <div>
                 <span>Main Context Fit</span>
                 <strong>Moon Over The Sea</strong>
@@ -984,36 +528,43 @@ footer {
                 <p>Nearest contextual rival.</p>
             </div>
         </div>
+
         <details class="race-runners" >
             <summary>View full racecard intelligence</summary>
             <div class="runners-list"></div>
         </details>
     </article>
     
-    <article class="race-card warn" data-course="Cartmel" data-race="4:36 · Cartmel · 17.5f">
-        <div class="race-header">
+    <article class="race-card warn premium-race-card" data-course="Cartmel" data-race="4:36 · Cartmel · 17.5f">
+        <div class="race-header premium-race-header">
             <div>
                 <div class="eyebrow">4:36 · Cartmel</div>
                 <h2>4:36 · Cartmel · 17.5f</h2>
                 <p class="race-meta">Class 3 · Good · Molson Coors Handicap Chase (GBB Race)</p>
             </div>
-            <div class="race-score">
+            <div class="race-score premium-race-score">
                 <span>Race Confidence</span>
                 <strong class="warn">61</strong>
                 <em>⚠️ CAUTION / SPLIT RACE</em>
             </div>
         </div>
-        <div class="race-intel-grid">
+
+        <div class="race-intel-grid premium-intel-grid">
             <div><span>Race DNA</span><strong>Slow-tempo positioning race</strong></div>
             <div><span>Chaos Index</span><strong>Low</strong></div>
-            <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
-            <div><span>Primary action</span><strong>CAUTION</strong></div>
+            <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong><small>Class/distance/going timing layer developing</small></div>
+            <div><span>Primary Action</span><strong>CAUTION</strong></div>
         </div>
-        <section class="synopsis">
-            <h3>Race Synopsis</h3>
-            <p>Context read: Cartmel over 17.5 on Good with 4 runners. Race DNA: Slow-tempo positioning race. Chaos read: Low. The race does not look strongly run on paper. Closers may need luck or a pace injection, while tactical speed and being close enough turning in become more important. Coup De Coeur is the leading contextual fit, rated 34.0. The edge to the field average is +15.9 and the gap to the nearest rival is +17.8. That gives this race a cleaner top-profile shape than a tightly compressed field. Tactical note: No obvious tactical edge from race shape</p>
+
+        <section class="synopsis premium-snapshot">
+            <div>
+                <span class="micro-label">Race Snapshot</span>
+                <h3>What the model sees</h3>
+            </div>
+            <ul><li>Slow-tempo positioning race · chaos low</li><li>Slow tempo risk — position may matter more than closing speed</li><li>Coup De Coeur leads the contextual model at 34.0</li><li>Clearer top profile: +17.8 gap to nearest rival</li></ul>
         </section>
-        <div class="main-danger">
+
+        <div class="main-danger premium-main-danger">
             <div>
                 <span>Main Context Fit</span>
                 <strong>Coup De Coeur</strong>
@@ -1025,36 +576,43 @@ footer {
                 <p>Nearest contextual rival.</p>
             </div>
         </div>
+
         <details class="race-runners" >
             <summary>View full racecard intelligence</summary>
             <div class="runners-list"></div>
         </details>
     </article>
     
-    <article class="race-card warn" data-course="Windsor" data-race="3:53 · Windsor · 6f">
-        <div class="race-header">
+    <article class="race-card warn premium-race-card" data-course="Windsor" data-race="3:53 · Windsor · 6f">
+        <div class="race-header premium-race-header">
             <div>
                 <div class="eyebrow">3:53 · Windsor</div>
                 <h2>3:53 · Windsor · 6f</h2>
                 <p class="race-meta">Class 2 · Good To Firm · Fitzdares Sprint Series Handicap (Windsor Sprint Series Qualifier)</p>
             </div>
-            <div class="race-score">
+            <div class="race-score premium-race-score">
                 <span>Race Confidence</span>
                 <strong class="warn">61</strong>
                 <em>⚠️ CAUTION / SPLIT RACE</em>
             </div>
         </div>
-        <div class="race-intel-grid">
+
+        <div class="race-intel-grid premium-intel-grid">
             <div><span>Race DNA</span><strong>Slow-tempo positioning race</strong></div>
             <div><span>Chaos Index</span><strong>Low</strong></div>
-            <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong></div>
-            <div><span>Primary action</span><strong>CAUTION</strong></div>
+            <div><span>Winning Time Par</span><strong>Awaiting timing benchmark</strong><small>46.0 race sample · HIGH confidence</small></div>
+            <div><span>Primary Action</span><strong>CAUTION</strong></div>
         </div>
-        <section class="synopsis">
-            <h3>Race Synopsis</h3>
-            <p>Context read: Windsor over 6.0 on Good To Firm with 7 runners. Race DNA: Slow-tempo positioning race. Chaos read: Low. The race does not look strongly run on paper. Closers may need luck or a pace injection, while tactical speed and being close enough turning in become more important. Kylian is the leading contextual fit, rated 47.0. The edge to the field average is +11.9 and the gap to the nearest rival is +5.5. Tactical note: No obvious tactical edge from race shape</p>
+
+        <section class="synopsis premium-snapshot">
+            <div>
+                <span class="micro-label">Race Snapshot</span>
+                <h3>What the model sees</h3>
+            </div>
+            <ul><li>Slow-tempo positioning race · chaos low</li><li>Slow tempo risk — position may matter more than closing speed</li><li>Kylian leads the contextual model at 47.0</li><li>Moderate edge over next best: +5.5</li></ul>
         </section>
-        <div class="main-danger">
+
+        <div class="main-danger premium-main-danger">
             <div>
                 <span>Main Context Fit</span>
                 <strong>Kylian</strong>
@@ -1066,6 +624,7 @@ footer {
                 <p>Nearest contextual rival.</p>
             </div>
         </div>
+
         <details class="race-runners" >
             <summary>View full racecard intelligence</summary>
             <div class="runners-list"></div>
