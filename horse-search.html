@@ -76,7 +76,7 @@ details{border-top:1px solid rgba(255,255,255,.10);padding-top:13px;margin-top:1
 <section class="horse-search-panel">
     <div>
         <label for="horseSearch">Search horse, trainer or owner</label>
-        <input id="horseSearch" type="search" placeholder="Start typing a horse name..." oninput="updateHorseSearch()" autocomplete="off">
+        <input id="horseSearch" type="search" placeholder="Start typing a horse name..." autocomplete="off">
     </div>
     <div id="horseSearchCount" class="horse-search-count">24 current runners shown | 74,698 searchable horses</div>
 </section>
@@ -146,6 +146,69 @@ function updateHorseSearch() {
         if (match) shown += 1;
     });
     if (count) count.textContent = shown + " shown";
+}
+
+function horseSearchChunkKey(query) {
+    const first = (query || "").trim().toLowerCase()[0] || "";
+    if (!first) return "";
+    if (first >= "a" && first <= "z") return first;
+    if (first >= "0" && first <= "9") return "0-9";
+    return "other";
+}
+
+function loadHorseSearchChunk(key) {
+    window.FF_LOADED_HORSE_CHUNKS = window.FF_LOADED_HORSE_CHUNKS || {};
+    if (!key) return Promise.resolve([]);
+    if (window.FF_LOADED_HORSE_CHUNKS[key]) {
+        return Promise.resolve(window.FF_LOADED_HORSE_CHUNKS[key]);
+    }
+    const manifest = window.FF_HORSE_PROFILE_MANIFEST || { chunks: [] };
+    const chunk = (manifest.chunks || []).find(item => item.key === key);
+    if (!chunk) return Promise.resolve([]);
+    return new Promise((resolve) => {
+        const script = document.createElement("script");
+        script.src = chunk.file;
+        script.onload = () => {
+            const rows = window.FF_HORSE_PROFILE_CHUNK || [];
+            window.FF_LOADED_HORSE_CHUNKS[key] = rows;
+            window.FF_HORSE_PROFILE_CHUNK = [];
+            resolve(rows);
+        };
+        script.onerror = () => resolve([]);
+        document.head.appendChild(script);
+    });
+}
+
+async function updateChunkedHorseSearch() {
+    const input = document.getElementById("horseSearch");
+    const count = document.getElementById("horseSearchCount");
+    const results = document.getElementById("horseSearchResults");
+    const query = (input?.value || "").trim().toLowerCase();
+    const manifest = window.FF_HORSE_PROFILE_MANIFEST;
+    if (!results || !manifest) return false;
+
+    if (query.length < 2) {
+        const currentRows = await Promise.all((manifest.chunks || []).map(async chunk => {
+            const rows = await loadHorseSearchChunk(chunk.key);
+            return rows.filter(p => horseProfileEntered(p)).slice(0, 24);
+        }));
+        const matches = currentRows.flat().slice(0, 24);
+        results.innerHTML = matches.map(renderHorseProfileResult).join("");
+        if (count) count.textContent = `${matches.length} current runners shown | ${manifest.count.toLocaleString()} searchable horses`;
+        return true;
+    }
+
+    const key = horseSearchChunkKey(query);
+    const rows = await loadHorseSearchChunk(key);
+    const matches = rows.filter(p => horseProfileSearchText(p).includes(query)).slice(0, 40);
+    results.innerHTML = matches.map(renderHorseProfileResult).join("") || `
+        <section class="panel" style="padding:20px;">
+            <h2>No matching horse found</h2>
+            <p class="summary">Try fewer letters, remove punctuation, or search by trainer / owner.</p>
+        </section>
+    `;
+    if (count) count.textContent = `${matches.length} matches shown | ${manifest.count.toLocaleString()} searchable horses`;
+    return true;
 }
 
 function normaliseHorseProfile(profile) {
@@ -235,7 +298,14 @@ function renderHorseProfileResult(profile) {
     `;
 }
 document.addEventListener("DOMContentLoaded", () => {
-    if (document.getElementById("horseSearch")) updateHorseSearch();
+    if (document.getElementById("horseSearch")) {
+        if (window.FF_HORSE_PROFILE_MANIFEST) {
+            updateChunkedHorseSearch();
+            document.getElementById("horseSearch").addEventListener("input", updateChunkedHorseSearch);
+        } else {
+            updateHorseSearch();
+        }
+    }
 });
 </script>
 </body>
