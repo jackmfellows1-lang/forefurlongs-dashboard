@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Model P&amp;L | ForeFurlongs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Sora:wght@600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg:#030712; --panel:rgba(9,18,32,.78); --text:#f8fafc; --muted:#8ea3bb;
+    --line:rgba(180,205,235,.16); --green:#5DFFB1; --blue:#7dd3fc; --amber:#ffd166;
+    --gold:#f8d878; --red:#ff6673; --shadow:0 28px 90px rgba(0,0,0,.42);
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;padding:22px;min-height:100vh;color:var(--text);font-family:Inter,Arial,sans-serif;overflow-x:hidden;background:radial-gradient(circle at 8% -8%,rgba(93,255,177,.18),transparent 32%),radial-gradient(circle at 86% 0%,rgba(125,211,252,.16),transparent 30%),linear-gradient(180deg,#07111f 0%,#030712 58%,#02040a 100%)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.026) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.026) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.55),transparent 72%)}
+body.page-bets{background:radial-gradient(circle at 10% -8%,rgba(248,216,120,.17),transparent 32%),radial-gradient(circle at 86% 0%,rgba(93,255,177,.11),transparent 31%),linear-gradient(180deg,#0d0c10 0%,#050914 70%)}
+a{color:inherit;text-decoration:none}.topnav,.page-hero,.content,footer{max-width:1240px;margin-left:auto;margin-right:auto}
+.topnav{position:sticky;top:12px;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:18px;margin:4px auto 22px;padding:10px;border:1px solid var(--line);border-radius:22px;background:rgba(3,7,18,.68);backdrop-filter:blur(18px);box-shadow:0 18px 55px rgba(0,0,0,.25)}
+.brand-lockup{display:flex;align-items:center;gap:12px}.logo{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;font-family:Sora;font-weight:800;color:#04100b;background:radial-gradient(circle at 30% 15%,#fff,transparent 18%),linear-gradient(135deg,var(--green),var(--blue));box-shadow:0 0 34px rgba(93,255,177,.28),inset 0 0 18px rgba(255,255,255,.35)}
+.brand-lockup strong{display:block;font-family:Space Grotesk;letter-spacing:.035em;font-size:15px}.brand-lockup span{color:var(--muted);font-size:12px}
+.navlinks{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.navlinks a{font-family:Sora;font-size:12px;padding:10px 13px;border:1px solid var(--line);border-radius:999px;color:#dbeafe;background:rgba(255,255,255,.045);transition:.22s}.navlinks a:hover{transform:translateY(-1px);border-color:rgba(125,211,252,.42);background:rgba(125,211,252,.09)}.navlinks a.active{color:#06130d;border-color:transparent;background:linear-gradient(135deg,var(--green),var(--blue));box-shadow:0 0 24px rgba(93,255,177,.18)}
+.page-hero{position:relative;overflow:hidden;border:1px solid rgba(125,211,252,.22);border-radius:34px;padding:34px;margin-bottom:20px;background:linear-gradient(135deg,rgba(255,255,255,.085),rgba(255,255,255,.025)),radial-gradient(circle at 18% 0%,rgba(93,255,177,.16),transparent 38%),rgba(4,10,20,.74);backdrop-filter:blur(18px);box-shadow:var(--shadow)}
+.page-hero:after{content:"";position:absolute;inset:-1px;background:linear-gradient(115deg,transparent 0%,rgba(255,255,255,.10) 18%,transparent 34%);transform:translateX(-100%);animation:sweep 7s ease-in-out infinite}@keyframes sweep{0%,50%{transform:translateX(-100%)}100%{transform:translateX(125%)}}
+.eyebrow,.micro-label{font-family:Sora;text-transform:uppercase;letter-spacing:.16em;color:var(--green);font-size:11px;font-weight:800}h1,h2,h3,h4{font-family:Space Grotesk;letter-spacing:-.045em}h1{position:relative;font-size:clamp(44px,7vw,82px);line-height:.9;margin:12px 0;max-width:960px}.page-hero p{position:relative;color:#b8c7d9;max-width:880px;line-height:1.7;font-size:16px}.content{display:grid;gap:22px}
+.home-showcase{display:grid;grid-template-columns:1.03fr .97fr;gap:18px;align-items:stretch}.home-copy,.home-screen,.value-panel,.about-copy,.about-list div,.method-strip div,.home-final{border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(10,22,38,.82),rgba(4,10,20,.70));box-shadow:var(--shadow)}.home-copy{padding:28px}.home-copy h2{font-size:clamp(34px,4vw,58px);line-height:.95;margin:10px 0 14px}.home-copy p{color:#cbd5e1;line-height:1.65;max-width:680px}.home-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.home-actions a{display:inline-flex;border-radius:999px;padding:12px 15px;font-family:Sora;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;border:1px solid rgba(125,211,252,.24);background:rgba(125,211,252,.08)}.home-actions a:first-child{color:#06130d;background:linear-gradient(135deg,var(--green),var(--blue));border-color:transparent}.home-screen{position:relative;overflow:hidden;min-height:360px;padding:18px;background:radial-gradient(circle at 50% 0%,rgba(93,255,177,.17),transparent 34%),linear-gradient(145deg,#07111f,#030712)}.home-screen:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 0%,rgba(255,255,255,.10) 44%,transparent 58%);animation:sweep 8s ease-in-out infinite}.video-frame{position:relative;height:100%;min-height:320px;border:1px solid rgba(125,211,252,.20);border-radius:14px;padding:18px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));display:grid;align-content:space-between}.video-topline{display:flex;justify-content:space-between;gap:10px;color:#9fb0c6;font-family:Sora;font-size:11px;text-transform:uppercase;letter-spacing:.08em}.video-play{display:grid;place-items:center;justify-self:center;width:104px;height:104px;border-radius:999px;border:1px solid rgba(93,255,177,.36);background:rgba(93,255,177,.10);box-shadow:0 0 42px rgba(93,255,177,.22)}.video-play span{display:block;margin-left:7px;width:0;height:0;border-top:18px solid transparent;border-bottom:18px solid transparent;border-left:27px solid var(--green)}.video-score{font-family:Sora;font-size:74px;line-height:.9;color:var(--green);text-shadow:0 0 34px rgba(93,255,177,.20)}.video-race{display:grid;gap:9px}.video-race strong{font-family:Space Grotesk;font-size:30px}.video-race span{color:#9fb0c6;line-height:1.55}.video-pulse{height:82px;display:flex;align-items:end;gap:7px}.video-pulse i{display:block;flex:1;min-width:9px;border-radius:999px;background:linear-gradient(180deg,var(--green),var(--blue));height:var(--h);opacity:.86;box-shadow:0 0 18px rgba(93,255,177,.20)}.value-grid,.method-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.value-panel,.about-copy,.about-list div,.method-strip div,.home-final{padding:18px}.value-panel strong,.about-list strong,.method-strip strong{display:block;font-family:Sora;color:#f8fafc;margin:8px 0}.value-panel p,.about-copy p,.about-list p,.method-strip p,.home-final p{color:#9fb0c6;line-height:1.55;margin:0;font-size:13px}.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}.about-copy h2,.home-final h2{font-size:clamp(30px,4vw,48px);line-height:1;margin:8px 0 14px}.about-copy p+p{margin-top:13px}.about-list{display:grid;gap:14px}.method-strip{grid-template-columns:repeat(4,1fr)}.method-strip span{display:grid;place-items:center;width:32px;height:32px;border-radius:999px;background:linear-gradient(135deg,var(--green),var(--blue));color:#06130d;font-family:Sora;font-weight:900}.home-final{text-align:center;padding:28px}.home-final p{max-width:820px;margin:0 auto}
+.page-home .page-hero{display:none}.page-home .content{gap:18px}.page-home .home-showcase{min-height:calc(100vh - 118px)}.page-home .home-copy{display:flex;flex-direction:column;justify-content:center}.page-home .home-copy h2{font-size:clamp(46px,6.3vw,82px);max-width:860px}.page-home .home-screen{min-height:520px}.page-home .value-grid{margin-top:-2px}
+.brief-grid,.race-intel-grid,.main-danger,.context-grid,.premium-grid{display:grid;gap:14px}.brief-grid{grid-template-columns:repeat(4,1fr)}.brief-card,.race-card,.horse-card,.panel{border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,255,255,.025));backdrop-filter:blur(16px);box-shadow:var(--shadow)}.brief-card{padding:18px}.brief-card span,.race-intel-grid span,.main-danger span,.timing-context span{display:block;color:var(--muted);font-size:11px;margin-bottom:6px;text-transform:uppercase;letter-spacing:.08em}.brief-card strong{font-family:Sora;font-size:32px}
+.race-card{position:relative;overflow:hidden;padding:24px}.premium-race-card{background:radial-gradient(circle at 8% 0%,rgba(93,255,177,.10),transparent 30%),radial-gradient(circle at 100% 0%,rgba(125,211,252,.11),transparent 28%),linear-gradient(145deg,rgba(10,22,38,.88),rgba(4,10,20,.78))}.race-card:before,.horse-card:before{content:"";position:absolute;left:18px;right:18px;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--blue),var(--green),transparent)}
+.race-header,.horse-head{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:start}.race-header h2,.horse-head h3{margin:5px 0 8px;font-size:clamp(32px,4.8vw,56px);line-height:.92}.race-meta{color:#9fb0c6;margin:0;font-size:15px}.race-score,.horse-score{text-align:right;min-width:150px}.race-score span,.horse-score span{color:var(--muted);font-size:10px;font-family:Sora;text-transform:uppercase;letter-spacing:.12em}.race-score strong,.horse-score strong{display:block;font-family:Sora;font-size:62px;line-height:.9;margin:7px 0;color:var(--gold);text-shadow:0 0 28px rgba(248,216,120,.18)}.race-score em{display:inline-flex;font-style:normal;color:#dbeafe;font-size:12px;border:1px solid var(--line);border-radius:999px;padding:7px 10px;background:rgba(255,255,255,.045)}
+.elite{color:var(--green)!important}.good{color:var(--blue)!important}.warn{color:var(--amber)!important}.bad{color:var(--red)!important}.neutral{color:#cbd5e1!important}.race-intel-grid{grid-template-columns:repeat(4,1fr);margin:22px 0}.race-intel-grid div,.main-danger div,.timing-context,.condition-record,.context-grid div{border:1px solid var(--line);background:rgba(2,6,15,.44);border-radius:20px;padding:15px}.premium-intel-grid div{min-height:88px;transition:.25s}.premium-intel-grid div:hover{transform:translateY(-2px);border-color:rgba(125,211,252,.32);background:rgba(125,211,252,.055)}.race-intel-grid strong,.main-danger strong{display:block;font-family:Sora;font-size:16px}.race-intel-grid small{display:block;margin-top:7px;color:#7f93aa;font-size:11px;line-height:1.35}
+.synopsis{border:1px solid rgba(125,211,252,.18);background:radial-gradient(circle at 0% 0%,rgba(125,211,252,.12),transparent 34%),rgba(125,211,252,.045);border-radius:24px;padding:18px;margin:16px 0}.premium-snapshot{display:grid;grid-template-columns:260px 1fr;gap:18px;align-items:start}.premium-snapshot h3{margin:6px 0 0;font-size:24px}.premium-snapshot ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}.premium-snapshot li{position:relative;padding-left:22px;color:#dbeafe;line-height:1.45}.premium-snapshot li:before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--blue));box-shadow:0 0 12px rgba(93,255,177,.35)}
+.summary,.main-danger p,.runner-body p,.context-grid p{color:#cbd5e1;line-height:1.65;margin:0}.main-danger{grid-template-columns:1fr 1fr;margin:16px 0}.premium-main-danger strong{color:var(--gold);font-size:18px}.chip-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.chip{display:inline-flex;align-items:center;border-radius:999px;padding:7px 10px;font-family:Sora;font-size:10px;font-weight:800;letter-spacing:.055em;text-transform:uppercase;border:1px solid rgba(255,255,255,.12);background:rgba(148,163,184,.10)}.chip.elite{color:#bbf7d0!important;background:rgba(93,255,177,.12);border-color:rgba(93,255,177,.28);box-shadow:0 0 18px rgba(93,255,177,.16)}.chip.good{color:#d8f3ff!important;background:rgba(125,211,252,.12);border-color:rgba(125,211,252,.24)}.chip.warn{color:#fde68a!important;background:rgba(245,158,11,.13)}.chip.bad{color:#fecaca!important;background:rgba(239,68,68,.14)}
+.horse-card{padding:22px;position:relative;overflow:hidden}.premium-horse-card{background:radial-gradient(circle at 0% 0%,rgba(93,255,177,.10),transparent 30%),linear-gradient(145deg,rgba(9,18,32,.86),rgba(4,10,20,.72))}.top-horse-details>summary{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;cursor:pointer;list-style:none}.top-horse-details>summary::-webkit-details-marker{display:none}.top-horse-summary-main{display:grid;gap:4px}.top-horse-summary-main strong{font-family:Space Grotesk;font-size:clamp(24px,3vw,36px);line-height:1}.top-horse-summary-main small{color:#9fb0c6}.top-horse-summary-tags{display:flex;gap:10px;align-items:center;justify-content:flex-end;flex-wrap:wrap}.top-horse-details:not([open]) .top-horse-summary-main:after{content:"Open profile";display:inline-flex;width:max-content;margin-top:7px;border:1px solid rgba(93,255,177,.24);border-radius:999px;padding:6px 9px;color:var(--green);font-family:Sora;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.07em}.top-horse-details[open]>summary{padding-bottom:14px;border-bottom:1px solid rgba(148,163,184,.14);margin-bottom:14px}.top-horse-details[open] .top-horse-summary-main:after{content:"Close profile";display:inline-flex;width:max-content;margin-top:7px;border:1px solid rgba(148,163,184,.18);border-radius:999px;padding:6px 9px;color:#cbd5e1;font-family:Sora;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.07em}.hero-score-stack{display:grid;gap:10px;justify-items:end}.ff-score-block{display:inline-grid;justify-items:center;min-width:108px;border:1px solid var(--line);border-radius:20px;padding:10px 14px;background:rgba(2,6,15,.52)}.ff-score-block span{font-family:Sora;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.13em}.ff-score-block strong{font-family:Sora;font-size:28px;line-height:1;margin-top:4px}.score-elite{border-color:rgba(93,255,177,.42);box-shadow:0 0 24px rgba(93,255,177,.14)}.score-good{border-color:rgba(125,211,252,.35)}.score-watch{border-color:rgba(255,209,102,.30)}.score-muted{opacity:.75}.score-elite strong{color:var(--green)}.score-good strong{color:var(--blue)}.score-watch strong{color:var(--amber)}.score-muted strong{color:#cbd5e1}.chip.full-alignment{color:#fff7cc!important;border-color:rgba(248,216,120,.70);background:linear-gradient(135deg,rgba(248,216,120,.22),rgba(93,255,177,.16));box-shadow:0 0 24px rgba(248,216,120,.22),inset 0 0 14px rgba(255,255,255,.05)}
+.bet-badge{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:8px 12px;font-family:Sora;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);white-space:nowrap}.bet-primary{color:#06130d;background:linear-gradient(135deg,var(--green),var(--blue));border-color:transparent;box-shadow:0 0 22px rgba(93,255,177,.22)}.bet-value{color:#1e1400;background:linear-gradient(135deg,var(--gold),#ffae42);border-color:transparent}.bet-watch{color:#dbeafe;background:rgba(125,211,252,.10)}.bet-avoid{color:#fecaca;background:rgba(239,68,68,.13)}
+.runner-meta-strip{display:grid;grid-template-columns:repeat(9,1fr);gap:8px;margin:14px 0}.runner-meta-strip div{border:1px solid var(--line);background:rgba(2,6,15,.34);border-radius:14px;padding:10px}.runner-meta-strip span{display:block;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.10em;margin-bottom:5px}.runner-meta-strip strong{font-family:Sora;font-size:12px;color:#eaf7ff}
+.ff-intel-panel{margin:14px 0;border:1px solid rgba(93,255,177,.20);border-radius:22px;padding:16px;background:radial-gradient(circle at 0% 0%,rgba(93,255,177,.13),transparent 34%),rgba(2,6,15,.42)}.ff-intel-head{display:flex;justify-content:space-between;align-items:start;gap:12px;margin-bottom:14px}.ff-intel-head strong{display:block;margin-top:4px;font-family:Space Grotesk;font-size:24px}.ff-intel-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:12px}.ff-intel-metrics div{border:1px solid var(--line);border-radius:14px;padding:10px;background:rgba(255,255,255,.035)}.ff-intel-metrics span{display:block;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.1em}.ff-intel-metrics strong{display:block;margin-top:5px;font-family:Sora;color:#dffcff}.timing-strip{display:flex;justify-content:space-between;gap:14px;margin-top:13px;padding-top:12px;border-top:1px solid rgba(255,255,255,.09)}.timing-strip span{color:var(--muted);font-size:11px}.timing-strip strong{font-family:Sora;color:var(--gold)}
+.bars{border:1px solid var(--line);background:rgba(2,6,15,.34);border-radius:20px;padding:15px;margin:15px 0}.bar-row{display:grid;grid-template-columns:175px 1fr;gap:12px;align-items:center;margin:9px 0}.bar-row span{color:var(--muted);font-size:12px}.bar{height:9px;border-radius:999px;overflow:hidden;background:#111827}.bar i{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--blue),var(--green));border-radius:999px;box-shadow:0 0 18px rgba(93,255,177,.25);animation:grow 1.1s ease both}@keyframes grow{from{width:0}to{width:var(--w)}}
+details{border-top:1px solid rgba(255,255,255,.10);padding-top:13px;margin-top:13px}summary{cursor:pointer;font-family:Sora;color:#dbeafe;font-weight:800;list-style:none}summary::-webkit-details-marker{display:none}summary:before{content:"+";display:inline-block;margin-right:7px;color:var(--green)}details[open]>summary:before{transform:rotate(180deg)}
+.runner.compact{border:1px solid var(--line);border-radius:22px;padding:14px;background:rgba(255,255,255,.035);margin:12px 0;transition:.25s}.runner.compact:hover{transform:translateY(-2px);border-color:rgba(125,211,252,.26);background:rgba(125,211,252,.045)}.runner.compact summary{display:grid;grid-template-columns:1fr minmax(155px,190px) auto auto;gap:14px;align-items:center}.runner-summary-main{display:grid;gap:3px}.runner-name{font-family:Space Grotesk;font-size:21px;letter-spacing:-.02em}.runner-summary-main small{color:var(--muted);font-size:12px}.runner-body{padding-top:14px}.premium-runner-summary{display:grid;grid-template-columns:1.25fr repeat(3,1fr);gap:10px;margin:14px 0}.premium-runner-summary>div{border:1px solid rgba(148,163,184,.16);border-radius:12px;padding:12px;background:rgba(255,255,255,.032)}.premium-runner-summary span,.trust-meter span{display:block;color:var(--muted);font-family:Sora;font-size:9px;text-transform:uppercase;letter-spacing:.09em}.premium-runner-summary strong{display:block;margin-top:6px;font-family:Sora;font-size:14px;color:#f8fafc;line-height:1.35}.premium-runner-summary small{display:block;margin-top:6px;color:#94a3b8;line-height:1.35}.trust-meter{border:1px solid rgba(93,255,177,.20)!important;background:rgba(93,255,177,.055)!important}.trust-meter>div{display:flex;justify-content:space-between;gap:10px;align-items:center}.trust-meter strong{margin:0!important;color:var(--green)!important}.trust-meter i{display:block;height:7px;border-radius:999px;background:#101827;overflow:hidden;margin:8px 0}.trust-meter i b{display:block;width:var(--trust);height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--green));box-shadow:0 0 12px rgba(93,255,177,.28)}.trust-meter em{display:block;font-style:normal;color:#9fb0c6;font-size:11px}.premium-grid{grid-template-columns:1fr 1fr;margin-top:12px}.context-grid{grid-template-columns:repeat(2,1fr);margin-top:14px}.timing-context{margin-top:12px}.timing-context div{display:flex;justify-content:space-between;gap:12px;margin:4px 0}.timing-context strong{color:var(--gold);font-family:Sora}.small-line{font-size:11px;color:var(--muted)!important;margin-top:9px!important}.condition-record{margin-top:12px}.mini-grid{display:grid;grid-template-columns:1fr auto;gap:6px 12px;margin:8px 0}.mini-grid span{color:var(--muted)}.muted-card{opacity:.78}
+.previous-runs{margin-top:14px;overflow-x:auto}.previous-runs>strong{display:block;font-family:Sora;margin-bottom:9px;color:#dbeafe}.rp-table{width:100%;border-collapse:separate;border-spacing:0;min-width:760px;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:rgba(2,6,15,.42)}.rp-table th{background:rgba(255,255,255,.055);color:#b9c8da;font-family:Sora;font-size:10px;text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);white-space:nowrap;text-transform:uppercase;letter-spacing:.08em}.rp-table td{padding:12px 10px;border-bottom:1px solid rgba(148,163,184,.10);color:#e5e7eb;font-size:12px;vertical-align:middle}.rp-table tr:hover td{background:rgba(125,211,252,.055)}.rp-table tr:last-child td{border-bottom:none}
+.horse-search-panel{position:sticky;top:92px;z-index:41;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:end;border:1px solid var(--line);border-radius:26px;padding:16px;background:rgba(3,7,18,.74);backdrop-filter:blur(18px);box-shadow:0 18px 55px rgba(0,0,0,.22)}.horse-search-panel label{display:block;color:var(--muted);font-size:11px;margin-bottom:7px;text-transform:uppercase;letter-spacing:.08em}.horse-search-panel input{width:100%;border:1px solid rgba(148,163,184,.25);border-radius:15px;padding:14px 15px;background:#050914;color:#f8fafc;font-family:Sora;font-size:14px}.horse-search-count{font-family:Sora;color:var(--green);white-space:nowrap;padding:14px 0}.horse-profile-card{display:block}.horse-profile-card.hidden{display:none}.horse-profile-strip{grid-template-columns:repeat(9,1fr)}.horse-results-grid{display:grid;gap:14px}.horse-result-card{border:1px solid rgba(125,211,252,.18);border-radius:16px;padding:16px;background:linear-gradient(135deg,rgba(125,211,252,.06),rgba(2,6,15,.48))}.horse-result-card h3{margin:4px 0 5px;font-size:26px}.horse-result-card p{margin:0;color:#cbd5e1;line-height:1.55}.horse-result-stats{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:13px 0}.horse-result-stats div{border:1px solid rgba(148,163,184,.16);border-radius:11px;padding:10px;background:rgba(255,255,255,.03)}.horse-result-stats span{display:block;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.08em}.horse-result-stats strong{display:block;margin-top:5px;font-family:Sora;color:#f8fafc}.profile-writeup{border:1px solid rgba(125,211,252,.18);border-radius:20px;padding:16px;background:rgba(125,211,252,.045);margin:14px 0}.profile-writeup p{margin:8px 0 0;color:#dbeafe;line-height:1.65}.profile-entry-link{display:grid;gap:3px;text-align:left;border:1px solid rgba(93,255,177,.26);border-radius:18px;padding:10px 12px;background:rgba(93,255,177,.09)}.profile-entry-link span{font-family:Sora;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.12em}.profile-entry-link strong{font-family:Sora;color:var(--green);font-size:13px}.profile-entry-link small{color:#9fb0c6}
+.timing-pill{display:inline-flex;align-items:center;border-radius:999px;padding:6px 9px;font-family:Sora;font-size:10px;font-weight:900;letter-spacing:.04em;white-space:nowrap}.timing-gold{color:#fff7cc!important;background:rgba(248,216,120,.20);border:1px solid rgba(248,216,120,.60);box-shadow:0 0 22px rgba(248,216,120,.30)}.timing-green{color:#bbf7d0!important;background:rgba(93,255,177,.15);border:1px solid rgba(93,255,177,.45);box-shadow:0 0 20px rgba(93,255,177,.20)}.timing-amber{color:#fde68a!important;background:rgba(245,158,11,.16);border:1px solid rgba(245,158,11,.44)}.timing-grey{color:#cbd5e1!important;background:rgba(148,163,184,.12);border:1px solid rgba(148,163,184,.22)}
+.filter-panel{position:sticky;top:92px;z-index:40;border:1px solid var(--line);border-radius:26px;padding:16px;background:rgba(3,7,18,.70);backdrop-filter:blur(18px);display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end;box-shadow:0 18px 55px rgba(0,0,0,.22)}.filter-panel label{display:block;color:var(--muted);font-size:11px;margin-bottom:7px;text-transform:uppercase;letter-spacing:.08em}.filter-panel select,.filter-panel button{width:100%;border:1px solid rgba(148,163,184,.25);border-radius:15px;padding:13px 14px;background:#050914;color:#f8fafc;font-family:Sora}.filter-panel button{cursor:pointer;color:#06130d;background:linear-gradient(135deg,var(--green),var(--blue));border:none}
+.decision-strip{display:grid;grid-template-columns:1.15fr repeat(5,1fr);gap:8px;margin:16px 0}.decision-strip>div{min-height:72px;border:1px solid rgba(148,163,184,.18);background:rgba(3,8,18,.58);border-radius:16px;padding:11px;display:flex;flex-direction:column;justify-content:space-between}.decision-strip strong{font-family:Sora;font-size:18px}.decision-strip span{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.09em}.why-risk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}.why-risk-grid section{border:1px solid rgba(148,163,184,.18);border-radius:18px;padding:15px;background:rgba(2,6,15,.36)}.why-risk-grid ul{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:8px}.why-risk-grid li{position:relative;padding-left:18px;color:#dbeafe;line-height:1.45}.why-risk-grid li:before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--green)}.why-risk-grid section:last-child li:before{background:var(--amber)}.risk-label{color:var(--amber)!important}.context-fit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}.context-fit-grid div{border:1px solid rgba(148,163,184,.16);border-radius:16px;padding:13px;background:rgba(255,255,255,.028)}.context-fit-grid span{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.09em;margin-bottom:6px}.context-fit-grid strong{display:block;font-family:Sora;font-size:14px;color:#f8fafc}.context-fit-grid p{margin:7px 0 0;color:#9fb0c6;font-size:12px;line-height:1.45}.race-shape-panel{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0;border:1px solid rgba(93,255,177,.18);border-radius:22px;padding:16px;background:linear-gradient(135deg,rgba(93,255,177,.07),rgba(125,211,252,.035))}.race-shape-panel strong{display:block;font-family:Sora;font-size:18px;margin:6px 0}.race-shape-panel p{color:#cbd5e1;line-height:1.55;margin:0}.shape-bars{display:grid;gap:10px}.shape-bars div{display:grid;grid-template-columns:88px 1fr 28px;gap:10px;align-items:center;color:#cbd5e1;font-size:12px}.shape-bars i{height:9px;border-radius:999px;background:linear-gradient(90deg,var(--gold),var(--green));width:var(--w);box-shadow:0 0 14px rgba(93,255,177,.22)}.shape-bars b{font-family:Sora;color:#f8fafc;text-align:right}.premium-horse-head h3{font-size:clamp(28px,3.8vw,44px)}.race-score strong{font-size:54px}.brief-card,.race-card,.horse-card,.panel{border-radius:18px}.ff-score-block,.race-intel-grid div,.main-danger div,.runner.compact,.decision-strip>div,.context-fit-grid div,.why-risk-grid section{border-radius:12px}.page-hero{border-radius:22px}.topnav{border-radius:18px}
+.quality-scale{display:flex;gap:4px;align-items:center}.quality-scale span{display:grid!important;place-items:center;width:24px;height:24px;border-radius:999px;border:1px solid rgba(148,163,184,.20);background:rgba(15,23,42,.70);color:#8ea3bb!important;font-family:Sora;font-size:10px!important;letter-spacing:0!important}.quality-scale span.active{color:#06130d!important;border-color:transparent;box-shadow:0 0 22px rgba(93,255,177,.28)}.quality-scale span.active.elite{background:linear-gradient(135deg,var(--green),var(--blue))}.quality-scale span.active.good{background:linear-gradient(135deg,#b8f7ff,var(--blue))}.quality-scale span.active.warn{background:linear-gradient(135deg,var(--gold),#ffae42)}.quality-scale span.active.bad{color:#fff!important;background:linear-gradient(135deg,var(--red),#b91c1c)}.recent-evidence{margin:14px 0;border:1px solid rgba(125,211,252,.18);border-radius:14px;padding:14px;background:rgba(2,6,15,.34)}.recent-evidence-head{display:flex;justify-content:space-between;gap:14px;align-items:start;margin-bottom:12px}.recent-evidence-head strong{display:block;font-family:Sora;font-size:18px;margin-top:5px}.recent-evidence-stats{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.recent-evidence-stats span{border:1px solid rgba(148,163,184,.18);border-radius:999px;padding:7px 9px;color:#dbeafe;font-family:Sora;font-size:10px;text-transform:uppercase;letter-spacing:.06em;background:rgba(255,255,255,.035)}.recent-table{width:100%;border-collapse:collapse}.recent-table th{color:var(--muted);font-family:Sora;font-size:10px;text-align:left;text-transform:uppercase;letter-spacing:.08em;padding:9px;border-bottom:1px solid rgba(148,163,184,.15)}.recent-table td{padding:10px 9px;color:#e5e7eb;font-size:12px;border-bottom:1px solid rgba(148,163,184,.08)}.recent-table tr:last-child td{border-bottom:none}.finish-pill{display:inline-flex;border-radius:999px;padding:5px 8px;font-family:Sora;font-size:10px;font-weight:800;background:rgba(148,163,184,.10);color:#cbd5e1}.finish-pill.elite,.finish-pill.good{background:rgba(93,255,177,.15);color:#bbf7d0}.finish-pill.warn{background:rgba(245,158,11,.15);color:#fde68a}.finish-pill.bad{background:rgba(239,68,68,.14);color:#fecaca}.finish-pill.neutral{background:rgba(148,163,184,.12);color:#cbd5e1}
+.distance-timing-panel{margin:14px 0;border:1px solid rgba(125,211,252,.18);border-radius:14px;padding:15px;background:linear-gradient(135deg,rgba(14,165,233,.07),rgba(2,6,15,.42))}.distance-timing-panel.elite{border-color:rgba(93,255,177,.30);box-shadow:0 0 24px rgba(93,255,177,.08)}.distance-timing-panel.warn{border-color:rgba(245,158,11,.28);background:linear-gradient(135deg,rgba(245,158,11,.075),rgba(2,6,15,.42))}.distance-timing-panel.bad{border-color:rgba(239,68,68,.25);background:linear-gradient(135deg,rgba(239,68,68,.07),rgba(2,6,15,.42))}.distance-timing-head{display:flex;justify-content:space-between;gap:14px;align-items:start;margin-bottom:12px}.distance-timing-head strong{display:block;font-family:Sora;font-size:18px;margin-top:5px}.distance-timing-head .finish-pill{max-width:360px;line-height:1.35;white-space:normal}.distance-timing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}.distance-timing-grid div{border:1px solid rgba(148,163,184,.15);border-radius:10px;padding:10px;background:rgba(255,255,255,.03)}.distance-timing-grid span{display:block;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.08em}.distance-timing-grid strong{display:block;margin-top:4px;font-family:Sora;font-size:13px;color:#f8fafc}.distance-timing-table{width:100%;border-collapse:collapse}.distance-timing-table th{color:var(--muted);font-family:Sora;font-size:10px;text-align:left;text-transform:uppercase;letter-spacing:.08em;padding:8px;border-bottom:1px solid rgba(148,163,184,.14)}.distance-timing-table td{padding:9px 8px;color:#e5e7eb;font-size:12px;border-bottom:1px solid rgba(148,163,184,.08)}.distance-timing-table tr:last-child td{border-bottom:none}.distance-timing-panel small{display:block;margin-top:11px;color:#9fb0c6;line-height:1.45}
+.sectional-angle{margin:14px 0;border:1px solid rgba(125,211,252,.20);border-radius:14px;padding:15px;background:linear-gradient(135deg,rgba(125,211,252,.07),rgba(2,6,15,.42))}.sectional-angle.elite{border-color:rgba(93,255,177,.32);box-shadow:0 0 28px rgba(93,255,177,.10)}.sectional-angle.bad{border-color:rgba(255,102,115,.28);background:linear-gradient(135deg,rgba(255,102,115,.08),rgba(2,6,15,.42))}.sectional-angle-head{display:flex;justify-content:space-between;gap:14px;align-items:start;margin-bottom:10px}.sectional-angle-head strong{display:block;font-family:Sora;font-size:20px;margin-top:5px}.sectional-angle p{margin:0 0 12px;color:#e5f3ff;line-height:1.55}.sectional-angle small{display:block;margin-top:10px;color:#93a8bd;line-height:1.45}.sectional-evidence{text-align:right}.sectional-evidence span{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.08em}.sectional-evidence b{display:block;margin-top:5px;color:#dbeafe;font-family:Sora;font-size:11px}.sectional-read{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center;border:1px solid rgba(148,163,184,.16);border-radius:11px;padding:11px 12px;margin:10px 0 12px;background:rgba(2,6,15,.34)}.sectional-read strong{font-family:Sora;color:#f8fafc}.sectional-read span{color:#cbd5e1;line-height:1.45}.sectional-read.elite strong,.sectional-read.good strong{color:var(--green)}.sectional-read.bad strong{color:#fecaca}.sectional-read.neutral strong{color:#dbeafe}.sectional-metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.sectional-metrics.readable-sectionals{grid-template-columns:repeat(4,1fr)}.sectional-metrics div{border:1px solid rgba(148,163,184,.15);border-radius:10px;padding:10px;background:rgba(255,255,255,.03)}.sectional-metrics span{display:block;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.08em}.sectional-metrics strong{display:block;margin-top:4px;font-family:Sora;font-size:13px;color:#f8fafc}.sectional-metrics small{margin-top:5px!important;color:#8ea3bb;font-size:11px;line-height:1.35}.sectional-method-note{margin-top:10px;border-top:1px solid rgba(148,163,184,.14);padding-top:10px;color:#93a8bd;font-size:11px;line-height:1.45}
+.visual-trend-panel,.split-speed-chart{margin:14px 0;border:1px solid rgba(148,163,184,.17);border-radius:14px;padding:14px;background:rgba(2,6,15,.38)}.visual-trend-head{display:flex;justify-content:space-between;gap:14px;align-items:end;margin-bottom:11px}.visual-trend-head strong{display:block;margin-top:4px;font-family:Sora;font-size:14px;color:#f8fafc}.visual-trend-head small{max-width:340px;color:#8ea3bb;text-align:right;line-height:1.35}.trend-chart,.split-chart{display:grid;gap:9px}.trend-row{display:grid;grid-template-columns:minmax(112px,170px) 1fr;gap:10px;align-items:center}.trend-row>span,.split-row>span{color:#aebed0;font-size:11px}.trend-bars{display:grid;gap:4px}.trend-bars i,.split-row i{display:block;width:var(--w);min-width:54px;border-radius:999px;padding:3px 8px;font-style:normal;transition:.25s}.trend-bars b,.split-row b{display:block;color:#06101a;font-family:Sora;font-size:10px;white-space:nowrap}.rpr-bar{background:linear-gradient(90deg,#5dffb1,#baffdb)}.or-bar{background:linear-gradient(90deg,#7dd3fc,#c6edff)}.split-row{display:grid;grid-template-columns:minmax(92px,120px) 1fr;gap:10px;align-items:center}.split-row i{box-sizing:border-box}.early-bar{background:linear-gradient(90deg,#ffd166,#ffe7a6)}.late-bar{background:linear-gradient(90deg,#7dd3fc,#baffdb)}.verified-sectional-panel{margin-top:14px;border-top:1px solid rgba(148,163,184,.14);padding-top:14px}.verified-sectional-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.verified-sectional-grid>div{border:1px solid rgba(148,163,184,.15);border-radius:10px;padding:11px;background:rgba(255,255,255,.03)}.verified-sectional-grid span,.verified-sectional-grid small{display:block;color:#8ea3bb;font-size:10px;line-height:1.4}.verified-sectional-grid strong{display:block;margin:5px 0 8px;color:#f8fafc;font-family:Sora;font-size:17px}.timing-meter{display:block;width:100%;height:18px;border-radius:999px;background:rgba(148,163,184,.16);overflow:hidden;font-style:normal;margin:2px 0 7px}.timing-meter b{display:block;width:var(--w);min-width:76px;box-sizing:border-box;height:100%;padding:3px 7px;border-radius:999px;color:#06101a;background:linear-gradient(90deg,#b8c5d6,#dbeafe);font-family:Sora;font-size:9px;white-space:nowrap}.timing-meter.elite b,.timing-meter.good b{background:linear-gradient(90deg,#5dffb1,#baffdb)}.timing-meter.bad b{background:linear-gradient(90deg,#fb7185,#fecaca)}
+.last-six-strip{margin:12px 0;border:1px solid rgba(148,163,184,.16);border-radius:14px;padding:12px;background:rgba(2,6,15,.32)}.last-six-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:9px}.last-six-head small{color:#8ea3bb;text-align:right}.form-tiles{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:7px}.form-tile{min-width:0;border:1px solid rgba(148,163,184,.17);border-radius:10px;padding:8px;background:rgba(255,255,255,.035)}.form-tile strong{display:block;font-family:Sora;font-size:18px;color:#e2e8f0}.form-tile span,.form-tile small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.form-tile span{margin-top:4px;color:#cbd5e1;font-size:10px}.form-tile small{margin-top:3px;color:#7f93aa;font-size:9px}.form-tile.win{border-color:rgba(93,255,177,.45);background:rgba(93,255,177,.10)}.form-tile.win strong{color:var(--green)}.form-tile.place{border-color:rgba(125,211,252,.36);background:rgba(125,211,252,.08)}.form-tile.place strong{color:var(--blue)}
+.mini-grid{gap:8px 12px}.trip-run-count{display:flex;align-items:center;justify-content:flex-end;gap:8px;color:var(--green);font-family:Sora;font-size:17px}.trip-experience{display:inline-flex;align-items:center;gap:4px;border:1px solid rgba(93,255,177,.35);border-radius:999px;padding:4px 7px;color:#bbf7d0;font-size:9px;text-transform:uppercase;letter-spacing:.06em;background:rgba(93,255,177,.10);box-shadow:0 0 15px rgba(93,255,177,.12)}.trip-experience i{display:grid;place-items:center;width:15px;height:15px;border-radius:50%;color:#06130d;background:var(--green);box-shadow:0 0 12px rgba(93,255,177,.38);font-style:normal}.trip-experience.developing{color:#cbd5e1;border-color:rgba(148,163,184,.25);background:rgba(148,163,184,.08);box-shadow:none}.trend-summary{margin:0 0 11px;border-left:3px solid var(--green);padding:8px 10px;color:#dffcef;font-size:12px;background:rgba(93,255,177,.065)}.split-row{grid-template-columns:minmax(122px,150px) 1fr}.fit-bar{background:linear-gradient(90deg,#b8c5d6,#dbeafe)}.fit-bar.elite,.fit-bar.good{background:linear-gradient(90deg,#5dffb1,#baffdb)}.fit-bar.bad{background:linear-gradient(90deg,#fb7185,#fecaca)}.split-explainer{margin:0 0 12px!important;border-left:3px solid var(--blue);padding:8px 10px;color:#dbeafe!important;background:rgba(125,211,252,.055)}.form-tile span,.form-tile small,.form-tile em{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.form-tile em{margin-top:5px;font-family:Sora;font-size:9px;font-style:normal}.form-tile em.positive{color:var(--green)}.form-tile em.caution{color:var(--amber)}.form-tile em.excuse{color:var(--blue)}.form-tile em.neutral{color:#aebed0}
+.result-model-review{display:grid;gap:12px;margin:14px 0;border:1px solid rgba(93,255,177,.22);border-radius:14px;padding:14px;background:rgba(93,255,177,.045)}.result-model-review>div>strong{display:block;margin-top:5px;color:#e9fff4;font-family:Sora}.result-model-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.result-model-grid div{border:1px solid rgba(148,163,184,.15);border-radius:10px;padding:10px;background:rgba(2,6,15,.32)}.result-model-grid span,.result-model-grid small{display:block;color:#8ea3bb;font-size:10px}.result-model-grid strong{display:block;margin:5px 0;color:#f8fafc;font-family:Sora}
+.briefing-intro,.briefing-list,.briefing-note{padding:20px}.briefing-intro h2,.briefing-list h2{margin:5px 0 10px}.briefing-columns{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.briefing-list{display:grid;gap:8px;align-content:start}.briefing-row{display:grid;grid-template-columns:1fr minmax(74px,auto) minmax(74px,auto);gap:10px;align-items:center;border:1px solid rgba(148,163,184,.16);border-radius:12px;padding:11px;color:#f8fafc;text-decoration:none;background:rgba(2,6,15,.34);transition:.2s}.briefing-row:hover{border-color:rgba(93,255,177,.36);background:rgba(93,255,177,.055)}.briefing-row strong,.briefing-row span,.briefing-row b,.briefing-row small{display:block}.briefing-row span,.briefing-row small{margin-top:4px;color:#8ea3bb;font-size:10px}.briefing-row b{color:var(--green);font-family:Sora}.briefing-note{margin-top:14px}.briefing-note p{margin:7px 0 0;color:#cbd5e1;line-height:1.55}
+.runner-race-link{display:flex;justify-content:space-between;gap:14px;align-items:center;margin:14px 0;border:1px solid rgba(248,216,120,.24);border-radius:14px;padding:14px;background:linear-gradient(135deg,rgba(248,216,120,.09),rgba(125,211,252,.035))}.runner-race-link strong{display:block;font-family:Sora;font-size:17px;margin-top:5px;color:#fff7cc}.runner-race-link p{margin:5px 0 0;color:#cbd5e1;line-height:1.45}.runner-race-link a{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:10px 13px;background:linear-gradient(135deg,var(--gold),#ffae42);color:#1e1400;font-family:Sora;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;white-space:nowrap}
+.key-section{padding:22px}.key-section h2{margin-top:0}.key-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.key-item{border:1px solid var(--line);border-radius:20px;padding:16px;background:rgba(255,255,255,.035)}.key-item strong{display:block;color:var(--green);font-family:Sora;margin-bottom:7px}.key-item p{margin:0;color:#cbd5e1;line-height:1.58}footer{margin-top:30px;color:var(--muted);font-size:12px;line-height:1.65;padding-bottom:20px}
+.result-card .premium-snapshot{grid-template-columns:260px 1fr}.result-opinion p{margin:0;color:#dbeafe;line-height:1.65}.result-winner-name{font-size:28px!important;max-width:260px;overflow-wrap:anywhere}.result-table-wrap{margin-top:16px}.result-table td strong{color:#f8fafc}
+.pnl-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.pnl-panel{padding:18px}.pnl-panel h2{margin:7px 0 10px}.pnl-panel p{margin:0;color:#cbd5e1;line-height:1.6}.pnl-panel>small{display:block;margin-top:12px;color:#8ea3bb;line-height:1.45}.pnl-chart{display:grid;gap:10px;margin-top:14px}.pnl-chart-row{display:grid;grid-template-columns:minmax(110px,190px) 1fr minmax(92px,auto);gap:10px;align-items:center}.pnl-chart-row span,.pnl-chart-row small{color:#9fb0c6;font-size:10px}.pnl-bar{display:block;width:var(--w);min-width:58px;border-radius:999px;padding:4px 8px;background:linear-gradient(90deg,#5dffb1,#baffdb);font-style:normal}.pnl-bar.bad{background:linear-gradient(90deg,#fb7185,#fecaca)}.pnl-bar b{display:block;color:#06101a;font-family:Sora;font-size:10px;white-space:nowrap}.pnl-table{min-width:920px}.angle-monitor{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}.angle-card{padding:15px;border:1px solid #263a4b;border-radius:8px;background:#091522}.angle-card header{display:flex;justify-content:space-between;gap:10px;align-items:start}.angle-card h3{margin:0;color:#f4f7fb;font-size:15px;line-height:1.35}.angle-stage{display:inline-flex;flex:none;padding:4px 7px;border-radius:999px;border:1px solid #365268;color:#b9c9dc;font-size:9px;font-weight:800;text-transform:uppercase}.angle-stage.building{border-color:#d6a844;color:#ffd36d}.angle-stage.established{border-color:#35d68d;color:#68f5b7}.angle-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.angle-stats span{color:#8ea3bb;font-size:9px;text-transform:uppercase}.angle-stats strong{display:block;margin-top:4px;color:#f3f7fb;font-family:Sora;font-size:15px}.angle-return{margin-top:13px;color:#68f5b7;font-family:Sora;font-size:14px}.angle-return.negative{color:#fda4af}.angle-card small{display:block;margin-top:8px;color:#8ea3bb;line-height:1.45}
+@media(max-width:900px){body{padding:12px}.topnav{position:relative;top:auto;align-items:start;display:grid}.navlinks{justify-content:flex-start}.page-hero{padding:24px;border-radius:18px}.race-header,.horse-head,.top-horse-details>summary{grid-template-columns:1fr}.race-score,.horse-score,.hero-score-stack{text-align:left;justify-items:start}.top-horse-summary-tags{justify-content:flex-start}.home-showcase,.about-grid,.brief-grid,.race-intel-grid,.main-danger,.context-grid,.premium-grid,.filter-panel,.horse-search-panel,.key-grid,.premium-snapshot,.decision-strip,.why-risk-grid,.context-fit-grid,.race-shape-panel,.sectional-metrics,.sectional-metrics.readable-sectionals,.distance-timing-grid,.horse-result-stats,.value-grid,.method-strip,.premium-runner-summary,.result-model-grid,.briefing-columns,.verified-sectional-grid,.pnl-grid,.angle-monitor{grid-template-columns:1fr}.sectional-angle-head,.runner-race-link,.distance-timing-head,.visual-trend-head,.last-six-head{display:grid}.sectional-evidence,.visual-trend-head small,.last-six-head small{text-align:left}.trend-row{grid-template-columns:1fr}.form-tiles{grid-template-columns:repeat(3,minmax(0,1fr))}.briefing-row{grid-template-columns:1fr}.runner-race-link a{justify-self:start}.runner-meta-strip,.horse-profile-strip{grid-template-columns:repeat(2,1fr)}.ff-intel-metrics{grid-template-columns:repeat(2,1fr)}.bar-row{grid-template-columns:1fr;gap:5px}.runner.compact summary{grid-template-columns:1fr}.runner.compact summary .bet-badge{justify-self:start}.runner.compact summary .trust-meter{width:100%}.filter-panel,.horse-search-panel{position:relative;top:auto}.horse-search-count{padding:0}.distance-timing-head .finish-pill{max-width:none}.home-screen{min-height:300px}.video-score{font-size:56px}.pnl-chart-row{grid-template-columns:1fr}.pnl-bar{min-width:72px}}
+</style>
+</head>
+<body class="page-pnl">
+
+    <nav class="topnav">
+        <div class="brand-lockup">
+            <div class="logo">FF</div>
+            <div>
+                <strong>ForeFurlongs Intelligence</strong>
+                <span>Context creates performance</span>
+            </div>
+        </div>
+        <div class="navlinks"><a class="" href="index.html">Home</a><a class="" href="briefing.html">Briefing</a><a class="" href="racecards.html">Racecards</a><a class="" href="bet-races.html">Bet Races</a><a class="" href="top-horses.html">Top Horses</a><a class="" href="horse-search.html">Horse Search</a><a class="" href="results.html">Results</a><a class="active" href="model-pnl.html">Model P&L</a><a class="" href="watchlist.html">Watchlist</a><a class="" href="key.html">Key</a></div>
+    </nav>
+    
+<section class="page-hero">
+    <div class="eyebrow">ForeFurlongs Intelligence</div>
+    <h1>Model P&amp;L</h1>
+    <p>An audited, transparent view of how the primary pre-race model profiles have performed: £1 win stakes settled to SP, monthly review and every tracked primary selection listed.</p>
+</section>
+<main class="content">
+
+    <section class="brief-grid">
+        <div class="brief-card"><span>Audited primary profiles</span><strong>30</strong></div>
+        <div class="brief-card"><span>Win strike rate</span><strong>26.7%</strong></div>
+        <div class="brief-card"><span>Top-3 strike rate</span><strong>53.3%</strong></div>
+        <div class="brief-card"><span>£1 win stakes to SP</span><strong>+1.21 pts</strong></div>
+    </section>
+    <section class="pnl-grid">
+        <div class="panel pnl-panel">
+            <span class="micro-label">Transparent Method</span>
+            <h2>Primary profiles only</h2>
+            <p>Returns use one £1 win stake on each audited primary model profile, settled to SP. Top-three results are shown as a strike rate only because place odds are not yet stored.</p>
+            <small>Tracked period: 2026-05-23 to 2026-06-01 | ROI: 4.0% | unresolved selections excluded from settled totals.</small>
+        </div>
+        <div class="panel pnl-panel">
+            <span class="micro-label">How to use this</span>
+            <h2>Follow evidence, not a hot streak</h2>
+            <p>The charts show which confidence tiers have held up best so far. They are a research guide for race selection and stake restraint, not a promise that any individual runner will win.</p>
+            <small>The sample will become more useful as each nightly audit adds another completed racing day.</small>
+        </div>
+    </section>
+    <section class="pnl-grid">
+        <div class="panel pnl-panel"><span class="micro-label">Cumulative P&amp;L</span><h2>£1 win stakes to SP</h2><div class="pnl-chart"><div class="pnl-chart-row"><span>2026-05-23</span><i class="pnl-bar bad" style="--w:21.4%"><b>-1</b></i><small>0 win | 0 top 3</small></div><div class="pnl-chart-row"><span>2026-05-27</span><i class="pnl-bar bad" style="--w:57.1%"><b>-2.67</b></i><small>3 win | 4 top 3</small></div><div class="pnl-chart-row"><span>2026-05-28</span><i class="pnl-bar bad" style="--w:100.0%"><b>-4.67</b></i><small>0 win | 1 top 3</small></div><div class="pnl-chart-row"><span>2026-05-30</span><i class="pnl-bar good" style="--w:79.5%"><b>+3.71</b></i><small>4 win | 6 top 3</small></div><div class="pnl-chart-row"><span>2026-05-31</span><i class="pnl-bar good" style="--w:58.0%"><b>+2.71</b></i><small>0 win | 1 top 3</small></div><div class="pnl-chart-row"><span>2026-06-01</span><i class="pnl-bar good" style="--w:25.9%"><b>+1.21</b></i><small>1 win | 4 top 3</small></div></div></div>
+        <div class="panel pnl-panel"><span class="micro-label">Monthly Review</span><h2>Performance by month</h2><div class="pnl-chart"><div class="pnl-chart-row"><span>June 2026</span><i class="pnl-bar bad" style="--w:55.4%"><b>-1.5</b></i><small>5 bets | 1 win | 4 top 3 | ROI -30.0%</small></div><div class="pnl-chart-row"><span>May 2026</span><i class="pnl-bar good" style="--w:100.0%"><b>+2.71</b></i><small>25 bets | 7 win | 12 top 3 | ROI 10.8%</small></div></div></div>
+    </section>
+    <section class="panel pnl-panel">
+        <span class="micro-label">Primary Profile Review</span>
+        <h2>ROI by selection label</h2>
+        <div class="pnl-chart"><div class="pnl-chart-row"><span>PRIMARY CANDIDATE</span><i class="pnl-bar good" style="--w:8.0%"><b>+7.61</b></i><small>29 bets | 8 win | 16 top 3</small></div><div class="pnl-chart-row"><span>PRIMARY PICK</span><i class="pnl-bar bad" style="--w:100.0%"><b>-100</b></i><small>1 bets | 0 win | 0 top 3</small></div></div>
+    </section>
+    <section class="panel pnl-panel">
+        <span class="micro-label">Angle Monitor</span>
+        <h2>Which supporting signals are holding up?</h2>
+        <p>These overlapping research groups start with a primary candidate, then add supporting evidence. Emerging angles remain observations until the nightly tracker builds a larger settled sample.</p>
+        <div class="angle-monitor"><article class="angle-card">
+            <header><h3>Primary baseline</h3><span class="angle-stage building-evidence">Building Evidence</span></header>
+            <div class="angle-stats">
+                <div><span>Bets</span><strong>30</strong></div>
+                <div><span>Win</span><strong>26.7%</strong></div>
+                <div><span>Top 3</span><strong>53.3%</strong></div>
+            </div>
+            <div class="angle-return ">+1.21 pts | ROI 4.0%</div>
+            <small>Every audited primary model candidate.</small>
+        </article><article class="angle-card">
+            <header><h3>Recent form confirmed</h3><span class="angle-stage building-evidence">Building Evidence</span></header>
+            <div class="angle-stats">
+                <div><span>Bets</span><strong>22</strong></div>
+                <div><span>Win</span><strong>31.8%</strong></div>
+                <div><span>Top 3</span><strong>59.1%</strong></div>
+            </div>
+            <div class="angle-return ">+5.71 pts | ROI 25.9%</div>
+            <small>Primary candidate with a positive recent-form signal.</small>
+        </article><article class="angle-card">
+            <header><h3>Form + horse memory</h3><span class="angle-stage emerging">Emerging</span></header>
+            <div class="angle-stats">
+                <div><span>Bets</span><strong>17</strong></div>
+                <div><span>Win</span><strong>29.4%</strong></div>
+                <div><span>Top 3</span><strong>52.9%</strong></div>
+            </div>
+            <div class="angle-return ">+6.62 pts | ROI 39.0%</div>
+            <small>Recent form supported by the horse&#x27;s historic profile.</small>
+        </article><article class="angle-card">
+            <header><h3>Three-way alignment</h3><span class="angle-stage emerging">Emerging</span></header>
+            <div class="angle-stats">
+                <div><span>Bets</span><strong>14</strong></div>
+                <div><span>Win</span><strong>28.6%</strong></div>
+                <div><span>Top 3</span><strong>50.0%</strong></div>
+            </div>
+            <div class="angle-return ">+8.12 pts | ROI 58.0%</div>
+            <small>Recent form, horse memory and race commentary all agree.</small>
+        </article><article class="angle-card">
+            <header><h3>Sectional confirmation</h3><span class="angle-stage emerging">Emerging</span></header>
+            <div class="angle-stats">
+                <div><span>Bets</span><strong>9</strong></div>
+                <div><span>Win</span><strong>33.3%</strong></div>
+                <div><span>Top 3</span><strong>66.7%</strong></div>
+            </div>
+            <div class="angle-return ">+9 pts | ROI 100.0%</div>
+            <small>Primary candidate with a positive recorded sectional fit.</small>
+        </article></div>
+        <small>Evidence stages: Emerging under 20 settled bets | Building Evidence 20-49 | Established 50+.</small>
+    </section>
+    <section class="panel pnl-panel">
+        <span class="micro-label">Audited Ledger</span>
+        <h2>Every tracked primary profile</h2>
+        <div class="previous-runs"><table class="rp-table pnl-table"><thead><tr><th>Date</th><th>Race</th><th>Model horse</th><th>Pos</th><th>SP</th><th>P&amp;L</th><th>Confidence</th><th>Tier</th></tr></thead><tbody><tr><td>2026-06-01</td><td>2:07 | Lingfield (AW)</td><td><strong>Buy The Dip</strong></td><td>2</td><td>100/30</td><td>-1</td><td>50.0</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-06-01</td><td>2:07 | Lingfield (AW)</td><td><strong>Mbappe</strong></td><td>Unresolved</td><td>--</td><td>Awaiting audit</td><td>41.5</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-06-01</td><td>2:42 | Lingfield (AW)</td><td><strong>Southbank</strong></td><td>2</td><td>EvensF</td><td>-1</td><td>38.5</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-06-01</td><td>5:05 | Windsor</td><td><strong>Moulin Booj</strong></td><td>3</td><td>13/2</td><td>-1</td><td>47.5</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-06-01</td><td>7:45 | Windsor</td><td><strong>Moon Over The Sea</strong></td><td>4</td><td>100/30</td><td>-1</td><td>46.7</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-06-01</td><td>8:30 | Wolverhampton (AW)</td><td><strong>He&#x27;s An Angel</strong></td><td>1</td><td>5/2F</td><td>+2.5</td><td>37.0</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-06-01</td><td>8:45 | Windsor</td><td><strong>Party Island</strong></td><td>Unresolved</td><td>--</td><td>Awaiting audit</td><td>39.0</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-31</td><td>3:50 | Listowel</td><td><strong>God Of Power</strong></td><td>Unresolved</td><td>--</td><td>Awaiting audit</td><td>53.5</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-31</td><td>6:45 | Thirsk</td><td><strong>Thaluna</strong></td><td>3</td><td>100/30F</td><td>-1</td><td>52.6</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-30</td><td>1:30 | Carlisle</td><td><strong>Humble Spark</strong></td><td>Unresolved</td><td>--</td><td>Awaiting audit</td><td>38.1</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-30</td><td>1:45 | Beverley</td><td><strong>Mafting</strong></td><td>Unresolved</td><td>--</td><td>Awaiting audit</td><td>49.2</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-30</td><td>2:10 | Carlisle</td><td><strong>Krissy</strong></td><td>1</td><td>1/2F</td><td>+0.5</td><td>49.2</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-30</td><td>3:10 | Carlisle</td><td><strong>Coedana</strong></td><td>3</td><td>12/1</td><td>-1</td><td>55.6</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-30</td><td>3:30 | Chester</td><td><strong>Palmar Bay</strong></td><td>10</td><td>5/1</td><td>-1</td><td>40.2</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-30</td><td>4:00 | Beverley</td><td><strong>Goldmoyne</strong></td><td>4</td><td>4/1</td><td>-1</td><td>39.7</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-30</td><td>4:00 | Beverley</td><td><strong>Capital Guarantee</strong></td><td>9</td><td>18/1</td><td>-1</td><td>39.0</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-30</td><td>4:05 | Chester</td><td><strong>Zighy</strong></td><td>3</td><td>6/1</td><td>-1</td><td>45.4</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-30</td><td>4:20 | Carlisle</td><td><strong>Ziggy&#x27;s Queen</strong></td><td>8</td><td>40/1</td><td>-1</td><td>42.1</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-30</td><td>4:55 | Carlisle</td><td><strong>St Anton</strong></td><td>1</td><td>7/4F</td><td>+1.75</td><td>61.7</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-30</td><td>4:55 | Carlisle</td><td><strong>Factual</strong></td><td>8</td><td>100/30</td><td>-1</td><td>50.7</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-30</td><td>5:15 | Carlisle</td><td><strong>The Gay Blade</strong></td><td>1</td><td>12/1</td><td>+12</td><td>40.7</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-30</td><td>6:42 | Lingfield</td><td><strong>Sweet Reward</strong></td><td>1</td><td>85/40F</td><td>+2.12</td><td>42.2</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-30</td><td>8:25 | Wolverhampton (AW)</td><td><strong>Alondra</strong></td><td>5</td><td>14/1</td><td>-1</td><td>57.0</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-28</td><td>3:53 | Yarmouth</td><td><strong>King&#x27;s Hand</strong></td><td>2</td><td>15/8</td><td>-1</td><td>40.2</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-28</td><td>7:45 | Sandown</td><td><strong>Saytarr</strong></td><td>5</td><td>9/1</td><td>-1</td><td>54.2</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-27</td><td>2:53 | Newton Abbot</td><td><strong>Lady Kara</strong></td><td>1</td><td>2/1J</td><td>+2</td><td>33.0</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-27</td><td>3:53 | Newton Abbot</td><td><strong>Time To Bite</strong></td><td>3</td><td>100/30</td><td>-1</td><td>32.0</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-27</td><td>4:23 | Newton Abbot</td><td><strong>Reel Orange</strong></td><td>4</td><td>2/1F</td><td>-1</td><td>28.0</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-27</td><td>4:42 | Wexford</td><td><strong>Hasten Slowly</strong></td><td>Unresolved</td><td>--</td><td>Awaiting audit</td><td>29.5</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-27</td><td>4:50 | Beverley</td><td><strong>Sisterandbrother</strong></td><td>1</td><td>9/4</td><td>+2.25</td><td>49.4</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-27</td><td>5:12 | Wexford</td><td><strong>Colcannon</strong></td><td>Unresolved</td><td>--</td><td>Awaiting audit</td><td>29.0</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-27</td><td>5:20 | Beverley</td><td><strong>Thornaby Pearl</strong></td><td>4</td><td>9/5F</td><td>-1</td><td>38.5</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-27</td><td>5:25 | Kempton (AW)</td><td><strong>Joseph</strong></td><td>13</td><td>10/1</td><td>-1</td><td>49.5</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-27</td><td>6:49 | Wexford</td><td><strong>Karlynn</strong></td><td>Unresolved</td><td>--</td><td>Awaiting audit</td><td>28.0</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-27</td><td>7:19 | Wexford</td><td><strong>Dani Donadoni</strong></td><td>Unresolved</td><td>--</td><td>Awaiting audit</td><td>40.0</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-27</td><td>7:30 | Kempton (AW)</td><td><strong>Water To Wine</strong></td><td>1</td><td>1/12F</td><td>+0.08</td><td>29.1</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-27</td><td>7:49 | Wexford</td><td><strong>Sean Mc</strong></td><td>Unresolved</td><td>--</td><td>Awaiting audit</td><td>29.0</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-27</td><td>8:38 | Cartmel</td><td><strong>Prospect House</strong></td><td>4</td><td>13/2</td><td>-1</td><td>30.0</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-27</td><td>9:00 | Kempton (AW)</td><td><strong>Robusto</strong></td><td>5</td><td>25/1</td><td>-1</td><td>50.6</td><td>PRIMARY CANDIDATE</td></tr><tr><td>2026-05-24</td><td>3:20 | Curragh</td><td><strong>Jancis</strong></td><td>Unresolved</td><td>--</td><td>Awaiting audit</td><td>56.4</td><td>PRIMARY PICK</td></tr><tr><td>2026-05-24</td><td>4:30 | Curragh</td><td><strong>Sukanya</strong></td><td>Unresolved</td><td>--</td><td>Awaiting audit</td><td>52.4</td><td>PRIMARY PICK</td></tr><tr><td>2026-05-23</td><td>3:30 | Haydock</td><td><strong>Getreadytorumble</strong></td><td>7</td><td>17/2</td><td>-1</td><td>54.9</td><td>PRIMARY PICK</td></tr></tbody></table></div>
+    </section>
+    
+</main>
+<footer>
+ForeFurlongs Intelligence is a contextual racing analytics dashboard. It supports research and interpretation, but does not guarantee outcomes or constitute financial advice.
+</footer>
+<script>
+function updateCourseFilter() {
+    const course = document.getElementById("courseFilter")?.value || "ALL";
+    const race = document.getElementById("raceFilter")?.value || "ALL";
+
+    document.querySelectorAll(".race-card").forEach(card => {
+        const courseMatch = course === "ALL" || card.dataset.course === course;
+        const raceMatch = race === "ALL" || card.dataset.race === race;
+        card.style.display = (courseMatch && raceMatch) ? "" : "none";
+    });
+}
+function resetRaceFilters() {
+    const c = document.getElementById("courseFilter");
+    const r = document.getElementById("raceFilter");
+    if (c) c.value = "ALL";
+    if (r) r.value = "ALL";
+    updateCourseFilter();
+}
+function updateHorseSearch() {
+    const input = document.getElementById("horseSearch");
+    const count = document.getElementById("horseSearchCount");
+    const results = document.getElementById("horseSearchResults");
+    const query = (input?.value || "").trim().toLowerCase();
+    const index = window.FF_HORSE_PROFILES || [];
+
+    if (results && index.length) {
+        const matches = query.length < 2
+            ? index.filter(p => horseProfileEntered(p)).slice(0, 24)
+            : index.filter(p => horseProfileSearchText(p).includes(query)).slice(0, 40);
+        results.innerHTML = matches.map(renderHorseProfileResult).join("") || `
+            <section class="panel" style="padding:20px;">
+                <h2>No matching horse found</h2>
+                <p class="summary">Try fewer letters, remove punctuation, or search by trainer / owner.</p>
+            </section>
+        `;
+        if (count) {
+            const suffix = query.length < 2 ? "featured current profiles shown" : "matches shown";
+            count.textContent = `${matches.length} ${suffix} | ${index.length.toLocaleString()} searchable horses`;
+        }
+        return;
+    }
+
+    let shown = 0;
+    document.querySelectorAll("[data-horse-profile]").forEach(card => {
+        const text = (card.dataset.search || "").toLowerCase();
+        const match = query.length < 2 ? shown < 24 : text.includes(query);
+        card.classList.toggle("hidden", !match);
+        if (match) shown += 1;
+    });
+    if (count) count.textContent = shown + " shown";
+}
+
+function horseSearchChunkKey(query) {
+    const first = (query || "").trim().toLowerCase()[0] || "";
+    if (!first) return "";
+    if (first >= "a" && first <= "z") return first;
+    if (first >= "0" && first <= "9") return "0-9";
+    return "other";
+}
+
+function loadHorseSearchChunk(key) {
+    window.FF_LOADED_HORSE_CHUNKS = window.FF_LOADED_HORSE_CHUNKS || {};
+    if (!key) return Promise.resolve([]);
+    if (window.FF_LOADED_HORSE_CHUNKS[key]) {
+        return Promise.resolve(window.FF_LOADED_HORSE_CHUNKS[key]);
+    }
+    const manifest = window.FF_HORSE_PROFILE_MANIFEST || { chunks: [] };
+    const chunk = (manifest.chunks || []).find(item => item.key === key);
+    if (!chunk) return Promise.resolve([]);
+    return new Promise((resolve) => {
+        const script = document.createElement("script");
+        script.src = chunk.file;
+        script.onload = () => {
+            const rows = window.FF_HORSE_PROFILE_CHUNK || [];
+            window.FF_LOADED_HORSE_CHUNKS[key] = rows;
+            window.FF_HORSE_PROFILE_CHUNK = [];
+            resolve(rows);
+        };
+        script.onerror = () => resolve([]);
+        document.head.appendChild(script);
+    });
+}
+
+async function updateChunkedHorseSearch() {
+    const input = document.getElementById("horseSearch");
+    const count = document.getElementById("horseSearchCount");
+    const results = document.getElementById("horseSearchResults");
+    const query = (input?.value || "").trim().toLowerCase();
+    const manifest = window.FF_HORSE_PROFILE_MANIFEST;
+    if (!results || !manifest) return false;
+
+    if (query.length < 2) {
+        const currentRows = await Promise.all((manifest.chunks || []).map(async chunk => {
+            const rows = await loadHorseSearchChunk(chunk.key);
+            return rows.filter(p => horseProfileEntered(p)).slice(0, 24);
+        }));
+        const matches = currentRows.flat().slice(0, 24);
+        results.innerHTML = matches.map(renderHorseProfileResult).join("");
+        if (count) count.textContent = `${matches.length} featured current profiles shown | ${manifest.count.toLocaleString()} searchable horses`;
+        return true;
+    }
+
+    const key = horseSearchChunkKey(query);
+    const rows = await loadHorseSearchChunk(key);
+    const matches = rows.filter(p => horseProfileSearchText(p).includes(query)).slice(0, 40);
+    results.innerHTML = matches.map(renderHorseProfileResult).join("") || `
+        <section class="panel" style="padding:20px;">
+            <h2>No matching horse found</h2>
+            <p class="summary">Try fewer letters, remove punctuation, or search by trainer / owner.</p>
+        </section>
+    `;
+    if (count) count.textContent = `${matches.length} matches shown | ${manifest.count.toLocaleString()} searchable horses`;
+    return true;
+}
+
+function normaliseHorseProfile(profile) {
+    if (!Array.isArray(profile)) return profile || {};
+    return {
+        horse: profile[0],
+        trainer: profile[1],
+        owner: profile[2],
+        runs: profile[3],
+        wins: profile[4],
+        places: profile[5],
+        winRate: profile[6],
+        placeRate: profile[7],
+        bestRpr: profile[8],
+        latestOr: profile[9],
+        bestTrip: profile[10],
+        bestGoing: profile[11],
+        bestClass: profile[12],
+        style: profile[13],
+        fastFinishes: profile[14],
+        fades: profile[15],
+        entered: profile[16] === 1,
+        entryTime: profile[17],
+        entryCourse: profile[18],
+        entryRace: profile[19],
+        entryLink: profile[20],
+    };
+}
+
+function horseProfileEntered(profile) {
+    return Array.isArray(profile) ? profile[16] === 1 : !!profile.entered;
+}
+
+function horseProfileSearchText(profile) {
+    if (Array.isArray(profile)) {
+        return `${profile[0] || ""} ${profile[1] || ""} ${profile[2] || ""}`.toLowerCase();
+    }
+    return (profile.search || `${profile.horse || ""} ${profile.trainer || ""} ${profile.owner || ""}`).toLowerCase();
+}
+
+function escHtml(value) {
+    return String(value ?? "").replace(/[&<>"']/g, ch => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+    }[ch]));
+}
+
+function renderHorseProfileResult(profile) {
+    profile = normaliseHorseProfile(profile);
+    const entry = profile.entered ? `
+        <a class="runner-race-link profile-entry-link" href="${escHtml(profile.entryLink || "racecards.html")}">
+            <span>Runs today</span>
+            <strong>${escHtml(profile.entryTime)} | ${escHtml(profile.entryCourse)}</strong>
+            <small>${escHtml(profile.entryRace)}</small>
+        </a>
+    ` : "";
+    const read = `${profile.horse} has ${profile.runs} stored run(s), ${profile.winRate}% wins and ${profile.placeRate}% top-three finishes. Best evidence points to ${profile.bestTrip} and ${profile.bestGoing}, with strongest class evidence around ${profile.bestClass}.`;
+    return `
+        <article class="horse-result-card">
+            <div class="horse-head">
+                <div>
+                    <div class="eyebrow">Historic Horse Profile</div>
+                    <h3>${escHtml(profile.horse)}</h3>
+                    <p>Trainer: ${escHtml(profile.trainer || "Trainer data developing")} | Owner: ${escHtml(profile.owner || "Owner data developing")}</p>
+                </div>
+                <div class="hero-score-stack">
+                    <div class="ff-score-block score-elite"><span>Best RPR</span><strong>${escHtml(profile.bestRpr || "--")}</strong></div>
+                    ${entry}
+                </div>
+            </div>
+            <div class="horse-result-stats">
+                <div><span>Runs</span><strong>${escHtml(profile.runs)}</strong></div>
+                <div><span>Wins</span><strong>${escHtml(profile.wins)}</strong></div>
+                <div><span>Places</span><strong>${escHtml(profile.places)}</strong></div>
+                <div><span>Best trip</span><strong>${escHtml(profile.bestTrip)}</strong></div>
+                <div><span>Going</span><strong>${escHtml(profile.bestGoing)}</strong></div>
+                <div><span>Class</span><strong>${escHtml(profile.bestClass)}</strong></div>
+            </div>
+            <section class="profile-writeup">
+                <span class="micro-label">Database read</span>
+                <p>${escHtml(read)}</p>
+            </section>
+        </article>
+    `;
+}
+document.addEventListener("DOMContentLoaded", () => {
+    if (document.getElementById("horseSearch")) {
+        if (window.FF_HORSE_PROFILE_MANIFEST) {
+            updateChunkedHorseSearch();
+            document.getElementById("horseSearch").addEventListener("input", updateChunkedHorseSearch);
+        } else {
+            updateHorseSearch();
+        }
+    }
+});
+</script>
+</body>
+</html>
