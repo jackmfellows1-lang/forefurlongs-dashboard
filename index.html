@@ -439,7 +439,7 @@ function updateRaceCompare(input) {
         bestRprNum: Math.max(...selected.map(item => numeric(item, "bestRprNum"))),
         rprEdgeNum: Math.max(...selected.map(item => numeric(item, "rprEdgeNum"))),
         fspNum: Math.max(...selected.map(item => numeric(item, "fspNum"))),
-        drawNum: Math.max(...selected.map(item => numeric(item, "drawNum"))),
+        drawQualityNum: Math.max(...selected.map(item => numeric(item, "drawQualityNum"))),
         groundNum: Math.max(...selected.map(item => numeric(item, "groundNum"))),
     };
     const deiRank = {"A+": 7, "A": 6, "B": 5, "C": 4, "D": 3, "E": 2, "F": 1};
@@ -456,7 +456,7 @@ function updateRaceCompare(input) {
         if (numeric(item, "markNum") === best.markNum) badges.push("Best mark");
         if (numeric(item, "bestRprNum") === best.bestRprNum) badges.push("Best RPR");
         if (numeric(item, "fspNum") === best.fspNum && best.fspNum > 0) badges.push("Best FSP");
-        if (numeric(item, "drawNum") === best.drawNum) badges.push("Best draw");
+        if (numeric(item, "drawQualityNum") === best.drawQualityNum && best.drawQualityNum > 50) badges.push("Best draw");
         return badges.slice(0, 3);
     };
     tray.classList.add("active");
@@ -504,7 +504,7 @@ function updateRaceCompare(input) {
             <div class="compare-section">
                 <span>Track / ground</span>
                 <div class="compare-delta-grid">
-                    <div class="${numeric(item, "drawNum") === best.drawNum ? "best" : ""}"><span>Draw</span><strong>${escHtml(item.dataset.draw || "--")}</strong></div>
+                    <div class="${numeric(item, "drawQualityNum") === best.drawQualityNum && best.drawQualityNum > 50 ? "best" : ""}"><span>Draw</span><strong>${escHtml(item.dataset.draw || "--")}</strong></div>
                     <div><span>Draw read</span><strong>${escHtml(item.dataset.drawRead || "--")}</strong></div>
                     <div class="${numeric(item, "groundNum") === best.groundNum ? "best" : ""}"><span>Ground</span><strong>${escHtml(item.dataset.ground || "--")}</strong></div>
                     <div><span>Today</span><strong>${escHtml(item.dataset.todayGoing || "--")}</strong></div>
