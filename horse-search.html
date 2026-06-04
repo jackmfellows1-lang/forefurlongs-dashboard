@@ -402,6 +402,7 @@ function updateRaceCompare(input) {
         markNum: Math.max(...selected.map(item => numeric(item, "markNum"))),
         bestRprNum: Math.max(...selected.map(item => numeric(item, "bestRprNum"))),
         rprEdgeNum: Math.max(...selected.map(item => numeric(item, "rprEdgeNum"))),
+        speedScoreNum: Math.max(...selected.map(item => numeric(item, "speedScoreNum"))),
         fspNum: Math.max(...selected.map(item => numeric(item, "fspNum"))),
         drawQualityNum: Math.max(...selected.map(item => numeric(item, "drawQualityNum"))),
         groundNum: Math.max(...selected.map(item => numeric(item, "groundNum"))),
@@ -419,6 +420,7 @@ function updateRaceCompare(input) {
         if ((deiRank[item.dataset.dei || ""] || 0) === bestDei) badges.push("Best DEI");
         if (numeric(item, "markNum") === best.markNum) badges.push("Best mark");
         if (numeric(item, "bestRprNum") === best.bestRprNum) badges.push("Best RPR");
+        if (numeric(item, "speedScoreNum") === best.speedScoreNum && best.speedScoreNum > 0) badges.push("Best SpeedScore");
         if (numeric(item, "fspNum") === best.fspNum && best.fspNum > 0) badges.push("Best FSP");
         if (numeric(item, "drawQualityNum") === best.drawQualityNum && best.drawQualityNum > 50) badges.push("Best draw");
         return badges.slice(0, 3);
@@ -452,6 +454,7 @@ function updateRaceCompare(input) {
                 <div class="compare-detail-grid">
                     <div><span>Recent form</span><strong>${escHtml(item.dataset.recentDetail || "Recent form data developing")}</strong></div>
                     <div><span>Ratings read</span><strong>${escHtml(item.dataset.ratingsDetail || "Ratings evidence developing")}</strong></div>
+                    <div><span>SpeedScore</span><strong>${escHtml(item.dataset.speedScoreDetail || item.dataset.speedDetail || "SpeedScore evidence developing")}</strong></div>
                     <div><span>Trip evidence</span><strong>${escHtml(item.dataset.tripDetail || "Trip evidence developing")}</strong></div>
                     <div><span>Ground evidence</span><strong>${escHtml(item.dataset.groundDetail || "Ground evidence developing")}</strong></div>
                     <div><span>Pace / sectionals</span><strong>${escHtml(item.dataset.paceDetail || "Pace evidence developing")}</strong></div>
@@ -465,6 +468,7 @@ function updateRaceCompare(input) {
                 <div class="compare-delta-grid">
                     <div class="${numeric(item, "bestRprNum") === best.bestRprNum ? "best" : ""}"><span>Best RPR</span><strong>${escHtml(item.dataset.bestRpr || "--")}</strong></div>
                     <div><span>Last RPR</span><strong>${escHtml(item.dataset.lastRpr || "--")}</strong></div>
+                    <div class="${numeric(item, "speedScoreNum") === best.speedScoreNum && best.speedScoreNum > 0 ? "best" : ""}"><span>SpeedScore</span><strong>${escHtml(item.dataset.speedScore || "--")}</strong></div>
                     <div><span>Best TS</span><strong>${escHtml(item.dataset.bestTs || "--")}</strong></div>
                     <div class="${numeric(item, "rprEdgeNum") === best.rprEdgeNum ? "best" : ""}"><span>RPR vs par</span><strong>${escHtml(item.dataset.rprEdge || "N/A")}</strong></div>
                 </div>
