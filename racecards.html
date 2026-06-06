@@ -96,7 +96,7 @@ details{border-top:1px solid rgba(255,255,255,.10);padding-top:13px;margin-top:1
 <section class="filter-panel">
     <div>
         <label for="courseFilter">Select course</label>
-        <select id="courseFilter" onchange="updateCourseFilter()">
+        <select id="courseFilter" onchange="updateCourseFilter(true)">
             <option value="ALL">All courses</option>
             <option value="Chepstow">Chepstow</option><option value="Doncaster">Doncaster</option><option value="Epsom">Epsom</option><option value="Hexham">Hexham</option><option value="Lingfield">Lingfield</option><option value="Musselburgh">Musselburgh</option><option value="Punchestown">Punchestown</option><option value="Worcester">Worcester</option>
         </select>
@@ -203655,6 +203655,39 @@ details{border-top:1px solid rgba(255,255,255,.10);padding-top:13px;margin-top:1
     `;
 }
 
+
+function populateRaceFilterForCourse(course, keepSelected = false) {
+    const raceSelect = document.getElementById("raceFilter");
+    if (!raceSelect) return "ALL";
+    const previous = keepSelected ? raceSelect.value : "ALL";
+    const races = [...document.querySelectorAll(".race-card")]
+        .filter(card => course === "ALL" || card.dataset.course === course)
+        .map(card => card.dataset.race)
+        .filter(Boolean);
+    const uniqueRaces = [...new Set(races)];
+    raceSelect.innerHTML = '<option value="ALL">All races</option>' + uniqueRaces
+        .map(race => `<option value="${race.replaceAll('"', '&quot;')}">${race}</option>`)
+        .join("");
+    raceSelect.value = uniqueRaces.includes(previous) ? previous : "ALL";
+    return raceSelect.value;
+}
+function updateCourseFilter(courseChanged = false) {
+    const course = document.getElementById("courseFilter")?.value || "ALL";
+    const race = populateRaceFilterForCourse(course, !courseChanged);
+
+    document.querySelectorAll(".race-card").forEach(card => {
+        const courseMatch = course === "ALL" || card.dataset.course === course;
+        const raceMatch = race === "ALL" || card.dataset.race === race;
+        card.style.display = (courseMatch && raceMatch) ? "" : "none";
+    });
+}
+function resetRaceFilters() {
+    const c = document.getElementById("courseFilter");
+    const r = document.getElementById("raceFilter");
+    if (c) c.value = "ALL";
+    if (r) r.value = "ALL";
+    updateCourseFilter(true);
+}
 
 function simplifyRunnerEvidence() {
     document.querySelectorAll(".runner-body").forEach(body => {
