@@ -8118,7 +8118,52 @@ function updateRaceCompare(input) {
     `;
 }
 
+
+function simplifyRunnerEvidence() {
+    document.querySelectorAll(".runner-body").forEach(body => {
+        if (body.querySelector(":scope > .decision-drawer")) return;
+
+        const technical = body.querySelector(":scope > .evidence-drawer");
+        const meta = body.querySelector(":scope > .runner-meta-strip");
+        if (technical && meta) {
+            const summary = technical.querySelector("summary");
+            if (summary) summary.insertAdjacentElement("afterend", meta);
+        }
+
+        const contextSelectors = [
+            ":scope > .last-six-strip",
+            ":scope > .conditions-match-panel",
+            ":scope > .placement-evidence-panel",
+            ":scope > .opportunity-grid",
+        ];
+        const contextNodes = contextSelectors
+            .map(selector => body.querySelector(selector))
+            .filter(Boolean);
+        if (!contextNodes.length) return;
+
+        const drawer = document.createElement("details");
+        drawer.className = "evidence-drawer decision-drawer";
+        drawer.innerHTML = `
+            <summary>
+                <span>Context match</span>
+                <strong>Conditions, placement, handicap and recent form</strong>
+            </summary>
+        `;
+        contextNodes.forEach(node => drawer.appendChild(node));
+
+        const chipRow = body.querySelector(":scope > .chip-row");
+        if (chipRow) {
+            chipRow.insertAdjacentElement("beforebegin", drawer);
+        } else if (technical) {
+            technical.insertAdjacentElement("beforebegin", drawer);
+        } else {
+            body.appendChild(drawer);
+        }
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+    simplifyRunnerEvidence();
     document.querySelectorAll(".compare-check").forEach(input => {
         input.addEventListener("change", () => updateRaceCompare(input));
     });
