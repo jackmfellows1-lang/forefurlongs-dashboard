@@ -100,6 +100,7 @@ details{border-top:1px solid rgba(255,255,255,.10);padding-top:13px;margin-top:1
     <div class="key-grid">
         <div class="key-item"><strong>Opportunity Score</strong><p>A horse-level contextual score. It blends ability, current mark, race fit, pace setup, distance intelligence, draw confidence, benchmark fit, commentary signals and calibration. It is not a simple rating like RPR; it is a TODAY score.</p></div>
         <div class="key-item"><strong>SpeedScore</strong><p>Our own clock-based performance figure for each horse's previous runs. It is designed to show how strongly a horse has performed against the time demands of comparable races. Use it like an independent speed rating: 110+ is an elite clock read, 100-109 is fast, 90-99 is solid, 80-89 is below par and under 80 is a caution. It is most powerful when a high SpeedScore also lines up with today's trip, ground, class, race shape and model alignment.</p></div>
+        <div class="key-item"><strong>Current RP RPR vs Historic RPR</strong><p>Current RP RPR is the Racing Post/API rating published for today's racecard. Historic best RPR and last-run RPR are previous performance figures from stored results. The current card rating is used for today's ability comparison where available; historic RPRs show what the horse has actually recorded in past runs.</p></div>
         <div class="key-item"><strong>Race Confidence</strong><p>A race-level score measuring how bet-friendly the whole race looks: top-horse strength, separation from the field, tactical clarity, model agreement and likely chaos.</p></div>
         <div class="key-item"><strong>Betting Tiers</strong><p>Tier 1 is the strongest shortlist, Tier 2 is a supported secondary shortlist and lower tiers need more restraint. A tier is a research priority, not a guarantee or a staking instruction.</p></div>
         <div class="key-item"><strong>Full Alignment</strong><p>A rare badge for runners where all six independent evidence layers agree and the wider race checks are supportive. Treat it as a prompt for a careful price and staking review, not an automatic bet.</p></div>
@@ -425,6 +426,7 @@ function updateRaceCompare(input) {
         placementNum: Math.max(...selected.map(item => numeric(item, "placementNum"))),
         alignmentNum: Math.max(...selected.map(item => numeric(item, "alignmentNum"))),
         markNum: Math.max(...selected.map(item => numeric(item, "markNum"))),
+        currentRprNum: Math.max(...selected.map(item => numeric(item, "currentRprNum"))),
         bestRprNum: Math.max(...selected.map(item => numeric(item, "bestRprNum"))),
         rprEdgeNum: Math.max(...selected.map(item => numeric(item, "rprEdgeNum"))),
         speedScoreNum: Math.max(...selected.map(item => numeric(item, "speedScoreNum"))),
@@ -444,7 +446,8 @@ function updateRaceCompare(input) {
         if (numeric(item, "alignmentNum") === best.alignmentNum) badges.push("Best alignment");
         if ((deiRank[item.dataset.dei || ""] || 0) === bestDei) badges.push("Best DEI");
         if (numeric(item, "markNum") === best.markNum) badges.push("Best mark");
-        if (numeric(item, "bestRprNum") === best.bestRprNum) badges.push("Best RPR");
+        if (numeric(item, "currentRprNum") === best.currentRprNum && best.currentRprNum > 0) badges.push("Best current RPR");
+        if (numeric(item, "bestRprNum") === best.bestRprNum) badges.push("Best historic RPR");
         if (numeric(item, "speedScoreNum") === best.speedScoreNum && best.speedScoreNum > 0) badges.push("Best SpeedScore");
         if (numeric(item, "fspNum") === best.fspNum && best.fspNum > 0) badges.push("Best FSP");
         if (numeric(item, "drawQualityNum") === best.drawQualityNum && best.drawQualityNum > 50) badges.push("Best draw");
@@ -492,10 +495,11 @@ function updateRaceCompare(input) {
             <div class="compare-section">
                 <span>Ratings</span>
                 <div class="compare-delta-grid">
-                    <div class="${numeric(item, "bestRprNum") === best.bestRprNum ? "best" : ""}"><span>Best RPR</span><strong>${escHtml(item.dataset.bestRpr || "--")}</strong></div>
-                    <div><span>Last RPR</span><strong>${escHtml(item.dataset.lastRpr || "--")}</strong></div>
+                    <div class="${numeric(item, "currentRprNum") === best.currentRprNum && best.currentRprNum > 0 ? "best" : ""}"><span>Current RP RPR</span><strong>${escHtml(item.dataset.currentRpr || "--")}</strong></div>
+                    <div class="${numeric(item, "bestRprNum") === best.bestRprNum ? "best" : ""}"><span>Historic best RPR</span><strong>${escHtml(item.dataset.bestRpr || "--")}</strong></div>
+                    <div><span>Last-run RPR</span><strong>${escHtml(item.dataset.lastRpr || "--")}</strong></div>
                     <div class="${numeric(item, "speedScoreNum") === best.speedScoreNum && best.speedScoreNum > 0 ? "best" : ""}"><span>SpeedScore</span><strong>${escHtml(item.dataset.speedScore || "--")}</strong></div>
-                    <div><span>Best TS</span><strong>${escHtml(item.dataset.bestTs || "--")}</strong></div>
+                    <div><span>Current TS</span><strong>${escHtml(item.dataset.currentTs || item.dataset.bestTs || "--")}</strong></div>
                     <div class="${numeric(item, "rprEdgeNum") === best.rprEdgeNum ? "best" : ""}"><span>RPR vs par</span><strong>${escHtml(item.dataset.rprEdge || "N/A")}</strong></div>
                 </div>
             </div>

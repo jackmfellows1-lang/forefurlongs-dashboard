@@ -460,6 +460,7 @@ function updateRaceCompare(input) {
         placementNum: Math.max(...selected.map(item => numeric(item, "placementNum"))),
         alignmentNum: Math.max(...selected.map(item => numeric(item, "alignmentNum"))),
         markNum: Math.max(...selected.map(item => numeric(item, "markNum"))),
+        currentRprNum: Math.max(...selected.map(item => numeric(item, "currentRprNum"))),
         bestRprNum: Math.max(...selected.map(item => numeric(item, "bestRprNum"))),
         rprEdgeNum: Math.max(...selected.map(item => numeric(item, "rprEdgeNum"))),
         speedScoreNum: Math.max(...selected.map(item => numeric(item, "speedScoreNum"))),
@@ -479,7 +480,8 @@ function updateRaceCompare(input) {
         if (numeric(item, "alignmentNum") === best.alignmentNum) badges.push("Best alignment");
         if ((deiRank[item.dataset.dei || ""] || 0) === bestDei) badges.push("Best DEI");
         if (numeric(item, "markNum") === best.markNum) badges.push("Best mark");
-        if (numeric(item, "bestRprNum") === best.bestRprNum) badges.push("Best RPR");
+        if (numeric(item, "currentRprNum") === best.currentRprNum && best.currentRprNum > 0) badges.push("Best current RPR");
+        if (numeric(item, "bestRprNum") === best.bestRprNum) badges.push("Best historic RPR");
         if (numeric(item, "speedScoreNum") === best.speedScoreNum && best.speedScoreNum > 0) badges.push("Best SpeedScore");
         if (numeric(item, "fspNum") === best.fspNum && best.fspNum > 0) badges.push("Best FSP");
         if (numeric(item, "drawQualityNum") === best.drawQualityNum && best.drawQualityNum > 50) badges.push("Best draw");
@@ -527,10 +529,11 @@ function updateRaceCompare(input) {
             <div class="compare-section">
                 <span>Ratings</span>
                 <div class="compare-delta-grid">
-                    <div class="${numeric(item, "bestRprNum") === best.bestRprNum ? "best" : ""}"><span>Best RPR</span><strong>${escHtml(item.dataset.bestRpr || "--")}</strong></div>
-                    <div><span>Last RPR</span><strong>${escHtml(item.dataset.lastRpr || "--")}</strong></div>
+                    <div class="${numeric(item, "currentRprNum") === best.currentRprNum && best.currentRprNum > 0 ? "best" : ""}"><span>Current RP RPR</span><strong>${escHtml(item.dataset.currentRpr || "--")}</strong></div>
+                    <div class="${numeric(item, "bestRprNum") === best.bestRprNum ? "best" : ""}"><span>Historic best RPR</span><strong>${escHtml(item.dataset.bestRpr || "--")}</strong></div>
+                    <div><span>Last-run RPR</span><strong>${escHtml(item.dataset.lastRpr || "--")}</strong></div>
                     <div class="${numeric(item, "speedScoreNum") === best.speedScoreNum && best.speedScoreNum > 0 ? "best" : ""}"><span>SpeedScore</span><strong>${escHtml(item.dataset.speedScore || "--")}</strong></div>
-                    <div><span>Best TS</span><strong>${escHtml(item.dataset.bestTs || "--")}</strong></div>
+                    <div><span>Current TS</span><strong>${escHtml(item.dataset.currentTs || item.dataset.bestTs || "--")}</strong></div>
                     <div class="${numeric(item, "rprEdgeNum") === best.rprEdgeNum ? "best" : ""}"><span>RPR vs par</span><strong>${escHtml(item.dataset.rprEdge || "N/A")}</strong></div>
                 </div>
             </div>
