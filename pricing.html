@@ -516,7 +516,7 @@ function updateRaceCompare(input) {
                     <div><span>SpeedScore</span><strong>${escHtml(item.dataset.speedScoreDetail || item.dataset.speedDetail || "SpeedScore evidence developing")}</strong></div>
                     <div><span>Trip evidence</span><strong>${escHtml(item.dataset.tripDetail || "Trip evidence developing")}</strong></div>
                     <div><span>Ground evidence</span><strong>${escHtml(item.dataset.groundDetail || "Ground evidence developing")}</strong></div>
-                    <div><span>Pace / sectionals</span><strong>${escHtml(item.dataset.paceDetail || "Pace evidence developing")}</strong></div>
+                    <div><span>Run style / sectionals</span><strong>${escHtml(item.dataset.paceDetail || "Pace evidence developing")}</strong></div>
                     <div><span>Recent sectionals</span><strong>${escHtml(item.dataset.sectionalRecentDetail || "Recent sectional evidence developing")}</strong></div>
                     <div><span>Draw evidence</span><strong>${escHtml(item.dataset.drawDetail || "Draw evidence developing")}</strong></div>
                     <div><span>Handicap read</span><strong>${escHtml(item.dataset.handicapDetail || "Handicap evidence developing")}</strong></div>
@@ -534,9 +534,10 @@ function updateRaceCompare(input) {
                 </div>
             </div>
             <div class="compare-section">
-                <span>Sectionals / pace</span>
+                <span>Run style / sectionals</span>
                 <div class="compare-delta-grid">
-                    <div><span>Profile</span><strong>${escHtml(item.dataset.sectional || "--")}</strong></div>
+                    <div><span>Run style</span><strong>${escHtml(item.dataset.runStyle || "--")}</strong></div>
+                    <div><span>Finish profile</span><strong>${escHtml(item.dataset.finishProfile || item.dataset.sectional || "--")}</strong></div>
                     <div class="${numeric(item, "fspNum") === best.fspNum && best.fspNum > 0 ? "best" : ""}"><span>FSP%</span><strong>${escHtml(item.dataset.fsp || "N/A")}</strong></div>
                     <div><span>Final 2f</span><strong>${escHtml(item.dataset.final2f || "N/A")}</strong></div>
                     <div><span>TS vs par</span><strong>${escHtml(item.dataset.tsEdge || "N/A")}</strong></div>
