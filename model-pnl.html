@@ -162,6 +162,35 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 .compare-card-title strong{font-size:16px!important}.compare-card-score b{font-size:34px!important}
 .compare-card-metrics div,.compare-delta-grid div,.compare-detail-grid div{background:#fffdf8!important;border-color:#ded3c2!important;border-radius:0!important}
 .compare-badges em,.compare-context-chips span{border-radius:2px!important}
+
+/* Final runner-profile readability pass */
+.runner-race-link{background:#fffdf8!important;border:1px solid var(--line)!important;border-left:4px solid var(--gold)!important;border-radius:0!important;box-shadow:none!important}
+.runner-race-link strong{color:var(--text)!important;text-shadow:none!important}
+.runner-race-link p{color:#25352f!important;text-shadow:none!important}
+.runner-race-link .micro-label{color:var(--green)!important}
+.runner-race-link a{border-radius:2px!important;background:var(--gold)!important;color:#211707!important;box-shadow:none!important}
+.runner-decision-metrics div,.predictive-edge-grid div,.predictive-edge-score,.decision-primary-tile,.decision-meter{background:#fffdf8!important;border:1px solid var(--line)!important;border-radius:0!important;box-shadow:none!important}
+.runner-decision-metrics span,.predictive-edge-grid span,.predictive-edge-score span,.decision-primary-tile span,.decision-meter span{color:#66736d!important}
+.runner-decision-metrics strong,.predictive-edge-grid strong,.predictive-edge-score strong,.decision-primary-tile strong,.decision-meter strong{color:var(--text)!important}
+.runner-decision-metrics small,.predictive-edge-grid small,.predictive-edge-score small,.decision-primary-tile small,.decision-meter small{color:#4f5c56!important}
+.predictive-edge-score strong,.decision-primary-tile strong:first-of-type{color:var(--green)!important}
+.runner-decision-panel,.predictive-edge-panel{background:#fffdf8!important;border:1px solid var(--line)!important;border-radius:0!important;box-shadow:none!important}
+.runner-decision-panel{border-left:4px solid var(--green)!important}.predictive-edge-panel{border-left:4px solid var(--gold)!important}
+
+/* Expanded horse drawers must be readable on paper */
+.runner.compact[open],.runner.compact[open] .runner-body{color:var(--text)!important;background:#fffdf8!important}
+.runner.compact[open] :where(p,li,td,th,small,em,span,strong,summary,div){text-shadow:none}
+.runner.compact[open] :where(p,li,td,small,em){color:#25352f!important}
+.runner.compact[open] :where(strong,h2,h3,h4,b){color:var(--text)!important}
+.runner.compact[open] :where(.micro-label,.eyebrow){color:var(--green)!important}
+.runner.compact[open] :where(.sectional-angle,.distance-timing-panel,.extra-intel-panel,.context-fit-grid div,.recent-evidence,.visual-trend-panel,.previous-runs,.ground-evidence-panel,.conditions-match-panel,.placement-evidence-panel,.opportunity-grid section,.handicap-opportunity-panel,.hidden-run-panel,.ff-intel-panel,.bars,.timing-context,.condition-record,.context-grid div,.runner-meta-strip div,.horse-profile-strip div,.premium-grid>div,.sectional-run-card,.verified-sectional-card,.split-speed-chart,.distance-timing-grid div,.pace-finish-tile,.last-six-strip,.last-six-table,.recent-table,.rp-table){background:#fffdf8!important;border-color:var(--line)!important;border-radius:0!important;box-shadow:none!important}
+.runner.compact[open] :where(.sectional-evidence b,.visual-trend-head small,.last-six-head small,.distance-timing-panel small,.extra-intel-panel small,.ground-evidence-score small,.conditions-match-score small,.placement-score small,.compact-insight-row span,.timing-strip span,.mini-grid span){color:#4f5c56!important}
+.runner.compact[open] :where(.pace-finish-note em,.finish-pill.neutral,.finish-pill){color:#25352f!important}
+.runner.compact[open] :where(table th,.rp-table th,.recent-table th,.distance-timing-table th){background:#26332e!important;color:#fff!important}
+.runner.compact[open] :where(table td,.rp-table td,.recent-table td,.distance-timing-table td){background:#fffdf8!important;color:#25352f!important;border-color:#e6ddcd!important}
+.runner.compact[open] :where(.trend-row span,.last-six-head small,.visual-trend-head small){color:#4f5c56!important}
+.runner.compact[open] :where(.trend-bars i,.bar,.pace-finish-tile i,.condition-match-row i,.placement-row i){background:#e0d7c8!important}
+.runner.compact[open] :where(.trend-bars i b,.bar i,.pace-finish-tile i b,.condition-match-row i b,.placement-row i b){box-shadow:none!important}
 @media(max-width:900px){body{padding:12px}.topnav{position:relative;top:auto;align-items:start;display:grid;gap:12px;padding:12px}.navlinks{justify-content:flex-start;gap:4px}.navlinks a{padding:8px 9px;font-size:10px}.navlinks a.utility-link:before{display:none}.navlinks a.join-link{margin-left:2px}.page-hero{padding:24px;border-radius:18px}.race-header,.horse-head,.top-horse-details>summary{grid-template-columns:1fr}.race-score,.horse-score,.hero-score-stack{text-align:left;justify-items:start}.top-horse-summary-tags{justify-content:flex-start}.home-showcase,.about-grid,.brief-grid,.race-intel-grid,.main-danger,.context-grid,.premium-grid,.filter-panel,.horse-search-panel,.key-grid,.premium-snapshot,.decision-strip,.why-risk-grid,.context-fit-grid,.race-shape-panel,.sectional-metrics,.sectional-metrics.readable-sectionals,.distance-timing-grid,.horse-result-stats,.value-grid,.method-strip,.premium-runner-summary,.result-model-grid,.briefing-columns,.briefing-angle-feature,.verified-sectional-grid,.pace-finish-dashboard,.sectional-run-list,.pnl-grid,.angle-monitor,.pricing-grid,.premium-preview,.conditions-match-panel,.ground-evidence-panel,.placement-evidence-panel,.opportunity-grid,.handicap-opportunity-panel,.hidden-run-panel,.runner-decision-head,.runner-decision-focus,.runner-decision-metrics,.decision-visual-grid,.decision-benchmark-strip,.decision-reason-risk,.predictive-edge-head,.predictive-edge-grid{grid-template-columns:1fr}.runner-decision-action,.predictive-edge-score{justify-items:start}.race-scan-head{display:grid}.race-scan-head small{text-align:left}.compare-board-grid{grid-template-columns:1fr}.compare-delta-grid{grid-template-columns:repeat(2,1fr)}.ground-record-row{grid-template-columns:1fr}.ground-record-row em{text-align:left}.ground-record-drawer summary{display:grid}.ground-record-drawer summary strong{text-align:left}.sectional-angle-head,.runner-race-link,.distance-timing-head,.visual-trend-head,.last-six-head{display:grid}.sectional-evidence,.visual-trend-head small,.last-six-head small{text-align:left}.conditions-match-score,.ground-evidence-score,.placement-score{justify-items:start;border-right:0;border-bottom:1px solid rgba(148,163,184,.18);padding:0 0 12px;text-align:left}.trend-row{grid-template-columns:1fr}.form-tiles{grid-template-columns:repeat(3,minmax(0,1fr))}.briefing-row{grid-template-columns:1fr}.runner-race-link a{justify-self:start}.runner-meta-strip,.horse-profile-strip{grid-template-columns:repeat(2,1fr)}.ff-intel-metrics{grid-template-columns:repeat(2,1fr)}.bar-row{grid-template-columns:1fr;gap:5px}.runner.compact summary{grid-template-columns:1fr}.runner.compact summary .bet-badge{justify-self:start}.runner.compact summary .trust-meter{width:100%}.filter-panel,.horse-search-panel{position:relative;top:auto}.horse-search-count{padding:0}.distance-timing-head .finish-pill{max-width:none}.home-screen{min-height:300px}.video-score{font-size:56px}.pnl-chart-row{grid-template-columns:1fr}.pnl-bar{min-width:72px}.pnl-updated{display:grid}}
 </style>
 </head>
@@ -193,7 +222,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
     <section class="pnl-updated">
         <strong>Audited model tracker</strong>
-        <span>Last updated: 13 Jun 2026, 18:51 | Verified settled results only</span>
+        <span>Last updated: 13 Jun 2026, 19:20 | Verified settled results only</span>
     </section>
     <section class="brief-grid">
         <div class="brief-card"><span>Audited primary profiles</span><strong>72</strong></div>
