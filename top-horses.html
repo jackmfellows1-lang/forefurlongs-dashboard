@@ -238,6 +238,32 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 .form-tile strong{color:var(--text)!important}.form-tile.win strong{color:var(--green)!important}.form-tile.place strong{color:#1f5b6f!important}
 .ground-record-drawer summary,.sectional-detail-drawer summary{background:#fffdf8!important;color:var(--text)!important}
 .ground-record-drawer summary strong,.sectional-detail-drawer summary strong{color:#4f5c56!important}
+
+/* Customer-facing evidence visuals */
+.profile-signal-board,.evidence-snapshot-board{margin:14px 0;border:1px solid var(--line);background:#fffdf8;padding:14px}
+.profile-signal-head{display:flex;justify-content:space-between;gap:14px;align-items:end;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:12px}
+.profile-signal-head span,.evidence-snapshot-card>span,.profile-note-card span{font-size:10px;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+.profile-signal-head strong{font-family:Source Serif 4,Georgia,serif;font-size:22px;color:var(--text)}
+.profile-signal-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.profile-signal{display:grid;gap:3px;min-width:150px;border:1px solid #d8cdbb;background:#f8f1e2;padding:10px 12px}
+.profile-signal b{color:var(--text);font-size:13px}.profile-signal em{font-style:normal;color:#4f5c56;font-size:11px;line-height:1.35}
+.profile-signal.elite,.profile-signal.positive{background:#e3efe8;border-color:#a8c6b6}.profile-signal.caution{background:#f2e2bb;border-color:#d4b66e}.profile-signal.neutral{background:#f6f1e7}
+.profile-note-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:10px}
+.profile-note-card{border-left:4px solid var(--green);background:#fffaf0;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px}
+.profile-note-card.market{border-left-color:var(--gold)}.profile-note-card.impact{border-left-color:#17364a}
+.profile-note-card p{margin:6px 0 0;color:#25352f;line-height:1.45}
+.evidence-snapshot-board{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:10px}
+.evidence-snapshot-card{position:relative;overflow:hidden;border:1px solid var(--line);background:#fffaf0;padding:14px}
+.evidence-snapshot-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--green)}
+.evidence-snapshot-card.warn:before{background:var(--gold)}.evidence-snapshot-card.bad:before{background:var(--red)}.evidence-snapshot-card.note:before,.evidence-snapshot-card.neutral:before{background:#17364a}
+.evidence-snapshot-card strong{display:block;margin-top:6px;font-family:Source Serif 4,Georgia,serif;font-size:23px;line-height:1.05;color:var(--text)}
+.evidence-snapshot-card p{margin:9px 0 0;color:#25352f;line-height:1.45}
+.evidence-snapshot-card i{display:block;height:9px;margin-top:11px;background:#e0d7c8;overflow:hidden}
+.evidence-snapshot-card i b{display:block;width:var(--w);height:100%;background:var(--green)}
+.evidence-snapshot-card.warn i b{background:var(--gold)}.evidence-snapshot-card.bad i b{background:var(--red)}
+.alignment-chip-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.alignment-chip{border:1px solid #d8cdbb;background:#f6f1e7;color:#4f5c56;padding:5px 7px;font-size:10px;font-weight:800}
+.alignment-chip.on{background:#e3efe8;border-color:#a8c6b6;color:#0f4f35}.alignment-chip.off{background:#ead5d5;border-color:#d0aaaa;color:#8e2f2f}
 @media(max-width:900px){body{padding:12px}.topnav{position:relative;top:auto;align-items:start;display:grid;gap:12px;padding:12px}.navlinks{justify-content:flex-start;gap:4px}.navlinks a{padding:8px 9px;font-size:10px}.navlinks a.utility-link:before{display:none}.navlinks a.join-link{margin-left:2px}.page-hero{padding:24px;border-radius:18px}.race-header,.horse-head,.top-horse-details>summary{grid-template-columns:1fr}.race-score,.horse-score,.hero-score-stack{text-align:left;justify-items:start}.top-horse-summary-tags{justify-content:flex-start}.home-showcase,.about-grid,.brief-grid,.race-intel-grid,.main-danger,.context-grid,.premium-grid,.filter-panel,.horse-search-panel,.key-grid,.premium-snapshot,.decision-strip,.why-risk-grid,.context-fit-grid,.race-shape-panel,.sectional-metrics,.sectional-metrics.readable-sectionals,.distance-timing-grid,.horse-result-stats,.value-grid,.method-strip,.premium-runner-summary,.result-model-grid,.briefing-columns,.briefing-angle-feature,.verified-sectional-grid,.pace-finish-dashboard,.sectional-run-list,.pnl-grid,.angle-monitor,.pricing-grid,.premium-preview,.conditions-match-panel,.ground-evidence-panel,.placement-evidence-panel,.opportunity-grid,.handicap-opportunity-panel,.hidden-run-panel,.runner-decision-head,.runner-decision-focus,.runner-decision-metrics,.decision-visual-grid,.decision-benchmark-strip,.decision-reason-risk,.predictive-edge-head,.predictive-edge-grid{grid-template-columns:1fr}.runner-decision-action,.predictive-edge-score{justify-items:start}.race-scan-head{display:grid}.race-scan-head small{text-align:left}.compare-board-grid{grid-template-columns:1fr}.compare-delta-grid{grid-template-columns:repeat(2,1fr)}.ground-record-row{grid-template-columns:1fr}.ground-record-row em{text-align:left}.ground-record-drawer summary{display:grid}.ground-record-drawer summary strong{text-align:left}.sectional-angle-head,.runner-race-link,.distance-timing-head,.visual-trend-head,.last-six-head{display:grid}.sectional-evidence,.visual-trend-head small,.last-six-head small{text-align:left}.conditions-match-score,.ground-evidence-score,.placement-score{justify-items:start;border-right:0;border-bottom:1px solid rgba(148,163,184,.18);padding:0 0 12px;text-align:left}.trend-row{grid-template-columns:1fr}.form-tiles{grid-template-columns:repeat(3,minmax(0,1fr))}.briefing-row{grid-template-columns:1fr}.runner-race-link a{justify-self:start}.runner-meta-strip,.horse-profile-strip{grid-template-columns:repeat(2,1fr)}.ff-intel-metrics{grid-template-columns:repeat(2,1fr)}.bar-row{grid-template-columns:1fr;gap:5px}.runner.compact summary{grid-template-columns:1fr}.runner.compact summary .bet-badge{justify-self:start}.runner.compact summary .trust-meter{width:100%}.filter-panel,.horse-search-panel{position:relative;top:auto}.horse-search-count{padding:0}.distance-timing-head .finish-pill{max-width:none}.home-screen{min-height:300px}.video-score{font-size:56px}.pnl-chart-row{grid-template-columns:1fr}.pnl-bar{min-width:72px}.pnl-updated{display:grid}}
 </style>
 </head>
@@ -830,7 +856,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>2/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -844,11 +870,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Summerseat Mist</b></span>
             <span>Damsire <b>Dandy Man</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Hampered start - towards rear - smooth headway on far side of group over 2f out - went second over 1f out - challenging inside final furlong - no extra and lost position final 110yds(op 10/1)</p></div>
-            <div><strong>API flags</strong><p>D</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal positive"><b>Distance win</b><em>Has won at this trip</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Hampered start - towards rear - smooth headway on far side of group over 2f out - went second over 1f out - challenging inside final furlong - no extra and lost position final 110yds(op 10/1)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -1137,13 +1165,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>The current mark looks demanding against the available peak rating evidence.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 83.3 and winning TS par is around 64.3. Runner versus par: RPR edge +1.7 | TS edge +4.7. Benchmark fit: 0.9.</p></div>
-                        <div><strong>Track DNA</strong><p>SALISBURY 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 140 (HIGH confidence).</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: Yes | Benchmark: Yes | Memory: Yes | Pace: Yes | Commentary: Yes | Pace / finish: Yes | Overall: 6/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Hampered start - towards rear - smooth headway on far side of group over 2f out - went second over 1f out - challenging inside final furlong - no extra and lost position final 110yds(op 10/1)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card warn">
+            <span>Handicap</span>
+            <strong>Near ceiling</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+0lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Benchmark</span>
+            <strong>Fit score 1</strong>
+            <i style="--w:59%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 83.3 and winning TS par is around 64.3. Runner versus par: RPR edge +1.7 | TS edge +4.7. Benchmark fit: 0.9.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card elite">
+            <span>Model agreement</span>
+            <strong>6/6 layers positive</strong>
+            <i style="--w:100%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip on">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip on">Pace</span><span class="alignment-chip on">Commentary</span><span class="alignment-chip on">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card good">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>SALISBURY 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 140 (HIGH confidence).</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Hampered start - towards rear - smooth headway on far side of group over 2f out - went second over 1f out - challenging inside final furlong - no extra...</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -1712,7 +1767,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>0/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -1726,11 +1781,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Shifting Moon</b></span>
             <span>Damsire <b>Kheleyf</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Midfield - headway over 2f out - up the centre when led inside final furlong - soon ridden - kept on well(op 10/3)</p></div>
-            <div><strong>API flags</strong><p>CD</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal elite"><b>Course + distance</b><em>Has won over this course and distance</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Midfield - headway over 2f out - up the centre when led inside final furlong - soon ridden - kept on well(op 10/3)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -2019,13 +2076,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>Peak RPR evidence suggests the mark remains workable, with around 8lb historical room. Latest RPR still compares favourably with the current OR.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 80 and winning TS par is around 45. Runner versus par: RPR edge +4.0 | TS edge -20.0. Benchmark fit: 0.</p></div>
-                        <div><strong>Track DNA</strong><p>SALISBURY 1m4f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 44 (HIGH confidence).</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: Yes | Benchmark: No | Memory: Yes | Pace: Yes | Commentary: Yes | Pace / finish: Yes | Overall: 5/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Midfield - headway over 2f out - up the centre when led inside final furlong - soon ridden - kept on well(op 10/3)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card elite">
+            <span>Handicap</span>
+            <strong>Well handicapped</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+8lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card warn">
+            <span>Benchmark</span>
+            <strong>Fit score 0</strong>
+            <i style="--w:50%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 80 and winning TS par is around 45. Runner versus par: RPR edge +4.0 | TS edge -20.0. Benchmark fit: 0.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card elite">
+            <span>Model agreement</span>
+            <strong>5/6 layers positive</strong>
+            <i style="--w:83%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip on">Distance</span><span class="alignment-chip off">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip on">Pace</span><span class="alignment-chip on">Commentary</span><span class="alignment-chip on">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card good">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>SALISBURY 1m4f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 44 (HIGH confidence).</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Midfield - headway over 2f out - up the centre when led inside final furlong - soon ridden - kept on well(op 10/3)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -2594,7 +2678,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>0/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -2608,11 +2692,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Beshayer</b></span>
             <span>Damsire <b>Galileo</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Prominent - raced in second behind clear leader after 3f - edged left under 2f out - lost position over 1f out - weakened gradually final furlong(op 10/3)</p></div>
-            <div><strong>API flags</strong><p>D</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal positive"><b>Distance win</b><em>Has won at this trip</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Prominent - raced in second behind clear leader after 3f - edged left under 2f out - lost position over 1f out - weakened gradually final furlong(op 10/3)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -2901,13 +2987,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>The horse looks close to its known rating ceiling on the available figures. Latest RPR still compares favourably with the current OR.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 84 and winning TS par is around 52. Runner versus par: RPR edge +25.0 | TS edge +43.0. Benchmark fit: 2.5.</p></div>
-                        <div><strong>Track DNA</strong><p>Track DNA is still developing for this course and distance.</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: Yes | Benchmark: Yes | Memory: Yes | Pace: No | Commentary: Yes | Pace / finish: No | Overall: 4/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Prominent - raced in second behind clear leader after 3f - edged left under 2f out - lost position over 1f out - weakened gradually final furlong(op 10/3)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card warn">
+            <span>Handicap</span>
+            <strong>Near ceiling</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+3lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Benchmark</span>
+            <strong>Fit score 3</strong>
+            <i style="--w:75%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 84 and winning TS par is around 52. Runner versus par: RPR edge +25.0 | TS edge +43.0. Benchmark fit: 2.5.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Model agreement</span>
+            <strong>4/6 layers positive</strong>
+            <i style="--w:67%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip on">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip off">Pace</span><span class="alignment-chip on">Commentary</span><span class="alignment-chip off">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card warn">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>Track DNA is still developing for this course and distance.</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Prominent - raced in second behind clear leader after 3f - edged left under 2f out - lost position over 1f out - weakened gradually final furlong(op 10/3)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -3476,7 +3589,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>0/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -3490,11 +3603,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Cecelia Clementine</b></span>
             <span>Damsire <b>Zoffany</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Started quickly - prominent - outpaced towards far side over 1f out - kept on(op 5/1)</p></div>
-            <div><strong>API flags</strong><p>CD</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal elite"><b>Course + distance</b><em>Has won over this course and distance</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Started quickly - prominent - outpaced towards far side over 1f out - kept on(op 5/1)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -3783,13 +3898,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>The current mark looks demanding against the available peak rating evidence.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 81.3 and winning TS par is around 59.1. Runner versus par: RPR edge +7.7 | TS edge +13.8. Benchmark fit: 3.4.</p></div>
-                        <div><strong>Track DNA</strong><p>Track DNA is still developing for this course and distance.</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: Yes | Benchmark: Yes | Memory: Yes | Pace: Yes | Commentary: Yes | Pace / finish: No | Overall: 5/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Started quickly - prominent - outpaced towards far side over 1f out - kept on(op 5/1)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card bad">
+            <span>Handicap</span>
+            <strong>Mark looks stiff</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>-1lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Benchmark</span>
+            <strong>Fit score 3</strong>
+            <i style="--w:84%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 81.3 and winning TS par is around 59.1. Runner versus par: RPR edge +7.7 | TS edge +13.8. Benchmark fit: 3.4.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card elite">
+            <span>Model agreement</span>
+            <strong>5/6 layers positive</strong>
+            <i style="--w:83%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip on">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip on">Pace</span><span class="alignment-chip on">Commentary</span><span class="alignment-chip off">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card warn">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>Track DNA is still developing for this course and distance.</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Started quickly - prominent - outpaced towards far side over 1f out - kept on(op 5/1)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -4358,7 +4500,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>2/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -4372,11 +4514,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Rose Berry</b></span>
             <span>Damsire <b>Archipenko</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Midfield - in touch with leaders when switched left and headway from over 1f out - no extra inside final furlong(op 7/2)</p></div>
-            <div><strong>API flags</strong><p>D</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal positive"><b>Distance win</b><em>Has won at this trip</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Midfield - in touch with leaders when switched left and headway from over 1f out - no extra inside final furlong(op 7/2)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -4665,13 +4809,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>The horse looks close to its known rating ceiling on the available figures. Latest RPR still compares favourably with the current OR.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 80.8 and winning TS par is around 60.2. Runner versus par: RPR edge -6.8 | TS edge +5.8. Benchmark fit: 0.3.</p></div>
-                        <div><strong>Track DNA</strong><p>DONCASTER 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 251 (HIGH confidence).</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: Yes | Benchmark: Yes | Memory: Yes | Pace: Yes | Commentary: No | Pace / finish: Yes | Overall: 5/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Midfield - in touch with leaders when switched left and headway from over 1f out - no extra inside final furlong(op 7/2)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card warn">
+            <span>Handicap</span>
+            <strong>Near ceiling</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+5lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Benchmark</span>
+            <strong>Fit score 0</strong>
+            <i style="--w:54%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 80.8 and winning TS par is around 60.2. Runner versus par: RPR edge -6.8 | TS edge +5.8. Benchmark fit: 0.3.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card elite">
+            <span>Model agreement</span>
+            <strong>5/6 layers positive</strong>
+            <i style="--w:83%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip on">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip on">Pace</span><span class="alignment-chip off">Commentary</span><span class="alignment-chip on">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card good">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>DONCASTER 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 251 (HIGH confidence).</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Midfield - in touch with leaders when switched left and headway from over 1f out - no extra inside final furlong(op 7/2)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -5240,7 +5411,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>1/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -5254,11 +5425,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Vernatti</b></span>
             <span>Damsire <b>Teofilo</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Made virtually all - drifted right when pushed along over 1f out - kept on well(tchd 7/2)</p></div>
-            <div><strong>API flags</strong><p>CD</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal elite"><b>Course + distance</b><em>Has won over this course and distance</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Made virtually all - drifted right when pushed along over 1f out - kept on well(tchd 7/2)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -5547,13 +5720,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>The horse looks close to its known rating ceiling on the available figures. Latest RPR still compares favourably with the current OR.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 80.8 and winning TS par is around 60.2. Runner versus par: RPR edge -7.8 | TS edge +1.8. Benchmark fit: 0.</p></div>
-                        <div><strong>Track DNA</strong><p>DONCASTER 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 251 (HIGH confidence).</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: Yes | Benchmark: No | Memory: Yes | Pace: Yes | Commentary: Yes | Pace / finish: No | Overall: 4/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Made virtually all - drifted right when pushed along over 1f out - kept on well(tchd 7/2)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card warn">
+            <span>Handicap</span>
+            <strong>Near ceiling</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+5lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card warn">
+            <span>Benchmark</span>
+            <strong>Fit score 0</strong>
+            <i style="--w:50%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 80.8 and winning TS par is around 60.2. Runner versus par: RPR edge -7.8 | TS edge +1.8. Benchmark fit: 0.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Model agreement</span>
+            <strong>4/6 layers positive</strong>
+            <i style="--w:67%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip on">Distance</span><span class="alignment-chip off">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip on">Pace</span><span class="alignment-chip on">Commentary</span><span class="alignment-chip off">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card good">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>DONCASTER 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 251 (HIGH confidence).</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Made virtually all - drifted right when pushed along over 1f out - kept on well(tchd 7/2)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -6122,7 +6322,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>0/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -6136,11 +6336,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Freddie&#x27;s Girl</b></span>
             <span>Damsire <b>More Than Ready</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>In touch with leaders on far side of group - pressed leaders over 1f out - weakened final 110yds(op 7/4)</p></div>
-            <div><strong>API flags</strong><p>D; BF</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal positive"><b>Distance win</b><em>Has won at this trip</em></span><span class="profile-signal caution"><b>Beaten favourite</b><em>Market expected more last time</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>In touch with leaders on far side of group - pressed leaders over 1f out - weakened final 110yds(op 7/4)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -6429,13 +6631,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>The current mark looks demanding against the available peak rating evidence.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 80.8 and winning TS par is around 60.2. Runner versus par: RPR edge -9.8 | TS edge +4.8. Benchmark fit: 0.3.</p></div>
-                        <div><strong>Track DNA</strong><p>DONCASTER 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 251 (HIGH confidence).</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: No | Benchmark: Yes | Memory: Yes | Pace: Yes | Commentary: Yes | Pace / finish: No | Overall: 4/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>In touch with leaders on far side of group - pressed leaders over 1f out - weakened final 110yds(op 7/4)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card elite">
+            <span>Handicap</span>
+            <strong>Well handicapped</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+20lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Benchmark</span>
+            <strong>Fit score 0</strong>
+            <i style="--w:54%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 80.8 and winning TS par is around 60.2. Runner versus par: RPR edge -9.8 | TS edge +4.8. Benchmark fit: 0.3.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Model agreement</span>
+            <strong>4/6 layers positive</strong>
+            <i style="--w:67%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip off">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip on">Pace</span><span class="alignment-chip on">Commentary</span><span class="alignment-chip off">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card good">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>DONCASTER 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 251 (HIGH confidence).</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>In touch with leaders on far side of group - pressed leaders over 1f out - weakened final 110yds(op 7/4)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -6995,7 +7224,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>0/2</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -7009,11 +7238,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Alea Iacta</b></span>
             <span>Damsire <b>Invincible Spirit</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Dwelt start - in rear - headway over 2f out - kept on and went second inside final 110yds - just held(op 3/1)</p></div>
-            <div><strong>API flags</strong><p>No API past-result flags</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal neutral"><b>No headline flag</b><em>No course, distance or beaten-favourite flag recorded</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Dwelt start - in rear - headway over 2f out - kept on and went second inside final 110yds - just held(op 3/1)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -7300,13 +7531,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>Peak RPR evidence suggests the mark remains workable, with around 7lb historical room. Latest RPR still compares favourably with the current OR.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 83.3 and winning TS par is around 51.7. Runner versus par: RPR edge -6.3 | TS edge +16.3. Benchmark fit: 0.9.</p></div>
-                        <div><strong>Track DNA</strong><p>SALISBURY 1m2f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 112 (HIGH confidence).</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: No | Benchmark: Yes | Memory: Yes | Pace: Yes | Commentary: No | Pace / finish: Yes | Overall: 4/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Dwelt start - in rear - headway over 2f out - kept on and went second inside final 110yds - just held(op 3/1)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card elite">
+            <span>Handicap</span>
+            <strong>Well handicapped</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+16lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Benchmark</span>
+            <strong>Fit score 1</strong>
+            <i style="--w:59%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 83.3 and winning TS par is around 51.7. Runner versus par: RPR edge -6.3 | TS edge +16.3. Benchmark fit: 0.9.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Model agreement</span>
+            <strong>4/6 layers positive</strong>
+            <i style="--w:67%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip off">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip on">Pace</span><span class="alignment-chip off">Commentary</span><span class="alignment-chip on">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card good">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>SALISBURY 1m2f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 112 (HIGH confidence).</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Dwelt start - in rear - headway over 2f out - kept on and went second inside final 110yds - just held(op 3/1)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -7875,7 +8133,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>2/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -7889,11 +8147,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Impala</b></span>
             <span>Damsire <b>Oasis Dream</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Prominent - not clear run over 2f out - ran on inside final furlong(op 12/1 tchd 14/1)</p></div>
-            <div><strong>API flags</strong><p>D</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal positive"><b>Distance win</b><em>Has won at this trip</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Prominent - not clear run over 2f out - ran on inside final furlong(op 12/1 tchd 14/1)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -8182,13 +8442,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>The horse looks close to its known rating ceiling on the available figures.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 87 and winning TS par is around 65.5. Runner versus par: RPR edge +11.0 | TS edge -2.5. Benchmark fit: 1.4.</p></div>
-                        <div><strong>Track DNA</strong><p>Track DNA is still developing for this course and distance.</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: No | Benchmark: Yes | Memory: Yes | Pace: Yes | Commentary: Yes | Pace / finish: No | Overall: 4/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Prominent - not clear run over 2f out - ran on inside final furlong(op 12/1 tchd 14/1)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card elite">
+            <span>Handicap</span>
+            <strong>Well handicapped</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+12lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Benchmark</span>
+            <strong>Fit score 1</strong>
+            <i style="--w:64%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 87 and winning TS par is around 65.5. Runner versus par: RPR edge +11.0 | TS edge -2.5. Benchmark fit: 1.4.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Model agreement</span>
+            <strong>4/6 layers positive</strong>
+            <i style="--w:67%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip off">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip on">Pace</span><span class="alignment-chip on">Commentary</span><span class="alignment-chip off">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card warn">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>Track DNA is still developing for this course and distance.</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Prominent - not clear run over 2f out - ran on inside final furlong(op 12/1 tchd 14/1)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -8757,7 +9044,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>1/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -8771,11 +9058,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Chinaconnection</b></span>
             <span>Damsire <b>Dark Angel</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Awkward start - held up in rear - headway when not clear run over 1f out - squeezed through and went second inside final furlong - ridden to lead inside final 110yds - comfortably(op 17/2 tchd 13/2)</p></div>
-            <div><strong>API flags</strong><p>D</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal positive"><b>Distance win</b><em>Has won at this trip</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Awkward start - held up in rear - headway when not clear run over 1f out - squeezed through and went second inside final furlong - ridden to lead inside final 110yds - comfortably(op 17/2 tchd 13/2)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -9064,13 +9353,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>Peak RPR evidence gives roughly 16lb in hand over today&#x27;s mark. Latest RPR still compares favourably with the current OR.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 80.8 and winning TS par is around 60.2. Runner versus par: RPR edge +5.2 | TS edge +16.8. Benchmark fit: 2.5.</p></div>
-                        <div><strong>Track DNA</strong><p>DONCASTER 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 251 (HIGH confidence).</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: No | Benchmark: Yes | Memory: Yes | Pace: Yes | Commentary: No | Pace / finish: Yes | Overall: 4/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Awkward start - held up in rear - headway when not clear run over 1f out - squeezed through and went second inside final furlong - ridden to lead inside final 110yds - comfortably(op 17/2 tchd 13/2)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card elite">
+            <span>Handicap</span>
+            <strong>Well handicapped</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+16lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Benchmark</span>
+            <strong>Fit score 2</strong>
+            <i style="--w:74%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 80.8 and winning TS par is around 60.2. Runner versus par: RPR edge +5.2 | TS edge +16.8. Benchmark fit: 2.5.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Model agreement</span>
+            <strong>4/6 layers positive</strong>
+            <i style="--w:67%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip off">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip on">Pace</span><span class="alignment-chip off">Commentary</span><span class="alignment-chip on">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card good">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>DONCASTER 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 251 (HIGH confidence).</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Awkward start - held up in rear - headway when not clear run over 1f out - squeezed through and went second inside final furlong - ridden to lead inside...</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -9639,7 +9955,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>1/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -9653,11 +9969,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Destieux</b></span>
             <span>Damsire <b>Rip Van Winkle</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Prominent - led after 1f - ridden over 1f out - ran on well inside final furlong(op 9/1)</p></div>
-            <div><strong>API flags</strong><p>D</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal positive"><b>Distance win</b><em>Has won at this trip</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Prominent - led after 1f - ridden over 1f out - ran on well inside final furlong(op 9/1)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -9946,13 +10264,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>The horse looks close to its known rating ceiling on the available figures. Latest RPR still compares favourably with the current OR.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 81.3 and winning TS par is around 59.1. Runner versus par: RPR edge +23.7 | TS edge +16.9. Benchmark fit: 4.3.</p></div>
-                        <div><strong>Track DNA</strong><p>Track DNA is still developing for this course and distance.</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: Yes | Benchmark: Yes | Memory: Yes | Pace: No | Commentary: Yes | Pace / finish: No | Overall: 4/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Prominent - led after 1f - ridden over 1f out - ran on well inside final furlong(op 9/1)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card warn">
+            <span>Handicap</span>
+            <strong>Near ceiling</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+3lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card elite">
+            <span>Benchmark</span>
+            <strong>Fit score 4</strong>
+            <i style="--w:93%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 81.3 and winning TS par is around 59.1. Runner versus par: RPR edge +23.7 | TS edge +16.9. Benchmark fit: 4.3.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Model agreement</span>
+            <strong>4/6 layers positive</strong>
+            <i style="--w:67%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip on">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip off">Pace</span><span class="alignment-chip on">Commentary</span><span class="alignment-chip off">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card warn">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>Track DNA is still developing for this course and distance.</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Prominent - led after 1f - ridden over 1f out - ran on well inside final furlong(op 9/1)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -10521,7 +10866,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>1/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -10535,11 +10880,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Velvet Jaguar</b></span>
             <span>Damsire <b>Hurricane Run</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Held up in rear - some headway over 1f out - no extra inside final furlong(op 6/1)</p></div>
-            <div><strong>API flags</strong><p>No API past-result flags</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal neutral"><b>No headline flag</b><em>No course, distance or beaten-favourite flag recorded</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Held up in rear - some headway over 1f out - no extra inside final furlong(op 6/1)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -10826,13 +11173,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>Peak RPR evidence suggests the mark remains workable, with around 8lb historical room.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 64.8 and winning TS par is around 49.2. Runner versus par: RPR edge +1.2 | TS edge +11.8. Benchmark fit: 3.</p></div>
-                        <div><strong>Track DNA</strong><p>DONCASTER 1m (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 180 (HIGH confidence).</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: No | Benchmark: Yes | Memory: Yes | Pace: Yes | Commentary: Yes | Pace / finish: No | Overall: 4/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Held up in rear - some headway over 1f out - no extra inside final furlong(op 6/1)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card good">
+            <span>Handicap</span>
+            <strong>Workable mark</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+10lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Benchmark</span>
+            <strong>Fit score 3</strong>
+            <i style="--w:80%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 64.8 and winning TS par is around 49.2. Runner versus par: RPR edge +1.2 | TS edge +11.8. Benchmark fit: 3.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Model agreement</span>
+            <strong>4/6 layers positive</strong>
+            <i style="--w:67%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip off">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip on">Pace</span><span class="alignment-chip on">Commentary</span><span class="alignment-chip off">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card good">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>DONCASTER 1m (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 180 (HIGH confidence).</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Held up in rear - some headway over 1f out - no extra inside final furlong(op 6/1)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -11383,7 +11757,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>1/1</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -11397,11 +11771,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Kitty Love</b></span>
             <span>Damsire <b>Kitten&#x27;s Joy</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Soon prominent - dropped to midfield after 2f - headway on outer 3f out - soon edged right - hung right but went third inside final furlong - no extra towards finish(op 9/2)</p></div>
-            <div><strong>API flags</strong><p>No API past-result flags</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal neutral"><b>No headline flag</b><em>No course, distance or beaten-favourite flag recorded</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Soon prominent - dropped to midfield after 2f - headway on outer 3f out - soon edged right - hung right but went third inside final furlong - no extra towards finish(op 9/2)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -11688,13 +12064,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>Peak RPR evidence suggests the mark remains workable, with around 7lb historical room. Latest RPR still compares favourably with the current OR.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 80 and winning TS par is around 45. Runner versus par: RPR edge +3.0 | TS edge +30.0. Benchmark fit: 2.5.</p></div>
-                        <div><strong>Track DNA</strong><p>SALISBURY 1m4f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 44 (HIGH confidence).</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: No | Benchmark: Yes | Memory: Yes | Pace: Yes | Commentary: Yes | Pace / finish: Yes | Overall: 5/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Soon prominent - dropped to midfield after 2f - headway on outer 3f out - soon edged right - hung right but went third inside final furlong - no extra towards finish(op 9/2)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card good">
+            <span>Handicap</span>
+            <strong>Workable mark</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+8lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Benchmark</span>
+            <strong>Fit score 2</strong>
+            <i style="--w:74%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 80 and winning TS par is around 45. Runner versus par: RPR edge +3.0 | TS edge +30.0. Benchmark fit: 2.5.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card elite">
+            <span>Model agreement</span>
+            <strong>5/6 layers positive</strong>
+            <i style="--w:83%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip off">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip on">Pace</span><span class="alignment-chip on">Commentary</span><span class="alignment-chip on">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card good">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>SALISBURY 1m4f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 44 (HIGH confidence).</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Soon prominent - dropped to midfield after 2f - headway on outer 3f out - soon edged right - hung right but went third inside final furlong - no extra t...</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -12263,7 +12666,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>2/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -12277,11 +12680,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Rhagori</b></span>
             <span>Damsire <b>Exceed And Excel</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Towards rear throughout(tchd 14/1)</p></div>
-            <div><strong>API flags</strong><p>C; D</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal positive"><b>Course win</b><em>Has won at this course</em></span><span class="profile-signal positive"><b>Distance win</b><em>Has won at this trip</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Towards rear throughout(tchd 14/1)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -12568,13 +12973,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>Peak RPR evidence gives roughly 16lb in hand over today&#x27;s mark.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 80 and winning TS par is around 45. Runner versus par: RPR edge +13.0 | TS edge +20.0. Benchmark fit: 3.1.</p></div>
-                        <div><strong>Track DNA</strong><p>SALISBURY 1m4f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 44 (HIGH confidence).</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: No | Benchmark: Yes | Memory: Yes | Pace: No | Commentary: Yes | Pace / finish: Yes | Overall: 4/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Towards rear throughout(tchd 14/1)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card elite">
+            <span>Handicap</span>
+            <strong>Well handicapped</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+16lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Benchmark</span>
+            <strong>Fit score 3</strong>
+            <i style="--w:82%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 80 and winning TS par is around 45. Runner versus par: RPR edge +13.0 | TS edge +20.0. Benchmark fit: 3.1.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Model agreement</span>
+            <strong>4/6 layers positive</strong>
+            <i style="--w:67%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip off">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip off">Pace</span><span class="alignment-chip on">Commentary</span><span class="alignment-chip on">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card good">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>SALISBURY 1m4f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 44 (HIGH confidence).</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Towards rear throughout(tchd 14/1)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -13143,7 +13575,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>2/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -13157,11 +13589,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Lady Lube Rye</b></span>
             <span>Damsire <b>Catcher In The Rye</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Prominent - no extra towards finish(op 14/1 and tchd 16/1)</p></div>
-            <div><strong>API flags</strong><p>D</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal positive"><b>Distance win</b><em>Has won at this trip</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Prominent - no extra towards finish(op 14/1 and tchd 16/1)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -13450,13 +13884,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>Peak RPR evidence gives roughly 19lb in hand over today&#x27;s mark. Latest RPR still compares favourably with the current OR.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 80.8 and winning TS par is around 60.2. Runner versus par: RPR edge +9.2 | TS edge +8.8. Benchmark fit: 3.1.</p></div>
-                        <div><strong>Track DNA</strong><p>DONCASTER 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 251 (HIGH confidence).</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: No | Benchmark: Yes | Memory: Yes | Pace: Yes | Commentary: No | Pace / finish: Yes | Overall: 4/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Prominent - no extra towards finish(op 14/1 and tchd 16/1)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card elite">
+            <span>Handicap</span>
+            <strong>Well handicapped</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+28lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Benchmark</span>
+            <strong>Fit score 3</strong>
+            <i style="--w:82%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 80.8 and winning TS par is around 60.2. Runner versus par: RPR edge +9.2 | TS edge +8.8. Benchmark fit: 3.1.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Model agreement</span>
+            <strong>4/6 layers positive</strong>
+            <i style="--w:67%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip off">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip on">Pace</span><span class="alignment-chip off">Commentary</span><span class="alignment-chip on">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card good">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>DONCASTER 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 251 (HIGH confidence).</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Prominent - no extra towards finish(op 14/1 and tchd 16/1)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -14025,7 +14486,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>2/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -14039,11 +14500,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Hourglass</b></span>
             <span>Damsire <b>Galileo</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>In touch with leaders - bit short of room and lost position 4f out - rallied from 2f out - went second inside final furlong - no match for winner(op 4/1)</p></div>
-            <div><strong>API flags</strong><p>D</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal positive"><b>Distance win</b><em>Has won at this trip</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>In touch with leaders - bit short of room and lost position 4f out - rallied from 2f out - went second inside final furlong - no match for winner(op 4/1)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -14332,13 +14795,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>Peak RPR evidence suggests the mark remains workable, with around 8lb historical room. Latest RPR still compares favourably with the current OR.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 80 and winning TS par is around 45. Runner versus par: RPR edge +3.0 | TS edge +18.0. Benchmark fit: 2.5.</p></div>
-                        <div><strong>Track DNA</strong><p>SALISBURY 1m4f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 44 (HIGH confidence).</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: No | Benchmark: Yes | Memory: Yes | Pace: No | Commentary: Yes | Pace / finish: Yes | Overall: 4/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>In touch with leaders - bit short of room and lost position 4f out - rallied from 2f out - went second inside final furlong - no match for winner(op 4/1)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card elite">
+            <span>Handicap</span>
+            <strong>Well handicapped</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+23lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Benchmark</span>
+            <strong>Fit score 2</strong>
+            <i style="--w:74%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 80 and winning TS par is around 45. Runner versus par: RPR edge +3.0 | TS edge +18.0. Benchmark fit: 2.5.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Model agreement</span>
+            <strong>4/6 layers positive</strong>
+            <i style="--w:67%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip off">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip off">Pace</span><span class="alignment-chip on">Commentary</span><span class="alignment-chip on">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card good">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>SALISBURY 1m4f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 44 (HIGH confidence).</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>In touch with leaders - bit short of room and lost position 4f out - rallied from 2f out - went second inside final furlong - no match for winner(op 4/1)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -14907,7 +15397,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>1/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -14921,11 +15411,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Accommodate</b></span>
             <span>Damsire <b>Acclamation</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>In touch with leaders - headway 2f out - kept on inside final furlong(op 4/1 tchd 10/3)</p></div>
-            <div><strong>API flags</strong><p>CD</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal elite"><b>Course + distance</b><em>Has won over this course and distance</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>In touch with leaders - headway 2f out - kept on inside final furlong(op 4/1 tchd 10/3)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -15214,13 +15706,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>Peak RPR evidence gives roughly 14lb in hand over today&#x27;s mark. Latest RPR still compares favourably with the current OR.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 80.8 and winning TS par is around 60.2. Runner versus par: RPR edge +5.2 | TS edge +12.8. Benchmark fit: 2.5.</p></div>
-                        <div><strong>Track DNA</strong><p>DONCASTER 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 251 (HIGH confidence).</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: No | Benchmark: Yes | Memory: Yes | Pace: Yes | Commentary: Yes | Pace / finish: Yes | Overall: 5/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>In touch with leaders - headway 2f out - kept on inside final furlong(op 4/1 tchd 10/3)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card elite">
+            <span>Handicap</span>
+            <strong>Well handicapped</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+14lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Benchmark</span>
+            <strong>Fit score 2</strong>
+            <i style="--w:74%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 80.8 and winning TS par is around 60.2. Runner versus par: RPR edge +5.2 | TS edge +12.8. Benchmark fit: 2.5.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card elite">
+            <span>Model agreement</span>
+            <strong>5/6 layers positive</strong>
+            <i style="--w:83%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip off">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip on">Pace</span><span class="alignment-chip on">Commentary</span><span class="alignment-chip on">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card good">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>DONCASTER 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 251 (HIGH confidence).</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>In touch with leaders - headway 2f out - kept on inside final furlong(op 4/1 tchd 10/3)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -15789,7 +16308,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>0/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -15803,11 +16322,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Goodnight And Joy</b></span>
             <span>Damsire <b>Rip Van Winkle</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Towards rear throughout</p></div>
-            <div><strong>API flags</strong><p>No API past-result flags</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal neutral"><b>No headline flag</b><em>No course, distance or beaten-favourite flag recorded</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Towards rear throughout</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -16096,13 +16617,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>Peak RPR evidence gives roughly 16lb in hand over today&#x27;s mark.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 64.8 and winning TS par is around 49.2. Runner versus par: RPR edge +11.2 | TS edge -2.2. Benchmark fit: 3.</p></div>
-                        <div><strong>Track DNA</strong><p>DONCASTER 1m (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 180 (HIGH confidence).</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: No | Benchmark: Yes | Memory: Yes | Pace: Yes | Commentary: No | Pace / finish: Yes | Overall: 4/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Towards rear throughout</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card elite">
+            <span>Handicap</span>
+            <strong>Well handicapped</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+26lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Benchmark</span>
+            <strong>Fit score 3</strong>
+            <i style="--w:80%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 64.8 and winning TS par is around 49.2. Runner versus par: RPR edge +11.2 | TS edge -2.2. Benchmark fit: 3.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Model agreement</span>
+            <strong>4/6 layers positive</strong>
+            <i style="--w:67%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip off">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip on">Pace</span><span class="alignment-chip off">Commentary</span><span class="alignment-chip on">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card good">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>DONCASTER 1m (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 180 (HIGH confidence).</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Towards rear throughout</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -16671,7 +17219,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>2/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -16685,11 +17233,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Silver Machine</b></span>
             <span>Damsire <b>Brazen Beau</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Held up in rear - raced awkwardly over 2f out - switched right over 1f out - never on terms(op 11/1 tchd 10/1)</p></div>
-            <div><strong>API flags</strong><p>D</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal positive"><b>Distance win</b><em>Has won at this trip</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Held up in rear - raced awkwardly over 2f out - switched right over 1f out - never on terms(op 11/1 tchd 10/1)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -16978,13 +17528,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>The horse looks close to its known rating ceiling on the available figures.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 80.8 and winning TS par is around 60.2. Runner versus par: RPR edge -3.8 | TS edge -24.2. Benchmark fit: -1.1.</p></div>
-                        <div><strong>Track DNA</strong><p>DONCASTER 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 251 (HIGH confidence).</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: Yes | Benchmark: No | Memory: Yes | Pace: Yes | Commentary: Yes | Pace / finish: Yes | Overall: 5/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Held up in rear - raced awkwardly over 2f out - switched right over 1f out - never on terms(op 11/1 tchd 10/1)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card good">
+            <span>Handicap</span>
+            <strong>Workable mark</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+6lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card bad">
+            <span>Benchmark</span>
+            <strong>Fit score -1</strong>
+            <i style="--w:40%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 80.8 and winning TS par is around 60.2. Runner versus par: RPR edge -3.8 | TS edge -24.2. Benchmark fit: -1.1.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card elite">
+            <span>Model agreement</span>
+            <strong>5/6 layers positive</strong>
+            <i style="--w:83%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip on">Distance</span><span class="alignment-chip off">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip on">Pace</span><span class="alignment-chip on">Commentary</span><span class="alignment-chip on">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card good">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>DONCASTER 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 251 (HIGH confidence).</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Held up in rear - raced awkwardly over 2f out - switched right over 1f out - never on terms(op 11/1 tchd 10/1)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -17553,7 +18130,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>2/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -17567,11 +18144,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Let&#x27;s</b></span>
             <span>Damsire <b>Shalaa</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Took keen hold - led - hung left when against far rail under 2f out - soon headed - rallied inside final furlong - no extra towards finish(op 13/2 tchd 11/2)</p></div>
-            <div><strong>API flags</strong><p>D</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal positive"><b>Distance win</b><em>Has won at this trip</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Took keen hold - led - hung left when against far rail under 2f out - soon headed - rallied inside final furlong - no extra towards finish(op 13/2 tchd 11/2)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -17860,13 +18439,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>The current mark looks demanding against the available peak rating evidence.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 68 and winning TS par is around 37. Runner versus par: RPR edge -5.0 | TS edge +11.0. Benchmark fit: 1.1.</p></div>
-                        <div><strong>Track DNA</strong><p>DONCASTER 6f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 192 (HIGH confidence).</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: Yes | Benchmark: Yes | Memory: Yes | Pace: No | Commentary: No | Pace / finish: No | Overall: 3/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Took keen hold - led - hung left when against far rail under 2f out - soon headed - rallied inside final furlong - no extra towards finish(op 13/2 tchd 11/2)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card bad">
+            <span>Handicap</span>
+            <strong>Mark looks stiff</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>-1lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Benchmark</span>
+            <strong>Fit score 1</strong>
+            <i style="--w:60%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 68 and winning TS par is around 37. Runner versus par: RPR edge -5.0 | TS edge +11.0. Benchmark fit: 1.1.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card warn">
+            <span>Model agreement</span>
+            <strong>3/6 layers positive</strong>
+            <i style="--w:50%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip on">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip off">Pace</span><span class="alignment-chip off">Commentary</span><span class="alignment-chip off">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card good">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>DONCASTER 6f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 192 (HIGH confidence).</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Took keen hold - led - hung left when against far rail under 2f out - soon headed - rallied inside final furlong - no extra towards finish(op 13/2 tchd...</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -18367,7 +18973,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>0/2</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -18381,11 +18987,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Roubles</b></span>
             <span>Damsire <b>Speightstown</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Took keen hold - in touch with leaders - prominent after 2f - hampered over 1f out - soon weakened (jockey said gelding suffered interference approx 1f out)(op 80/1 tchd 300/1)</p></div>
-            <div><strong>API flags</strong><p>D</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal positive"><b>Distance win</b><em>Has won at this trip</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Took keen hold - in touch with leaders - prominent after 2f - hampered over 1f out - soon weakened (jockey said gelding suffered interference approx 1f out)(op 80/1 tchd 300/1)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -18632,13 +19240,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>The current mark looks demanding against the available peak rating evidence.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 61.4 and winning TS par is around 45.6. Runner versus par: RPR edge -7.4 | TS edge -8.6. Benchmark fit: -1.2.</p></div>
-                        <div><strong>Track DNA</strong><p>DONCASTER 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 251 (HIGH confidence).</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: No | Benchmark: No | Memory: Yes | Pace: Yes | Commentary: Yes | Pace / finish: No | Overall: 3/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Took keen hold - in touch with leaders - prominent after 2f - hampered over 1f out - soon weakened (jockey said gelding suffered interference approx 1f out)(op 80/1 tchd 300/1)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card warn">
+            <span>Handicap</span>
+            <strong>Near ceiling</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+4lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card bad">
+            <span>Benchmark</span>
+            <strong>Fit score -1</strong>
+            <i style="--w:38%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 61.4 and winning TS par is around 45.6. Runner versus par: RPR edge -7.4 | TS edge -8.6. Benchmark fit: -1.2.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card warn">
+            <span>Model agreement</span>
+            <strong>3/6 layers positive</strong>
+            <i style="--w:50%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip off">Distance</span><span class="alignment-chip off">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip on">Pace</span><span class="alignment-chip on">Commentary</span><span class="alignment-chip off">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card good">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>DONCASTER 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 251 (HIGH confidence).</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Took keen hold - in touch with leaders - prominent after 2f - hampered over 1f out - soon weakened (jockey said gelding suffered interference approx 1f...</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -19207,7 +19842,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>2/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -19221,11 +19856,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Away</b></span>
             <span>Damsire <b>Galileo</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Towards rear - headway when bit short of room under 2f out - soon switched left then not clear run - kept on when in the clear inside final furlong (jockey said filly was denied a clear run)(tchd 11/4)</p></div>
-            <div><strong>API flags</strong><p>D; BF</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal positive"><b>Distance win</b><em>Has won at this trip</em></span><span class="profile-signal caution"><b>Beaten favourite</b><em>Market expected more last time</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Towards rear - headway when bit short of room under 2f out - soon switched left then not clear run - kept on when in the clear inside final furlong (jockey said filly was denied a clear run)(tchd 11/4)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -19514,13 +20151,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>The current mark looks demanding against the available peak rating evidence.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 80.4 and winning TS par is around 60.4. Runner versus par: RPR edge -14.4 | TS edge -28.4. Benchmark fit: -3.6.</p></div>
-                        <div><strong>Track DNA</strong><p>SALISBURY 1m (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 102 (HIGH confidence).</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: No | Benchmark: No | Memory: Yes | Pace: Yes | Commentary: Yes | Pace / finish: Yes | Overall: 4/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Towards rear - headway when bit short of room under 2f out - soon switched left then not clear run - kept on when in the clear inside final furlong (jockey said filly was denied a clear run)(tchd 11/4)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card good">
+            <span>Handicap</span>
+            <strong>Workable mark</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+7lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card bad">
+            <span>Benchmark</span>
+            <strong>Fit score -4</strong>
+            <i style="--w:14%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 80.4 and winning TS par is around 60.4. Runner versus par: RPR edge -14.4 | TS edge -28.4. Benchmark fit: -3.6.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Model agreement</span>
+            <strong>4/6 layers positive</strong>
+            <i style="--w:67%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip off">Distance</span><span class="alignment-chip off">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip on">Pace</span><span class="alignment-chip on">Commentary</span><span class="alignment-chip on">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card good">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>SALISBURY 1m (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 102 (HIGH confidence).</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Towards rear - headway when bit short of room under 2f out - soon switched left then not clear run - kept on when in the clear inside final furlong (joc...</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -20089,7 +20753,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>0/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -20103,11 +20767,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Solfege</b></span>
             <span>Damsire <b>Shamardal</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Towards rear - headway over 2f out - ridden over 1f out - went modest fourth inside final furlong(op 11/2 tchd 13/2)</p></div>
-            <div><strong>API flags</strong><p>D</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal positive"><b>Distance win</b><em>Has won at this trip</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Towards rear - headway over 2f out - ridden over 1f out - went modest fourth inside final furlong(op 11/2 tchd 13/2)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -20396,13 +21062,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>The horse looks close to its known rating ceiling on the available figures.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 61.4 and winning TS par is around 45.6. Runner versus par: RPR edge -0.4 | TS edge +5.4. Benchmark fit: 1.2.</p></div>
-                        <div><strong>Track DNA</strong><p>DONCASTER 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 251 (HIGH confidence).</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: Yes | Benchmark: Yes | Memory: Yes | Pace: Yes | Commentary: Yes | Pace / finish: No | Overall: 5/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Towards rear - headway over 2f out - ridden over 1f out - went modest fourth inside final furlong(op 11/2 tchd 13/2)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card good">
+            <span>Handicap</span>
+            <strong>Workable mark</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+6lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Benchmark</span>
+            <strong>Fit score 1</strong>
+            <i style="--w:62%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 61.4 and winning TS par is around 45.6. Runner versus par: RPR edge -0.4 | TS edge +5.4. Benchmark fit: 1.2.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card elite">
+            <span>Model agreement</span>
+            <strong>5/6 layers positive</strong>
+            <i style="--w:83%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip on">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip on">Pace</span><span class="alignment-chip on">Commentary</span><span class="alignment-chip off">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card good">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>DONCASTER 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 251 (HIGH confidence).</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Towards rear - headway over 2f out - ridden over 1f out - went modest fourth inside final furlong(op 11/2 tchd 13/2)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -20971,7 +21664,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>2/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -20985,11 +21678,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Trisara</b></span>
             <span>Damsire <b>Exceed And Excel</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Dwelt start - in rear - headway under 2f out - disputed lead inside final furlong - no extra towards finish(op 40/1)</p></div>
-            <div><strong>API flags</strong><p>CD</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal elite"><b>Course + distance</b><em>Has won over this course and distance</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Dwelt start - in rear - headway under 2f out - disputed lead inside final furlong - no extra towards finish(op 40/1)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -21278,13 +21973,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>Peak RPR evidence suggests the mark remains workable, with around 8lb historical room. Latest RPR still compares favourably with the current OR.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 81.3 and winning TS par is around 59.1. Runner versus par: RPR edge +22.7 | TS edge +13.8. Benchmark fit: 4.3.</p></div>
-                        <div><strong>Track DNA</strong><p>Track DNA is still developing for this course and distance.</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: No | Benchmark: Yes | Memory: Yes | Pace: Yes | Commentary: No | Pace / finish: No | Overall: 3/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Dwelt start - in rear - headway under 2f out - disputed lead inside final furlong - no extra towards finish(op 40/1)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card elite">
+            <span>Handicap</span>
+            <strong>Well handicapped</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+8lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card elite">
+            <span>Benchmark</span>
+            <strong>Fit score 4</strong>
+            <i style="--w:93%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 81.3 and winning TS par is around 59.1. Runner versus par: RPR edge +22.7 | TS edge +13.8. Benchmark fit: 4.3.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card warn">
+            <span>Model agreement</span>
+            <strong>3/6 layers positive</strong>
+            <i style="--w:50%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip off">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip on">Pace</span><span class="alignment-chip off">Commentary</span><span class="alignment-chip off">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card warn">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>Track DNA is still developing for this course and distance.</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Dwelt start - in rear - headway under 2f out - disputed lead inside final furlong - no extra towards finish(op 40/1)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -21853,7 +22575,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>0/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -21867,11 +22589,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Allegation</b></span>
             <span>Damsire <b>Lawman</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Travelled strongly - prominent on far side of group - led 2f out - soon ridden - kept on final 110yds(op 7/2)</p></div>
-            <div><strong>API flags</strong><p>C; D</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal positive"><b>Course win</b><em>Has won at this course</em></span><span class="profile-signal positive"><b>Distance win</b><em>Has won at this trip</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Travelled strongly - prominent on far side of group - led 2f out - soon ridden - kept on final 110yds(op 7/2)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -22160,13 +22884,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>The horse looks close to its known rating ceiling on the available figures. Latest RPR still compares favourably with the current OR.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 87 and winning TS par is around 65.5. Runner versus par: RPR edge +11.0 | TS edge +17.5. Benchmark fit: 2.5.</p></div>
-                        <div><strong>Track DNA</strong><p>Track DNA is still developing for this course and distance.</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: No | Benchmark: Yes | Memory: Yes | Pace: No | Commentary: Yes | Pace / finish: No | Overall: 3/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Travelled strongly - prominent on far side of group - led 2f out - soon ridden - kept on final 110yds(op 7/2)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card warn">
+            <span>Handicap</span>
+            <strong>Near ceiling</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+3lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Benchmark</span>
+            <strong>Fit score 3</strong>
+            <i style="--w:75%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 87 and winning TS par is around 65.5. Runner versus par: RPR edge +11.0 | TS edge +17.5. Benchmark fit: 2.5.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card warn">
+            <span>Model agreement</span>
+            <strong>3/6 layers positive</strong>
+            <i style="--w:50%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip off">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip off">Pace</span><span class="alignment-chip on">Commentary</span><span class="alignment-chip off">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card warn">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>Track DNA is still developing for this course and distance.</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Travelled strongly - prominent on far side of group - led 2f out - soon ridden - kept on final 110yds(op 7/2)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -22717,7 +23468,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>0/1</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -22731,11 +23482,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Dutch Mistress</b></span>
             <span>Damsire <b>Dutch Art</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Midfield - headway over 2f out - weakened gradually inside final furlong(op 12/1 tchd 9/1)</p></div>
-            <div><strong>API flags</strong><p>No API past-result flags</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal neutral"><b>No headline flag</b><em>No course, distance or beaten-favourite flag recorded</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Midfield - headway over 2f out - weakened gradually inside final furlong(op 12/1 tchd 9/1)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -23022,13 +23775,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>Peak RPR evidence suggests the mark remains workable, with around 7lb historical room.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 80.8 and winning TS par is around 60.2. Runner versus par: RPR edge +1.2 | TS edge +5.8. Benchmark fit: 1.1.</p></div>
-                        <div><strong>Track DNA</strong><p>DONCASTER 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 251 (HIGH confidence).</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: No | Benchmark: Yes | Memory: Yes | Pace: Yes | Commentary: No | Pace / finish: Yes | Overall: 4/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Midfield - headway over 2f out - weakened gradually inside final furlong(op 12/1 tchd 9/1)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card elite">
+            <span>Handicap</span>
+            <strong>Well handicapped</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+16lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Benchmark</span>
+            <strong>Fit score 1</strong>
+            <i style="--w:60%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 80.8 and winning TS par is around 60.2. Runner versus par: RPR edge +1.2 | TS edge +5.8. Benchmark fit: 1.1.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Model agreement</span>
+            <strong>4/6 layers positive</strong>
+            <i style="--w:67%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip off">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip on">Pace</span><span class="alignment-chip off">Commentary</span><span class="alignment-chip on">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card good">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>DONCASTER 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 251 (HIGH confidence).</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Midfield - headway over 2f out - weakened gradually inside final furlong(op 12/1 tchd 9/1)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -23597,7 +24377,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>1/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -23611,11 +24391,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>It&#x27;s My Time</b></span>
             <span>Damsire <b>Green Desert</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>In touch with leaders - weakened from 1f out(op 17/2 tchd 9/1)</p></div>
-            <div><strong>API flags</strong><p>D</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal positive"><b>Distance win</b><em>Has won at this trip</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>In touch with leaders - weakened from 1f out(op 17/2 tchd 9/1)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -23904,13 +24686,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>Peak RPR evidence suggests the mark remains workable, with around 8lb historical room. Latest RPR still compares favourably with the current OR.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 83.3 and winning TS par is around 64.3. Runner versus par: RPR edge +5.7 | TS edge +11.7. Benchmark fit: 2.2.</p></div>
-                        <div><strong>Track DNA</strong><p>SALISBURY 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 140 (HIGH confidence).</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: No | Benchmark: Yes | Memory: Yes | Pace: No | Commentary: Yes | Pace / finish: Yes | Overall: 4/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>In touch with leaders - weakened from 1f out(op 17/2 tchd 9/1)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card elite">
+            <span>Handicap</span>
+            <strong>Well handicapped</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+13lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Benchmark</span>
+            <strong>Fit score 2</strong>
+            <i style="--w:72%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 83.3 and winning TS par is around 64.3. Runner versus par: RPR edge +5.7 | TS edge +11.7. Benchmark fit: 2.2.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Model agreement</span>
+            <strong>4/6 layers positive</strong>
+            <i style="--w:67%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip off">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip off">Pace</span><span class="alignment-chip on">Commentary</span><span class="alignment-chip on">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card good">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>SALISBURY 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 140 (HIGH confidence).</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>In touch with leaders - weakened from 1f out(op 17/2 tchd 9/1)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -24434,7 +25243,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>1/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -24448,11 +25257,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>York Express</b></span>
             <span>Damsire <b>Vale Of York</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>In rear - outpaced and still plenty to do 3f out - soon switched left - rallied and headway from over 1f out - not pace to challenge(tchd 10/1)</p></div>
-            <div><strong>API flags</strong><p>BF</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal caution"><b>Beaten favourite</b><em>Market expected more last time</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>In rear - outpaced and still plenty to do 3f out - soon switched left - rallied and headway from over 1f out - not pace to challenge(tchd 10/1)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -24739,13 +25550,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>The horse looks close to its known rating ceiling on the available figures.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 80.8 and winning TS par is around 60.2. Runner versus par: RPR edge -0.8 | TS edge +8.8. Benchmark fit: 1.4.</p></div>
-                        <div><strong>Track DNA</strong><p>DONCASTER 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 251 (HIGH confidence).</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: No | Benchmark: Yes | Memory: Yes | Pace: No | Commentary: Yes | Pace / finish: No | Overall: 3/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>In rear - outpaced and still plenty to do 3f out - soon switched left - rallied and headway from over 1f out - not pace to challenge(tchd 10/1)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card elite">
+            <span>Handicap</span>
+            <strong>Well handicapped</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+25lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Benchmark</span>
+            <strong>Fit score 1</strong>
+            <i style="--w:64%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 80.8 and winning TS par is around 60.2. Runner versus par: RPR edge -0.8 | TS edge +8.8. Benchmark fit: 1.4.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card warn">
+            <span>Model agreement</span>
+            <strong>3/6 layers positive</strong>
+            <i style="--w:50%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip off">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip off">Pace</span><span class="alignment-chip on">Commentary</span><span class="alignment-chip off">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card good">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>DONCASTER 7f (Turf): late-speed profiles favoured |  draw impact unclear. Sample size 251 (HIGH confidence).</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>In rear - outpaced and still plenty to do 3f out - soon switched left - rallied and headway from over 1f out - not pace to challenge(tchd 10/1)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -25314,7 +26152,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>1/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -25328,11 +26166,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Tout Va Bien</b></span>
             <span>Damsire <b>Verglas</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Midfield - outpaced before halfway - weakened over 1f out (jockey said gelding received a bump from both sides leaving stalls)(tchd 5/1 and tchd 6/1)</p></div>
-            <div><strong>API flags</strong><p>D</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal positive"><b>Distance win</b><em>Has won at this trip</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Midfield - outpaced before halfway - weakened over 1f out (jockey said gelding received a bump from both sides leaving stalls)(tchd 5/1 and tchd 6/1)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -25621,13 +26461,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>The horse looks close to its known rating ceiling on the available figures.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 81.3 and winning TS par is around 59.1. Runner versus par: RPR edge +0.7 | TS edge +17.9. Benchmark fit: 2.4.</p></div>
-                        <div><strong>Track DNA</strong><p>Track DNA is still developing for this course and distance.</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: No | Benchmark: Yes | Memory: Yes | Pace: No | Commentary: No | Pace / finish: No | Overall: 2/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Midfield - outpaced before halfway - weakened over 1f out (jockey said gelding received a bump from both sides leaving stalls)(tchd 5/1 and tchd 6/1)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card good">
+            <span>Handicap</span>
+            <strong>Workable mark</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+9lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card good">
+            <span>Benchmark</span>
+            <strong>Fit score 2</strong>
+            <i style="--w:74%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 81.3 and winning TS par is around 59.1. Runner versus par: RPR edge +0.7 | TS edge +17.9. Benchmark fit: 2.4.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card warn">
+            <span>Model agreement</span>
+            <strong>2/6 layers positive</strong>
+            <i style="--w:33%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip off">Distance</span><span class="alignment-chip on">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip off">Pace</span><span class="alignment-chip off">Commentary</span><span class="alignment-chip off">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card warn">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>Track DNA is still developing for this course and distance.</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Midfield - outpaced before halfway - weakened over 1f out (jockey said gelding received a bump from both sides leaving stalls)(tchd 5/1 and tchd 6/1)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
@@ -26189,7 +27056,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
                 <span>Ground timing match</span>
                 <strong>0/3</strong>
                 <i><b></b></i>
-                <small>Recent API distance-time runs on today's ground</small>
+                <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
         <div class="intel-badge-row">
@@ -26203,11 +27070,13 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
             <span>Dam <b>Elusive Laurence</b></span>
             <span>Damsire <b>Lawman</b></span>
         </div>
-        <div class="context-grid premium-context">
-            <div><strong>Comment note</strong><p>Held up in midfield - in touch with leaders 3f out - ridden and ran on well from under 2f out - led inside final 110yds(op 5/1 tchd 9/2)</p></div>
-            <div><strong>API flags</strong><p>D</p></div>
-            <div><strong>Quote / spotlight note</strong><p>No quote/spotlight note supplied by the API.</p></div>
-            <div><strong>How it affects score</strong><p>Only reliable micro clues can nudge the model, capped at +/-2 points so the core score stays stable.</p></div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal positive"><b>Distance win</b><em>Has won at this trip</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>Held up in midfield - in touch with leaders 3f out - ridden and ran on well from under 2f out - led inside final 110yds(op 5/1 tchd 9/2)</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
         </div>
     </section>
     
@@ -26475,13 +27344,40 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
         </table>
     </div>
     
-                    <div class="context-grid premium-context">
-                        <div><strong>Handicap read</strong><p>The horse looks close to its known rating ceiling on the available figures.</p></div>
-                        <div><strong>Benchmark read</strong><p>Historical benchmark read: winning RPR par is around 83.6 and winning TS par is around 67.8. Runner versus par: RPR edge -14.6 | TS edge -22.8. Benchmark fit: -2.9.</p></div>
-                        <div><strong>Track DNA</strong><p>Track DNA is still developing for this course and distance.</p></div>
-                        <div><strong>Model alignment</strong><p>Distance: No | Benchmark: No | Memory: Yes | Pace: No | Commentary: Yes | Pace / finish: No | Overall: 2/6 positive</p></div>
-                        <div><strong>Latest evidence</strong><p>Held up in midfield - in touch with leaders 3f out - ridden and ran on well from under 2f out - led inside final 110yds(op 5/1 tchd 9/2)</p></div>
-                    </div>
+                    <section class="evidence-snapshot-board">
+        <div class="evidence-snapshot-card warn">
+            <span>Handicap</span>
+            <strong>Near ceiling</strong>
+            <i style="--w:45%"><b></b></i>
+            <p>+4lb peak historical room from peak evidence.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card bad">
+            <span>Benchmark</span>
+            <strong>Fit score -3</strong>
+            <i style="--w:21%"><b></b></i>
+            <p>Historical benchmark read: winning RPR par is around 83.6 and winning TS par is around 67.8. Runner versus par: RPR edge -14.6 | TS edge -22.8. Benchmark fit: -2.9.</p>
+        </div>
+        
+        <div class="evidence-snapshot-card warn">
+            <span>Model agreement</span>
+            <strong>2/6 layers positive</strong>
+            <i style="--w:33%"><b></b></i>
+            <div class="alignment-chip-row"><span class="alignment-chip off">Distance</span><span class="alignment-chip off">Benchmark</span><span class="alignment-chip on">Memory</span><span class="alignment-chip off">Pace</span><span class="alignment-chip on">Commentary</span><span class="alignment-chip off">Finish</span></div>
+        </div>
+        
+            <div class="evidence-snapshot-card warn">
+                <span>Track profile</span>
+                <strong>Race setup read</strong>
+                <p>Track DNA is still developing for this course and distance.</p>
+            </div>
+            
+            <div class="evidence-snapshot-card note">
+                <span>Latest evidence</span>
+                <strong>Run comment</strong>
+                <p>Held up in midfield - in touch with leaders 3f out - ridden and ran on well from under 2f out - led inside final 110yds(op 5/1 tchd 9/2)</p>
+            </div>
+            </section>
                 </details>
             </div>
         </details>
