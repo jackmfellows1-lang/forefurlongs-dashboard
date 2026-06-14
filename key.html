@@ -155,7 +155,11 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 .scan-pill.neutral{background:#e9e1d2;color:#26332e;border-color:#ded3c2}.scan-pill.elite{background:#0f4f35!important;color:#fff!important;border-color:#0f4f35}.scan-pill.good{background:#d9ecdf!important;color:#0f4f35!important;border-color:#a8c6b6}.scan-pill.warn{background:#f2e2bb!important;color:#5e410d!important;border-color:#d4b66e}.scan-pill.bad{background:#ead5d5!important;color:#8e2f2f!important;border-color:#d0aaaa}
 .scan-pill.status-primary{background:var(--green)!important;color:#fff!important;border-color:var(--green);font-size:10px!important}.scan-pill.status-shortlist,.scan-pill.status-neutral{background:var(--gold)!important;color:#211707!important;border-color:var(--gold)}.scan-pill.status-low{background:var(--red)!important;color:#fff!important;border-color:var(--red)}
 .race-scan-table td:nth-child(3) b{font-size:16px;font-weight:850}
-.race-scan-table td:nth-child(4) .scan-pill,.race-scan-table td:nth-child(13) .scan-pill{min-width:42px;justify-content:center}
+.race-scan-table td:nth-child(13) .scan-pill{min-width:42px;justify-content:center}
+.race-scan-scroll{cursor:grab;scrollbar-color:#b28731 #eadfcd}
+.race-scan-scroll.dragging{cursor:grabbing;user-select:none}
+.race-scan-scroll.dragging *{user-select:none}
+.scan-form{display:inline-flex;align-items:center;min-height:28px;max-width:132px;padding:5px 8px;border:1px solid #b7a578;border-left:3px solid var(--green);border-radius:2px;background:#fffaf0;color:#17211d;font-family:Sora;font-size:11px;font-weight:850;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .compare-tray.active{background:#fffaf0!important;border-color:#b7a578!important}
 .compare-board-grid{grid-template-columns:repeat(auto-fit,minmax(235px,1fr))!important}
 .compare-card{border:1px solid #b7a578!important;background:#fffaf0!important;border-left:4px solid var(--green)!important;padding:14px!important}
@@ -864,9 +868,55 @@ function simplifyKeyPage() {
     });
 }
 
+function enableRaceScanDragScroll() {
+    document.querySelectorAll(".race-scan-scroll").forEach(scroller => {
+        if (scroller.dataset.dragScrollReady === "1") return;
+        scroller.dataset.dragScrollReady = "1";
+        let isDown = false;
+        let startX = 0;
+        let scrollLeft = 0;
+        let moved = false;
+
+        scroller.addEventListener("pointerdown", event => {
+            if (event.target.closest("input, label, button, a, select, details, summary")) return;
+            isDown = true;
+            moved = false;
+            startX = event.clientX;
+            scrollLeft = scroller.scrollLeft;
+            scroller.classList.add("dragging");
+            scroller.setPointerCapture?.(event.pointerId);
+        });
+
+        scroller.addEventListener("pointermove", event => {
+            if (!isDown) return;
+            const delta = event.clientX - startX;
+            if (Math.abs(delta) > 4) moved = true;
+            scroller.scrollLeft = scrollLeft - delta;
+        });
+
+        const endDrag = event => {
+            if (!isDown) return;
+            isDown = false;
+            scroller.classList.remove("dragging");
+            scroller.releasePointerCapture?.(event.pointerId);
+        };
+        scroller.addEventListener("pointerup", endDrag);
+        scroller.addEventListener("pointercancel", endDrag);
+        scroller.addEventListener("pointerleave", endDrag);
+        scroller.addEventListener("click", event => {
+            if (moved && !event.target.closest("input, label, button, a")) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            moved = false;
+        }, true);
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     simplifyRunnerEvidence();
     simplifyKeyPage();
+    enableRaceScanDragScroll();
     document.querySelectorAll(".compare-check").forEach(input => {
         input.addEventListener("change", () => updateRaceCompare(input));
     });
