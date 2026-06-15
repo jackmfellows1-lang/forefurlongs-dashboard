@@ -279,6 +279,35 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 .alignment-chip-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
 .alignment-chip{border:1px solid #d8cdbb;background:#f6f1e7;color:#4f5c56;padding:5px 7px;font-size:10px;font-weight:800}
 .alignment-chip.on{background:#e3efe8;border-color:#a8c6b6;color:#0f4f35}.alignment-chip.off{background:#ead5d5;border-color:#d0aaaa;color:#8e2f2f}
+
+/* Final publication-theme contract across pages and all drawers */
+:root{--paper:#fffdf8;--paper-soft:#f6f1e7;--paper-warm:#fffaf0;--ink:#07130f;--ink-soft:#25352f;--editorial-green:#0f4f35;--editorial-blue:#17364a;--editorial-gold:#b28731;--editorial-red:#8e2f2f}
+body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card,.key-item,.pnl-panel{color:var(--ink)!important}
+.content :where(p,li,td,summary,label,span,small,em),.page-hero p{color:var(--ink-soft)!important}
+.content :where(h1,h2,h3,h4,strong,b),.page-hero :where(h1,h2,h3,h4,strong,b){color:var(--ink)!important}
+.content :where(.eyebrow,.micro-label,.section-head span,.profile-signal-head span,.evidence-snapshot-card>span){color:var(--editorial-green)!important}
+.content :where(.runner.compact,.runner.compact[open],.runner-body,.runner-race-link,.runner-decision-panel,.predictive-edge-panel,.distance-timing-panel,.sectional-angle,.extra-intel-panel,.conditions-match-panel,.placement-evidence-panel,.ground-evidence-panel,.handicap-opportunity-panel,.hidden-run-panel,.visual-trend-panel,.split-speed-chart,.previous-runs,.last-six-strip,.profile-signal-board,.evidence-snapshot-board,.profile-writeup,.horse-run-history,.horse-result-card,.result-opinion,.premium-snapshot,.race-shape-panel,.synopsis,.compare-tray.active,.compare-card,.race-scan-panel){background:var(--paper)!important;border-color:#d6cbb9!important;box-shadow:none!important;text-shadow:none!important}
+.content :where(.runner-decision-metrics div,.predictive-edge-grid div,.decision-meter,.decision-primary-tile,.ff-score-block,.confidence,.trust-meter,.premium-runner-summary>div,.horse-profile-strip div,.runner-meta-strip div,.context-fit-grid div,.distance-timing-grid div,.ground-evidence-grid div,.placement-row,.condition-match-row,.pace-finish-tile,.verified-sectional-grid>div,.sectional-run-card,.profile-signal,.evidence-snapshot-card,.compare-delta-grid div,.compare-detail-grid div,.compare-card-metrics div,.form-tile,.timing-context,.condition-record){background:var(--paper-warm)!important;border-color:#d8cdbb!important;border-radius:2px!important;box-shadow:none!important;opacity:1!important}
+.content :where(.runner-decision-metrics span,.predictive-edge-grid span,.decision-meter span,.decision-primary-tile span,.ff-score-block span,.confidence span,.trust-meter span,.premium-runner-summary span,.horse-profile-strip span,.runner-meta-strip span,.context-fit-grid span,.distance-timing-grid span,.ground-evidence-grid span,.placement-row span,.condition-match-row span,.pace-finish-tile span,.verified-sectional-grid span,.sectional-run-card span,.compare-delta-grid span,.compare-detail-grid span,.compare-card-metrics span,.form-tile span,.profile-signal em,.evidence-snapshot-card p){color:#4f5c56!important}
+.content :where(.runner-decision-metrics strong,.predictive-edge-grid strong,.decision-meter strong,.decision-primary-tile strong,.ff-score-block strong,.confidence strong,.trust-meter strong,.premium-runner-summary strong,.horse-profile-strip strong,.runner-meta-strip strong,.context-fit-grid strong,.distance-timing-grid strong,.ground-evidence-grid strong,.placement-row strong,.condition-match-row strong,.pace-finish-tile strong,.verified-sectional-grid strong,.sectional-run-card strong,.compare-delta-grid strong,.compare-detail-grid strong,.compare-card-metrics strong,.form-tile strong,.profile-signal b,.evidence-snapshot-card strong){color:var(--ink)!important}
+.content :where(.score-muted,.muted-card){opacity:1!important}
+.content :where(.bet-primary,.status-primary,.chip.elite,.scan-pill.elite){background:var(--editorial-green)!important;color:#fff!important;border-color:var(--editorial-green)!important}
+.content :where(.bet-value,.bet-watch,.chip.warn,.scan-pill.warn){background:#f2e2bb!important;color:#5e410d!important;border-color:#d4b66e!important}
+.content :where(.bet-avoid,.chip.bad,.scan-pill.bad){background:#ead5d5!important;color:var(--editorial-red)!important;border-color:#d0aaaa!important}
+.content :where(.chip.good,.scan-pill.good,.form-tile.place){background:#dcebf0!important;color:#1f5b6f!important;border-color:#b9d0d9!important}
+.content :where(.scan-pill.neutral,.finish-pill,.intent-chip,.timing-read-chip,.distance-chip,.ground-chip,.alignment-chip){background:var(--paper-soft)!important;color:var(--ink-soft)!important;border-color:#d8cdbb!important}
+.content :where(.form-tile.win,.intent-chip.positive,.finish-pill.good,.finish-pill.positive,.alignment-chip.on){background:#e3efe8!important;color:var(--editorial-green)!important;border-color:#a8c6b6!important}
+.content :where(.intent-chip.caution,.finish-pill.warn,.finish-pill.caution){background:#f2e2bb!important;color:#5e410d!important;border-color:#d4b66e!important}
+.content :where(table th,.rp-table th,.recent-table th,.distance-timing-table th,.race-scan-table th){background:#1f2f28!important;color:#fff!important}
+.content :where(table td,.rp-table td,.recent-table td,.distance-timing-table td,.race-scan-table td){background:var(--paper)!important;color:var(--ink-soft)!important;border-color:#e6ddcd!important}
+.content :where(.bar,.decision-primary-tile i,.decision-meter i,.compare-visual-bars i,.condition-match-row i,.placement-row i,.pnl-track,.ground-record-row i,.trend-bars i,.benchmark-single i){background:#e0d7c8!important}
+.content :where(.bar i,.decision-primary-tile i b,.decision-meter i b,.compare-visual-bars i b,.condition-match-row i b,.placement-row i b,.pnl-bar,.ground-record-row i b,.trend-bars i.rpr-bar,.benchmark-single i b){background:var(--editorial-green)!important;color:#fff!important;box-shadow:none!important}
+.content :where(.trend-bars i.or-bar){background:var(--editorial-blue)!important}
+.content :where(.trend-summary){background:#eef7f2!important;color:var(--editorial-green)!important;border-left-color:var(--editorial-green)!important}
+.topnav{background:#fffdf8!important;border-color:#d6cbb9!important;box-shadow:0 8px 30px rgba(27,24,18,.08)!important}
+.brand-name i,.navlinks a{color:var(--ink)!important}.brand-name b,.navlinks a.active{color:var(--editorial-green)!important}
+.navlinks a.active{background:#e3efe8!important;border-color:#a8c6b6!important;box-shadow:none!important}
+.navlinks a.join-link{background:var(--editorial-gold)!important;color:#211707!important}
 @media(max-width:900px){body{padding:12px}.topnav{position:relative;top:auto;align-items:start;display:grid;gap:12px;padding:12px}.navlinks{justify-content:flex-start;gap:4px}.navlinks a{padding:8px 9px;font-size:10px}.navlinks a.utility-link:before{display:none}.navlinks a.join-link{margin-left:2px}.page-hero{padding:24px;border-radius:18px}.race-header,.horse-head,.top-horse-details>summary{grid-template-columns:1fr}.race-score,.horse-score,.hero-score-stack{text-align:left;justify-items:start}.top-horse-summary-tags{justify-content:flex-start}.home-showcase,.about-grid,.brief-grid,.race-intel-grid,.main-danger,.context-grid,.premium-grid,.filter-panel,.horse-search-panel,.key-grid,.premium-snapshot,.decision-strip,.why-risk-grid,.context-fit-grid,.race-shape-panel,.sectional-metrics,.sectional-metrics.readable-sectionals,.distance-timing-grid,.horse-result-stats,.value-grid,.method-strip,.premium-runner-summary,.result-model-grid,.briefing-columns,.briefing-angle-feature,.verified-sectional-grid,.pace-finish-dashboard,.sectional-run-list,.pnl-grid,.angle-monitor,.pricing-grid,.premium-preview,.conditions-match-panel,.ground-evidence-panel,.placement-evidence-panel,.opportunity-grid,.handicap-opportunity-panel,.hidden-run-panel,.runner-decision-head,.runner-decision-focus,.runner-decision-metrics,.decision-visual-grid,.decision-benchmark-strip,.decision-reason-risk,.predictive-edge-head,.predictive-edge-grid{grid-template-columns:1fr}.runner-decision-action,.predictive-edge-score{justify-items:start}.race-scan-head{display:grid}.race-scan-head small{text-align:left}.compare-board-grid{grid-template-columns:1fr}.compare-delta-grid{grid-template-columns:repeat(2,1fr)}.ground-record-row{grid-template-columns:1fr}.ground-record-row em{text-align:left}.ground-record-drawer summary{display:grid}.ground-record-drawer summary strong{text-align:left}.sectional-angle-head,.runner-race-link,.distance-timing-head,.visual-trend-head,.last-six-head{display:grid}.sectional-evidence,.visual-trend-head small,.last-six-head small{text-align:left}.conditions-match-score,.ground-evidence-score,.placement-score{justify-items:start;border-right:0;border-bottom:1px solid rgba(148,163,184,.18);padding:0 0 12px;text-align:left}.trend-row{grid-template-columns:1fr}.form-tiles{grid-template-columns:repeat(3,minmax(0,1fr))}.briefing-row{grid-template-columns:1fr}.runner-race-link a{justify-self:start}.runner-meta-strip,.horse-profile-strip{grid-template-columns:repeat(2,1fr)}.ff-intel-metrics{grid-template-columns:repeat(2,1fr)}.bar-row{grid-template-columns:1fr;gap:5px}.runner.compact summary{grid-template-columns:1fr}.runner.compact summary .bet-badge{justify-self:start}.runner.compact summary .trust-meter{width:100%}.filter-panel,.horse-search-panel{position:relative;top:auto}.horse-search-count{padding:0}.distance-timing-head .finish-pill{max-width:none}.home-screen{min-height:300px}.video-score{font-size:56px}.pnl-chart-row{grid-template-columns:1fr}.pnl-bar{min-width:72px}.pnl-updated{display:grid}}
 </style>
 </head>
@@ -354,7 +383,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Surfin Usa (FR)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>12</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -377,7 +406,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -520,7 +549,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Optician (GB)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>6</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -547,7 +576,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -630,7 +659,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Ballinea Star (IRE)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>14</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -657,7 +686,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -820,7 +849,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Red Moon (IRE)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>5</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -847,7 +876,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -920,7 +949,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>In The Trenches (GB)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>14</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -943,7 +972,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -1106,7 +1135,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Raneem (GB)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>12</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -1133,7 +1162,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -1276,7 +1305,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Gleneagle Bay (IRE)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>15</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -1303,7 +1332,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -1476,7 +1505,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Blue Prince (IRE)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>7</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -1503,7 +1532,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -1596,7 +1625,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>She&#x27;s A Fine Wine (IRE)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>12</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -1619,7 +1648,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -1762,7 +1791,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Nochebuena (GB)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>5</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -1789,7 +1818,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -1862,7 +1891,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Xerling (IRE)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>13</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -1889,7 +1918,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -2042,7 +2071,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Sonny Parvenue (FR)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>11</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -2069,7 +2098,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -2202,7 +2231,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Malbay Madness (IRE)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>10</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -2225,7 +2254,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -2348,7 +2377,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Gunalt Wavelength (GB)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>15</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -2375,7 +2404,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -2548,7 +2577,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Kendall Roy (GB)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>8</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -2575,7 +2604,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -2678,7 +2707,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Wild Violet (FR)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>6</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -2705,7 +2734,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -2788,7 +2817,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Blue Moon Boy (IRE)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>10</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -2811,7 +2840,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -2934,7 +2963,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Alpha Capture (IRE)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>11</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -2961,7 +2990,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -3094,7 +3123,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Sarahmae (IRE)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>10</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -3121,7 +3150,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -3244,7 +3273,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Redbud Sixteen (IRE)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>10</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -3271,7 +3300,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -3394,7 +3423,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Georginas Jet (IRE)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>14</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -3417,7 +3446,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -3580,7 +3609,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Bella Bisbee (GB)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>12</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -3607,7 +3636,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -3750,7 +3779,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Sparan Nua (IRE)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>9</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -3777,7 +3806,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -3890,7 +3919,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Kamaway (GB)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>13</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -3917,7 +3946,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -4070,7 +4099,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Irish Lace (IRE)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>8</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -4097,7 +4126,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -4200,7 +4229,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Woodleigh (IRE)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>18</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -4227,7 +4256,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -4430,7 +4459,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Hambelton (IRE)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>12</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -4457,7 +4486,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -4600,7 +4629,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>Taritino (IRE)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>6</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -4627,7 +4656,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -4710,7 +4739,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 
         <div class="race-intel-grid premium-intel-grid">
             <div><span>Winner</span><strong>That&#x27;s Random (GB)</strong></div>
-            <div><span>RPR / TS</span><strong>-- / --</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>14</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
@@ -4737,7 +4766,7 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
         <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>RPR</th><th>TS</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
             <tbody>
             <tr>
                 <td>1</td>
@@ -5094,7 +5123,7 @@ function renderHorseRunRows(runs) {
         const beaten = run[8] || "";
         const sp = run[9] || "";
         const orVal = run[10] || "Unrated";
-        const rpr = run[11] || "No RPR";
+        const rpr = run[11] || "No rating";
         const ts = run[12] || "--";
         const style = run[13] || "";
         const finish = run[14] || "";
@@ -5136,7 +5165,7 @@ function renderHorseProfileResult(profile) {
                     <p>Trainer: ${escHtml(profile.trainer || "Trainer data developing")} | Owner: ${escHtml(profile.owner || "Owner data developing")}</p>
                 </div>
                 <div class="hero-score-stack">
-                    <div class="ff-score-block score-elite"><span>Best RPR</span><strong>${escHtml(profile.bestRpr || "--")}</strong></div>
+                    <div class="ff-score-block score-elite"><span>Best rating</span><strong>${escHtml(profile.bestRpr || "--")}</strong></div>
                     ${entry}
                 </div>
             </div>
@@ -5230,7 +5259,7 @@ function updateRaceCompare(input) {
         if (numeric(item, "alignmentNum") === best.alignmentNum) badges.push("Best alignment");
         if ((deiRank[item.dataset.dei || ""] || 0) === bestDei) badges.push("Best DEI");
         if (numeric(item, "markNum") === best.markNum) badges.push("Best mark");
-        if (numeric(item, "rprReadNum") === best.rprReadNum && best.rprReadNum > 0) badges.push("Best RPR read");
+        if (numeric(item, "rprReadNum") === best.rprReadNum && best.rprReadNum > 0) badges.push("Best rating read");
         if (numeric(item, "ffrEdgeNum") === best.ffrEdgeNum && best.ffrEdgeNum > 0) badges.push("Best FFR edge");
         if (numeric(item, "orEdgeNum") === best.orEdgeNum && best.orEdgeNum > 0) badges.push("Best OR edge");
         if (numeric(item, "bestRprNum") === best.bestRprNum) badges.push("Best historic RPR");
@@ -5304,17 +5333,17 @@ function updateRaceCompare(input) {
             <div class="compare-section">
                 <span>Ratings</span>
                 <div class="compare-delta-grid">
-                    <div class="${numeric(item, "rprReadNum") === best.rprReadNum && best.rprReadNum > 0 ? "best" : ""}"><span>RPR read</span><strong>${escHtml(item.dataset.rprRead || "--")}</strong></div>
+                    <div class="${numeric(item, "rprReadNum") === best.rprReadNum && best.rprReadNum > 0 ? "best" : ""}"><span>Rating read</span><strong>${escHtml(item.dataset.rprRead || "--")}</strong></div>
                     <div class="${numeric(item, "ffrNum") === best.ffrNum && best.ffrNum > 0 ? "best" : ""}"><span>FFR</span><strong>${escHtml(item.dataset.ffr || "--")}</strong></div>
                     <div class="${numeric(item, "ffrEdgeNum") === best.ffrEdgeNum && best.ffrEdgeNum > 0 ? "best" : ""}"><span>FFR vs OR</span><strong>${escHtml(item.dataset.ffrEdge || "--")}</strong></div>
                     <div class="${numeric(item, "orEdgeNum") === best.orEdgeNum && best.orEdgeNum > 0 ? "best" : ""}"><span>OR vs field</span><strong>${escHtml(item.dataset.orEdge || "--")}</strong></div>
                     <div><span>Current OR</span><strong>${escHtml(item.dataset.currentOr || "--")}</strong></div>
                     <div><span>Average OR</span><strong>${escHtml(item.dataset.avgOr || "--")}</strong></div>
-                    <div class="${numeric(item, "bestRprNum") === best.bestRprNum ? "best" : ""}"><span>Historic best RPR</span><strong>${escHtml(item.dataset.bestRpr || "--")}</strong></div>
-                    <div><span>Last-run RPR</span><strong>${escHtml(item.dataset.lastRpr || "--")}</strong></div>
+                    <div class="${numeric(item, "bestRprNum") === best.bestRprNum ? "best" : ""}"><span>Historic best rating</span><strong>${escHtml(item.dataset.bestRpr || "--")}</strong></div>
+                    <div><span>Last-run rating</span><strong>${escHtml(item.dataset.lastRpr || "--")}</strong></div>
                     <div class="${numeric(item, "speedScoreNum") === best.speedScoreNum && best.speedScoreNum > 0 ? "best" : ""}"><span>SpeedScore</span><strong>${escHtml(item.dataset.speedScore || "--")}</strong></div>
                     <div><span>Current TS</span><strong>${escHtml(item.dataset.currentTs || item.dataset.bestTs || "--")}</strong></div>
-                    <div class="${numeric(item, "rprEdgeNum") === best.rprEdgeNum ? "best" : ""}"><span>RPR vs par</span><strong>${escHtml(item.dataset.rprEdge || "N/A")}</strong></div>
+                    <div class="${numeric(item, "rprEdgeNum") === best.rprEdgeNum ? "best" : ""}"><span>Rating vs par</span><strong>${escHtml(item.dataset.rprEdge || "N/A")}</strong></div>
                 </div>
             </div>
             <div class="compare-section">
