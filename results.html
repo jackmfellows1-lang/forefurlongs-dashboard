@@ -5292,6 +5292,7 @@ function updateRaceCompare(input) {
             </div>
             <div class="compare-context-chips">
                 <span title="${escHtml(item.dataset.orFieldRead || "")}">OR ${escHtml(item.dataset.currentOr || "--")}</span>
+                <span title="${escHtml(item.dataset.marketDetail || "")}">Odds ${escHtml(item.dataset.marketOdds || "--")}</span>
                 <span title="${escHtml(item.dataset.restDetail || "")}">${escHtml(item.dataset.rest || "Rest developing")}</span>
                 <span title="${escHtml(item.dataset.tripMoveDetail || "")}">${escHtml(item.dataset.tripMove || "Trip developing")}</span>
                 <span title="${escHtml(item.dataset.fieldStrengthDetail || "")}">${escHtml(item.dataset.fieldStrength || "Field developing")}</span>
@@ -5315,6 +5316,7 @@ function updateRaceCompare(input) {
                     <div><span>Recent form</span><strong>${escHtml(item.dataset.recentDetail || "Recent form data developing")}</strong></div>
                     <div><span>Ratings read</span><strong>${escHtml(item.dataset.ratingsDetail || "Ratings evidence developing")}</strong></div>
                     <div><span>FFR read</span><strong>${escHtml(item.dataset.ffrDetail || "ForeFurlongs Rating evidence developing")}</strong></div>
+                    <div><span>Market</span><strong>${escHtml(item.dataset.marketDetail || "No live market price stored")}</strong></div>
                     <div><span>OR versus field</span><strong>${escHtml(item.dataset.orFieldRead || "Field OR context developing")}</strong></div>
                     <div><span>SpeedScore</span><strong>${escHtml(item.dataset.speedScoreDetail || item.dataset.speedDetail || "SpeedScore evidence developing")}</strong></div>
                     <div><span>Trip evidence</span><strong>${escHtml(item.dataset.tripDetail || "Trip evidence developing")}</strong></div>
@@ -5336,6 +5338,8 @@ function updateRaceCompare(input) {
                     <div class="${numeric(item, "rprReadNum") === best.rprReadNum && best.rprReadNum > 0 ? "best" : ""}"><span>Rating read</span><strong>${escHtml(item.dataset.rprRead || "--")}</strong></div>
                     <div class="${numeric(item, "ffrNum") === best.ffrNum && best.ffrNum > 0 ? "best" : ""}"><span>FFR</span><strong>${escHtml(item.dataset.ffr || "--")}</strong></div>
                     <div class="${numeric(item, "ffrEdgeNum") === best.ffrEdgeNum && best.ffrEdgeNum > 0 ? "best" : ""}"><span>FFR vs OR</span><strong>${escHtml(item.dataset.ffrEdge || "--")}</strong></div>
+                    <div><span>Market odds</span><strong>${escHtml(item.dataset.marketOdds || "--")}</strong></div>
+                    <div><span>Implied chance</span><strong>${escHtml(item.dataset.marketImplied || "--")}</strong></div>
                     <div class="${numeric(item, "orEdgeNum") === best.orEdgeNum && best.orEdgeNum > 0 ? "best" : ""}"><span>OR vs field</span><strong>${escHtml(item.dataset.orEdge || "--")}</strong></div>
                     <div><span>Current OR</span><strong>${escHtml(item.dataset.currentOr || "--")}</strong></div>
                     <div><span>Average OR</span><strong>${escHtml(item.dataset.avgOr || "--")}</strong></div>
