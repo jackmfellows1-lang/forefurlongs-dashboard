@@ -153,6 +153,11 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 .race-scan-head strong{font-family:Source Serif 4,Georgia,serif!important;font-size:24px!important;color:var(--text)!important}
 .race-scan-table{min-width:1240px!important;table-layout:auto;border:1px solid #cfc4b3!important}
 .race-scan-table th{padding:12px 10px!important;background:#1f2f28!important;color:#fff!important;border-right:1px solid rgba(255,255,255,.08);font-size:10px!important;line-height:1.15}
+.race-scan-table th button{appearance:none;border:0;background:transparent;color:inherit;font:inherit;text-transform:inherit;letter-spacing:inherit;padding:0 14px 0 0;cursor:pointer;position:relative;text-align:left}
+.race-scan-table th button:after{content:"<>";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:8px;opacity:.58}
+.race-scan-table th.sorted-asc button:after{content:"^";opacity:1}
+.race-scan-table th.sorted-desc button:after{content:"v";opacity:1}
+.race-scan-table th button:hover{color:#f5d990}
 .race-scan-table td{padding:13px 10px!important;background:#fffdf8;border-bottom:1px solid #ded3c2!important;vertical-align:middle}
 .race-scan-table tr:nth-child(even) td{background:#f9f4ea}
 .race-scan-table tr:hover td{background:#efe7d8!important}
@@ -6041,10 +6046,65 @@ function enableRaceScanDragScroll() {
     });
 }
 
+function sortRaceScanTable(button) {
+    const table = button.closest(".race-scan-table");
+    const th = button.closest("th");
+    const tbody = table?.querySelector("tbody");
+    if (!table || !th || !tbody) return;
+
+    const headers = Array.from(th.parentElement.children);
+    const columnIndex = headers.indexOf(th);
+    const type = button.dataset.sortType || "text";
+    const currentDirection = th.dataset.sortDirection || "";
+    const defaultDirection = button.dataset.sortDefault || (type === "number" ? "desc" : "asc");
+    const direction = currentDirection === "asc" ? "desc" : currentDirection === "desc" ? "asc" : defaultDirection;
+    const multiplier = direction === "asc" ? 1 : -1;
+
+    const rows = Array.from(tbody.querySelectorAll("tr"));
+    rows.sort((a, b) => {
+        const aCell = a.children[columnIndex];
+        const bCell = b.children[columnIndex];
+        const aRaw = aCell?.dataset.sortValue ?? aCell?.textContent ?? "";
+        const bRaw = bCell?.dataset.sortValue ?? bCell?.textContent ?? "";
+
+        if (type === "number") {
+            const aNum = Number.parseFloat(String(aRaw).replace(/[^0-9.+-]/g, ""));
+            const bNum = Number.parseFloat(String(bRaw).replace(/[^0-9.+-]/g, ""));
+            const aValue = Number.isFinite(aNum) ? aNum : -999999;
+            const bValue = Number.isFinite(bNum) ? bNum : -999999;
+            if (aValue !== bValue) return (aValue - bValue) * multiplier;
+        } else {
+            const result = String(aRaw).localeCompare(String(bRaw), undefined, {numeric: true, sensitivity: "base"});
+            if (result !== 0) return result * multiplier;
+        }
+
+        const aOriginal = Number.parseInt(a.dataset.originalIndex || "0", 10);
+        const bOriginal = Number.parseInt(b.dataset.originalIndex || "0", 10);
+        return aOriginal - bOriginal;
+    });
+
+    headers.forEach(header => {
+        header.classList.remove("sorted-asc", "sorted-desc");
+        delete header.dataset.sortDirection;
+    });
+    th.dataset.sortDirection = direction;
+    th.classList.add(direction === "asc" ? "sorted-asc" : "sorted-desc");
+    rows.forEach(row => tbody.appendChild(row));
+}
+
+function enableRaceScanSorting() {
+    document.querySelectorAll(".race-scan-table th button[data-sort-type]").forEach(button => {
+        if (button.dataset.sortReady === "1") return;
+        button.dataset.sortReady = "1";
+        button.addEventListener("click", () => sortRaceScanTable(button));
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     simplifyRunnerEvidence();
     simplifyKeyPage();
     enableRaceScanDragScroll();
+    enableRaceScanSorting();
     document.querySelectorAll(".compare-check").forEach(input => {
         input.addEventListener("change", () => updateRaceCompare(input));
     });
