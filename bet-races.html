@@ -320,6 +320,31 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
 .navlinks a.active{background:#e3efe8!important;border-color:#a8c6b6!important;box-shadow:none!important}
 .navlinks a.join-link{background:var(--editorial-gold)!important;color:#211707!important}
 @media(max-width:900px){body{padding:12px}.topnav{position:relative;top:auto;align-items:start;display:grid;gap:12px;padding:12px}.navlinks{justify-content:flex-start;gap:4px}.navlinks a{padding:8px 9px;font-size:10px}.navlinks a.utility-link:before{display:none}.navlinks a.join-link{margin-left:2px}.page-hero{padding:24px;border-radius:18px}.race-header,.horse-head,.top-horse-details>summary{grid-template-columns:1fr}.race-score,.horse-score,.hero-score-stack{text-align:left;justify-items:start}.top-horse-summary-tags{justify-content:flex-start}.home-showcase,.about-grid,.brief-grid,.race-intel-grid,.main-danger,.context-grid,.premium-grid,.filter-panel,.horse-search-panel,.key-grid,.premium-snapshot,.decision-strip,.why-risk-grid,.context-fit-grid,.race-shape-panel,.sectional-metrics,.sectional-metrics.readable-sectionals,.distance-timing-grid,.horse-result-stats,.value-grid,.method-strip,.premium-runner-summary,.result-model-grid,.briefing-columns,.briefing-angle-feature,.verified-sectional-grid,.pace-finish-dashboard,.sectional-run-list,.pnl-grid,.angle-monitor,.pricing-grid,.premium-preview,.conditions-match-panel,.ground-evidence-panel,.placement-evidence-panel,.opportunity-grid,.handicap-opportunity-panel,.hidden-run-panel,.runner-decision-head,.runner-decision-focus,.runner-decision-metrics,.decision-visual-grid,.decision-benchmark-strip,.decision-reason-risk,.predictive-edge-head,.predictive-edge-grid{grid-template-columns:1fr}.runner-decision-action,.predictive-edge-score{justify-items:start}.race-scan-head{display:grid}.race-scan-head small{text-align:left}.compare-board-grid{grid-template-columns:1fr}.compare-delta-grid{grid-template-columns:repeat(2,1fr)}.ground-record-row{grid-template-columns:1fr}.ground-record-row em{text-align:left}.ground-record-drawer summary{display:grid}.ground-record-drawer summary strong{text-align:left}.sectional-angle-head,.runner-race-link,.distance-timing-head,.visual-trend-head,.last-six-head{display:grid}.sectional-evidence,.visual-trend-head small,.last-six-head small{text-align:left}.conditions-match-score,.ground-evidence-score,.placement-score{justify-items:start;border-right:0;border-bottom:1px solid rgba(148,163,184,.18);padding:0 0 12px;text-align:left}.trend-row{grid-template-columns:1fr}.form-tiles{grid-template-columns:repeat(3,minmax(0,1fr))}.briefing-row{grid-template-columns:1fr}.runner-race-link a{justify-self:start}.runner-meta-strip,.horse-profile-strip{grid-template-columns:repeat(2,1fr)}.ff-intel-metrics{grid-template-columns:repeat(2,1fr)}.bar-row{grid-template-columns:1fr;gap:5px}.runner.compact summary{grid-template-columns:1fr}.runner.compact summary .bet-badge{justify-self:start}.runner.compact summary .trust-meter{width:100%}.filter-panel,.horse-search-panel{position:relative;top:auto}.horse-search-count{padding:0}.distance-timing-head .finish-pill{max-width:none}.home-screen{min-height:300px}.video-score{font-size:56px}.pnl-chart-row{grid-template-columns:1fr}.pnl-bar{min-width:72px}.pnl-updated{display:grid}}
+
+/* UX refinement: compact editorial intelligence surfaces */
+.briefing-row{border:1px solid #d9cfbd!important;border-left:4px solid var(--editorial-green)!important;border-radius:4px!important;background:linear-gradient(90deg,#fffaf0 0%,#fffdf8 72%)!important;padding:11px 13px!important;box-shadow:0 5px 16px rgba(35,31,23,.045)}
+.briefing-row:hover{border-color:#a8b9aa!important;background:#f3f8f4!important;transform:translateY(-1px)}
+.briefing-row>div:not(:first-child){border-left:1px solid #ded4c3;padding-left:12px}.briefing-row b{color:var(--editorial-green)!important;font-size:17px}.briefing-row small{color:#68746e!important}
+.briefing-angle-feature{border:1px solid #c9d9ce!important;border-left:4px solid var(--editorial-green)!important;border-radius:4px!important;background:linear-gradient(90deg,#edf6f0,#fffdf8 78%)!important;padding:12px 14px!important;box-shadow:0 5px 16px rgba(35,31,23,.04)}
+.briefing-angle-feature-score{min-width:72px!important;border:0!important;border-left:1px solid #cfdbd2!important;border-radius:0!important;background:transparent!important;padding:5px 10px!important}.briefing-angle-feature-score b{color:var(--editorial-green)!important;font-size:18px}.briefing-angle-feature-main em{border-radius:2px!important;background:#f5e9c8!important;border-color:#dec88f!important;color:#5e410d!important}
+
+.race-intel-rail{display:grid;grid-template-columns:1.25fr .65fr 1fr 1fr 1.35fr;margin:18px 0;border-top:2px solid var(--editorial-green);border-bottom:1px solid #d8cdbb;background:#f8f3e9}
+.race-intel-rail>div,.race-intel-rail>details{min-width:0;margin:0!important;border:0!important;border-right:1px solid #d8cdbb!important;border-radius:0!important;background:transparent!important;padding:11px 14px!important;box-shadow:none!important}.race-intel-rail>*:last-child{border-right:0!important}
+.race-intel-rail span{display:block;color:#65726c!important;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.11em}.race-intel-rail strong{display:block;margin-top:4px;color:var(--ink)!important;font-family:Sora;font-size:14px;line-height:1.25}.race-intel-rail small{display:block;margin-top:4px;color:#66736d!important;font-size:9px;line-height:1.35}.race-intel-lead strong{color:var(--editorial-green)!important}
+.race-setup-compact>summary{display:block;padding:0!important;color:var(--ink)!important}.race-setup-compact>summary:before{display:none!important}.race-setup-compact>summary:after{content:"+";float:right;margin-top:-22px;color:var(--editorial-gold);font-size:16px}.race-setup-compact[open]>summary:after{content:"−"}
+
+.runner-decision-panel{padding:15px 16px!important;border:1px solid #d6cbb9!important;border-left:4px solid var(--editorial-green)!important;background:#fffdf8!important}.runner-decision-head{padding-bottom:10px;border-bottom:1px solid #ded5c6}.runner-decision-head>div>strong{font-family:Source Serif 4,Georgia,serif!important;font-size:19px!important;line-height:1.3!important}
+.decision-visual-grid{grid-template-columns:1.15fr repeat(5,1fr);gap:0!important;margin:10px 0!important;border-bottom:1px solid #ded5c6}.content .decision-visual-grid>*{min-width:0;border:0!important;border-right:1px solid #e1d8ca!important;border-radius:0!important;background:transparent!important;padding:8px 11px!important;box-shadow:none!important}.content .decision-visual-grid>*:last-child{border-right:0!important}.decision-primary-tile strong,.decision-meter strong{font-size:13px!important;margin:4px 0 6px!important}.decision-primary-tile i,.decision-meter i{height:5px!important}
+.decision-benchmark-strip{grid-template-columns:1.25fr 1fr 1fr;gap:0!important;margin:10px 0!important;border-bottom:1px solid #ded5c6}.content .decision-benchmark-card{border:0!important;border-right:1px solid #e1d8ca!important;border-radius:0!important;background:transparent!important;padding:9px 12px!important;box-shadow:none!important}.content .decision-benchmark-card:last-child{border-right:0!important}.content .benchmark-bars i b,.content .benchmark-single i b{color:#fff!important}.content .benchmark-bars .rpr-bar b{background:var(--editorial-green)!important;color:#fff!important}.content .benchmark-bars .or-bar b{background:var(--editorial-blue)!important;color:#fff!important}
+.decision-reason-risk{gap:10px!important;margin:10px 0!important}.content .decision-reason-risk span{border:0!important;border-left:3px solid var(--editorial-green)!important;border-radius:0!important;background:#edf6f0!important;padding:9px 11px!important}.content .decision-reason-risk .caution{border-left-color:var(--editorial-gold)!important;background:#fbf3df!important}
+.decision-support-strip{display:grid;grid-template-columns:.7fr 1fr 1.3fr;margin-top:10px;border-top:1px solid #ded5c6;background:#f8f3e9}.decision-support-strip>div{min-width:0;padding:9px 12px;border-right:1px solid #ded5c6}.decision-support-strip>div:last-child{border-right:0}.decision-support-strip span{display:block;color:#66736d!important;font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.1em}.decision-support-strip strong{display:block;margin-top:4px;color:var(--ink)!important;font-family:Sora;font-size:13px}.decision-support-strip small{display:block;margin-top:3px;color:#68746e!important;font-size:9px}
+
+.extra-intel-panel{padding:15px 16px!important}.extra-intel-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:10px 0;border-top:2px solid var(--editorial-green);border-bottom:1px solid #ded5c6;background:#f8f3e9}.content .extra-intel-summary .intel-meter{min-width:0;border:0!important;border-right:1px solid #ded5c6!important;border-radius:0!important;background:transparent!important;padding:10px 12px!important;box-shadow:none!important}.content .extra-intel-summary .intel-meter:last-child{border-right:0!important}.extra-intel-summary .intel-meter strong{font-size:17px!important}.extra-intel-summary .intel-meter i{height:5px!important}.extra-intel-summary .intel-meter small{font-size:9px!important}
+.extra-intel-facts{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #ded5c6}.extra-intel-facts>div{min-width:0;padding:9px 12px;border-right:1px solid #ded5c6}.extra-intel-facts>div:last-child{border-right:0}.extra-intel-facts span,.pedigree-line>span{display:block;color:#66736d!important;font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.1em}.extra-intel-facts strong{display:block;margin-top:4px;color:var(--ink)!important;font-size:12px;line-height:1.3}.extra-intel-facts small{display:block;margin-top:3px;color:#68746e!important;font-size:9px;line-height:1.3}
+.pedigree-line{display:grid;grid-template-columns:90px 1fr;gap:12px;align-items:center;padding:10px 12px;border-bottom:1px solid #ded5c6}.pedigree-line p{margin:0!important;color:#4f5c56!important;font-size:11px!important}.pedigree-line b{color:var(--editorial-green)!important}.pedigree-line em{color:#68746e;font-style:normal}
+
+@media(max-width:900px){.briefing-row{grid-template-columns:1fr auto auto!important}.briefing-angle-feature{grid-template-columns:1fr repeat(3,auto)!important}.race-intel-rail{grid-template-columns:repeat(2,minmax(0,1fr))}.race-intel-rail>div,.race-intel-rail>details{border-bottom:1px solid #d8cdbb!important}.race-setup-compact{grid-column:1/-1}.decision-visual-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.content .decision-visual-grid>*{border-bottom:1px solid #e1d8ca!important}.decision-benchmark-strip{grid-template-columns:1fr!important}.content .decision-benchmark-card{border-right:0!important;border-bottom:1px solid #e1d8ca!important}.decision-support-strip{grid-template-columns:1fr}.decision-support-strip>div{border-right:0;border-bottom:1px solid #ded5c6}.extra-intel-summary,.extra-intel-facts{grid-template-columns:repeat(2,minmax(0,1fr))}.content .extra-intel-summary .intel-meter,.extra-intel-facts>div{border-bottom:1px solid #ded5c6!important}.pedigree-line{grid-template-columns:1fr;gap:5px}}
+@media(max-width:560px){.briefing-row{grid-template-columns:1fr 1fr!important}.briefing-row>div:first-child{grid-column:1/-1}.briefing-row>div:nth-child(2){border-left:0;padding-left:0}.briefing-angle-feature{grid-template-columns:repeat(3,1fr)!important}.briefing-angle-feature-main{grid-column:1/-1}.briefing-angle-feature-score{border-left:0!important;border-top:1px solid #cfdbd2!important}.race-intel-rail,.extra-intel-summary,.extra-intel-facts{grid-template-columns:1fr}.race-intel-rail>div,.race-intel-rail>details,.content .extra-intel-summary .intel-meter,.extra-intel-facts>div{border-right:0!important}.decision-visual-grid{grid-template-columns:1fr 1fr!important}.decision-reason-risk{grid-template-columns:1fr!important}}
 </style>
 </head>
 <body class="page-bets">
@@ -362,13 +387,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
         </div>
 
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Race DNA</span><strong>Controlled tactical race</strong></div>
-            <div><span>Chaos Index</span><strong>Low</strong></div>
+        <div class="race-intel-rail">
+            <div class="race-intel-lead"><span>Race DNA</span><strong>Controlled tactical race</strong></div>
+            <div><span>Chaos</span><strong>Low</strong></div>
             <div><span>Average OR</span><strong>70</strong><small>2 rated runners | Top OR 71: Stoneacre Joe</small></div>
-            <div><span>Winning Time Par</span><strong>1m 12.09s</strong><small>14 race class/course/distance/going sample</small></div>
-            <div><span>Race Setup</span><strong>GOOD (GoingStick: 8.1)</strong><small>Stalls 6f - Centre; 7f - Outside; Remainder - Inside | Rail No rail note | Band --</small></div>
-            <div><span>Primary Action</span><strong>SHORTLIST RACE</strong></div>
+            <div><span>Winning par</span><strong>1m 12.09s</strong><small>14 race class/course/distance/going sample</small></div>
+            <details class="race-setup-compact">
+                <summary><span>Setup</span><strong>GOOD (GoingStick: 8.1)</strong></summary>
+                <small>Stalls 6f - Centre; 7f - Outside; Remainder - Inside | Rail No rail note | Band -- | Weather Light rain</small>
+            </details>
         </div>
 
         <section class="synopsis premium-snapshot">
@@ -1635,13 +1662,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Interesting numbers, but current evidence contains a clear warning</span>
             <span class="caution"><b>Main risk</b>Distance suitability is a caution (DEI E)</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>38.8</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>3/6</strong></div>
-            <div><span>FFR</span><strong>70</strong><small>-1lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>67</strong><small>Speed caution</small></div>
-            <div><span>Trip / Ground</span><strong>DEI E</strong><small>LOW</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+13lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>38.8</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI E</strong><small>LOW</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+13lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -2109,7 +2133,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.8 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:41%">
                 <span>Trainer RTF</span>
                 <strong>41%</strong>
@@ -2135,16 +2159,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>None | No headgear declared</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>11/10F</span>
-            <span><b>Owner</b>R Teatum</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>11/10F</strong></div>
+            <div><span>Owner</span><strong>R Teatum</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Showcasing</b></span>
-            <span>Dam <b>Fairy Dust</b></span>
-            <span>Damsire <b>Gregorian</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Showcasing</b> × Fairy Dust <em>(Gregorian)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -2654,13 +2677,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
         </div>
 
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Race DNA</span><strong>Controlled tactical race</strong></div>
-            <div><span>Chaos Index</span><strong>Low</strong></div>
+        <div class="race-intel-rail">
+            <div class="race-intel-lead"><span>Race DNA</span><strong>Controlled tactical race</strong></div>
+            <div><span>Chaos</span><strong>Low</strong></div>
             <div><span>Average OR</span><strong>58.4</strong><small>9 rated runners | Top OR 69: Laravie</small></div>
-            <div><span>Winning Time Par</span><strong>3m 18.74s</strong><small>1 race class/course/distance/going sample</small></div>
-            <div><span>Race Setup</span><strong>GOOD (GoingStick: 8.1)</strong><small>Stalls 6f - Centre; 7f - Outside; Remainder - Inside | Rail No rail note | Band 0-65</small></div>
-            <div><span>Primary Action</span><strong>SHORTLIST RACE</strong></div>
+            <div><span>Winning par</span><strong>3m 18.74s</strong><small>1 race class/course/distance/going sample</small></div>
+            <details class="race-setup-compact">
+                <summary><span>Setup</span><strong>GOOD (GoingStick: 8.1)</strong></summary>
+                <small>Stalls 6f - Centre; 7f - Outside; Remainder - Inside | Rail No rail note | Band 0-65 | Weather Light rain</small>
+            </details>
         </div>
 
         <section class="synopsis premium-snapshot">
@@ -3927,13 +3952,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Interesting numbers, but current evidence contains a clear warning</span>
             <span class="caution"><b>Main risk</b>No exact-distance profile; nearest-trip evidence used</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>50.9</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>3/6</strong></div>
-            <div><span>FFR</span><strong>67</strong><small>+5lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>91</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI C</strong><small>LOW</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+17lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>50.9</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI C</strong><small>LOW</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+17lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -4420,7 +4442,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:44%">
                 <span>Trainer RTF</span>
                 <strong>44%</strong>
@@ -4446,16 +4468,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>None | No headgear declared</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>2/1</span>
-            <span><b>Owner</b>Gallus Racing</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>2/1</strong></div>
+            <div><span>Owner</span><strong>Gallus Racing</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Telescope</b></span>
-            <span>Dam <b>La Vecchia Scuola</b></span>
-            <span>Damsire <b>Mull Of Kintyre</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Telescope</b> × La Vecchia Scuola <em>(Mull Of Kintyre)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -4788,13 +4809,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Interesting numbers, but current evidence contains a clear warning</span>
             <span class="caution"><b>Main risk</b>Distance suitability is a caution (DEI E)</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>34.4</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>4/6</strong></div>
-            <div><span>FFR</span><strong>65</strong><small>+4lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>101</strong><small>Fast figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI E</strong><small>VERY_LOW</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+26lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>34.4</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI E</strong><small>VERY_LOW</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+26lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -5263,7 +5281,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:44%">
                 <span>Trainer RTF</span>
                 <strong>44%</strong>
@@ -5289,16 +5307,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>p | Declared equipment</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>3/1F</span>
-            <span><b>Owner</b>Iain Jardine Racing Club</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>p</strong><small>Declared equipment</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>3/1F</strong></div>
+            <div><span>Owner</span><strong>Iain Jardine Racing Club</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Prince Of Lir</b></span>
-            <span>Dam <b>Nora Batty</b></span>
-            <span>Damsire <b>Zamindar</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Prince Of Lir</b> × Nora Batty <em>(Zamindar)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -5623,13 +5640,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Interesting numbers, but current evidence contains a clear warning</span>
             <span class="caution"><b>Main risk</b>No exact-distance profile; nearest-trip evidence used</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>42.5</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>3/6</strong></div>
-            <div><span>FFR</span><strong>72</strong><small>+3lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>96</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI C</strong><small>LOW</small></div>
-            <div><span>Handicap</span><strong class="good">Workable mark</strong><small>+10lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>42.5</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI C</strong><small>LOW</small></div>
+            <div><span>Handicap ceiling</span><strong class="good">Workable mark</strong><small>+10lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -6079,7 +6093,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill neutral">+0.0 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:51%">
                 <span>Trainer RTF</span>
                 <strong>51%</strong>
@@ -6105,16 +6119,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>v | Declared equipment</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>1/4F</span>
-            <span><b>Owner</b>Laravie Partnership</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>v</strong><small>Declared equipment</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>1/4F</strong></div>
+            <div><span>Owner</span><strong>Laravie Partnership</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Sans Frontieres</b></span>
-            <span>Dam <b>Lohort Castle</b></span>
-            <span>Damsire <b>Presenting</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Sans Frontieres</b> × Lohort Castle <em>(Presenting)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -6430,7 +6443,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="decision-benchmark-card single">
             <div><span>SpeedScore</span><strong>around par</strong></div>
             <div class="benchmark-single">
-                <i style="--w:99.7"><b>1</b></i>
+                <i style="--w:99.7"><b>100</b></i>
                 <em>Par 100</em>
             </div>
         </div>
@@ -6447,13 +6460,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Needs more evidence before treating as a betting profile</span>
             <span class="caution"><b>Main risk</b>No exact-distance profile; nearest-trip evidence used</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>30.5</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>3/6</strong></div>
-            <div><span>FFR</span><strong>84</strong><small>+24lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>100</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI D</strong><small>MEDIUM</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+24lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>30.5</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI D</strong><small>MEDIUM</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+24lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -6940,7 +6950,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill warn">-0.5 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:50%">
                 <span>Trainer RTF</span>
                 <strong>--</strong>
@@ -6966,16 +6976,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>p | Declared equipment</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>17/2</span>
-            <span><b>Owner</b>Mr &amp; Mrs G F Hall Racing</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>p</strong><small>Declared equipment</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>17/2</strong></div>
+            <div><span>Owner</span><strong>Mr &amp; Mrs G F Hall Racing</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Dark Angel</b></span>
-            <span>Dam <b>Hespera</b></span>
-            <span>Damsire <b>Danehill</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Dark Angel</b> × Hespera <em>(Danehill)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -7410,13 +7419,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
         </div>
 
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Race DNA</span><strong>Controlled tactical race</strong></div>
-            <div><span>Chaos Index</span><strong>Low</strong></div>
+        <div class="race-intel-rail">
+            <div class="race-intel-lead"><span>Race DNA</span><strong>Controlled tactical race</strong></div>
+            <div><span>Chaos</span><strong>Low</strong></div>
             <div><span>Average OR</span><strong>67.4</strong><small>9 rated runners | Top OR 70: Believeinmenow</small></div>
-            <div><span>Winning Time Par</span><strong>58.35s</strong><small>7 race class/course/distance/going sample</small></div>
-            <div><span>Race Setup</span><strong>GOOD (GoingStick: 6.8)</strong><small>Stalls 5f - Stands&#x27; side; 7f &amp; 1m - Centre; Remainder - Inside | Rail No rail note | Band 0-70</small></div>
-            <div><span>Primary Action</span><strong>SHORTLIST RACE</strong></div>
+            <div><span>Winning par</span><strong>58.35s</strong><small>7 race class/course/distance/going sample</small></div>
+            <details class="race-setup-compact">
+                <summary><span>Setup</span><strong>GOOD (GoingStick: 6.8)</strong></summary>
+                <small>Stalls 5f - Stands&#x27; side; 7f &amp; 1m - Centre; Remainder - Inside | Rail No rail note | Band 0-70 | Weather Light rain</small>
+            </details>
         </div>
 
         <section class="synopsis premium-snapshot">
@@ -8683,13 +8694,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Interesting numbers, but current evidence contains a clear warning</span>
             <span class="caution"><b>Main risk</b>Draw data is a negative nudge</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>38.6</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>4/6</strong></div>
-            <div><span>FFR</span><strong>68</strong><small>-2lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>106</strong><small>Fast figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI D</strong><small>MEDIUM</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+24lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>38.6</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI D</strong><small>MEDIUM</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+24lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -9176,7 +9184,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter warn" style="--intel:25%">
                 <span>Trainer RTF</span>
                 <strong>25%</strong>
@@ -9202,16 +9210,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>None | No headgear declared</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>16/5</span>
-            <span><b>Owner</b>John R Saville</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>16/5</strong></div>
+            <div><span>Owner</span><strong>John R Saville</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Ubettabelieveit</b></span>
-            <span>Dam <b>Weisse Socken</b></span>
-            <span>Damsire <b>Acclamation</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Ubettabelieveit</b> × Weisse Socken <em>(Acclamation)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -9742,13 +9749,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
         </div>
 
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Race DNA</span><strong>Pace-pressure sprint</strong></div>
-            <div><span>Chaos Index</span><strong>Medium</strong></div>
+        <div class="race-intel-rail">
+            <div class="race-intel-lead"><span>Race DNA</span><strong>Pace-pressure sprint</strong></div>
+            <div><span>Chaos</span><strong>Medium</strong></div>
             <div><span>Average OR</span><strong>76.7</strong><small>10 rated runners | Top OR 82: Gallant</small></div>
-            <div><span>Winning Time Par</span><strong>1m 26.39s</strong><small>21 race class/course/distance/going sample</small></div>
-            <div><span>Race Setup</span><strong>GOOD, Good to firm in places (GoingStick: 6.8) (Watering)</strong><small>Stalls (Far side course) Centre | Rail No rail note | Band 0-80</small></div>
-            <div><span>Primary Action</span><strong>SHORTLIST RACE</strong></div>
+            <div><span>Winning par</span><strong>1m 26.39s</strong><small>21 race class/course/distance/going sample</small></div>
+            <details class="race-setup-compact">
+                <summary><span>Setup</span><strong>GOOD, Good to firm in places (GoingStick: 6.8) (Watering)</strong></summary>
+                <small>Stalls (Far side course) Centre | Rail No rail note | Band 0-80 | Weather Mostly cloudy</small>
+            </details>
         </div>
 
         <section class="synopsis premium-snapshot">
@@ -11138,13 +11147,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Clean current evidence; stake only if price is acceptable</span>
             <span class="caution"><b>Main risk</b>No major model risk flagged</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>39.2</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>5/6</strong></div>
-            <div><span>FFR</span><strong>84</strong><small>+8lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>103</strong><small>Fast figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI C</strong><small>HIGH</small></div>
-            <div><span>Handicap</span><strong class="good">Workable mark</strong><small>+10lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>39.2</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI C</strong><small>HIGH</small></div>
+            <div><span>Handicap ceiling</span><strong class="good">Workable mark</strong><small>+10lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -11631,7 +11637,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.8 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter good" style="--intel:60%">
                 <span>Trainer RTF</span>
                 <strong>60%</strong>
@@ -11657,16 +11663,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>p | Declared equipment</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>11/1</span>
-            <span><b>Owner</b>Chris Housego And Kevin Fisher</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>p</strong><small>Declared equipment</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>11/1</strong></div>
+            <div><span>Owner</span><strong>Chris Housego And Kevin Fisher</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Kingman</b></span>
-            <span>Dam <b>Sivoliere</b></span>
-            <span>Damsire <b>Sea The Stars</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Kingman</b> × Sivoliere <em>(Sea The Stars)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -12001,13 +12006,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Useful evidence, but needs price and race-shape confirmation</span>
             <span class="caution"><b>Main risk</b>Distance suitability is a caution (DEI E)</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>49.2</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>4/6</strong></div>
-            <div><span>FFR</span><strong>85</strong><small>+3lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>112</strong><small>Elite clock figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI E</strong><small>LOW</small></div>
-            <div><span>Handicap</span><strong class="warn">Near ceiling</strong><small>+4lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>49.2</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI E</strong><small>LOW</small></div>
+            <div><span>Handicap ceiling</span><strong class="warn">Near ceiling</strong><small>+4lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -12494,7 +12496,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.8 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter good" style="--intel:60%">
                 <span>Trainer RTF</span>
                 <strong>60%</strong>
@@ -12520,16 +12522,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>t | Declared equipment</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>9/1</span>
-            <span><b>Owner</b>Seven Seas</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>t</strong><small>Declared equipment</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>9/1</strong></div>
+            <div><span>Owner</span><strong>Seven Seas</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Hello Youmzain</b></span>
-            <span>Dam <b>Sailor Moon</b></span>
-            <span>Damsire <b>Tiger Hill</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Hello Youmzain</b> × Sailor Moon <em>(Tiger Hill)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -12862,13 +12863,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Interesting numbers, but current evidence contains a clear warning</span>
             <span class="caution"><b>Main risk</b>No major model risk flagged</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>41.2</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>4/6</strong></div>
-            <div><span>FFR</span><strong>59</strong><small>-19lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>95</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI B</strong><small>HIGH</small></div>
-            <div><span>Handicap</span><strong class="good">Workable mark</strong><small>+8lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>41.2</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI B</strong><small>HIGH</small></div>
+            <div><span>Handicap ceiling</span><strong class="good">Workable mark</strong><small>+8lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -13355,7 +13353,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.8 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter good" style="--intel:65%">
                 <span>Trainer RTF</span>
                 <strong>65%</strong>
@@ -13381,16 +13379,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>t | First-time aid today</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>10/1</span>
-            <span><b>Owner</b>Graham &amp; Lynn Knight</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>t</strong><small>First-time aid today</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>10/1</strong></div>
+            <div><span>Owner</span><strong>Graham &amp; Lynn Knight</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Night Of Thunder</b></span>
-            <span>Dam <b>Maroubra</b></span>
-            <span>Damsire <b>Lawman</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Night Of Thunder</b> × Maroubra <em>(Lawman)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -13725,13 +13722,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Model evidence is not clean enough for a positive stance</span>
             <span class="caution"><b>Main risk</b>No major model risk flagged</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>21.8</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>4/6</strong></div>
-            <div><span>FFR</span><strong>65</strong><small>-15lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>94</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI A</strong><small>HIGH</small></div>
-            <div><span>Handicap</span><strong class="good">Workable mark</strong><small>+11lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>21.8</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI A</strong><small>HIGH</small></div>
+            <div><span>Handicap ceiling</span><strong class="good">Workable mark</strong><small>+11lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -14218,7 +14212,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:50%">
                 <span>Trainer RTF</span>
                 <strong>50%</strong>
@@ -14244,16 +14238,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>v | Declared equipment</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>15/2</span>
-            <span><b>Owner</b>John Guest Racing</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>v</strong><small>Declared equipment</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>15/2</strong></div>
+            <div><span>Owner</span><strong>John Guest Racing</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Dandy Man</b></span>
-            <span>Dam <b>Sea Of Dreams</b></span>
-            <span>Damsire <b>Oasis Dream</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Dandy Man</b> × Sea Of Dreams <em>(Oasis Dream)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -14588,13 +14581,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Model evidence is not clean enough for a positive stance</span>
             <span class="caution"><b>Main risk</b>Raw score needs more support</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>31.8</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>4/6</strong></div>
-            <div><span>FFR</span><strong>42</strong><small>-35lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>107</strong><small>Fast figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI A</strong><small>MEDIUM</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+14lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>31.8</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI A</strong><small>MEDIUM</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+14lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -15081,7 +15071,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:36%">
                 <span>Trainer RTF</span>
                 <strong>36%</strong>
@@ -15107,16 +15097,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>p | Declared equipment</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>9/1</span>
-            <span><b>Owner</b>David Lowe</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>p</strong><small>Declared equipment</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>9/1</strong></div>
+            <div><span>Owner</span><strong>David Lowe</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>National Defense</b></span>
-            <span>Dam <b>Runway Giant</b></span>
-            <span>Damsire <b>Giant&#x27;s Causeway</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>National Defense</b> × Runway Giant <em>(Giant&#x27;s Causeway)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -15553,13 +15542,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
         </div>
 
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Race DNA</span><strong>Balanced context race</strong></div>
-            <div><span>Chaos Index</span><strong>Low</strong></div>
+        <div class="race-intel-rail">
+            <div class="race-intel-lead"><span>Race DNA</span><strong>Balanced context race</strong></div>
+            <div><span>Chaos</span><strong>Low</strong></div>
             <div><span>Average OR</span><strong>76.2</strong><small>12 rated runners | Top OR 83: Omniscient</small></div>
-            <div><span>Winning Time Par</span><strong>2m 42.58s</strong><small>435 race distance-only sample | approximate</small></div>
-            <div><span>Race Setup</span><strong>GOOD TO YIELDING</strong><small>Stalls -- | Rail No rail note | Band --</small></div>
-            <div><span>Primary Action</span><strong>SHORTLIST RACE</strong></div>
+            <div><span>Winning par</span><strong>2m 42.58s</strong><small>435 race distance-only sample | approximate</small></div>
+            <details class="race-setup-compact">
+                <summary><span>Setup</span><strong>GOOD TO YIELDING</strong></summary>
+                <small>Stalls -- | Rail No rail note | Band -- | Weather Light rain</small>
+            </details>
         </div>
 
         <section class="synopsis premium-snapshot">
@@ -17195,13 +17186,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Recent form and class support, but not a full-stake profile</span>
             <span class="caution"><b>Main risk</b>No exact-distance profile; nearest-trip evidence used</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>39.2</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>4/6</strong></div>
-            <div><span>FFR</span><strong>93</strong><small>+11lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>100</strong><small>Fast figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI C</strong><small>LOW</small></div>
-            <div><span>Handicap</span><strong class="good">Workable mark</strong><small>+11lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>39.2</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI C</strong><small>LOW</small></div>
+            <div><span>Handicap ceiling</span><strong class="good">Workable mark</strong><small>+11lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -17646,7 +17634,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:42%">
                 <span>Trainer RTF</span>
                 <strong>42%</strong>
@@ -17672,16 +17660,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>p | Declared equipment</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>9/2</span>
-            <span><b>Owner</b>Sapphire Racing</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>p</strong><small>Declared equipment</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>9/2</strong></div>
+            <div><span>Owner</span><strong>Sapphire Racing</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Saxon Warrior</b></span>
-            <span>Dam <b>Novelty</b></span>
-            <span>Damsire <b>New Approach</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Saxon Warrior</b> × Novelty <em>(New Approach)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -17972,13 +17959,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Model evidence is not clean enough for a positive stance</span>
             <span class="caution"><b>Main risk</b>No major model risk flagged</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>33.2</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>4/6</strong></div>
-            <div><span>FFR</span><strong>53</strong><small>-26lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>98</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI A</strong><small>HIGH</small></div>
-            <div><span>Handicap</span><strong class="good">Workable mark</strong><small>+6lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>33.2</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI A</strong><small>HIGH</small></div>
+            <div><span>Handicap ceiling</span><strong class="good">Workable mark</strong><small>+6lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -18465,7 +18449,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:50%">
                 <span>Trainer RTF</span>
                 <strong>--</strong>
@@ -18491,16 +18475,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>p | Declared equipment</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>18/1</span>
-            <span><b>Owner</b>M K Flannery</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>p</strong><small>Declared equipment</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>18/1</strong></div>
+            <div><span>Owner</span><strong>M K Flannery</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Invincible Spirit</b></span>
-            <span>Dam <b>Albisola</b></span>
-            <span>Damsire <b>Montjeu</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Invincible Spirit</b> × Albisola <em>(Montjeu)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -18833,13 +18816,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Model evidence is not clean enough for a positive stance</span>
             <span class="caution"><b>Main risk</b>Distance evidence is thin</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>33.8</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>2/6</strong></div>
-            <div><span>FFR</span><strong>76</strong><small>-1lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>97</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI C</strong><small>LOW</small></div>
-            <div><span>Handicap</span><strong class="good">Workable mark</strong><small>+10lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>33.8</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI C</strong><small>LOW</small></div>
+            <div><span>Handicap ceiling</span><strong class="good">Workable mark</strong><small>+10lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -19317,7 +19297,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:55%">
                 <span>Trainer RTF</span>
                 <strong>55%</strong>
@@ -19343,16 +19323,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>tp | First-time aid today</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>66/1</span>
-            <span><b>Owner</b>ALTO EQUINE Building Solutions</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>tp</strong><small>First-time aid today</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>66/1</strong></div>
+            <div><span>Owner</span><strong>ALTO EQUINE Building Solutions</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>U S Navy Flag</b></span>
-            <span>Dam <b>Barnet</b></span>
-            <span>Damsire <b>Manduro</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>U S Navy Flag</b> × Barnet <em>(Manduro)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -19685,13 +19664,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Needs more evidence before treating as a betting profile</span>
             <span class="caution"><b>Main risk</b>Distance evidence is thin</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>27.0</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>2/6</strong></div>
-            <div><span>FFR</span><strong>74</strong><small>-8lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>94</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI D</strong><small>LOW</small></div>
-            <div><span>Handicap</span><strong class="warn">Near ceiling</strong><small>+4lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>27.0</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI D</strong><small>LOW</small></div>
+            <div><span>Handicap ceiling</span><strong class="warn">Near ceiling</strong><small>+4lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -20169,7 +20145,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.5 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter good" style="--intel:67%">
                 <span>Trainer RTF</span>
                 <strong>67%</strong>
@@ -20195,16 +20171,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>None | No headgear declared</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>14/1</span>
-            <span><b>Owner</b>Frank J Lynch &amp; Maria Lynch</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>14/1</strong></div>
+            <div><span>Owner</span><strong>Frank J Lynch &amp; Maria Lynch</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Sea The Stars</b></span>
-            <span>Dam <b>Waitingfortheday</b></span>
-            <span>Damsire <b>Elzaam</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Sea The Stars</b> × Waitingfortheday <em>(Elzaam)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -20537,13 +20512,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Model evidence is not clean enough for a positive stance</span>
             <span class="caution"><b>Main risk</b>Distance evidence is thin</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>25.2</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>3/6</strong></div>
-            <div><span>FFR</span><strong>45</strong><small>-33lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>98</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI C</strong><small>LOW</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+27lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>25.2</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI C</strong><small>LOW</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+27lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -21021,7 +20993,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:52%">
                 <span>Trainer RTF</span>
                 <strong>52%</strong>
@@ -21047,16 +21019,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>None | No headgear declared</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>10/1</span>
-            <span><b>Owner</b>Manifold &amp; Fahy Partnership</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>10/1</strong></div>
+            <div><span>Owner</span><strong>Manifold &amp; Fahy Partnership</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Kodiac</b></span>
-            <span>Dam <b>Sheikhakan</b></span>
-            <span>Damsire <b>Shamardal</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Kodiac</b> × Sheikhakan <em>(Shamardal)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -21555,13 +21526,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
         </div>
 
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Race DNA</span><strong>Pace-pressure sprint</strong></div>
-            <div><span>Chaos Index</span><strong>Medium</strong></div>
+        <div class="race-intel-rail">
+            <div class="race-intel-lead"><span>Race DNA</span><strong>Pace-pressure sprint</strong></div>
+            <div><span>Chaos</span><strong>Medium</strong></div>
             <div><span>Average OR</span><strong>62.5</strong><small>11 rated runners | Top OR 75: Clonmacash</small></div>
-            <div><span>Winning Time Par</span><strong>58.84s</strong><small>3400 race distance-only sample | approximate</small></div>
-            <div><span>Race Setup</span><strong>GOOD, Good to yielding in places</strong><small>Stalls -- | Rail No rail note | Band --</small></div>
-            <div><span>Primary Action</span><strong>SHORTLIST RACE</strong></div>
+            <div><span>Winning par</span><strong>58.84s</strong><small>3400 race distance-only sample | approximate</small></div>
+            <details class="race-setup-compact">
+                <summary><span>Setup</span><strong>GOOD, Good to yielding in places</strong></summary>
+                <small>Stalls -- | Rail No rail note | Band -- | Weather Light rain</small>
+            </details>
         </div>
 
         <section class="synopsis premium-snapshot">
@@ -23074,13 +23047,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Useful evidence, but needs price and race-shape confirmation</span>
             <span class="caution"><b>Main risk</b>No major model risk flagged</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>47.2</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>4/6</strong></div>
-            <div><span>FFR</span><strong>74</strong><small>-1lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>95</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI C</strong><small>HIGH</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+12lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>47.2</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI C</strong><small>HIGH</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+12lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -23567,7 +23537,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill warn">-0.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:36%">
                 <span>Trainer RTF</span>
                 <strong>36%</strong>
@@ -23593,16 +23563,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>v | Declared equipment</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>22/1</span>
-            <span><b>Owner</b>Mark Devlin/J Mackle/Skylark Racing Syndicate</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>v</strong><small>Declared equipment</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>22/1</strong></div>
+            <div><span>Owner</span><strong>Mark Devlin/J Mackle/Skylark Racing Syndicate</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Charming Thought</b></span>
-            <span>Dam <b>Orientate</b></span>
-            <span>Damsire <b>Equiano</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Charming Thought</b> × Orientate <em>(Equiano)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -23920,7 +23889,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="decision-benchmark-card single">
             <div><span>SpeedScore</span><strong>around par</strong></div>
             <div class="benchmark-single">
-                <i style="--w:100"><b>1</b></i>
+                <i style="--w:100"><b>100</b></i>
                 <em>Par 100</em>
             </div>
         </div>
@@ -23937,13 +23906,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Interesting numbers, but current evidence contains a clear warning</span>
             <span class="caution"><b>Main risk</b>Race shape is high variance</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>34.8</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>2/6</strong></div>
-            <div><span>FFR</span><strong>65</strong><small>-7lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>100</strong><small>Fast figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI C</strong><small>HIGH</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+15lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>34.8</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI C</strong><small>HIGH</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+15lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -24430,7 +24396,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:40%">
                 <span>Trainer RTF</span>
                 <strong>40%</strong>
@@ -24456,16 +24422,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>None | No headgear declared</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>11/2</span>
-            <span><b>Owner</b>Exors of the Late Mrs S Power</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>11/2</strong></div>
+            <div><span>Owner</span><strong>Exors of the Late Mrs S Power</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Slade Power</b></span>
-            <span>Dam <b>Gathering Power</b></span>
-            <span>Damsire <b>Kyllachy</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Slade Power</b> × Gathering Power <em>(Kyllachy)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -24800,13 +24765,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Interesting numbers, but current evidence contains a clear warning</span>
             <span class="caution"><b>Main risk</b>No major model risk flagged</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>39.2</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>3/6</strong></div>
-            <div><span>FFR</span><strong>51</strong><small>-11lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>102</strong><small>Fast figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI A</strong><small>HIGH</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+25lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>39.2</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI A</strong><small>HIGH</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+25lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -25287,7 +25249,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill warn">-0.8 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter bad" style="--intel:13%">
                 <span>Trainer RTF</span>
                 <strong>13%</strong>
@@ -25313,16 +25275,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>None | No headgear declared</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>6/1</span>
-            <span><b>Owner</b>Mrs Patrick J Flynn</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>6/1</strong></div>
+            <div><span>Owner</span><strong>Mrs Patrick J Flynn</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Starspangledbanner</b></span>
-            <span>Dam <b>Little Sweetheart</b></span>
-            <span>Damsire <b>Lawman</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Starspangledbanner</b> × Little Sweetheart <em>(Lawman)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -25657,13 +25618,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Model evidence is not clean enough for a positive stance</span>
             <span class="caution"><b>Main risk</b>Race shape is high variance</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>31.8</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>2/6</strong></div>
-            <div><span>FFR</span><strong>82</strong><small>+23lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>94</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI C</strong><small>HIGH</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+23lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>31.8</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI C</strong><small>HIGH</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+23lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -26150,7 +26108,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill elite">+1.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter elite" style="--intel:100%">
                 <span>Trainer RTF</span>
                 <strong>100%</strong>
@@ -26176,16 +26134,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>tp | Declared equipment</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>11/1</span>
-            <span><b>Owner</b>Martin Flinter</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>tp</strong><small>Declared equipment</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>11/1</strong></div>
+            <div><span>Owner</span><strong>Martin Flinter</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Gleneagles</b></span>
-            <span>Dam <b>Tranquil Spirit</b></span>
-            <span>Damsire <b>Invincible Spirit</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Gleneagles</b> × Tranquil Spirit <em>(Invincible Spirit)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -26520,13 +26477,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Model evidence is not clean enough for a positive stance</span>
             <span class="caution"><b>Main risk</b>No major model risk flagged</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>25.2</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>3/6</strong></div>
-            <div><span>FFR</span><strong>64</strong><small>+12lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>89</strong><small>Speed caution</small></div>
-            <div><span>Trip / Ground</span><strong>DEI D</strong><small>HIGH</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+31lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>25.2</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI D</strong><small>HIGH</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+31lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -27013,7 +26967,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill warn">-0.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter warn" style="--intel:26%">
                 <span>Trainer RTF</span>
                 <strong>26%</strong>
@@ -27039,16 +26993,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>None | No headgear declared</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>17/2</span>
-            <span><b>Owner</b>Dermot McGuinness</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>17/2</strong></div>
+            <div><span>Owner</span><strong>Dermot McGuinness</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Iffraaj</b></span>
-            <span>Dam <b>Encore Moi</b></span>
-            <span>Damsire <b>Exceed And Excel</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Iffraaj</b> × Encore Moi <em>(Exceed And Excel)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -27381,13 +27334,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Model evidence is not clean enough for a positive stance</span>
             <span class="caution"><b>Main risk</b>Raw score needs more support</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>30.8</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>2/6</strong></div>
-            <div><span>FFR</span><strong>68</strong><small>-4lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>93</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI A+</strong><small>HIGH</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+14lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>30.8</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI A+</strong><small>HIGH</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+14lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -27862,7 +27812,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.8 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:52%">
                 <span>Trainer RTF</span>
                 <strong>52%</strong>
@@ -27888,16 +27838,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>p | Declared equipment</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>6/1</span>
-            <span><b>Owner</b>Ms Amanda Torrens</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>p</strong><small>Declared equipment</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>6/1</strong></div>
+            <div><span>Owner</span><strong>Ms Amanda Torrens</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Footstepsinthesand</b></span>
-            <span>Dam <b>Arctic Haze</b></span>
-            <span>Damsire <b>Kodiac</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Footstepsinthesand</b> × Arctic Haze <em>(Kodiac)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -28334,13 +28283,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
         </div>
 
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Race DNA</span><strong>Controlled tactical race</strong></div>
-            <div><span>Chaos Index</span><strong>Low</strong></div>
+        <div class="race-intel-rail">
+            <div class="race-intel-lead"><span>Race DNA</span><strong>Controlled tactical race</strong></div>
+            <div><span>Chaos</span><strong>Low</strong></div>
             <div><span>Average OR</span><strong>72.2</strong><small>8 rated runners | Top OR 82: Spanish Temptress</small></div>
-            <div><span>Winning Time Par</span><strong>1m 51.24s</strong><small>4 race course/distance sample | approximate</small></div>
-            <div><span>Race Setup</span><strong>GOOD TO YIELDING</strong><small>Stalls -- | Rail No rail note | Band --</small></div>
-            <div><span>Primary Action</span><strong>SHORTLIST RACE</strong></div>
+            <div><span>Winning par</span><strong>1m 51.24s</strong><small>4 race course/distance sample | approximate</small></div>
+            <details class="race-setup-compact">
+                <summary><span>Setup</span><strong>GOOD TO YIELDING</strong></summary>
+                <small>Stalls -- | Rail No rail note | Band -- | Weather Light rain</small>
+            </details>
         </div>
 
         <section class="synopsis premium-snapshot">
@@ -29484,13 +29435,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Interesting numbers, but current evidence contains a clear warning</span>
             <span class="caution"><b>Main risk</b>No major model risk flagged</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>45.3</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>4/6</strong></div>
-            <div><span>FFR</span><strong>44</strong><small>-28lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>100</strong><small>Fast figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI A</strong><small>MEDIUM</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+14lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>45.3</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI A</strong><small>MEDIUM</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+14lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -29977,7 +29925,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:36%">
                 <span>Trainer RTF</span>
                 <strong>36%</strong>
@@ -30003,16 +29951,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>p | Declared equipment</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>12/1</span>
-            <span><b>Owner</b>Dooley Thoroughbreds &amp; J Fairhurst &amp; Deepak Dhand</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>p</strong><small>Declared equipment</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>12/1</strong></div>
+            <div><span>Owner</span><strong>Dooley Thoroughbreds &amp; J Fairhurst &amp; Deepak Dhand</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Profitable</b></span>
-            <span>Dam <b>Abstain</b></span>
-            <span>Damsire <b>Araafa</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Profitable</b> × Abstain <em>(Araafa)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -30347,13 +30294,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Interesting numbers, but current evidence contains a clear warning</span>
             <span class="caution"><b>Main risk</b>No major model risk flagged</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>34.1</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>3/6</strong></div>
-            <div><span>FFR</span><strong>68</strong><small>-14lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>87</strong><small>Speed caution</small></div>
-            <div><span>Trip / Ground</span><strong>DEI B</strong><small>HIGH</small></div>
-            <div><span>Handicap</span><strong class="warn">Near ceiling</strong><small>+3lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>34.1</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI B</strong><small>HIGH</small></div>
+            <div><span>Handicap ceiling</span><strong class="warn">Near ceiling</strong><small>+3lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -30840,7 +30784,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill elite">+1.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter good" style="--intel:67%">
                 <span>Trainer RTF</span>
                 <strong>67%</strong>
@@ -30866,16 +30810,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>None | No headgear declared</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>100/30</span>
-            <span><b>Owner</b>Phoenix Rising Syndicate</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>100/30</strong></div>
+            <div><span>Owner</span><strong>Phoenix Rising Syndicate</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Phoenix Of Spain</b></span>
-            <span>Dam <b>Sweet Temptation</b></span>
-            <span>Damsire <b>Amadeus Wolf</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Phoenix Of Spain</b> × Sweet Temptation <em>(Amadeus Wolf)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -31210,13 +31153,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Model evidence is not clean enough for a positive stance</span>
             <span class="caution"><b>Main risk</b>Distance suitability is a caution (DEI E)</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>32.3</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>3/6</strong></div>
-            <div><span>FFR</span><strong>49</strong><small>-23lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>94</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI E</strong><small>LOW</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+13lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>32.3</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI E</strong><small>LOW</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+13lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -31694,7 +31634,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill elite">+1.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter elite" style="--intel:100%">
                 <span>Trainer RTF</span>
                 <strong>100%</strong>
@@ -31720,16 +31660,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>t | Declared equipment</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>7/1</span>
-            <span><b>Owner</b>D Coogan</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>t</strong><small>Declared equipment</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>7/1</strong></div>
+            <div><span>Owner</span><strong>D Coogan</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Starspangledbanner</b></span>
-            <span>Dam <b>Aussie Opera</b></span>
-            <span>Damsire <b>Aussie Rules</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Starspangledbanner</b> × Aussie Opera <em>(Aussie Rules)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -32062,13 +32001,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Model evidence is not clean enough for a positive stance</span>
             <span class="caution"><b>Main risk</b>No major model risk flagged</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>22.5</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>2/6</strong></div>
-            <div><span>FFR</span><strong>74</strong><small>+3lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>93</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI C</strong><small>HIGH</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+17lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>22.5</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI C</strong><small>HIGH</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+17lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -32555,7 +32491,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill warn">-0.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:36%">
                 <span>Trainer RTF</span>
                 <strong>36%</strong>
@@ -32581,16 +32517,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>None | No headgear declared</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>11/1</span>
-            <span><b>Owner</b>Mark Devlin &amp; Mark McGuckin &amp; Claire Wylie</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>11/1</strong></div>
+            <div><span>Owner</span><strong>Mark Devlin &amp; Mark McGuckin &amp; Claire Wylie</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Mehmas</b></span>
-            <span>Dam <b>Toolentidhaar</b></span>
-            <span>Damsire <b>Swain</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Mehmas</b> × Toolentidhaar <em>(Swain)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -32925,13 +32860,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Model evidence is not clean enough for a positive stance</span>
             <span class="caution"><b>Main risk</b>Raw score needs more support</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>28.4</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>2/6</strong></div>
-            <div><span>FFR</span><strong>63</strong><small>-1lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>92</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI B</strong><small>HIGH</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+22lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>28.4</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI B</strong><small>HIGH</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+22lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -33418,7 +33350,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:38%">
                 <span>Trainer RTF</span>
                 <strong>38%</strong>
@@ -33444,16 +33376,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>v | Declared equipment</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>11/2</span>
-            <span><b>Owner</b>Ms Melanie Marnane</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>v</strong><small>Declared equipment</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>11/2</strong></div>
+            <div><span>Owner</span><strong>Ms Melanie Marnane</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Time Test</b></span>
-            <span>Dam <b>Dularame</b></span>
-            <span>Damsire <b>Pivotal</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Time Test</b> × Dularame <em>(Pivotal)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -33771,7 +33702,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="decision-benchmark-card single">
             <div><span>SpeedScore</span><strong>below par</strong></div>
             <div class="benchmark-single">
-                <i style="--w:69.8"><b>7</b></i>
+                <i style="--w:69.8"><b>70</b></i>
                 <em>Par 100</em>
             </div>
         </div>
@@ -33780,13 +33711,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Model evidence is not clean enough for a positive stance</span>
             <span class="caution"><b>Main risk</b>Raw score needs more support</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>31.5</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>2/6</strong></div>
-            <div><span>FFR</span><strong>61</strong><small>-18lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>70</strong><small>Speed caution</small></div>
-            <div><span>Trip / Ground</span><strong>DEI A</strong><small>MEDIUM</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+20lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>31.5</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI A</strong><small>MEDIUM</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+20lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -34236,7 +34164,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.5 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:53%">
                 <span>Trainer RTF</span>
                 <strong>53%</strong>
@@ -34262,16 +34190,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>None | No headgear declared</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>10/1</span>
-            <span><b>Owner</b>Raymond McMahon</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>10/1</strong></div>
+            <div><span>Owner</span><strong>Raymond McMahon</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Fracas</b></span>
-            <span>Dam <b>Deontas</b></span>
-            <span>Damsire <b>Teofilo</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Fracas</b> × Deontas <em>(Teofilo)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -34612,13 +34539,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
         </div>
 
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Race DNA</span><strong>Balanced context race</strong></div>
-            <div><span>Chaos Index</span><strong>Medium</strong></div>
+        <div class="race-intel-rail">
+            <div class="race-intel-lead"><span>Race DNA</span><strong>Balanced context race</strong></div>
+            <div><span>Chaos</span><strong>Medium</strong></div>
             <div><span>Average OR</span><strong>53.3</strong><small>17 rated runners | Top OR 60: Royal County Glory</small></div>
-            <div><span>Winning Time Par</span><strong>1m 25.24s</strong><small>5777 race distance-only sample | approximate</small></div>
-            <div><span>Race Setup</span><strong>GOOD, Good to yielding in places</strong><small>Stalls -- | Rail No rail note | Band 0-60</small></div>
-            <div><span>Primary Action</span><strong>SHORTLIST RACE</strong></div>
+            <div><span>Winning par</span><strong>1m 25.24s</strong><small>5777 race distance-only sample | approximate</small></div>
+            <details class="race-setup-compact">
+                <summary><span>Setup</span><strong>GOOD, Good to yielding in places</strong></summary>
+                <small>Stalls -- | Rail No rail note | Band 0-60 | Weather Light rain</small>
+            </details>
         </div>
 
         <section class="synopsis premium-snapshot">
@@ -36869,13 +36798,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Interesting numbers, but current evidence contains a clear warning</span>
             <span class="caution"><b>Main risk</b>Distance evidence is thin</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>41.2</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>3/6</strong></div>
-            <div><span>FFR</span><strong>55</strong><small>-5lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>95</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI C</strong><small>LOW</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+25lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>41.2</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI C</strong><small>LOW</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+25lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -37362,7 +37288,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill elite">+1.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter elite" style="--intel:75%">
                 <span>Trainer RTF</span>
                 <strong>75%</strong>
@@ -37388,16 +37314,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>None | No headgear declared</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>9/2F</span>
-            <span><b>Owner</b>Kevin John Smith</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>9/2F</strong></div>
+            <div><span>Owner</span><strong>Kevin John Smith</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Cotai Glory</b></span>
-            <span>Dam <b>Wychwood Whisper</b></span>
-            <span>Damsire <b>Belardo</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Cotai Glory</b> × Wychwood Whisper <em>(Belardo)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -37732,13 +37657,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Model evidence is not clean enough for a positive stance</span>
             <span class="caution"><b>Main risk</b>No major model risk flagged</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>21.0</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>3/6</strong></div>
-            <div><span>FFR</span><strong>69</strong><small>+14lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>94</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI B</strong><small>HIGH</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+33lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>21.0</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI B</strong><small>HIGH</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+33lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -38219,7 +38141,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill neutral">+0.0 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:50%">
                 <span>Trainer RTF</span>
                 <strong>50%</strong>
@@ -38245,16 +38167,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>p | Declared equipment</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>10/1</span>
-            <span><b>Owner</b>John M Keogh</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>p</strong><small>Declared equipment</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>10/1</strong></div>
+            <div><span>Owner</span><strong>John M Keogh</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Harry Angel</b></span>
-            <span>Dam <b>Brooklyn&#x27;s Rose</b></span>
-            <span>Damsire <b>Holy Roman Emperor</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Harry Angel</b> × Brooklyn&#x27;s Rose <em>(Holy Roman Emperor)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -38589,13 +38510,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Model evidence is not clean enough for a positive stance</span>
             <span class="caution"><b>Main risk</b>No major model risk flagged</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>24.2</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>2/6</strong></div>
-            <div><span>FFR</span><strong>63</strong><small>+5lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>96</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI B</strong><small>MEDIUM</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+28lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>24.2</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI B</strong><small>MEDIUM</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+28lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -39082,7 +39000,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill warn">-0.8 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter warn" style="--intel:26%">
                 <span>Trainer RTF</span>
                 <strong>26%</strong>
@@ -39108,16 +39026,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>v | Declared equipment</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>11/2</span>
-            <span><b>Owner</b>Rockview Stables</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>v</strong><small>Declared equipment</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>11/2</strong></div>
+            <div><span>Owner</span><strong>Rockview Stables</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Belardo</b></span>
-            <span>Dam <b>Silver Tide</b></span>
-            <span>Damsire <b>Silver Hawk</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Belardo</b> × Silver Tide <em>(Silver Hawk)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -39842,13 +39759,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
         </div>
 
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Race DNA</span><strong>Balanced context race</strong></div>
-            <div><span>Chaos Index</span><strong>Medium</strong></div>
+        <div class="race-intel-rail">
+            <div class="race-intel-lead"><span>Race DNA</span><strong>Balanced context race</strong></div>
+            <div><span>Chaos</span><strong>Medium</strong></div>
             <div><span>Average OR</span><strong>50.9</strong><small>19 rated runners | Top OR 60: Bella Colombia</small></div>
-            <div><span>Winning Time Par</span><strong>1m 51.24s</strong><small>4 race course/distance sample | approximate</small></div>
-            <div><span>Race Setup</span><strong>GOOD TO YIELDING</strong><small>Stalls -- | Rail No rail note | Band 0-60</small></div>
-            <div><span>Primary Action</span><strong>SHORTLIST RACE</strong></div>
+            <div><span>Winning par</span><strong>1m 51.24s</strong><small>4 race course/distance sample | approximate</small></div>
+            <details class="race-setup-compact">
+                <summary><span>Setup</span><strong>GOOD TO YIELDING</strong></summary>
+                <small>Stalls -- | Rail No rail note | Band 0-60 | Weather Light rain</small>
+            </details>
         </div>
 
         <section class="synopsis premium-snapshot">
@@ -42345,13 +42264,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Interesting numbers, but current evidence contains a clear warning</span>
             <span class="caution"><b>Main risk</b>No major model risk flagged</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>43.2</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>3/6</strong></div>
-            <div><span>FFR</span><strong>80</strong><small>+20lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>97</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI B</strong><small>MEDIUM</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+27lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>43.2</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI B</strong><small>MEDIUM</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+27lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -42838,7 +42754,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:35%">
                 <span>Trainer RTF</span>
                 <strong>35%</strong>
@@ -42864,16 +42780,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>None | No headgear declared</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>6/1</span>
-            <span><b>Owner</b>COR Racing Syndicate</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>6/1</strong></div>
+            <div><span>Owner</span><strong>COR Racing Syndicate</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>The Last Lion</b></span>
-            <span>Dam <b>Daanaat</b></span>
-            <span>Damsire <b>Kheleyf</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>The Last Lion</b> × Daanaat <em>(Kheleyf)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -43208,13 +43123,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Interesting numbers, but current evidence contains a clear warning</span>
             <span class="caution"><b>Main risk</b>No major model risk flagged</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>20.6</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>2/6</strong></div>
-            <div><span>FFR</span><strong>68</strong><small>+16lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>98</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI B</strong><small>HIGH</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+30lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>20.6</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI B</strong><small>HIGH</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+30lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -43701,7 +43613,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill elite">+1.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter good" style="--intel:67%">
                 <span>Trainer RTF</span>
                 <strong>67%</strong>
@@ -43727,16 +43639,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>p | Declared equipment</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>28/1</span>
-            <span><b>Owner</b>Laura Hourigan</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>p</strong><small>Declared equipment</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>28/1</strong></div>
+            <div><span>Owner</span><strong>Laura Hourigan</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Paco Boy</b></span>
-            <span>Dam <b>Punchy Lady</b></span>
-            <span>Damsire <b>Invincible Spirit</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Paco Boy</b> × Punchy Lady <em>(Invincible Spirit)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -44071,13 +43982,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Model evidence is not clean enough for a positive stance</span>
             <span class="caution"><b>Main risk</b>Distance suitability is a caution (DEI E)</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>30.9</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>3/6</strong></div>
-            <div><span>FFR</span><strong>76</strong><small>+22lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>97</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI E</strong><small>HIGH</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+32lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>30.9</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI E</strong><small>HIGH</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+32lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -44564,7 +44472,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill warn">-0.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:50%">
                 <span>Trainer RTF</span>
                 <strong>50%</strong>
@@ -44590,16 +44498,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>p | Declared equipment</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>12/1</span>
-            <span><b>Owner</b>Starting Monday Syndicate</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>p</strong><small>Declared equipment</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>12/1</strong></div>
+            <div><span>Owner</span><strong>Starting Monday Syndicate</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Raven&#x27;s Pass</b></span>
-            <span>Dam <b>Turning Times</b></span>
-            <span>Damsire <b>Pivotal</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Raven&#x27;s Pass</b> × Turning Times <em>(Pivotal)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -45386,13 +45293,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
         </div>
 
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Race DNA</span><strong>Slow-tempo positioning race</strong></div>
-            <div><span>Chaos Index</span><strong>Low</strong></div>
+        <div class="race-intel-rail">
+            <div class="race-intel-lead"><span>Race DNA</span><strong>Slow-tempo positioning race</strong></div>
+            <div><span>Chaos</span><strong>Low</strong></div>
             <div><span>Average OR</span><strong>65.9</strong><small>10 rated runners | Top OR 69: Glorious Kitty</small></div>
-            <div><span>Winning Time Par</span><strong>1m 31.36s</strong><small>7 race class/course/distance/going sample</small></div>
-            <div><span>Race Setup</span><strong>GOOD (GoingStick: 8.1)</strong><small>Stalls 6f - Centre; 7f - Outside; Remainder - Inside | Rail No rail note | Band 0-70</small></div>
-            <div><span>Primary Action</span><strong>SHORTLIST RACE</strong></div>
+            <div><span>Winning par</span><strong>1m 31.36s</strong><small>7 race class/course/distance/going sample</small></div>
+            <details class="race-setup-compact">
+                <summary><span>Setup</span><strong>GOOD (GoingStick: 8.1)</strong></summary>
+                <small>Stalls 6f - Centre; 7f - Outside; Remainder - Inside | Rail No rail note | Band 0-70 | Weather Light rain</small>
+            </details>
         </div>
 
         <section class="synopsis premium-snapshot">
@@ -46782,13 +46691,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Useful evidence, but needs price and race-shape confirmation</span>
             <span class="caution"><b>Main risk</b>No major model risk flagged</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>37.6</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>5/6</strong></div>
-            <div><span>FFR</span><strong>66</strong><small>+1lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>95</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI A+</strong><small>HIGH</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+19lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>37.6</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI A+</strong><small>HIGH</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+19lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -47275,7 +47181,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.5 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:44%">
                 <span>Trainer RTF</span>
                 <strong>44%</strong>
@@ -47301,16 +47207,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>None | No headgear declared</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>5/1</span>
-            <span><b>Owner</b>Iain Jardine Racing Club</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>5/1</strong></div>
+            <div><span>Owner</span><strong>Iain Jardine Racing Club</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Mazameer</b></span>
-            <span>Dam <b>Big Mystery</b></span>
-            <span>Damsire <b>Grand Lodge</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Mazameer</b> × Big Mystery <em>(Grand Lodge)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -47645,13 +47550,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Useful evidence, but needs price and race-shape confirmation</span>
             <span class="caution"><b>Main risk</b>Distance evidence is thin</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>43.5</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>4/6</strong></div>
-            <div><span>FFR</span><strong>67</strong><small>-2lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>104</strong><small>Fast figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI C</strong><small>LOW</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+15lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>43.5</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI C</strong><small>LOW</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+15lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -48138,7 +48040,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.8 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:38%">
                 <span>Trainer RTF</span>
                 <strong>38%</strong>
@@ -48164,16 +48066,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>None | No headgear declared</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>9/4F</span>
-            <span><b>Owner</b>Middleham Park &amp; South Bank Racing</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>9/4F</strong></div>
+            <div><span>Owner</span><strong>Middleham Park &amp; South Bank Racing</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Cotai Glory</b></span>
-            <span>Dam <b>Destiny&#x27;s Kitten</b></span>
-            <span>Damsire <b>Naaqoos</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Cotai Glory</b> × Destiny&#x27;s Kitten <em>(Naaqoos)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -48508,13 +48409,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Useful evidence, but needs price and race-shape confirmation</span>
             <span class="caution"><b>Main risk</b>Draw data is a negative nudge</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>35.4</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>3/6</strong></div>
-            <div><span>FFR</span><strong>81</strong><small>+14lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>99</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI A</strong><small>MEDIUM</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+17lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>35.4</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI A</strong><small>MEDIUM</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+17lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -49001,7 +48899,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:44%">
                 <span>Trainer RTF</span>
                 <strong>44%</strong>
@@ -49027,16 +48925,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>None | No headgear declared</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>5/4F</span>
-            <span><b>Owner</b>Johnnie Delta Racing</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>5/4F</strong></div>
+            <div><span>Owner</span><strong>Johnnie Delta Racing</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Phoenix Of Spain</b></span>
-            <span>Dam <b>Fly On The Night</b></span>
-            <span>Damsire <b>Equiano</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Phoenix Of Spain</b> × Fly On The Night <em>(Equiano)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -49371,13 +49268,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Needs more evidence before treating as a betting profile</span>
             <span class="caution"><b>Main risk</b>Draw data is a negative nudge</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>26.9</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>3/6</strong></div>
-            <div><span>FFR</span><strong>83</strong><small>+15lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>102</strong><small>Fast figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI B</strong><small>HIGH</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+15lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>26.9</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI B</strong><small>HIGH</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+15lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -49864,7 +49758,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:40%">
                 <span>Trainer RTF</span>
                 <strong>40%</strong>
@@ -49890,16 +49784,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>p | Declared equipment</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>9/2</span>
-            <span><b>Owner</b>Lycett Racing Ltd</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>p</strong><small>Declared equipment</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>9/2</strong></div>
+            <div><span>Owner</span><strong>Lycett Racing Ltd</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Zoustar</b></span>
-            <span>Dam <b>Miss Work Of Art</b></span>
-            <span>Damsire <b>Dutch Art</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Zoustar</b> × Miss Work Of Art <em>(Dutch Art)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -50234,13 +50127,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Needs more evidence before treating as a betting profile</span>
             <span class="caution"><b>Main risk</b>Draw data is a negative nudge</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>26.1</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>3/6</strong></div>
-            <div><span>FFR</span><strong>74</strong><small>+10lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>102</strong><small>Fast figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI C</strong><small>HIGH</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+30lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>26.1</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI C</strong><small>HIGH</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+30lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -50727,7 +50617,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:44%">
                 <span>Trainer RTF</span>
                 <strong>44%</strong>
@@ -50753,16 +50643,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>None | No headgear declared</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>11/2</span>
-            <span><b>Owner</b>Mrs Francesca Mitchell</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>11/2</strong></div>
+            <div><span>Owner</span><strong>Mrs Francesca Mitchell</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Mastercraftsman</b></span>
-            <span>Dam <b>Parknasilla</b></span>
-            <span>Damsire <b>Dutch Art</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Mastercraftsman</b> × Parknasilla <em>(Dutch Art)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -51097,13 +50986,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Model evidence is not clean enough for a positive stance</span>
             <span class="caution"><b>Main risk</b>Raw score needs more support</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>32.2</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>3/6</strong></div>
-            <div><span>FFR</span><strong>82</strong><small>+13lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>86</strong><small>Speed caution</small></div>
-            <div><span>Trip / Ground</span><strong>DEI D</strong><small>HIGH</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+15lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>32.2</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI D</strong><small>HIGH</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+15lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -51590,7 +51476,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter warn" style="--intel:27%">
                 <span>Trainer RTF</span>
                 <strong>27%</strong>
@@ -51616,16 +51502,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>None | No headgear declared</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>13/2</span>
-            <span><b>Owner</b>Ursa Major Racing Ltd</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>13/2</strong></div>
+            <div><span>Owner</span><strong>Ursa Major Racing Ltd</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Ten Sovereigns</b></span>
-            <span>Dam <b>Active Approach</b></span>
-            <span>Damsire <b>New Approach</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Ten Sovereigns</b> × Active Approach <em>(New Approach)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -52030,13 +51915,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
         </div>
 
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Race DNA</span><strong>Pace-pressure sprint</strong></div>
-            <div><span>Chaos Index</span><strong>High</strong></div>
+        <div class="race-intel-rail">
+            <div class="race-intel-lead"><span>Race DNA</span><strong>Pace-pressure sprint</strong></div>
+            <div><span>Chaos</span><strong>High</strong></div>
             <div><span>Average OR</span><strong>54.8</strong><small>10 rated runners | Top OR 60: Hey Havana</small></div>
-            <div><span>Winning Time Par</span><strong>1m 24.17s</strong><small>11 race class/course/distance/going sample</small></div>
-            <div><span>Race Setup</span><strong>GOOD (GoingStick: 6.8)</strong><small>Stalls 5f - Stands&#x27; side; 7f &amp; 1m - Centre; Remainder - Inside | Rail No rail note | Band 0-60</small></div>
-            <div><span>Primary Action</span><strong>SHORTLIST RACE</strong></div>
+            <div><span>Winning par</span><strong>1m 24.17s</strong><small>11 race class/course/distance/going sample</small></div>
+            <details class="race-setup-compact">
+                <summary><span>Setup</span><strong>GOOD (GoingStick: 6.8)</strong></summary>
+                <small>Stalls 5f - Stands&#x27; side; 7f &amp; 1m - Centre; Remainder - Inside | Rail No rail note | Band 0-60 | Weather Light rain</small>
+            </details>
         </div>
 
         <section class="synopsis premium-snapshot">
@@ -53409,7 +53296,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="decision-benchmark-card single">
             <div><span>SpeedScore</span><strong>around par</strong></div>
             <div class="benchmark-single">
-                <i style="--w:100"><b>1</b></i>
+                <i style="--w:100"><b>100</b></i>
                 <em>Par 100</em>
             </div>
         </div>
@@ -53426,13 +53313,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Interesting numbers, but current evidence contains a clear warning</span>
             <span class="caution"><b>Main risk</b>Distance evidence is thin</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>31.5</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>2/6</strong></div>
-            <div><span>FFR</span><strong>55</strong><small>-5lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>100</strong><small>Fast figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI D</strong><small>VERY_LOW</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+21lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>31.5</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI D</strong><small>VERY_LOW</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+21lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -53901,7 +53785,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill neutral">+0.0 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:50%">
                 <span>Trainer RTF</span>
                 <strong>50%</strong>
@@ -53927,16 +53811,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>p | First-time aid today</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>13/2</span>
-            <span><b>Owner</b>Tom Goodair &amp; Jimmy Kay</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>p</strong><small>First-time aid today</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>13/2</strong></div>
+            <div><span>Owner</span><strong>Tom Goodair &amp; Jimmy Kay</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Havana Grey</b></span>
-            <span>Dam <b>Deep Impression</b></span>
-            <span>Damsire <b>Footstepsinthesand</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Havana Grey</b> × Deep Impression <em>(Footstepsinthesand)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -54499,13 +54382,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
         </div>
 
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Race DNA</span><strong>Balanced context race</strong></div>
-            <div><span>Chaos Index</span><strong>Low</strong></div>
+        <div class="race-intel-rail">
+            <div class="race-intel-lead"><span>Race DNA</span><strong>Balanced context race</strong></div>
+            <div><span>Chaos</span><strong>Low</strong></div>
             <div><span>Average OR</span><strong>72.6</strong><small>10 rated runners | Top OR 79: Halon Bay</small></div>
-            <div><span>Winning Time Par</span><strong>1m 36.62s</strong><small>2 race course/distance sample | approximate</small></div>
-            <div><span>Race Setup</span><strong>GOOD TO YIELDING</strong><small>Stalls -- | Rail No rail note | Band --</small></div>
-            <div><span>Primary Action</span><strong>SHORTLIST RACE</strong></div>
+            <div><span>Winning par</span><strong>1m 36.62s</strong><small>2 race course/distance sample | approximate</small></div>
+            <details class="race-setup-compact">
+                <summary><span>Setup</span><strong>GOOD TO YIELDING</strong></summary>
+                <small>Stalls -- | Rail No rail note | Band -- | Weather Light rain</small>
+            </details>
         </div>
 
         <section class="synopsis premium-snapshot">
@@ -55895,13 +55780,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Useful evidence, but needs price and race-shape confirmation</span>
             <span class="caution"><b>Main risk</b>Distance suitability is a caution (DEI E)</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>45.8</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>3/6</strong></div>
-            <div><span>FFR</span><strong>89</strong><small>+11lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>104</strong><small>Fast figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI E</strong><small>LOW</small></div>
-            <div><span>Handicap</span><strong class="good">Workable mark</strong><small>+11lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>45.8</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI E</strong><small>LOW</small></div>
+            <div><span>Handicap ceiling</span><strong class="good">Workable mark</strong><small>+11lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -56355,7 +56237,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill elite">+1.2 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter good" style="--intel:63%">
                 <span>Trainer RTF</span>
                 <strong>63%</strong>
@@ -56381,16 +56263,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>h | Declared equipment</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>6/1</span>
-            <span><b>Owner</b>Newtown Anner Stud Farm Ltd</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>h</strong><small>Declared equipment</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>6/1</strong></div>
+            <div><span>Owner</span><strong>Newtown Anner Stud Farm Ltd</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Beckford</b></span>
-            <span>Dam <b>Lady Zen</b></span>
-            <span>Damsire <b>Iffraaj</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Beckford</b> × Lady Zen <em>(Iffraaj)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -56673,13 +56554,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Model evidence is not clean enough for a positive stance</span>
             <span class="caution"><b>Main risk</b>Distance evidence is thin</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>30.1</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>1/6</strong></div>
-            <div><span>FFR</span><strong>85</strong><small>+6lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>98</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI D</strong><small>VERY_LOW</small></div>
-            <div><span>Handicap</span><strong class="good">Workable mark</strong><small>+6lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>30.1</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI D</strong><small>VERY_LOW</small></div>
+            <div><span>Handicap ceiling</span><strong class="good">Workable mark</strong><small>+6lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -57071,7 +56949,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.8 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter good" style="--intel:60%">
                 <span>Trainer RTF</span>
                 <strong>60%</strong>
@@ -57097,16 +56975,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>None | No headgear declared</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>10/1</span>
-            <span><b>Owner</b>Charlestown Dancers Syndicate</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>10/1</strong></div>
+            <div><span>Owner</span><strong>Charlestown Dancers Syndicate</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Coulsty</b></span>
-            <span>Dam <b>Moonlit View</b></span>
-            <span>Damsire <b>Exceed And Excel</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Coulsty</b> × Moonlit View <em>(Exceed And Excel)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -57410,13 +57287,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Model evidence is not clean enough for a positive stance</span>
             <span class="caution"><b>Main risk</b>Distance evidence is thin</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>21.6</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>3/6</strong></div>
-            <div><span>FFR</span><strong>37</strong><small>-35lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>98</strong><small>Solid figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI D</strong><small>LOW</small></div>
-            <div><span>Handicap</span><strong class="elite">Well handicapped</strong><small>+12lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>21.6</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI D</strong><small>LOW</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+12lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -57903,7 +57777,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.8 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:43%">
                 <span>Trainer RTF</span>
                 <strong>43%</strong>
@@ -57929,16 +57803,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>None | No headgear declared</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>8/1</span>
-            <span><b>Owner</b>Tony Branagan Meats Limited</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>8/1</strong></div>
+            <div><span>Owner</span><strong>Tony Branagan Meats Limited</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Starman</b></span>
-            <span>Dam <b>Mistress Of Venice</b></span>
-            <span>Damsire <b>Bated Breath</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Starman</b> × Mistress Of Venice <em>(Bated Breath)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
@@ -58254,7 +58127,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="decision-benchmark-card single">
             <div><span>SpeedScore</span><strong>around par</strong></div>
             <div class="benchmark-single">
-                <i style="--w:100"><b>1</b></i>
+                <i style="--w:100"><b>100</b></i>
                 <em>Par 100</em>
             </div>
         </div>
@@ -58271,13 +58144,10 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="positive"><b>Best reason</b>Interesting numbers, but current evidence contains a clear warning</span>
             <span class="caution"><b>Main risk</b>Distance suitability is a caution (DEI E)</span>
         </div>
-        <div class="runner-decision-metrics">
-            <div><span>Model Score</span><strong>36.1</strong><small>raw</small></div>
-            <div><span>Agreement</span><strong>1/6</strong></div>
-            <div><span>FFR</span><strong>66</strong><small>-10lb vs OR</small></div>
-            <div><span>SpeedScore</span><strong>100</strong><small>Fast figure</small></div>
-            <div><span>Trip / Ground</span><strong>DEI E</strong><small>LOW</small></div>
-            <div><span>Handicap</span><strong class="good">Workable mark</strong><small>+11lb FFR vs OR</small></div>
+        <div class="decision-support-strip">
+            <div><span>Model score</span><strong>36.1</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI E</strong><small>LOW</small></div>
+            <div><span>Handicap ceiling</span><strong class="good">Workable mark</strong><small>+11lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
     
@@ -58749,7 +58619,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <span class="finish-pill good">+0.8 micro score</span>
         </div>
-        <div class="extra-intel-visuals">
+        <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:53%">
                 <span>Trainer RTF</span>
                 <strong>53%</strong>
@@ -58775,16 +58645,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <small>Recent distance-time runs on today's ground</small>
             </div>
         </div>
-        <div class="intel-badge-row">
-            <span><b>Headgear</b>tp | First-time aid today</span>
-            <span><b>Wind</b>No wind surgery flag</span>
-            <span><b>Latest SP</b>9/2</span>
-            <span><b>Owner</b>Stonestreet Stables LLC</span>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>tp</strong><small>First-time aid today</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>9/2</strong></div>
+            <div><span>Owner</span><strong>Stonestreet Stables LLC</strong></div>
         </div>
-        <div class="breeding-strip">
-            <span>Sire <b>Supremacy</b></span>
-            <span>Dam <b>Miranda Frost</b></span>
-            <span>Damsire <b>Cape Cross</b></span>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Supremacy</b> × Miranda Frost <em>(Cape Cross)</em></p>
         </div>
         <div class="profile-signal-board">
             <div class="profile-signal-head">
