@@ -998,6 +998,7 @@ function updateRaceCompare(input) {
         speedScoreNum: Math.max(...selected.map(item => numeric(item, "speedScoreNum"))),
         ffrNum: Math.max(...selected.map(item => numeric(item, "ffrNum"))),
         ffrEdgeNum: Math.max(...selected.map(item => numeric(item, "ffrEdgeNum"))),
+        frankedRatingNum: Math.max(...selected.map(item => numeric(item, "frankedRatingNum"))),
         fspNum: Math.max(...selected.map(item => numeric(item, "fspNum"))),
         drawQualityNum: Math.max(...selected.map(item => numeric(item, "drawQualityNum"))),
         groundNum: Math.max(...selected.map(item => numeric(item, "groundNum"))),
@@ -1019,6 +1020,7 @@ function updateRaceCompare(input) {
         if (numeric(item, "markNum") === best.markNum) badges.push("Best mark");
         if (numeric(item, "rprReadNum") === best.rprReadNum && best.rprReadNum > 0) badges.push("Best rating read");
         if (numeric(item, "ffrEdgeNum") === best.ffrEdgeNum && best.ffrEdgeNum > 0) badges.push("Best FFR edge");
+        if (numeric(item, "frankedRatingNum") === best.frankedRatingNum && best.frankedRatingNum > 0) badges.push("Best franked form");
         if (numeric(item, "orEdgeNum") === best.orEdgeNum && best.orEdgeNum > 0) badges.push("Best OR edge");
         if (numeric(item, "bestRprNum") === best.bestRprNum) badges.push("Best historic RPR");
         if (numeric(item, "speedScoreNum") === best.speedScoreNum && best.speedScoreNum > 0) badges.push("Best SpeedScore");
@@ -1062,6 +1064,7 @@ function updateRaceCompare(input) {
                 <div><span>Placement</span><i style="--w:${Math.min(100, numeric(item, "placementNum"))}%"><b></b></i><strong>${placementLabel(item.dataset.placementNum)}</strong></div>
                 <div><span>Speed</span><i style="--w:${Math.min(100, numeric(item, "speedScoreNum"))}%"><b></b></i><strong>${escHtml(item.dataset.speedScore || "--")}</strong></div>
                 <div><span>FFR edge</span><i style="--w:${Math.min(100, Math.max(0, 50 + numeric(item, "ffrEdgeNum") * 3))}%"><b></b></i><strong>${escHtml(item.dataset.ffrEdge || "--")}</strong></div>
+                <div><span>Franked form</span><i style="--w:${Math.min(100, Math.max(0, numeric(item, "frankedRatingNum")))}%"><b></b></i><strong>${escHtml(item.dataset.frankedRating || "--")}</strong></div>
                 <div><span>Trip</span><i style="--w:${Math.min(100, numeric(item, "tripMoveNum"))}%"><b></b></i><strong>${escHtml(item.dataset.tripMove || "--")}</strong></div>
             </div>
             <div class="compare-card-verdict">
@@ -1074,6 +1077,7 @@ function updateRaceCompare(input) {
                     <div><span>Recent form</span><strong>${escHtml(item.dataset.recentDetail || "Recent form data developing")}</strong></div>
                     <div><span>Ratings read</span><strong>${escHtml(item.dataset.ratingsDetail || "Ratings evidence developing")}</strong></div>
                     <div><span>FFR read</span><strong>${escHtml(item.dataset.ffrDetail || "ForeFurlongs Rating evidence developing")}</strong></div>
+                    <div><span>Franked form</span><strong>${escHtml(item.dataset.frankedDetail || "Franked-form evidence developing")}</strong></div>
                     <div><span>Market</span><strong>${escHtml(item.dataset.marketDetail || "No live market price stored")}</strong></div>
                     <div><span>OR versus field</span><strong>${escHtml(item.dataset.orFieldRead || "Field OR context developing")}</strong></div>
                     <div><span>SpeedScore</span><strong>${escHtml(item.dataset.speedScoreDetail || item.dataset.speedDetail || "SpeedScore evidence developing")}</strong></div>
@@ -1096,6 +1100,7 @@ function updateRaceCompare(input) {
                     <div class="${numeric(item, "rprReadNum") === best.rprReadNum && best.rprReadNum > 0 ? "best" : ""}"><span>Rating read</span><strong>${escHtml(item.dataset.rprRead || "--")}</strong></div>
                     <div class="${numeric(item, "ffrNum") === best.ffrNum && best.ffrNum > 0 ? "best" : ""}"><span>FFR</span><strong>${escHtml(item.dataset.ffr || "--")}</strong></div>
                     <div class="${numeric(item, "ffrEdgeNum") === best.ffrEdgeNum && best.ffrEdgeNum > 0 ? "best" : ""}"><span>FFR vs OR</span><strong>${escHtml(item.dataset.ffrEdge || "--")}</strong></div>
+                    <div class="${numeric(item, "frankedRatingNum") === best.frankedRatingNum && best.frankedRatingNum > 0 ? "best" : ""}"><span>Franked form</span><strong>${escHtml(item.dataset.frankedRating || "--")}/100</strong></div>
                     <div><span>Market odds</span><strong>${escHtml(item.dataset.marketOdds || "--")}</strong></div>
                     <div><span>Implied chance</span><strong>${escHtml(item.dataset.marketImplied || "--")}</strong></div>
                     <div class="${numeric(item, "orEdgeNum") === best.orEdgeNum && best.orEdgeNum > 0 ? "best" : ""}"><span>OR vs field</span><strong>${escHtml(item.dataset.orEdge || "--")}</strong></div>
