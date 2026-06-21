@@ -412,12 +412,12 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <label for="horseSearch">Search horse, trainer or owner</label>
         <input id="horseSearch" type="search" placeholder="Start typing a horse name..." autocomplete="off">
     </div>
-    <div id="horseSearchCount" class="horse-search-count">24 featured current profiles shown | 76,824 searchable horses</div>
+    <div id="horseSearchCount" class="horse-search-count">24 featured current profiles shown | 4,685 searchable horses</div>
 </section>
 <section class="brief-grid">
-    <div class="brief-card"><span>Historic runs</span><strong>565,287</strong></div>
-    <div class="brief-card"><span>Searchable horses</span><strong>76,824</strong></div>
-    <div class="brief-card"><span>Current profiles indexed</span><strong>270</strong></div>
+    <div class="brief-card"><span>Historic runs</span><strong>0</strong></div>
+    <div class="brief-card"><span>Searchable horses</span><strong>4,685</strong></div>
+    <div class="brief-card"><span>Current profiles indexed</span><strong>292</strong></div>
     <div class="brief-card"><span>Data source</span><strong>2023-26</strong></div>
 </section>
 <section class="panel" style="padding:20px;">
@@ -749,6 +749,7 @@ function updateRaceCompare(input) {
         rprReadNum: Math.max(...selected.map(item => numeric(item, "rprReadNum"))),
         currentOrNum: Math.max(...selected.map(item => numeric(item, "currentOrNum"))),
         orEdgeNum: Math.max(...selected.map(item => numeric(item, "orEdgeNum"))),
+        fieldEdgeNum: Math.max(...selected.map(item => numeric(item, "fieldEdgeNum"))),
         bestRprNum: Math.max(...selected.map(item => numeric(item, "bestRprNum"))),
         rprEdgeNum: Math.max(...selected.map(item => numeric(item, "rprEdgeNum"))),
         speedScoreNum: Math.max(...selected.map(item => numeric(item, "speedScoreNum"))),
@@ -778,6 +779,7 @@ function updateRaceCompare(input) {
         if (numeric(item, "ffrEdgeNum") === best.ffrEdgeNum && best.ffrEdgeNum > 0) badges.push("Best FFR edge");
         if (numeric(item, "frankedRatingNum") === best.frankedRatingNum && best.frankedRatingNum > 0) badges.push("Best franked form");
         if (numeric(item, "orEdgeNum") === best.orEdgeNum && best.orEdgeNum > 0) badges.push("Best OR edge");
+        if (numeric(item, "fieldEdgeNum") === best.fieldEdgeNum && best.fieldEdgeNum > 0) badges.push("Best field edge");
         if (numeric(item, "bestRprNum") === best.bestRprNum) badges.push("Best historic RPR");
         if (numeric(item, "speedScoreNum") === best.speedScoreNum && best.speedScoreNum > 0) badges.push("Best SpeedScore");
         if (numeric(item, "fspNum") === best.fspNum && best.fspNum > 0) badges.push("Best FSP");
@@ -808,6 +810,8 @@ function updateRaceCompare(input) {
             </div>
             <div class="compare-context-chips">
                 <span title="${escHtml(item.dataset.orFieldRead || "")}">OR ${escHtml(item.dataset.currentOr || "--")}</span>
+                <span>Weight ${escHtml(item.dataset.weight || "--")}</span>
+                <span title="Model score compared with the race average">Field edge ${escHtml(item.dataset.fieldEdge || "--")}</span>
                 <span title="${escHtml(item.dataset.marketDetail || "")}">Odds ${escHtml(item.dataset.marketOdds || "--")}</span>
                 <span title="${escHtml(item.dataset.restDetail || "")}">${escHtml(item.dataset.rest || "Rest developing")}</span>
                 <span title="${escHtml(item.dataset.tripMoveDetail || "")}">${escHtml(item.dataset.tripMove || "Trip developing")}</span>
@@ -815,7 +819,7 @@ function updateRaceCompare(input) {
             </div>
             <div class="compare-visual-bars">
                 <div><span>Score</span><i style="--w:${Math.min(100, numeric(item, "scoreNum"))}%"><b></b></i><strong>${escHtml(item.dataset.score || "--")}</strong></div>
-                <div><span>OR edge</span><i style="--w:${Math.min(100, Math.max(0, 50 + numeric(item, "orEdgeNum") * 3))}%"><b></b></i><strong>${escHtml(item.dataset.orEdge || "--")}</strong></div>
+                <div><span>Field edge</span><i style="--w:${Math.min(100, Math.max(0, 50 + numeric(item, "fieldEdgeNum") * 2))}%"><b></b></i><strong>${escHtml(item.dataset.fieldEdge || "--")}</strong></div>
                 <div><span>Conditions</span><i style="--w:${Math.min(100, numeric(item, "conditionsNum"))}%"><b></b></i><strong>${fitLabel(item.dataset.conditionsNum)}</strong></div>
                 <div><span>Placement</span><i style="--w:${Math.min(100, numeric(item, "placementNum"))}%"><b></b></i><strong>${placementLabel(item.dataset.placementNum)}</strong></div>
                 <div><span>Speed</span><i style="--w:${Math.min(100, numeric(item, "speedScoreNum"))}%"><b></b></i><strong>${escHtml(item.dataset.speedScore || "--")}</strong></div>
@@ -836,6 +840,8 @@ function updateRaceCompare(input) {
                     <div><span>Franked form</span><strong>${escHtml(item.dataset.frankedDetail || "Franked-form evidence developing")}</strong></div>
                     <div><span>Market</span><strong>${escHtml(item.dataset.marketDetail || "No live market price stored")}</strong></div>
                     <div><span>OR versus field</span><strong>${escHtml(item.dataset.orFieldRead || "Field OR context developing")}</strong></div>
+                    <div><span>Weight carried</span><strong>${escHtml(item.dataset.weight || "Weight unavailable")}</strong></div>
+                    <div><span>Field edge</span><strong>${escHtml(item.dataset.fieldEdge || "--")} points versus the race-average model score</strong></div>
                     <div><span>SpeedScore</span><strong>${escHtml(item.dataset.speedScoreDetail || item.dataset.speedDetail || "SpeedScore evidence developing")}</strong></div>
                     <div><span>Trip evidence</span><strong>${escHtml(item.dataset.tripDetail || "Trip evidence developing")}</strong></div>
                     <div><span>Ground evidence</span><strong>${escHtml(item.dataset.groundDetail || "Ground evidence developing")}</strong></div>
@@ -966,6 +972,35 @@ function selectCardDay(day) {
     window.scrollTo({top: Math.max(0, target.offsetTop - 130), behavior: "smooth"});
 }
 
+function refreshCardDayLabels() {
+    const links = Array.from(document.querySelectorAll(".card-day-buttons a[data-card-date]"));
+    if (!links.length) return;
+
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const todayKey = [
+        today.getFullYear(),
+        String(today.getMonth() + 1).padStart(2, "0"),
+        String(today.getDate()).padStart(2, "0"),
+    ].join("-");
+    const currentLink = links.find(link => link.dataset.cardDate === todayKey);
+    const activeLink = links.find(link => link.classList.contains("active"));
+
+    links.forEach(link => {
+        const label = link.querySelector("span");
+        if (!label) return;
+        const parts = String(link.dataset.cardDate || "").split("-").map(Number);
+        if (parts.length !== 3 || parts.some(value => !Number.isFinite(value))) return;
+        const cardDate = new Date(parts[0], parts[1] - 1, parts[2]);
+        const dayDifference = Math.round((cardDate - today) / 86400000);
+        label.textContent = dayDifference === 0 ? "Today" : dayDifference === 1 ? "Tomorrow" : dayDifference === -1 ? "Yesterday" : "Racecards";
+    });
+
+    if (currentLink && activeLink && activeLink !== currentLink && activeLink.dataset.cardDate < todayKey) {
+        window.location.replace(currentLink.href);
+    }
+}
+
 function simplifyKeyPage() {
     document.querySelectorAll(".key-grid .key-item").forEach(item => {
         if (item.matches("details")) return;
@@ -1082,6 +1117,7 @@ function enableRaceScanSorting() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    refreshCardDayLabels();
     simplifyRunnerEvidence();
     simplifyKeyPage();
     enableRaceScanDragScroll();
