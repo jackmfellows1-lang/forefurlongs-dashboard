@@ -1043,6 +1043,18 @@ function refreshCardDayLabels() {
     }
 }
 
+function initialiseTopHorseDay() {
+    const panels = Array.from(document.querySelectorAll("[data-top-horse-panel]"));
+    if (!panels.length) return;
+    const requestedDay = new URLSearchParams(window.location.search).get("day") === "tomorrow" ? "tomorrow" : "today";
+    panels.forEach(panel => panel.hidden = panel.dataset.topHorsePanel !== requestedDay);
+    document.querySelectorAll("[data-top-horse-day]").forEach(link => {
+        const active = link.dataset.topHorseDay === requestedDay;
+        link.classList.toggle("active", active);
+        link.setAttribute("aria-selected", active ? "true" : "false");
+    });
+}
+
 function simplifyKeyPage() {
     document.querySelectorAll(".key-grid .key-item").forEach(item => {
         if (item.matches("details")) return;
@@ -1160,6 +1172,7 @@ function enableRaceScanSorting() {
 
 document.addEventListener("DOMContentLoaded", () => {
     refreshCardDayLabels();
+    initialiseTopHorseDay();
     simplifyRunnerEvidence();
     simplifyKeyPage();
     enableRaceScanDragScroll();
