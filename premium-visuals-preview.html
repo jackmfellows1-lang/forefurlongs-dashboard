@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ForeFurlongs Premium Visual Concepts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#061120;--panel:#0b1b2a;--line:rgba(148,163,184,.18);--text:#f4f7fb;--muted:#94a9bd;--green:#5dffb1;--blue:#7dd3fc;--gold:#ffd166;--red:#ff6b7a}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;background:radial-gradient(circle at 6% 0%,rgba(93,255,177,.16),transparent 30%),radial-gradient(circle at 90% 8%,rgba(125,211,252,.14),transparent 28%),linear-gradient(145deg,#061120,#020814 72%);color:var(--text);font-family:Inter,system-ui,sans-serif;padding:28px}
+    .wrap{max-width:1220px;margin:0 auto;display:grid;gap:22px}
+    .hero,.panel{border:1px solid rgba(93,255,177,.18);border-radius:24px;background:linear-gradient(145deg,rgba(12,29,42,.88),rgba(3,8,18,.82));box-shadow:0 24px 70px rgba(0,0,0,.24)}
+    .hero{padding:28px}
+    .eyebrow{display:block;color:var(--green);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:900;margin-bottom:10px}
+    h1,h2,h3,p{margin:0}
+    h1{font-family:Space Grotesk;font-size:clamp(42px,6vw,76px);line-height:.94}
+    .hero p{max-width:790px;color:#b7c6d6;font-size:20px;line-height:1.55;margin-top:14px}
+    .grid{display:grid;grid-template-columns:1fr;gap:22px}
+    .panel{padding:24px;overflow:hidden}
+    .panel-head{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;margin-bottom:20px}
+    .panel h2{font-family:Space Grotesk;font-size:34px;margin-bottom:7px}
+    .panel p{color:#9fb0c6;line-height:1.5}
+    .tag{display:inline-flex;border-radius:999px;padding:11px 15px;background:linear-gradient(135deg,var(--green),var(--blue));color:#02131b;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 0 28px rgba(93,255,177,.24)}
+    .runner-strip{display:grid;grid-template-columns:1fr repeat(3,auto);gap:12px;align-items:center;border:1px solid rgba(148,163,184,.14);border-radius:18px;padding:15px;background:rgba(2,6,15,.38);margin-bottom:18px}
+    .runner-strip strong{font-family:Space Grotesk;font-size:30px}
+    .runner-strip small{display:block;color:#8ea3bb;font-weight:800;margin-top:3px}
+    .metric-pill{display:grid;justify-items:center;min-width:92px;border:1px solid rgba(93,255,177,.25);border-radius:14px;padding:9px 12px;background:rgba(93,255,177,.08)}
+    .metric-pill span{color:#8ea3bb;font-size:9px;text-transform:uppercase;letter-spacing:.1em;font-weight:900}
+    .metric-pill b{font-family:Space Grotesk;font-size:24px;color:var(--green)}
+    .evidence-map{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+    .evidence-tile{min-height:145px;border:1px solid rgba(148,163,184,.16);border-radius:18px;padding:14px;background:linear-gradient(145deg,rgba(255,255,255,.04),rgba(2,6,15,.30));position:relative;overflow:hidden}
+    .evidence-tile:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 0%,rgba(93,255,177,.18),transparent 50%);opacity:.55}
+    .evidence-tile.warn:before{background:radial-gradient(circle at 20% 0%,rgba(255,209,102,.20),transparent 50%)}
+    .evidence-tile.bad:before{background:radial-gradient(circle at 20% 0%,rgba(255,107,122,.18),transparent 50%)}
+    .evidence-tile span,.evidence-tile strong,.evidence-tile small{position:relative}
+    .evidence-tile span{display:block;color:#8ea3bb;font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:900}
+    .evidence-tile strong{display:block;margin-top:13px;font-family:Space Grotesk;font-size:28px;line-height:1;color:#f8fafc}
+    .evidence-tile small{display:block;margin-top:10px;color:#cbd5e1;line-height:1.35;font-weight:800}
+    .status-dot{position:absolute;right:14px;top:14px;width:14px;height:14px;border-radius:50%;background:var(--green);box-shadow:0 0 20px rgba(93,255,177,.55)}
+    .warn .status-dot{background:var(--gold);box-shadow:0 0 20px rgba(255,209,102,.45)}
+    .bad .status-dot{background:var(--red);box-shadow:0 0 20px rgba(255,107,122,.45)}
+    .fingerprint{display:grid;grid-template-columns:1fr 330px;gap:20px;align-items:stretch}
+    .ground-bars{display:grid;gap:12px}
+    .ground-row{display:grid;grid-template-columns:110px 1fr 95px;gap:12px;align-items:center}
+    .ground-row span{color:#dbeafe;font-weight:900}
+    .bar{height:22px;border-radius:999px;background:rgba(148,163,184,.13);overflow:hidden;border:1px solid rgba(148,163,184,.12)}
+    .bar i{display:block;height:100%;width:var(--w);border-radius:999px;background:linear-gradient(90deg,var(--gold),var(--green));box-shadow:0 0 18px rgba(93,255,177,.22)}
+    .ground-row b{font-family:Space Grotesk;text-align:right;color:#f8fafc}
+    .ground-card{border:1px solid rgba(93,255,177,.22);border-radius:20px;padding:18px;background:linear-gradient(145deg,rgba(93,255,177,.10),rgba(125,211,252,.055))}
+    .ground-card span{display:block;color:#8ea3bb;font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:900}
+    .ground-card strong{display:block;margin-top:8px;font-family:Space Grotesk;font-size:42px;color:var(--green)}
+    .ground-card p{font-size:15px;margin-top:10px;color:#dbeafe}
+    .ground-stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}
+    .ground-stat-grid div{border:1px solid rgba(148,163,184,.14);border-radius:14px;padding:11px;background:rgba(2,6,15,.36)}
+    .ground-stat-grid b{font-family:Space Grotesk;font-size:24px}
+    .sectional-layout{display:grid;grid-template-columns:330px 1fr;gap:20px;align-items:stretch}
+    .gauge{border:1px solid rgba(93,255,177,.22);border-radius:22px;padding:22px;background:radial-gradient(circle at 50% 0%,rgba(93,255,177,.14),transparent 52%),rgba(2,6,15,.38);display:grid;place-items:center;text-align:center}
+    .gauge-ring{width:210px;height:210px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--green) 0 288deg,rgba(148,163,184,.14) 288deg 360deg);box-shadow:0 0 38px rgba(93,255,177,.17)}
+    .gauge-inner{width:158px;height:158px;border-radius:50%;display:grid;place-items:center;background:#061120;border:1px solid rgba(148,163,184,.16)}
+    .gauge-inner strong{font-family:Space Grotesk;font-size:44px;color:var(--green)}
+    .gauge-inner span{display:block;color:#8ea3bb;font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:900}
+    .gauge p{margin-top:16px;color:#dbeafe;font-weight:800}
+    .split-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}
+    .split-card{border:1px solid rgba(148,163,184,.15);border-radius:17px;padding:15px;background:rgba(255,255,255,.035)}
+    .split-card span{display:block;color:#8ea3bb;font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:900}
+    .split-card strong{display:block;margin-top:8px;font-family:Space Grotesk;font-size:26px}
+    .split-card.good strong{color:var(--green)}.split-card.warn strong{color:var(--gold)}
+    .signature-line{border:1px solid rgba(93,255,177,.18);border-radius:20px;padding:18px;background:rgba(93,255,177,.06)}
+    .signature-line h3{font-family:Space Grotesk;font-size:25px;color:var(--green);margin-bottom:10px}
+    .signature-line p{font-size:16px;color:#dbeafe}
+    .shape{display:grid;gap:10px;margin-top:16px}
+    .shape-row{display:grid;grid-template-columns:120px 1fr 60px;gap:10px;align-items:center}
+    .shape-row span{color:#cbd5e1;font-weight:900}
+    .shape-row b{font-family:Space Grotesk;color:#f8fafc;text-align:right}
+    @media(max-width:1000px){body{padding:14px}.panel-head,.runner-strip,.fingerprint,.sectional-layout{grid-template-columns:1fr}.evidence-map{grid-template-columns:repeat(2,1fr)}.split-cards{grid-template-columns:1fr}.ground-row{grid-template-columns:1fr}.ground-row b{text-align:left}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <span class="eyebrow">Premium visual concepts</span>
+      <h1>Less Noise, More Intelligence</h1>
+      <p>Three visual ideas designed to make racecards feel genuinely valuable: not decoration, but fast-read evidence that helps a punter understand suitability, speed, ground and the final decision.</p>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <span class="eyebrow">Idea 1</span>
+            <h2>Runner Evidence Map</h2>
+            <p>A diagnostic scan of the horse. Every tile answers one simple question: is this angle helping today?</p>
+          </div>
+          <span class="tag">Best for runner profiles</span>
+        </div>
+        <div class="runner-strip">
+          <div><strong>Tenability</strong><small>4:45 Goodwood | 12f | Primary Candidate</small></div>
+          <div class="metric-pill"><span>Confidence</span><b>96</b></div>
+          <div class="metric-pill"><span>Align</span><b>6/6</b></div>
+          <div class="metric-pill"><span>Speed</span><b>100</b></div>
+        </div>
+        <div class="evidence-map">
+          <div class="evidence-tile"><i class="status-dot"></i><span>Speed</span><strong>Strong</strong><small>Own SpeedScore supports the profile.</small></div>
+          <div class="evidence-tile"><i class="status-dot"></i><span>RPR Trend</span><strong>Rising</strong><small>Recent performance line is improving.</small></div>
+          <div class="evidence-tile"><i class="status-dot"></i><span>Trip</span><strong>Proven</strong><small>Evidence at or near today's distance.</small></div>
+          <div class="evidence-tile warn"><i class="status-dot"></i><span>Ground</span><strong>Suitable</strong><small>Positive, but not bulletproof.</small></div>
+          <div class="evidence-tile"><i class="status-dot"></i><span>Sectionals</span><strong>Finishes</strong><small>Late energy profile is a plus.</small></div>
+          <div class="evidence-tile warn"><i class="status-dot"></i><span>Risk</span><strong>Medium</strong><small>Still review price and race shape.</small></div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <span class="eyebrow">Idea 2</span>
+            <h2>Ground Fingerprint</h2>
+            <p>Shows whether a horse is genuinely suited to today's going. This is especially useful when rain changes the card.</p>
+          </div>
+          <span class="tag">Best for going changes</span>
+        </div>
+        <div class="fingerprint">
+          <div class="ground-bars">
+            <div class="ground-row"><span>Firm</span><div class="bar"><i style="--w:28%"></i></div><b>Low sample</b></div>
+            <div class="ground-row"><span>Good</span><div class="bar"><i style="--w:86%"></i></div><b>3 wins</b></div>
+            <div class="ground-row"><span>Good to Soft</span><div class="bar"><i style="--w:74%"></i></div><b>4 places</b></div>
+            <div class="ground-row"><span>Soft</span><div class="bar"><i style="--w:52%"></i></div><b>Mixed</b></div>
+            <div class="ground-row"><span>Heavy</span><div class="bar"><i style="--w:18%"></i></div><b>No proof</b></div>
+          </div>
+          <aside class="ground-card">
+            <span>Today's ground read</span>
+            <strong>Positive</strong>
+            <p>Best evidence is Good / Good to Soft. If the ground eases, the profile still has support.</p>
+            <div class="ground-stat-grid">
+              <div><span>Runs</span><b>12</b></div>
+              <div><span>Places</span><b>7</b></div>
+              <div><span>Best RPR</span><b>104</b></div>
+              <div><span>Best Speed</span><b>100</b></div>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <span class="eyebrow">Idea 3</span>
+            <h2>Sectional Signature</h2>
+            <p>Turns confusing sectional numbers into a simple read: how the horse uses its energy and whether today's race shape helps.</p>
+          </div>
+          <span class="tag">Best for sectionals</span>
+        </div>
+        <div class="sectional-layout">
+          <aside class="gauge">
+            <div class="gauge-ring">
+              <div class="gauge-inner">
+                <div>
+                  <strong>106%</strong>
+                  <span>FSP</span>
+                </div>
+              </div>
+            </div>
+            <p>Finished faster than overall race speed.</p>
+          </aside>
+          <div>
+            <div class="split-cards">
+              <div class="split-card good"><span>Final 2f</span><strong>23.84s</strong></div>
+              <div class="split-card good"><span>Vs Par</span><strong>0.6s fast</strong></div>
+              <div class="split-card warn"><span>Reliability</span><strong>Medium</strong></div>
+            </div>
+            <div class="signature-line">
+              <h3>Late-energy finisher</h3>
+              <p>This horse has shown the ability to finish strongly. It is most interesting when the projected pace is honest enough to bring stamina and finishing speed into play.</p>
+            </div>
+            <div class="shape">
+              <div class="shape-row"><span>Early speed</span><div class="bar"><i style="--w:48%"></i></div><b>Steady</b></div>
+              <div class="shape-row"><span>Cruise</span><div class="bar"><i style="--w:72%"></i></div><b>Good</b></div>
+              <div class="shape-row"><span>Finish</span><div class="bar"><i style="--w:92%"></i></div><b>Strong</b></div>
+              <div class="shape-row"><span>Today fit</span><div class="bar"><i style="--w:80%"></i></div><b>Positive</b></div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

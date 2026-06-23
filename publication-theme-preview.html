@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ForeFurlongs Publication Theme Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&family=Libre+Baskerville:wght@700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+    --paper:#f6f1e7;
+    --paper-soft:#fbf8f1;
+    --ink:#17211d;
+    --muted:#69756f;
+    --line:#d8d0c1;
+    --green:#0f4f35;
+    --green-soft:#e3efe8;
+    --gold:#b28731;
+    --gold-soft:#f2e2bb;
+    --red:#8e2f2f;
+    --blue:#2d5f78;
+    --shadow:0 18px 50px rgba(32,28,21,.10);
+}
+*{box-sizing:border-box}
+body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:Inter,Arial,sans-serif;
+}
+a{color:inherit;text-decoration:none}
+.page{
+    max-width:1280px;
+    margin:0 auto;
+    padding:22px;
+}
+.masthead{
+    border:1px solid var(--line);
+    background:var(--paper-soft);
+    box-shadow:var(--shadow);
+}
+.brand-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:18px 22px;
+    border-bottom:3px solid var(--green);
+}
+.brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+.mark{
+    width:52px;
+    height:52px;
+    display:grid;
+    place-items:center;
+    border:2px solid var(--green);
+    color:var(--green);
+    font-family:Libre Baskerville,serif;
+    font-size:22px;
+    background:#fffdf8;
+}
+.brand h1{
+    margin:0;
+    font-family:Source Serif 4,Georgia,serif;
+    font-size:31px;
+    line-height:1;
+    letter-spacing:-.035em;
+}
+.brand span{
+    display:block;
+    margin-top:3px;
+    color:var(--muted);
+    font-size:12px;
+    font-weight:750;
+    text-transform:uppercase;
+    letter-spacing:.16em;
+}
+.date-strip{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    color:#fff;
+    background:var(--green);
+    padding:9px 22px;
+    font-size:12px;
+    font-weight:750;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+}
+.nav{
+    display:flex;
+    gap:2px;
+    flex-wrap:wrap;
+    padding:12px 18px;
+    background:#efe7d8;
+}
+.nav a{
+    padding:9px 12px;
+    border-radius:2px;
+    color:#26332e;
+    font-size:13px;
+    font-weight:750;
+}
+.nav a.active{
+    color:#fff;
+    background:var(--green);
+}
+.nav a.join{
+    margin-left:auto;
+    background:var(--gold);
+    color:#211707;
+}
+.layout{
+    display:grid;
+    grid-template-columns:1fr 330px;
+    gap:18px;
+    margin-top:18px;
+}
+.race-card,.side-panel,.runner-card{
+    border:1px solid var(--line);
+    background:var(--paper-soft);
+    box-shadow:var(--shadow);
+}
+.race-card{
+    padding:0;
+}
+.race-title{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:20px;
+    padding:20px 22px 17px;
+    border-bottom:1px solid var(--line);
+}
+.kicker{
+    color:var(--green);
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.14em;
+}
+.race-title h2{
+    margin:5px 0 8px;
+    font-family:Source Serif 4,Georgia,serif;
+    font-size:40px;
+    line-height:1.02;
+    letter-spacing:-.03em;
+}
+.race-title p{
+    margin:0;
+    color:var(--muted);
+    font-size:15px;
+}
+.race-rating{
+    text-align:right;
+    min-width:150px;
+}
+.race-rating span{
+    display:block;
+    color:var(--muted);
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+}
+.race-rating strong{
+    display:block;
+    margin-top:5px;
+    color:var(--green);
+    font-size:48px;
+    line-height:1;
+    font-weight:800;
+}
+.summary-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border-bottom:1px solid var(--line);
+}
+.summary-grid div{
+    padding:15px 16px;
+    border-right:1px solid var(--line);
+}
+.summary-grid div:last-child{border-right:0}
+.summary-grid span{
+    display:block;
+    color:var(--muted);
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+}
+.summary-grid strong{
+    display:block;
+    margin-top:7px;
+    font-size:19px;
+    color:var(--ink);
+}
+.model-read{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:20px;
+    padding:18px 22px;
+    border-bottom:1px solid var(--line);
+    background:#fffaf0;
+}
+.decision-badge{
+    display:inline-flex;
+    width:max-content;
+    padding:8px 10px;
+    background:var(--green);
+    color:#fff;
+    font-size:12px;
+    font-weight:850;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+}
+.model-read h3{
+    margin:10px 0 8px;
+    font-family:Source Serif 4,Georgia,serif;
+    font-size:25px;
+}
+.model-read p{
+    margin:0;
+    color:#4c5953;
+    line-height:1.55;
+}
+.reason-list{
+    display:grid;
+    gap:8px;
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.reason-list li{
+    display:grid;
+    grid-template-columns:20px 1fr;
+    gap:8px;
+    color:#33413b;
+    line-height:1.45;
+}
+.reason-list li:before{
+    content:"";
+    width:9px;
+    height:9px;
+    margin-top:.45em;
+    border-radius:50%;
+    background:var(--green);
+}
+.scan{
+    padding:18px 22px 22px;
+}
+.section-head{
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    margin-bottom:10px;
+}
+.section-head h3{
+    margin:0;
+    font-family:Source Serif 4,Georgia,serif;
+    font-size:25px;
+}
+.section-head small{
+    color:var(--muted);
+    text-align:right;
+}
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fffdf8;
+    border:1px solid var(--line);
+}
+th{
+    padding:10px 9px;
+    text-align:left;
+    color:#fff;
+    background:#26332e;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+}
+td{
+    padding:12px 9px;
+    border-bottom:1px solid #e6ddcd;
+    color:#26332e;
+    font-size:13px;
+    vertical-align:top;
+}
+tr.highlight td{
+    background:var(--green-soft);
+}
+.runner-name{
+    font-weight:850;
+    color:#14231d;
+}
+.sub{
+    display:block;
+    margin-top:3px;
+    color:var(--muted);
+    font-size:12px;
+}
+.pill{
+    display:inline-flex;
+    padding:5px 7px;
+    border-radius:2px;
+    font-size:11px;
+    font-weight:850;
+    white-space:nowrap;
+}
+.pill.green{background:var(--green);color:#fff}
+.pill.gold{background:var(--gold-soft);color:#3e2a06}
+.pill.blue{background:#dcebf0;color:var(--blue)}
+.pill.red{background:#ead5d5;color:var(--red)}
+.bar-cell{
+    min-width:90px;
+}
+.bar{
+    display:block;
+    height:8px;
+    margin-top:6px;
+    background:#e0d7c8;
+}
+.bar i{
+    display:block;
+    width:var(--w);
+    height:100%;
+    background:var(--green);
+}
+.runner-card{
+    margin-top:18px;
+}
+.runner-head{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:18px;
+    padding:18px 22px;
+    border-bottom:1px solid var(--line);
+}
+.runner-head h3{
+    margin:0;
+    font-family:Source Serif 4,Georgia,serif;
+    font-size:34px;
+}
+.runner-head p{
+    margin:5px 0 0;
+    color:var(--muted);
+}
+.confidence{
+    min-width:118px;
+    padding:10px;
+    border:2px solid var(--green);
+    text-align:center;
+    background:#fffdf8;
+}
+.confidence span{
+    display:block;
+    color:var(--muted);
+    font-size:10px;
+    font-weight:850;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+}
+.confidence strong{
+    display:block;
+    color:var(--green);
+    font-size:34px;
+}
+.runner-body{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    padding:18px 22px;
+}
+.mini-chart{
+    border:1px solid var(--line);
+    background:#fffdf8;
+    padding:14px;
+}
+.mini-chart h4{
+    margin:0 0 12px;
+    font-family:Source Serif 4,Georgia,serif;
+    font-size:19px;
+}
+.chart-row{
+    display:grid;
+    grid-template-columns:92px 1fr 42px;
+    gap:10px;
+    align-items:center;
+    margin:10px 0;
+    font-size:13px;
+}
+.chart-row i{
+    height:10px;
+    background:#e2d8c7;
+}
+.chart-row i b{
+    display:block;
+    width:var(--w);
+    height:100%;
+    background:var(--green);
+}
+.chart-row:nth-child(3) i b{background:var(--gold)}
+.side-panel{
+    padding:18px;
+}
+.side-panel + .side-panel{
+    margin-top:18px;
+}
+.side-panel h3{
+    margin:0 0 12px;
+    font-family:Source Serif 4,Georgia,serif;
+    font-size:24px;
+}
+.ranked{
+    display:grid;
+    gap:10px;
+}
+.ranked div{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    gap:10px;
+    align-items:center;
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
+}
+.ranked b{
+    display:grid;
+    place-items:center;
+    width:28px;
+    height:28px;
+    color:#fff;
+    background:var(--green);
+}
+.ranked strong{
+    display:block;
+    font-size:14px;
+}
+.ranked span{
+    color:var(--muted);
+    font-size:12px;
+}
+.editorial-note{
+    padding:14px;
+    background:#fff8e8;
+    border-left:4px solid var(--gold);
+    color:#3d3324;
+    line-height:1.55;
+}
+@media(max-width:900px){
+    .page{padding:12px}
+    .layout,.runner-body,.model-read,.race-title{grid-template-columns:1fr}
+    .race-rating,.section-head small{text-align:left}
+    .summary-grid{grid-template-columns:1fr 1fr}
+    .nav a.join{margin-left:0}
+    .scan{overflow:auto}
+    table{min-width:760px}
+}
+</style>
+</head>
+<body>
+<main class="page">
+    <header class="masthead">
+        <div class="brand-row">
+            <div class="brand">
+                <div class="mark">FF</div>
+                <div>
+                    <h1>ForeFurlongs</h1>
+                    <span>Racing Intelligence</span>
+                </div>
+            </div>
+            <div class="kicker">Saturday Form Desk</div>
+        </div>
+        <div class="date-strip">
+            <span>13-06-2026</span>
+            <span>Racecards</span>
+            <span>Model evidence first, selections second</span>
+        </div>
+        <nav class="nav">
+            <a>Home</a>
+            <a>Briefing</a>
+            <a class="active">Racecards</a>
+            <a>Bet Races</a>
+            <a>Top Horses</a>
+            <a>Results</a>
+            <a>Model P&L</a>
+            <a class="join">Join</a>
+        </nav>
+    </header>
+
+    <div class="layout">
+        <section>
+            <article class="race-card">
+                <div class="race-title">
+                    <div>
+                        <span class="kicker">Racecard Intelligence</span>
+                        <h2>2:25 York | 7f Handicap</h2>
+                        <p>Class 3 | Good | Full field scan with ratings, pace, trip and placement evidence.</p>
+                    </div>
+                    <div class="race-rating">
+                        <span>Race Quality</span>
+                        <strong>84</strong>
+                        <span>Shortlist race</span>
+                    </div>
+                </div>
+
+                <div class="summary-grid">
+                    <div><span>Race Shape</span><strong>Pressure into finish</strong></div>
+                    <div><span>Winning Par</span><strong>1m 23.6s</strong></div>
+                    <div><span>Average OR</span><strong>78.2</strong></div>
+                    <div><span>Main Edge</span><strong>Late speed</strong></div>
+                </div>
+
+                <div class="model-read">
+                    <div>
+                        <span class="decision-badge">Main Candidate</span>
+                        <h3>Clear profile, not a blind tip</h3>
+                        <p>Confidence is shown as a decision read. Raw score stays visible, but the page leads with why the horse is interesting.</p>
+                    </div>
+                    <ul class="reason-list">
+                        <li>Strongest runner has proven pace finish, positive mark evidence and field-relative OR support.</li>
+                        <li>Race looks likely to reward efficient finishers rather than pure early pace.</li>
+                        <li>Current RPR/TS should be treated as required data before publication.</li>
+                    </ul>
+                </div>
+
+                <div class="scan">
+                    <div class="section-head">
+                        <h3>Whole-Field Scan</h3>
+                        <small>Cleaner table first. Deeper evidence opens only when needed.</small>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Runner</th>
+                                <th>Decision</th>
+                                <th>OR</th>
+                                <th>RPR</th>
+                                <th>SpeedScore</th>
+                                <th>Trip</th>
+                                <th>Ground</th>
+                                <th>Mark</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight">
+                                <td><span class="runner-name">Tenable</span><span class="sub">Late-speed profile</span></td>
+                                <td><strong>96</strong><span class="bar-cell"><span class="bar"><i style="--w:96%"></i></span></span></td>
+                                <td>88</td>
+                                <td><span class="pill green">Current 102</span></td>
+                                <td><span class="pill green">100</span></td>
+                                <td><span class="pill green">A</span></td>
+                                <td><span class="pill gold">Good</span></td>
+                                <td>+13lb</td>
+                                <td><span class="pill green">Primary</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="runner-name">Jack Andrea</span><span class="sub">Sustained speed</span></td>
+                                <td><strong>74</strong><span class="bar-cell"><span class="bar"><i style="--w:74%"></i></span></span></td>
+                                <td>82</td>
+                                <td><span class="pill blue">Current 91</span></td>
+                                <td><span class="pill blue">94</span></td>
+                                <td><span class="pill green">B</span></td>
+                                <td><span class="pill gold">Mixed</span></td>
+                                <td>+7lb</td>
+                                <td><span class="pill gold">Shortlist</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="runner-name">Lake Como</span><span class="sub">Prominent racer</span></td>
+                                <td><strong>62</strong><span class="bar-cell"><span class="bar"><i style="--w:62%"></i></span></span></td>
+                                <td>79</td>
+                                <td><span class="pill blue">Current 84</span></td>
+                                <td><span class="pill gold">87</span></td>
+                                <td><span class="pill gold">C</span></td>
+                                <td><span class="pill green">Positive</span></td>
+                                <td>+3lb</td>
+                                <td><span class="pill gold">Value watch</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="runner-name">Hove Ranger</span><span class="sub">Late energy finisher</span></td>
+                                <td><strong>43</strong><span class="bar-cell"><span class="bar"><i style="--w:43%"></i></span></span></td>
+                                <td>76</td>
+                                <td><span class="pill red">Missing</span></td>
+                                <td><span class="pill gold">90</span></td>
+                                <td><span class="pill red">E</span></td>
+                                <td><span class="pill gold">Mixed</span></td>
+                                <td>+1lb</td>
+                                <td><span class="pill red">Low interest</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <article class="runner-card">
+                <div class="runner-head">
+                    <div>
+                        <span class="kicker">Runner Evidence</span>
+                        <h3>Tenable</h3>
+                        <p>4:45 Goodwood | 12f | Tapster Stakes</p>
+                    </div>
+                    <div class="confidence">
+                        <span>Decision</span>
+                        <strong>96</strong>
+                    </div>
+                </div>
+                <div class="runner-body">
+                    <div class="mini-chart">
+                        <h4>RPR vs OR Trend</h4>
+                        <div class="chart-row"><span>Last run</span><i><b style="--w:82%"></b></i><strong>RPR 92</strong></div>
+                        <div class="chart-row"><span>OR</span><i><b style="--w:74%"></b></i><strong>OR 83</strong></div>
+                        <div class="chart-row"><span>Field avg</span><i><b style="--w:69%"></b></i><strong>78</strong></div>
+                    </div>
+                    <div class="mini-chart">
+                        <h4>Conditions Read</h4>
+                        <div class="chart-row"><span>Trip</span><i><b style="--w:92%"></b></i><strong>A</strong></div>
+                        <div class="chart-row"><span>Ground</span><i><b style="--w:74%"></b></i><strong>Good</strong></div>
+                        <div class="chart-row"><span>Finish</span><i><b style="--w:88%"></b></i><strong>Strong</strong></div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <aside>
+            <section class="side-panel">
+                <h3>Morning Shortlist</h3>
+                <div class="ranked">
+                    <div><b>1</b><span><strong>Tenable</strong>Full alignment</span><em>96</em></div>
+                    <div><b>2</b><span><strong>Jack Andrea</strong>Sectional support</span><em>74</em></div>
+                    <div><b>3</b><span><strong>Lake Como</strong>Ground fit</span><em>62</em></div>
+                    <div><b>4</b><span><strong>Rusheen Boy</strong>Mark angle</span><em>58</em></div>
+                </div>
+            </section>
+            <section class="side-panel">
+                <h3>Analyst Note</h3>
+                <p class="editorial-note">The page should feel like a racing desk: measured, clear, evidence-led. Colour is reserved for decisions, warnings and comparison, not decoration.</p>
+            </section>
+            <section class="side-panel">
+                <h3>Data Quality</h3>
+                <div class="ranked">
+                    <div><b>✓</b><span><strong>OR</strong>Current racecard feed</span><em>OK</em></div>
+                    <div><b>!</b><span><strong>RPR/TS</strong>Requires Standard feed</span><em>Hold</em></div>
+                    <div><b>✓</b><span><strong>History</strong>Stored database</span><em>OK</em></div>
+                </div>
+            </section>
+        </aside>
+    </div>
+</main>
+</body>
+</html>

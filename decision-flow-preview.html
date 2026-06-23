@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ForeFurlongs Animation Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#061120;
+      --panel:#0b1b2a;
+      --panel2:#102839;
+      --line:rgba(148,163,184,.18);
+      --text:#f4f7fb;
+      --muted:#94a9bd;
+      --green:#5dffb1;
+      --blue:#7dd3fc;
+      --gold:#ffd166;
+      --red:#ff6b7a;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      background:
+        radial-gradient(circle at 8% 0%,rgba(93,255,177,.16),transparent 30%),
+        radial-gradient(circle at 92% 8%,rgba(125,211,252,.14),transparent 28%),
+        linear-gradient(145deg,#061120,#020814 70%);
+      color:var(--text);
+      font-family:Inter,system-ui,sans-serif;
+      padding:28px;
+    }
+    .wrap{max-width:1180px;margin:0 auto;display:grid;gap:20px}
+    .hero{
+      border:1px solid rgba(93,255,177,.18);
+      border-radius:22px;
+      padding:26px;
+      background:linear-gradient(135deg,rgba(13,35,49,.82),rgba(4,10,20,.72));
+    }
+    .eyebrow{
+      display:block;
+      color:var(--green);
+      font-size:12px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-weight:900;
+      margin-bottom:10px;
+    }
+    h1,h2,h3,p{margin:0}
+    h1{font-family:Space Grotesk;font-size:clamp(38px,6vw,72px);line-height:.95}
+    .hero p{max-width:760px;color:#b7c6d6;font-size:20px;line-height:1.55;margin-top:14px}
+    .grid{display:grid;grid-template-columns:1.08fr .92fr;gap:20px}
+    .card{
+      position:relative;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:
+        radial-gradient(circle at 0% 0%,rgba(93,255,177,.10),transparent 34%),
+        linear-gradient(145deg,rgba(12,28,43,.92),rgba(3,8,18,.88));
+      padding:24px;
+      min-height:560px;
+    }
+    .card h2{font-family:Space Grotesk;font-size:30px;margin-bottom:8px}
+    .card > p{color:#9fb0c6;font-size:15px;line-height:1.5;margin-bottom:20px}
+    .runner-head{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:16px;
+      align-items:start;
+      padding-bottom:18px;
+      border-bottom:1px solid var(--line);
+      margin-bottom:18px;
+    }
+    .runner-head strong{display:block;font-family:Space Grotesk;font-size:32px;line-height:1}
+    .runner-head span{display:block;color:#9fb0c6;margin-top:6px;font-weight:800}
+    .final-score{
+      display:grid;
+      justify-items:center;
+      min-width:116px;
+      border:1px solid rgba(93,255,177,.35);
+      border-radius:18px;
+      padding:12px 16px;
+      background:rgba(2,6,15,.48);
+      box-shadow:0 0 34px rgba(93,255,177,.13);
+    }
+    .final-score small{color:#9fb0c6;text-transform:uppercase;font-size:10px;letter-spacing:.12em;font-weight:900}
+    .final-score b{font-family:Space Grotesk;font-size:38px;color:var(--green);line-height:1}
+    .flow{display:grid;gap:12px}
+    .flow-row{
+      --delay:0s;
+      display:grid;
+      grid-template-columns:130px 1fr 58px;
+      gap:12px;
+      align-items:center;
+      opacity:.35;
+      transform:translateY(10px);
+      animation:flowIn .7s ease forwards;
+      animation-delay:var(--delay);
+    }
+    .flow-row .label{color:#cbd5e1;font-weight:900}
+    .track{
+      height:18px;
+      border-radius:999px;
+      background:rgba(148,163,184,.13);
+      overflow:hidden;
+      border:1px solid rgba(148,163,184,.10);
+    }
+    .fill{
+      display:block;
+      height:100%;
+      width:0;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--gold),var(--green),var(--blue));
+      box-shadow:0 0 18px rgba(93,255,177,.26);
+      animation:barGrow 1s cubic-bezier(.2,.8,.2,1) forwards;
+      animation-delay:calc(var(--delay) + .25s);
+    }
+    .flow-row .delta{
+      font-family:Space Grotesk;
+      color:var(--green);
+      font-size:20px;
+      text-align:right;
+      opacity:0;
+      animation:pop .45s ease forwards;
+      animation-delay:calc(var(--delay) + .85s);
+    }
+    .flow-row.caution .fill{background:linear-gradient(90deg,var(--red),var(--gold))}
+    .flow-row.caution .delta{color:var(--gold)}
+    .decision-result{
+      margin-top:22px;
+      border:1px solid rgba(93,255,177,.30);
+      border-radius:18px;
+      padding:18px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:14px;
+      align-items:center;
+      background:linear-gradient(135deg,rgba(93,255,177,.12),rgba(125,211,252,.08));
+      opacity:0;
+      transform:scale(.98);
+      animation:resultIn .75s ease forwards;
+      animation-delay:5.6s;
+    }
+    .decision-result strong{font-family:Space Grotesk;font-size:26px;color:var(--green)}
+    .decision-result span{display:block;color:#dbeafe;line-height:1.45;margin-top:5px}
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:999px;
+      padding:13px 18px;
+      min-width:172px;
+      background:linear-gradient(135deg,var(--green),var(--blue));
+      color:#02131b;
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-weight:900;
+      box-shadow:0 0 34px rgba(93,255,177,.30);
+    }
+    .trend-stage{
+      position:relative;
+      min-height:390px;
+      border:1px solid rgba(148,163,184,.14);
+      border-radius:18px;
+      padding:18px;
+      background:rgba(2,6,15,.34);
+    }
+    .legend{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+    .legend span{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      color:#cbd5e1;
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+    }
+    .dot{width:10px;height:10px;border-radius:50%;background:var(--green)}
+    .dot.blue{background:var(--blue)}
+    .dot.gold{background:var(--gold)}
+    .chart{
+      width:100%;
+      height:260px;
+      overflow:visible;
+    }
+    .gridline{stroke:rgba(148,163,184,.12);stroke-width:1}
+    .axis-label{fill:#8ea3bb;font-size:11px;font-weight:800}
+    .line{
+      fill:none;
+      stroke-width:5;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+      stroke-dasharray:720;
+      stroke-dashoffset:720;
+      animation:drawLine 2.8s ease forwards;
+    }
+    .line.rpr{stroke:var(--green)}
+    .line.speed{stroke:var(--blue);animation-delay:.35s}
+    .line.or{stroke:var(--gold);animation-delay:.7s}
+    .point{
+      opacity:0;
+      transform-box:fill-box;
+      transform-origin:center;
+      animation:pointIn .35s ease forwards;
+    }
+    .run-card-row{
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:8px;
+      margin-top:10px;
+    }
+    .run-tile{
+      border:1px solid rgba(148,163,184,.16);
+      border-radius:13px;
+      padding:10px;
+      background:rgba(255,255,255,.035);
+      opacity:0;
+      transform:translateY(8px);
+      animation:flowIn .55s ease forwards;
+    }
+    .run-tile b{display:block;font-family:Space Grotesk;font-size:22px;color:#f8fafc}
+    .run-tile span{display:block;color:#8ea3bb;font-size:11px;margin-top:4px;font-weight:800}
+    .readout{
+      margin-top:18px;
+      display:grid;
+      gap:10px;
+    }
+    .readout div{
+      border:1px solid rgba(93,255,177,.18);
+      border-radius:14px;
+      padding:13px;
+      background:rgba(93,255,177,.055);
+    }
+    .readout span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:900}
+    .readout strong{display:block;margin-top:5px;color:#f8fafc;font-size:16px;line-height:1.35}
+    @keyframes flowIn{to{opacity:1;transform:translateY(0)}}
+    @keyframes barGrow{to{width:var(--w)}}
+    @keyframes pop{to{opacity:1;transform:scale(1)}}
+    @keyframes resultIn{to{opacity:1;transform:scale(1)}}
+    @keyframes drawLine{to{stroke-dashoffset:0}}
+    @keyframes pointIn{to{opacity:1;transform:scale(1.08)}}
+    @media(max-width:900px){
+      body{padding:14px}
+      .grid{grid-template-columns:1fr}
+      .runner-head,.decision-result{grid-template-columns:1fr}
+      .final-score{justify-items:start;width:max-content}
+      .flow-row{grid-template-columns:1fr}
+      .flow-row .delta{text-align:left}
+      .run-card-row{grid-template-columns:repeat(3,1fr)}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <span class="eyebrow">Animation concept preview</span>
+      <h1>Decision Flow + Form Trend</h1>
+      <p>A prototype of how ForeFurlongs could explain a runner visually: first the model layers build the final decision, then the recent form trend shows whether the profile is improving or flattening.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <div class="runner-head">
+          <div>
+            <span class="eyebrow">Decision flow</span>
+            <strong>Tenability</strong>
+            <span>4:45 Goodwood | 12f | Tapster Stakes</span>
+          </div>
+          <div class="final-score">
+            <small>Confidence</small>
+            <b>96.0</b>
+          </div>
+        </div>
+        <p>Each model layer lights up in order, showing why the horse moves from possible interest to a clear decision.</p>
+
+        <div class="flow">
+          <div class="flow-row" style="--delay:.1s"><span class="label">Base profile</span><div class="track"><i class="fill" style="--w:56%"></i></div><span class="delta">56</span></div>
+          <div class="flow-row" style="--delay:.7s"><span class="label">Current RPR</span><div class="track"><i class="fill" style="--w:78%"></i></div><span class="delta">+8</span></div>
+          <div class="flow-row" style="--delay:1.3s"><span class="label">SpeedScore</span><div class="track"><i class="fill" style="--w:82%"></i></div><span class="delta">+7</span></div>
+          <div class="flow-row" style="--delay:1.9s"><span class="label">Trip / ground</span><div class="track"><i class="fill" style="--w:88%"></i></div><span class="delta">+6</span></div>
+          <div class="flow-row" style="--delay:2.5s"><span class="label">Sectionals</span><div class="track"><i class="fill" style="--w:80%"></i></div><span class="delta">+5</span></div>
+          <div class="flow-row caution" style="--delay:3.1s"><span class="label">Race risk</span><div class="track"><i class="fill" style="--w:34%"></i></div><span class="delta">-2</span></div>
+          <div class="flow-row" style="--delay:3.7s"><span class="label">Alignment</span><div class="track"><i class="fill" style="--w:100%"></i></div><span class="delta">6/6</span></div>
+        </div>
+
+        <div class="decision-result">
+          <div>
+            <strong>Primary Candidate</strong>
+            <span>Several independent layers agree. Strong enough to review staking once price and race conditions are checked.</span>
+          </div>
+          <span class="badge">Stake Review</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="eyebrow">Form trend</span>
+        <h2>Last 6 runs visual</h2>
+        <p>Recent form becomes easier to scan: RPR, SpeedScore and mark move together, with the run tiles giving the finishing context.</p>
+
+        <div class="trend-stage">
+          <div class="legend">
+            <span><i class="dot"></i>RPR</span>
+            <span><i class="dot blue"></i>SpeedScore</span>
+            <span><i class="dot gold"></i>Mark</span>
+          </div>
+          <svg class="chart" viewBox="0 0 520 260" role="img" aria-label="Animated form trend chart">
+            <line class="gridline" x1="32" y1="40" x2="500" y2="40"></line>
+            <line class="gridline" x1="32" y1="100" x2="500" y2="100"></line>
+            <line class="gridline" x1="32" y1="160" x2="500" y2="160"></line>
+            <line class="gridline" x1="32" y1="220" x2="500" y2="220"></line>
+            <text class="axis-label" x="0" y="44">110</text>
+            <text class="axis-label" x="7" y="104">95</text>
+            <text class="axis-label" x="7" y="164">80</text>
+            <text class="axis-label" x="7" y="224">65</text>
+
+            <path class="line rpr" d="M45 176 C80 170,90 158,125 154 S190 135,205 130 S285 114,285 108 S350 86,365 78 S440 70,455 62"></path>
+            <path class="line speed" d="M45 188 C85 180,95 166,125 160 S190 146,205 138 S285 120,285 116 S350 98,365 90 S440 78,455 72"></path>
+            <path class="line or" d="M45 140 C90 140,90 140,125 140 S190 138,205 138 S285 136,285 136 S350 132,365 132 S440 128,455 128"></path>
+
+            <circle class="point" style="animation-delay:.7s" cx="45" cy="176" r="7" fill="#5dffb1"></circle>
+            <circle class="point" style="animation-delay:1s" cx="125" cy="154" r="7" fill="#5dffb1"></circle>
+            <circle class="point" style="animation-delay:1.3s" cx="205" cy="130" r="7" fill="#5dffb1"></circle>
+            <circle class="point" style="animation-delay:1.6s" cx="285" cy="108" r="7" fill="#5dffb1"></circle>
+            <circle class="point" style="animation-delay:1.9s" cx="365" cy="78" r="7" fill="#5dffb1"></circle>
+            <circle class="point" style="animation-delay:2.2s" cx="455" cy="62" r="7" fill="#5dffb1"></circle>
+          </svg>
+
+          <div class="run-card-row">
+            <div class="run-tile" style="animation-delay:.2s"><b>6th</b><span>RPR 78</span></div>
+            <div class="run-tile" style="animation-delay:.4s"><b>4th</b><span>RPR 83</span></div>
+            <div class="run-tile" style="animation-delay:.6s"><b>2nd</b><span>RPR 88</span></div>
+            <div class="run-tile" style="animation-delay:.8s"><b>2nd</b><span>RPR 94</span></div>
+            <div class="run-tile" style="animation-delay:1s"><b>1st</b><span>RPR 100</span></div>
+            <div class="run-tile" style="animation-delay:1.2s"><b>1st</b><span>RPR 104</span></div>
+          </div>
+        </div>
+
+        <div class="readout">
+          <div><span>Simple read</span><strong>Progressive profile: RPR and SpeedScore are climbing while the mark has risen more slowly.</strong></div>
+          <div><span>Decision use</span><strong>Helps explain why the horse is interesting before the full technical evidence is opened.</strong></div>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

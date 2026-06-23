@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ForeFurlongs Decision Wheel Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;650;800&family=Source+Serif+4:wght@650;760&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --paper:#f7f3ea;
+      --panel:#fffdf8;
+      --ink:#0e1d17;
+      --muted:#5d6962;
+      --line:#d8cdbb;
+      --green:#0f6b48;
+      --green-soft:#dff0e7;
+      --navy:#16384d;
+      --gold:#b78627;
+      --amber:#efd9a5;
+      --red:#b65055;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--paper);
+      color:var(--ink);
+      font-family:Inter,Arial,sans-serif;
+      padding:28px;
+    }
+    .page{
+      max-width:1180px;
+      margin:0 auto;
+      display:grid;
+      gap:18px;
+    }
+    .hero{
+      border-top:5px solid var(--green);
+      background:var(--panel);
+      border-bottom:1px solid var(--line);
+      padding:26px 30px;
+    }
+    .eyebrow{
+      color:var(--green);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+    h1{
+      margin:8px 0 6px;
+      font-family:"Source Serif 4",Georgia,serif;
+      font-size:50px;
+      line-height:.96;
+    }
+    .hero p{
+      max-width:760px;
+      margin:0;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.45;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:18px;
+      align-items:start;
+    }
+    .card{
+      background:var(--panel);
+      border:1px solid var(--line);
+      padding:22px;
+    }
+    .runner-head{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      border-bottom:1px solid var(--line);
+      padding-bottom:16px;
+      margin-bottom:18px;
+    }
+    h2{
+      margin:4px 0 4px;
+      font-family:"Source Serif 4",Georgia,serif;
+      font-size:36px;
+      line-height:1;
+    }
+    .sub{
+      color:var(--muted);
+      font-weight:650;
+    }
+    .status{
+      align-self:start;
+      display:inline-flex;
+      background:var(--green);
+      color:#fff;
+      padding:9px 12px;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .wheel-wrap{
+      display:grid;
+      grid-template-columns:370px 1fr;
+      gap:20px;
+      align-items:center;
+    }
+    .wheel{
+      width:370px;
+      height:370px;
+      position:relative;
+      display:grid;
+      place-items:center;
+    }
+    svg{width:100%;height:100%;overflow:visible}
+    .ring{fill:none;stroke:#e1d7c8;stroke-width:1}
+    .axis{stroke:#c8bda9;stroke-width:1}
+    .shape-base{fill:rgba(15,107,72,.10);stroke:rgba(15,107,72,.22);stroke-width:1}
+    .shape-strong{fill:rgba(15,107,72,.28);stroke:var(--green);stroke-width:3}
+    .shape-mixed{fill:rgba(183,134,39,.22);stroke:var(--gold);stroke-width:3}
+    .dot{fill:var(--green);stroke:#fffdf8;stroke-width:3}
+    .dot.warn{fill:var(--gold)}
+    .axis-label{
+      font-size:10px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      fill:#33423b;
+    }
+    .center{
+      position:absolute;
+      width:122px;
+      height:122px;
+      border:1px solid #a8c6b6;
+      background:#fffdf8;
+      display:grid;
+      place-content:center;
+      text-align:center;
+      box-shadow:0 0 0 10px rgba(255,253,248,.82);
+    }
+    .center strong{
+      display:block;
+      color:var(--green);
+      font-size:38px;
+      line-height:1;
+    }
+    .center span{
+      display:block;
+      margin-top:4px;
+      color:var(--muted);
+      font-size:10px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .readout{
+      display:grid;
+      gap:9px;
+    }
+    .metric{
+      display:grid;
+      grid-template-columns:116px 1fr 42px;
+      gap:10px;
+      align-items:center;
+    }
+    .metric span{
+      color:#33423b;
+      font-size:12px;
+      font-weight:800;
+    }
+    .track{
+      height:9px;
+      background:#e0d7c8;
+      overflow:hidden;
+    }
+    .track b{
+      display:block;
+      height:100%;
+      width:var(--w);
+      background:var(--green);
+    }
+    .track b.warn{background:var(--gold)}
+    .metric strong{
+      text-align:right;
+      font-size:13px;
+    }
+    .decision{
+      margin-top:16px;
+      border-left:4px solid var(--green);
+      background:#eef7f2;
+      padding:14px 16px;
+    }
+    .decision strong{
+      display:block;
+      margin-bottom:5px;
+      font-family:"Source Serif 4",Georgia,serif;
+      font-size:23px;
+    }
+    .decision p{
+      margin:0;
+      color:#25352f;
+      line-height:1.45;
+    }
+    .side{
+      display:grid;
+      gap:18px;
+    }
+    .mini-card h3{
+      margin:0 0 12px;
+      font-family:"Source Serif 4",Georgia,serif;
+      font-size:28px;
+    }
+    .compare-note{
+      border-top:1px solid var(--line);
+      padding-top:14px;
+      color:var(--muted);
+      line-height:1.5;
+    }
+    .chips{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+    .chip{
+      border:1px solid #a8c6b6;
+      background:var(--green-soft);
+      color:var(--green);
+      padding:7px 9px;
+      font-size:11px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+    }
+    .chip.warn{
+      border-color:#d4b66e;
+      background:#f2e2bb;
+      color:#5e410d;
+    }
+    @media(max-width:900px){
+      body{padding:14px}
+      .grid,.wheel-wrap{grid-template-columns:1fr}
+      .wheel{width:min(100%,360px);height:auto;aspect-ratio:1}
+      h1{font-size:40px}
+      .runner-head{display:grid}
+      .metric{grid-template-columns:100px 1fr 38px}
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">ForeFurlongs Visual Lab</div>
+      <h1>Decision Strength Wheel</h1>
+      <p>A compact visual profile that shows whether a horse is genuinely rounded across the model, or whether one big number is hiding obvious weaknesses.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <div class="runner-head">
+          <div>
+            <div class="eyebrow">Premium Runner Profile</div>
+            <h2>Tenable Example</h2>
+            <div class="sub">4:45 Goodwood | 12f | Primary Candidate</div>
+          </div>
+          <div class="status">Complete profile</div>
+        </div>
+
+        <div class="wheel-wrap">
+          <div class="wheel">
+            <svg viewBox="0 0 360 360" aria-label="Decision strength wheel">
+              <circle class="ring" cx="180" cy="180" r="45"></circle>
+              <circle class="ring" cx="180" cy="180" r="78"></circle>
+              <circle class="ring" cx="180" cy="180" r="111"></circle>
+              <circle class="ring" cx="180" cy="180" r="144"></circle>
+              <line class="axis" x1="180" y1="180" x2="180" y2="36"></line>
+              <line class="axis" x1="180" y1="180" x2="292" y2="90"></line>
+              <line class="axis" x1="180" y1="180" x2="320" y2="212"></line>
+              <line class="axis" x1="180" y1="180" x2="244" y2="310"></line>
+              <line class="axis" x1="180" y1="180" x2="116" y2="310"></line>
+              <line class="axis" x1="180" y1="180" x2="40" y2="212"></line>
+              <line class="axis" x1="180" y1="180" x2="68" y2="90"></line>
+              <polygon class="shape-base" points="180,36 292,90 320,212 244,310 116,310 40,212 68,90"></polygon>
+              <polygon class="shape-strong" points="180,47 280,100 300,207 233,287 119,304 61,207 78,98"></polygon>
+              <circle class="dot" cx="180" cy="47" r="6"></circle>
+              <circle class="dot" cx="280" cy="100" r="6"></circle>
+              <circle class="dot" cx="300" cy="207" r="6"></circle>
+              <circle class="dot" cx="233" cy="287" r="6"></circle>
+              <circle class="dot" cx="119" cy="304" r="6"></circle>
+              <circle class="dot" cx="61" cy="207" r="6"></circle>
+              <circle class="dot" cx="78" cy="98" r="6"></circle>
+              <text class="axis-label" x="180" y="22" text-anchor="middle">Confidence</text>
+              <text class="axis-label" x="306" y="82" text-anchor="start">Agreement</text>
+              <text class="axis-label" x="333" y="216" text-anchor="start">Speed</text>
+              <text class="axis-label" x="252" y="334" text-anchor="middle">RPR/OR</text>
+              <text class="axis-label" x="108" y="334" text-anchor="middle">Trip/Ground</text>
+              <text class="axis-label" x="26" y="216" text-anchor="end">Placement</text>
+              <text class="axis-label" x="54" y="82" text-anchor="end">Sectionals</text>
+            </svg>
+            <div class="center">
+              <strong>91</strong>
+              <span>Decision read</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="readout">
+              <div class="metric"><span>Confidence</span><i class="track"><b style="--w:91%"></b></i><strong>91</strong></div>
+              <div class="metric"><span>Agreement</span><i class="track"><b style="--w:86%"></b></i><strong>6/6</strong></div>
+              <div class="metric"><span>SpeedScore</span><i class="track"><b style="--w:82%"></b></i><strong>102</strong></div>
+              <div class="metric"><span>RPR vs OR</span><i class="track"><b style="--w:78%"></b></i><strong>+7</strong></div>
+              <div class="metric"><span>Trip/Ground</span><i class="track"><b style="--w:88%"></b></i><strong>A</strong></div>
+              <div class="metric"><span>Placement</span><i class="track"><b style="--w:84%"></b></i><strong>84%</strong></div>
+              <div class="metric"><span>Sectionals</span><i class="track"><b style="--w:80%"></b></i><strong>Good</strong></div>
+            </div>
+            <div class="decision">
+              <strong>Strong, rounded profile</strong>
+              <p>The shape is almost complete: the model is not relying on one angle. Speed, ratings, placement and conditions all support the same horse.</p>
+            </div>
+            <div class="chips">
+              <span class="chip">Primary</span>
+              <span class="chip">6/6 agreement</span>
+              <span class="chip">Well handicapped</span>
+              <span class="chip">Speed support</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <aside class="side">
+        <article class="card mini-card">
+          <h3>How it helps</h3>
+          <div class="compare-note">
+            A full-looking wheel means the horse has strength across several independent angles. A lopsided wheel means the score may be driven by one standout metric, so the user should be more cautious.
+          </div>
+        </article>
+
+        <article class="card mini-card">
+          <div class="runner-head">
+            <div>
+              <div class="eyebrow">Comparison Example</div>
+              <h3>Patchy contender</h3>
+              <div class="sub">Decent score, but weaker evidence spread</div>
+            </div>
+          </div>
+          <div class="wheel" style="width:100%;height:auto;aspect-ratio:1;max-width:360px;margin:auto">
+            <svg viewBox="0 0 360 360" aria-label="Patchy decision wheel">
+              <circle class="ring" cx="180" cy="180" r="45"></circle>
+              <circle class="ring" cx="180" cy="180" r="78"></circle>
+              <circle class="ring" cx="180" cy="180" r="111"></circle>
+              <circle class="ring" cx="180" cy="180" r="144"></circle>
+              <line class="axis" x1="180" y1="180" x2="180" y2="36"></line>
+              <line class="axis" x1="180" y1="180" x2="292" y2="90"></line>
+              <line class="axis" x1="180" y1="180" x2="320" y2="212"></line>
+              <line class="axis" x1="180" y1="180" x2="244" y2="310"></line>
+              <line class="axis" x1="180" y1="180" x2="116" y2="310"></line>
+              <line class="axis" x1="180" y1="180" x2="40" y2="212"></line>
+              <line class="axis" x1="180" y1="180" x2="68" y2="90"></line>
+              <polygon class="shape-base" points="180,36 292,90 320,212 244,310 116,310 40,212 68,90"></polygon>
+              <polygon class="shape-mixed" points="180,83 245,128 287,205 214,248 142,257 100,198 108,122"></polygon>
+              <circle class="dot warn" cx="180" cy="83" r="6"></circle>
+              <circle class="dot warn" cx="245" cy="128" r="6"></circle>
+              <circle class="dot warn" cx="287" cy="205" r="6"></circle>
+              <circle class="dot warn" cx="214" cy="248" r="6"></circle>
+              <circle class="dot warn" cx="142" cy="257" r="6"></circle>
+              <circle class="dot warn" cx="100" cy="198" r="6"></circle>
+              <circle class="dot warn" cx="108" cy="122" r="6"></circle>
+              <text class="axis-label" x="180" y="22" text-anchor="middle">Confidence</text>
+              <text class="axis-label" x="306" y="82" text-anchor="start">Agreement</text>
+              <text class="axis-label" x="333" y="216" text-anchor="start">Speed</text>
+              <text class="axis-label" x="252" y="334" text-anchor="middle">RPR/OR</text>
+              <text class="axis-label" x="108" y="334" text-anchor="middle">Trip/Ground</text>
+              <text class="axis-label" x="26" y="216" text-anchor="end">Placement</text>
+              <text class="axis-label" x="54" y="82" text-anchor="end">Sectionals</text>
+            </svg>
+            <div class="center">
+              <strong style="color:var(--gold)">64</strong>
+              <span>Decision read</span>
+            </div>
+          </div>
+          <div class="decision" style="border-left-color:var(--gold);background:#f8efd9">
+            <strong>Useful, but not complete</strong>
+            <p>There are positives, but the visual makes the missing support obvious before the user gets buried in the evidence.</p>
+          </div>
+          <div class="chips">
+            <span class="chip warn">Shortlist</span>
+            <span class="chip warn">Check price</span>
+            <span class="chip warn">Ground question</span>
+          </div>
+        </article>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
