@@ -186,6 +186,21 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 .race-scan-scroll.dragging{cursor:grabbing;user-select:none}
 .race-scan-scroll.dragging *{user-select:none}
 .scan-form{display:inline-flex;align-items:center;min-height:28px;max-width:132px;padding:5px 8px;border:1px solid #b7a578;border-left:3px solid var(--green);border-radius:2px;background:#fffaf0;color:#17211d;font-family:Sora;font-size:11px;font-weight:850;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.scan-form-wrap{position:relative;display:inline-flex;align-items:center;outline:0}
+.scan-form-wrap:focus-visible .scan-form{box-shadow:0 0 0 3px rgba(9,87,55,.16)}
+.form-popover-card{position:absolute;left:0;top:calc(100% + 9px);z-index:60;width:min(760px,78vw);max-height:360px;overflow:hidden;display:none;padding:12px;border:1px solid #b7a578;border-top:3px solid var(--editorial-green);background:#fffdf8;box-shadow:0 16px 40px rgba(35,31,23,.22);color:var(--ink);text-align:left}
+.scan-form-wrap:hover .form-popover-card,.scan-form-wrap:focus-within .form-popover-card{display:block}
+.form-popover-card:before{content:"";position:absolute;left:22px;top:-8px;width:14px;height:14px;background:#fffdf8;border-left:1px solid #b7a578;border-top:1px solid #b7a578;transform:rotate(45deg)}
+.form-popover-card>strong{display:block;margin:0 0 2px;font-family:Source Serif 4,Georgia,serif;font-size:18px;color:var(--ink)!important}
+.form-popover-card>small,.form-popover-card>em{display:block;margin:0 0 9px;color:#596761!important;font-size:11px;font-style:normal}
+.form-popover-scroll{display:block;max-height:286px;overflow:auto;border:1px solid #ded3c2}
+.form-popover-card table{width:100%;border-collapse:collapse;min-width:710px;background:#fffdf8}
+.form-popover-card th{padding:8px 9px!important;background:#1f2f28!important;color:#fff!important;font-family:Sora;font-size:9px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.form-popover-card td{padding:8px 9px!important;border-bottom:1px solid #eadfce!important;background:#fffdf8!important;color:#17211d!important;font-size:12px;vertical-align:top}
+.form-popover-card tr:nth-child(even) td{background:#f9f4ea!important}
+.form-popover-card td strong{display:block;color:var(--ink)!important;font-size:12px}.form-popover-card td small{display:block;margin-top:2px;color:#596761!important;font-size:10px;line-height:1.25}
+.mini-rating{display:inline-flex;align-items:center;justify-content:center;min-width:34px;padding:4px 7px;border-radius:2px;border:1px solid #d8cdbb;background:#f6f1e7;color:#25352f;font-family:Sora;font-size:11px;font-weight:900}
+.mini-rating.positive{background:#0f4f35;color:#fff;border-color:#0f4f35}.mini-rating.negative{background:#ead5d5;color:#8e2f2f;border-color:#d0aaaa}.mini-rating.speed{background:#dcebf0;color:#17364a;border-color:#b9d4df}
 .compare-tray.active{background:#fffaf0!important;border-color:#b7a578!important}
 .compare-board-grid{grid-template-columns:repeat(auto-fit,minmax(235px,1fr))!important}
 .compare-card{border:1px solid #b7a578!important;background:#fffaf0!important;border-left:4px solid var(--green)!important;padding:14px!important}
@@ -549,7 +564,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Positive form proof</strong>
+                <strong>Positive franked form</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>19</b></div>
@@ -1285,7 +1300,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Some form support</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>38</b></div>
@@ -2109,7 +2124,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Strong franked form</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>68</b></div>
@@ -2919,7 +2934,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <section class="franked-form-panel muted">
             <div class="franked-form-head">
                 <div>
-                    <span class="micro-label">Race form proof</span>
+                    <span class="micro-label">Franked form</span>
                     <strong>Not franked yet</strong>
                     <p>No strong named-rival evidence from recent races yet.</p>
                 </div>
@@ -3642,7 +3657,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Some form support</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>43</b></div>
@@ -4466,7 +4481,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <section class="franked-form-panel muted">
             <div class="franked-form-head">
                 <div>
-                    <span class="micro-label">Race form proof</span>
+                    <span class="micro-label">Franked form</span>
                     <strong>Not franked yet</strong>
                     <p>No strong named-rival evidence from recent races yet.</p>
                 </div>
@@ -5248,7 +5263,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>23</b></div>
@@ -6072,7 +6087,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>32</b></div>
@@ -6904,7 +6919,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>26</b></div>
@@ -7728,7 +7743,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Positive form proof</strong>
+                <strong>Positive franked form</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>8</b></div>
@@ -8544,7 +8559,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>33</b></div>
@@ -9376,7 +9391,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Some form support</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>42</b></div>
@@ -10208,7 +10223,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>22</b></div>
@@ -11022,7 +11037,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>25</b></div>
@@ -11839,7 +11854,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <section class="franked-form-panel muted">
             <div class="franked-form-head">
                 <div>
-                    <span class="micro-label">Race form proof</span>
+                    <span class="micro-label">Franked form</span>
                     <strong>Not franked yet</strong>
                     <p>No strong named-rival evidence from recent races yet.</p>
                 </div>
@@ -12600,7 +12615,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Some form support</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>35</b></div>
@@ -13432,7 +13447,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Some form support</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>40</b></div>
@@ -14264,7 +14279,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>20</b></div>
@@ -15096,7 +15111,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Some form support</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>36</b></div>
@@ -15928,7 +15943,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Elite franked form</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>85</b></div>
@@ -16760,7 +16775,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>30</b></div>
@@ -17585,7 +17600,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Some form proof</strong>
+                <strong>Some franked form</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>2</b></div>
@@ -18380,7 +18395,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>33</b></div>
@@ -19212,7 +19227,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>18</b></div>
@@ -20016,7 +20031,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Some form proof</strong>
+                <strong>Some franked form</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>0</b></div>
@@ -20723,7 +20738,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Positive franked form</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>50</b></div>
@@ -21555,7 +21570,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Some form support</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>46</b></div>
@@ -22358,7 +22373,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <section class="franked-form-panel muted">
             <div class="franked-form-head">
                 <div>
-                    <span class="micro-label">Race form proof</span>
+                    <span class="micro-label">Franked form</span>
                     <strong>Not franked yet</strong>
                     <p>No strong named-rival evidence from recent races yet.</p>
                 </div>
@@ -23060,7 +23075,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Some form support</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>43</b></div>
@@ -23892,7 +23907,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Strong franked form</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>72</b></div>
@@ -24725,7 +24740,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>6</b></div>
@@ -25557,7 +25572,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>19</b></div>
@@ -26389,7 +26404,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>20</b></div>
@@ -27204,7 +27219,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>17</b></div>
@@ -28032,7 +28047,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Some form proof</strong>
+                <strong>Some franked form</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>0</b></div>
@@ -28869,7 +28884,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Positive form proof</strong>
+                <strong>Positive franked form</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>22</b></div>
@@ -29685,7 +29700,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Positive form proof</strong>
+                <strong>Positive franked form</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>14</b></div>
@@ -30539,7 +30554,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Strong franked form</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>77</b></div>
@@ -31371,7 +31386,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>20</b></div>
@@ -32225,7 +32240,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>34</b></div>
@@ -33057,7 +33072,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>18</b></div>
@@ -33889,7 +33904,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>24</b></div>
@@ -34743,7 +34758,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Positive form proof</strong>
+                <strong>Positive franked form</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>10</b></div>
@@ -35575,7 +35590,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>20</b></div>
@@ -36407,7 +36422,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Some form support</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>42</b></div>
@@ -37247,7 +37262,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Some form proof</strong>
+                <strong>Some franked form</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>0</b></div>
@@ -38012,7 +38027,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Some form support</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>41</b></div>
@@ -38858,7 +38873,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>20</b></div>
@@ -39673,7 +39688,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Positive form proof</strong>
+                <strong>Positive franked form</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>15</b></div>
@@ -40505,7 +40520,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Some form support</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>44</b></div>
@@ -41264,7 +41279,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Some form proof</strong>
+                <strong>Some franked form</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>2</b></div>
@@ -42020,7 +42035,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Some form support</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>48</b></div>
@@ -42834,7 +42849,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Some form support</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>45</b></div>
@@ -43670,7 +43685,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>24</b></div>
@@ -44516,7 +44531,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>18</b></div>
@@ -45348,7 +45363,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Positive franked form</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>63</b></div>
@@ -46151,7 +46166,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Some form proof</strong>
+                <strong>Some franked form</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>0</b></div>
@@ -46887,7 +46902,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>31</b></div>
@@ -47702,7 +47717,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>34</b></div>
@@ -48556,7 +48571,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="franked-form-head">
             <div>
                 <span class="micro-label">Race form proof</span>
-                <strong>Strong form proof</strong>
+                <strong>Strongly franked</strong>
                 <p>Form strength unproven</p>
             </div>
             <div class="franked-strength"><span>Proof rating</span><b>19</b></div>
