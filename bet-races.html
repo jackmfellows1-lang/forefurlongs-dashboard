@@ -254,6 +254,9 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 .last-six-strip .form-tile.place{background:#dcebf0!important}
 .last-six-strip .form-tile.run{background:#fffaf0!important}
 .last-six-strip :where(span,small,em){color:#25352f!important}
+.angle-filter-panel{display:grid;gap:10px;margin:0 0 12px;padding:12px 13px;border:1px solid #d8cdbb;background:linear-gradient(90deg,#fffdf8,#f6efe3);border-left:4px solid var(--editorial-green)}
+.angle-filter-title{display:flex;justify-content:space-between;gap:12px;align-items:end}.angle-filter-title span{font-family:Sora;font-size:10px;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:var(--editorial-green)}.angle-filter-title strong{font-family:Sora;font-size:11px;color:#6f6251;text-align:right}
+.angle-filter-options{display:flex;flex-wrap:wrap;gap:7px;align-items:center}.angle-filter-options label{display:inline-flex;align-items:center;gap:6px;margin:0;padding:7px 9px;border:1px solid #d9cba8;border-radius:999px;background:#fbf4df;color:#3c342a;font-family:Sora;font-size:10px;font-weight:850;cursor:pointer;transition:.16s}.angle-filter-options label:has(input:checked){background:var(--editorial-green);border-color:var(--editorial-green);color:#fff;box-shadow:0 5px 14px rgba(9,87,55,.16)}.angle-filter-options input{accent-color:var(--editorial-green);margin:0}.angle-filter-options button{border:1px solid #cdbb98;background:#fffdf8;color:#6b4c10;border-radius:999px;padding:7px 10px;font-family:Sora;font-size:10px;font-weight:900;cursor:pointer}.race-scan-table tr.angle-hidden{display:none!important}
 
 /* Publication readability contract: no pale-on-paper evidence blocks */
 .content :where(.ground-evidence-panel,.placement-evidence-panel,.conditions-match-panel,.handicap-opportunity-panel,.hidden-run-panel,.visual-trend-panel,.split-speed-chart,.distance-timing-panel,.extra-intel-panel,.jumps-intel-panel,.previous-runs,.last-six-strip,.sectional-angle,.sectional-detail-drawer,.ground-record-drawer,.runner-decision-panel,.predictive-edge-panel){background:#fffdf8!important;border:1px solid var(--line)!important;border-radius:0!important;box-shadow:none!important}
@@ -474,6 +477,23 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <small>Tick runners to compare side by side, then open the full evidence below.</small>
         </div>
+        <div class="angle-filter-panel" data-angle-filter>
+            <div class="angle-filter-title">
+                <span>Find runners by angle</span>
+                <strong data-angle-count>Showing all runners</strong>
+            </div>
+            <div class="angle-filter-options">
+                <label><input type="checkbox" value="lto-place"> <span>Won/placed LTO</span></label>
+                <label><input type="checkbox" value="strong-form"> <span>Strong form proof</span></label>
+                <label><input type="checkbox" value="ground"> <span>Ground fit</span></label>
+                <label><input type="checkbox" value="top-ffr"> <span>Top 3 FFR</span></label>
+                <label><input type="checkbox" value="top-speed"> <span>Top 3 SpeedScore</span></label>
+                <label><input type="checkbox" value="distance-win"> <span>Distance winner</span></label>
+                <label><input type="checkbox" value="course-win"> <span>Course winner</span></label>
+                <label><input type="checkbox" value="cd-win"> <span>C&amp;D winner</span></label>
+                <button type="button" data-angle-clear>Clear</button>
+            </div>
+        </div>
         <div class="compare-tray"><span>Select two or more runners to compare</span></div>
         <div class="race-scan-scroll">
             <table class="race-scan-table">
@@ -505,7 +525,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                     </tr>
                 </thead>
                 <tbody>
-        <tr data-original-index="1">
+        <tr data-original-index="1" data-angle-row data-angle-tags="top-speed">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -640,7 +660,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="2">
+        <tr data-original-index="2" data-angle-row data-angle-tags="top-ffr top-speed">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -775,7 +795,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="3">
+        <tr data-original-index="3" data-angle-row data-angle-tags="">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -910,7 +930,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="4">
+        <tr data-original-index="4" data-angle-row data-angle-tags="top-ffr top-speed">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -1045,7 +1065,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="5">
+        <tr data-original-index="5" data-angle-row data-angle-tags="">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -1180,7 +1200,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="6">
+        <tr data-original-index="6" data-angle-row data-angle-tags="top-ffr">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -1315,7 +1335,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="WATCH ONLY"><span class="scan-pill status-neutral">WATCH ONLY</span></td>
         </tr>
         
-        <tr data-original-index="7">
+        <tr data-original-index="7" data-angle-row data-angle-tags="">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -1450,7 +1470,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="WATCH ONLY"><span class="scan-pill status-neutral">WATCH ONLY</span></td>
         </tr>
         
-        <tr data-original-index="8">
+        <tr data-original-index="8" data-angle-row data-angle-tags="top-ffr">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -1585,7 +1605,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="9">
+        <tr data-original-index="9" data-angle-row data-angle-tags="top-ffr">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -1720,7 +1740,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="10">
+        <tr data-original-index="10" data-angle-row data-angle-tags="">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -1855,7 +1875,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="11">
+        <tr data-original-index="11" data-angle-row data-angle-tags="">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -2085,54 +2105,6 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         </div>
     </section>
     
-                
-    <section class="predictive-edge-panel">
-        <div class="predictive-edge-head">
-            <div>
-                <span class="micro-label">Predictive edge</span>
-                <strong class="good">Predictive support</strong>
-                <p>Reliable; Mild bounce watch; No hidden upgrade; Par capable; Improving</p>
-            </div>
-            <div class="predictive-edge-score">
-                <span>confidence nudge</span>
-                <strong class="good">+2.0</strong>
-            </div>
-        </div>
-        <div class="predictive-edge-grid">
-        <div>
-            <span>Variance</span>
-            <strong>Reliable</strong>
-            <small>5.7% volatility</small>
-        </div>
-        
-        <div>
-            <span>Bounce</span>
-            <strong>Mild bounce watch</strong>
-            <small>Recent big figure regression check</small>
-        </div>
-        
-        <div>
-            <span>Hidden Run</span>
-            <strong>No hidden upgrade</strong>
-            <small>Upgrade 0</small>
-        </div>
-        
-        <div>
-            <span>Ceiling</span>
-            <strong>Par capable</strong>
-            <small>3.8 vs par</small>
-        </div>
-        
-        <div>
-            <span>Curve</span>
-            <strong>Improving</strong>
-            <small>Trend 2</small>
-        </div>
-        </div>
-    </section>
-    
-                
-                
                 <details class="evidence-drawer decision-drawer">
                     <summary>
                         <span>Context match</span>
@@ -2392,9 +2364,57 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 </details>
                 <details class="evidence-drawer">
                     <summary>
-                        <span>Technical evidence</span>
-                        <strong>Sectionals, timing, ratings trend and full run table</strong>
+                        <span>Deeper evidence</span>
+                        <strong>Speed, timing, jumps, ratings and full run table</strong>
                     </summary>
+                    
+    <section class="predictive-edge-panel">
+        <div class="predictive-edge-head">
+            <div>
+                <span class="micro-label">Predictive edge</span>
+                <strong class="good">Predictive support</strong>
+                <p>Reliable; Mild bounce watch; No hidden upgrade; Par capable; Improving</p>
+            </div>
+            <div class="predictive-edge-score">
+                <span>confidence nudge</span>
+                <strong class="good">+2.0</strong>
+            </div>
+        </div>
+        <div class="predictive-edge-grid">
+        <div>
+            <span>Variance</span>
+            <strong>Reliable</strong>
+            <small>5.7% volatility</small>
+        </div>
+        
+        <div>
+            <span>Bounce</span>
+            <strong>Mild bounce watch</strong>
+            <small>Recent big figure regression check</small>
+        </div>
+        
+        <div>
+            <span>Hidden Run</span>
+            <strong>No hidden upgrade</strong>
+            <small>Upgrade 0</small>
+        </div>
+        
+        <div>
+            <span>Ceiling</span>
+            <strong>Par capable</strong>
+            <small>3.8 vs par</small>
+        </div>
+        
+        <div>
+            <span>Curve</span>
+            <strong>Improving</strong>
+            <small>Trend 2</small>
+        </div>
+        </div>
+    </section>
+    
+                    
+                    
                     
     <div class="runner-meta-strip">
         
@@ -3180,6 +3200,23 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <small>Tick runners to compare side by side, then open the full evidence below.</small>
         </div>
+        <div class="angle-filter-panel" data-angle-filter>
+            <div class="angle-filter-title">
+                <span>Find runners by angle</span>
+                <strong data-angle-count>Showing all runners</strong>
+            </div>
+            <div class="angle-filter-options">
+                <label><input type="checkbox" value="lto-place"> <span>Won/placed LTO</span></label>
+                <label><input type="checkbox" value="strong-form"> <span>Strong form proof</span></label>
+                <label><input type="checkbox" value="ground"> <span>Ground fit</span></label>
+                <label><input type="checkbox" value="top-ffr"> <span>Top 3 FFR</span></label>
+                <label><input type="checkbox" value="top-speed"> <span>Top 3 SpeedScore</span></label>
+                <label><input type="checkbox" value="distance-win"> <span>Distance winner</span></label>
+                <label><input type="checkbox" value="course-win"> <span>Course winner</span></label>
+                <label><input type="checkbox" value="cd-win"> <span>C&amp;D winner</span></label>
+                <button type="button" data-angle-clear>Clear</button>
+            </div>
+        </div>
         <div class="compare-tray"><span>Select two or more runners to compare</span></div>
         <div class="race-scan-scroll">
             <table class="race-scan-table">
@@ -3211,7 +3248,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                     </tr>
                 </thead>
                 <tbody>
-        <tr data-original-index="1">
+        <tr data-original-index="1" data-angle-row data-angle-tags="ground lto-place top-ffr top-speed">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -3346,7 +3383,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="PRICE DEPENDENT"><span class="scan-pill status-shortlist">PRICE DEPENDENT</span></td>
         </tr>
         
-        <tr data-original-index="2">
+        <tr data-original-index="2" data-angle-row data-angle-tags="lto-place top-ffr top-speed">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -3481,7 +3518,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="WATCH ONLY"><span class="scan-pill status-neutral">WATCH ONLY</span></td>
         </tr>
         
-        <tr data-original-index="3">
+        <tr data-original-index="3" data-angle-row data-angle-tags="top-speed">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -3616,7 +3653,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="WATCH ONLY"><span class="scan-pill status-neutral">WATCH ONLY</span></td>
         </tr>
         
-        <tr data-original-index="4">
+        <tr data-original-index="4" data-angle-row data-angle-tags="">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -3751,7 +3788,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="5">
+        <tr data-original-index="5" data-angle-row data-angle-tags="ground top-ffr top-speed">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -3981,54 +4018,6 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         </div>
     </section>
     
-                
-    <section class="predictive-edge-panel">
-        <div class="predictive-edge-head">
-            <div>
-                <span class="micro-label">Predictive edge</span>
-                <strong class="good">Predictive support</strong>
-                <p>Reliable; No bounce signal; No hidden upgrade; Par capable; Edging forward</p>
-            </div>
-            <div class="predictive-edge-score">
-                <span>confidence nudge</span>
-                <strong class="good">+2.0</strong>
-            </div>
-        </div>
-        <div class="predictive-edge-grid">
-        <div>
-            <span>Variance</span>
-            <strong>Reliable</strong>
-            <small>5% volatility</small>
-        </div>
-        
-        <div>
-            <span>Bounce</span>
-            <strong>No bounce signal</strong>
-            <small>Recent big figure regression check</small>
-        </div>
-        
-        <div>
-            <span>Hidden Run</span>
-            <strong>No hidden upgrade</strong>
-            <small>Upgrade 0</small>
-        </div>
-        
-        <div>
-            <span>Ceiling</span>
-            <strong>Par capable</strong>
-            <small>1.1 vs par</small>
-        </div>
-        
-        <div>
-            <span>Curve</span>
-            <strong>Edging forward</strong>
-            <small>Trend 1</small>
-        </div>
-        </div>
-    </section>
-    
-                
-                
                 <details class="evidence-drawer decision-drawer">
                     <summary>
                         <span>Context match</span>
@@ -4304,9 +4293,57 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 </details>
                 <details class="evidence-drawer">
                     <summary>
-                        <span>Technical evidence</span>
-                        <strong>Sectionals, timing, ratings trend and full run table</strong>
+                        <span>Deeper evidence</span>
+                        <strong>Speed, timing, jumps, ratings and full run table</strong>
                     </summary>
+                    
+    <section class="predictive-edge-panel">
+        <div class="predictive-edge-head">
+            <div>
+                <span class="micro-label">Predictive edge</span>
+                <strong class="good">Predictive support</strong>
+                <p>Reliable; No bounce signal; No hidden upgrade; Par capable; Edging forward</p>
+            </div>
+            <div class="predictive-edge-score">
+                <span>confidence nudge</span>
+                <strong class="good">+2.0</strong>
+            </div>
+        </div>
+        <div class="predictive-edge-grid">
+        <div>
+            <span>Variance</span>
+            <strong>Reliable</strong>
+            <small>5% volatility</small>
+        </div>
+        
+        <div>
+            <span>Bounce</span>
+            <strong>No bounce signal</strong>
+            <small>Recent big figure regression check</small>
+        </div>
+        
+        <div>
+            <span>Hidden Run</span>
+            <strong>No hidden upgrade</strong>
+            <small>Upgrade 0</small>
+        </div>
+        
+        <div>
+            <span>Ceiling</span>
+            <strong>Par capable</strong>
+            <small>1.1 vs par</small>
+        </div>
+        
+        <div>
+            <span>Curve</span>
+            <strong>Edging forward</strong>
+            <small>Trend 1</small>
+        </div>
+        </div>
+    </section>
+    
+                    
+                    
                     
     <div class="runner-meta-strip">
         
@@ -4804,54 +4841,6 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         </div>
     </section>
     
-                
-    <section class="predictive-edge-panel">
-        <div class="predictive-edge-head">
-            <div>
-                <span class="micro-label">Predictive edge</span>
-                <strong class="warn">Small positive nudge</strong>
-                <p>Very steady; No bounce signal; No hidden upgrade; Below requirement; Edging forward</p>
-            </div>
-            <div class="predictive-edge-score">
-                <span>confidence nudge</span>
-                <strong class="warn">+1.8</strong>
-            </div>
-        </div>
-        <div class="predictive-edge-grid">
-        <div>
-            <span>Variance</span>
-            <strong>Very steady</strong>
-            <small>2.2% volatility</small>
-        </div>
-        
-        <div>
-            <span>Bounce</span>
-            <strong>No bounce signal</strong>
-            <small>Recent big figure regression check</small>
-        </div>
-        
-        <div>
-            <span>Hidden Run</span>
-            <strong>No hidden upgrade</strong>
-            <small>Upgrade 0</small>
-        </div>
-        
-        <div>
-            <span>Ceiling</span>
-            <strong>Below requirement</strong>
-            <small>-1.9 vs par</small>
-        </div>
-        
-        <div>
-            <span>Curve</span>
-            <strong>Edging forward</strong>
-            <small>Trend 1</small>
-        </div>
-        </div>
-    </section>
-    
-                
-                
                 <details class="evidence-drawer decision-drawer">
                     <summary>
                         <span>Context match</span>
@@ -5127,9 +5116,57 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 </details>
                 <details class="evidence-drawer">
                     <summary>
-                        <span>Technical evidence</span>
-                        <strong>Sectionals, timing, ratings trend and full run table</strong>
+                        <span>Deeper evidence</span>
+                        <strong>Speed, timing, jumps, ratings and full run table</strong>
                     </summary>
+                    
+    <section class="predictive-edge-panel">
+        <div class="predictive-edge-head">
+            <div>
+                <span class="micro-label">Predictive edge</span>
+                <strong class="warn">Small positive nudge</strong>
+                <p>Very steady; No bounce signal; No hidden upgrade; Below requirement; Edging forward</p>
+            </div>
+            <div class="predictive-edge-score">
+                <span>confidence nudge</span>
+                <strong class="warn">+1.8</strong>
+            </div>
+        </div>
+        <div class="predictive-edge-grid">
+        <div>
+            <span>Variance</span>
+            <strong>Very steady</strong>
+            <small>2.2% volatility</small>
+        </div>
+        
+        <div>
+            <span>Bounce</span>
+            <strong>No bounce signal</strong>
+            <small>Recent big figure regression check</small>
+        </div>
+        
+        <div>
+            <span>Hidden Run</span>
+            <strong>No hidden upgrade</strong>
+            <small>Upgrade 0</small>
+        </div>
+        
+        <div>
+            <span>Ceiling</span>
+            <strong>Below requirement</strong>
+            <small>-1.9 vs par</small>
+        </div>
+        
+        <div>
+            <span>Curve</span>
+            <strong>Edging forward</strong>
+            <small>Trend 1</small>
+        </div>
+        </div>
+    </section>
+    
+                    
+                    
                     
     <div class="runner-meta-strip">
         
@@ -5709,6 +5746,23 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <small>Tick runners to compare side by side, then open the full evidence below.</small>
         </div>
+        <div class="angle-filter-panel" data-angle-filter>
+            <div class="angle-filter-title">
+                <span>Find runners by angle</span>
+                <strong data-angle-count>Showing all runners</strong>
+            </div>
+            <div class="angle-filter-options">
+                <label><input type="checkbox" value="lto-place"> <span>Won/placed LTO</span></label>
+                <label><input type="checkbox" value="strong-form"> <span>Strong form proof</span></label>
+                <label><input type="checkbox" value="ground"> <span>Ground fit</span></label>
+                <label><input type="checkbox" value="top-ffr"> <span>Top 3 FFR</span></label>
+                <label><input type="checkbox" value="top-speed"> <span>Top 3 SpeedScore</span></label>
+                <label><input type="checkbox" value="distance-win"> <span>Distance winner</span></label>
+                <label><input type="checkbox" value="course-win"> <span>Course winner</span></label>
+                <label><input type="checkbox" value="cd-win"> <span>C&amp;D winner</span></label>
+                <button type="button" data-angle-clear>Clear</button>
+            </div>
+        </div>
         <div class="compare-tray"><span>Select two or more runners to compare</span></div>
         <div class="race-scan-scroll">
             <table class="race-scan-table">
@@ -5740,7 +5794,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                     </tr>
                 </thead>
                 <tbody>
-        <tr data-original-index="1">
+        <tr data-original-index="1" data-angle-row data-angle-tags="ground lto-place top-ffr">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -5875,7 +5929,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="2">
+        <tr data-original-index="2" data-angle-row data-angle-tags="lto-place top-ffr top-speed">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -6010,7 +6064,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="WATCH ONLY"><span class="scan-pill status-neutral">WATCH ONLY</span></td>
         </tr>
         
-        <tr data-original-index="3">
+        <tr data-original-index="3" data-angle-row data-angle-tags="ground">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -6145,7 +6199,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="4">
+        <tr data-original-index="4" data-angle-row data-angle-tags="top-speed">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -6280,7 +6334,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="5">
+        <tr data-original-index="5" data-angle-row data-angle-tags="">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -6415,7 +6469,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="6">
+        <tr data-original-index="6" data-angle-row data-angle-tags="">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -6550,7 +6604,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="7">
+        <tr data-original-index="7" data-angle-row data-angle-tags="">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -6685,7 +6739,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="8">
+        <tr data-original-index="8" data-angle-row data-angle-tags="top-ffr top-speed">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -6915,54 +6969,6 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         </div>
     </section>
     
-                
-    <section class="predictive-edge-panel">
-        <div class="predictive-edge-head">
-            <div>
-                <span class="micro-label">Predictive edge</span>
-                <strong class="bad">Predictive caution</strong>
-                <p>Volatile; No bounce signal; No hidden upgrade; Par capable; Regressing</p>
-            </div>
-            <div class="predictive-edge-score">
-                <span>confidence nudge</span>
-                <strong class="bad">-3.2</strong>
-            </div>
-        </div>
-        <div class="predictive-edge-grid">
-        <div>
-            <span>Variance</span>
-            <strong>Volatile</strong>
-            <small>15.6% volatility</small>
-        </div>
-        
-        <div>
-            <span>Bounce</span>
-            <strong>No bounce signal</strong>
-            <small>Recent big figure regression check</small>
-        </div>
-        
-        <div>
-            <span>Hidden Run</span>
-            <strong>No hidden upgrade</strong>
-            <small>Upgrade 0</small>
-        </div>
-        
-        <div>
-            <span>Ceiling</span>
-            <strong>Par capable</strong>
-            <small>4.5 vs par</small>
-        </div>
-        
-        <div>
-            <span>Curve</span>
-            <strong>Regressing</strong>
-            <small>Trend -2</small>
-        </div>
-        </div>
-    </section>
-    
-                
-                
                 <details class="evidence-drawer decision-drawer">
                     <summary>
                         <span>Context match</span>
@@ -7238,9 +7244,57 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 </details>
                 <details class="evidence-drawer">
                     <summary>
-                        <span>Technical evidence</span>
-                        <strong>Sectionals, timing, ratings trend and full run table</strong>
+                        <span>Deeper evidence</span>
+                        <strong>Speed, timing, jumps, ratings and full run table</strong>
                     </summary>
+                    
+    <section class="predictive-edge-panel">
+        <div class="predictive-edge-head">
+            <div>
+                <span class="micro-label">Predictive edge</span>
+                <strong class="bad">Predictive caution</strong>
+                <p>Volatile; No bounce signal; No hidden upgrade; Par capable; Regressing</p>
+            </div>
+            <div class="predictive-edge-score">
+                <span>confidence nudge</span>
+                <strong class="bad">-3.2</strong>
+            </div>
+        </div>
+        <div class="predictive-edge-grid">
+        <div>
+            <span>Variance</span>
+            <strong>Volatile</strong>
+            <small>15.6% volatility</small>
+        </div>
+        
+        <div>
+            <span>Bounce</span>
+            <strong>No bounce signal</strong>
+            <small>Recent big figure regression check</small>
+        </div>
+        
+        <div>
+            <span>Hidden Run</span>
+            <strong>No hidden upgrade</strong>
+            <small>Upgrade 0</small>
+        </div>
+        
+        <div>
+            <span>Ceiling</span>
+            <strong>Par capable</strong>
+            <small>4.5 vs par</small>
+        </div>
+        
+        <div>
+            <span>Curve</span>
+            <strong>Regressing</strong>
+            <small>Trend -2</small>
+        </div>
+        </div>
+    </section>
+    
+                    
+                    
                     
     <div class="runner-meta-strip">
         
@@ -7738,54 +7792,6 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         </div>
     </section>
     
-                
-    <section class="predictive-edge-panel">
-        <div class="predictive-edge-head">
-            <div>
-                <span class="micro-label">Predictive edge</span>
-                <strong class="warn">Small positive nudge</strong>
-                <p>Very steady; No bounce signal; No hidden upgrade; Par capable; Stable</p>
-            </div>
-            <div class="predictive-edge-score">
-                <span>confidence nudge</span>
-                <strong class="warn">+1.8</strong>
-            </div>
-        </div>
-        <div class="predictive-edge-grid">
-        <div>
-            <span>Variance</span>
-            <strong>Very steady</strong>
-            <small>3.7% volatility</small>
-        </div>
-        
-        <div>
-            <span>Bounce</span>
-            <strong>No bounce signal</strong>
-            <small>Recent big figure regression check</small>
-        </div>
-        
-        <div>
-            <span>Hidden Run</span>
-            <strong>No hidden upgrade</strong>
-            <small>Upgrade 0</small>
-        </div>
-        
-        <div>
-            <span>Ceiling</span>
-            <strong>Par capable</strong>
-            <small>1.5 vs par</small>
-        </div>
-        
-        <div>
-            <span>Curve</span>
-            <strong>Stable</strong>
-            <small>Trend 0</small>
-        </div>
-        </div>
-    </section>
-    
-                
-                
                 <details class="evidence-drawer decision-drawer">
                     <summary>
                         <span>Context match</span>
@@ -8053,9 +8059,57 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 </details>
                 <details class="evidence-drawer">
                     <summary>
-                        <span>Technical evidence</span>
-                        <strong>Sectionals, timing, ratings trend and full run table</strong>
+                        <span>Deeper evidence</span>
+                        <strong>Speed, timing, jumps, ratings and full run table</strong>
                     </summary>
+                    
+    <section class="predictive-edge-panel">
+        <div class="predictive-edge-head">
+            <div>
+                <span class="micro-label">Predictive edge</span>
+                <strong class="warn">Small positive nudge</strong>
+                <p>Very steady; No bounce signal; No hidden upgrade; Par capable; Stable</p>
+            </div>
+            <div class="predictive-edge-score">
+                <span>confidence nudge</span>
+                <strong class="warn">+1.8</strong>
+            </div>
+        </div>
+        <div class="predictive-edge-grid">
+        <div>
+            <span>Variance</span>
+            <strong>Very steady</strong>
+            <small>3.7% volatility</small>
+        </div>
+        
+        <div>
+            <span>Bounce</span>
+            <strong>No bounce signal</strong>
+            <small>Recent big figure regression check</small>
+        </div>
+        
+        <div>
+            <span>Hidden Run</span>
+            <strong>No hidden upgrade</strong>
+            <small>Upgrade 0</small>
+        </div>
+        
+        <div>
+            <span>Ceiling</span>
+            <strong>Par capable</strong>
+            <small>1.5 vs par</small>
+        </div>
+        
+        <div>
+            <span>Curve</span>
+            <strong>Stable</strong>
+            <small>Trend 0</small>
+        </div>
+        </div>
+    </section>
+    
+                    
+                    
                     
     <div class="runner-meta-strip">
         
@@ -8535,54 +8589,6 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         </div>
     </section>
     
-                
-    <section class="predictive-edge-panel">
-        <div class="predictive-edge-head">
-            <div>
-                <span class="micro-label">Predictive edge</span>
-                <strong class="neutral">Neutral predictive read</strong>
-                <p>Reliable; No bounce signal; No hidden upgrade; Par capable; Cooling</p>
-            </div>
-            <div class="predictive-edge-score">
-                <span>confidence nudge</span>
-                <strong class="neutral">+0.0</strong>
-            </div>
-        </div>
-        <div class="predictive-edge-grid">
-        <div>
-            <span>Variance</span>
-            <strong>Reliable</strong>
-            <small>6.6% volatility</small>
-        </div>
-        
-        <div>
-            <span>Bounce</span>
-            <strong>No bounce signal</strong>
-            <small>Recent big figure regression check</small>
-        </div>
-        
-        <div>
-            <span>Hidden Run</span>
-            <strong>No hidden upgrade</strong>
-            <small>Upgrade 0</small>
-        </div>
-        
-        <div>
-            <span>Ceiling</span>
-            <strong>Par capable</strong>
-            <small>1 vs par</small>
-        </div>
-        
-        <div>
-            <span>Curve</span>
-            <strong>Cooling</strong>
-            <small>Trend -1</small>
-        </div>
-        </div>
-    </section>
-    
-                
-                
                 <details class="evidence-drawer decision-drawer">
                     <summary>
                         <span>Context match</span>
@@ -8858,9 +8864,57 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 </details>
                 <details class="evidence-drawer">
                     <summary>
-                        <span>Technical evidence</span>
-                        <strong>Sectionals, timing, ratings trend and full run table</strong>
+                        <span>Deeper evidence</span>
+                        <strong>Speed, timing, jumps, ratings and full run table</strong>
                     </summary>
+                    
+    <section class="predictive-edge-panel">
+        <div class="predictive-edge-head">
+            <div>
+                <span class="micro-label">Predictive edge</span>
+                <strong class="neutral">Neutral predictive read</strong>
+                <p>Reliable; No bounce signal; No hidden upgrade; Par capable; Cooling</p>
+            </div>
+            <div class="predictive-edge-score">
+                <span>confidence nudge</span>
+                <strong class="neutral">+0.0</strong>
+            </div>
+        </div>
+        <div class="predictive-edge-grid">
+        <div>
+            <span>Variance</span>
+            <strong>Reliable</strong>
+            <small>6.6% volatility</small>
+        </div>
+        
+        <div>
+            <span>Bounce</span>
+            <strong>No bounce signal</strong>
+            <small>Recent big figure regression check</small>
+        </div>
+        
+        <div>
+            <span>Hidden Run</span>
+            <strong>No hidden upgrade</strong>
+            <small>Upgrade 0</small>
+        </div>
+        
+        <div>
+            <span>Ceiling</span>
+            <strong>Par capable</strong>
+            <small>1 vs par</small>
+        </div>
+        
+        <div>
+            <span>Curve</span>
+            <strong>Cooling</strong>
+            <small>Trend -1</small>
+        </div>
+        </div>
+    </section>
+    
+                    
+                    
                     
     <div class="runner-meta-strip">
         
@@ -9504,6 +9558,23 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <small>Tick runners to compare side by side, then open the full evidence below.</small>
         </div>
+        <div class="angle-filter-panel" data-angle-filter>
+            <div class="angle-filter-title">
+                <span>Find runners by angle</span>
+                <strong data-angle-count>Showing all runners</strong>
+            </div>
+            <div class="angle-filter-options">
+                <label><input type="checkbox" value="lto-place"> <span>Won/placed LTO</span></label>
+                <label><input type="checkbox" value="strong-form"> <span>Strong form proof</span></label>
+                <label><input type="checkbox" value="ground"> <span>Ground fit</span></label>
+                <label><input type="checkbox" value="top-ffr"> <span>Top 3 FFR</span></label>
+                <label><input type="checkbox" value="top-speed"> <span>Top 3 SpeedScore</span></label>
+                <label><input type="checkbox" value="distance-win"> <span>Distance winner</span></label>
+                <label><input type="checkbox" value="course-win"> <span>Course winner</span></label>
+                <label><input type="checkbox" value="cd-win"> <span>C&amp;D winner</span></label>
+                <button type="button" data-angle-clear>Clear</button>
+            </div>
+        </div>
         <div class="compare-tray"><span>Select two or more runners to compare</span></div>
         <div class="race-scan-scroll">
             <table class="race-scan-table">
@@ -9535,7 +9606,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                     </tr>
                 </thead>
                 <tbody>
-        <tr data-original-index="1">
+        <tr data-original-index="1" data-angle-row data-angle-tags="ground top-ffr">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -9670,7 +9741,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="WATCH ONLY"><span class="scan-pill status-neutral">WATCH ONLY</span></td>
         </tr>
         
-        <tr data-original-index="2">
+        <tr data-original-index="2" data-angle-row data-angle-tags="ground">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -9805,7 +9876,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="3">
+        <tr data-original-index="3" data-angle-row data-angle-tags="ground">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -9940,7 +10011,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="4">
+        <tr data-original-index="4" data-angle-row data-angle-tags="ground lto-place top-ffr top-speed">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -10075,7 +10146,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="5">
+        <tr data-original-index="5" data-angle-row data-angle-tags="lto-place top-speed">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -10210,7 +10281,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="6">
+        <tr data-original-index="6" data-angle-row data-angle-tags="ground strong-form top-speed">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -10345,7 +10416,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="7">
+        <tr data-original-index="7" data-angle-row data-angle-tags="ground strong-form">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -10480,7 +10551,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="8">
+        <tr data-original-index="8" data-angle-row data-angle-tags="ground top-ffr">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -10615,7 +10686,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="WATCH ONLY"><span class="scan-pill status-neutral">WATCH ONLY</span></td>
         </tr>
         
-        <tr data-original-index="9">
+        <tr data-original-index="9" data-angle-row data-angle-tags="ground">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -10750,7 +10821,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="10">
+        <tr data-original-index="10" data-angle-row data-angle-tags="strong-form">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -10885,7 +10956,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="11">
+        <tr data-original-index="11" data-angle-row data-angle-tags="ground">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -11020,7 +11091,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="12">
+        <tr data-original-index="12" data-angle-row data-angle-tags="ground strong-form">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -11155,7 +11226,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td data-sort-value="CAUTION PROFILE"><span class="scan-pill status-low">CAUTION PROFILE</span></td>
         </tr>
         
-        <tr data-original-index="13">
+        <tr data-original-index="13" data-angle-row data-angle-tags="ground strong-form">
             <td class="compare-pick">
                 <label>
                     <input type="checkbox" class="compare-check"
@@ -11385,54 +11456,6 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         </div>
     </section>
     
-                
-    <section class="predictive-edge-panel">
-        <div class="predictive-edge-head">
-            <div>
-                <span class="micro-label">Predictive edge</span>
-                <strong class="warn">Small positive nudge</strong>
-                <p>Very steady; No bounce signal; No hidden upgrade; Below requirement; Stable</p>
-            </div>
-            <div class="predictive-edge-score">
-                <span>confidence nudge</span>
-                <strong class="warn">+0.8</strong>
-            </div>
-        </div>
-        <div class="predictive-edge-grid">
-        <div>
-            <span>Variance</span>
-            <strong>Very steady</strong>
-            <small>3% volatility</small>
-        </div>
-        
-        <div>
-            <span>Bounce</span>
-            <strong>No bounce signal</strong>
-            <small>Recent big figure regression check</small>
-        </div>
-        
-        <div>
-            <span>Hidden Run</span>
-            <strong>No hidden upgrade</strong>
-            <small>Upgrade 0</small>
-        </div>
-        
-        <div>
-            <span>Ceiling</span>
-            <strong>Below requirement</strong>
-            <small>-0.2 vs par</small>
-        </div>
-        
-        <div>
-            <span>Curve</span>
-            <strong>Stable</strong>
-            <small>Trend 0</small>
-        </div>
-        </div>
-    </section>
-    
-                
-                
                 <details class="evidence-drawer decision-drawer">
                     <summary>
                         <span>Context match</span>
@@ -11708,9 +11731,57 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 </details>
                 <details class="evidence-drawer">
                     <summary>
-                        <span>Technical evidence</span>
-                        <strong>Sectionals, timing, ratings trend and full run table</strong>
+                        <span>Deeper evidence</span>
+                        <strong>Speed, timing, jumps, ratings and full run table</strong>
                     </summary>
+                    
+    <section class="predictive-edge-panel">
+        <div class="predictive-edge-head">
+            <div>
+                <span class="micro-label">Predictive edge</span>
+                <strong class="warn">Small positive nudge</strong>
+                <p>Very steady; No bounce signal; No hidden upgrade; Below requirement; Stable</p>
+            </div>
+            <div class="predictive-edge-score">
+                <span>confidence nudge</span>
+                <strong class="warn">+0.8</strong>
+            </div>
+        </div>
+        <div class="predictive-edge-grid">
+        <div>
+            <span>Variance</span>
+            <strong>Very steady</strong>
+            <small>3% volatility</small>
+        </div>
+        
+        <div>
+            <span>Bounce</span>
+            <strong>No bounce signal</strong>
+            <small>Recent big figure regression check</small>
+        </div>
+        
+        <div>
+            <span>Hidden Run</span>
+            <strong>No hidden upgrade</strong>
+            <small>Upgrade 0</small>
+        </div>
+        
+        <div>
+            <span>Ceiling</span>
+            <strong>Below requirement</strong>
+            <small>-0.2 vs par</small>
+        </div>
+        
+        <div>
+            <span>Curve</span>
+            <strong>Stable</strong>
+            <small>Trend 0</small>
+        </div>
+        </div>
+    </section>
+    
+                    
+                    
                     
     <div class="runner-meta-strip">
         
@@ -12208,54 +12279,6 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         </div>
     </section>
     
-                
-    <section class="predictive-edge-panel">
-        <div class="predictive-edge-head">
-            <div>
-                <span class="micro-label">Predictive edge</span>
-                <strong class="neutral">Neutral predictive read</strong>
-                <p>Reliable; No bounce signal; No hidden upgrade; Par capable; Cooling</p>
-            </div>
-            <div class="predictive-edge-score">
-                <span>confidence nudge</span>
-                <strong class="neutral">+0.0</strong>
-            </div>
-        </div>
-        <div class="predictive-edge-grid">
-        <div>
-            <span>Variance</span>
-            <strong>Reliable</strong>
-            <small>6.9% volatility</small>
-        </div>
-        
-        <div>
-            <span>Bounce</span>
-            <strong>No bounce signal</strong>
-            <small>Recent big figure regression check</small>
-        </div>
-        
-        <div>
-            <span>Hidden Run</span>
-            <strong>No hidden upgrade</strong>
-            <small>Upgrade 0</small>
-        </div>
-        
-        <div>
-            <span>Ceiling</span>
-            <strong>Par capable</strong>
-            <small>2.6 vs par</small>
-        </div>
-        
-        <div>
-            <span>Curve</span>
-            <strong>Cooling</strong>
-            <small>Trend -1</small>
-        </div>
-        </div>
-    </section>
-    
-                
-                
                 <details class="evidence-drawer decision-drawer">
                     <summary>
                         <span>Context match</span>
@@ -12531,9 +12554,57 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 </details>
                 <details class="evidence-drawer">
                     <summary>
-                        <span>Technical evidence</span>
-                        <strong>Sectionals, timing, ratings trend and full run table</strong>
+                        <span>Deeper evidence</span>
+                        <strong>Speed, timing, jumps, ratings and full run table</strong>
                     </summary>
+                    
+    <section class="predictive-edge-panel">
+        <div class="predictive-edge-head">
+            <div>
+                <span class="micro-label">Predictive edge</span>
+                <strong class="neutral">Neutral predictive read</strong>
+                <p>Reliable; No bounce signal; No hidden upgrade; Par capable; Cooling</p>
+            </div>
+            <div class="predictive-edge-score">
+                <span>confidence nudge</span>
+                <strong class="neutral">+0.0</strong>
+            </div>
+        </div>
+        <div class="predictive-edge-grid">
+        <div>
+            <span>Variance</span>
+            <strong>Reliable</strong>
+            <small>6.9% volatility</small>
+        </div>
+        
+        <div>
+            <span>Bounce</span>
+            <strong>No bounce signal</strong>
+            <small>Recent big figure regression check</small>
+        </div>
+        
+        <div>
+            <span>Hidden Run</span>
+            <strong>No hidden upgrade</strong>
+            <small>Upgrade 0</small>
+        </div>
+        
+        <div>
+            <span>Ceiling</span>
+            <strong>Par capable</strong>
+            <small>2.6 vs par</small>
+        </div>
+        
+        <div>
+            <span>Curve</span>
+            <strong>Cooling</strong>
+            <small>Trend -1</small>
+        </div>
+        </div>
+    </section>
+    
+                    
+                    
                     
     <div class="runner-meta-strip">
         
@@ -13031,54 +13102,6 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         </div>
     </section>
     
-                
-    <section class="predictive-edge-panel">
-        <div class="predictive-edge-head">
-            <div>
-                <span class="micro-label">Predictive edge</span>
-                <strong class="warn">Small positive nudge</strong>
-                <p>Very steady; No bounce signal; No hidden upgrade; Below requirement; Edging forward</p>
-            </div>
-            <div class="predictive-edge-score">
-                <span>confidence nudge</span>
-                <strong class="warn">+1.8</strong>
-            </div>
-        </div>
-        <div class="predictive-edge-grid">
-        <div>
-            <span>Variance</span>
-            <strong>Very steady</strong>
-            <small>3.7% volatility</small>
-        </div>
-        
-        <div>
-            <span>Bounce</span>
-            <strong>No bounce signal</strong>
-            <small>Recent big figure regression check</small>
-        </div>
-        
-        <div>
-            <span>Hidden Run</span>
-            <strong>No hidden upgrade</strong>
-            <small>Upgrade 0</small>
-        </div>
-        
-        <div>
-            <span>Ceiling</span>
-            <strong>Below requirement</strong>
-            <small>-4.9 vs par</small>
-        </div>
-        
-        <div>
-            <span>Curve</span>
-            <strong>Edging forward</strong>
-            <small>Trend 1</small>
-        </div>
-        </div>
-    </section>
-    
-                
-                
                 <details class="evidence-drawer decision-drawer">
                     <summary>
                         <span>Context match</span>
@@ -13354,9 +13377,57 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 </details>
                 <details class="evidence-drawer">
                     <summary>
-                        <span>Technical evidence</span>
-                        <strong>Sectionals, timing, ratings trend and full run table</strong>
+                        <span>Deeper evidence</span>
+                        <strong>Speed, timing, jumps, ratings and full run table</strong>
                     </summary>
+                    
+    <section class="predictive-edge-panel">
+        <div class="predictive-edge-head">
+            <div>
+                <span class="micro-label">Predictive edge</span>
+                <strong class="warn">Small positive nudge</strong>
+                <p>Very steady; No bounce signal; No hidden upgrade; Below requirement; Edging forward</p>
+            </div>
+            <div class="predictive-edge-score">
+                <span>confidence nudge</span>
+                <strong class="warn">+1.8</strong>
+            </div>
+        </div>
+        <div class="predictive-edge-grid">
+        <div>
+            <span>Variance</span>
+            <strong>Very steady</strong>
+            <small>3.7% volatility</small>
+        </div>
+        
+        <div>
+            <span>Bounce</span>
+            <strong>No bounce signal</strong>
+            <small>Recent big figure regression check</small>
+        </div>
+        
+        <div>
+            <span>Hidden Run</span>
+            <strong>No hidden upgrade</strong>
+            <small>Upgrade 0</small>
+        </div>
+        
+        <div>
+            <span>Ceiling</span>
+            <strong>Below requirement</strong>
+            <small>-4.9 vs par</small>
+        </div>
+        
+        <div>
+            <span>Curve</span>
+            <strong>Edging forward</strong>
+            <small>Trend 1</small>
+        </div>
+        </div>
+    </section>
+    
+                    
+                    
                     
     <div class="runner-meta-strip">
         
@@ -14810,6 +14881,51 @@ function enableRaceScanSorting() {
     });
 }
 
+function initialiseRaceAngleFilters() {
+    document.querySelectorAll("[data-angle-filter]").forEach(panel => {
+        if (panel.dataset.angleReady === "1") return;
+        panel.dataset.angleReady = "1";
+        const racePanel = panel.closest(".race-scan-panel");
+        const rows = Array.from(racePanel?.querySelectorAll("[data-angle-row]") || []);
+        const inputs = Array.from(panel.querySelectorAll('input[type="checkbox"]'));
+        const clear = panel.querySelector("[data-angle-clear]");
+        const count = panel.querySelector("[data-angle-count]");
+
+        const apply = () => {
+            const selected = inputs.filter(input => input.checked).map(input => input.value);
+            let shown = 0;
+            rows.forEach(row => {
+                const tags = new Set(String(row.dataset.angleTags || "").split(/\s+/).filter(Boolean));
+                const visible = !selected.length || selected.every(tag => tags.has(tag));
+                row.classList.toggle("angle-hidden", !visible);
+                if (visible) {
+                    shown += 1;
+                } else {
+                    const check = row.querySelector(".compare-check");
+                    if (check?.checked) {
+                        check.checked = false;
+                        row.classList.remove("selected");
+                    }
+                }
+            });
+            if (count) {
+                count.textContent = selected.length
+                    ? `Showing ${shown}/${rows.length} runners`
+                    : `Showing all ${rows.length} runners`;
+            }
+            const firstCheck = racePanel?.querySelector(".compare-check");
+            if (firstCheck) updateRaceCompare(firstCheck);
+        };
+
+        inputs.forEach(input => input.addEventListener("change", apply));
+        clear?.addEventListener("click", () => {
+            inputs.forEach(input => input.checked = false);
+            apply();
+        });
+        apply();
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     refreshCardDayLabels();
     initialiseTopHorseDay();
@@ -14817,6 +14933,7 @@ document.addEventListener("DOMContentLoaded", () => {
     simplifyKeyPage();
     enableRaceScanDragScroll();
     enableRaceScanSorting();
+    initialiseRaceAngleFilters();
     document.querySelectorAll(".compare-check").forEach(input => {
         input.addEventListener("change", () => updateRaceCompare(input));
     });
