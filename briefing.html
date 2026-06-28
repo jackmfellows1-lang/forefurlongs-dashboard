@@ -193,12 +193,14 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 .form-popover-card:before{content:"";position:absolute;left:22px;top:-8px;width:14px;height:14px;background:#fffdf8;border-left:1px solid #b7a578;border-top:1px solid #b7a578;transform:rotate(45deg)}
 .form-popover-card>strong{display:block;margin:0 0 2px;font-family:Source Serif 4,Georgia,serif;font-size:18px;color:var(--ink)!important}
 .form-popover-card>small,.form-popover-card>em{display:block;margin:0 0 9px;color:#596761!important;font-size:11px;font-style:normal}
-.form-popover-scroll{display:block;max-height:286px;overflow:auto;border:1px solid #ded3c2}
-.form-popover-card table{width:100%;border-collapse:collapse;min-width:710px;background:#fffdf8}
-.form-popover-card th{padding:8px 9px!important;background:#1f2f28!important;color:#fff!important;font-family:Sora;font-size:9px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
-.form-popover-card td{padding:8px 9px!important;border-bottom:1px solid #eadfce!important;background:#fffdf8!important;color:#17211d!important;font-size:12px;vertical-align:top}
-.form-popover-card tr:nth-child(even) td{background:#f9f4ea!important}
-.form-popover-card td strong{display:block;color:var(--ink)!important;font-size:12px}.form-popover-card td small{display:block;margin-top:2px;color:#596761!important;font-size:10px;line-height:1.25}
+.form-popover-scroll{display:block;max-height:286px;overflow:auto;border:1px solid #ded3c2;background:#fffdf8}
+.form-popover-header,.form-popover-run{display:grid;grid-template-columns:92px minmax(190px,1.4fr) 62px 80px 58px 112px 48px 52px 52px;min-width:760px}
+.form-popover-header{position:sticky;top:0;z-index:2;background:#1f2f28;color:#fff;font-family:Sora;font-size:9px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.form-popover-header span{padding:8px 9px;border-right:1px solid rgba(255,255,255,.08)}
+.form-popover-run{border-bottom:1px solid #eadfce;color:#17211d;font-size:12px}
+.form-popover-run:nth-child(even){background:#f9f4ea}
+.form-popover-run>div{padding:8px 9px;border-right:1px solid #eadfce;min-width:0}
+.form-popover-run strong,.form-popover-run b{display:block;color:var(--ink)!important;font-size:12px;line-height:1.25}.form-popover-run small{display:block;margin-top:2px;color:#596761!important;font-size:10px;line-height:1.25}.form-popover-run span{display:none}
 .mini-rating{display:inline-flex;align-items:center;justify-content:center;min-width:34px;padding:4px 7px;border-radius:2px;border:1px solid #d8cdbb;background:#f6f1e7;color:#17211d!important;font-family:Sora;font-size:11px;font-weight:900}
 .mini-rating.positive{background:#0f4f35!important;color:#fff!important;border-color:#0f4f35!important}.mini-rating.negative{background:#9b2f2f!important;color:#fff!important;border-color:#9b2f2f!important}.mini-rating.speed{background:#17364a!important;color:#fff!important;border-color:#17364a!important}
 .compare-tray.active{background:#fffaf0!important;border-color:#b7a578!important}
@@ -1274,7 +1276,7 @@ function sortRaceScanTable(button) {
     const direction = currentDirection === "asc" ? "desc" : currentDirection === "desc" ? "asc" : defaultDirection;
     const multiplier = direction === "asc" ? 1 : -1;
 
-    const rows = Array.from(tbody.querySelectorAll("tr"));
+    const rows = Array.from(tbody.children).filter(row => row.matches("tr[data-angle-row]"));
     rows.sort((a, b) => {
         const aCell = a.children[columnIndex];
         const bCell = b.children[columnIndex];
