@@ -440,9 +440,9 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
 
         <section class="brief-grid">
             <div class="brief-card"><span>Result date</span><strong>04 Jul 2026</strong></div>
-            <div class="brief-card"><span>Races reviewed</span><strong>11</strong></div>
-            <div class="brief-card"><span>Winners captured</span><strong>11</strong></div>
-            <div class="brief-card"><span>Avg field size</span><strong>11.5</strong></div>
+            <div class="brief-card"><span>Races reviewed</span><strong>4</strong></div>
+            <div class="brief-card"><span>Winners captured</span><strong>4</strong></div>
+            <div class="brief-card"><span>Avg field size</span><strong>7.2</strong></div>
         </section>
         <section class="panel" style="padding:20px;">
             <h2>Latest Result Reviews</h2>
@@ -454,1334 +454,36 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <label for="courseFilter">Select course</label>
                 <select id="courseFilter" onchange="updateCourseFilter(true)">
                     <option value="ALL">All courses</option>
-                    <option value="Deauville (FR)">Deauville (FR)</option><option value="Sha Tin (HK)">Sha Tin (HK)</option><option value="Sunshine Coast (AUS)">Sunshine Coast (AUS)</option>
+                    <option value="Naas (IRE)">Naas (IRE)</option><option value="Newmarket (July)">Newmarket (July)</option><option value="Sandown">Sandown</option>
                 </select>
             </div>
             <div>
                 <label for="raceFilter">Select race</label>
                 <select id="raceFilter" onchange="updateCourseFilter()">
                     <option value="ALL">All races</option>
-                    <option value="12:05 | Deauville (FR) | 7f">12:05 | Deauville (FR) | 7f</option><option value="12:10 | Sha Tin (HK) | 6f">12:10 | Sha Tin (HK) | 6f</option><option value="12:40 | Deauville (FR) | 9.5f">12:40 | Deauville (FR) | 9.5f</option><option value="12:40 | Sha Tin (HK) | 9f">12:40 | Sha Tin (HK) | 9f</option><option value="6:23 | Sunshine Coast (AUS) | 8f">6:23 | Sunshine Coast (AUS) | 8f</option><option value="9:00 | Sha Tin (HK) | 6f">9:00 | Sha Tin (HK) | 6f</option><option value="9:30 | Sha Tin (HK) | 6f">9:30 | Sha Tin (HK) | 6f</option><option value="10:00 | Sha Tin (HK) | 6f">10:00 | Sha Tin (HK) | 6f</option><option value="10:40 | Sha Tin (HK) | 6f">10:40 | Sha Tin (HK) | 6f</option><option value="11:10 | Sha Tin (HK) | 7f">11:10 | Sha Tin (HK) | 7f</option><option value="11:40 | Sha Tin (HK) | 6f">11:40 | Sha Tin (HK) | 6f</option>
+                    <option value="1:22 | Naas (IRE) | 5f">1:22 | Naas (IRE) | 5f</option><option value="1:30 | Newmarket (July) | 5f">1:30 | Newmarket (July) | 5f</option><option value="1:50 | Sandown | 5f">1:50 | Sandown | 5f</option><option value="1:57 | Naas (IRE) | 5f">1:57 | Naas (IRE) | 5f</option>
                 </select>
             </div>
             <button onclick="resetRaceFilters()">Reset</button>
         </section>
         
         
-    <article class="race-card result-card premium-race-card" data-course="Deauville (FR)" data-race="12:05 | Deauville (FR) | 7f">
+    <article class="race-card result-card premium-race-card" data-course="Naas (IRE)" data-race="1:22 | Naas (IRE) | 5f">
         <div class="race-header premium-race-header">
             <div>
-                <div class="eyebrow">12:05 | Deauville (FR)</div>
-                <h2>12:05 | Deauville (FR) | 7f</h2>
-                <p class="race-meta">Listed | Good To Soft | Prix Roland de Chambure () (Turf)</p>
+                <div class="eyebrow">1:22 | Naas (IRE)</div>
+                <h2>1:22 | Naas (IRE) | 5f</h2>
+                <p class="race-meta">Class not listed | Good | EMS Copiers Irish EBF Fillies Maiden</p>
             </div>
             <div class="race-score premium-race-score">
                 <span>Winner</span>
-                <strong class="elite result-winner-name">Avec Toi (USA)</strong>
-                <em>9/10F</em>
+                <strong class="elite result-winner-name">Concorde Landed (IRE)</strong>
+                <em>13/8F</em>
             </div>
         </div>
 
         <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Avec Toi (USA)</strong></div>
-            <div><span>Rating / TS</span><strong>-- / --</strong></div>
-            <div><span>Field Size</span><strong>5</strong></div>
-            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
-        </div>
-
-        <section class="synopsis premium-snapshot result-opinion">
-            <div>
-                <span class="micro-label">Our Opinion</span>
-                <h3>What the result says</h3>
-            </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 9/10F in a 5-runner field.</p>
-        </section>
-
-        
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
-        
-    <div class="previous-runs result-table-wrap">
-        <strong>Result</strong>
-        <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td><strong>Avec Toi (USA)</strong></td>
-                <td class="result-time-cell">1:22.78</td>
-                <td>9/10F</td>
-                <td>0</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>2</td>
-                <td><strong>Queen Of The Day (IRE)</strong></td>
-                <td class="result-time-cell">1:23.23</td>
-                <td>9/5</td>
-                <td>2.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>3</td>
-                <td><strong>Algebre (IRE)</strong></td>
-                <td class="result-time-cell">1:23.78</td>
-                <td>41/10</td>
-                <td>5.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>4</td>
-                <td><strong>Margaret&#x27;s Pearl (GB)</strong></td>
-                <td class="result-time-cell">1:24.96</td>
-                <td>245/10</td>
-                <td>12</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>5</td>
-                <td><strong>Azamra (FR)</strong></td>
-                <td class="result-time-cell">1:25.60</td>
-                <td>124/10</td>
-                <td>15.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-    
-    </article>
-    
-    <article class="race-card result-card premium-race-card" data-course="Sha Tin (HK)" data-race="12:10 | Sha Tin (HK) | 6f">
-        <div class="race-header premium-race-header">
-            <div>
-                <div class="eyebrow">12:10 | Sha Tin (HK)</div>
-                <h2>12:10 | Sha Tin (HK) | 6f</h2>
-                <p class="race-meta">Class 4 | Good To Yielding | Stevenson Cup (Handicap) (Course C) (Turf)</p>
-            </div>
-            <div class="race-score premium-race-score">
-                <span>Winner</span>
-                <strong class="elite result-winner-name">Healthy Healthy (NZ)</strong>
-                <em>67/10</em>
-            </div>
-        </div>
-
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Healthy Healthy (NZ)</strong></div>
-            <div><span>Rating / TS</span><strong>-- / --</strong></div>
-            <div><span>Field Size</span><strong>11</strong></div>
-            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
-        </div>
-
-        <section class="synopsis premium-snapshot result-opinion">
-            <div>
-                <span class="micro-label">Our Opinion</span>
-                <h3>What the result says</h3>
-            </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 67/10 in a 11-runner field.</p>
-        </section>
-
-        
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
-        
-    <div class="previous-runs result-table-wrap">
-        <strong>Result</strong>
-        <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td><strong>Healthy Healthy (NZ)</strong></td>
-                <td class="result-time-cell">1:10.09</td>
-                <td>67/10</td>
-                <td>0</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>2</td>
-                <td><strong>Riding High (AUS)</strong></td>
-                <td class="result-time-cell">1:10.11</td>
-                <td>5/2</td>
-                <td>0.1</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>3</td>
-                <td><strong>Grouper (AUS)</strong></td>
-                <td class="result-time-cell">1:10.18</td>
-                <td>2/1F</td>
-                <td>0.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>4</td>
-                <td><strong>Lean Era (AUS)</strong></td>
-                <td class="result-time-cell">1:10.32</td>
-                <td>62/1</td>
-                <td>1.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>5</td>
-                <td><strong>Private Wealth (AUS)</strong></td>
-                <td class="result-time-cell">1:10.45</td>
-                <td>20/1</td>
-                <td>2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>6</td>
-                <td><strong>Russet Glow (AUS)</strong></td>
-                <td class="result-time-cell">1:10.50</td>
-                <td>20/1</td>
-                <td>2.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>7</td>
-                <td><strong>Kol (AUS)</strong></td>
-                <td class="result-time-cell">1:10.77</td>
-                <td>27/1</td>
-                <td>3.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>8</td>
-                <td><strong>Oneshot (NZ)</strong></td>
-                <td class="result-time-cell">1:10.91</td>
-                <td>17/2</td>
-                <td>4.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>9</td>
-                <td><strong>Dashing Peach (NZ)</strong></td>
-                <td class="result-time-cell">1:10.95</td>
-                <td>44/1</td>
-                <td>4.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>10</td>
-                <td><strong>A Time For Us (AUS)</strong></td>
-                <td class="result-time-cell">1:11.82</td>
-                <td>59/10</td>
-                <td>9.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>11</td>
-                <td><strong>Run Run Sunrise (AUS)</strong></td>
-                <td class="result-time-cell">1:12.23</td>
-                <td>17/1</td>
-                <td>11.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-    
-    </article>
-    
-    <article class="race-card result-card premium-race-card" data-course="Deauville (FR)" data-race="12:40 | Deauville (FR) | 9.5f">
-        <div class="race-header premium-race-header">
-            <div>
-                <div class="eyebrow">12:40 | Deauville (FR)</div>
-                <h2>12:40 | Deauville (FR) | 9.5f</h2>
-                <p class="race-meta">Class not listed | Standard To Slow | Prix de Montebourg (Handicap) (Polytrack)</p>
-            </div>
-            <div class="race-score premium-race-score">
-                <span>Winner</span>
-                <strong class="elite result-winner-name">Blue Ocean Dream (GER)</strong>
-                <em>63/10</em>
-            </div>
-        </div>
-
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Blue Ocean Dream (GER)</strong></div>
-            <div><span>Rating / TS</span><strong>-- / --</strong></div>
-            <div><span>Field Size</span><strong>15</strong></div>
-            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
-        </div>
-
-        <section class="synopsis premium-snapshot result-opinion">
-            <div>
-                <span class="micro-label">Our Opinion</span>
-                <h3>What the result says</h3>
-            </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 63/10 in a 15-runner field.</p>
-        </section>
-
-        
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
-        
-    <div class="previous-runs result-table-wrap">
-        <strong>Result</strong>
-        <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td><strong>Blue Ocean Dream (GER)</strong></td>
-                <td class="result-time-cell">1:57.43</td>
-                <td>63/10</td>
-                <td>0</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>2</td>
-                <td><strong>Neuschwanstein (FR)</strong></td>
-                <td class="result-time-cell">1:57.47</td>
-                <td>112/10</td>
-                <td>0.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>3</td>
-                <td><strong>Moon Rider (FR)</strong></td>
-                <td class="result-time-cell">1:57.53</td>
-                <td>99/10</td>
-                <td>0.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>4</td>
-                <td><strong>Appleblossomwhite (IRE)</strong></td>
-                <td class="result-time-cell">1:57.78</td>
-                <td>36/1</td>
-                <td>1.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>5</td>
-                <td><strong>Got Flower (FR)</strong></td>
-                <td class="result-time-cell">1:57.83</td>
-                <td>12/1</td>
-                <td>2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>6</td>
-                <td><strong>Kelbofrer (FR)</strong></td>
-                <td class="result-time-cell">1:58.08</td>
-                <td>59/1</td>
-                <td>3.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>7</td>
-                <td><strong>Lucero (FR)</strong></td>
-                <td class="result-time-cell">1:58.43</td>
-                <td>17/1</td>
-                <td>5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>8</td>
-                <td><strong>J&#x27;Aurais Du (FR)</strong></td>
-                <td class="result-time-cell">1:58.63</td>
-                <td>54/10</td>
-                <td>6</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>9</td>
-                <td><strong>Chubasco (FR)</strong></td>
-                <td class="result-time-cell">1:58.73</td>
-                <td>78/10</td>
-                <td>6.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>10</td>
-                <td><strong>Inmate (GB)</strong></td>
-                <td class="result-time-cell">1:59.73</td>
-                <td>33/1</td>
-                <td>11.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>11</td>
-                <td><strong>Comte Noir (FR)</strong></td>
-                <td class="result-time-cell">2:0.13</td>
-                <td>41/10F</td>
-                <td>13.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>12</td>
-                <td><strong>Coco Light (FR)</strong></td>
-                <td class="result-time-cell">2:0.48</td>
-                <td>234/10</td>
-                <td>15.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>13</td>
-                <td><strong>Grand Angel (FR)</strong></td>
-                <td class="result-time-cell">2:0.83</td>
-                <td>144/10</td>
-                <td>17</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>14</td>
-                <td><strong>Detesnouvelles (FR)</strong></td>
-                <td class="result-time-cell">2:0.98</td>
-                <td>182/10</td>
-                <td>17.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>15</td>
-                <td><strong>Antico (IRE)</strong></td>
-                <td class="result-time-cell">2:1.23</td>
-                <td>30/1</td>
-                <td>19</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-    
-    </article>
-    
-    <article class="race-card result-card premium-race-card" data-course="Sha Tin (HK)" data-race="12:40 | Sha Tin (HK) | 9f">
-        <div class="race-header premium-race-header">
-            <div>
-                <div class="eyebrow">12:40 | Sha Tin (HK)</div>
-                <h2>12:40 | Sha Tin (HK) | 9f</h2>
-                <p class="race-meta">Class 4 | Good To Yielding | Ip Jug Hcp (Handicap) (Course C) (Turf)</p>
-            </div>
-            <div class="race-score premium-race-score">
-                <span>Winner</span>
-                <strong class="elite result-winner-name">Victor Supreme (NZ)</strong>
-                <em>27/10</em>
-            </div>
-        </div>
-
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Victor Supreme (NZ)</strong></div>
-            <div><span>Rating / TS</span><strong>-- / --</strong></div>
-            <div><span>Field Size</span><strong>14</strong></div>
-            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
-        </div>
-
-        <section class="synopsis premium-snapshot result-opinion">
-            <div>
-                <span class="micro-label">Our Opinion</span>
-                <h3>What the result says</h3>
-            </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 27/10 in a 14-runner field.</p>
-        </section>
-
-        
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
-        
-    <div class="previous-runs result-table-wrap">
-        <strong>Result</strong>
-        <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td><strong>Victor Supreme (NZ)</strong></td>
-                <td class="result-time-cell">1:47.65</td>
-                <td>27/10</td>
-                <td>0</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>2</td>
-                <td><strong>Firefoot (AUS)</strong></td>
-                <td class="result-time-cell">1:48.47</td>
-                <td>10/1</td>
-                <td>4.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>3</td>
-                <td><strong>Inno Super (AUS)</strong></td>
-                <td class="result-time-cell">1:48.70</td>
-                <td>49/1</td>
-                <td>5.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>4</td>
-                <td><strong>Smart Fat Cat (AUS)</strong></td>
-                <td class="result-time-cell">1:48.79</td>
-                <td>12/5F</td>
-                <td>6.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>5</td>
-                <td><strong>Supreme Mastermind (AUS)</strong></td>
-                <td class="result-time-cell">1:48.83</td>
-                <td>14/1</td>
-                <td>6.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>6</td>
-                <td><strong>I Excelle (NZ)</strong></td>
-                <td class="result-time-cell">1:49.20</td>
-                <td>22/1</td>
-                <td>8.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>7</td>
-                <td><strong>Grand Turbo (NZ)</strong></td>
-                <td class="result-time-cell">1:49.24</td>
-                <td>16/1</td>
-                <td>8.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>8</td>
-                <td><strong>Mr Cool (AUS)</strong></td>
-                <td class="result-time-cell">1:49.25</td>
-                <td>4/1</td>
-                <td>8.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>9</td>
-                <td><strong>Kingly Demeanor (GB)</strong></td>
-                <td class="result-time-cell">1:49.25</td>
-                <td>9/1</td>
-                <td>8.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>10</td>
-                <td><strong>Bright Inheritance (AUS)</strong></td>
-                <td class="result-time-cell">1:49.29</td>
-                <td>81/1</td>
-                <td>9</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>11</td>
-                <td><strong>Leaping Star (IRE)</strong></td>
-                <td class="result-time-cell">1:50.01</td>
-                <td>44/1</td>
-                <td>13</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>12</td>
-                <td><strong>Celtic Times (IRE)</strong></td>
-                <td class="result-time-cell">1:50.97</td>
-                <td>82/1</td>
-                <td>18.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>13</td>
-                <td><strong>Smiling One (AUS)</strong></td>
-                <td class="result-time-cell">1:51.47</td>
-                <td>39/1</td>
-                <td>21</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>14</td>
-                <td><strong>Mission Giant (AUS)</strong></td>
-                <td class="result-time-cell">1:51.92</td>
-                <td>101/1</td>
-                <td>23.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-    
-    </article>
-    
-    <article class="race-card result-card premium-race-card" data-course="Sunshine Coast (AUS)" data-race="6:23 | Sunshine Coast (AUS) | 8f">
-        <div class="race-header premium-race-header">
-            <div>
-                <div class="eyebrow">6:23 | Sunshine Coast (AUS)</div>
-                <h2>6:23 | Sunshine Coast (AUS) | 8f</h2>
-                <p class="race-meta">Group 3 | Good To Soft | Double R Group Winx Guineas (Turf)</p>
-            </div>
-            <div class="race-score premium-race-score">
-                <span>Winner</span>
-                <strong class="elite result-winner-name">Cellarmaster (NZ)</strong>
-                <em>9/2</em>
-            </div>
-        </div>
-
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Cellarmaster (NZ)</strong></div>
-            <div><span>Rating / TS</span><strong>-- / --</strong></div>
-            <div><span>Field Size</span><strong>14</strong></div>
-            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
-        </div>
-
-        <section class="synopsis premium-snapshot result-opinion">
-            <div>
-                <span class="micro-label">Our Opinion</span>
-                <h3>What the result says</h3>
-            </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 9/2 in a 14-runner field.</p>
-        </section>
-
-        
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
-        
-    <div class="previous-runs result-table-wrap">
-        <strong>Result</strong>
-        <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td><strong>Cellarmaster (NZ)</strong></td>
-                <td class="result-time-cell">1:39.46</td>
-                <td>9/2</td>
-                <td>0</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>2</td>
-                <td><strong>Platinum Pantheon (AUS)</strong></td>
-                <td class="result-time-cell">1:39.51</td>
-                <td>11/2</td>
-                <td>0.3</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>3</td>
-                <td><strong>Rustemo (AUS)</strong></td>
-                <td class="result-time-cell">1:39.73</td>
-                <td>15/2</td>
-                <td>1.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>4</td>
-                <td><strong>Hillier (AUS)</strong></td>
-                <td class="result-time-cell">1:39.80</td>
-                <td>10/1</td>
-                <td>1.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>5</td>
-                <td><strong>State Opera (AUS)</strong></td>
-                <td class="result-time-cell">1:39.82</td>
-                <td>30/1</td>
-                <td>2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>6</td>
-                <td><strong>Within The Law (AUS)</strong></td>
-                <td class="result-time-cell">1:40.05</td>
-                <td>8/5F</td>
-                <td>3.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>7</td>
-                <td><strong>Hush Hush (AUS)</strong></td>
-                <td class="result-time-cell">1:40.10</td>
-                <td>40/1</td>
-                <td>3.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>8</td>
-                <td><strong>Vandevelde (AUS)</strong></td>
-                <td class="result-time-cell">1:40.18</td>
-                <td>100/1</td>
-                <td>3.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>9</td>
-                <td><strong>Kohler Kid (AUS)</strong></td>
-                <td class="result-time-cell">1:40.28</td>
-                <td>13/2</td>
-                <td>4.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>10</td>
-                <td><strong>Tupakara (AUS)</strong></td>
-                <td class="result-time-cell">1:40.36</td>
-                <td>20/1</td>
-                <td>4.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>11</td>
-                <td><strong>Lyneham (AUS)</strong></td>
-                <td class="result-time-cell">1:40.46</td>
-                <td>30/1</td>
-                <td>5.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>12</td>
-                <td><strong>Run To You (AUS)</strong></td>
-                <td class="result-time-cell">1:40.82</td>
-                <td>100/1</td>
-                <td>7.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>13</td>
-                <td><strong>Pink Vixen (AUS)</strong></td>
-                <td class="result-time-cell">1:41.10</td>
-                <td>150/1</td>
-                <td>9</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>14</td>
-                <td><strong>Special Artist (AUS)</strong></td>
-                <td class="result-time-cell">1:41.55</td>
-                <td>150/1</td>
-                <td>11.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-    
-    </article>
-    
-    <article class="race-card result-card premium-race-card" data-course="Sha Tin (HK)" data-race="9:00 | Sha Tin (HK) | 6f">
-        <div class="race-header premium-race-header">
-            <div>
-                <div class="eyebrow">9:00 | Sha Tin (HK)</div>
-                <h2>9:00 | Sha Tin (HK) | 6f</h2>
-                <p class="race-meta">Class not listed | Good | Purves Quaich Griffin Plate (Course C) (Turf)</p>
-            </div>
-            <div class="race-score premium-race-score">
-                <span>Winner</span>
-                <strong class="elite result-winner-name">Almighty Warrior (IRE)</strong>
-                <em>68/10</em>
-            </div>
-        </div>
-
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Almighty Warrior (IRE)</strong></div>
-            <div><span>Rating / TS</span><strong>-- / --</strong></div>
-            <div><span>Field Size</span><strong>10</strong></div>
-            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
-        </div>
-
-        <section class="synopsis premium-snapshot result-opinion">
-            <div>
-                <span class="micro-label">Our Opinion</span>
-                <h3>What the result says</h3>
-            </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 68/10 in a 10-runner field.</p>
-        </section>
-
-        
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
-        
-    <div class="previous-runs result-table-wrap">
-        <strong>Result</strong>
-        <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td><strong>Almighty Warrior (IRE)</strong></td>
-                <td class="result-time-cell">1:9.71</td>
-                <td>68/10</td>
-                <td>0</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>2</td>
-                <td><strong>Jedi Spurs (AUS)</strong></td>
-                <td class="result-time-cell">1:10.33</td>
-                <td>1/10F</td>
-                <td>3.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>3</td>
-                <td><strong>Quantum Wukong (AUS)</strong></td>
-                <td class="result-time-cell">1:10.38</td>
-                <td>14/1</td>
-                <td>4</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>4</td>
-                <td><strong>Chancheng Sparkle (USA)</strong></td>
-                <td class="result-time-cell">1:10.54</td>
-                <td>24/1</td>
-                <td>5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>5</td>
-                <td><strong>Dragon Generation (USA)</strong></td>
-                <td class="result-time-cell">1:10.88</td>
-                <td>61/1</td>
-                <td>7</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>6</td>
-                <td><strong>Ever Wealth (AUS)</strong></td>
-                <td class="result-time-cell">1:11.04</td>
-                <td>18/1</td>
-                <td>8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>7</td>
-                <td><strong>Golden Gunners (IRE)</strong></td>
-                <td class="result-time-cell">1:11.33</td>
-                <td>51/1</td>
-                <td>9.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>8</td>
-                <td><strong>Coogee Bay (IRE)</strong></td>
-                <td class="result-time-cell">1:11.58</td>
-                <td>130/1</td>
-                <td>11.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>9</td>
-                <td><strong>Kyoto Spring (IRE)</strong></td>
-                <td class="result-time-cell">1:12.08</td>
-                <td>103/1</td>
-                <td>14.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>10</td>
-                <td><strong>Ultra Bolt (AUS)</strong></td>
-                <td class="result-time-cell">1:12.13</td>
-                <td>55/1</td>
-                <td>14.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-    
-    </article>
-    
-    <article class="race-card result-card premium-race-card" data-course="Sha Tin (HK)" data-race="9:30 | Sha Tin (HK) | 6f">
-        <div class="race-header premium-race-header">
-            <div>
-                <div class="eyebrow">9:30 | Sha Tin (HK)</div>
-                <h2>9:30 | Sha Tin (HK) | 6f</h2>
-                <p class="race-meta">Class 5 | Good | Swaine Cup (Handicap) (Course C) (Turf)</p>
-            </div>
-            <div class="race-score premium-race-score">
-                <span>Winner</span>
-                <strong class="elite result-winner-name">Noble Fans (AUS)</strong>
-                <em>20/1</em>
-            </div>
-        </div>
-
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Noble Fans (AUS)</strong></div>
-            <div><span>Rating / TS</span><strong>-- / --</strong></div>
-            <div><span>Field Size</span><strong>12</strong></div>
-            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
-        </div>
-
-        <section class="synopsis premium-snapshot result-opinion">
-            <div>
-                <span class="micro-label">Our Opinion</span>
-                <h3>What the result says</h3>
-            </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 20/1 in a 12-runner field.</p>
-        </section>
-
-        
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
-        
-    <div class="previous-runs result-table-wrap">
-        <strong>Result</strong>
-        <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td><strong>Noble Fans (AUS)</strong></td>
-                <td class="result-time-cell">1:10.06</td>
-                <td>20/1</td>
-                <td>0</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>2</td>
-                <td><strong>Mr Good Vibes (NZ)</strong></td>
-                <td class="result-time-cell">1:10.09</td>
-                <td>44/1</td>
-                <td>0.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>3</td>
-                <td><strong>Verbier (FR)</strong></td>
-                <td class="result-time-cell">1:10.11</td>
-                <td>4/5F</td>
-                <td>0.3</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>4</td>
-                <td><strong>Made For Life (AUS)</strong></td>
-                <td class="result-time-cell">1:10.44</td>
-                <td>16/1</td>
-                <td>2.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>5</td>
-                <td><strong>Vigor Elleegant (AUS)</strong></td>
-                <td class="result-time-cell">1:10.44</td>
-                <td>19/1</td>
-                <td>2.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>6</td>
-                <td><strong>Peridot (NZ)</strong></td>
-                <td class="result-time-cell">1:10.69</td>
-                <td>9/1</td>
-                <td>3.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>7</td>
-                <td><strong>Supreme Winner (AUS)</strong></td>
-                <td class="result-time-cell">1:10.73</td>
-                <td>79/10</td>
-                <td>4</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>8</td>
-                <td><strong>Blue Baron (NZ)</strong></td>
-                <td class="result-time-cell">1:10.73</td>
-                <td>41/10</td>
-                <td>4</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>9</td>
-                <td><strong>Money Tycoon (AUS)</strong></td>
-                <td class="result-time-cell">1:11.02</td>
-                <td>107/1</td>
-                <td>5.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>10</td>
-                <td><strong>Groovy Feeling (AUS)</strong></td>
-                <td class="result-time-cell">1:11.06</td>
-                <td>28/1</td>
-                <td>6</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>11</td>
-                <td><strong>Sparkle And Gold (GB)</strong></td>
-                <td class="result-time-cell">1:11.64</td>
-                <td>67/1</td>
-                <td>9.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>12</td>
-                <td><strong>Multidutch (AUS)</strong></td>
-                <td class="result-time-cell">1:12.27</td>
-                <td>27/1</td>
-                <td>13.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-    
-    </article>
-    
-    <article class="race-card result-card premium-race-card" data-course="Sha Tin (HK)" data-race="10:00 | Sha Tin (HK) | 6f">
-        <div class="race-header premium-race-header">
-            <div>
-                <div class="eyebrow">10:00 | Sha Tin (HK)</div>
-                <h2>10:00 | Sha Tin (HK) | 6f</h2>
-                <p class="race-meta">Class 5 | Fast | Wong Cup (Handicap) (Dirt)</p>
-            </div>
-            <div class="race-score premium-race-score">
-                <span>Winner</span>
-                <strong class="elite result-winner-name">Noble Deluxe (AUS)</strong>
-                <em>15/1</em>
-            </div>
-        </div>
-
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Noble Deluxe (AUS)</strong></div>
-            <div><span>Rating / TS</span><strong>-- / --</strong></div>
-            <div><span>Field Size</span><strong>12</strong></div>
-            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
-        </div>
-
-        <section class="synopsis premium-snapshot result-opinion">
-            <div>
-                <span class="micro-label">Our Opinion</span>
-                <h3>What the result says</h3>
-            </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 15/1 in a 12-runner field.</p>
-        </section>
-
-        
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
-        
-    <div class="previous-runs result-table-wrap">
-        <strong>Result</strong>
-        <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td><strong>Noble Deluxe (AUS)</strong></td>
-                <td class="result-time-cell">1:8.91</td>
-                <td>15/1</td>
-                <td>0</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>2</td>
-                <td><strong>Macanese Master (AUS)</strong></td>
-                <td class="result-time-cell">1:8.93</td>
-                <td>76/10</td>
-                <td>0.1</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>3</td>
-                <td><strong>Viva Chaleur (FR)</strong></td>
-                <td class="result-time-cell">1:9.24</td>
-                <td>5/2F</td>
-                <td>2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>4</td>
-                <td><strong>Daily Trophy (NZ)</strong></td>
-                <td class="result-time-cell">1:9.28</td>
-                <td>31/10</td>
-                <td>2.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>5</td>
-                <td><strong>Bullish Pride (AUS)</strong></td>
-                <td class="result-time-cell">1:9.33</td>
-                <td>11/1</td>
-                <td>2.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>6</td>
-                <td><strong>Quick Money (GB)</strong></td>
-                <td class="result-time-cell">1:9.83</td>
-                <td>40/1</td>
-                <td>5.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>7</td>
-                <td><strong>Cirrus Speed (AUS)</strong></td>
-                <td class="result-time-cell">1:9.87</td>
-                <td>9/1</td>
-                <td>5.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>8</td>
-                <td><strong>Young Striker (AUS)</strong></td>
-                <td class="result-time-cell">1:10.12</td>
-                <td>22/1</td>
-                <td>7.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>9</td>
-                <td><strong>Happy Action (AUS)</strong></td>
-                <td class="result-time-cell">1:10.13</td>
-                <td>67/10</td>
-                <td>7.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>10</td>
-                <td><strong>Robot Knight (AUS)</strong></td>
-                <td class="result-time-cell">1:10.33</td>
-                <td>10/1</td>
-                <td>8.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>11</td>
-                <td><strong>Full Of Laughter (NZ)</strong></td>
-                <td class="result-time-cell">1:10.62</td>
-                <td>112/1</td>
-                <td>10.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>12</td>
-                <td><strong>Gimme Five (NZ)</strong></td>
-                <td class="result-time-cell">1:11.66</td>
-                <td>23/1</td>
-                <td>16.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-    
-    </article>
-    
-    <article class="race-card result-card premium-race-card" data-course="Sha Tin (HK)" data-race="10:40 | Sha Tin (HK) | 6f">
-        <div class="race-header premium-race-header">
-            <div>
-                <div class="eyebrow">10:40 | Sha Tin (HK)</div>
-                <h2>10:40 | Sha Tin (HK) | 6f</h2>
-                <p class="race-meta">Class 2 | Good To Yielding | Li Cup (Handicap) (Course C) (Turf)</p>
-            </div>
-            <div class="race-score premium-race-score">
-                <span>Winner</span>
-                <strong class="elite result-winner-name">Rising Force (NZ)</strong>
-                <em>13/10F</em>
-            </div>
-        </div>
-
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Rising Force (NZ)</strong></div>
+            <div><span>Winner</span><strong>Concorde Landed (IRE)</strong></div>
             <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>7</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
@@ -1792,15 +494,19 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <span class="micro-label">Our Opinion</span>
                 <h3>What the result says</h3>
             </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 13/10F in a 7-runner field.</p>
+            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 13/8F in a 7-runner field.</p>
         </section>
 
         
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
+    <section class="result-model-review">
+        <div><span class="micro-label">Pre-race Model Review</span><strong>Top pre-race profile placed.</strong></div>
+        <div class="result-model-grid">
+            <div><span>Top model profile</span><strong>Snowing</strong><small>Finished 2 | confidence 4.0</small></div>
+            <div><span>Winner model rank</span><strong>3</strong><small>0.0 confidence</small></div>
+            <div><span>Winner alignment</span><strong>0/6</strong><small>Positive evidence layers before the race</small></div>
+        </div>
+    </section>
+    
         
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
@@ -1809,9 +515,9 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <tbody>
             <tr>
                 <td>1</td>
-                <td><strong>Rising Force (NZ)</strong></td>
-                <td class="result-time-cell">1:9.10</td>
-                <td>13/10F</td>
+                <td><strong>Concorde Landed (IRE)</strong></td>
+                <td class="result-time-cell">0:59.60</td>
+                <td>13/8F</td>
                 <td>0</td>
                 <td>--</td>
                 <td>--</td>
@@ -1819,246 +525,60 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         
             <tr>
                 <td>2</td>
-                <td><strong>Pakistan Legacy (AUS)</strong></td>
-                <td class="result-time-cell">1:9.33</td>
+                <td><strong>Snowing (IRE)</strong></td>
+                <td class="result-time-cell">1:0.43</td>
+                <td>7/4</td>
+                <td>5</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td><strong>Fly Smartly (IRE)</strong></td>
+                <td class="result-time-cell">1:0.68</td>
                 <td>18/1</td>
-                <td>1.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>3</td>
-                <td><strong>Young Champion (IRE)</strong></td>
-                <td class="result-time-cell">1:9.34</td>
-                <td>22/5</td>
-                <td>1.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>4</td>
-                <td><strong>Mugen (AUS)</strong></td>
-                <td class="result-time-cell">1:9.65</td>
-                <td>50/1</td>
-                <td>3</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>5</td>
-                <td><strong>Sky Trust (AUS)</strong></td>
-                <td class="result-time-cell">1:9.65</td>
-                <td>73/10</td>
-                <td>3</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>6</td>
-                <td><strong>Turquoise Velocity (AUS)</strong></td>
-                <td class="result-time-cell">1:9.87</td>
-                <td>9/5</td>
-                <td>4.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>7</td>
-                <td><strong>So Naive (NZ)</strong></td>
-                <td class="result-time-cell">1:10.96</td>
-                <td>23/1</td>
-                <td>10.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-    
-    </article>
-    
-    <article class="race-card result-card premium-race-card" data-course="Sha Tin (HK)" data-race="11:10 | Sha Tin (HK) | 7f">
-        <div class="race-header premium-race-header">
-            <div>
-                <div class="eyebrow">11:10 | Sha Tin (HK)</div>
-                <h2>11:10 | Sha Tin (HK) | 7f</h2>
-                <p class="race-meta">Class 4 | Good To Yielding | Arculli Trophy (Handicap) (Course C) (Turf)</p>
-            </div>
-            <div class="race-score premium-race-score">
-                <span>Winner</span>
-                <strong class="elite result-winner-name">Graceful Heart (AUS)</strong>
-                <em>19/1</em>
-            </div>
-        </div>
-
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Graceful Heart (AUS)</strong></div>
-            <div><span>Rating / TS</span><strong>-- / --</strong></div>
-            <div><span>Field Size</span><strong>14</strong></div>
-            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
-        </div>
-
-        <section class="synopsis premium-snapshot result-opinion">
-            <div>
-                <span class="micro-label">Our Opinion</span>
-                <h3>What the result says</h3>
-            </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 19/1 in a 14-runner field.</p>
-        </section>
-
-        
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
-        
-    <div class="previous-runs result-table-wrap">
-        <strong>Result</strong>
-        <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td><strong>Graceful Heart (AUS)</strong></td>
-                <td class="result-time-cell">1:22.08</td>
-                <td>19/1</td>
-                <td>0</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>2</td>
-                <td><strong>Sunday&#x27;s Serenade (NZ)</strong></td>
-                <td class="result-time-cell">1:22.44</td>
-                <td>14/1</td>
-                <td>2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>3</td>
-                <td><strong>Quick Contribution (NZ)</strong></td>
-                <td class="result-time-cell">1:22.45</td>
-                <td>6/4F</td>
-                <td>2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>4</td>
-                <td><strong>Robot Star (AUS)</strong></td>
-                <td class="result-time-cell">1:22.63</td>
-                <td>15/1</td>
-                <td>3</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>5</td>
-                <td><strong>Golden Empire (FR)</strong></td>
-                <td class="result-time-cell">1:22.81</td>
-                <td>34/1</td>
-                <td>4</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>6</td>
-                <td><strong>M M Concord (AUS)</strong></td>
-                <td class="result-time-cell">1:22.94</td>
-                <td>27/10</td>
-                <td>4.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>7</td>
-                <td><strong>Lucky Doctor (AUS)</strong></td>
-                <td class="result-time-cell">1:22.95</td>
-                <td>68/1</td>
-                <td>4.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>8</td>
-                <td><strong>Rising From Ashes (AUS)</strong></td>
-                <td class="result-time-cell">1:23.08</td>
-                <td>34/1</td>
-                <td>5.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>9</td>
-                <td><strong>Let&#x27;s Have Fun (AUS)</strong></td>
-                <td class="result-time-cell">1:23.13</td>
-                <td>17/1</td>
-                <td>5.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>10</td>
-                <td><strong>Glorious Ryder (NZ)</strong></td>
-                <td class="result-time-cell">1:23.22</td>
-                <td>91/1</td>
-                <td>6.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>11</td>
-                <td><strong>Sunny Da Best (NZ)</strong></td>
-                <td class="result-time-cell">1:23.27</td>
-                <td>11/1</td>
                 <td>6.5</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
-                <td>12</td>
-                <td><strong>Decision Link (AUS)</strong></td>
-                <td class="result-time-cell">1:23.58</td>
-                <td>68/10</td>
-                <td>8.2</td>
+                <td>4</td>
+                <td><strong>Shi Yang (IRE)</strong></td>
+                <td class="result-time-cell">1:0.89</td>
+                <td>13/2</td>
+                <td>7.8</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
-                <td>13</td>
-                <td><strong>Word Of Kindness (NZ)</strong></td>
-                <td class="result-time-cell">1:23.72</td>
-                <td>41/1</td>
+                <td>5</td>
+                <td><strong>Southern Boulevard (IRE)</strong></td>
+                <td class="result-time-cell">1:1.10</td>
+                <td>17/2</td>
                 <td>9</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
-                <td>14</td>
-                <td><strong>Cornerstone (AUS)</strong></td>
-                <td class="result-time-cell">1:25.63</td>
-                <td>114/1</td>
-                <td>19.5</td>
+                <td>6</td>
+                <td><strong>My Irish Lady (IRE)</strong></td>
+                <td class="result-time-cell">1:1.68</td>
+                <td>12/1</td>
+                <td>12.5</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td><strong>Woodlawn Lily (IRE)</strong></td>
+                <td class="result-time-cell">1:1.85</td>
+                <td>66/1</td>
+                <td>13.5</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
@@ -2068,24 +588,24 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
     
     </article>
     
-    <article class="race-card result-card premium-race-card" data-course="Sha Tin (HK)" data-race="11:40 | Sha Tin (HK) | 6f">
+    <article class="race-card result-card premium-race-card" data-course="Newmarket (July)" data-race="1:30 | Newmarket (July) | 5f">
         <div class="race-header premium-race-header">
             <div>
-                <div class="eyebrow">11:40 | Sha Tin (HK)</div>
-                <h2>11:40 | Sha Tin (HK) | 6f</h2>
-                <p class="race-meta">Class 4 | Fast | Chan Trophy (Handicap) (Dirt)</p>
+                <div class="eyebrow">1:30 | Newmarket (July)</div>
+                <h2>1:30 | Newmarket (July) | 5f</h2>
+                <p class="race-meta">Class 4 | Good To Firm | Betway Sprint Handicap</p>
             </div>
             <div class="race-score premium-race-score">
                 <span>Winner</span>
-                <strong class="elite result-winner-name">Bustling City (AUS)</strong>
-                <em>3/1</em>
+                <strong class="elite result-winner-name">Quantum Power (IRE)</strong>
+                <em>7/2</em>
             </div>
         </div>
 
         <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Bustling City (AUS)</strong></div>
+            <div><span>Winner</span><strong>Quantum Power (IRE)</strong></div>
             <div><span>Rating / TS</span><strong>-- / --</strong></div>
-            <div><span>Field Size</span><strong>12</strong></div>
+            <div><span>Field Size</span><strong>8</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
 
@@ -2094,15 +614,19 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <span class="micro-label">Our Opinion</span>
                 <h3>What the result says</h3>
             </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 3/1 in a 12-runner field.</p>
+            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 7/2 in a 8-runner field.</p>
         </section>
 
         
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
+    <section class="result-model-review">
+        <div><span class="micro-label">Pre-race Model Review</span><strong>Top pre-race profile placed.</strong></div>
+        <div class="result-model-grid">
+            <div><span>Top model profile</span><strong>Mighty Magnus</strong><small>Finished 3 | confidence 34.8</small></div>
+            <div><span>Winner model rank</span><strong>7</strong><small>6.8 confidence</small></div>
+            <div><span>Winner alignment</span><strong>2/6</strong><small>Positive evidence layers before the race</small></div>
+        </div>
+    </section>
+    
         
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
@@ -2111,9 +635,9 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <tbody>
             <tr>
                 <td>1</td>
-                <td><strong>Bustling City (AUS)</strong></td>
-                <td class="result-time-cell">1:8.18</td>
-                <td>3/1</td>
+                <td><strong>Quantum Power (IRE)</strong></td>
+                <td class="result-time-cell">0:57.42</td>
+                <td>7/2</td>
                 <td>0</td>
                 <td>--</td>
                 <td>--</td>
@@ -2121,110 +645,310 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         
             <tr>
                 <td>2</td>
-                <td><strong>Bright Mortar (AUS)</strong></td>
-                <td class="result-time-cell">1:8.93</td>
-                <td>27/1</td>
+                <td><strong>Wedonttelllies (IRE)</strong></td>
+                <td class="result-time-cell">0:57.50</td>
+                <td>6/1</td>
+                <td>0.5</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td><strong>Mighty Magnus (IRE)</strong></td>
+                <td class="result-time-cell">0:57.71</td>
+                <td>15/8F</td>
+                <td>1.8</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td><strong>Kolkata Knight (IRE)</strong></td>
+                <td class="result-time-cell">0:57.92</td>
+                <td>22/1</td>
+                <td>3</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td><strong>Ambishio (IRE)</strong></td>
+                <td class="result-time-cell">0:58.05</td>
+                <td>14/1</td>
+                <td>3.8</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td><strong>Percy&#x27;s Star (GB)</strong></td>
+                <td class="result-time-cell">0:58.17</td>
+                <td>17/2</td>
                 <td>4.5</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
-                <td>3</td>
-                <td><strong>Day Day Victory (AUS)</strong></td>
-                <td class="result-time-cell">1:8.97</td>
-                <td>14/1</td>
-                <td>4.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>4</td>
-                <td><strong>Speedy Smartie (NZ)</strong></td>
-                <td class="result-time-cell">1:9.06</td>
-                <td>36/5</td>
-                <td>5.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>5</td>
-                <td><strong>Noble Patch (AUS)</strong></td>
-                <td class="result-time-cell">1:9.26</td>
-                <td>46/1</td>
-                <td>6.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>6</td>
-                <td><strong>E Ho Ho (AUS)</strong></td>
-                <td class="result-time-cell">1:9.43</td>
-                <td>23/1</td>
-                <td>7.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
                 <td>7</td>
-                <td><strong>Good Chap (AUS)</strong></td>
-                <td class="result-time-cell">1:9.68</td>
-                <td>15/1</td>
-                <td>9</td>
+                <td><strong>Desert Treasure (GB)</strong></td>
+                <td class="result-time-cell">0:58.19</td>
+                <td>11/2</td>
+                <td>4.5</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>8</td>
-                <td><strong>Fatal Blow (AUS)</strong></td>
-                <td class="result-time-cell">1:9.72</td>
-                <td>37/1</td>
-                <td>9.2</td>
+                <td><strong>Zelaina (GB)</strong></td>
+                <td class="result-time-cell">0:59.25</td>
+                <td>14/1</td>
+                <td>11</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    
+    </article>
+    
+    <article class="race-card result-card premium-race-card" data-course="Sandown" data-race="1:50 | Sandown | 5f">
+        <div class="race-header premium-race-header">
+            <div>
+                <div class="eyebrow">1:50 | Sandown</div>
+                <h2>1:50 | Sandown | 5f</h2>
+                <p class="race-meta">Class 1 | Good | Coral Charge (Group 3) (Registered As The Sprint Stakes)</p>
+            </div>
+            <div class="race-score premium-race-score">
+                <span>Winner</span>
+                <strong class="elite result-winner-name">Rumstar (GB)</strong>
+                <em>100/30</em>
+            </div>
+        </div>
+
+        <div class="race-intel-grid premium-intel-grid">
+            <div><span>Winner</span><strong>Rumstar (GB)</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
+            <div><span>Field Size</span><strong>9</strong></div>
+            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
+        </div>
+
+        <section class="synopsis premium-snapshot result-opinion">
+            <div>
+                <span class="micro-label">Our Opinion</span>
+                <h3>What the result says</h3>
+            </div>
+            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 100/30 in a 9-runner field.</p>
+        </section>
+
+        
+    <section class="result-model-review">
+        <div><span class="micro-label">Pre-race Model Review</span><strong>Top pre-race profile won.</strong></div>
+        <div class="result-model-grid">
+            <div><span>Top model profile</span><strong>Rumstar</strong><small>Finished 1 | confidence 57.8</small></div>
+            <div><span>Winner model rank</span><strong>1</strong><small>57.8 confidence</small></div>
+            <div><span>Winner alignment</span><strong>3/6</strong><small>Positive evidence layers before the race</small></div>
+        </div>
+    </section>
+    
+        
+    <div class="previous-runs result-table-wrap">
+        <strong>Result</strong>
+        <table class="rp-table result-table">
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td><strong>Rumstar (GB)</strong></td>
+                <td class="result-time-cell">1:0.38</td>
+                <td>100/30</td>
+                <td>0</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td><strong>Luna A Inbhir Nis (GB)</strong></td>
+                <td class="result-time-cell">1:0.55</td>
+                <td>18/1</td>
+                <td>1</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td><strong>Partisan Hero (IRE)</strong></td>
+                <td class="result-time-cell">1:0.62</td>
+                <td>12/1</td>
+                <td>1.2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td><strong>Getreadytorumble (GB)</strong></td>
+                <td class="result-time-cell">1:1.09</td>
+                <td>6/1</td>
+                <td>4.2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td><strong>Leovanni (IRE)</strong></td>
+                <td class="result-time-cell">1:1.11</td>
+                <td>14/1</td>
+                <td>4.2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td><strong>Gold Digger (IRE)</strong></td>
+                <td class="result-time-cell">1:1.21</td>
+                <td>12/1</td>
+                <td>5</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td><strong>Shagraan (IRE)</strong></td>
+                <td class="result-time-cell">1:1.26</td>
+                <td>4/1</td>
+                <td>5.2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td><strong>Palmeira (GB)</strong></td>
+                <td class="result-time-cell">1:1.42</td>
+                <td>80/1</td>
+                <td>6.2</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>9</td>
-                <td><strong>Natural High (AUS)</strong></td>
-                <td class="result-time-cell">1:9.73</td>
-                <td>17/1</td>
-                <td>9.2</td>
+                <td><strong>Asfoora (AUS)</strong></td>
+                <td class="result-time-cell">1:1.80</td>
+                <td>9/4F</td>
+                <td>8.5</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    
+    </article>
+    
+    <article class="race-card result-card premium-race-card" data-course="Naas (IRE)" data-race="1:57 | Naas (IRE) | 5f">
+        <div class="race-header premium-race-header">
+            <div>
+                <div class="eyebrow">1:57 | Naas (IRE)</div>
+                <h2>1:57 | Naas (IRE) | 5f</h2>
+                <p class="race-meta">Class not listed | Good | Irish Stallion Farms EBF Race</p>
+            </div>
+            <div class="race-score premium-race-score">
+                <span>Winner</span>
+                <strong class="elite result-winner-name">Keke (GB)</strong>
+                <em>6/5F</em>
+            </div>
+        </div>
+
+        <div class="race-intel-grid premium-intel-grid">
+            <div><span>Winner</span><strong>Keke (GB)</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
+            <div><span>Field Size</span><strong>5</strong></div>
+            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
+        </div>
+
+        <section class="synopsis premium-snapshot result-opinion">
+            <div>
+                <span class="micro-label">Our Opinion</span>
+                <h3>What the result says</h3>
+            </div>
+            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 6/5F in a 5-runner field.</p>
+        </section>
+
+        
+    <section class="result-model-review">
+        <div><span class="micro-label">Pre-race Model Review</span><strong>Top pre-race profile won.</strong></div>
+        <div class="result-model-grid">
+            <div><span>Top model profile</span><strong>Keke</strong><small>Finished 1 | confidence 62.0</small></div>
+            <div><span>Winner model rank</span><strong>1</strong><small>62.0 confidence</small></div>
+            <div><span>Winner alignment</span><strong>3/6</strong><small>Positive evidence layers before the race</small></div>
+        </div>
+    </section>
+    
+        
+    <div class="previous-runs result-table-wrap">
+        <strong>Result</strong>
+        <table class="rp-table result-table">
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td><strong>Keke (GB)</strong></td>
+                <td class="result-time-cell">0:59.50</td>
+                <td>6/5F</td>
+                <td>0</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
-                <td>10</td>
-                <td><strong>Daily Fun (AUS)</strong></td>
-                <td class="result-time-cell">1:9.73</td>
-                <td>21/10F</td>
-                <td>9.2</td>
+                <td>2</td>
+                <td><strong>Xerling (IRE)</strong></td>
+                <td class="result-time-cell">0:59.55</td>
+                <td>9/1</td>
+                <td>0.3</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
-                <td>11</td>
-                <td><strong>Pejibaye (NZ)</strong></td>
-                <td class="result-time-cell">1:11.18</td>
-                <td>11/2</td>
-                <td>18</td>
+                <td>3</td>
+                <td><strong>Likedbymike (IRE)</strong></td>
+                <td class="result-time-cell">0:59.75</td>
+                <td>15/8</td>
+                <td>1.5</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
-                <td>12</td>
-                <td><strong>Tin Fook (AUS)</strong></td>
-                <td class="result-time-cell">1:11.60</td>
+                <td>4</td>
+                <td><strong>Howd&#x27;yadoit (IRE)</strong></td>
+                <td class="result-time-cell">0:59.88</td>
+                <td>6/1</td>
+                <td>2.2</td>
                 <td>--</td>
-                <td>20.5</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td><strong>Cardiff By The Sea (IRE)</strong></td>
+                <td class="result-time-cell">1:0.46</td>
+                <td>14/1</td>
+                <td>5.8</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
