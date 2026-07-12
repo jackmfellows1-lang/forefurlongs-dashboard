@@ -440,9 +440,9 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
 
         <section class="brief-grid">
             <div class="brief-card"><span>Result date</span><strong>12 Jul 2026</strong></div>
-            <div class="brief-card"><span>Races reviewed</span><strong>8</strong></div>
-            <div class="brief-card"><span>Winners captured</span><strong>8</strong></div>
-            <div class="brief-card"><span>Avg field size</span><strong>13.8</strong></div>
+            <div class="brief-card"><span>Races reviewed</span><strong>3</strong></div>
+            <div class="brief-card"><span>Winners captured</span><strong>3</strong></div>
+            <div class="brief-card"><span>Avg field size</span><strong>9</strong></div>
         </section>
         <section class="panel" style="padding:20px;">
             <h2>Latest Result Reviews</h2>
@@ -454,38 +454,38 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <label for="courseFilter">Select course</label>
                 <select id="courseFilter" onchange="updateCourseFilter(true)">
                     <option value="ALL">All courses</option>
-                    <option value="Sha Tin">Sha Tin</option>
+                    <option value="Sligo">Sligo</option><option value="Stratford">Stratford</option>
                 </select>
             </div>
             <div>
                 <label for="raceFilter">Select race</label>
                 <select id="raceFilter" onchange="updateCourseFilter()">
                     <option value="ALL">All races</option>
-                    <option value="12:00 | Sha Tin | 8f">12:00 | Sha Tin | 8f</option><option value="12:35 | Sha Tin | 8f">12:35 | Sha Tin | 8f</option><option value="9:00 | Sha Tin | 9f">9:00 | Sha Tin | 9f</option><option value="9:30 | Sha Tin | 7f">9:30 | Sha Tin | 7f</option><option value="10:00 | Sha Tin | 7f">10:00 | Sha Tin | 7f</option><option value="10:30 | Sha Tin | 7f">10:30 | Sha Tin | 7f</option><option value="11:00 | Sha Tin | 6f">11:00 | Sha Tin | 6f</option><option value="11:30 | Sha Tin | 6f">11:30 | Sha Tin | 6f</option>
+                    <option value="1:10 | Sligo | 17.5f">1:10 | Sligo | 17.5f</option><option value="1:40 | Sligo | 17.5f">1:40 | Sligo | 17.5f</option><option value="1:50 | Stratford | 16.5f">1:50 | Stratford | 16.5f</option>
                 </select>
             </div>
             <button onclick="resetRaceFilters()">Reset</button>
         </section>
         
         
-    <article class="race-card result-card premium-race-card" data-course="Sha Tin" data-race="12:00 | Sha Tin | 8f">
+    <article class="race-card result-card premium-race-card" data-course="Sligo" data-race="1:10 | Sligo | 17.5f">
         <div class="race-header premium-race-header">
             <div>
-                <div class="eyebrow">12:00 | Sha Tin</div>
-                <h2>12:00 | Sha Tin | 8f</h2>
-                <p class="race-meta">Class not listed | Good To Firm | Solar Hei Hei Handicap</p>
+                <div class="eyebrow">1:10 | Sligo</div>
+                <h2>1:10 | Sligo | 17.5f</h2>
+                <p class="race-meta">Class not listed | Good | Durkin Bros. Electrical Maiden Hurdle</p>
             </div>
             <div class="race-score premium-race-score">
                 <span>Winner</span>
-                <strong class="elite result-winner-name">Packing Fighter</strong>
-                <em>--</em>
+                <strong class="elite result-winner-name">Manoir De Mirande (FR)</strong>
+                <em>3/1</em>
             </div>
         </div>
 
         <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Packing Fighter</strong></div>
+            <div><span>Winner</span><strong>Manoir De Mirande (FR)</strong></div>
             <div><span>Rating / TS</span><strong>-- / --</strong></div>
-            <div><span>Field Size</span><strong>14</strong></div>
+            <div><span>Field Size</span><strong>11</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
 
@@ -494,15 +494,19 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <span class="micro-label">Our Opinion</span>
                 <h3>What the result says</h3>
             </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner came through a 14-runner field.</p>
+            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 3/1 in a 11-runner field.</p>
         </section>
 
         
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
+    <section class="result-model-review">
+        <div><span class="micro-label">Pre-race Model Review</span><strong>Top pre-race profile placed.</strong></div>
+        <div class="result-model-grid">
+            <div><span>Top model profile</span><strong>Whats New</strong><small>Finished 2 | confidence 50.0</small></div>
+            <div><span>Winner model rank</span><strong>2</strong><small>22.2 confidence</small></div>
+            <div><span>Winner alignment</span><strong>0/6</strong><small>Positive evidence layers before the race</small></div>
+        </div>
+    </section>
+    
         
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
@@ -511,9 +515,9 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <tbody>
             <tr>
                 <td>1</td>
-                <td><strong>Packing Fighter</strong></td>
-                <td class="result-time-cell">1:33.75</td>
-                <td>--</td>
+                <td><strong>Manoir De Mirande (FR)</strong></td>
+                <td class="result-time-cell">4:3.40</td>
+                <td>3/1</td>
                 <td>0</td>
                 <td>--</td>
                 <td>--</td>
@@ -521,130 +525,100 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         
             <tr>
                 <td>2</td>
-                <td><strong>Automated</strong></td>
-                <td class="result-time-cell">1:34.04</td>
-                <td>--</td>
-                <td>1.8</td>
+                <td><strong>Whats New (IRE)</strong></td>
+                <td class="result-time-cell">4:3.85</td>
+                <td>13/8F</td>
+                <td>2.2</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>3</td>
-                <td><strong>Absolute Honour (IRE)</strong></td>
-                <td class="result-time-cell">1:34.17</td>
-                <td>--</td>
-                <td>2.5</td>
+                <td><strong>Bobby Kirova (GB)</strong></td>
+                <td class="result-time-cell">4:5.65</td>
+                <td>50/1</td>
+                <td>11.2</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>4</td>
-                <td><strong>Smart Fat Cat</strong></td>
-                <td class="result-time-cell">1:34.42</td>
-                <td>--</td>
-                <td>4</td>
+                <td><strong>Pebble Island (GB)</strong></td>
+                <td class="result-time-cell">4:6.55</td>
+                <td>5/2</td>
+                <td>15.8</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>5</td>
-                <td><strong>Ariel (IRE)</strong></td>
-                <td class="result-time-cell">1:34.71</td>
-                <td>--</td>
-                <td>5.8</td>
+                <td><strong>Sylvie Power</strong></td>
+                <td class="result-time-cell">4:6.95</td>
+                <td>100/1</td>
+                <td>17.8</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>6</td>
-                <td><strong>Vivacious Win</strong></td>
-                <td class="result-time-cell">1:34.71</td>
-                <td>--</td>
-                <td>5.8</td>
+                <td><strong>The Chancie Grey (IRE)</strong></td>
+                <td class="result-time-cell">4:7.05</td>
+                <td>28/1</td>
+                <td>18.2</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>7</td>
-                <td><strong>Mighty Steed (NZ)</strong></td>
-                <td class="result-time-cell">1:34.75</td>
-                <td>--</td>
-                <td>6</td>
+                <td><strong>Beat The Devil (IRE)</strong></td>
+                <td class="result-time-cell">4:7.40</td>
+                <td>14/1</td>
+                <td>20</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>8</td>
-                <td><strong>Family Knight (GB)</strong></td>
-                <td class="result-time-cell">1:34.79</td>
-                <td>--</td>
-                <td>6.2</td>
+                <td><strong>Casheldale Lass (IRE)</strong></td>
+                <td class="result-time-cell">4:7.75</td>
+                <td>9/1</td>
+                <td>21.8</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>9</td>
-                <td><strong>Polar Patch</strong></td>
-                <td class="result-time-cell">1:35.00</td>
-                <td>--</td>
-                <td>7.5</td>
+                <td><strong>Noble Rocco (IRE)</strong></td>
+                <td class="result-time-cell">4:8.05</td>
+                <td>50/1</td>
+                <td>23.2</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>10</td>
-                <td><strong>Flying Amani</strong></td>
-                <td class="result-time-cell">1:35.08</td>
-                <td>--</td>
-                <td>8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>11</td>
-                <td><strong>Lovely Miles</strong></td>
-                <td class="result-time-cell">1:35.12</td>
-                <td>--</td>
-                <td>8.2</td>
+                <td><strong>Emmamia</strong></td>
+                <td class="result-time-cell">4:9.45</td>
+                <td>40/1</td>
+                <td>30.2</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
-                <td>12</td>
-                <td><strong>Amo Ergo Sum</strong></td>
-                <td class="result-time-cell">1:35.21</td>
-                <td>--</td>
-                <td>8.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>13</td>
-                <td><strong>Pearl Of Pang&#x27;s</strong></td>
-                <td class="result-time-cell">1:35.29</td>
-                <td>--</td>
-                <td>9.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>14</td>
-                <td><strong>So You Will</strong></td>
-                <td class="result-time-cell">1:36.46</td>
-                <td>--</td>
-                <td>16.2</td>
+                <td>PU</td>
+                <td><strong>Megaball</strong></td>
+                <td class="result-time-cell">-</td>
+                <td>100/1</td>
+                <td>-</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
@@ -654,22 +628,22 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
     
     </article>
     
-    <article class="race-card result-card premium-race-card" data-course="Sha Tin" data-race="12:35 | Sha Tin | 8f">
+    <article class="race-card result-card premium-race-card" data-course="Sligo" data-race="1:40 | Sligo | 17.5f">
         <div class="race-header premium-race-header">
             <div>
-                <div class="eyebrow">12:35 | Sha Tin</div>
-                <h2>12:35 | Sha Tin | 8f</h2>
-                <p class="race-meta">Class not listed | Good To Firm | The Hong Kong Racehorse Owners Association Trophy (Handicap)</p>
+                <div class="eyebrow">1:40 | Sligo</div>
+                <h2>1:40 | Sligo | 17.5f</h2>
+                <p class="race-meta">Class not listed | Good | Ct Electrical Maiden Hurdle</p>
             </div>
             <div class="race-score premium-race-score">
                 <span>Winner</span>
-                <strong class="elite result-winner-name">Beauty Joy</strong>
-                <em>--</em>
+                <strong class="elite result-winner-name">Unknown Fortune (IRE)</strong>
+                <em>25/1</em>
             </div>
         </div>
 
         <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Beauty Joy</strong></div>
+            <div><span>Winner</span><strong>Unknown Fortune (IRE)</strong></div>
             <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>12</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
@@ -680,15 +654,19 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <span class="micro-label">Our Opinion</span>
                 <h3>What the result says</h3>
             </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner came through a 12-runner field.</p>
+            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 25/1 in a 12-runner field.</p>
         </section>
 
         
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
+    <section class="result-model-review">
+        <div><span class="micro-label">Pre-race Model Review</span><strong>Top pre-race profile placed.</strong></div>
+        <div class="result-model-grid">
+            <div><span>Top model profile</span><strong>Brother Hollie</strong><small>Finished 3 | confidence 28.0</small></div>
+            <div><span>Winner model rank</span><strong>3</strong><small>6.0 confidence</small></div>
+            <div><span>Winner alignment</span><strong>0/6</strong><small>Positive evidence layers before the race</small></div>
+        </div>
+    </section>
+    
         
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
@@ -697,9 +675,9 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <tbody>
             <tr>
                 <td>1</td>
-                <td><strong>Beauty Joy</strong></td>
-                <td class="result-time-cell">1:33.58</td>
-                <td>--</td>
+                <td><strong>Unknown Fortune (IRE)</strong></td>
+                <td class="result-time-cell">Exact time not supplied</td>
+                <td>25/1</td>
                 <td>0</td>
                 <td>--</td>
                 <td>--</td>
@@ -707,1040 +685,110 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         
             <tr>
                 <td>2</td>
-                <td><strong>Max Que</strong></td>
-                <td class="result-time-cell">1:33.70</td>
-                <td>--</td>
-                <td>0.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>3</td>
-                <td><strong>Silvery Breeze</strong></td>
-                <td class="result-time-cell">1:33.70</td>
-                <td>--</td>
-                <td>0.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>4</td>
-                <td><strong>Soleil Fighter</strong></td>
-                <td class="result-time-cell">1:33.83</td>
-                <td>--</td>
-                <td>1.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>5</td>
-                <td><strong>Packing Angel</strong></td>
-                <td class="result-time-cell">1:33.87</td>
-                <td>--</td>
-                <td>1.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>6</td>
-                <td><strong>Californiatotality</strong></td>
-                <td class="result-time-cell">1:33.95</td>
-                <td>--</td>
-                <td>2.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>7</td>
-                <td><strong>Sagacious Life</strong></td>
-                <td class="result-time-cell">1:34.20</td>
-                <td>--</td>
-                <td>3.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>8</td>
-                <td><strong>Stunning Peach</strong></td>
-                <td class="result-time-cell">1:34.33</td>
-                <td>--</td>
-                <td>4.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>9</td>
-                <td><strong>Helene Feeling</strong></td>
-                <td class="result-time-cell">1:34.45</td>
-                <td>--</td>
-                <td>5.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>10</td>
-                <td><strong>Nautical Force (GB)</strong></td>
-                <td class="result-time-cell">1:34.58</td>
-                <td>--</td>
-                <td>6</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>11</td>
-                <td><strong>Huge Wave</strong></td>
-                <td class="result-time-cell">1:34.66</td>
-                <td>--</td>
-                <td>6.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>12</td>
-                <td><strong>Massive Sovereign</strong></td>
-                <td class="result-time-cell">1:36.20</td>
-                <td>--</td>
-                <td>15.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-    
-    </article>
-    
-    <article class="race-card result-card premium-race-card" data-course="Sha Tin" data-race="9:00 | Sha Tin | 9f">
-        <div class="race-header premium-race-header">
-            <div>
-                <div class="eyebrow">9:00 | Sha Tin</div>
-                <h2>9:00 | Sha Tin | 9f</h2>
-                <p class="race-meta">Class not listed | Good To Firm | Miraculous Handicap</p>
-            </div>
-            <div class="race-score premium-race-score">
-                <span>Winner</span>
-                <strong class="elite result-winner-name">Beauty Missile</strong>
-                <em>--</em>
-            </div>
-        </div>
-
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Beauty Missile</strong></div>
-            <div><span>Rating / TS</span><strong>-- / --</strong></div>
-            <div><span>Field Size</span><strong>14</strong></div>
-            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
-        </div>
-
-        <section class="synopsis premium-snapshot result-opinion">
-            <div>
-                <span class="micro-label">Our Opinion</span>
-                <h3>What the result says</h3>
-            </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner came through a 14-runner field.</p>
-        </section>
-
-        
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
-        
-    <div class="previous-runs result-table-wrap">
-        <strong>Result</strong>
-        <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td><strong>Beauty Missile</strong></td>
-                <td class="result-time-cell">1:47.63</td>
-                <td>--</td>
-                <td>0</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>2</td>
-                <td><strong>Dragon Sunrise</strong></td>
-                <td class="result-time-cell">1:47.92</td>
-                <td>--</td>
-                <td>1.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>3</td>
-                <td><strong>Hailtothevictors</strong></td>
-                <td class="result-time-cell">1:47.92</td>
-                <td>--</td>
-                <td>1.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>4</td>
-                <td><strong>Gold Tack</strong></td>
-                <td class="result-time-cell">1:48.13</td>
-                <td>--</td>
-                <td>3</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>5</td>
-                <td><strong>Golden Fortune</strong></td>
-                <td class="result-time-cell">1:48.17</td>
-                <td>--</td>
-                <td>3.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>6</td>
-                <td><strong>Happy Buddies</strong></td>
-                <td class="result-time-cell">1:48.21</td>
-                <td>--</td>
-                <td>3.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>7</td>
-                <td><strong>Harry&#x27;s Hero (GB)</strong></td>
-                <td class="result-time-cell">1:48.38</td>
-                <td>--</td>
-                <td>4.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>8</td>
-                <td><strong>Smiling Emperor</strong></td>
-                <td class="result-time-cell">1:48.55</td>
-                <td>--</td>
-                <td>5.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>9</td>
-                <td><strong>Kolachi (IRE)</strong></td>
-                <td class="result-time-cell">1:48.88</td>
-                <td>--</td>
-                <td>7.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>10</td>
-                <td><strong>Mega Force</strong></td>
-                <td class="result-time-cell">1:49.09</td>
-                <td>--</td>
-                <td>8.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>11</td>
-                <td><strong>Zetta Force</strong></td>
-                <td class="result-time-cell">1:49.21</td>
-                <td>--</td>
-                <td>9.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>12</td>
-                <td><strong>Smart Beauty</strong></td>
-                <td class="result-time-cell">1:49.55</td>
-                <td>--</td>
-                <td>11.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>13</td>
-                <td><strong>Carryon Smiling</strong></td>
-                <td class="result-time-cell">1:50.80</td>
-                <td>--</td>
-                <td>19</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>14</td>
-                <td><strong>Special Hedge</strong></td>
-                <td class="result-time-cell">1:50.88</td>
-                <td>--</td>
-                <td>19.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-    
-    </article>
-    
-    <article class="race-card result-card premium-race-card" data-course="Sha Tin" data-race="9:30 | Sha Tin | 7f">
-        <div class="race-header premium-race-header">
-            <div>
-                <div class="eyebrow">9:30 | Sha Tin</div>
-                <h2>9:30 | Sha Tin | 7f</h2>
-                <p class="race-meta">Class not listed | Good To Firm | Mr Award Handicap</p>
-            </div>
-            <div class="race-score premium-race-score">
-                <span>Winner</span>
-                <strong class="elite result-winner-name">Double Bingo</strong>
-                <em>--</em>
-            </div>
-        </div>
-
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Double Bingo</strong></div>
-            <div><span>Rating / TS</span><strong>-- / --</strong></div>
-            <div><span>Field Size</span><strong>14</strong></div>
-            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
-        </div>
-
-        <section class="synopsis premium-snapshot result-opinion">
-            <div>
-                <span class="micro-label">Our Opinion</span>
-                <h3>What the result says</h3>
-            </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner came through a 14-runner field.</p>
-        </section>
-
-        
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
-        
-    <div class="previous-runs result-table-wrap">
-        <strong>Result</strong>
-        <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td><strong>Double Bingo</strong></td>
-                <td class="result-time-cell">1:21.91</td>
-                <td>--</td>
-                <td>0</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>2</td>
-                <td><strong>Rattan Galaxy (NZ)</strong></td>
-                <td class="result-time-cell">1:21.93</td>
-                <td>--</td>
-                <td>0.1</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>3</td>
-                <td><strong>Speedy Trident</strong></td>
-                <td class="result-time-cell">1:21.95</td>
-                <td>--</td>
-                <td>0.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>4</td>
-                <td><strong>Exceed The Wish</strong></td>
-                <td class="result-time-cell">1:21.99</td>
-                <td>--</td>
-                <td>0.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>5</td>
-                <td><strong>Aquaman</strong></td>
-                <td class="result-time-cell">1:22.03</td>
-                <td>--</td>
-                <td>0.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>6</td>
-                <td><strong>Wah May Wai Wai</strong></td>
-                <td class="result-time-cell">1:22.03</td>
-                <td>--</td>
-                <td>0.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>7</td>
-                <td><strong>Prince Alex</strong></td>
-                <td class="result-time-cell">1:22.16</td>
-                <td>--</td>
-                <td>1.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>8</td>
-                <td><strong>Iron Legion</strong></td>
-                <td class="result-time-cell">1:22.20</td>
-                <td>--</td>
-                <td>1.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>9</td>
-                <td><strong>Draco</strong></td>
-                <td class="result-time-cell">1:22.28</td>
-                <td>--</td>
-                <td>2.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>10</td>
-                <td><strong>Panda Legend</strong></td>
-                <td class="result-time-cell">1:22.41</td>
-                <td>--</td>
-                <td>3</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>11</td>
-                <td><strong>Daily Trophy</strong></td>
-                <td class="result-time-cell">1:22.66</td>
-                <td>--</td>
-                <td>4.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>12</td>
-                <td><strong>Derrynblue</strong></td>
-                <td class="result-time-cell">1:22.95</td>
-                <td>--</td>
-                <td>6.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>13</td>
-                <td><strong>Phantom Cyclone</strong></td>
-                <td class="result-time-cell">1:23.41</td>
-                <td>--</td>
-                <td>9</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>14</td>
-                <td><strong>Win Speed</strong></td>
-                <td class="result-time-cell">1:23.70</td>
-                <td>--</td>
-                <td>10.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-    
-    </article>
-    
-    <article class="race-card result-card premium-race-card" data-course="Sha Tin" data-race="10:00 | Sha Tin | 7f">
-        <div class="race-header premium-race-header">
-            <div>
-                <div class="eyebrow">10:00 | Sha Tin</div>
-                <h2>10:00 | Sha Tin | 7f</h2>
-                <p class="race-meta">Class not listed | Good To Firm | Pingwu Spark Handicap</p>
-            </div>
-            <div class="race-score premium-race-score">
-                <span>Winner</span>
-                <strong class="elite result-winner-name">Grand Patch</strong>
-                <em>--</em>
-            </div>
-        </div>
-
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Grand Patch</strong></div>
-            <div><span>Rating / TS</span><strong>-- / --</strong></div>
-            <div><span>Field Size</span><strong>14</strong></div>
-            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
-        </div>
-
-        <section class="synopsis premium-snapshot result-opinion">
-            <div>
-                <span class="micro-label">Our Opinion</span>
-                <h3>What the result says</h3>
-            </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner came through a 14-runner field.</p>
-        </section>
-
-        
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
-        
-    <div class="previous-runs result-table-wrap">
-        <strong>Result</strong>
-        <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td><strong>Grand Patch</strong></td>
-                <td class="result-time-cell">1:21.80</td>
-                <td>--</td>
-                <td>0</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>2</td>
-                <td><strong>Ka Ying Glory</strong></td>
-                <td class="result-time-cell">1:21.83</td>
-                <td>--</td>
-                <td>0.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>3</td>
-                <td><strong>Voyage Boss</strong></td>
-                <td class="result-time-cell">1:21.84</td>
-                <td>--</td>
-                <td>0.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>4</td>
-                <td><strong>Hot Air Ballon</strong></td>
-                <td class="result-time-cell">1:21.88</td>
-                <td>--</td>
-                <td>0.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>5</td>
-                <td><strong>Goldentronicmighty</strong></td>
-                <td class="result-time-cell">1:21.92</td>
-                <td>--</td>
-                <td>0.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>6</td>
-                <td><strong>Silver Up</strong></td>
-                <td class="result-time-cell">1:21.97</td>
-                <td>--</td>
-                <td>1</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>7</td>
-                <td><strong>Flash Current</strong></td>
-                <td class="result-time-cell">1:22.05</td>
-                <td>--</td>
-                <td>1.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>8</td>
-                <td><strong>Flying Sniper</strong></td>
-                <td class="result-time-cell">1:22.26</td>
-                <td>--</td>
+                <td><strong>Rosenborg (FR)</strong></td>
+                <td class="result-time-cell">Exact time not supplied</td>
+                <td>11/1</td>
                 <td>2.8</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
-                <td>9</td>
-                <td><strong>Lady&#x27;s Love</strong></td>
-                <td class="result-time-cell">1:22.34</td>
-                <td>--</td>
-                <td>3.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>10</td>
-                <td><strong>Circuit Marshal</strong></td>
-                <td class="result-time-cell">1:22.34</td>
-                <td>--</td>
-                <td>3.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>11</td>
-                <td><strong>Green Autumn</strong></td>
-                <td class="result-time-cell">1:22.42</td>
-                <td>--</td>
-                <td>3.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>12</td>
-                <td><strong>Flying Hunter</strong></td>
-                <td class="result-time-cell">1:22.97</td>
-                <td>--</td>
-                <td>7</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>13</td>
-                <td><strong>Beauty Gemini</strong></td>
-                <td class="result-time-cell">1:23.30</td>
-                <td>--</td>
-                <td>9</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>14</td>
-                <td><strong>Aethelwind</strong></td>
-                <td class="result-time-cell">1:23.30</td>
-                <td>--</td>
-                <td>9</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-    
-    </article>
-    
-    <article class="race-card result-card premium-race-card" data-course="Sha Tin" data-race="10:30 | Sha Tin | 7f">
-        <div class="race-header premium-race-header">
-            <div>
-                <div class="eyebrow">10:30 | Sha Tin</div>
-                <h2>10:30 | Sha Tin | 7f</h2>
-                <p class="race-meta">Class not listed | Good To Firm | Medic Kingdom Handicap</p>
-            </div>
-            <div class="race-score premium-race-score">
-                <span>Winner</span>
-                <strong class="elite result-winner-name">Rising Phoenix</strong>
-                <em>--</em>
-            </div>
-        </div>
-
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Rising Phoenix</strong></div>
-            <div><span>Rating / TS</span><strong>-- / --</strong></div>
-            <div><span>Field Size</span><strong>14</strong></div>
-            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
-        </div>
-
-        <section class="synopsis premium-snapshot result-opinion">
-            <div>
-                <span class="micro-label">Our Opinion</span>
-                <h3>What the result says</h3>
-            </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner came through a 14-runner field.</p>
-        </section>
-
-        
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
-        
-    <div class="previous-runs result-table-wrap">
-        <strong>Result</strong>
-        <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td><strong>Rising Phoenix</strong></td>
-                <td class="result-time-cell">1:21.48</td>
-                <td>--</td>
-                <td>0</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>2</td>
-                <td><strong>Golden Win</strong></td>
-                <td class="result-time-cell">1:21.53</td>
-                <td>--</td>
-                <td>0.3</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
                 <td>3</td>
-                <td><strong>Harold Win</strong></td>
-                <td class="result-time-cell">1:21.69</td>
-                <td>--</td>
-                <td>1.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>4</td>
-                <td><strong>Super Love</strong></td>
-                <td class="result-time-cell">1:22.02</td>
-                <td>--</td>
-                <td>3.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>5</td>
-                <td><strong>Happy Promise (AUS)</strong></td>
-                <td class="result-time-cell">1:22.02</td>
-                <td>--</td>
-                <td>3.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>6</td>
-                <td><strong>Bucephalas</strong></td>
-                <td class="result-time-cell">1:22.06</td>
-                <td>--</td>
-                <td>3.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>7</td>
-                <td><strong>Fortune Star</strong></td>
-                <td class="result-time-cell">1:22.11</td>
-                <td>--</td>
-                <td>3.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>8</td>
-                <td><strong>Gor Gor</strong></td>
-                <td class="result-time-cell">1:22.19</td>
-                <td>--</td>
-                <td>4.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>9</td>
-                <td><strong>Fighting Machine</strong></td>
-                <td class="result-time-cell">1:22.27</td>
-                <td>--</td>
-                <td>4.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>10</td>
-                <td><strong>Lucky Man</strong></td>
-                <td class="result-time-cell">1:22.31</td>
-                <td>--</td>
-                <td>5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>11</td>
-                <td><strong>Massive Reward</strong></td>
-                <td class="result-time-cell">1:22.56</td>
-                <td>--</td>
-                <td>6.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>12</td>
-                <td><strong>My Wyndfall</strong></td>
-                <td class="result-time-cell">1:22.61</td>
-                <td>--</td>
-                <td>6.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>13</td>
-                <td><strong>Alabama Song</strong></td>
-                <td class="result-time-cell">1:22.61</td>
-                <td>--</td>
-                <td>6.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>14</td>
-                <td><strong>Daily Acclaim</strong></td>
-                <td class="result-time-cell">1:23.36</td>
-                <td>--</td>
-                <td>11.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-    
-    </article>
-    
-    <article class="race-card result-card premium-race-card" data-course="Sha Tin" data-race="11:00 | Sha Tin | 6f">
-        <div class="race-header premium-race-header">
-            <div>
-                <div class="eyebrow">11:00 | Sha Tin</div>
-                <h2>11:00 | Sha Tin | 6f</h2>
-                <p class="race-meta">Class not listed | Good To Firm | Big Profit Handicap</p>
-            </div>
-            <div class="race-score premium-race-score">
-                <span>Winner</span>
-                <strong class="elite result-winner-name">Green Angel</strong>
-                <em>--</em>
-            </div>
-        </div>
-
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Green Angel</strong></div>
-            <div><span>Rating / TS</span><strong>-- / --</strong></div>
-            <div><span>Field Size</span><strong>14</strong></div>
-            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
-        </div>
-
-        <section class="synopsis premium-snapshot result-opinion">
-            <div>
-                <span class="micro-label">Our Opinion</span>
-                <h3>What the result says</h3>
-            </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner came through a 14-runner field.</p>
-        </section>
-
-        
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
-        
-    <div class="previous-runs result-table-wrap">
-        <strong>Result</strong>
-        <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td><strong>Green Angel</strong></td>
-                <td class="result-time-cell">1:8.96</td>
-                <td>--</td>
-                <td>0</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>2</td>
-                <td><strong>Enjoy Golf</strong></td>
-                <td class="result-time-cell">1:9.04</td>
-                <td>--</td>
-                <td>0.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>3</td>
-                <td><strong>Lunar Dash</strong></td>
-                <td class="result-time-cell">1:9.09</td>
-                <td>--</td>
-                <td>0.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>4</td>
-                <td><strong>Speedy Patch</strong></td>
-                <td class="result-time-cell">1:9.25</td>
-                <td>--</td>
-                <td>1.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>5</td>
-                <td><strong>Mighty Profit</strong></td>
-                <td class="result-time-cell">1:9.25</td>
-                <td>--</td>
-                <td>1.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>6</td>
-                <td><strong>Ka Ying Resilience</strong></td>
-                <td class="result-time-cell">1:9.34</td>
-                <td>--</td>
-                <td>2.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>7</td>
-                <td><strong>Lightning Ace</strong></td>
-                <td class="result-time-cell">1:9.38</td>
-                <td>--</td>
-                <td>2.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>8</td>
-                <td><strong>Casa Primo</strong></td>
-                <td class="result-time-cell">1:9.54</td>
-                <td>--</td>
-                <td>3.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>9</td>
-                <td><strong>Tactical Victory</strong></td>
-                <td class="result-time-cell">1:9.88</td>
-                <td>--</td>
-                <td>5.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>10</td>
-                <td><strong>Lean Flyer</strong></td>
-                <td class="result-time-cell">1:10.04</td>
-                <td>--</td>
-                <td>6.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>11</td>
-                <td><strong>Hayday</strong></td>
-                <td class="result-time-cell">1:10.09</td>
-                <td>--</td>
-                <td>6.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>12</td>
-                <td><strong>E Hopeful</strong></td>
-                <td class="result-time-cell">1:10.50</td>
-                <td>--</td>
+                <td><strong>Brother Hollie (IRE)</strong></td>
+                <td class="result-time-cell">Exact time not supplied</td>
+                <td>7/2</td>
                 <td>9.2</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
-                <td>13</td>
-                <td><strong>So My Folks</strong></td>
-                <td class="result-time-cell">1:10.59</td>
-                <td>--</td>
-                <td>9.8</td>
+                <td>4</td>
+                <td><strong>Nile Star (FR)</strong></td>
+                <td class="result-time-cell">Exact time not supplied</td>
+                <td>8/1</td>
+                <td>14.2</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
-                <td>14</td>
-                <td><strong>Here Comes Plutus</strong></td>
-                <td class="result-time-cell">1:11.13</td>
+                <td>5</td>
+                <td><strong>Tribal (FR)</strong></td>
+                <td class="result-time-cell">Exact time not supplied</td>
+                <td>50/1</td>
+                <td>15.2</td>
                 <td>--</td>
-                <td>13</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td><strong>Hey Sir (IRE)</strong></td>
+                <td class="result-time-cell">Exact time not supplied</td>
+                <td>33/1</td>
+                <td>22.2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td><strong>Returning Officer (FR)</strong></td>
+                <td class="result-time-cell">Exact time not supplied</td>
+                <td>5/4F</td>
+                <td>35.2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td><strong>Gethegoodtimesroll (IRE)</strong></td>
+                <td class="result-time-cell">Exact time not supplied</td>
+                <td>66/1</td>
+                <td>36</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td><strong>Boo Radley (IRE)</strong></td>
+                <td class="result-time-cell">Exact time not supplied</td>
+                <td>100/30</td>
+                <td>47</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>PU</td>
+                <td><strong>A Mayo Breeze (IRE)</strong></td>
+                <td class="result-time-cell">-</td>
+                <td>100/1</td>
+                <td>-</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>PU</td>
+                <td><strong>Middlethird Marvel (GB)</strong></td>
+                <td class="result-time-cell">-</td>
+                <td>250/1</td>
+                <td>-</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>PU</td>
+                <td><strong>Tommy Go Maith (IRE)</strong></td>
+                <td class="result-time-cell">-</td>
+                <td>125/1</td>
+                <td>-</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
@@ -1750,24 +798,24 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
     
     </article>
     
-    <article class="race-card result-card premium-race-card" data-course="Sha Tin" data-race="11:30 | Sha Tin | 6f">
+    <article class="race-card result-card premium-race-card" data-course="Stratford" data-race="1:50 | Stratford | 16.5f">
         <div class="race-header premium-race-header">
             <div>
-                <div class="eyebrow">11:30 | Sha Tin</div>
-                <h2>11:30 | Sha Tin | 6f</h2>
-                <p class="race-meta">Class not listed | Good To Firm | Victory Marvel Handicap</p>
+                <div class="eyebrow">1:50 | Stratford</div>
+                <h2>1:50 | Stratford | 16.5f</h2>
+                <p class="race-meta">Class 4 | Good To Firm | Welcome To Family Day Juvenile Hurdle (GBB Race)</p>
             </div>
             <div class="race-score premium-race-score">
                 <span>Winner</span>
-                <strong class="elite result-winner-name">Prestige Always (IRE)</strong>
-                <em>--</em>
+                <strong class="elite result-winner-name">Lucky Sevens (GB)</strong>
+                <em>11/10</em>
             </div>
         </div>
 
         <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Prestige Always (IRE)</strong></div>
+            <div><span>Winner</span><strong>Lucky Sevens (GB)</strong></div>
             <div><span>Rating / TS</span><strong>-- / --</strong></div>
-            <div><span>Field Size</span><strong>14</strong></div>
+            <div><span>Field Size</span><strong>4</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
 
@@ -1776,15 +824,19 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <span class="micro-label">Our Opinion</span>
                 <h3>What the result says</h3>
             </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner came through a 14-runner field.</p>
+            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 11/10 in a 4-runner field.</p>
         </section>
 
         
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
+    <section class="result-model-review">
+        <div><span class="micro-label">Pre-race Model Review</span><strong>Top pre-race profile placed.</strong></div>
+        <div class="result-model-grid">
+            <div><span>Top model profile</span><strong>Tiny Riot</strong><small>Finished 2 | confidence 44.0</small></div>
+            <div><span>Winner model rank</span><strong>2</strong><small>39.5 confidence</small></div>
+            <div><span>Winner alignment</span><strong>0/6</strong><small>Positive evidence layers before the race</small></div>
+        </div>
+    </section>
+    
         
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
@@ -1793,9 +845,9 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <tbody>
             <tr>
                 <td>1</td>
-                <td><strong>Prestige Always (IRE)</strong></td>
-                <td class="result-time-cell">1:8.71</td>
-                <td>--</td>
+                <td><strong>Lucky Sevens (GB)</strong></td>
+                <td class="result-time-cell">3:48.05</td>
+                <td>11/10</td>
                 <td>0</td>
                 <td>--</td>
                 <td>--</td>
@@ -1803,130 +855,30 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         
             <tr>
                 <td>2</td>
-                <td><strong>Spirited Steed</strong></td>
-                <td class="result-time-cell">1:8.76</td>
-                <td>--</td>
-                <td>0.3</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>3</td>
-                <td><strong>Solid Car</strong></td>
-                <td class="result-time-cell">1:8.88</td>
-                <td>--</td>
-                <td>1</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>4</td>
-                <td><strong>Victory Champion</strong></td>
-                <td class="result-time-cell">1:9.00</td>
-                <td>--</td>
+                <td><strong>Tiny Riot (IRE)</strong></td>
+                <td class="result-time-cell">3:48.40</td>
+                <td>5/6F</td>
                 <td>1.8</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
-                <td>5</td>
-                <td><strong>Rising Elite</strong></td>
-                <td class="result-time-cell">1:9.04</td>
-                <td>--</td>
-                <td>2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>6</td>
-                <td><strong>Oldtown</strong></td>
-                <td class="result-time-cell">1:9.17</td>
-                <td>--</td>
-                <td>2.8</td>
+                <td>3</td>
+                <td><strong>Hello Garda (IRE)</strong></td>
+                <td class="result-time-cell">3:52.20</td>
+                <td>12/1</td>
+                <td>20.8</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
-                <td>7</td>
-                <td><strong>Ryui Kokoroe</strong></td>
-                <td class="result-time-cell">1:9.25</td>
-                <td>--</td>
-                <td>3.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>8</td>
-                <td><strong>Monta Frutta</strong></td>
-                <td class="result-time-cell">1:9.29</td>
-                <td>--</td>
-                <td>3.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>9</td>
-                <td><strong>King&#x27;s Arrow</strong></td>
-                <td class="result-time-cell">1:9.50</td>
-                <td>--</td>
-                <td>4.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>10</td>
-                <td><strong>Iron Security</strong></td>
-                <td class="result-time-cell">1:9.75</td>
-                <td>--</td>
-                <td>6.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>11</td>
-                <td><strong>Noble Superior</strong></td>
-                <td class="result-time-cell">1:9.79</td>
-                <td>--</td>
-                <td>6.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>12</td>
-                <td><strong>Silver Spurs</strong></td>
-                <td class="result-time-cell">1:10.04</td>
-                <td>--</td>
-                <td>8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>13</td>
-                <td><strong>Majestic Life</strong></td>
-                <td class="result-time-cell">1:10.29</td>
-                <td>--</td>
-                <td>9.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>14</td>
-                <td><strong>Prime Winister</strong></td>
-                <td class="result-time-cell">1:10.50</td>
-                <td>--</td>
-                <td>10.8</td>
+                <td>4</td>
+                <td><strong>Just Call Me Mo (GB)</strong></td>
+                <td class="result-time-cell">3:56.20</td>
+                <td>125/1</td>
+                <td>40.8</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
