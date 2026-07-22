@@ -440,9 +440,9 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
 
         <section class="brief-grid">
             <div class="brief-card"><span>Result date</span><strong>22 Jul 2026</strong></div>
-            <div class="brief-card"><span>Races reviewed</span><strong>18</strong></div>
-            <div class="brief-card"><span>Winners captured</span><strong>18</strong></div>
-            <div class="brief-card"><span>Avg field size</span><strong>7.8</strong></div>
+            <div class="brief-card"><span>Races reviewed</span><strong>22</strong></div>
+            <div class="brief-card"><span>Winners captured</span><strong>22</strong></div>
+            <div class="brief-card"><span>Avg field size</span><strong>8.8</strong></div>
         </section>
         <section class="panel" style="padding:20px;">
             <h2>Latest Result Reviews</h2>
@@ -454,14 +454,14 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <label for="courseFilter">Select course</label>
                 <select id="courseFilter" onchange="updateCourseFilter(true)">
                     <option value="ALL">All courses</option>
-                    <option value="Catterick">Catterick</option><option value="Wexford (IRE)">Wexford (IRE)</option><option value="Worcester">Worcester</option>
+                    <option value="Catterick">Catterick</option><option value="Naas (IRE)">Naas (IRE)</option><option value="Wexford (IRE)">Wexford (IRE)</option><option value="Worcester">Worcester</option>
                 </select>
             </div>
             <div>
                 <label for="raceFilter">Select race</label>
                 <select id="raceFilter" onchange="updateCourseFilter()">
                     <option value="ALL">All races</option>
-                    <option value="1:55 | Worcester | 20f">1:55 | Worcester | 20f</option><option value="2:07 | Catterick | 7f">2:07 | Catterick | 7f</option><option value="2:15 | Wexford (IRE) | 15.5f">2:15 | Wexford (IRE) | 15.5f</option><option value="2:25 | Worcester | 23f">2:25 | Worcester | 23f</option><option value="2:37 | Catterick | 7f">2:37 | Catterick | 7f</option><option value="2:45 | Wexford (IRE) | 15.5f">2:45 | Wexford (IRE) | 15.5f</option><option value="3:00 | Worcester | 16f">3:00 | Worcester | 16f</option><option value="3:10 | Catterick | 7f">3:10 | Catterick | 7f</option><option value="3:20 | Wexford (IRE) | 15.5f">3:20 | Wexford (IRE) | 15.5f</option><option value="3:30 | Worcester | 16f">3:30 | Worcester | 16f</option><option value="3:42 | Catterick | 12f">3:42 | Catterick | 12f</option><option value="3:50 | Wexford (IRE) | 15.5f">3:50 | Wexford (IRE) | 15.5f</option><option value="4:00 | Worcester | 16f">4:00 | Worcester | 16f</option><option value="4:12 | Catterick | 12f">4:12 | Catterick | 12f</option><option value="4:20 | Wexford (IRE) | 19f">4:20 | Wexford (IRE) | 19f</option><option value="4:30 | Worcester | 20f">4:30 | Worcester | 20f</option><option value="4:42 | Catterick | 6f">4:42 | Catterick | 6f</option><option value="4:50 | Wexford (IRE) | 24.5f">4:50 | Wexford (IRE) | 24.5f</option>
+                    <option value="1:55 | Worcester | 20f">1:55 | Worcester | 20f</option><option value="2:07 | Catterick | 7f">2:07 | Catterick | 7f</option><option value="2:15 | Wexford (IRE) | 15.5f">2:15 | Wexford (IRE) | 15.5f</option><option value="2:25 | Worcester | 23f">2:25 | Worcester | 23f</option><option value="2:37 | Catterick | 7f">2:37 | Catterick | 7f</option><option value="2:45 | Wexford (IRE) | 15.5f">2:45 | Wexford (IRE) | 15.5f</option><option value="3:00 | Worcester | 16f">3:00 | Worcester | 16f</option><option value="3:10 | Catterick | 7f">3:10 | Catterick | 7f</option><option value="3:20 | Wexford (IRE) | 15.5f">3:20 | Wexford (IRE) | 15.5f</option><option value="3:30 | Worcester | 16f">3:30 | Worcester | 16f</option><option value="3:42 | Catterick | 12f">3:42 | Catterick | 12f</option><option value="3:50 | Wexford (IRE) | 15.5f">3:50 | Wexford (IRE) | 15.5f</option><option value="4:00 | Worcester | 16f">4:00 | Worcester | 16f</option><option value="4:12 | Catterick | 12f">4:12 | Catterick | 12f</option><option value="4:20 | Wexford (IRE) | 19f">4:20 | Wexford (IRE) | 19f</option><option value="4:30 | Worcester | 20f">4:30 | Worcester | 20f</option><option value="4:42 | Catterick | 6f">4:42 | Catterick | 6f</option><option value="4:50 | Wexford (IRE) | 24.5f">4:50 | Wexford (IRE) | 24.5f</option><option value="5:05 | Worcester | 23f">5:05 | Worcester | 23f</option><option value="5:20 | Wexford (IRE) | 24.5f">5:20 | Wexford (IRE) | 24.5f</option><option value="5:30 | Naas (IRE) | 6f">5:30 | Naas (IRE) | 6f</option><option value="6:00 | Naas (IRE) | 6f">6:00 | Naas (IRE) | 6f</option>
                 </select>
             </div>
             <button onclick="resetRaceFilters()">Reset</button>
@@ -2716,7 +2716,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <tr>
                 <td>1</td>
                 <td><strong>Ceroc (IRE)</strong></td>
-                <td class="result-time-cell">Exact time not supplied</td>
+                <td class="result-time-cell">6:13.00</td>
                 <td>9/4F</td>
                 <td>0</td>
                 <td>--</td>
@@ -2726,7 +2726,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <tr>
                 <td>2</td>
                 <td><strong>Dorans Law (IRE)</strong></td>
-                <td class="result-time-cell">Exact time not supplied</td>
+                <td class="result-time-cell">6:15.20</td>
                 <td>11/2</td>
                 <td>11</td>
                 <td>--</td>
@@ -2736,7 +2736,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <tr>
                 <td>3</td>
                 <td><strong>Goody Four Shoes (IRE)</strong></td>
-                <td class="result-time-cell">Exact time not supplied</td>
+                <td class="result-time-cell">6:27.60</td>
                 <td>9/2</td>
                 <td>73</td>
                 <td>--</td>
@@ -2759,6 +2759,736 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <td class="result-time-cell">-</td>
                 <td>11/4</td>
                 <td>-</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    
+    </article>
+    
+    <article class="race-card result-card premium-race-card" data-course="Worcester" data-race="5:05 | Worcester | 23f">
+        <div class="race-header premium-race-header">
+            <div>
+                <div class="eyebrow">5:05 | Worcester</div>
+                <h2>5:05 | Worcester | 23f</h2>
+                <p class="race-meta">Class 5 | Good | PJ Nicholls KGM Korea Genuinely Made Handicap Hurdle Race</p>
+            </div>
+            <div class="race-score premium-race-score">
+                <span>Winner</span>
+                <strong class="elite result-winner-name">Mancero (FR)</strong>
+                <em>100/30</em>
+            </div>
+        </div>
+
+        <div class="race-intel-grid premium-intel-grid">
+            <div><span>Winner</span><strong>Mancero (FR)</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
+            <div><span>Field Size</span><strong>10</strong></div>
+            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
+        </div>
+
+        <section class="synopsis premium-snapshot result-opinion">
+            <div>
+                <span class="micro-label">Our Opinion</span>
+                <h3>What the result says</h3>
+            </div>
+            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 100/30 in a 10-runner field.</p>
+        </section>
+
+        
+    <section class="result-model-review">
+        <div><span class="micro-label">Pre-race Model Review</span><strong>Top pre-race profile missed the frame.</strong></div>
+        <div class="result-model-grid">
+            <div><span>Top model profile</span><strong>Spitalfield</strong><small>Finished 7 | confidence 50.0</small></div>
+            <div><span>Winner model rank</span><strong>6</strong><small>16.2 confidence</small></div>
+            <div><span>Winner alignment</span><strong>0/6</strong><small>Positive evidence layers before the race</small></div>
+        </div>
+    </section>
+    
+        
+    <div class="previous-runs result-table-wrap">
+        <strong>Result</strong>
+        <table class="rp-table result-table">
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td><strong>Mancero (FR)</strong></td>
+                <td class="result-time-cell">5:42.52</td>
+                <td>100/30</td>
+                <td>0</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td><strong>Citizen Jane (GB)</strong></td>
+                <td class="result-time-cell">5:43.62</td>
+                <td>25/1</td>
+                <td>5.5</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td><strong>Barry Fife (IRE)</strong></td>
+                <td class="result-time-cell">5:46.02</td>
+                <td>12/1</td>
+                <td>17.5</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td><strong>Indian Sunbird (IRE)</strong></td>
+                <td class="result-time-cell">5:46.27</td>
+                <td>10/1</td>
+                <td>18.8</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td><strong>Roxboro River (IRE)</strong></td>
+                <td class="result-time-cell">5:49.07</td>
+                <td>11/1</td>
+                <td>32.8</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td><strong>Lunar Morning (IRE)</strong></td>
+                <td class="result-time-cell">5:49.72</td>
+                <td>12/1</td>
+                <td>36</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td><strong>Spitalfield (IRE)</strong></td>
+                <td class="result-time-cell">5:50.52</td>
+                <td>15/2</td>
+                <td>40</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td><strong>Alderley Charlie (GB)</strong></td>
+                <td class="result-time-cell">5:53.12</td>
+                <td>40/1</td>
+                <td>53</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td><strong>Back To Cali (IRE)</strong></td>
+                <td class="result-time-cell">6:0.32</td>
+                <td>11/8F</td>
+                <td>89</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>UR</td>
+                <td><strong>Swingforthefence (IRE)</strong></td>
+                <td class="result-time-cell">-</td>
+                <td>33/1</td>
+                <td>-</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    
+    </article>
+    
+    <article class="race-card result-card premium-race-card" data-course="Wexford (IRE)" data-race="5:20 | Wexford (IRE) | 24.5f">
+        <div class="race-header premium-race-header">
+            <div>
+                <div class="eyebrow">5:20 | Wexford (IRE)</div>
+                <h2>5:20 | Wexford (IRE) | 24.5f</h2>
+                <p class="race-meta">Class not listed | Good | Racing Again Tomorrow 23rd July Family Day Handicap Steeplechase</p>
+            </div>
+            <div class="race-score premium-race-score">
+                <span>Winner</span>
+                <strong class="elite result-winner-name">Anodandawink (IRE)</strong>
+                <em>3/1F</em>
+            </div>
+        </div>
+
+        <div class="race-intel-grid premium-intel-grid">
+            <div><span>Winner</span><strong>Anodandawink (IRE)</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
+            <div><span>Field Size</span><strong>15</strong></div>
+            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
+        </div>
+
+        <section class="synopsis premium-snapshot result-opinion">
+            <div>
+                <span class="micro-label">Our Opinion</span>
+                <h3>What the result says</h3>
+            </div>
+            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 3/1F in a 15-runner field.</p>
+        </section>
+
+        
+    <section class="result-model-review">
+        <div><span class="micro-label">Pre-race Model Review</span><strong>Top pre-race profile won.</strong></div>
+        <div class="result-model-grid">
+            <div><span>Top model profile</span><strong>Anodandawink</strong><small>Finished 1 | confidence 50.0</small></div>
+            <div><span>Winner model rank</span><strong>1</strong><small>50.0 confidence</small></div>
+            <div><span>Winner alignment</span><strong>1/6</strong><small>Positive evidence layers before the race</small></div>
+        </div>
+    </section>
+    
+        
+    <div class="previous-runs result-table-wrap">
+        <strong>Result</strong>
+        <table class="rp-table result-table">
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td><strong>Anodandawink (IRE)</strong></td>
+                <td class="result-time-cell">6:16.20</td>
+                <td>3/1F</td>
+                <td>0</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td><strong>Fr Gilligansvoyge (GB)</strong></td>
+                <td class="result-time-cell">6:18.20</td>
+                <td>14/1</td>
+                <td>10</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td><strong>Barely Made It (IRE)</strong></td>
+                <td class="result-time-cell">6:18.35</td>
+                <td>11/1</td>
+                <td>10.8</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td><strong>Amburana (IRE)</strong></td>
+                <td class="result-time-cell">6:18.65</td>
+                <td>11/1</td>
+                <td>12.2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td><strong>Midnight Moonshine (IRE)</strong></td>
+                <td class="result-time-cell">6:19.95</td>
+                <td>16/1</td>
+                <td>18.8</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td><strong>Embrace The Day (IRE)</strong></td>
+                <td class="result-time-cell">6:21.35</td>
+                <td>4/1</td>
+                <td>25.8</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td><strong>North Of Nashville (IRE)</strong></td>
+                <td class="result-time-cell">6:21.85</td>
+                <td>11/1</td>
+                <td>28.2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td><strong>Oogum Boogum (IRE)</strong></td>
+                <td class="result-time-cell">6:22.00</td>
+                <td>4/1</td>
+                <td>29</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td><strong>Captain Kate (IRE)</strong></td>
+                <td class="result-time-cell">6:22.95</td>
+                <td>33/1</td>
+                <td>33.8</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td><strong>Derby Rock (IRE)</strong></td>
+                <td class="result-time-cell">6:25.95</td>
+                <td>9/1</td>
+                <td>48.8</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>PU</td>
+                <td><strong>Ardaghs Choice (IRE)</strong></td>
+                <td class="result-time-cell">-</td>
+                <td>33/1</td>
+                <td>-</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>PU</td>
+                <td><strong>Eddies Pride (IRE)</strong></td>
+                <td class="result-time-cell">-</td>
+                <td>80/1</td>
+                <td>-</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>PU</td>
+                <td><strong>Secrecies Of Stone (IRE)</strong></td>
+                <td class="result-time-cell">-</td>
+                <td>25/1</td>
+                <td>-</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>PU</td>
+                <td><strong>Shantou Show (IRE)</strong></td>
+                <td class="result-time-cell">-</td>
+                <td>14/1</td>
+                <td>-</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>PU</td>
+                <td><strong>Tennesse Boy (IRE)</strong></td>
+                <td class="result-time-cell">-</td>
+                <td>14/1</td>
+                <td>-</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    
+    </article>
+    
+    <article class="race-card result-card premium-race-card" data-course="Naas (IRE)" data-race="5:30 | Naas (IRE) | 6f">
+        <div class="race-header premium-race-header">
+            <div>
+                <div class="eyebrow">5:30 | Naas (IRE)</div>
+                <h2>5:30 | Naas (IRE) | 6f</h2>
+                <p class="race-meta">Class not listed | Good | Matchbook Exchange Irish EBF Maiden</p>
+            </div>
+            <div class="race-score premium-race-score">
+                <span>Winner</span>
+                <strong class="elite result-winner-name">Man&#x27;s Best Friend (IRE)</strong>
+                <em>2/1</em>
+            </div>
+        </div>
+
+        <div class="race-intel-grid premium-intel-grid">
+            <div><span>Winner</span><strong>Man&#x27;s Best Friend (IRE)</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
+            <div><span>Field Size</span><strong>18</strong></div>
+            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
+        </div>
+
+        <section class="synopsis premium-snapshot result-opinion">
+            <div>
+                <span class="micro-label">Our Opinion</span>
+                <h3>What the result says</h3>
+            </div>
+            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 2/1 in a 18-runner field.</p>
+        </section>
+
+        
+    <section class="result-model-review">
+        <div><span class="micro-label">Pre-race Model Review</span><strong>Top pre-race profile placed.</strong></div>
+        <div class="result-model-grid">
+            <div><span>Top model profile</span><strong>New Bond Street</strong><small>Finished 3 | confidence 26.0</small></div>
+            <div><span>Winner model rank</span><strong>2</strong><small>9.0 confidence</small></div>
+            <div><span>Winner alignment</span><strong>0/6</strong><small>Positive evidence layers before the race</small></div>
+        </div>
+    </section>
+    
+        
+    <div class="previous-runs result-table-wrap">
+        <strong>Result</strong>
+        <table class="rp-table result-table">
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td><strong>Man&#x27;s Best Friend (IRE)</strong></td>
+                <td class="result-time-cell">1:9.84</td>
+                <td>2/1</td>
+                <td>0</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td><strong>Zoar (USA)</strong></td>
+                <td class="result-time-cell">1:10.22</td>
+                <td>16/1</td>
+                <td>2.2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td><strong>New Bond Street (GB)</strong></td>
+                <td class="result-time-cell">1:10.47</td>
+                <td>11/8F</td>
+                <td>3.8</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td><strong>My Lucky Journey (IRE)</strong></td>
+                <td class="result-time-cell">1:10.59</td>
+                <td>33/1</td>
+                <td>4.5</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td><strong>Ile de France (USA)</strong></td>
+                <td class="result-time-cell">1:10.80</td>
+                <td>16/1</td>
+                <td>5.8</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td><strong>Prince Of Peppard (IRE)</strong></td>
+                <td class="result-time-cell">1:11.09</td>
+                <td>50/1</td>
+                <td>7.5</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td><strong>Muscogee Nation (CAN)</strong></td>
+                <td class="result-time-cell">1:11.13</td>
+                <td>9/2</td>
+                <td>7.8</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td><strong>Nation Blaze (IRE)</strong></td>
+                <td class="result-time-cell">1:11.22</td>
+                <td>80/1</td>
+                <td>8.2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td><strong>Sapphire Petal (IRE)</strong></td>
+                <td class="result-time-cell">1:11.67</td>
+                <td>300/1</td>
+                <td>11</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td><strong>Palo (IRE)</strong></td>
+                <td class="result-time-cell">1:11.72</td>
+                <td>25/1</td>
+                <td>11.2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>11</td>
+                <td><strong>Run Johnny Run (IRE)</strong></td>
+                <td class="result-time-cell">1:11.88</td>
+                <td>300/1</td>
+                <td>12.2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>12</td>
+                <td><strong>Mutamarid Lsk (IRE)</strong></td>
+                <td class="result-time-cell">1:11.92</td>
+                <td>150/1</td>
+                <td>12.5</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>13</td>
+                <td><strong>Littlepacer (IRE)</strong></td>
+                <td class="result-time-cell">1:12.13</td>
+                <td>200/1</td>
+                <td>13.8</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>14</td>
+                <td><strong>Anglesea Bridge (IRE)</strong></td>
+                <td class="result-time-cell">1:12.13</td>
+                <td>11/1</td>
+                <td>13.8</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>15</td>
+                <td><strong>Exchange Student (IRE)</strong></td>
+                <td class="result-time-cell">1:12.17</td>
+                <td>200/1</td>
+                <td>14</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>16</td>
+                <td><strong>Voyage Of Survival (IRE)</strong></td>
+                <td class="result-time-cell">1:12.67</td>
+                <td>50/1</td>
+                <td>17</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>17</td>
+                <td><strong>Closed Loop (IRE)</strong></td>
+                <td class="result-time-cell">1:14.84</td>
+                <td>250/1</td>
+                <td>30</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>18</td>
+                <td><strong>Bettercalltheboss (IRE)</strong></td>
+                <td class="result-time-cell">1:15.22</td>
+                <td>300/1</td>
+                <td>32.2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    
+    </article>
+    
+    <article class="race-card result-card premium-race-card" data-course="Naas (IRE)" data-race="6:00 | Naas (IRE) | 6f">
+        <div class="race-header premium-race-header">
+            <div>
+                <div class="eyebrow">6:00 | Naas (IRE)</div>
+                <h2>6:00 | Naas (IRE) | 6f</h2>
+                <p class="race-meta">Class not listed | Good | Forte Healthcare Handicap</p>
+            </div>
+            <div class="race-score premium-race-score">
+                <span>Winner</span>
+                <strong class="elite result-winner-name">Gotta Catch&#x27;em All (IRE)</strong>
+                <em>7/1</em>
+            </div>
+        </div>
+
+        <div class="race-intel-grid premium-intel-grid">
+            <div><span>Winner</span><strong>Gotta Catch&#x27;em All (IRE)</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
+            <div><span>Field Size</span><strong>10</strong></div>
+            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
+        </div>
+
+        <section class="synopsis premium-snapshot result-opinion">
+            <div>
+                <span class="micro-label">Our Opinion</span>
+                <h3>What the result says</h3>
+            </div>
+            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 7/1 in a 10-runner field.</p>
+        </section>
+
+        
+    <section class="result-model-review">
+        <div><span class="micro-label">Pre-race Model Review</span><strong>Top pre-race profile missed the frame.</strong></div>
+        <div class="result-model-grid">
+            <div><span>Top model profile</span><strong>Bad Boy Rizz</strong><small>Finished 4 | confidence 48.0</small></div>
+            <div><span>Winner model rank</span><strong>4</strong><small>27.8 confidence</small></div>
+            <div><span>Winner alignment</span><strong>1/6</strong><small>Positive evidence layers before the race</small></div>
+        </div>
+    </section>
+    
+        
+    <div class="previous-runs result-table-wrap">
+        <strong>Result</strong>
+        <table class="rp-table result-table">
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td><strong>Gotta Catch&#x27;em All (IRE)</strong></td>
+                <td class="result-time-cell">Exact time not supplied</td>
+                <td>7/1</td>
+                <td>0</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td><strong>I Bid You Ajou (FR)</strong></td>
+                <td class="result-time-cell">Exact time not supplied</td>
+                <td>3/1F</td>
+                <td>1.2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td><strong>Mint Man (GB)</strong></td>
+                <td class="result-time-cell">Exact time not supplied</td>
+                <td>7/1</td>
+                <td>2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td><strong>Bad Boy Rizz (IRE)</strong></td>
+                <td class="result-time-cell">Exact time not supplied</td>
+                <td>4/1</td>
+                <td>3.5</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td><strong>Four Blondes (IRE)</strong></td>
+                <td class="result-time-cell">Exact time not supplied</td>
+                <td>12/1</td>
+                <td>5.5</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td><strong>Ninth Crusade (IRE)</strong></td>
+                <td class="result-time-cell">Exact time not supplied</td>
+                <td>20/1</td>
+                <td>7.2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td><strong>Ohailbhic (IRE)</strong></td>
+                <td class="result-time-cell">Exact time not supplied</td>
+                <td>12/1</td>
+                <td>7.2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td><strong>Flaming Rib (IRE)</strong></td>
+                <td class="result-time-cell">Exact time not supplied</td>
+                <td>6/1</td>
+                <td>8</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td><strong>Soulful Diva (IRE)</strong></td>
+                <td class="result-time-cell">Exact time not supplied</td>
+                <td>12/1</td>
+                <td>9.8</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td><strong>All Hail (IRE)</strong></td>
+                <td class="result-time-cell">Exact time not supplied</td>
+                <td>12/1</td>
+                <td>11.8</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
