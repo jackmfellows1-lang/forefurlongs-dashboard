@@ -224,6 +224,26 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 .predictive-edge-score strong,.decision-primary-tile strong:first-of-type{color:var(--green)!important}
 .runner-decision-panel,.predictive-edge-panel{background:#fffdf8!important;border:1px solid var(--line)!important;border-radius:0!important;box-shadow:none!important}
 .runner-decision-panel{border-left:4px solid var(--green)!important}.predictive-edge-panel{border-left:4px solid var(--gold)!important}
+.runner-quick-read{margin:14px 0;border:1px solid var(--line);border-left:5px solid var(--green);background:#fffdf8;padding:15px 16px;box-shadow:none}
+.runner-quick-head{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;border-bottom:1px solid #ded3c2;padding-bottom:12px}
+.runner-quick-head strong{display:block;margin-top:4px;font-family:Source Serif 4,Georgia,serif;font-size:24px;line-height:1.18;color:var(--text)!important}
+.runner-quick-status{min-width:126px;text-align:center;border:1px solid #a8c6b6;background:#e3efe8;padding:9px 12px}
+.runner-quick-status span,.runner-quick-status small,.runner-quick-angle-grid span,.runner-quick-reasons span,.runner-quick-footer span{display:block;font-family:Sora,Inter,sans-serif;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:#66736d!important}
+.runner-quick-status b{display:block;margin:3px 0;font-family:Sora,Inter,sans-serif;font-size:30px;line-height:1;color:var(--green)}
+.runner-quick-status.watch,.runner-quick-status.neutral{background:#f2e2bb;border-color:#d4b66e}.runner-quick-status.caution,.runner-quick-status.avoid{background:#ead5d5;border-color:#d0aaaa}.runner-quick-status.caution b,.runner-quick-status.avoid b{color:var(--red)}
+.runner-quick-reasons{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.runner-quick-reasons div{padding:10px 12px;border:1px solid #ded3c2;background:#fffaf0}
+.runner-quick-reasons .positive{border-left:4px solid var(--green)}.runner-quick-reasons .caution{border-left:4px solid var(--gold)}
+.runner-quick-reasons strong{display:block;margin-top:4px;color:#17211d!important;font-size:14px;line-height:1.35}
+.runner-quick-angle-grid{display:grid;grid-template-columns:repeat(9,minmax(92px,1fr));gap:0;border:1px solid #ded3c2;border-bottom:0;border-right:0;background:#fffdf8}
+.runner-quick-angle-grid div{min-width:0;padding:9px 10px;border-right:1px solid #ded3c2;border-bottom:1px solid #ded3c2;background:#fffdf8}
+.runner-quick-angle-grid div:nth-child(even){background:#f9f4ea}
+.runner-quick-angle-grid strong{display:block;margin-top:3px;color:#17211d!important;font-size:13px;line-height:1.25;overflow-wrap:anywhere}
+.runner-quick-footer{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+.runner-quick-footer span{display:inline-flex!important;gap:5px;align-items:center;border:1px solid #ded3c2;background:#f6f1e7;padding:6px 8px;color:#4f5c56!important}
+.runner-quick-footer b{color:var(--green)!important}
+@media(max-width:900px){.runner-quick-head,.runner-quick-reasons{grid-template-columns:1fr}.runner-quick-status{text-align:left}.runner-quick-angle-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.runner-quick-angle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.runner-quick-head strong{font-size:20px}}
 .jumps-intel-panel{margin:14px 0;padding:15px 16px;background:#fffdf8!important;border:1px solid var(--line)!important;border-left:4px solid var(--green)!important;border-radius:0!important;box-shadow:none!important}
 .jumps-intel-panel.warn{border-left-color:var(--gold)!important}.jumps-intel-panel.bad{border-left-color:var(--red)!important}
 .jumps-intel-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:10px}
@@ -407,6 +427,13 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
 .content .runner.compact>summary:before{color:var(--editorial-gold)!important}.content .top-horse-details>summary{background:transparent!important}.content .top-horse-details[open]>summary{border-bottom-color:#d6cbb9!important}
 
 .content .franked-form-panel{padding:15px 17px!important;border:1px solid #d6cbb9!important;border-top:3px solid var(--editorial-gold)!important;border-radius:2px!important;background:#fffdf8!important;box-shadow:none!important}.franked-form-head{align-items:center!important}.franked-form-head strong{font-family:Source Serif 4,Georgia,serif!important;font-size:20px!important;color:var(--ink)!important}.franked-form-head p{max-width:720px;margin-top:4px!important;color:#4f5c56!important;font-size:10px!important}.franked-strength{display:grid;justify-items:end;gap:2px;min-width:92px;padding:7px 10px;border-left:3px solid var(--editorial-gold);background:#fbf3df}.franked-strength span{color:#6b5b38!important;font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.franked-strength b{color:var(--ink)!important;font-family:Sora;font-size:20px}.franked-summary-strip{display:grid;grid-template-columns:repeat(3,100px);width:max-content;max-width:100%;gap:0;margin-top:11px;border:1px solid #dfd4c3;background:#f8f3e9}.franked-summary-strip>div{display:grid;justify-items:center;padding:8px 10px;border-right:1px solid #dfd4c3}.franked-summary-strip>div:last-child{border-right:0}.franked-summary-strip b{color:var(--editorial-green)!important;font-family:Sora;font-size:17px}.franked-summary-strip span{color:#65726c!important;font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.franked-form-grid{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))!important;gap:10px!important;margin-top:11px!important}.content .franked-run-card{padding:0!important;border:1px solid #d8cdbb!important;border-radius:2px!important;background:#fffdf8!important}.franked-run-head{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:8px 10px;border-bottom:1px solid #e2d8c9;background:#f8f3e9}.franked-run-head span{color:#53615b!important;font-size:8px!important}.franked-run-head strong{margin:0!important;color:var(--ink)!important;font-size:10px!important}.franked-evidence-rows{display:grid}.franked-evidence-row{display:grid;grid-template-columns:112px 1fr;gap:9px;padding:8px 10px;border-bottom:1px solid #e7dfd3}.franked-evidence-row:last-child{border-bottom:0}.franked-evidence-row span{color:#65726c!important;font-size:8px!important;font-weight:800;text-transform:uppercase;letter-spacing:.06em}.franked-evidence-row p{margin:0!important;color:#263630!important;font-size:9px!important;line-height:1.4}.franked-evidence-row.winner{border-left:3px solid var(--editorial-green);background:#f2faf5}.franked-evidence-row.placer{border-left:3px solid #527b8b;background:#f1f6f7}.franked-evidence-row.behind{border-left:3px solid var(--editorial-gold);background:#fff9ea}.franked-empty{margin:0!important;padding:10px;color:#65726c!important;font-size:9px!important}
+
+/* Final bar-label contrast guard: visual bars must never inherit dark article text */
+.content :where(.benchmark-single,.benchmark-bars,.trend-bars,.ground-record-row,.decision-primary-tile,.decision-meter,.compare-visual-bars,.condition-match-row,.placement-row,.jumps-intel-grid,.evidence-snapshot-card) i b,
+.content :where(.bar) i,
+.content :where(.pnl-bar) b{color:#fff!important;text-shadow:none!important}
+.content :where(.benchmark-single,.benchmark-bars) i b{background:var(--editorial-green)!important;color:#fff!important}
+.content :where(.benchmark-bars) i.or-bar b,.content :where(.trend-bars) i.or-bar b{background:var(--editorial-blue)!important;color:#fff!important}
 
 @media(max-width:900px){.briefing-row{grid-template-columns:1fr auto auto!important}.briefing-angle-feature{grid-template-columns:1fr repeat(3,auto)!important}.race-intel-rail{grid-template-columns:repeat(2,minmax(0,1fr))}.race-intel-rail>div,.race-intel-rail>details{border-bottom:1px solid #d8cdbb!important}.race-setup-compact{grid-column:1/-1}.decision-visual-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.content .decision-visual-grid>*{border-bottom:1px solid #e1d8ca!important}.decision-benchmark-strip{grid-template-columns:1fr!important}.content .decision-benchmark-card{border-right:0!important;border-bottom:1px solid #e1d8ca!important}.decision-support-strip{grid-template-columns:1fr}.decision-support-strip>div{border-right:0;border-bottom:1px solid #ded5c6}.extra-intel-summary,.extra-intel-facts{grid-template-columns:repeat(2,minmax(0,1fr))}.content .extra-intel-summary .intel-meter,.extra-intel-facts>div{border-bottom:1px solid #ded5c6!important}.pedigree-line{grid-template-columns:1fr;gap:5px}.distance-context-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.distance-context-stats>div{border-bottom:1px solid #ded5c6}.distance-context-history{grid-template-columns:1fr}.distance-context-history>div{border-right:0;border-bottom:1px solid #e3dacc}.franked-summary-strip{grid-template-columns:90px 90px 1fr}.franked-form-grid{grid-template-columns:1fr!important}}
 @media(max-width:560px){.briefing-row{grid-template-columns:1fr 1fr!important}.briefing-row>div:first-child{grid-column:1/-1}.briefing-row>div:nth-child(2){border-left:0;padding-left:0}.briefing-angle-feature{grid-template-columns:repeat(3,1fr)!important}.briefing-angle-feature-main{grid-column:1/-1}.briefing-angle-feature-score{border-left:0!important;border-top:1px solid #cfdbd2!important}.race-intel-rail,.extra-intel-summary,.extra-intel-facts{grid-template-columns:1fr}.race-intel-rail>div,.race-intel-rail>details,.content .extra-intel-summary .intel-meter,.extra-intel-facts>div{border-right:0!important}.decision-visual-grid{grid-template-columns:1fr 1fr!important}.decision-reason-risk{grid-template-columns:1fr!important}.visual-trend-head,.distance-context-head{display:grid!important}.visual-trend-head small{text-align:left!important}.trend-row{grid-template-columns:1fr!important}.distance-context-stats{grid-template-columns:1fr}.distance-context-stats>div{border-right:0}.distance-experience{width:max-content}.franked-form-head{grid-template-columns:1fr!important}.franked-strength{justify-items:start;width:max-content;border-left:0;border-top:3px solid var(--editorial-gold)}.franked-summary-strip{grid-template-columns:1fr 1fr}.franked-summary-strip p{grid-column:1/-1;border-top:1px solid #dfd4c3}.franked-evidence-row{grid-template-columns:1fr}}
@@ -5408,7 +5435,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                     
     <div class="ff-score-block score-watch">
         <span>Decision Confidence</span>
-        <strong>59.0</strong>
+        <strong>51.0</strong>
     </div>
     
                     <span class="bet-badge bet-value">PRICE DEPENDENT</span>
@@ -5437,7 +5464,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <div class="decision-primary-tile">
                 <span>Status</span>
                 <strong>PRICE DEPENDENT</strong>
-                <i style="--w:59.0%"><b></b></i>
+                <i style="--w:51.0%"><b></b></i>
             </div>
             <div class="decision-meter"><span>Agreement</span><strong>2/6</strong><i style="--w:33%"><b></b></i></div>
             <div class="decision-meter"><span>FFR</span><strong>61</strong><i style="--w:49%"><b></b></i></div>
@@ -5468,7 +5495,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         </div>
         <div class="decision-support-strip">
             <div class="decision-type-card warn"><span>Decision type</span><strong>Best of a weak race</strong><small>This runner is not clean on every metric, but the field looks more compromised and the contextual edge is still strongest.</small></div>
-            <div><span>Model score</span><strong>35.6</strong><small>Underlying model read</small></div>
+            <div><span>Model score</span><strong>36.1</strong><small>Underlying model read</small></div>
             <div><span>Trip / ground</span><strong>DEI D</strong><small>HIGH</small></div>
             <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+25lb FFR vs OR best recorded edge</small></div>
         </div>
@@ -5717,7 +5744,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <strong>42%</strong>
         </div>
         </div>
-            <div class="intent-chip-row"><span class="intent-chip positive">16 similar-trip runs recorded</span><span class="intent-chip positive">FFR vs OR gives +25lb room</span><span class="intent-chip positive">Trainer and jockey setup recorded</span><span class="intent-chip positive">Recent form includes a win/place signal</span><span class="intent-chip caution">Recent evidence contains a fade/no-extra clue</span></div>
+            <div class="intent-chip-row"><span class="intent-chip positive">17 similar-trip runs recorded</span><span class="intent-chip positive">FFR vs OR gives +25lb room</span><span class="intent-chip positive">Trainer and jockey setup recorded</span><span class="intent-chip positive">Recent form includes a win/place signal</span><span class="intent-chip caution">Recent evidence contains a fade/no-extra clue</span></div>
             <div class="compact-insight-row">
                 <span>Mark read <b>FFR vs OR: +25lb</b></span>
                 <span>Evidence <b>Observable only</b></span>
@@ -5886,22 +5913,13 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         </div>
         <div class="distance-timing-grid">
             <div><span>Profile distance</span><strong>1m</strong></div>
-            <div><span>Runs at profile</span><strong>16</strong></div>
+            <div><span>Runs at profile</span><strong>17</strong></div>
             <div><span>DEI</span><strong>D</strong></div>
             <div><span>Reliability</span><strong>HIGH</strong></div>
         </div>
         <table class="distance-timing-table">
             <thead><tr><th>Date</th><th>Course</th><th>Going</th><th>Pos</th><th>Time</th><th>Secs</th></tr></thead>
             <tbody>
-        <tr>
-            <td>20-04-2026</td>
-            <td>Lingfield (AW)</td>
-            <td>Standard</td>
-            <td>4</td>
-            <td>1:39.10</td>
-            <td>99.1</td>
-        </tr>
-        
         <tr>
             <td>04-05-2026</td>
             <td>Bath</td>
@@ -5919,6 +5937,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td>1:41.39</td>
             <td>101.4</td>
         </tr>
+        
+        <tr>
+            <td>28-07-2026</td>
+            <td>Ffos Las</td>
+            <td>Good</td>
+            <td>3</td>
+            <td>1:44.03</td>
+            <td>104</td>
+        </tr>
         </tbody>
         </table>
     </section>
@@ -5930,7 +5957,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <span class="micro-label">Extra Intelligence</span>
                 <strong>Trainer, equipment, freshness and background clues</strong>
             </div>
-            <span class="finish-pill good">+0.2 micro score</span>
+            <span class="finish-pill good">+0.8 micro score</span>
         </div>
         <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:40%">
@@ -5945,15 +5972,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <i><b></b></i>
                 <small>Recent fitness window</small>
             </div>
-            <div class="intel-meter good" style="--intel:56%">
+            <div class="intel-meter good" style="--intel:69%">
                 <span>Micro score</span>
-                <strong>+0.2</strong>
+                <strong>+0.8</strong>
                 <i><b></b></i>
-                <small>recent run fitness window; headgear declared: p; API past-result flags present</small>
+                <small>recent distance evidence matches today&#x27;s ground; recent run fitness window; headgear declared: p; API past-result flags present</small>
             </div>
-            <div class="intel-meter neutral" style="--intel:63%">
+            <div class="intel-meter neutral" style="--intel:81%">
                 <span>Ground timing match</span>
-                <strong>1/3</strong>
+                <strong>2/3</strong>
                 <i><b></b></i>
                 <small>Recent distance-time runs on today's ground</small>
             </div>
@@ -6111,14 +6138,14 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="distance-experience established">Experienced at trip</span>
         </div>
         <div class="distance-context-stats">
-            <div><span>Similar-trip runs</span><strong>16</strong></div>
+            <div><span>Similar-trip runs</span><strong>17</strong></div>
             <div><span>Reliability</span><strong>HIGH</strong></div>
             <div><span>Winning-time par</span><strong>1m 40.04s</strong></div>
             <div><span>Last win at trip</span><strong>1:35.84 | Lingfield (AW) | 06-09-2023</strong></div>
         </div>
         <div class="distance-context-history">
-            <div><span>Recent times</span><b>1:39.10 | 1:42.12 | 1:41.39</b></div>
-            <div><span>Recent positions</span><b>4 | 4 | 5</b></div>
+            <div><span>Recent times</span><b>1:42.12 | 1:41.39 | 1:44.03</b></div>
+            <div><span>Recent positions</span><b>4 | 5 | 3</b></div>
             <div><span>Winning context</span><b>vs par -4.2s | OR 62</b></div>
         </div>
     </section>
@@ -10466,7 +10493,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         </div>
         <div class="decision-support-strip">
             <div class="decision-type-card neutral"><span>Decision type</span><strong>Watch only</strong><small>The horse has some positives, but not enough clean evidence to treat as a strong betting read.</small></div>
-            <div><span>Model score</span><strong>41.8</strong><small>Underlying model read</small></div>
+            <div><span>Model score</span><strong>42.2</strong><small>Underlying model read</small></div>
             <div><span>Trip / ground</span><strong>DEI A</strong><small>HIGH</small></div>
             <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+14lb FFR vs OR best recorded edge</small></div>
         </div>
@@ -10715,7 +10742,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <strong>76%</strong>
         </div>
         </div>
-            <div class="intent-chip-row"><span class="intent-chip positive">Proven trip profile (A)</span><span class="intent-chip positive">12 similar-trip runs recorded</span><span class="intent-chip positive">FFR vs OR gives +14lb room</span><span class="intent-chip positive">Trainer and jockey setup recorded</span><span class="intent-chip caution">No major placement caution from stored evidence</span></div>
+            <div class="intent-chip-row"><span class="intent-chip positive">Proven trip profile (A)</span><span class="intent-chip positive">13 similar-trip runs recorded</span><span class="intent-chip positive">FFR vs OR gives +14lb room</span><span class="intent-chip positive">Trainer and jockey setup recorded</span><span class="intent-chip caution">No major placement caution from stored evidence</span></div>
             <div class="compact-insight-row">
                 <span>Mark read <b>FFR vs OR: +14lb</b></span>
                 <span>Evidence <b>Observable only</b></span>
@@ -10880,26 +10907,17 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <span class="micro-label">Distance Timing Evidence</span>
                 <strong>Exact distance profile</strong>
             </div>
-            <span class="finish-pill elite">Latest matched-distance time is the best of the recent timed set.</span>
+            <span class="finish-pill warn">Latest matched-distance time is slower than the earlier timed sample.</span>
         </div>
         <div class="distance-timing-grid">
             <div><span>Profile distance</span><strong>7f</strong></div>
-            <div><span>Runs at profile</span><strong>12</strong></div>
+            <div><span>Runs at profile</span><strong>13</strong></div>
             <div><span>DEI</span><strong>A</strong></div>
             <div><span>Reliability</span><strong>HIGH</strong></div>
         </div>
         <table class="distance-timing-table">
             <thead><tr><th>Date</th><th>Course</th><th>Going</th><th>Pos</th><th>Time</th><th>Secs</th></tr></thead>
             <tbody>
-        <tr>
-            <td>19-04-2026</td>
-            <td>Curragh (IRE)</td>
-            <td>Soft</td>
-            <td>10</td>
-            <td>1:32.30</td>
-            <td>92.3</td>
-        </tr>
-        
         <tr>
             <td>19-05-2026</td>
             <td>Cork (IRE)</td>
@@ -10917,6 +10935,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td>1:29.85</td>
             <td>89.8</td>
         </tr>
+        
+        <tr>
+            <td>28-07-2026</td>
+            <td>Galway (IRE)</td>
+            <td>Yielding</td>
+            <td>4</td>
+            <td>1:32.96</td>
+            <td>93</td>
+        </tr>
         </tbody>
         </table>
     </section>
@@ -10928,7 +10955,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <span class="micro-label">Extra Intelligence</span>
                 <strong>Trainer, equipment, freshness and background clues</strong>
             </div>
-            <span class="finish-pill warn">-0.2 micro score</span>
+            <span class="finish-pill good">+0.2 micro score</span>
         </div>
         <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:41%">
@@ -10943,15 +10970,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <i><b></b></i>
                 <small>Recent fitness window</small>
             </div>
-            <div class="intel-meter warn" style="--intel:44%">
+            <div class="intel-meter good" style="--intel:56%">
                 <span>Micro score</span>
-                <strong>-0.2</strong>
+                <strong>+0.2</strong>
                 <i><b></b></i>
-                <small>no recent matched-ground timing evidence; recent run fitness window; headgear declared: t; API past-result flags present</small>
+                <small>recent run fitness window; headgear declared: t; API past-result flags present</small>
             </div>
-            <div class="intel-meter neutral" style="--intel:45%">
+            <div class="intel-meter neutral" style="--intel:63%">
                 <span>Ground timing match</span>
-                <strong>0/3</strong>
+                <strong>1/3</strong>
                 <i><b></b></i>
                 <small>Recent distance-time runs on today's ground</small>
             </div>
@@ -11109,14 +11136,14 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="distance-experience established">Experienced at trip</span>
         </div>
         <div class="distance-context-stats">
-            <div><span>Similar-trip runs</span><strong>12</strong></div>
+            <div><span>Similar-trip runs</span><strong>13</strong></div>
             <div><span>Reliability</span><strong>HIGH</strong></div>
             <div><span>Winning-time par</span><strong>1m 36.59s</strong></div>
             <div><span>Last win at trip</span><strong>-- | Leopardstown (IRE) | 18-06-2026</strong></div>
         </div>
         <div class="distance-context-history">
-            <div><span>Recent times</span><b>1:32.30 | 1:30.48 | 1:29.85</b></div>
-            <div><span>Recent positions</span><b>10 | 3 | 1</b></div>
+            <div><span>Recent times</span><b>1:30.48 | 1:29.85 | 1:32.96</b></div>
+            <div><span>Recent positions</span><b>3 | 1 | 4</b></div>
             <div><span>Winning context</span><b>OR 66 | weight 9-10</b></div>
         </div>
     </section>
@@ -13812,7 +13839,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         </div>
         <div class="decision-support-strip">
             <div class="decision-type-card warn"><span>Decision type</span><strong>Best of a weak race</strong><small>This runner is not clean on every metric, but the field looks more compromised and the contextual edge is still strongest.</small></div>
-            <div><span>Model score</span><strong>42.1</strong><small>Underlying model read</small></div>
+            <div><span>Model score</span><strong>43.1</strong><small>Underlying model read</small></div>
             <div><span>Trip / ground</span><strong>DEI A</strong><small>MEDIUM</small></div>
             <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+25lb FFR vs OR best recorded edge</small></div>
         </div>
@@ -14166,12 +14193,12 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         
         <div>
             <span>Avg OR</span>
-            <strong>49.7</strong>
+            <strong>50.2</strong>
         </div>
         
         <div>
             <span>OR vs Field</span>
-            <strong>+5.3</strong>
+            <strong>+4.8</strong>
         </div>
         
         <div>
@@ -17079,7 +17106,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="runner-decision-head">
             <div>
                 <span class="micro-label">Decision read</span>
-                <strong>Interesting on score, but needs caution: distance evidence is thin.</strong>
+                <strong>Interesting on score, but needs caution: distance suitability is a caution (dei e).</strong>
             </div>
             
         </div>
@@ -17092,8 +17119,8 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <div class="decision-meter"><span>Agreement</span><strong>2/6</strong><i style="--w:33%"><b></b></i></div>
             <div class="decision-meter"><span>FFR</span><strong>61</strong><i style="--w:49%"><b></b></i></div>
             <div class="decision-meter"><span>Speed</span><strong>99</strong><i style="--w:99%"><b></b></i></div>
-            <div class="decision-meter"><span>Conditions</span><strong>Mixed fit</strong><i style="--w:52%"><b></b></i></div>
-            <div class="decision-meter"><span>Placement</span><strong>Mixed setup</strong><i style="--w:60%"><b></b></i></div>
+            <div class="decision-meter"><span>Conditions</span><strong>Caution</strong><i style="--w:49%"><b></b></i></div>
+            <div class="decision-meter"><span>Placement</span><strong>Mixed setup</strong><i style="--w:57%"><b></b></i></div>
         </div>
         <div class="decision-benchmark-strip">
         <div class="decision-benchmark-card single">
@@ -17114,12 +17141,12 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         </div>
         <div class="decision-reason-risk">
             <span class="positive"><b>Best reason</b>Model evidence is not clean enough for a positive stance</span>
-            <span class="caution"><b>Main risk</b>Distance evidence is thin</span>
+            <span class="caution"><b>Main risk</b>Distance suitability is a caution (DEI E)</span>
         </div>
         <div class="decision-support-strip">
             <div class="decision-type-card warn"><span>Decision type</span><strong>Best of a weak race</strong><small>This runner is not clean on every metric, but the field looks more compromised and the contextual edge is still strongest.</small></div>
-            <div><span>Model score</span><strong>34.0</strong><small>Underlying model read</small></div>
-            <div><span>Trip / ground</span><strong>DEI D</strong><small>LOW</small></div>
+            <div><span>Model score</span><strong>33.0</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI E</strong><small>MEDIUM</small></div>
             <div><span>Handicap ceiling</span><strong class="warn">Near ceiling</strong><small>+3lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
@@ -17224,17 +17251,17 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
     
                 
     <section class="conditions-match-panel">
-        <div class="conditions-match-score warn">
+        <div class="conditions-match-score bad">
             <span>Today's conditions match</span>
-            <strong>52%</strong>
-            <small>Mixed conditions match</small>
+            <strong>49%</strong>
+            <small>Conditions ask questions</small>
         </div>
         <div>
             <div class="condition-match-rows">
         <div class="condition-match-row">
             <span>Trip / ground</span>
-            <i><b class="warn" style="--w:52%"></b></i>
-            <strong>52%</strong>
+            <i><b class="bad" style="--w:38%"></b></i>
+            <strong>38%</strong>
         </div>
         
         <div class="condition-match-row">
@@ -17263,7 +17290,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         </div>
             <div class="compact-insight-row">
                 <span>Best fit <b>Handicap</b></span>
-                <span>Question <b>Pace shape</b></span>
+                <span>Question <b>Trip / ground</b></span>
             </div>
         </div>
     </section>
@@ -17332,15 +17359,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
     <section class="placement-evidence-panel warn">
         <div class="placement-score">
             <span>Placement evidence</span>
-            <strong>60%</strong>
+            <strong>57%</strong>
             <small>Neutral placement read</small>
         </div>
         <div class="placement-body">
             <div class="placement-rows">
         <div class="placement-row">
             <span>Trip evidence</span>
-            <i><b class="bad" style="--w:44%"></b></i>
-            <strong>44%</strong>
+            <i><b class="bad" style="--w:30%"></b></i>
+            <strong>30%</strong>
         </div>
         
         <div class="placement-row">
@@ -17367,7 +17394,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <strong>76%</strong>
         </div>
         </div>
-            <div class="intent-chip-row"><span class="intent-chip positive">Trainer and jockey setup recorded</span><span class="intent-chip positive">Recent evidence contains a positive run clue</span><span class="intent-chip positive">Recent form includes a win/place signal</span><span class="intent-chip caution">No major placement caution from stored evidence</span></div>
+            <div class="intent-chip-row"><span class="intent-chip positive">5 similar-trip runs recorded</span><span class="intent-chip positive">Trainer and jockey setup recorded</span><span class="intent-chip positive">Recent evidence contains a positive run clue</span><span class="intent-chip positive">Recent form includes a win/place signal</span><span class="intent-chip caution">Trip evidence still asks questions</span></div>
             <div class="compact-insight-row">
                 <span>Mark read <b>FFR vs OR: +3lb</b></span>
                 <span>Evidence <b>Observable only</b></span>
@@ -17536,22 +17563,13 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         </div>
         <div class="distance-timing-grid">
             <div><span>Profile distance</span><strong>7f</strong></div>
-            <div><span>Runs at profile</span><strong>4</strong></div>
-            <div><span>DEI</span><strong>D</strong></div>
-            <div><span>Reliability</span><strong>LOW</strong></div>
+            <div><span>Runs at profile</span><strong>5</strong></div>
+            <div><span>DEI</span><strong>E</strong></div>
+            <div><span>Reliability</span><strong>MEDIUM</strong></div>
         </div>
         <table class="distance-timing-table">
             <thead><tr><th>Date</th><th>Course</th><th>Going</th><th>Pos</th><th>Time</th><th>Secs</th></tr></thead>
             <tbody>
-        <tr>
-            <td>29-05-2025</td>
-            <td>Fairyhouse (IRE)</td>
-            <td>Yielding</td>
-            <td>3</td>
-            <td>1:29.40</td>
-            <td>89.4</td>
-        </tr>
-        
         <tr>
             <td>04-08-2025</td>
             <td>Naas (IRE)</td>
@@ -17568,6 +17586,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td>3</td>
             <td>1:32.38</td>
             <td>92.4</td>
+        </tr>
+        
+        <tr>
+            <td>28-07-2026</td>
+            <td>Galway (IRE)</td>
+            <td>Yielding</td>
+            <td>10</td>
+            <td>1:33.96</td>
+            <td>94</td>
         </tr>
         </tbody>
         </table>
@@ -17742,12 +17769,12 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="bet-badge bet-avoid">CAUTION PROFILE</span>
         </div>
         <div class="ff-intel-metrics">
-            <div><span>DEI</span><strong>D</strong></div>
+            <div><span>DEI</span><strong>E</strong></div>
             <div><span>Benchmark</span><strong>0.28</strong></div>
             <div><span>Pace</span><strong>Unclear</strong></div>
             <div><span>Consensus</span><strong>FRAGILE</strong></div>
         </div>
-        <p>Great Mover profiles as a unclear with a stable / positive signs trajectory. Distance intelligence grade is D. Model alignment is 2/6. No obvious tactical edge from race shape</p>
+        <p>Great Mover profiles as a unclear with a stable / positive signs trajectory. Distance intelligence grade is E. Model alignment is 2/6. No obvious tactical edge from race shape</p>
         <div class="timing-strip">
             <span>Winning Time Par</span>
             <strong>1m 36.59s</strong>
@@ -17761,14 +17788,14 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="distance-experience established">Experienced at trip</span>
         </div>
         <div class="distance-context-stats">
-            <div><span>Similar-trip runs</span><strong>4</strong></div>
-            <div><span>Reliability</span><strong>LOW</strong></div>
+            <div><span>Similar-trip runs</span><strong>5</strong></div>
+            <div><span>Reliability</span><strong>MEDIUM</strong></div>
             <div><span>Winning-time par</span><strong>1m 36.59s</strong></div>
             <div><span>Last win at trip</span><strong>No exact-distance win recorded</strong></div>
         </div>
         <div class="distance-context-history">
-            <div><span>Recent times</span><b>1:29.40 | 1:30.40 | 1:32.38</b></div>
-            <div><span>Recent positions</span><b>3 | 14 | 3</b></div>
+            <div><span>Recent times</span><b>1:30.40 | 1:32.38 | 1:33.96</b></div>
+            <div><span>Recent positions</span><b>14 | 3 | 10</b></div>
             <div><span>Winning context</span><b>Winning-run context developing</b></div>
         </div>
     </section>
@@ -17926,7 +17953,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <div class="decision-meter"><span>FFR</span><strong>45</strong><i style="--w:36%"><b></b></i></div>
             <div class="decision-meter"><span>Speed</span><strong>99</strong><i style="--w:99%"><b></b></i></div>
             <div class="decision-meter"><span>Conditions</span><strong>Mixed fit</strong><i style="--w:56%"><b></b></i></div>
-            <div class="decision-meter"><span>Placement</span><strong>Positive setup</strong><i style="--w:64%"><b></b></i></div>
+            <div class="decision-meter"><span>Placement</span><strong>Mixed setup</strong><i style="--w:62%"><b></b></i></div>
         </div>
         <div class="decision-benchmark-strip">
         <div class="decision-benchmark-card single">
@@ -17952,7 +17979,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="decision-support-strip">
             <div class="decision-type-card warn"><span>Decision type</span><strong>Best of a weak race</strong><small>This runner is not clean on every metric, but the field looks more compromised and the contextual edge is still strongest.</small></div>
             <div><span>Model score</span><strong>38.1</strong><small>Underlying model read</small></div>
-            <div><span>Trip / ground</span><strong>DEI E</strong><small>VERY_LOW</small></div>
+            <div><span>Trip / ground</span><strong>DEI E</strong><small>LOW</small></div>
             <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+17lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
@@ -18162,18 +18189,18 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
     </section>
     
                 
-    <section class="placement-evidence-panel good">
+    <section class="placement-evidence-panel warn">
         <div class="placement-score">
             <span>Placement evidence</span>
-            <strong>64%</strong>
-            <small>Positive placement clues</small>
+            <strong>62%</strong>
+            <small>Neutral placement read</small>
         </div>
         <div class="placement-body">
             <div class="placement-rows">
         <div class="placement-row">
             <span>Trip evidence</span>
-            <i><b class="bad" style="--w:38%"></b></i>
-            <strong>38%</strong>
+            <i><b class="bad" style="--w:30%"></b></i>
+            <strong>30%</strong>
         </div>
         
         <div class="placement-row">
@@ -18363,26 +18390,35 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         <div class="distance-timing-head">
             <div>
                 <span class="micro-label">Distance Timing Evidence</span>
-                <strong>Nearest profile 1m½f</strong>
+                <strong>Nearest profile 1m1½f</strong>
             </div>
-            <span class="finish-pill neutral">No clear timing trend yet; use this as supporting evidence.</span>
+            <span class="finish-pill warn">Latest matched-distance time is slower than the earlier timed sample.</span>
         </div>
         <div class="distance-timing-grid">
-            <div><span>Profile distance</span><strong>1m½f</strong></div>
-            <div><span>Runs at profile</span><strong>1</strong></div>
+            <div><span>Profile distance</span><strong>1m1½f</strong></div>
+            <div><span>Runs at profile</span><strong>2</strong></div>
             <div><span>DEI</span><strong>E</strong></div>
-            <div><span>Reliability</span><strong>VERY_LOW</strong></div>
+            <div><span>Reliability</span><strong>LOW</strong></div>
         </div>
         <table class="distance-timing-table">
             <thead><tr><th>Date</th><th>Course</th><th>Going</th><th>Pos</th><th>Time</th><th>Secs</th></tr></thead>
             <tbody>
         <tr>
-            <td>16-06-2026</td>
+            <td>18-11-2019</td>
+            <td>Wolverhampton (AW)</td>
+            <td>Standard</td>
+            <td>4</td>
+            <td>1:56.41</td>
+            <td>116.4</td>
+        </tr>
+        
+        <tr>
+            <td>15-12-2020</td>
             <td>Wolverhampton (AW)</td>
             <td>Standard</td>
             <td>6</td>
-            <td>1:52.03</td>
-            <td>112</td>
+            <td>1:59.93</td>
+            <td>119.9</td>
         </tr>
         </tbody>
         </table>
@@ -18418,7 +18454,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
             <div class="intel-meter neutral" style="--intel:45%">
                 <span>Ground timing match</span>
-                <strong>0/1</strong>
+                <strong>0/2</strong>
                 <i><b></b></i>
                 <small>Recent distance-time runs on today's ground</small>
             </div>
@@ -18576,14 +18612,14 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="distance-experience developing">Trip evidence building</span>
         </div>
         <div class="distance-context-stats">
-            <div><span>Similar-trip runs</span><strong>1</strong></div>
-            <div><span>Reliability</span><strong>VERY_LOW</strong></div>
+            <div><span>Similar-trip runs</span><strong>2</strong></div>
+            <div><span>Reliability</span><strong>LOW</strong></div>
             <div><span>Winning-time par</span><strong>2m 05.97s</strong></div>
             <div><span>Last win at trip</span><strong>2:16.83 | Newcastle (AW) | 28-12-2024</strong></div>
         </div>
         <div class="distance-context-history">
-            <div><span>Recent times</span><b>1:52.03</b></div>
-            <div><span>Recent positions</span><b>6</b></div>
+            <div><span>Recent times</span><b>1:56.41 | 1:59.93</b></div>
+            <div><span>Recent positions</span><b>4 | 6</b></div>
             <div><span>Winning context</span><b>vs par +10.86s | OR 58</b></div>
         </div>
     </section>
@@ -20390,7 +20426,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <div class="decision-meter"><span>FFR</span><strong>36</strong><i style="--w:29%"><b></b></i></div>
             <div class="decision-meter"><span>Speed</span><strong>107</strong><i style="--w:100%"><b></b></i></div>
             <div class="decision-meter"><span>Conditions</span><strong>Mixed fit</strong><i style="--w:56%"><b></b></i></div>
-            <div class="decision-meter"><span>Placement</span><strong>Mixed setup</strong><i style="--w:58%"><b></b></i></div>
+            <div class="decision-meter"><span>Placement</span><strong>Mixed setup</strong><i style="--w:59%"><b></b></i></div>
         </div>
         <div class="decision-benchmark-strip">
         <div class="decision-benchmark-card single">
@@ -20415,8 +20451,8 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         </div>
         <div class="decision-support-strip">
             <div class="decision-type-card warn"><span>Decision type</span><strong>Context over ratings</strong><small>The raw rating/mark view is a caution, but other layers such as field edge, recent form, benchmark or memory keep it interesting.</small></div>
-            <div><span>Model score</span><strong>29.5</strong><small>Underlying model read</small></div>
-            <div><span>Trip / ground</span><strong>DEI E</strong><small>LOW</small></div>
+            <div><span>Model score</span><strong>30.0</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI E</strong><small>MEDIUM</small></div>
             <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+12lb FFR vs OR best recorded edge</small></div>
         </div>
     </section>
@@ -20629,15 +20665,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
     <section class="placement-evidence-panel warn">
         <div class="placement-score">
             <span>Placement evidence</span>
-            <strong>58%</strong>
+            <strong>59%</strong>
             <small>Neutral placement read</small>
         </div>
         <div class="placement-body">
             <div class="placement-rows">
         <div class="placement-row">
             <span>Trip evidence</span>
-            <i><b class="bad" style="--w:24%"></b></i>
-            <strong>24%</strong>
+            <i><b class="bad" style="--w:30%"></b></i>
+            <strong>30%</strong>
         </div>
         
         <div class="placement-row">
@@ -20664,7 +20700,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <strong>58%</strong>
         </div>
         </div>
-            <div class="intent-chip-row"><span class="intent-chip positive">FFR vs OR gives +12lb room</span><span class="intent-chip positive">Trainer and jockey setup recorded</span><span class="intent-chip positive">Recent form includes a win/place signal</span><span class="intent-chip caution">Trip evidence still asks questions</span><span class="intent-chip caution">Recent evidence is mixed</span></div>
+            <div class="intent-chip-row"><span class="intent-chip positive">5 similar-trip runs recorded</span><span class="intent-chip positive">FFR vs OR gives +12lb room</span><span class="intent-chip positive">Trainer and jockey setup recorded</span><span class="intent-chip positive">Recent form includes a win/place signal</span><span class="intent-chip caution">Trip evidence still asks questions</span><span class="intent-chip caution">Recent evidence is mixed</span></div>
             <div class="compact-insight-row">
                 <span>Mark read <b>FFR vs OR: +12lb</b></span>
                 <span>Evidence <b>Observable only</b></span>
@@ -20833,22 +20869,13 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         </div>
         <div class="distance-timing-grid">
             <div><span>Profile distance</span><strong>7f</strong></div>
-            <div><span>Runs at profile</span><strong>4</strong></div>
+            <div><span>Runs at profile</span><strong>5</strong></div>
             <div><span>DEI</span><strong>E</strong></div>
-            <div><span>Reliability</span><strong>LOW</strong></div>
+            <div><span>Reliability</span><strong>MEDIUM</strong></div>
         </div>
         <table class="distance-timing-table">
             <thead><tr><th>Date</th><th>Course</th><th>Going</th><th>Pos</th><th>Time</th><th>Secs</th></tr></thead>
             <tbody>
-        <tr>
-            <td>13-11-2024</td>
-            <td>Dundalk (AW) (IRE)</td>
-            <td>Standard</td>
-            <td>7</td>
-            <td>1:27.60</td>
-            <td>87.6</td>
-        </tr>
-        
         <tr>
             <td>29-05-2025</td>
             <td>Fairyhouse (IRE)</td>
@@ -20866,6 +20893,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td>1:38.37</td>
             <td>98.4</td>
         </tr>
+        
+        <tr>
+            <td>28-07-2026</td>
+            <td>Galway (IRE)</td>
+            <td>Yielding</td>
+            <td>12</td>
+            <td>1:34.61</td>
+            <td>94.6</td>
+        </tr>
         </tbody>
         </table>
     </section>
@@ -20877,7 +20913,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <span class="micro-label">Extra Intelligence</span>
                 <strong>Trainer, equipment, freshness and background clues</strong>
             </div>
-            <span class="finish-pill good">+0.2 micro score</span>
+            <span class="finish-pill good">+0.8 micro score</span>
         </div>
         <div class="extra-intel-summary">
             <div class="intel-meter neutral" style="--intel:31%">
@@ -20892,15 +20928,15 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <i><b></b></i>
                 <small>Recent fitness window</small>
             </div>
-            <div class="intel-meter good" style="--intel:56%">
+            <div class="intel-meter good" style="--intel:69%">
                 <span>Micro score</span>
-                <strong>+0.2</strong>
+                <strong>+0.8</strong>
                 <i><b></b></i>
-                <small>recent run fitness window</small>
+                <small>recent distance evidence matches today&#x27;s ground; recent run fitness window</small>
             </div>
-            <div class="intel-meter neutral" style="--intel:63%">
+            <div class="intel-meter neutral" style="--intel:81%">
                 <span>Ground timing match</span>
-                <strong>1/3</strong>
+                <strong>2/3</strong>
                 <i><b></b></i>
                 <small>Recent distance-time runs on today's ground</small>
             </div>
@@ -21058,14 +21094,14 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="distance-experience established">Experienced at trip</span>
         </div>
         <div class="distance-context-stats">
-            <div><span>Similar-trip runs</span><strong>4</strong></div>
-            <div><span>Reliability</span><strong>LOW</strong></div>
+            <div><span>Similar-trip runs</span><strong>5</strong></div>
+            <div><span>Reliability</span><strong>MEDIUM</strong></div>
             <div><span>Winning-time par</span><strong>1m 36.59s</strong></div>
             <div><span>Last win at trip</span><strong>No exact-distance win recorded</strong></div>
         </div>
         <div class="distance-context-history">
-            <div><span>Recent times</span><b>1:27.60 | 1:30.10 | 1:38.37</b></div>
-            <div><span>Recent positions</span><b>7 | 7 | 2</b></div>
+            <div><span>Recent times</span><b>1:30.10 | 1:38.37 | 1:34.61</b></div>
+            <div><span>Recent positions</span><b>7 | 2 | 12</b></div>
             <div><span>Winning context</span><b>Winning-run context developing</b></div>
         </div>
     </section>
@@ -23663,6 +23699,831 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <summary>
                 <div class="top-horse-summary-main">
                     <span class="micro-label">Premium runner profile</span>
+                    <strong>It&#x27;sneverjustone</strong>
+                    <small>7:15 | Galway | 7f</small>
+                    <div class="chip-row top-horse-summary-chip-row"><span class="chip warn">Quality E</span><span class="chip neutral">Tier 4 watch only</span><span class="chip bad">Fragile profile</span><span class="chip neutral">+5 more signals</span></div>
+                </div>
+                <div class="top-horse-summary-tags">
+                    
+    <div class="ff-score-block score-muted">
+        <span>Decision Confidence</span>
+        <strong>38.2</strong>
+    </div>
+    
+                    <span class="bet-badge bet-avoid">CAUTION PROFILE</span>
+                </div>
+            </summary>
+            
+    <div class="runner-race-link">
+        <div>
+            <span class="micro-label">Runs Today</span>
+            <strong>7:15 | Galway | 7f</strong>
+            <p>caulfieldindustrial.com Handicap</p>
+        </div>
+        <a href="racecards.html#race-2026-07-28-7-15-galway-7f-caulfieldindustrial-com-handicap">Open racecard</a>
+    </div>
+    
+            
+    <section class="runner-decision-panel">
+        <div class="runner-decision-head">
+            <div>
+                <span class="micro-label">Decision read</span>
+                <strong>Interesting on score, but needs caution: no major model risk flagged.</strong>
+            </div>
+            
+        </div>
+        <div class="decision-visual-grid">
+            <div class="decision-primary-tile">
+                <span>Status</span>
+                <strong>CAUTION PROFILE</strong>
+                <i style="--w:38.2%"><b></b></i>
+            </div>
+            <div class="decision-meter"><span>Agreement</span><strong>2/6</strong><i style="--w:33%"><b></b></i></div>
+            <div class="decision-meter"><span>FFR</span><strong>57</strong><i style="--w:46%"><b></b></i></div>
+            <div class="decision-meter"><span>Speed</span><strong>97</strong><i style="--w:97%"><b></b></i></div>
+            <div class="decision-meter"><span>Conditions</span><strong>Mixed fit</strong><i style="--w:61%"><b></b></i></div>
+            <div class="decision-meter"><span>Placement</span><strong>Positive setup</strong><i style="--w:69%"><b></b></i></div>
+        </div>
+        <div class="decision-benchmark-strip">
+        <div class="decision-benchmark-card single">
+            <div><span>FFR vs OR</span><strong>-21lb below mark</strong></div>
+            <div class="benchmark-single">
+                <i style="--w:45.6"><b>FFR 57</b></i>
+                <em>pounds scale</em>
+            </div>
+        </div>
+        
+        <div class="decision-benchmark-card single">
+            <div><span>SpeedScore</span><strong>around par</strong></div>
+            <div class="benchmark-single">
+                <i style="--w:96.6"><b>97</b></i>
+                <em>Par 100</em>
+            </div>
+        </div>
+        </div>
+        <div class="decision-reason-risk">
+            <span class="positive"><b>Best reason</b>Model evidence is not clean enough for a positive stance</span>
+            <span class="caution"><b>Main risk</b>No major model risk flagged</span>
+        </div>
+        <div class="decision-support-strip">
+            <div class="decision-type-card neutral"><span>Decision type</span><strong>Watch only</strong><small>The horse has some positives, but not enough clean evidence to treat as a strong betting read.</small></div>
+            <div><span>Model score</span><strong>20.5</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI C</strong><small>HIGH</small></div>
+            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+15lb FFR vs OR best recorded edge</small></div>
+        </div>
+    </section>
+    
+            <details class="evidence-drawer decision-drawer">
+                <summary>
+                    <span>Context match</span>
+                    <strong>Conditions, placement, handicap and recent form</strong>
+                </summary>
+                
+    <section class="last-six-strip">
+        <div class="last-six-head">
+            <span class="micro-label">Last 6 Finishing Positions</span>
+            <small>Most recent first | 1 = win | 2-3 = placed | open the full table for detail</small>
+        </div>
+        <div class="form-tiles">
+        <div class="form-tile run">
+            <strong>6</strong>
+            <span>Salisbury</span>
+            <em class="neutral">Competitive</em>
+            <small>14-06-2026</small>
+        </div>
+        
+        <div class="form-tile run">
+            <strong>4</strong>
+            <span>Thirsk</span>
+            <em class="caution">Run faded</em>
+            <small>18-04-2026</small>
+        </div>
+        
+        <div class="form-tile run">
+            <strong>4</strong>
+            <span>Doncaster</span>
+            <em class="positive">Finished well</em>
+            <small>29-03-2026</small>
+        </div>
+        
+        <div class="form-tile run">
+            <strong>5</strong>
+            <span>Redcar</span>
+            <em class="caution">Run faded</em>
+            <small>27-10-2025</small>
+        </div>
+        
+        <div class="form-tile run">
+            <strong>8</strong>
+            <span>Leicester</span>
+            <em class="positive">Finished well</em>
+            <small>14-10-2025</small>
+        </div>
+        
+        <div class="form-tile run">
+            <strong>11</strong>
+            <span>Chester</span>
+            <em class="caution">Run faded</em>
+            <small>13-09-2025</small>
+        </div>
+        </div>
+    </section>
+    
+                
+    <section class="franked-form-panel gold">
+        <div class="franked-form-head">
+            <div>
+                <span class="micro-label">Race form proof</span>
+                <strong>Strongly franked</strong>
+                <p>Some form support</p>
+            </div>
+            <div class="franked-strength"><span>Proof rating</span><b>48</b></div>
+        </div>
+        <div class="franked-summary-strip">
+            <div><b>6</b><span>winners since</span></div>
+            <div><b>6</b><span>placers since</span></div>
+            <div><b>10</b><span>evidence pts</span></div>
+        </div>
+        <div class="franked-form-grid">
+            <div class="franked-run-card">
+                <div class="franked-run-head">
+                    <span>04-04-2025 | Southwell (AW)</span>
+                    <strong>Finished 2</strong>
+                </div>
+                <div class="franked-evidence-rows"><div class="franked-evidence-row behind"><span>Beat named rivals</span><p>Captain Parma (IRE), Eagle Strike (FR), Havachoc (GB)</p></div><div class="franked-evidence-row winner"><span>Race produced winner</span><p>Havachoc (GB)</p></div><div class="franked-evidence-row placer"><span>Later placers</span><p>Captain Parma (IRE) (03-07-2026), Rosemary May (IRE) (07-04-2026)</p></div></div>
+            </div>
+        
+            <div class="franked-run-card">
+                <div class="franked-run-head">
+                    <span>05-03-2025 | Doncaster</span>
+                    <strong>Finished 7</strong>
+                </div>
+                <div class="franked-evidence-rows"><div class="franked-evidence-row behind"><span>Beat named rivals</span><p>Graduated (GB), Patsy Snugfit (GB), Shimaleyah (IRE)</p></div><div class="franked-evidence-row winner"><span>Race produced winner</span><p>Canvas (GB), Hot Dancer (GB)</p></div><div class="franked-evidence-row placer"><span>Later placers</span><p>Barry&#x27;s Boy (IRE) (07-06-2026), Everyoneknowsadave (IRE) (09-05-2025)</p></div></div>
+            </div>
+        </div>
+    </section>
+    
+                
+    <section class="conditions-match-panel">
+        <div class="conditions-match-score warn">
+            <span>Today's conditions match</span>
+            <strong>61%</strong>
+            <small>Mixed conditions match</small>
+        </div>
+        <div>
+            <div class="condition-match-rows">
+        <div class="condition-match-row">
+            <span>Trip / ground</span>
+            <i><b class="good" style="--w:66%"></b></i>
+            <strong>66%</strong>
+        </div>
+        
+        <div class="condition-match-row">
+            <span>Class</span>
+            <i><b class="warn" style="--w:51.4%"></b></i>
+            <strong>51%</strong>
+        </div>
+        
+        <div class="condition-match-row">
+            <span>Pace shape</span>
+            <i><b class="warn" style="--w:50.0%"></b></i>
+            <strong>50%</strong>
+        </div>
+        
+        <div class="condition-match-row">
+            <span>Track / draw</span>
+            <i><b class="warn" style="--w:50%"></b></i>
+            <strong>50%</strong>
+        </div>
+        
+        <div class="condition-match-row">
+            <span>Handicap</span>
+            <i><b class="elite" style="--w:90%"></b></i>
+            <strong>90%</strong>
+        </div>
+        </div>
+            <div class="compact-insight-row">
+                <span>Best fit <b>Handicap</b></span>
+                <span>Question <b>Pace shape</b></span>
+            </div>
+        </div>
+    </section>
+    
+                
+    <section class="ground-evidence-panel elite">
+        <div class="ground-evidence-score elite">
+            <span>Ground evidence</span>
+            <strong>Testing</strong>
+            <small>Proven on today&#x27;s ground band</small>
+        </div>
+        <div>
+            <div class="ground-evidence-grid">
+                <div><span>Today</span><strong>Yielding</strong></div>
+                <div><span>Similar-ground runs</span><strong>3/6</strong></div>
+                <div><span>Best similar rating</span><strong>84</strong></div>
+                <div><span>Best ground band</span><strong>Testing</strong></div>
+            </div>
+            <div class="compact-insight-row">
+                <span>Read <b>Proven on today&#x27;s ground band</b></span>
+                <span>Today <b>Testing</b></span>
+            </div>
+            
+    <details class="ground-record-drawer">
+        <summary>
+            <span>Ground record by surface</span>
+            <strong>Runs, wins, places and peak rating by ground band</strong>
+        </summary>
+        <div class="ground-record-chart">
+            
+        <div class="ground-record-row active">
+            <span>Testing</span>
+            <i style="--w:100%"><b>7</b></i>
+            <strong>2W / 2P</strong>
+            <em>Peak rating 88</em>
+        </div>
+        
+        <div class="ground-record-row">
+            <span>Good</span>
+            <i style="--w:85.71428571428571%"><b>6</b></i>
+            <strong>0W / 0P</strong>
+            <em>Peak rating 84</em>
+        </div>
+        
+        <div class="ground-record-row">
+            <span>Fast</span>
+            <i style="--w:0%"><b>0</b></i>
+            <strong>0W / 0P</strong>
+            <em>Peak rating --</em>
+        </div>
+        
+        <div class="ground-record-row">
+            <span>All-weather</span>
+            <i style="--w:28.57142857142857%"><b>2</b></i>
+            <strong>0W / 2P</strong>
+            <em>Peak rating 75</em>
+        </div>
+        
+        </div>
+    </details>
+    
+        </div>
+    </section>
+    
+                
+    <section class="placement-evidence-panel good">
+        <div class="placement-score">
+            <span>Placement evidence</span>
+            <strong>69%</strong>
+            <small>Positive placement clues</small>
+        </div>
+        <div class="placement-body">
+            <div class="placement-rows">
+        <div class="placement-row">
+            <span>Trip evidence</span>
+            <i><b class="elite" style="--w:78%"></b></i>
+            <strong>78%</strong>
+        </div>
+        
+        <div class="placement-row">
+            <span>Class fit</span>
+            <i><b class="warn" style="--w:51%"></b></i>
+            <strong>51%</strong>
+        </div>
+        
+        <div class="placement-row">
+            <span>Mark room</span>
+            <i><b class="elite" style="--w:97%"></b></i>
+            <strong>97%</strong>
+        </div>
+        
+        <div class="placement-row">
+            <span>Stable setup</span>
+            <i><b class="good" style="--w:66%"></b></i>
+            <strong>66%</strong>
+        </div>
+        
+        <div class="placement-row">
+            <span>Recent evidence</span>
+            <i><b class="warn" style="--w:50%"></b></i>
+            <strong>50%</strong>
+        </div>
+        </div>
+            <div class="intent-chip-row"><span class="intent-chip positive">Proven trip profile (C)</span><span class="intent-chip positive">10 similar-trip runs recorded</span><span class="intent-chip positive">FFR vs OR gives +15lb room</span><span class="intent-chip positive">Trainer and jockey setup recorded</span><span class="intent-chip caution">No major placement caution from stored evidence</span></div>
+            <div class="compact-insight-row">
+                <span>Mark read <b>FFR vs OR: +15lb</b></span>
+                <span>Evidence <b>Observable only</b></span>
+            </div>
+        </div>
+    </section>
+    
+                <div class="opportunity-grid">
+                    
+    <section class="handicap-opportunity-panel">
+        <div>
+            <span class="micro-label">Handicap Opportunity</span>
+            <strong class="elite">Well handicapped</strong>
+            <small>+15lb FFR vs OR</small>
+        </div>
+        <div class="handicap-opportunity-copy">
+            <p>Our pounds-style FFR evidence suggests today&#x27;s official mark may leave useful room for improvement.</p>
+            <span>Today's OR <b>78</b> | FFR <b>57</b> | Best FFR <b>93</b> | FFR edge <b>+15</b></span>
+        </div>
+    </section>
+    
+                    
+        <section class="hidden-run-panel muted">
+            <div><span class="micro-label">Hidden Run Detector</span><strong>No hidden run flagged</strong></div>
+            <p>No recent performance currently meets the ForeFurlongs hidden-effort checks.</p>
+        </section>
+        
+                </div>
+            </details>
+            <details class="evidence-drawer">
+                <summary>
+                    <span>Deeper evidence</span>
+                    <strong>Speed, timing, jumps, ratings and full run table</strong>
+                </summary>
+                
+    <section class="predictive-edge-panel">
+        <div class="predictive-edge-head">
+            <div>
+                <span class="micro-label">Predictive edge</span>
+                <strong class="warn">Small positive nudge</strong>
+                <p>Variable; No bounce signal; No hidden upgrade; Big ceiling edge; Cooling</p>
+            </div>
+            <div class="predictive-edge-score">
+                <span>confidence nudge</span>
+                <strong class="warn">+0.2</strong>
+            </div>
+        </div>
+        <div class="predictive-edge-grid">
+        <div>
+            <span>Variance</span>
+            <strong>Variable</strong>
+            <small>9.6% volatility</small>
+        </div>
+        
+        <div>
+            <span>Bounce</span>
+            <strong>No bounce signal</strong>
+            <small>Recent big figure regression check</small>
+        </div>
+        
+        <div>
+            <span>Hidden Run</span>
+            <strong>No hidden upgrade</strong>
+            <small>Upgrade 0</small>
+        </div>
+        
+        <div>
+            <span>Ceiling</span>
+            <strong>Big ceiling edge</strong>
+            <small>21.3 vs par</small>
+        </div>
+        
+        <div>
+            <span>Curve</span>
+            <strong>Cooling</strong>
+            <small>Trend -1</small>
+        </div>
+        </div>
+    </section>
+    
+                
+                
+                
+    <div class="runner-meta-strip">
+        
+        <div>
+            <span>Trainer</span>
+            <strong>David Loughnane</strong>
+        </div>
+        
+        <div>
+            <span>Jockey</span>
+            <strong>Declan McDonogh</strong>
+        </div>
+        
+        <div>
+            <span>Age</span>
+            <strong>4</strong>
+        </div>
+        
+        <div>
+            <span>Draw</span>
+            <strong>16</strong>
+        </div>
+        
+        <div>
+            <span>OR</span>
+            <strong>78</strong>
+        </div>
+        
+        <div>
+            <span>Avg OR</span>
+            <strong>75.9</strong>
+        </div>
+        
+        <div>
+            <span>OR vs Field</span>
+            <strong>+2.1</strong>
+        </div>
+        
+        <div>
+            <span>Rating</span>
+            <strong>No rating yet</strong>
+        </div>
+        
+        <div>
+            <span>TS</span>
+            <strong>--</strong>
+        </div>
+        
+        <div>
+            <span>Form</span>
+            <strong>85-446</strong>
+        </div>
+        
+        <div>
+            <span>Run Style</span>
+            <strong>Unclear</strong>
+        </div>
+        
+    </div>
+    
+                
+    <section class="sectional-angle elite">
+        <div class="sectional-angle-head">
+            <div>
+                <span class="micro-label">Pace & Finish Fit</span>
+                <strong>No clear style</strong>
+            </div>
+            <div class="sectional-evidence">
+                <span>Evidence</span>
+                <b>Recent finish evidence only</b>
+            </div>
+        </div>
+        
+    </section>
+    
+                
+    <section class="distance-timing-panel elite">
+        <div class="distance-timing-head">
+            <div>
+                <span class="micro-label">Distance Timing Evidence</span>
+                <strong>Exact distance profile</strong>
+            </div>
+            <span class="finish-pill warn">Latest matched-distance time is slower than the earlier timed sample.</span>
+        </div>
+        <div class="distance-timing-grid">
+            <div><span>Profile distance</span><strong>7f</strong></div>
+            <div><span>Runs at profile</span><strong>10</strong></div>
+            <div><span>DEI</span><strong>C</strong></div>
+            <div><span>Reliability</span><strong>HIGH</strong></div>
+        </div>
+        <table class="distance-timing-table">
+            <thead><tr><th>Date</th><th>Course</th><th>Going</th><th>Pos</th><th>Time</th><th>Secs</th></tr></thead>
+            <tbody>
+        <tr>
+            <td>18-04-2026</td>
+            <td>Thirsk</td>
+            <td>Good</td>
+            <td>4</td>
+            <td>1:27.65</td>
+            <td>87.7</td>
+        </tr>
+        
+        <tr>
+            <td>14-06-2026</td>
+            <td>Salisbury</td>
+            <td>Good</td>
+            <td>6</td>
+            <td>1:28.52</td>
+            <td>88.5</td>
+        </tr>
+        
+        <tr>
+            <td>28-07-2026</td>
+            <td>Galway (IRE)</td>
+            <td>Yielding</td>
+            <td>14</td>
+            <td>1:34.86</td>
+            <td>94.9</td>
+        </tr>
+        </tbody>
+        </table>
+    </section>
+    
+                
+    <section class="extra-intel-panel">
+        <div class="distance-timing-head">
+            <div>
+                <span class="micro-label">Extra Intelligence</span>
+                <strong>Trainer, equipment, freshness and background clues</strong>
+            </div>
+            <span class="finish-pill good">+0.2 micro score</span>
+        </div>
+        <div class="extra-intel-summary">
+            <div class="intel-meter neutral" style="--intel:39%">
+                <span>Trainer RTF</span>
+                <strong>39%</strong>
+                <i><b></b></i>
+                <small>Trainer form is steady</small>
+            </div>
+            <div class="intel-meter neutral" style="--intel:84%">
+                <span>Freshness</span>
+                <strong>44 days</strong>
+                <i><b></b></i>
+                <small>Recent fitness window</small>
+            </div>
+            <div class="intel-meter good" style="--intel:56%">
+                <span>Micro score</span>
+                <strong>+0.2</strong>
+                <i><b></b></i>
+                <small>recent run fitness window; API past-result flags present</small>
+            </div>
+            <div class="intel-meter neutral" style="--intel:63%">
+                <span>Ground timing match</span>
+                <strong>1/3</strong>
+                <i><b></b></i>
+                <small>Recent distance-time runs on today's ground</small>
+            </div>
+        </div>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>4/1</strong></div>
+            <div><span>Owner</span><strong>Ian Oconnor The Fox And Hounds</strong></div>
+        </div>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Massaat</b> × Nigella <em>(Band On The Run)</em></p>
+        </div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal elite"><b>Course + distance</b><em>Has won over this course and distance</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>No recent race comment available.</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
+        </div>
+    </section>
+    
+                
+    <section class="recent-evidence">
+        <div class="recent-evidence-head">
+            <div>
+                <span class="micro-label">Recent Evidence</span>
+                <strong>Last 3 runs</strong>
+            </div>
+            <div class="recent-evidence-stats">
+                <span>1/3 fast finish</span>
+                <span>Avg beaten 1.5L</span>
+            </div>
+        </div>
+        <table class="recent-table">
+            <thead><tr><th>Date</th><th>Course</th><th>Pos</th><th>Beaten</th><th>Finish</th></tr></thead>
+            <tbody>
+        <tr>
+            <td>14-06-2026</td>
+            <td>Salisbury</td>
+            <td>6</td>
+            <td>2.8</td>
+            <td><span class="finish-pill neutral">Neutral finish</span></td>
+        </tr>
+        
+        <tr>
+            <td>18-04-2026</td>
+            <td>Thirsk</td>
+            <td>4</td>
+            <td>1.2</td>
+            <td><span class="finish-pill bad">Run faded</span></td>
+        </tr>
+        
+        <tr>
+            <td>29-03-2026</td>
+            <td>Doncaster</td>
+            <td>4</td>
+            <td>0.5</td>
+            <td><span class="finish-pill elite">Fast finish</span></td>
+        </tr>
+        </tbody>
+        </table>
+    </section>
+    
+                
+    <section class="visual-trend-panel">
+        <div class="visual-trend-head">
+            <div><span class="micro-label">Ratings Trend</span><strong>Last 6 rating vs OR</strong></div>
+            <small>Oldest to newest | rating shows performance; OR shows handicap mark</small>
+        </div>
+        <div class="trend-summary">Exceeded the handicap mark in 2 of 5 runs with an official OR.</div>
+        <div class="trend-chart">
+        <div class="trend-row">
+            <span>13-09-2025 | Chester</span>
+            <div class="trend-bars">
+                <i class="rpr-bar" style="--w:42.857142857142854%"><b>Rating 36</b></i>
+                <i class="or-bar" style="--w:98.80952380952381%"><b>OR 83</b></i>
+            </div>
+        </div>
+        
+        <div class="trend-row">
+            <span>14-10-2025 | Leicester</span>
+            <div class="trend-bars">
+                <i class="rpr-bar" style="--w:94.04761904761905%"><b>Rating 79</b></i>
+                <i class="or-bar" style="--w:98.80952380952381%"><b>OR 83</b></i>
+            </div>
+        </div>
+        
+        <div class="trend-row">
+            <span>27-10-2025 | Redcar</span>
+            <div class="trend-bars">
+                <i class="rpr-bar" style="--w:90.47619047619048%"><b>Rating 76</b></i>
+                <i class="or-bar" style="--w:97.61904761904762%"><b>OR 82</b></i>
+            </div>
+        </div>
+        
+        <div class="trend-row">
+            <span>29-03-2026 | Doncaster</span>
+            <div class="trend-bars">
+                <i class="rpr-bar" style="--w:100%"><b>Rating 84</b></i>
+                <i class="or-bar" style="--w:96.42857142857143%"><b>OR 81</b></i>
+            </div>
+        </div>
+        
+        <div class="trend-row">
+            <span>18-04-2026 | Thirsk</span>
+            <div class="trend-bars">
+                <i class="rpr-bar" style="--w:100%"><b>Rating 84</b></i>
+                <i class="or-bar" style="--w:96.42857142857143%"><b>OR 81</b></i>
+            </div>
+        </div>
+        
+        <div class="trend-row">
+            <span>14-06-2026 | Salisbury</span>
+            <div class="trend-bars">
+                <i class="rpr-bar" style="--w:0%"><b>Rating --</b></i>
+                <i class="or-bar" style="--w:95.23809523809523%"><b>OR 80</b></i>
+            </div>
+        </div>
+        </div>
+    </section>
+    
+            </details>
+            <div class="runner-body">
+                <details>
+                    <summary>Open full intelligence read</summary>
+                    
+    <div class="ff-intel-panel">
+        <div class="ff-intel-head">
+            <div>
+                <span class="micro-label">ForeFurlongs Intelligence</span>
+                <strong>It&#x27;sneverjustone</strong>
+            </div>
+            <span class="bet-badge bet-avoid">CAUTION PROFILE</span>
+        </div>
+        <div class="ff-intel-metrics">
+            <div><span>DEI</span><strong>C</strong></div>
+            <div><span>Benchmark</span><strong>0.28</strong></div>
+            <div><span>Pace</span><strong>Unclear</strong></div>
+            <div><span>Consensus</span><strong>FRAGILE</strong></div>
+        </div>
+        <p>It&#x27;sneverjustone profiles as a unclear with a stable trajectory. Distance intelligence grade is C. Model alignment is 2/6. No obvious tactical edge from race shape</p>
+        <div class="timing-strip">
+            <span>Winning Time Par</span>
+            <strong>1m 36.59s</strong>
+        </div>
+    </div>
+    
+                    
+    <section class="distance-context-panel">
+        <div class="distance-context-head">
+            <div><span class="micro-label">Distance intelligence</span><strong>Trip evidence</strong></div>
+            <span class="distance-experience established">Experienced at trip</span>
+        </div>
+        <div class="distance-context-stats">
+            <div><span>Similar-trip runs</span><strong>10</strong></div>
+            <div><span>Reliability</span><strong>HIGH</strong></div>
+            <div><span>Winning-time par</span><strong>1m 36.59s</strong></div>
+            <div><span>Last win at trip</span><strong>1:32.40 | Galway (IRE) | 28-07-2025</strong></div>
+        </div>
+        <div class="distance-context-history">
+            <div><span>Recent times</span><b>1:27.65 | 1:28.52 | 1:34.86</b></div>
+            <div><span>Recent positions</span><b>4 | 6 | 14</b></div>
+            <div><span>Winning context</span><b>vs par -4.19s | OR 77</b></div>
+        </div>
+    </section>
+    
+                    
+    <div class="previous-runs">
+        <strong>Last 6 runs</strong>
+        <table class="rp-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Conditions</th>
+                    <th>Result</th>
+                    <th>SP</th>
+                    <th>OR</th>
+                    <th>Rating</th>
+                    <th>TS</th>
+                    <th>Beaten</th>
+                    <th>Time</th>
+                    <th>FF Timing Read</th>
+                </tr>
+            </thead>
+            <tbody>
+        <tr>
+            <td>14-06-2026</td>
+            <td>Salisbury | 7f | Good | Class 4</td>
+            <td>6</td>
+            <td>4/1</td>
+            <td>80</td>
+            <td>--</td>
+            <td>--</td>
+            <td>2.8</td>
+            <td>--</td>
+            <td><span class="timing-pill timing-grey">GREY - no timing read</span></td>
+        </tr>
+        
+        <tr>
+            <td>18-04-2026</td>
+            <td>Thirsk | 7f | Good | Class 4</td>
+            <td>4</td>
+            <td>13/2</td>
+            <td>81</td>
+            <td>84</td>
+            <td>46</td>
+            <td>1.2</td>
+            <td>1:27.65</td>
+            <td><span class="timing-pill timing-gold">GOLD - faster than par</span></td>
+        </tr>
+        
+        <tr>
+            <td>29-03-2026</td>
+            <td>Doncaster | 7f | Good To Soft | Class 4</td>
+            <td>4</td>
+            <td>11/2</td>
+            <td>81</td>
+            <td>84</td>
+            <td>33</td>
+            <td>0.5</td>
+            <td>1:31.51</td>
+            <td><span class="timing-pill timing-gold">GOLD - faster than par</span></td>
+        </tr>
+        
+        <tr>
+            <td>27-10-2025</td>
+            <td>Redcar | 1m | Good To Soft | Class 3</td>
+            <td>5</td>
+            <td>18/1</td>
+            <td>82</td>
+            <td>76</td>
+            <td>72</td>
+            <td>2.2</td>
+            <td>1:36.92</td>
+            <td><span class="timing-pill timing-green">GREEN - within 1% of par</span></td>
+        </tr>
+        
+        <tr>
+            <td>14-10-2025</td>
+            <td>Leicester | 7f | Good | Class 3</td>
+            <td>8</td>
+            <td>33/1</td>
+            <td>83</td>
+            <td>79</td>
+            <td>73</td>
+            <td>0.8</td>
+            <td>1:25.70</td>
+            <td><span class="timing-pill timing-gold">GOLD - faster than par</span></td>
+        </tr>
+        
+        <tr>
+            <td>13-09-2025</td>
+            <td>Chester | 7½f | Good To Soft | Class 4</td>
+            <td>11</td>
+            <td>3/1F</td>
+            <td>83</td>
+            <td>36</td>
+            <td>27</td>
+            <td>9.5</td>
+            <td>1:36.03</td>
+            <td><span class="timing-pill timing-gold">GOLD - faster than par</span></td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+    
+                </details>
+            </div>
+        </details>
+    </article>
+    
+    <article class="horse-card premium-horse-card">
+        <details class="top-horse-details">
+            <summary>
+                <div class="top-horse-summary-main">
+                    <span class="micro-label">Premium runner profile</span>
                     <strong>Norwalk Havoc</strong>
                     <small>6:45 | Galway | 8.5f</small>
                     <div class="chip-row top-horse-summary-chip-row"><span class="chip warn">Quality E</span><span class="chip neutral">Tier 4 watch only</span><span class="chip neutral">Marginal edge</span><span class="chip neutral">+5 more signals</span></div>
@@ -24472,839 +25333,6 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <td>99</td>
             <td>0</td>
             <td>1:48.03</td>
-            <td><span class="timing-pill timing-grey">GREY - no timing read</span></td>
-        </tr>
-        </tbody>
-        </table>
-    </div>
-    
-                </details>
-            </div>
-        </details>
-    </article>
-    
-    <article class="horse-card premium-horse-card">
-        <details class="top-horse-details">
-            <summary>
-                <div class="top-horse-summary-main">
-                    <span class="micro-label">Premium runner profile</span>
-                    <strong>Moyassr</strong>
-                    <small>8:15 | Galway | 8.5f</small>
-                    <div class="chip-row top-horse-summary-chip-row"><span class="chip warn">Quality E</span><span class="chip neutral">Tier 4 watch only</span><span class="chip warn">Clear but not dominant</span><span class="chip neutral">+5 more signals</span></div>
-                </div>
-                <div class="top-horse-summary-tags">
-                    
-    <div class="ff-score-block score-muted">
-        <span>Decision Confidence</span>
-        <strong>34.0</strong>
-    </div>
-    
-                    <span class="bet-badge bet-avoid">CAUTION PROFILE</span>
-                </div>
-            </summary>
-            
-    <div class="runner-race-link">
-        <div>
-            <span class="micro-label">Runs Today</span>
-            <strong>8:15 | Galway | 8.5f</strong>
-            <p>Caulfield Industrial Handicap</p>
-        </div>
-        <a href="racecards.html#race-2026-07-28-8-15-galway-8-5f-caulfield-industrial-handicap">Open racecard</a>
-    </div>
-    
-            
-    <section class="runner-decision-panel">
-        <div class="runner-decision-head">
-            <div>
-                <span class="micro-label">Decision read</span>
-                <strong>Interesting on score, but needs caution: raw score needs more support.</strong>
-            </div>
-            
-        </div>
-        <div class="decision-visual-grid">
-            <div class="decision-primary-tile">
-                <span>Status</span>
-                <strong>CAUTION PROFILE</strong>
-                <i style="--w:34.0%"><b></b></i>
-            </div>
-            <div class="decision-meter"><span>Agreement</span><strong>2/6</strong><i style="--w:33%"><b></b></i></div>
-            <div class="decision-meter"><span>FFR</span><strong>68</strong><i style="--w:54%"><b></b></i></div>
-            <div class="decision-meter"><span>Speed</span><strong>84</strong><i style="--w:84%"><b></b></i></div>
-            <div class="decision-meter"><span>Conditions</span><strong>Positive fit</strong><i style="--w:66%"><b></b></i></div>
-            <div class="decision-meter"><span>Placement</span><strong>Positive setup</strong><i style="--w:71%"><b></b></i></div>
-        </div>
-        <div class="decision-benchmark-strip">
-        <div class="decision-benchmark-card single">
-            <div><span>FFR vs OR</span><strong>+2lb near mark</strong></div>
-            <div class="benchmark-single">
-                <i style="--w:54.400000000000006"><b>FFR 68</b></i>
-                <em>pounds scale</em>
-            </div>
-        </div>
-        
-        <div class="decision-benchmark-card single">
-            <div><span>SpeedScore</span><strong>below par</strong></div>
-            <div class="benchmark-single">
-                <i style="--w:84.3"><b>84</b></i>
-                <em>Par 100</em>
-            </div>
-        </div>
-        </div>
-        <div class="decision-reason-risk">
-            <span class="positive"><b>Best reason</b>Model evidence is not clean enough for a positive stance</span>
-            <span class="caution"><b>Main risk</b>Raw score needs more support</span>
-        </div>
-        <div class="decision-support-strip">
-            <div class="decision-type-card warn"><span>Decision type</span><strong>Best of a weak race</strong><small>This runner is not clean on every metric, but the field looks more compromised and the contextual edge is still strongest.</small></div>
-            <div><span>Model score</span><strong>31.2</strong><small>Underlying model read</small></div>
-            <div><span>Trip / ground</span><strong>DEI A</strong><small>HIGH</small></div>
-            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+15lb FFR vs OR best recorded edge</small></div>
-        </div>
-    </section>
-    
-            <details class="evidence-drawer decision-drawer">
-                <summary>
-                    <span>Context match</span>
-                    <strong>Conditions, placement, handicap and recent form</strong>
-                </summary>
-                
-    <section class="last-six-strip">
-        <div class="last-six-head">
-            <span class="micro-label">Last 6 Finishing Positions</span>
-            <small>Most recent first | 1 = win | 2-3 = placed | open the full table for detail</small>
-        </div>
-        <div class="form-tiles">
-        <div class="form-tile run">
-            <strong>6</strong>
-            <span>Killarney (IRE)</span>
-            <em class="neutral">Competitive</em>
-            <small>15-07-2026</small>
-        </div>
-        
-        <div class="form-tile run">
-            <strong>5</strong>
-            <span>Leopardstown (IRE)</span>
-            <em class="caution">Run faded</em>
-            <small>11-06-2026</small>
-        </div>
-        
-        <div class="form-tile win">
-            <strong>1</strong>
-            <span>Fairyhouse (IRE)</span>
-            <em class="positive">Finished well</em>
-            <small>28-05-2026</small>
-        </div>
-        
-        <div class="form-tile run">
-            <strong>5</strong>
-            <span>Leopardstown (IRE)</span>
-            <em class="neutral">Competitive</em>
-            <small>15-05-2026</small>
-        </div>
-        
-        <div class="form-tile run">
-            <strong>13</strong>
-            <span>Curragh (IRE)</span>
-            <em class="neutral">Competitive</em>
-            <small>04-05-2026</small>
-        </div>
-        
-        <div class="form-tile run">
-            <strong>12</strong>
-            <span>Limerick</span>
-            <em class="neutral">Competitive</em>
-            <small>25-04-2026</small>
-        </div>
-        </div>
-    </section>
-    
-                
-    <section class="franked-form-panel gold">
-        <div class="franked-form-head">
-            <div>
-                <span class="micro-label">Race form proof</span>
-                <strong>Strongly franked</strong>
-                <p>Some form support</p>
-            </div>
-            <div class="franked-strength"><span>Proof rating</span><b>45</b></div>
-        </div>
-        <div class="franked-summary-strip">
-            <div><b>5</b><span>winners since</span></div>
-            <div><b>6</b><span>placers since</span></div>
-            <div><b>13</b><span>evidence pts</span></div>
-        </div>
-        <div class="franked-form-grid">
-            <div class="franked-run-card">
-                <div class="franked-run-head">
-                    <span>05-04-2026 | Curragh (IRE)</span>
-                    <strong>Finished 13</strong>
-                </div>
-                <div class="franked-evidence-rows"><div class="franked-evidence-row behind"><span>Beat named rivals</span><p>Cannonball Queen (IRE), Oxford Circus (IRE)</p></div><div class="franked-evidence-row winner"><span>Race produced winner</span><p>Summer Island (USA)</p></div><div class="franked-evidence-row placer"><span>Later placers</span><p>Go Out (FR) (02-06-2026)</p></div></div>
-            </div>
-        
-            <div class="franked-run-card">
-                <div class="franked-run-head">
-                    <span>09-09-2025 | Galway (IRE)</span>
-                    <strong>Finished 14</strong>
-                </div>
-                <div class="franked-evidence-rows"><div class="franked-evidence-row winner"><span>Race produced winner</span><p>Our Dagger (IRE), Speckled Meadow (IRE)</p></div></div>
-            </div>
-        
-            <div class="franked-run-card">
-                <div class="franked-run-head">
-                    <span>04-09-2025 | Leopardstown (IRE)</span>
-                    <strong>Finished 4</strong>
-                </div>
-                <div class="franked-evidence-rows"><div class="franked-evidence-row behind"><span>Beat named rivals</span><p>Imperial Fighter (IRE), Morning Approach (IRE), Pier Pressure (FR)</p></div><div class="franked-evidence-row winner"><span>Race produced winner</span><p>Imperial Fighter (IRE), Tawaazon (IRE)</p></div><div class="franked-evidence-row placer"><span>Later placers</span><p>Comfort Line (IRE) (05-04-2026), Desert Haven (GB) (08-11-2025)</p></div></div>
-            </div>
-        </div>
-    </section>
-    
-                
-    <section class="conditions-match-panel">
-        <div class="conditions-match-score good">
-            <span>Today's conditions match</span>
-            <strong>66%</strong>
-            <small>Positive conditions match</small>
-        </div>
-        <div>
-            <div class="condition-match-rows">
-        <div class="condition-match-row">
-            <span>Trip / ground</span>
-            <i><b class="elite" style="--w:90%"></b></i>
-            <strong>90%</strong>
-        </div>
-        
-        <div class="condition-match-row">
-            <span>Class</span>
-            <i><b class="warn" style="--w:50.0%"></b></i>
-            <strong>50%</strong>
-        </div>
-        
-        <div class="condition-match-row">
-            <span>Pace shape</span>
-            <i><b class="warn" style="--w:50.0%"></b></i>
-            <strong>50%</strong>
-        </div>
-        
-        <div class="condition-match-row">
-            <span>Track / draw</span>
-            <i><b class="warn" style="--w:50%"></b></i>
-            <strong>50%</strong>
-        </div>
-        
-        <div class="condition-match-row">
-            <span>Handicap</span>
-            <i><b class="elite" style="--w:90%"></b></i>
-            <strong>90%</strong>
-        </div>
-        </div>
-            <div class="compact-insight-row">
-                <span>Best fit <b>Trip / ground</b></span>
-                <span>Question <b>Class</b></span>
-            </div>
-        </div>
-    </section>
-    
-                
-    <section class="ground-evidence-panel good">
-        <div class="ground-evidence-score good">
-            <span>Ground evidence</span>
-            <strong>Testing</strong>
-            <small>Some positive evidence on today&#x27;s ground</small>
-        </div>
-        <div>
-            <div class="ground-evidence-grid">
-                <div><span>Today</span><strong>Yielding</strong></div>
-                <div><span>Similar-ground runs</span><strong>2/6</strong></div>
-                <div><span>Best similar rating</span><strong>35</strong></div>
-                <div><span>Best ground band</span><strong>Testing</strong></div>
-            </div>
-            <div class="compact-insight-row">
-                <span>Read <b>Some positive evidence on today&#x27;s ground</b></span>
-                <span>Today <b>Testing</b></span>
-            </div>
-            
-    <details class="ground-record-drawer">
-        <summary>
-            <span>Ground record by surface</span>
-            <strong>Runs, wins, places and peak rating by ground band</strong>
-        </summary>
-        <div class="ground-record-chart">
-            
-        <div class="ground-record-row active">
-            <span>Testing</span>
-            <i style="--w:45.45454545454545%"><b>5</b></i>
-            <strong>0W / 0P</strong>
-            <em>Peak rating 47</em>
-        </div>
-        
-        <div class="ground-record-row">
-            <span>Good</span>
-            <i style="--w:100%"><b>11</b></i>
-            <strong>1W / 2P</strong>
-            <em>Peak rating 75</em>
-        </div>
-        
-        <div class="ground-record-row">
-            <span>Fast</span>
-            <i style="--w:0%"><b>0</b></i>
-            <strong>0W / 0P</strong>
-            <em>Peak rating --</em>
-        </div>
-        
-        <div class="ground-record-row">
-            <span>All-weather</span>
-            <i style="--w:90.9090909090909%"><b>10</b></i>
-            <strong>4W / 7P</strong>
-            <em>Peak rating 79</em>
-        </div>
-        
-        </div>
-    </details>
-    
-        </div>
-    </section>
-    
-                
-    <section class="placement-evidence-panel good">
-        <div class="placement-score">
-            <span>Placement evidence</span>
-            <strong>71%</strong>
-            <small>Positive placement clues</small>
-        </div>
-        <div class="placement-body">
-            <div class="placement-rows">
-        <div class="placement-row">
-            <span>Trip evidence</span>
-            <i><b class="elite" style="--w:100%"></b></i>
-            <strong>100%</strong>
-        </div>
-        
-        <div class="placement-row">
-            <span>Class fit</span>
-            <i><b class="warn" style="--w:50%"></b></i>
-            <strong>50%</strong>
-        </div>
-        
-        <div class="placement-row">
-            <span>Mark room</span>
-            <i><b class="elite" style="--w:97%"></b></i>
-            <strong>97%</strong>
-        </div>
-        
-        <div class="placement-row">
-            <span>Stable setup</span>
-            <i><b class="good" style="--w:66%"></b></i>
-            <strong>66%</strong>
-        </div>
-        
-        <div class="placement-row">
-            <span>Recent evidence</span>
-            <i><b class="bad" style="--w:42%"></b></i>
-            <strong>42%</strong>
-        </div>
-        </div>
-            <div class="intent-chip-row"><span class="intent-chip positive">Proven trip profile (A)</span><span class="intent-chip positive">11 similar-trip runs recorded</span><span class="intent-chip positive">FFR vs OR gives +15lb room</span><span class="intent-chip positive">Trainer and jockey setup recorded</span><span class="intent-chip caution">Recent evidence contains a fade/no-extra clue</span></div>
-            <div class="compact-insight-row">
-                <span>Mark read <b>FFR vs OR: +15lb</b></span>
-                <span>Evidence <b>Observable only</b></span>
-            </div>
-        </div>
-    </section>
-    
-                <div class="opportunity-grid">
-                    
-    <section class="handicap-opportunity-panel">
-        <div>
-            <span class="micro-label">Handicap Opportunity</span>
-            <strong class="elite">Well handicapped</strong>
-            <small>+15lb FFR vs OR</small>
-        </div>
-        <div class="handicap-opportunity-copy">
-            <p>Our pounds-style FFR evidence suggests today&#x27;s official mark may leave useful room for improvement.</p>
-            <span>Today's OR <b>66</b> | FFR <b>68</b> | Best FFR <b>81</b> | FFR edge <b>+15</b></span>
-        </div>
-    </section>
-    
-                    
-        <section class="hidden-run-panel muted">
-            <div><span class="micro-label">Hidden Run Detector</span><strong>No hidden run flagged</strong></div>
-            <p>No recent performance currently meets the ForeFurlongs hidden-effort checks.</p>
-        </section>
-        
-                </div>
-            </details>
-            <details class="evidence-drawer">
-                <summary>
-                    <span>Deeper evidence</span>
-                    <strong>Speed, timing, jumps, ratings and full run table</strong>
-                </summary>
-                
-    <section class="predictive-edge-panel">
-        <div class="predictive-edge-head">
-            <div>
-                <span class="micro-label">Predictive edge</span>
-                <strong class="warn">Small caution nudge</strong>
-                <p>Reliable; No bounce signal; No hidden upgrade; Par capable; Regressing</p>
-            </div>
-            <div class="predictive-edge-score">
-                <span>confidence nudge</span>
-                <strong class="warn">-1.0</strong>
-            </div>
-        </div>
-        <div class="predictive-edge-grid">
-        <div>
-            <span>Variance</span>
-            <strong>Reliable</strong>
-            <small>6.9% volatility</small>
-        </div>
-        
-        <div>
-            <span>Bounce</span>
-            <strong>No bounce signal</strong>
-            <small>Recent big figure regression check</small>
-        </div>
-        
-        <div>
-            <span>Hidden Run</span>
-            <strong>No hidden upgrade</strong>
-            <small>Upgrade 0</small>
-        </div>
-        
-        <div>
-            <span>Ceiling</span>
-            <strong>Par capable</strong>
-            <small>4.2 vs par</small>
-        </div>
-        
-        <div>
-            <span>Curve</span>
-            <strong>Regressing</strong>
-            <small>Trend -2</small>
-        </div>
-        </div>
-    </section>
-    
-                
-                
-                
-    <div class="runner-meta-strip">
-        
-        <div>
-            <span>Trainer</span>
-            <strong>Paul W Flynn</strong>
-        </div>
-        
-        <div>
-            <span>Jockey</span>
-            <strong>Luke McAteer</strong>
-        </div>
-        
-        <div>
-            <span>Age</span>
-            <strong>5</strong>
-        </div>
-        
-        <div>
-            <span>Draw</span>
-            <strong>18</strong>
-        </div>
-        
-        <div>
-            <span>OR</span>
-            <strong>66</strong>
-        </div>
-        
-        <div>
-            <span>Avg OR</span>
-            <strong>67.9</strong>
-        </div>
-        
-        <div>
-            <span>OR vs Field</span>
-            <strong>-1.9</strong>
-        </div>
-        
-        <div>
-            <span>Rating</span>
-            <strong>No rating yet</strong>
-        </div>
-        
-        <div>
-            <span>TS</span>
-            <strong>--</strong>
-        </div>
-        
-        <div>
-            <span>Form</span>
-            <strong>5156</strong>
-        </div>
-        
-        <div>
-            <span>Run Style</span>
-            <strong>Unclear</strong>
-        </div>
-        
-    </div>
-    
-                
-    <section class="sectional-angle elite">
-        <div class="sectional-angle-head">
-            <div>
-                <span class="micro-label">Pace & Finish Fit</span>
-                <strong>No clear style</strong>
-            </div>
-            <div class="sectional-evidence">
-                <span>Evidence</span>
-                <b>Recent finish evidence only</b>
-            </div>
-        </div>
-        
-    </section>
-    
-                
-    <section class="distance-timing-panel elite">
-        <div class="distance-timing-head">
-            <div>
-                <span class="micro-label">Distance Timing Evidence</span>
-                <strong>Exact distance profile</strong>
-            </div>
-            <span class="finish-pill warn">Latest matched-distance time is slower than the earlier timed sample.</span>
-        </div>
-        <div class="distance-timing-grid">
-            <div><span>Profile distance</span><strong>1m</strong></div>
-            <div><span>Runs at profile</span><strong>11</strong></div>
-            <div><span>DEI</span><strong>A</strong></div>
-            <div><span>Reliability</span><strong>HIGH</strong></div>
-        </div>
-        <table class="distance-timing-table">
-            <thead><tr><th>Date</th><th>Course</th><th>Going</th><th>Pos</th><th>Time</th><th>Secs</th></tr></thead>
-            <tbody>
-        <tr>
-            <td>20-02-2026</td>
-            <td>Dundalk (AW) (IRE)</td>
-            <td>Standard</td>
-            <td>5</td>
-            <td>1:40.24</td>
-            <td>100.2</td>
-        </tr>
-        
-        <tr>
-            <td>25-04-2026</td>
-            <td>Limerick (IRE)</td>
-            <td>Yielding</td>
-            <td>12</td>
-            <td>1:55.06</td>
-            <td>115.1</td>
-        </tr>
-        
-        <tr>
-            <td>15-05-2026</td>
-            <td>Leopardstown (IRE)</td>
-            <td>Good</td>
-            <td>5</td>
-            <td>1:41.95</td>
-            <td>102</td>
-        </tr>
-        </tbody>
-        </table>
-    </section>
-    
-                
-    <section class="extra-intel-panel">
-        <div class="distance-timing-head">
-            <div>
-                <span class="micro-label">Extra Intelligence</span>
-                <strong>Trainer, equipment, freshness and background clues</strong>
-            </div>
-            <span class="finish-pill good">+0.2 micro score</span>
-        </div>
-        <div class="extra-intel-summary">
-            <div class="intel-meter neutral" style="--intel:49%">
-                <span>Trainer RTF</span>
-                <strong>49%</strong>
-                <i><b></b></i>
-                <small>Trainer form is steady</small>
-            </div>
-            <div class="intel-meter neutral" style="--intel:84%">
-                <span>Freshness</span>
-                <strong>13 days</strong>
-                <i><b></b></i>
-                <small>Recent fitness window</small>
-            </div>
-            <div class="intel-meter good" style="--intel:56%">
-                <span>Micro score</span>
-                <strong>+0.2</strong>
-                <i><b></b></i>
-                <small>recent run fitness window; headgear declared: t</small>
-            </div>
-            <div class="intel-meter neutral" style="--intel:63%">
-                <span>Ground timing match</span>
-                <strong>1/3</strong>
-                <i><b></b></i>
-                <small>Recent distance-time runs on today's ground</small>
-            </div>
-        </div>
-        <div class="extra-intel-facts">
-            <div><span>Headgear</span><strong>t</strong><small>Declared equipment</small></div>
-            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
-            <div><span>Latest SP</span><strong>14/1</strong></div>
-            <div><span>Owner</span><strong>Aiden Hynes</strong></div>
-        </div>
-        <div class="pedigree-line">
-            <span>Pedigree</span>
-            <p><b>Mehmas</b> × Yin <em>(Dansili)</em></p>
-        </div>
-        <div class="profile-signal-board">
-            <div class="profile-signal-head">
-                <span>Profile Signals</span>
-                <strong>Form clues that can sharpen the read</strong>
-            </div>
-            <div class="profile-signal-row"><span class="profile-signal neutral"><b>No headline flag</b><em>No course, distance or beaten-favourite flag recorded</em></span></div>
-            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>No recent race comment available.</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
-        </div>
-    </section>
-    
-                
-    <section class="recent-evidence">
-        <div class="recent-evidence-head">
-            <div>
-                <span class="micro-label">Recent Evidence</span>
-                <strong>Last 3 runs</strong>
-            </div>
-            <div class="recent-evidence-stats">
-                <span>1/3 fast finish</span>
-                <span>Avg beaten 4.1L</span>
-            </div>
-        </div>
-        <table class="recent-table">
-            <thead><tr><th>Date</th><th>Course</th><th>Pos</th><th>Beaten</th><th>Finish</th></tr></thead>
-            <tbody>
-        <tr>
-            <td>15-07-2026</td>
-            <td>Killarney (IRE)</td>
-            <td>6</td>
-            <td>0.3</td>
-            <td><span class="finish-pill neutral">Neutral finish</span></td>
-        </tr>
-        
-        <tr>
-            <td>11-06-2026</td>
-            <td>Leopardstown (IRE)</td>
-            <td>5</td>
-            <td>12</td>
-            <td><span class="finish-pill bad">Run faded</span></td>
-        </tr>
-        
-        <tr>
-            <td>28-05-2026</td>
-            <td>Fairyhouse (IRE)</td>
-            <td>1</td>
-            <td>0</td>
-            <td><span class="finish-pill elite">Fast finish</span></td>
-        </tr>
-        </tbody>
-        </table>
-    </section>
-    
-                
-    <section class="visual-trend-panel">
-        <div class="visual-trend-head">
-            <div><span class="micro-label">Ratings Trend</span><strong>Last 6 rating vs OR</strong></div>
-            <small>Oldest to newest | rating shows performance; OR shows handicap mark</small>
-        </div>
-        <div class="trend-summary">Exceeded the handicap mark in 0 of 1 runs with an official OR.</div>
-        <div class="trend-chart">
-        <div class="trend-row">
-            <span>25-04-2026 | Limerick</span>
-            <div class="trend-bars">
-                <i class="rpr-bar" style="--w:51.470588235294116%"><b>Rating 35</b></i>
-                <i class="or-bar" style="--w:100%"><b>OR 68</b></i>
-            </div>
-        </div>
-        
-        <div class="trend-row">
-            <span>04-05-2026 | Curragh (IRE)</span>
-            <div class="trend-bars">
-                <i class="rpr-bar" style="--w:0%"><b>Rating --</b></i>
-                <i class="or-bar" style="--w:97.05882352941177%"><b>OR 66</b></i>
-            </div>
-        </div>
-        
-        <div class="trend-row">
-            <span>15-05-2026 | Leopardstown (IRE)</span>
-            <div class="trend-bars">
-                <i class="rpr-bar" style="--w:0%"><b>Rating --</b></i>
-                <i class="or-bar" style="--w:89.70588235294117%"><b>OR 61</b></i>
-            </div>
-        </div>
-        
-        <div class="trend-row">
-            <span>28-05-2026 | Fairyhouse (IRE)</span>
-            <div class="trend-bars">
-                <i class="rpr-bar" style="--w:0%"><b>Rating --</b></i>
-                <i class="or-bar" style="--w:88.23529411764706%"><b>OR 60</b></i>
-            </div>
-        </div>
-        
-        <div class="trend-row">
-            <span>11-06-2026 | Leopardstown (IRE)</span>
-            <div class="trend-bars">
-                <i class="rpr-bar" style="--w:0%"><b>Rating --</b></i>
-                <i class="or-bar" style="--w:100%"><b>OR 68</b></i>
-            </div>
-        </div>
-        
-        <div class="trend-row">
-            <span>15-07-2026 | Killarney (IRE)</span>
-            <div class="trend-bars">
-                <i class="rpr-bar" style="--w:0%"><b>Rating --</b></i>
-                <i class="or-bar" style="--w:98.52941176470588%"><b>OR 67</b></i>
-            </div>
-        </div>
-        </div>
-    </section>
-    
-            </details>
-            <div class="runner-body">
-                <details>
-                    <summary>Open full intelligence read</summary>
-                    
-    <div class="ff-intel-panel">
-        <div class="ff-intel-head">
-            <div>
-                <span class="micro-label">ForeFurlongs Intelligence</span>
-                <strong>Moyassr</strong>
-            </div>
-            <span class="bet-badge bet-avoid">CAUTION PROFILE</span>
-        </div>
-        <div class="ff-intel-metrics">
-            <div><span>DEI</span><strong>A</strong></div>
-            <div><span>Benchmark</span><strong>0</strong></div>
-            <div><span>Pace</span><strong>Unclear</strong></div>
-            <div><span>Consensus</span><strong>FRAGILE</strong></div>
-        </div>
-        <p>Moyassr profiles as a unclear with a stable / positive signs trajectory. Distance intelligence grade is A. Model alignment is 2/6. No obvious tactical edge from race shape</p>
-        <div class="timing-strip">
-            <span>Winning Time Par</span>
-            <strong>Awaiting timing benchmark</strong>
-        </div>
-    </div>
-    
-                    
-    <section class="distance-context-panel">
-        <div class="distance-context-head">
-            <div><span class="micro-label">Distance intelligence</span><strong>Trip evidence</strong></div>
-            <span class="distance-experience established">Experienced at trip</span>
-        </div>
-        <div class="distance-context-stats">
-            <div><span>Similar-trip runs</span><strong>11</strong></div>
-            <div><span>Reliability</span><strong>HIGH</strong></div>
-            <div><span>Winning-time par</span><strong>Awaiting timing benchmark</strong></div>
-            <div><span>Last win at trip</span><strong>No exact-distance win recorded</strong></div>
-        </div>
-        <div class="distance-context-history">
-            <div><span>Recent times</span><b>1:40.24 | 1:55.06 | 1:41.95</b></div>
-            <div><span>Recent positions</span><b>5 | 12 | 5</b></div>
-            <div><span>Winning context</span><b>Winning-run context developing</b></div>
-        </div>
-    </section>
-    
-                    
-    <div class="previous-runs">
-        <strong>Last 6 runs</strong>
-        <table class="rp-table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Conditions</th>
-                    <th>Result</th>
-                    <th>SP</th>
-                    <th>OR</th>
-                    <th>Rating</th>
-                    <th>TS</th>
-                    <th>Beaten</th>
-                    <th>Time</th>
-                    <th>FF Timing Read</th>
-                </tr>
-            </thead>
-            <tbody>
-        <tr>
-            <td>15-07-2026</td>
-            <td>Killarney (IRE) | 14.5f | Good | --</td>
-            <td>6</td>
-            <td>14/1</td>
-            <td>67</td>
-            <td>--</td>
-            <td>--</td>
-            <td>0.3</td>
-            <td>--</td>
-            <td><span class="timing-pill timing-grey">GREY - no timing read</span></td>
-        </tr>
-        
-        <tr>
-            <td>11-06-2026</td>
-            <td>Leopardstown (IRE) | 9f | Soft | --</td>
-            <td>5</td>
-            <td>9/1</td>
-            <td>68</td>
-            <td>--</td>
-            <td>--</td>
-            <td>12</td>
-            <td>--</td>
-            <td><span class="timing-pill timing-grey">GREY - no timing read</span></td>
-        </tr>
-        
-        <tr>
-            <td>28-05-2026</td>
-            <td>Fairyhouse (IRE) | 10f | Good | --</td>
-            <td>1</td>
-            <td>8/1</td>
-            <td>60</td>
-            <td>--</td>
-            <td>--</td>
-            <td>0</td>
-            <td>--</td>
-            <td><span class="timing-pill timing-grey">GREY - no timing read</span></td>
-        </tr>
-        
-        <tr>
-            <td>15-05-2026</td>
-            <td>Leopardstown (IRE) | 8f | Good | --</td>
-            <td>5</td>
-            <td>17/2</td>
-            <td>61</td>
-            <td>--</td>
-            <td>--</td>
-            <td>0.1</td>
-            <td>--</td>
-            <td><span class="timing-pill timing-grey">GREY - no timing read</span></td>
-        </tr>
-        
-        <tr>
-            <td>04-05-2026</td>
-            <td>Curragh (IRE) | 7f | Good | --</td>
-            <td>13</td>
-            <td>18/1</td>
-            <td>66</td>
-            <td>--</td>
-            <td>--</td>
-            <td>1.2</td>
-            <td>--</td>
-            <td><span class="timing-pill timing-grey">GREY - no timing read</span></td>
-        </tr>
-        
-        <tr>
-            <td>25-04-2026</td>
-            <td>Limerick | 1m | Yielding | --</td>
-            <td>12</td>
-            <td>12/1</td>
-            <td>68</td>
-            <td>35</td>
-            <td>17</td>
-            <td>2.5</td>
-            <td>1:55.06</td>
             <td><span class="timing-pill timing-grey">GREY - no timing read</span></td>
         </tr>
         </tbody>
@@ -38072,786 +38100,6 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <summary>
                 <div class="top-horse-summary-main">
                     <span class="micro-label">Premium runner profile</span>
-                    <strong>Hatteen</strong>
-                    <small>1:50 | Goodwood | 12f</small>
-                    <div class="chip-row top-horse-summary-chip-row"><span class="chip warn">Quality E</span><span class="chip neutral">Tier 4 watch only</span><span class="chip warn">Clear but not dominant</span><span class="chip neutral">+4 more signals</span></div>
-                </div>
-                <div class="top-horse-summary-tags">
-                    
-    <div class="ff-score-block score-muted">
-        <span>Decision Confidence</span>
-        <strong>36.0</strong>
-    </div>
-    
-                    <span class="bet-badge bet-value">PRICE DEPENDENT</span>
-                </div>
-            </summary>
-            
-    <div class="runner-race-link">
-        <div>
-            <span class="micro-label">Runs Tomorrow</span>
-            <strong>1:50 | Goodwood | 12f</strong>
-            <p>Coral Rewards Shaker Handicap Stakes (Gbbplus Race)</p>
-        </div>
-        <a href="racecards-tomorrow.html#race-2026-07-29-1-50-goodwood-12f-coral-rewards-shaker-handicap-stakes-gbbplus-race">Open racecard</a>
-    </div>
-    
-            
-    <section class="runner-decision-panel">
-        <div class="runner-decision-head">
-            <div>
-                <span class="micro-label">Decision read</span>
-                <strong>Interesting on score, but needs caution: no exact-distance profile; nearest-trip evidence used.</strong>
-            </div>
-            
-        </div>
-        <div class="decision-visual-grid">
-            <div class="decision-primary-tile">
-                <span>Status</span>
-                <strong>PRICE DEPENDENT</strong>
-                <i style="--w:36.0%"><b></b></i>
-            </div>
-            <div class="decision-meter"><span>Agreement</span><strong>1/6</strong><i style="--w:17%"><b></b></i></div>
-            <div class="decision-meter"><span>FFR</span><strong>106</strong><i style="--w:85%"><b></b></i></div>
-            <div class="decision-meter"><span>Speed</span><strong>99</strong><i style="--w:99%"><b></b></i></div>
-            <div class="decision-meter"><span>Conditions</span><strong>Mixed fit</strong><i style="--w:58%"><b></b></i></div>
-            <div class="decision-meter"><span>Placement</span><strong>Positive setup</strong><i style="--w:64%"><b></b></i></div>
-        </div>
-        <div class="decision-benchmark-strip">
-        <div class="decision-benchmark-card single">
-            <div><span>FFR vs OR</span><strong>+18lb ahead of mark</strong></div>
-            <div class="benchmark-single">
-                <i style="--w:84.8"><b>FFR 106</b></i>
-                <em>pounds scale</em>
-            </div>
-        </div>
-        
-        <div class="decision-benchmark-card single">
-            <div><span>SpeedScore</span><strong>around par</strong></div>
-            <div class="benchmark-single">
-                <i style="--w:98.9"><b>99</b></i>
-                <em>Par 100</em>
-            </div>
-        </div>
-        </div>
-        <div class="decision-reason-risk">
-            <span class="positive"><b>Best reason</b>Useful evidence, but needs price and race-shape confirmation</span>
-            <span class="caution"><b>Main risk</b>No exact-distance profile; nearest-trip evidence used</span>
-        </div>
-        <div class="decision-support-strip">
-            <div class="decision-type-card warn"><span>Decision type</span><strong>Best of a weak race</strong><small>This runner is not clean on every metric, but the field looks more compromised and the contextual edge is still strongest.</small></div>
-            <div><span>Model score</span><strong>39.8</strong><small>Underlying model read</small></div>
-            <div><span>Trip / ground</span><strong>DEI D</strong><small>LOW</small></div>
-            <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+18lb FFR vs OR best recorded edge</small></div>
-        </div>
-    </section>
-    
-            <details class="evidence-drawer decision-drawer">
-                <summary>
-                    <span>Context match</span>
-                    <strong>Conditions, placement, handicap and recent form</strong>
-                </summary>
-                
-    <section class="last-six-strip">
-        <div class="last-six-head">
-            <span class="micro-label">Last 6 Finishing Positions</span>
-            <small>Most recent first | 1 = win | 2-3 = placed | open the full table for detail</small>
-        </div>
-        <div class="form-tiles">
-        <div class="form-tile win">
-            <strong>1</strong>
-            <span>Doncaster</span>
-            <em class="positive">Strong run</em>
-            <small>09-07-2026</small>
-        </div>
-        
-        <div class="form-tile place">
-            <strong>2</strong>
-            <span>Newbury</span>
-            <em class="positive">Solid effort</em>
-            <small>15-05-2026</small>
-        </div>
-        
-        <div class="form-tile place">
-            <strong>2</strong>
-            <span>Nottingham</span>
-            <em class="positive">Solid effort</em>
-            <small>08-04-2026</small>
-        </div>
-        
-        <div class="form-tile run">
-            <strong>5</strong>
-            <span>Nottingham</span>
-            <em class="neutral">Competitive</em>
-            <small>08-10-2025</small>
-        </div>
-        
-        <div class="form-tile place">
-            <strong>3</strong>
-            <span>Sandown</span>
-            <em class="caution">Run faded</em>
-            <small>17-09-2025</small>
-        </div>
-        </div>
-    </section>
-    
-                
-    <section class="franked-form-panel neutral">
-        <div class="franked-form-head">
-            <div>
-                <span class="micro-label">Race form proof</span>
-                <strong>Some franked form</strong>
-                <p>Form strength unproven</p>
-            </div>
-            <div class="franked-strength"><span>Proof rating</span><b>16</b></div>
-        </div>
-        <div class="franked-summary-strip">
-            <div><b>1</b><span>winners since</span></div>
-            <div><b>0</b><span>placers since</span></div>
-            <div><b>2</b><span>evidence pts</span></div>
-        </div>
-        <div class="franked-form-grid">
-            <div class="franked-run-card">
-                <div class="franked-run-head">
-                    <span>10-08-2025 | Nottingham</span>
-                    <strong>Finished 5</strong>
-                </div>
-                <div class="franked-evidence-rows"><div class="franked-evidence-row behind"><span>Beat named rivals</span><p>Barbury Boy (GB)</p></div><div class="franked-evidence-row winner"><span>Race produced winner</span><p>Barbury Boy (GB)</p></div></div>
-            </div>
-        </div>
-    </section>
-    
-                
-    <section class="conditions-match-panel">
-        <div class="conditions-match-score warn">
-            <span>Today's conditions match</span>
-            <strong>58%</strong>
-            <small>Mixed conditions match</small>
-        </div>
-        <div>
-            <div class="condition-match-rows">
-        <div class="condition-match-row">
-            <span>Trip / ground</span>
-            <i><b class="warn" style="--w:52%"></b></i>
-            <strong>52%</strong>
-        </div>
-        
-        <div class="condition-match-row">
-            <span>Class</span>
-            <i><b class="warn" style="--w:50.0%"></b></i>
-            <strong>50%</strong>
-        </div>
-        
-        <div class="condition-match-row">
-            <span>Pace shape</span>
-            <i><b class="warn" style="--w:50.0%"></b></i>
-            <strong>50%</strong>
-        </div>
-        
-        <div class="condition-match-row">
-            <span>Track / draw</span>
-            <i><b class="warn" style="--w:50%"></b></i>
-            <strong>50%</strong>
-        </div>
-        
-        <div class="condition-match-row">
-            <span>Handicap</span>
-            <i><b class="elite" style="--w:90%"></b></i>
-            <strong>90%</strong>
-        </div>
-        </div>
-            <div class="compact-insight-row">
-                <span>Best fit <b>Handicap</b></span>
-                <span>Question <b>Class</b></span>
-            </div>
-        </div>
-    </section>
-    
-                
-    <section class="ground-evidence-panel elite">
-        <div class="ground-evidence-score elite">
-            <span>Ground evidence</span>
-            <strong>Good</strong>
-            <small>Proven on today&#x27;s ground band</small>
-        </div>
-        <div>
-            <div class="ground-evidence-grid">
-                <div><span>Today</span><strong>Good</strong></div>
-                <div><span>Similar-ground runs</span><strong>2/5</strong></div>
-                <div><span>Best similar rating</span><strong>81</strong></div>
-                <div><span>Best ground band</span><strong>Testing</strong></div>
-            </div>
-            <div class="compact-insight-row">
-                <span>Read <b>Proven on today&#x27;s ground band</b></span>
-                <span>Today <b>Good</b></span>
-            </div>
-            
-    <details class="ground-record-drawer">
-        <summary>
-            <span>Ground record by surface</span>
-            <strong>Runs, wins, places and peak rating by ground band</strong>
-        </summary>
-        <div class="ground-record-chart">
-            
-        <div class="ground-record-row">
-            <span>Testing</span>
-            <i style="--w:100%"><b>2</b></i>
-            <strong>0W / 1P</strong>
-            <em>Peak rating 70</em>
-        </div>
-        
-        <div class="ground-record-row active">
-            <span>Good</span>
-            <i style="--w:100%"><b>2</b></i>
-            <strong>0W / 2P</strong>
-            <em>Peak rating 81</em>
-        </div>
-        
-        <div class="ground-record-row">
-            <span>Fast</span>
-            <i style="--w:50.0%"><b>1</b></i>
-            <strong>1W / 1P</strong>
-            <em>Peak rating --</em>
-        </div>
-        
-        <div class="ground-record-row">
-            <span>All-weather</span>
-            <i style="--w:0%"><b>0</b></i>
-            <strong>0W / 0P</strong>
-            <em>Peak rating --</em>
-        </div>
-        
-        </div>
-    </details>
-    
-        </div>
-    </section>
-    
-                
-    <section class="placement-evidence-panel good">
-        <div class="placement-score">
-            <span>Placement evidence</span>
-            <strong>64%</strong>
-            <small>Positive placement clues</small>
-        </div>
-        <div class="placement-body">
-            <div class="placement-rows">
-        <div class="placement-row">
-            <span>Trip evidence</span>
-            <i><b class="bad" style="--w:44%"></b></i>
-            <strong>44%</strong>
-        </div>
-        
-        <div class="placement-row">
-            <span>Class fit</span>
-            <i><b class="warn" style="--w:50%"></b></i>
-            <strong>50%</strong>
-        </div>
-        
-        <div class="placement-row">
-            <span>Mark room</span>
-            <i><b class="elite" style="--w:100%"></b></i>
-            <strong>100%</strong>
-        </div>
-        
-        <div class="placement-row">
-            <span>Stable setup</span>
-            <i><b class="good" style="--w:66%"></b></i>
-            <strong>66%</strong>
-        </div>
-        
-        <div class="placement-row">
-            <span>Recent evidence</span>
-            <i><b class="warn" style="--w:58%"></b></i>
-            <strong>58%</strong>
-        </div>
-        </div>
-            <div class="intent-chip-row"><span class="intent-chip positive">FFR vs OR gives +18lb room</span><span class="intent-chip positive">Trainer and jockey setup recorded</span><span class="intent-chip positive">Recent form includes a win/place signal</span><span class="intent-chip caution">No major placement caution from stored evidence</span></div>
-            <div class="compact-insight-row">
-                <span>Mark read <b>FFR vs OR: +18lb</b></span>
-                <span>Evidence <b>Observable only</b></span>
-            </div>
-        </div>
-    </section>
-    
-                <div class="opportunity-grid">
-                    
-    <section class="handicap-opportunity-panel">
-        <div>
-            <span class="micro-label">Handicap Opportunity</span>
-            <strong class="elite">Well handicapped</strong>
-            <small>+18lb FFR vs OR</small>
-        </div>
-        <div class="handicap-opportunity-copy">
-            <p>Our pounds-style FFR evidence suggests today&#x27;s official mark may leave useful room for improvement.</p>
-            <span>Today's OR <b>88</b> | FFR <b>106</b> | Best FFR <b>106</b> | FFR edge <b>+18</b></span>
-        </div>
-    </section>
-    
-                    
-        <section class="hidden-run-panel muted">
-            <div><span class="micro-label">Hidden Run Detector</span><strong>No hidden run flagged</strong></div>
-            <p>No recent performance currently meets the ForeFurlongs hidden-effort checks.</p>
-        </section>
-        
-                </div>
-            </details>
-            <details class="evidence-drawer">
-                <summary>
-                    <span>Deeper evidence</span>
-                    <strong>Speed, timing, jumps, ratings and full run table</strong>
-                </summary>
-                
-    <section class="predictive-edge-panel">
-        <div class="predictive-edge-head">
-            <div>
-                <span class="micro-label">Predictive edge</span>
-                <strong class="warn">Small positive nudge</strong>
-                <p>Reliable; Mild bounce watch; No hidden upgrade; Below requirement; Improving</p>
-            </div>
-            <div class="predictive-edge-score">
-                <span>confidence nudge</span>
-                <strong class="warn">+1.0</strong>
-            </div>
-        </div>
-        <div class="predictive-edge-grid">
-        <div>
-            <span>Variance</span>
-            <strong>Reliable</strong>
-            <small>6.3% volatility</small>
-        </div>
-        
-        <div>
-            <span>Bounce</span>
-            <strong>Mild bounce watch</strong>
-            <small>Recent big figure regression check</small>
-        </div>
-        
-        <div>
-            <span>Hidden Run</span>
-            <strong>No hidden upgrade</strong>
-            <small>Upgrade 0</small>
-        </div>
-        
-        <div>
-            <span>Ceiling</span>
-            <strong>Below requirement</strong>
-            <small>-1.1 vs par</small>
-        </div>
-        
-        <div>
-            <span>Curve</span>
-            <strong>Improving</strong>
-            <small>Trend 2</small>
-        </div>
-        </div>
-    </section>
-    
-                
-                
-                
-    <div class="runner-meta-strip">
-        
-        <div>
-            <span>Trainer</span>
-            <strong>Andrew Balding</strong>
-        </div>
-        
-        <div>
-            <span>Jockey</span>
-            <strong>Oisin Murphy</strong>
-        </div>
-        
-        <div>
-            <span>Age</span>
-            <strong>3</strong>
-        </div>
-        
-        <div>
-            <span>Draw</span>
-            <strong>6</strong>
-        </div>
-        
-        <div>
-            <span>OR</span>
-            <strong>88</strong>
-        </div>
-        
-        <div>
-            <span>Avg OR</span>
-            <strong>87.9</strong>
-        </div>
-        
-        <div>
-            <span>OR vs Field</span>
-            <strong>+0.1</strong>
-        </div>
-        
-        <div>
-            <span>Rating</span>
-            <strong>No rating yet</strong>
-        </div>
-        
-        <div>
-            <span>TS</span>
-            <strong>--</strong>
-        </div>
-        
-        <div>
-            <span>Form</span>
-            <strong>35-221</strong>
-        </div>
-        
-        <div>
-            <span>Run Style</span>
-            <strong>Unclear</strong>
-        </div>
-        
-    </div>
-    
-                
-    <section class="sectional-angle elite">
-        <div class="sectional-angle-head">
-            <div>
-                <span class="micro-label">Pace & Finish Fit</span>
-                <strong>No clear style</strong>
-            </div>
-            <div class="sectional-evidence">
-                <span>Evidence</span>
-                <b>Recent finish evidence only</b>
-            </div>
-        </div>
-        
-    </section>
-    
-                
-    <section class="distance-timing-panel warn">
-        <div class="distance-timing-head">
-            <div>
-                <span class="micro-label">Distance Timing Evidence</span>
-                <strong>Nearest profile 1m2f</strong>
-            </div>
-            <span class="finish-pill elite">Latest matched-distance time is the best of the recent timed set.</span>
-        </div>
-        <div class="distance-timing-grid">
-            <div><span>Profile distance</span><strong>1m2f</strong></div>
-            <div><span>Runs at profile</span><strong>2</strong></div>
-            <div><span>DEI</span><strong>D</strong></div>
-            <div><span>Reliability</span><strong>LOW</strong></div>
-        </div>
-        <table class="distance-timing-table">
-            <thead><tr><th>Date</th><th>Course</th><th>Going</th><th>Pos</th><th>Time</th><th>Secs</th></tr></thead>
-            <tbody>
-        <tr>
-            <td>08-04-2026</td>
-            <td>Nottingham</td>
-            <td>Good</td>
-            <td>2</td>
-            <td>2:13.57</td>
-            <td>133.6</td>
-        </tr>
-        
-        <tr>
-            <td>15-05-2026</td>
-            <td>Newbury</td>
-            <td>Good</td>
-            <td>2</td>
-            <td>2:8.57</td>
-            <td>128.6</td>
-        </tr>
-        </tbody>
-        </table>
-    </section>
-    
-                
-    <section class="extra-intel-panel">
-        <div class="distance-timing-head">
-            <div>
-                <span class="micro-label">Extra Intelligence</span>
-                <strong>Trainer, equipment, freshness and background clues</strong>
-            </div>
-            <span class="finish-pill good">+0.8 micro score</span>
-        </div>
-        <div class="extra-intel-summary">
-            <div class="intel-meter neutral" style="--intel:50%">
-                <span>Trainer RTF</span>
-                <strong>--</strong>
-                <i><b></b></i>
-                <small>Trainer recent-form data unavailable</small>
-            </div>
-            <div class="intel-meter neutral" style="--intel:84%">
-                <span>Freshness</span>
-                <strong>20 days</strong>
-                <i><b></b></i>
-                <small>Recent fitness window</small>
-            </div>
-            <div class="intel-meter good" style="--intel:69%">
-                <span>Micro score</span>
-                <strong>+0.8</strong>
-                <i><b></b></i>
-                <small>recent distance evidence matches today&#x27;s ground; recent run fitness window; API past-result flags present</small>
-            </div>
-            <div class="intel-meter neutral" style="--intel:81%">
-                <span>Ground timing match</span>
-                <strong>2/2</strong>
-                <i><b></b></i>
-                <small>Recent distance-time runs on today's ground</small>
-            </div>
-        </div>
-        <div class="extra-intel-facts">
-            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
-            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
-            <div><span>Latest SP</span><strong>11/2</strong></div>
-            <div><span>Owner</span><strong>Al Shaqab Racing</strong></div>
-        </div>
-        <div class="pedigree-line">
-            <span>Pedigree</span>
-            <p><b>Lope De Vega</b> × Loyal <em>(Galileo)</em></p>
-        </div>
-        <div class="profile-signal-board">
-            <div class="profile-signal-head">
-                <span>Profile Signals</span>
-                <strong>Form clues that can sharpen the read</strong>
-            </div>
-            <div class="profile-signal-row"><span class="profile-signal positive"><b>Distance win</b><em>Has won at this trip</em></span></div>
-            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>No recent race comment available.</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
-        </div>
-    </section>
-    
-                
-    <section class="recent-evidence">
-        <div class="recent-evidence-head">
-            <div>
-                <span class="micro-label">Recent Evidence</span>
-                <strong>Last 3 runs</strong>
-            </div>
-            <div class="recent-evidence-stats">
-                <span>1/3 fast finish</span>
-                <span>Avg beaten 1.1L</span>
-            </div>
-        </div>
-        <table class="recent-table">
-            <thead><tr><th>Date</th><th>Course</th><th>Pos</th><th>Beaten</th><th>Finish</th></tr></thead>
-            <tbody>
-        <tr>
-            <td>09-07-2026</td>
-            <td>Doncaster</td>
-            <td>1</td>
-            <td>0</td>
-            <td><span class="finish-pill neutral">Neutral finish</span></td>
-        </tr>
-        
-        <tr>
-            <td>15-05-2026</td>
-            <td>Newbury</td>
-            <td>2</td>
-            <td>1.2</td>
-            <td><span class="finish-pill neutral">Neutral finish</span></td>
-        </tr>
-        
-        <tr>
-            <td>08-04-2026</td>
-            <td>Nottingham</td>
-            <td>2</td>
-            <td>2.2</td>
-            <td><span class="finish-pill elite">Fast finish</span></td>
-        </tr>
-        </tbody>
-        </table>
-    </section>
-    
-                
-    <section class="visual-trend-panel">
-        <div class="visual-trend-head">
-            <div><span class="micro-label">Ratings Trend</span><strong>Last 6 rating vs OR</strong></div>
-            <small>Oldest to newest | rating shows performance; OR shows handicap mark</small>
-        </div>
-        <div class="trend-summary">No previous official OR is available for a ratings comparison yet. 3 earlier runs were unrated.</div>
-        <div class="trend-chart">
-        <div class="trend-row">
-            <span>17-09-2025 | Sandown</span>
-            <div class="trend-bars">
-                <i class="rpr-bar" style="--w:67.07317073170732%"><b>Rating 55</b></i>
-                <i class="or-bar" style="--w:0%"><b>OR Unrated</b></i>
-            </div>
-        </div>
-        
-        <div class="trend-row">
-            <span>08-10-2025 | Nottingham</span>
-            <div class="trend-bars">
-                <i class="rpr-bar" style="--w:85.36585365853658%"><b>Rating 70</b></i>
-                <i class="or-bar" style="--w:0%"><b>OR Unrated</b></i>
-            </div>
-        </div>
-        
-        <div class="trend-row">
-            <span>08-04-2026 | Nottingham</span>
-            <div class="trend-bars">
-                <i class="rpr-bar" style="--w:98.78048780487805%"><b>Rating 81</b></i>
-                <i class="or-bar" style="--w:0%"><b>OR Unrated</b></i>
-            </div>
-        </div>
-        
-        <div class="trend-row">
-            <span>15-05-2026 | Newbury</span>
-            <div class="trend-bars">
-                <i class="rpr-bar" style="--w:0%"><b>Rating --</b></i>
-                <i class="or-bar" style="--w:100%"><b>OR 82</b></i>
-            </div>
-        </div>
-        
-        <div class="trend-row">
-            <span>09-07-2026 | Doncaster</span>
-            <div class="trend-bars">
-                <i class="rpr-bar" style="--w:0%"><b>Rating --</b></i>
-                <i class="or-bar" style="--w:100%"><b>OR 82</b></i>
-            </div>
-        </div>
-        </div>
-    </section>
-    
-            </details>
-            <div class="runner-body">
-                <details>
-                    <summary>Open full intelligence read</summary>
-                    
-    <div class="ff-intel-panel">
-        <div class="ff-intel-head">
-            <div>
-                <span class="micro-label">ForeFurlongs Intelligence</span>
-                <strong>Hatteen</strong>
-            </div>
-            <span class="bet-badge bet-value">PRICE DEPENDENT</span>
-        </div>
-        <div class="ff-intel-metrics">
-            <div><span>DEI</span><strong>D</strong></div>
-            <div><span>Benchmark</span><strong>0</strong></div>
-            <div><span>Pace</span><strong>Unclear</strong></div>
-            <div><span>Consensus</span><strong>WEAK</strong></div>
-        </div>
-        <p>Hatteen profiles as a unclear with a stable / positive signs trajectory. Distance intelligence grade is D. Model alignment is 1/6. No obvious tactical edge from race shape</p>
-        <div class="timing-strip">
-            <span>Winning Time Par</span>
-            <strong>2m 37.94s</strong>
-        </div>
-    </div>
-    
-                    
-    <section class="distance-context-panel">
-        <div class="distance-context-head">
-            <div><span class="micro-label">Distance intelligence</span><strong>Trip evidence</strong></div>
-            <span class="distance-experience developing">Trip evidence building</span>
-        </div>
-        <div class="distance-context-stats">
-            <div><span>Similar-trip runs</span><strong>2</strong></div>
-            <div><span>Reliability</span><strong>LOW</strong></div>
-            <div><span>Winning-time par</span><strong>2m 37.94s</strong></div>
-            <div><span>Last win at trip</span><strong>-- | Doncaster | 09-07-2026</strong></div>
-        </div>
-        <div class="distance-context-history">
-            <div><span>Recent times</span><b>2:13.57 | 2:8.57</b></div>
-            <div><span>Recent positions</span><b>2 | 2</b></div>
-            <div><span>Winning context</span><b>OR 82 | weight 9-4</b></div>
-        </div>
-    </section>
-    
-                    
-    <div class="previous-runs">
-        <strong>Last 6 runs</strong>
-        <table class="rp-table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Conditions</th>
-                    <th>Result</th>
-                    <th>SP</th>
-                    <th>OR</th>
-                    <th>Rating</th>
-                    <th>TS</th>
-                    <th>Beaten</th>
-                    <th>Time</th>
-                    <th>FF Timing Read</th>
-                </tr>
-            </thead>
-            <tbody>
-        <tr>
-            <td>09-07-2026</td>
-            <td>Doncaster | 12f | Good To Firm | Class 2</td>
-            <td>1</td>
-            <td>11/2</td>
-            <td>82</td>
-            <td>--</td>
-            <td>--</td>
-            <td>0</td>
-            <td>--</td>
-            <td><span class="timing-pill timing-grey">GREY - no timing read</span></td>
-        </tr>
-        
-        <tr>
-            <td>15-05-2026</td>
-            <td>Newbury | 10f | Good | Class 3</td>
-            <td>2</td>
-            <td>7/2</td>
-            <td>82</td>
-            <td>--</td>
-            <td>--</td>
-            <td>1.2</td>
-            <td>--</td>
-            <td><span class="timing-pill timing-grey">GREY - no timing read</span></td>
-        </tr>
-        
-        <tr>
-            <td>08-04-2026</td>
-            <td>Nottingham | 1m2f | Good | Class 3</td>
-            <td>2</td>
-            <td>9/2</td>
-            <td>--</td>
-            <td>81</td>
-            <td>46</td>
-            <td>2.2</td>
-            <td>2:13.57</td>
-            <td><span class="timing-pill timing-gold">GOLD - faster than par</span></td>
-        </tr>
-        
-        <tr>
-            <td>08-10-2025</td>
-            <td>Nottingham | 1m½f | Good To Soft | Class 2</td>
-            <td>5</td>
-            <td>10/1</td>
-            <td>--</td>
-            <td>70</td>
-            <td>19</td>
-            <td>1</td>
-            <td>1:51.69</td>
-            <td><span class="timing-pill timing-gold">GOLD - faster than par</span></td>
-        </tr>
-        
-        <tr>
-            <td>17-09-2025</td>
-            <td>Sandown | 1m | Soft | Class 4</td>
-            <td>3</td>
-            <td>11/2</td>
-            <td>--</td>
-            <td>55</td>
-            <td>15</td>
-            <td>9</td>
-            <td>1:52.98</td>
-            <td><span class="timing-pill timing-gold">GOLD - faster than par</span></td>
-        </tr>
-        </tbody>
-        </table>
-    </div>
-    
-                </details>
-            </div>
-        </details>
-    </article>
-    
-    <article class="horse-card premium-horse-card">
-        <details class="top-horse-details">
-            <summary>
-                <div class="top-horse-summary-main">
-                    <span class="micro-label">Premium runner profile</span>
                     <strong>Star Material</strong>
                     <small>2:05 | Redcar | 6f</small>
                     <div class="chip-row top-horse-summary-chip-row"><span class="chip warn">Quality E</span><span class="chip neutral">Tier 4 watch only</span><span class="chip warn">Clear but not dominant</span><span class="chip neutral">+5 more signals</span></div>
@@ -39752,7 +39000,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <span class="caution"><b>Main risk</b>No major model risk flagged</span>
         </div>
         <div class="decision-support-strip">
-            <div class="decision-type-card warn"><span>Decision type</span><strong>Best of a weak race</strong><small>This runner is not clean on every metric, but the field looks more compromised and the contextual edge is still strongest.</small></div>
+            <div class="decision-type-card warn"><span>Decision type</span><strong>Context over ratings</strong><small>The raw rating/mark view is a caution, but other layers such as field edge, recent form, benchmark or memory keep it interesting.</small></div>
             <div><span>Model score</span><strong>28.2</strong><small>Underlying model read</small></div>
             <div><span>Trip / ground</span><strong>DEI C</strong><small>HIGH</small></div>
             <div><span>Handicap ceiling</span><strong class="elite">Well handicapped</strong><small>+26lb FFR vs OR best recorded edge</small></div>
@@ -49384,6 +48632,727 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             </div>
         </details>
     </article>
+    
+    <article class="horse-card premium-horse-card">
+        <details class="top-horse-details">
+            <summary>
+                <div class="top-horse-summary-main">
+                    <span class="micro-label">Premium runner profile</span>
+                    <strong>Mergus Serrator</strong>
+                    <small>7:15 | Galway | 12f</small>
+                    <div class="chip-row top-horse-summary-chip-row"><span class="chip warn">Quality E</span><span class="chip neutral">Tier 4 watch only</span><span class="chip good">Strong edge</span><span class="chip neutral">+4 more signals</span></div>
+                </div>
+                <div class="top-horse-summary-tags">
+                    
+    <div class="ff-score-block score-muted">
+        <span>Decision Confidence</span>
+        <strong>39.2</strong>
+    </div>
+    
+                    <span class="bet-badge bet-avoid">CAUTION PROFILE</span>
+                </div>
+            </summary>
+            
+    <div class="runner-race-link">
+        <div>
+            <span class="micro-label">Runs Tomorrow</span>
+            <strong>7:15 | Galway | 12f</strong>
+            <p>Visit Tote26 On Course Today (Q.R.) Maiden</p>
+        </div>
+        <a href="racecards-tomorrow.html#race-2026-07-29-7-15-galway-12f-visit-tote26-on-course-today-q-r-maiden">Open racecard</a>
+    </div>
+    
+            
+    <section class="runner-decision-panel">
+        <div class="runner-decision-head">
+            <div>
+                <span class="micro-label">Decision read</span>
+                <strong>Interesting on score, but needs caution: distance suitability is a caution (dei e).</strong>
+            </div>
+            
+        </div>
+        <div class="decision-visual-grid">
+            <div class="decision-primary-tile">
+                <span>Status</span>
+                <strong>CAUTION PROFILE</strong>
+                <i style="--w:39.2%"><b></b></i>
+            </div>
+            <div class="decision-meter"><span>Agreement</span><strong>1/6</strong><i style="--w:17%"><b></b></i></div>
+            <div class="decision-meter"><span>FFR</span><strong>69</strong><i style="--w:55%"><b></b></i></div>
+            <div class="decision-meter"><span>Speed</span><strong>101</strong><i style="--w:100%"><b></b></i></div>
+            <div class="decision-meter"><span>Conditions</span><strong>Caution</strong><i style="--w:49%"><b></b></i></div>
+            <div class="decision-meter"><span>Placement</span><strong>Mixed setup</strong><i style="--w:51%"><b></b></i></div>
+        </div>
+        <div class="decision-benchmark-strip">
+        <div class="decision-benchmark-card single">
+            <div><span>FFR vs OR</span><strong>-15lb below mark</strong></div>
+            <div class="benchmark-single">
+                <i style="--w:55.2"><b>FFR 69</b></i>
+                <em>pounds scale</em>
+            </div>
+        </div>
+        
+        <div class="decision-benchmark-card single">
+            <div><span>SpeedScore</span><strong>around par</strong></div>
+            <div class="benchmark-single">
+                <i style="--w:100"><b>101</b></i>
+                <em>Par 100</em>
+            </div>
+        </div>
+        </div>
+        <div class="decision-reason-risk">
+            <span class="positive"><b>Best reason</b>Model evidence is not clean enough for a positive stance</span>
+            <span class="caution"><b>Main risk</b>Distance suitability is a caution (DEI E)</span>
+        </div>
+        <div class="decision-support-strip">
+            <div class="decision-type-card warn"><span>Decision type</span><strong>Best of a weak race</strong><small>This runner is not clean on every metric, but the field looks more compromised and the contextual edge is still strongest.</small></div>
+            <div><span>Model score</span><strong>27.2</strong><small>Underlying model read</small></div>
+            <div><span>Trip / ground</span><strong>DEI E</strong><small>VERY_LOW</small></div>
+            <div><span>Handicap ceiling</span><strong class="warn">Near ceiling</strong><small>+0lb FFR vs OR best recorded edge</small></div>
+        </div>
+    </section>
+    
+            <details class="evidence-drawer decision-drawer">
+                <summary>
+                    <span>Context match</span>
+                    <strong>Conditions, placement, handicap and recent form</strong>
+                </summary>
+                
+    <section class="last-six-strip">
+        <div class="last-six-head">
+            <span class="micro-label">Last 6 Finishing Positions</span>
+            <small>Most recent first | 1 = win | 2-3 = placed | open the full table for detail</small>
+        </div>
+        <div class="form-tiles">
+        <div class="form-tile run">
+            <strong>5</strong>
+            <span>Down Royal (IRE)</span>
+            <em class="neutral">Competitive</em>
+            <small>20-06-2026</small>
+        </div>
+        
+        <div class="form-tile run">
+            <strong>4</strong>
+            <span>Killarney (IRE)</span>
+            <em class="neutral">Competitive</em>
+            <small>12-05-2026</small>
+        </div>
+        
+        <div class="form-tile run">
+            <strong>4</strong>
+            <span>Navan</span>
+            <em class="positive">Finished well</em>
+            <small>25-04-2026</small>
+        </div>
+        
+        <div class="form-tile run">
+            <strong>6</strong>
+            <span>Leopardstown</span>
+            <em class="caution">Run faded</em>
+            <small>18-10-2025</small>
+        </div>
+        </div>
+    </section>
+    
+                
+        <section class="franked-form-panel muted">
+            <div class="franked-form-head">
+                <div>
+                    <span class="micro-label">Franked form</span>
+                    <strong>Not franked yet</strong>
+                    <p>No strong named-rival evidence from recent races yet.</p>
+                </div>
+                <div class="franked-strength"><span>Proof rating</span><b>0</b></div>
+            </div>
+        </section>
+        
+                
+    <section class="conditions-match-panel">
+        <div class="conditions-match-score bad">
+            <span>Today's conditions match</span>
+            <strong>49%</strong>
+            <small>Conditions ask questions</small>
+        </div>
+        <div>
+            <div class="condition-match-rows">
+        <div class="condition-match-row">
+            <span>Trip / ground</span>
+            <i><b class="bad" style="--w:38%"></b></i>
+            <strong>38%</strong>
+        </div>
+        
+        <div class="condition-match-row">
+            <span>Class</span>
+            <i><b class="warn" style="--w:50.0%"></b></i>
+            <strong>50%</strong>
+        </div>
+        
+        <div class="condition-match-row">
+            <span>Pace shape</span>
+            <i><b class="warn" style="--w:50.0%"></b></i>
+            <strong>50%</strong>
+        </div>
+        
+        <div class="condition-match-row">
+            <span>Track / draw</span>
+            <i><b class="warn" style="--w:50%"></b></i>
+            <strong>50%</strong>
+        </div>
+        
+        <div class="condition-match-row">
+            <span>Handicap</span>
+            <i><b class="warn" style="--w:58%"></b></i>
+            <strong>58%</strong>
+        </div>
+        </div>
+            <div class="compact-insight-row">
+                <span>Best fit <b>Handicap</b></span>
+                <span>Question <b>Trip / ground</b></span>
+            </div>
+        </div>
+    </section>
+    
+                
+    <section class="ground-evidence-panel good">
+        <div class="ground-evidence-score good">
+            <span>Ground evidence</span>
+            <strong>Good</strong>
+            <small>Some positive evidence on today&#x27;s ground</small>
+        </div>
+        <div>
+            <div class="ground-evidence-grid">
+                <div><span>Today</span><strong>Good</strong></div>
+                <div><span>Similar-ground runs</span><strong>1/4</strong></div>
+                <div><span>Best similar rating</span><strong>--</strong></div>
+                <div><span>Best ground band</span><strong>Testing</strong></div>
+            </div>
+            <div class="compact-insight-row">
+                <span>Read <b>Some positive evidence on today&#x27;s ground</b></span>
+                <span>Today <b>Good</b></span>
+            </div>
+            
+    <details class="ground-record-drawer">
+        <summary>
+            <span>Ground record by surface</span>
+            <strong>Runs, wins, places and peak rating by ground band</strong>
+        </summary>
+        <div class="ground-record-chart">
+            
+        <div class="ground-record-row">
+            <span>Testing</span>
+            <i style="--w:100%"><b>3</b></i>
+            <strong>0W / 0P</strong>
+            <em>Peak rating 82</em>
+        </div>
+        
+        <div class="ground-record-row active">
+            <span>Good</span>
+            <i style="--w:33.33333333333333%"><b>1</b></i>
+            <strong>0W / 0P</strong>
+            <em>Peak rating --</em>
+        </div>
+        
+        <div class="ground-record-row">
+            <span>Fast</span>
+            <i style="--w:0%"><b>0</b></i>
+            <strong>0W / 0P</strong>
+            <em>Peak rating --</em>
+        </div>
+        
+        <div class="ground-record-row">
+            <span>All-weather</span>
+            <i style="--w:0%"><b>0</b></i>
+            <strong>0W / 0P</strong>
+            <em>Peak rating --</em>
+        </div>
+        
+        </div>
+    </details>
+    
+        </div>
+    </section>
+    
+                
+    <section class="placement-evidence-panel warn">
+        <div class="placement-score">
+            <span>Placement evidence</span>
+            <strong>51%</strong>
+            <small>Neutral placement read</small>
+        </div>
+        <div class="placement-body">
+            <div class="placement-rows">
+        <div class="placement-row">
+            <span>Trip evidence</span>
+            <i><b class="bad" style="--w:38%"></b></i>
+            <strong>38%</strong>
+        </div>
+        
+        <div class="placement-row">
+            <span>Class fit</span>
+            <i><b class="warn" style="--w:50%"></b></i>
+            <strong>50%</strong>
+        </div>
+        
+        <div class="placement-row">
+            <span>Mark room</span>
+            <i><b class="warn" style="--w:52%"></b></i>
+            <strong>52%</strong>
+        </div>
+        
+        <div class="placement-row">
+            <span>Stable setup</span>
+            <i><b class="good" style="--w:66%"></b></i>
+            <strong>66%</strong>
+        </div>
+        
+        <div class="placement-row">
+            <span>Recent evidence</span>
+            <i><b class="warn" style="--w:50%"></b></i>
+            <strong>50%</strong>
+        </div>
+        </div>
+            <div class="intent-chip-row"><span class="intent-chip positive">Trainer and jockey setup recorded</span><span class="intent-chip caution">Trip evidence still asks questions</span></div>
+            <div class="compact-insight-row">
+                <span>Mark read <b>FFR vs OR: +0lb</b></span>
+                <span>Evidence <b>Observable only</b></span>
+            </div>
+        </div>
+    </section>
+    
+                <div class="opportunity-grid">
+                    
+    <section class="handicap-opportunity-panel">
+        <div>
+            <span class="micro-label">Handicap Opportunity</span>
+            <strong class="warn">Near ceiling</strong>
+            <small>+0lb FFR vs OR</small>
+        </div>
+        <div class="handicap-opportunity-copy">
+            <p>The horse may need to reproduce a strong effort to stay ahead of today&#x27;s mark.</p>
+            <span>Today's OR <b>84</b> | FFR <b>69</b> | Best FFR <b>84</b> | FFR edge <b>0</b></span>
+        </div>
+    </section>
+    
+                    
+        <section class="hidden-run-panel muted">
+            <div><span class="micro-label">Hidden Run Detector</span><strong>No hidden run flagged</strong></div>
+            <p>No recent performance currently meets the ForeFurlongs hidden-effort checks.</p>
+        </section>
+        
+                </div>
+            </details>
+            <details class="evidence-drawer">
+                <summary>
+                    <span>Deeper evidence</span>
+                    <strong>Speed, timing, jumps, ratings and full run table</strong>
+                </summary>
+                
+    <section class="predictive-edge-panel">
+        <div class="predictive-edge-head">
+            <div>
+                <span class="micro-label">Predictive edge</span>
+                <strong class="warn">Small positive nudge</strong>
+                <p>Developing; No bounce signal; No hidden upgrade; Par capable; Edging forward</p>
+            </div>
+            <div class="predictive-edge-score">
+                <span>confidence nudge</span>
+                <strong class="warn">+1.2</strong>
+            </div>
+        </div>
+        <div class="predictive-edge-grid">
+        <div>
+            <span>Variance</span>
+            <strong>Developing</strong>
+            <small>Consistency developing</small>
+        </div>
+        
+        <div>
+            <span>Bounce</span>
+            <strong>No bounce signal</strong>
+            <small>Recent big figure regression check</small>
+        </div>
+        
+        <div>
+            <span>Hidden Run</span>
+            <strong>No hidden upgrade</strong>
+            <small>Upgrade 0</small>
+        </div>
+        
+        <div>
+            <span>Ceiling</span>
+            <strong>Par capable</strong>
+            <small>1.1 vs par</small>
+        </div>
+        
+        <div>
+            <span>Curve</span>
+            <strong>Edging forward</strong>
+            <small>Trend 1</small>
+        </div>
+        </div>
+    </section>
+    
+                
+                
+                
+    <div class="runner-meta-strip">
+        
+        <div>
+            <span>Trainer</span>
+            <strong>Gavin Cromwell</strong>
+        </div>
+        
+        <div>
+            <span>Jockey</span>
+            <strong>Mr D G Lavery</strong>
+        </div>
+        
+        <div>
+            <span>Age</span>
+            <strong>3</strong>
+        </div>
+        
+        <div>
+            <span>Draw</span>
+            <strong>13</strong>
+        </div>
+        
+        <div>
+            <span>OR</span>
+            <strong>84</strong>
+        </div>
+        
+        <div>
+            <span>Avg OR</span>
+            <strong>72.8</strong>
+        </div>
+        
+        <div>
+            <span>OR vs Field</span>
+            <strong>+11.2</strong>
+        </div>
+        
+        <div>
+            <span>Rating</span>
+            <strong>No rating yet</strong>
+        </div>
+        
+        <div>
+            <span>TS</span>
+            <strong>--</strong>
+        </div>
+        
+        <div>
+            <span>Form</span>
+            <strong>6-445</strong>
+        </div>
+        
+        <div>
+            <span>Run Style</span>
+            <strong>Unclear</strong>
+        </div>
+        
+    </div>
+    
+                
+    <section class="sectional-angle elite">
+        <div class="sectional-angle-head">
+            <div>
+                <span class="micro-label">Pace & Finish Fit</span>
+                <strong>No clear style</strong>
+            </div>
+            <div class="sectional-evidence">
+                <span>Evidence</span>
+                <b>Recent finish evidence only</b>
+            </div>
+        </div>
+        
+    </section>
+    
+                
+    <section class="distance-timing-panel warn">
+        <div class="distance-timing-head">
+            <div>
+                <span class="micro-label">Distance Timing Evidence</span>
+                <strong>Nearest profile 1m5f</strong>
+            </div>
+            <span class="finish-pill neutral">No clear timing trend yet; use this as supporting evidence.</span>
+        </div>
+        <div class="distance-timing-grid">
+            <div><span>Profile distance</span><strong>1m5f</strong></div>
+            <div><span>Runs at profile</span><strong>1</strong></div>
+            <div><span>DEI</span><strong>E</strong></div>
+            <div><span>Reliability</span><strong>VERY_LOW</strong></div>
+        </div>
+        <table class="distance-timing-table">
+            <thead><tr><th>Date</th><th>Course</th><th>Going</th><th>Pos</th><th>Time</th><th>Secs</th></tr></thead>
+            <tbody>
+        <tr>
+            <td>20-06-2026</td>
+            <td>Down Royal (IRE)</td>
+            <td>Soft</td>
+            <td>5</td>
+            <td>2:54.88</td>
+            <td>174.9</td>
+        </tr>
+        </tbody>
+        </table>
+    </section>
+    
+                
+    <section class="extra-intel-panel">
+        <div class="distance-timing-head">
+            <div>
+                <span class="micro-label">Extra Intelligence</span>
+                <strong>Trainer, equipment, freshness and background clues</strong>
+            </div>
+            <span class="finish-pill good">+0.2 micro score</span>
+        </div>
+        <div class="extra-intel-summary">
+            <div class="intel-meter neutral" style="--intel:50%">
+                <span>Trainer RTF</span>
+                <strong>--</strong>
+                <i><b></b></i>
+                <small>Trainer recent-form data unavailable</small>
+            </div>
+            <div class="intel-meter neutral" style="--intel:84%">
+                <span>Freshness</span>
+                <strong>39 days</strong>
+                <i><b></b></i>
+                <small>Recent fitness window</small>
+            </div>
+            <div class="intel-meter good" style="--intel:56%">
+                <span>Micro score</span>
+                <strong>+0.2</strong>
+                <i><b></b></i>
+                <small>recent run fitness window; API past-result flags present</small>
+            </div>
+            <div class="intel-meter neutral" style="--intel:45%">
+                <span>Ground timing match</span>
+                <strong>0/1</strong>
+                <i><b></b></i>
+                <small>Recent distance-time runs on today's ground</small>
+            </div>
+        </div>
+        <div class="extra-intel-facts">
+            <div><span>Headgear</span><strong>None</strong><small>No headgear declared</small></div>
+            <div><span>Wind</span><strong>No wind surgery flag</strong></div>
+            <div><span>Latest SP</span><strong>7/2J</strong></div>
+            <div><span>Owner</span><strong>J Fyffe</strong></div>
+        </div>
+        <div class="pedigree-line">
+            <span>Pedigree</span>
+            <p><b>Masar</b> × Almareekh <em>(War Front)</em></p>
+        </div>
+        <div class="profile-signal-board">
+            <div class="profile-signal-head">
+                <span>Profile Signals</span>
+                <strong>Form clues that can sharpen the read</strong>
+            </div>
+            <div class="profile-signal-row"><span class="profile-signal caution"><b>Beaten favourite</b><em>Market expected more last time</em></span></div>
+            <div class="profile-note-grid"><div class="profile-note-card comment"><span>Race comment</span><p>No recent race comment available.</p></div><div class="profile-note-card market"><span>Market note</span><p>No verified market note available.</p></div><div class="profile-note-card impact"><span>Model impact</span><p>Only reliable clues can move the rating, and the nudge is capped at +/-2 so the core score stays stable.</p></div></div>
+        </div>
+    </section>
+    
+                
+    <section class="recent-evidence">
+        <div class="recent-evidence-head">
+            <div>
+                <span class="micro-label">Recent Evidence</span>
+                <strong>Last 3 runs</strong>
+            </div>
+            <div class="recent-evidence-stats">
+                <span>1/3 fast finish</span>
+                <span>Avg beaten 0.5L</span>
+            </div>
+        </div>
+        <table class="recent-table">
+            <thead><tr><th>Date</th><th>Course</th><th>Pos</th><th>Beaten</th><th>Finish</th></tr></thead>
+            <tbody>
+        <tr>
+            <td>20-06-2026</td>
+            <td>Down Royal (IRE)</td>
+            <td>5</td>
+            <td>0.8</td>
+            <td><span class="finish-pill neutral">Neutral finish</span></td>
+        </tr>
+        
+        <tr>
+            <td>12-05-2026</td>
+            <td>Killarney (IRE)</td>
+            <td>4</td>
+            <td>0.2</td>
+            <td><span class="finish-pill neutral">Neutral finish</span></td>
+        </tr>
+        
+        <tr>
+            <td>25-04-2026</td>
+            <td>Navan</td>
+            <td>4</td>
+            <td>0.5</td>
+            <td><span class="finish-pill elite">Fast finish</span></td>
+        </tr>
+        </tbody>
+        </table>
+    </section>
+    
+                
+    <section class="visual-trend-panel">
+        <div class="visual-trend-head">
+            <div><span class="micro-label">Ratings Trend</span><strong>Last 6 rating vs OR</strong></div>
+            <small>Oldest to newest | rating shows performance; OR shows handicap mark</small>
+        </div>
+        <div class="trend-summary">No previous official OR is available for a ratings comparison yet. 2 earlier runs were unrated.</div>
+        <div class="trend-chart">
+        <div class="trend-row">
+            <span>18-10-2025 | Leopardstown</span>
+            <div class="trend-bars">
+                <i class="rpr-bar" style="--w:80.95238095238095%"><b>Rating 68</b></i>
+                <i class="or-bar" style="--w:0%"><b>OR Unrated</b></i>
+            </div>
+        </div>
+        
+        <div class="trend-row">
+            <span>25-04-2026 | Navan</span>
+            <div class="trend-bars">
+                <i class="rpr-bar" style="--w:97.61904761904762%"><b>Rating 82</b></i>
+                <i class="or-bar" style="--w:0%"><b>OR Unrated</b></i>
+            </div>
+        </div>
+        
+        <div class="trend-row">
+            <span>20-06-2026 | Down Royal (IRE)</span>
+            <div class="trend-bars">
+                <i class="rpr-bar" style="--w:0%"><b>Rating --</b></i>
+                <i class="or-bar" style="--w:100%"><b>OR 84</b></i>
+            </div>
+        </div>
+        </div>
+    </section>
+    
+            </details>
+            <div class="runner-body">
+                <details>
+                    <summary>Open full intelligence read</summary>
+                    
+    <div class="ff-intel-panel">
+        <div class="ff-intel-head">
+            <div>
+                <span class="micro-label">ForeFurlongs Intelligence</span>
+                <strong>Mergus Serrator</strong>
+            </div>
+            <span class="bet-badge bet-avoid">CAUTION PROFILE</span>
+        </div>
+        <div class="ff-intel-metrics">
+            <div><span>DEI</span><strong>E</strong></div>
+            <div><span>Benchmark</span><strong>0</strong></div>
+            <div><span>Pace</span><strong>Unclear</strong></div>
+            <div><span>Consensus</span><strong>WEAK</strong></div>
+        </div>
+        <p>Mergus Serrator profiles as a unclear with a stable trajectory. Distance intelligence grade is E. Model alignment is 1/6. No obvious tactical edge from race shape</p>
+        <div class="timing-strip">
+            <span>Winning Time Par</span>
+            <strong>2m 50.30s</strong>
+        </div>
+    </div>
+    
+                    
+    <section class="distance-context-panel">
+        <div class="distance-context-head">
+            <div><span class="micro-label">Distance intelligence</span><strong>Trip evidence</strong></div>
+            <span class="distance-experience developing">Trip evidence building</span>
+        </div>
+        <div class="distance-context-stats">
+            <div><span>Similar-trip runs</span><strong>1</strong></div>
+            <div><span>Reliability</span><strong>VERY_LOW</strong></div>
+            <div><span>Winning-time par</span><strong>2m 50.30s</strong></div>
+            <div><span>Last win at trip</span><strong>No exact-distance win recorded</strong></div>
+        </div>
+        <div class="distance-context-history">
+            <div><span>Recent times</span><b>2:54.88</b></div>
+            <div><span>Recent positions</span><b>5</b></div>
+            <div><span>Winning context</span><b>Winning-run context developing</b></div>
+        </div>
+    </section>
+    
+                    
+    <div class="previous-runs">
+        <strong>Last 6 runs</strong>
+        <table class="rp-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Conditions</th>
+                    <th>Result</th>
+                    <th>SP</th>
+                    <th>OR</th>
+                    <th>Rating</th>
+                    <th>TS</th>
+                    <th>Beaten</th>
+                    <th>Time</th>
+                    <th>FF Timing Read</th>
+                </tr>
+            </thead>
+            <tbody>
+        <tr>
+            <td>20-06-2026</td>
+            <td>Down Royal (IRE) | 13f | Soft | --</td>
+            <td>5</td>
+            <td>7/2J</td>
+            <td>84</td>
+            <td>--</td>
+            <td>--</td>
+            <td>0.8</td>
+            <td>--</td>
+            <td><span class="timing-pill timing-grey">GREY - no timing read</span></td>
+        </tr>
+        
+        <tr>
+            <td>12-05-2026</td>
+            <td>Killarney (IRE) | 8f | Good | --</td>
+            <td>4</td>
+            <td>7/1</td>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+            <td>0.2</td>
+            <td>--</td>
+            <td><span class="timing-pill timing-grey">GREY - no timing read</span></td>
+        </tr>
+        
+        <tr>
+            <td>25-04-2026</td>
+            <td>Navan | 1m2f | Good To Yielding | --</td>
+            <td>4</td>
+            <td>8/1</td>
+            <td>--</td>
+            <td>82</td>
+            <td>75</td>
+            <td>0.5</td>
+            <td>2:07.98</td>
+            <td><span class="timing-pill timing-gold">GOLD - faster than par</span></td>
+        </tr>
+        
+        <tr>
+            <td>18-10-2025</td>
+            <td>Leopardstown | 1m | Yielding | --</td>
+            <td>6</td>
+            <td>50/1</td>
+            <td>--</td>
+            <td>68</td>
+            <td>62</td>
+            <td>1</td>
+            <td>1:45.79</td>
+            <td><span class="timing-pill timing-gold">GOLD - faster than par</span></td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+    
+                </details>
+            </div>
+        </details>
+    </article>
     </section>
 
 </main>
@@ -49886,43 +49855,11 @@ function updateRaceCompare(input) {
 
 function simplifyRunnerEvidence() {
     document.querySelectorAll(".runner-body").forEach(body => {
-        if (body.querySelector(":scope > .decision-drawer")) return;
-
         const technical = body.querySelector(":scope > .evidence-drawer");
         const meta = body.querySelector(":scope > .runner-meta-strip");
         if (technical && meta) {
             const summary = technical.querySelector("summary");
             if (summary) summary.insertAdjacentElement("afterend", meta);
-        }
-
-        const contextSelectors = [
-            ":scope > .last-six-strip",
-            ":scope > .conditions-match-panel",
-            ":scope > .placement-evidence-panel",
-            ":scope > .opportunity-grid",
-        ];
-        const contextNodes = contextSelectors
-            .map(selector => body.querySelector(selector))
-            .filter(Boolean);
-        if (!contextNodes.length) return;
-
-        const drawer = document.createElement("details");
-        drawer.className = "evidence-drawer decision-drawer";
-        drawer.innerHTML = `
-            <summary>
-                <span>Context match</span>
-                <strong>Conditions, placement, handicap and recent form</strong>
-            </summary>
-        `;
-        contextNodes.forEach(node => drawer.appendChild(node));
-
-        const chipRow = body.querySelector(":scope > .chip-row");
-        if (chipRow) {
-            chipRow.insertAdjacentElement("beforebegin", drawer);
-        } else if (technical) {
-            technical.insertAdjacentElement("beforebegin", drawer);
-        } else {
-            body.appendChild(drawer);
         }
     });
 }

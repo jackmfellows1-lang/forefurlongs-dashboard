@@ -224,6 +224,26 @@ footer{color:#66736d;border-top:1px solid var(--line);padding-top:18px}
 .predictive-edge-score strong,.decision-primary-tile strong:first-of-type{color:var(--green)!important}
 .runner-decision-panel,.predictive-edge-panel{background:#fffdf8!important;border:1px solid var(--line)!important;border-radius:0!important;box-shadow:none!important}
 .runner-decision-panel{border-left:4px solid var(--green)!important}.predictive-edge-panel{border-left:4px solid var(--gold)!important}
+.runner-quick-read{margin:14px 0;border:1px solid var(--line);border-left:5px solid var(--green);background:#fffdf8;padding:15px 16px;box-shadow:none}
+.runner-quick-head{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;border-bottom:1px solid #ded3c2;padding-bottom:12px}
+.runner-quick-head strong{display:block;margin-top:4px;font-family:Source Serif 4,Georgia,serif;font-size:24px;line-height:1.18;color:var(--text)!important}
+.runner-quick-status{min-width:126px;text-align:center;border:1px solid #a8c6b6;background:#e3efe8;padding:9px 12px}
+.runner-quick-status span,.runner-quick-status small,.runner-quick-angle-grid span,.runner-quick-reasons span,.runner-quick-footer span{display:block;font-family:Sora,Inter,sans-serif;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:#66736d!important}
+.runner-quick-status b{display:block;margin:3px 0;font-family:Sora,Inter,sans-serif;font-size:30px;line-height:1;color:var(--green)}
+.runner-quick-status.watch,.runner-quick-status.neutral{background:#f2e2bb;border-color:#d4b66e}.runner-quick-status.caution,.runner-quick-status.avoid{background:#ead5d5;border-color:#d0aaaa}.runner-quick-status.caution b,.runner-quick-status.avoid b{color:var(--red)}
+.runner-quick-reasons{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.runner-quick-reasons div{padding:10px 12px;border:1px solid #ded3c2;background:#fffaf0}
+.runner-quick-reasons .positive{border-left:4px solid var(--green)}.runner-quick-reasons .caution{border-left:4px solid var(--gold)}
+.runner-quick-reasons strong{display:block;margin-top:4px;color:#17211d!important;font-size:14px;line-height:1.35}
+.runner-quick-angle-grid{display:grid;grid-template-columns:repeat(9,minmax(92px,1fr));gap:0;border:1px solid #ded3c2;border-bottom:0;border-right:0;background:#fffdf8}
+.runner-quick-angle-grid div{min-width:0;padding:9px 10px;border-right:1px solid #ded3c2;border-bottom:1px solid #ded3c2;background:#fffdf8}
+.runner-quick-angle-grid div:nth-child(even){background:#f9f4ea}
+.runner-quick-angle-grid strong{display:block;margin-top:3px;color:#17211d!important;font-size:13px;line-height:1.25;overflow-wrap:anywhere}
+.runner-quick-footer{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+.runner-quick-footer span{display:inline-flex!important;gap:5px;align-items:center;border:1px solid #ded3c2;background:#f6f1e7;padding:6px 8px;color:#4f5c56!important}
+.runner-quick-footer b{color:var(--green)!important}
+@media(max-width:900px){.runner-quick-head,.runner-quick-reasons{grid-template-columns:1fr}.runner-quick-status{text-align:left}.runner-quick-angle-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.runner-quick-angle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.runner-quick-head strong{font-size:20px}}
 .jumps-intel-panel{margin:14px 0;padding:15px 16px;background:#fffdf8!important;border:1px solid var(--line)!important;border-left:4px solid var(--green)!important;border-radius:0!important;box-shadow:none!important}
 .jumps-intel-panel.warn{border-left-color:var(--gold)!important}.jumps-intel-panel.bad{border-left-color:var(--red)!important}
 .jumps-intel-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:10px}
@@ -408,6 +428,13 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
 
 .content .franked-form-panel{padding:15px 17px!important;border:1px solid #d6cbb9!important;border-top:3px solid var(--editorial-gold)!important;border-radius:2px!important;background:#fffdf8!important;box-shadow:none!important}.franked-form-head{align-items:center!important}.franked-form-head strong{font-family:Source Serif 4,Georgia,serif!important;font-size:20px!important;color:var(--ink)!important}.franked-form-head p{max-width:720px;margin-top:4px!important;color:#4f5c56!important;font-size:10px!important}.franked-strength{display:grid;justify-items:end;gap:2px;min-width:92px;padding:7px 10px;border-left:3px solid var(--editorial-gold);background:#fbf3df}.franked-strength span{color:#6b5b38!important;font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.franked-strength b{color:var(--ink)!important;font-family:Sora;font-size:20px}.franked-summary-strip{display:grid;grid-template-columns:repeat(3,100px);width:max-content;max-width:100%;gap:0;margin-top:11px;border:1px solid #dfd4c3;background:#f8f3e9}.franked-summary-strip>div{display:grid;justify-items:center;padding:8px 10px;border-right:1px solid #dfd4c3}.franked-summary-strip>div:last-child{border-right:0}.franked-summary-strip b{color:var(--editorial-green)!important;font-family:Sora;font-size:17px}.franked-summary-strip span{color:#65726c!important;font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.franked-form-grid{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))!important;gap:10px!important;margin-top:11px!important}.content .franked-run-card{padding:0!important;border:1px solid #d8cdbb!important;border-radius:2px!important;background:#fffdf8!important}.franked-run-head{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:8px 10px;border-bottom:1px solid #e2d8c9;background:#f8f3e9}.franked-run-head span{color:#53615b!important;font-size:8px!important}.franked-run-head strong{margin:0!important;color:var(--ink)!important;font-size:10px!important}.franked-evidence-rows{display:grid}.franked-evidence-row{display:grid;grid-template-columns:112px 1fr;gap:9px;padding:8px 10px;border-bottom:1px solid #e7dfd3}.franked-evidence-row:last-child{border-bottom:0}.franked-evidence-row span{color:#65726c!important;font-size:8px!important;font-weight:800;text-transform:uppercase;letter-spacing:.06em}.franked-evidence-row p{margin:0!important;color:#263630!important;font-size:9px!important;line-height:1.4}.franked-evidence-row.winner{border-left:3px solid var(--editorial-green);background:#f2faf5}.franked-evidence-row.placer{border-left:3px solid #527b8b;background:#f1f6f7}.franked-evidence-row.behind{border-left:3px solid var(--editorial-gold);background:#fff9ea}.franked-empty{margin:0!important;padding:10px;color:#65726c!important;font-size:9px!important}
 
+/* Final bar-label contrast guard: visual bars must never inherit dark article text */
+.content :where(.benchmark-single,.benchmark-bars,.trend-bars,.ground-record-row,.decision-primary-tile,.decision-meter,.compare-visual-bars,.condition-match-row,.placement-row,.jumps-intel-grid,.evidence-snapshot-card) i b,
+.content :where(.bar) i,
+.content :where(.pnl-bar) b{color:#fff!important;text-shadow:none!important}
+.content :where(.benchmark-single,.benchmark-bars) i b{background:var(--editorial-green)!important;color:#fff!important}
+.content :where(.benchmark-bars) i.or-bar b,.content :where(.trend-bars) i.or-bar b{background:var(--editorial-blue)!important;color:#fff!important}
+
 @media(max-width:900px){.briefing-row{grid-template-columns:1fr auto auto!important}.briefing-angle-feature{grid-template-columns:1fr repeat(3,auto)!important}.race-intel-rail{grid-template-columns:repeat(2,minmax(0,1fr))}.race-intel-rail>div,.race-intel-rail>details{border-bottom:1px solid #d8cdbb!important}.race-setup-compact{grid-column:1/-1}.decision-visual-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.content .decision-visual-grid>*{border-bottom:1px solid #e1d8ca!important}.decision-benchmark-strip{grid-template-columns:1fr!important}.content .decision-benchmark-card{border-right:0!important;border-bottom:1px solid #e1d8ca!important}.decision-support-strip{grid-template-columns:1fr}.decision-support-strip>div{border-right:0;border-bottom:1px solid #ded5c6}.extra-intel-summary,.extra-intel-facts{grid-template-columns:repeat(2,minmax(0,1fr))}.content .extra-intel-summary .intel-meter,.extra-intel-facts>div{border-bottom:1px solid #ded5c6!important}.pedigree-line{grid-template-columns:1fr;gap:5px}.distance-context-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.distance-context-stats>div{border-bottom:1px solid #ded5c6}.distance-context-history{grid-template-columns:1fr}.distance-context-history>div{border-right:0;border-bottom:1px solid #e3dacc}.franked-summary-strip{grid-template-columns:90px 90px 1fr}.franked-form-grid{grid-template-columns:1fr!important}}
 @media(max-width:560px){.briefing-row{grid-template-columns:1fr 1fr!important}.briefing-row>div:first-child{grid-column:1/-1}.briefing-row>div:nth-child(2){border-left:0;padding-left:0}.briefing-angle-feature{grid-template-columns:repeat(3,1fr)!important}.briefing-angle-feature-main{grid-column:1/-1}.briefing-angle-feature-score{border-left:0!important;border-top:1px solid #cfdbd2!important}.race-intel-rail,.extra-intel-summary,.extra-intel-facts{grid-template-columns:1fr}.race-intel-rail>div,.race-intel-rail>details,.content .extra-intel-summary .intel-meter,.extra-intel-facts>div{border-right:0!important}.decision-visual-grid{grid-template-columns:1fr 1fr!important}.decision-reason-risk{grid-template-columns:1fr!important}.visual-trend-head,.distance-context-head{display:grid!important}.visual-trend-head small{text-align:left!important}.trend-row{grid-template-columns:1fr!important}.distance-context-stats{grid-template-columns:1fr}.distance-context-stats>div{border-right:0}.distance-experience{width:max-content}.franked-form-head{grid-template-columns:1fr!important}.franked-strength{justify-items:start;width:max-content;border-left:0;border-top:3px solid var(--editorial-gold)}.franked-summary-strip{grid-template-columns:1fr 1fr}.franked-summary-strip p{grid-column:1/-1;border-top:1px solid #dfd4c3}.franked-evidence-row{grid-template-columns:1fr}}
 </style>
@@ -440,7 +467,7 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
 
     <section class="pnl-updated">
         <strong>Audited model tracker</strong>
-        <span>Last updated: 28 Jul 2026, 19:30 | 71 void | 132 awaiting audit</span>
+        <span>Last updated: 28 Jul 2026, 20:30 | 71 void | 132 awaiting audit</span>
     </section>
     <section class="brief-grid">
         <div class="brief-card"><span>Settled selections</span><strong>1581</strong></div>
@@ -1055,43 +1082,11 @@ function updateRaceCompare(input) {
 
 function simplifyRunnerEvidence() {
     document.querySelectorAll(".runner-body").forEach(body => {
-        if (body.querySelector(":scope > .decision-drawer")) return;
-
         const technical = body.querySelector(":scope > .evidence-drawer");
         const meta = body.querySelector(":scope > .runner-meta-strip");
         if (technical && meta) {
             const summary = technical.querySelector("summary");
             if (summary) summary.insertAdjacentElement("afterend", meta);
-        }
-
-        const contextSelectors = [
-            ":scope > .last-six-strip",
-            ":scope > .conditions-match-panel",
-            ":scope > .placement-evidence-panel",
-            ":scope > .opportunity-grid",
-        ];
-        const contextNodes = contextSelectors
-            .map(selector => body.querySelector(selector))
-            .filter(Boolean);
-        if (!contextNodes.length) return;
-
-        const drawer = document.createElement("details");
-        drawer.className = "evidence-drawer decision-drawer";
-        drawer.innerHTML = `
-            <summary>
-                <span>Context match</span>
-                <strong>Conditions, placement, handicap and recent form</strong>
-            </summary>
-        `;
-        contextNodes.forEach(node => drawer.appendChild(node));
-
-        const chipRow = body.querySelector(":scope > .chip-row");
-        if (chipRow) {
-            chipRow.insertAdjacentElement("beforebegin", drawer);
-        } else if (technical) {
-            technical.insertAdjacentElement("beforebegin", drawer);
-        } else {
-            body.appendChild(drawer);
         }
     });
 }
