@@ -467,8 +467,8 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
 
         <section class="brief-grid">
             <div class="brief-card"><span>Result date</span><strong>30 Jul 2026</strong></div>
-            <div class="brief-card"><span>Races reviewed</span><strong>8</strong></div>
-            <div class="brief-card"><span>Winners captured</span><strong>8</strong></div>
+            <div class="brief-card"><span>Races reviewed</span><strong>6</strong></div>
+            <div class="brief-card"><span>Winners captured</span><strong>6</strong></div>
             <div class="brief-card"><span>Avg field size</span><strong>7.8</strong></div>
         </section>
         <section class="panel" style="padding:20px;">
@@ -481,38 +481,38 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <label for="courseFilter">Select course</label>
                 <select id="courseFilter" onchange="updateCourseFilter(true)">
                     <option value="ALL">All courses</option>
-                    <option value="Vichy (FR)">Vichy (FR)</option>
+                    <option value="Galway (IRE)">Galway (IRE)</option><option value="Goodwood">Goodwood</option><option value="Nottingham">Nottingham</option>
                 </select>
             </div>
             <div>
                 <label for="raceFilter">Select race</label>
                 <select id="raceFilter" onchange="updateCourseFilter()">
                     <option value="ALL">All races</option>
-                    <option value="12:10 | Vichy (FR) | 12f">12:10 | Vichy (FR) | 12f</option><option value="12:43 | Vichy (FR) | 12f">12:43 | Vichy (FR) | 12f</option><option value="8:58 | Vichy (FR) | 12f">8:58 | Vichy (FR) | 12f</option><option value="9:30 | Vichy (FR) | 8f">9:30 | Vichy (FR) | 8f</option><option value="10:02 | Vichy (FR) | 8f">10:02 | Vichy (FR) | 8f</option><option value="10:34 | Vichy (FR) | 7f">10:34 | Vichy (FR) | 7f</option><option value="11:06 | Vichy (FR) | 9f">11:06 | Vichy (FR) | 9f</option><option value="11:38 | Vichy (FR) | 10f">11:38 | Vichy (FR) | 10f</option>
+                    <option value="1:50 | Goodwood | 10f">1:50 | Goodwood | 10f</option><option value="2:00 | Nottingham | 5f">2:00 | Nottingham | 5f</option><option value="2:10 | Galway (IRE) | 7f">2:10 | Galway (IRE) | 7f</option><option value="2:25 | Goodwood | 6f">2:25 | Goodwood | 6f</option><option value="2:35 | Nottingham | 8.5f">2:35 | Nottingham | 8.5f</option><option value="2:45 | Galway (IRE) | 7f">2:45 | Galway (IRE) | 7f</option>
                 </select>
             </div>
             <button onclick="resetRaceFilters()">Reset</button>
         </section>
         
         
-    <article class="race-card result-card premium-race-card" data-course="Vichy (FR)" data-race="12:10 | Vichy (FR) | 12f">
+    <article class="race-card result-card premium-race-card" data-course="Goodwood" data-race="1:50 | Goodwood | 10f">
         <div class="race-header premium-race-header">
             <div>
-                <div class="eyebrow">12:10 | Vichy (FR)</div>
-                <h2>12:10 | Vichy (FR) | 12f</h2>
-                <p class="race-meta">Class 4 | Soft | Prix De Charroux</p>
+                <div class="eyebrow">1:50 | Goodwood</div>
+                <h2>1:50 | Goodwood | 10f</h2>
+                <p class="race-meta">Class 2 | Good To Firm | Coral Kincsem Heritage Handicap</p>
             </div>
             <div class="race-score premium-race-score">
                 <span>Winner</span>
-                <strong class="elite result-winner-name">Hashtag Joa (FR)</strong>
-                <em>100/30</em>
+                <strong class="elite result-winner-name">Ciarrai Abu (IRE)</strong>
+                <em>100/30F</em>
             </div>
         </div>
 
         <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Hashtag Joa (FR)</strong></div>
+            <div><span>Winner</span><strong>Ciarrai Abu (IRE)</strong></div>
             <div><span>Rating / TS</span><strong>-- / --</strong></div>
-            <div><span>Field Size</span><strong>8</strong></div>
+            <div><span>Field Size</span><strong>14</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
         </div>
 
@@ -521,15 +521,19 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <span class="micro-label">Our Opinion</span>
                 <h3>What the result says</h3>
             </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 100/30 in a 8-runner field.</p>
+            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 100/30F in a 14-runner field.</p>
         </section>
 
         
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
+    <section class="result-model-review">
+        <div><span class="micro-label">Pre-race Model Review</span><strong>Top pre-race profile placed.</strong></div>
+        <div class="result-model-grid">
+            <div><span>Top model profile</span><strong>Evanesco</strong><small>Finished 3 | confidence 61.8</small></div>
+            <div><span>Winner model rank</span><strong>2</strong><small>51.0 confidence</small></div>
+            <div><span>Winner alignment</span><strong>1/6</strong><small>Positive evidence layers before the race</small></div>
+        </div>
+    </section>
+    
         
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
@@ -538,9 +542,9 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <tbody>
             <tr>
                 <td>1</td>
-                <td><strong>Hashtag Joa (FR)</strong></td>
-                <td class="result-time-cell">2:39.92</td>
-                <td>100/30</td>
+                <td><strong>Ciarrai Abu (IRE)</strong></td>
+                <td class="result-time-cell">2:7.49</td>
+                <td>100/30F</td>
                 <td>0</td>
                 <td>--</td>
                 <td>--</td>
@@ -548,70 +552,130 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         
             <tr>
                 <td>2</td>
-                <td><strong>Porto Giunco (FR)</strong></td>
-                <td class="result-time-cell">2:40.17</td>
-                <td>28/1</td>
-                <td>1.2</td>
+                <td><strong>Bourbon Blues (GB)</strong></td>
+                <td class="result-time-cell">2:7.66</td>
+                <td>25/1</td>
+                <td>1</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>3</td>
-                <td><strong>Tenyearsafter (FR)</strong></td>
-                <td class="result-time-cell">2:40.22</td>
-                <td>5/1</td>
-                <td>1.5</td>
+                <td><strong>Evanesco (GB)</strong></td>
+                <td class="result-time-cell">2:7.66</td>
+                <td>11/1</td>
+                <td>1</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>4</td>
-                <td><strong>Sylver Samba (FR)</strong></td>
-                <td class="result-time-cell">2:40.27</td>
-                <td>5/1</td>
-                <td>1.8</td>
+                <td><strong>Decade Of Time (GB)</strong></td>
+                <td class="result-time-cell">2:7.70</td>
+                <td>7/1</td>
+                <td>1.2</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>5</td>
-                <td><strong>Success Story (FR)</strong></td>
-                <td class="result-time-cell">2:40.52</td>
-                <td>15/2</td>
-                <td>3</td>
+                <td><strong>Harmonics (IRE)</strong></td>
+                <td class="result-time-cell">2:7.82</td>
+                <td>9/2</td>
+                <td>2</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>6</td>
-                <td><strong>La Rose Noire (FR)</strong></td>
-                <td class="result-time-cell">2:40.57</td>
-                <td>11/1</td>
-                <td>3.2</td>
+                <td><strong>Birgham Dub (IRE)</strong></td>
+                <td class="result-time-cell">2:7.86</td>
+                <td>9/1</td>
+                <td>2.2</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>7</td>
-                <td><strong>Pray For Hope (FR)</strong></td>
-                <td class="result-time-cell">2:40.62</td>
-                <td>10/1</td>
-                <td>3.5</td>
+                <td><strong>Lion Of Alba (GB)</strong></td>
+                <td class="result-time-cell">2:8.12</td>
+                <td>18/1</td>
+                <td>3.8</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>8</td>
-                <td><strong>Jardin Bleu (FR)</strong></td>
-                <td class="result-time-cell">2:46.62</td>
-                <td>15/8F</td>
-                <td>33.5</td>
+                <td><strong>Dial Me In (IRE)</strong></td>
+                <td class="result-time-cell">2:8.16</td>
+                <td>6/1</td>
+                <td>4</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td><strong>Gonna Fly (IRE)</strong></td>
+                <td class="result-time-cell">2:8.20</td>
+                <td>28/1</td>
+                <td>4.2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td><strong>Strength of Spirit (IRE)</strong></td>
+                <td class="result-time-cell">2:8.20</td>
+                <td>12/1</td>
+                <td>4.2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>11</td>
+                <td><strong>Loz Vegas (IRE)</strong></td>
+                <td class="result-time-cell">2:8.32</td>
+                <td>11/1</td>
+                <td>5</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>12</td>
+                <td><strong>Dark Whisper (FR)</strong></td>
+                <td class="result-time-cell">2:9.91</td>
+                <td>25/1</td>
+                <td>14.5</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>13</td>
+                <td><strong>Lean D&#x27;aislingean (IRE)</strong></td>
+                <td class="result-time-cell">2:12.57</td>
+                <td>66/1</td>
+                <td>30.5</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>F</td>
+                <td><strong>Savvy Disko (IRE)</strong></td>
+                <td class="result-time-cell">-</td>
+                <td>14/1</td>
+                <td>-</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
@@ -621,22 +685,92 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
     
     </article>
     
-    <article class="race-card result-card premium-race-card" data-course="Vichy (FR)" data-race="12:43 | Vichy (FR) | 12f">
+    <article class="race-card result-card premium-race-card" data-course="Nottingham" data-race="2:00 | Nottingham | 5f">
         <div class="race-header premium-race-header">
             <div>
-                <div class="eyebrow">12:43 | Vichy (FR)</div>
-                <h2>12:43 | Vichy (FR) | 12f</h2>
-                <p class="race-meta">Class 4 | Soft | Prix De Billom</p>
+                <div class="eyebrow">2:00 | Nottingham</div>
+                <h2>2:00 | Nottingham | 5f</h2>
+                <p class="race-meta">Class 4 | Good To Firm | European Breeders Fund EBF Fillies&#x27; Novice Stakes (GBB Race)</p>
             </div>
             <div class="race-score premium-race-score">
                 <span>Winner</span>
-                <strong class="elite result-winner-name">Alicanto (FR)</strong>
-                <em>9/2</em>
+                <strong class="elite result-winner-name">Roots In Touche (IRE)</strong>
+                <em>10/11</em>
             </div>
         </div>
 
         <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Alicanto (FR)</strong></div>
+            <div><span>Winner</span><strong>Roots In Touche (IRE)</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
+            <div><span>Field Size</span><strong>2</strong></div>
+            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
+        </div>
+
+        <section class="synopsis premium-snapshot result-opinion">
+            <div>
+                <span class="micro-label">Our Opinion</span>
+                <h3>What the result says</h3>
+            </div>
+            <p>The winner produced a finishing effort, which makes the race useful for identifying strong closers and future sectional interest. The winner returned 10/11 in a 2-runner field.</p>
+        </section>
+
+        
+    <section class="result-model-review">
+        <div><span class="micro-label">Pre-race Model Review</span><strong>Top pre-race profile won.</strong></div>
+        <div class="result-model-grid">
+            <div><span>Top model profile</span><strong>Roots In Touche</strong><small>Finished 1 | confidence 33.0</small></div>
+            <div><span>Winner model rank</span><strong>1</strong><small>33.0 confidence</small></div>
+            <div><span>Winner alignment</span><strong>0/6</strong><small>Positive evidence layers before the race</small></div>
+        </div>
+    </section>
+    
+        
+    <div class="previous-runs result-table-wrap">
+        <strong>Result</strong>
+        <table class="rp-table result-table">
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td><strong>Roots In Touche (IRE)</strong></td>
+                <td class="result-time-cell">1:0.49</td>
+                <td>10/11</td>
+                <td>0</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td><strong>Funky Dory (IRE)</strong></td>
+                <td class="result-time-cell">1:1.82</td>
+                <td>5/6F</td>
+                <td>8</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    
+    </article>
+    
+    <article class="race-card result-card premium-race-card" data-course="Galway (IRE)" data-race="2:10 | Galway (IRE) | 7f">
+        <div class="race-header premium-race-header">
+            <div>
+                <div class="eyebrow">2:10 | Galway (IRE)</div>
+                <h2>2:10 | Galway (IRE) | 7f</h2>
+                <p class="race-meta">Class not listed | Yielding To Soft | Guinness Irish EBF Nursery Handicap</p>
+            </div>
+            <div class="race-score premium-race-score">
+                <span>Winner</span>
+                <strong class="elite result-winner-name">Seven Nation Army (GER)</strong>
+                <em>13/8F</em>
+            </div>
+        </div>
+
+        <div class="race-intel-grid premium-intel-grid">
+            <div><span>Winner</span><strong>Seven Nation Army (GER)</strong></div>
             <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>7</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
@@ -647,15 +781,19 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <span class="micro-label">Our Opinion</span>
                 <h3>What the result says</h3>
             </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 9/2 in a 7-runner field.</p>
+            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 13/8F in a 7-runner field.</p>
         </section>
 
         
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
+    <section class="result-model-review">
+        <div><span class="micro-label">Pre-race Model Review</span><strong>Top pre-race profile missed the frame.</strong></div>
+        <div class="result-model-grid">
+            <div><span>Top model profile</span><strong>I Ready</strong><small>Finished 4 | confidence 35.0</small></div>
+            <div><span>Winner model rank</span><strong>2</strong><small>33.0 confidence</small></div>
+            <div><span>Winner alignment</span><strong>1/6</strong><small>Positive evidence layers before the race</small></div>
+        </div>
+    </section>
+    
         
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
@@ -664,9 +802,9 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <tbody>
             <tr>
                 <td>1</td>
-                <td><strong>Alicanto (FR)</strong></td>
-                <td class="result-time-cell">2:35.23</td>
-                <td>9/2</td>
+                <td><strong>Seven Nation Army (GER)</strong></td>
+                <td class="result-time-cell">1:33.82</td>
+                <td>13/8F</td>
                 <td>0</td>
                 <td>--</td>
                 <td>--</td>
@@ -674,60 +812,60 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         
             <tr>
                 <td>2</td>
-                <td><strong>Monsieur Shelby (FR)</strong></td>
-                <td class="result-time-cell">2:35.93</td>
-                <td>7/1</td>
-                <td>3.5</td>
+                <td><strong>Banks Of The Boyne (IRE)</strong></td>
+                <td class="result-time-cell">1:34.77</td>
+                <td>14/1</td>
+                <td>4.8</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>3</td>
-                <td><strong>Anctot (FR)</strong></td>
-                <td class="result-time-cell">2:35.98</td>
-                <td>5/4F</td>
-                <td>3.8</td>
+                <td><strong>Eighteenth Smiles (IRE)</strong></td>
+                <td class="result-time-cell">1:35.12</td>
+                <td>12/1</td>
+                <td>6.5</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>4</td>
-                <td><strong>Measter Owen (FR)</strong></td>
-                <td class="result-time-cell">2:36.03</td>
-                <td>3/1</td>
-                <td>4</td>
+                <td><strong>I Ready (IRE)</strong></td>
+                <td class="result-time-cell">1:35.12</td>
+                <td>11/1</td>
+                <td>6.5</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>5</td>
-                <td><strong>Al Habisset (FR)</strong></td>
-                <td class="result-time-cell">2:36.13</td>
-                <td>20/1</td>
-                <td>4.5</td>
+                <td><strong>Bold Commander (IRE)</strong></td>
+                <td class="result-time-cell">1:35.37</td>
+                <td>7/2</td>
+                <td>7.8</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>6</td>
-                <td><strong>Lagoone Chope (FR)</strong></td>
-                <td class="result-time-cell">2:36.63</td>
-                <td>9/1</td>
-                <td>7</td>
+                <td><strong>Winnie&#x27;s Wish (IRE)</strong></td>
+                <td class="result-time-cell">1:35.47</td>
+                <td>22/1</td>
+                <td>8.2</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>7</td>
-                <td><strong>Marvel Max (FR)</strong></td>
-                <td class="result-time-cell">2:36.88</td>
-                <td>16/1</td>
-                <td>8.2</td>
+                <td><strong>Celtic Moon (FR)</strong></td>
+                <td class="result-time-cell">1:35.87</td>
+                <td>5/2</td>
+                <td>10.2</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
@@ -737,22 +875,172 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
     
     </article>
     
-    <article class="race-card result-card premium-race-card" data-course="Vichy (FR)" data-race="8:58 | Vichy (FR) | 12f">
+    <article class="race-card result-card premium-race-card" data-course="Goodwood" data-race="2:25 | Goodwood | 6f">
         <div class="race-header premium-race-header">
             <div>
-                <div class="eyebrow">8:58 | Vichy (FR)</div>
-                <h2>8:58 | Vichy (FR) | 12f</h2>
-                <p class="race-meta">Class not listed | Soft | Prix Vippiacum</p>
+                <div class="eyebrow">2:25 | Goodwood</div>
+                <h2>2:25 | Goodwood | 6f</h2>
+                <p class="race-meta">Class 1 | Good To Firm | Markel Richmond Stakes (Group 2)</p>
             </div>
             <div class="race-score premium-race-score">
                 <span>Winner</span>
-                <strong class="elite result-winner-name">Nouvlatiep (FR)</strong>
-                <em>100/30</em>
+                <strong class="elite result-winner-name">Man&#x27;s Best Friend (IRE)</strong>
+                <em>11/2</em>
             </div>
         </div>
 
         <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Nouvlatiep (FR)</strong></div>
+            <div><span>Winner</span><strong>Man&#x27;s Best Friend (IRE)</strong></div>
+            <div><span>Rating / TS</span><strong>-- / --</strong></div>
+            <div><span>Field Size</span><strong>10</strong></div>
+            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
+        </div>
+
+        <section class="synopsis premium-snapshot result-opinion">
+            <div>
+                <span class="micro-label">Our Opinion</span>
+                <h3>What the result says</h3>
+            </div>
+            <p>The winner produced a finishing effort, which makes the race useful for identifying strong closers and future sectional interest. The winner returned 11/2 in a 10-runner field.</p>
+        </section>
+
+        
+    <section class="result-model-review">
+        <div><span class="micro-label">Pre-race Model Review</span><strong>Top pre-race profile missed the frame.</strong></div>
+        <div class="result-model-grid">
+            <div><span>Top model profile</span><strong>Hickory Lad</strong><small>Finished 8 | confidence 37.2</small></div>
+            <div><span>Winner model rank</span><strong>4</strong><small>22.0 confidence</small></div>
+            <div><span>Winner alignment</span><strong>0/6</strong><small>Positive evidence layers before the race</small></div>
+        </div>
+    </section>
+    
+        
+    <div class="previous-runs result-table-wrap">
+        <strong>Result</strong>
+        <table class="rp-table result-table">
+            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td><strong>Man&#x27;s Best Friend (IRE)</strong></td>
+                <td class="result-time-cell">1:10.81</td>
+                <td>11/2</td>
+                <td>0</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td><strong>Adaay Of Scarlett (IRE)</strong></td>
+                <td class="result-time-cell">1:10.98</td>
+                <td>8/1</td>
+                <td>1</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td><strong>Night In Vegas (IRE)</strong></td>
+                <td class="result-time-cell">1:11.23</td>
+                <td>6/1</td>
+                <td>2.5</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td><strong>Where Love Lives (IRE)</strong></td>
+                <td class="result-time-cell">1:11.52</td>
+                <td>12/1</td>
+                <td>4.2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td><strong>Flann Sunna (IRE)</strong></td>
+                <td class="result-time-cell">1:11.56</td>
+                <td>1/1F</td>
+                <td>4.5</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td><strong>Mr Macartney (GB)</strong></td>
+                <td class="result-time-cell">1:11.60</td>
+                <td>80/1</td>
+                <td>4.8</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td><strong>Big Cigar (IRE)</strong></td>
+                <td class="result-time-cell">1:11.69</td>
+                <td>22/1</td>
+                <td>5.2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td><strong>Hickory Lad (IRE)</strong></td>
+                <td class="result-time-cell">1:11.73</td>
+                <td>50/1</td>
+                <td>5.5</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td><strong>Cut A Dash (GB)</strong></td>
+                <td class="result-time-cell">1:11.85</td>
+                <td>11/1</td>
+                <td>6.2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td><strong>Jaan Ki Tukri (IRE)</strong></td>
+                <td class="result-time-cell">1:11.85</td>
+                <td>25/1</td>
+                <td>6.2</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    
+    </article>
+    
+    <article class="race-card result-card premium-race-card" data-course="Nottingham" data-race="2:35 | Nottingham | 8.5f">
+        <div class="race-header premium-race-header">
+            <div>
+                <div class="eyebrow">2:35 | Nottingham</div>
+                <h2>2:35 | Nottingham | 8.5f</h2>
+                <p class="race-meta">Class 5 | Good To Firm | Bet Smarter With Oddschecker+ Handicap Stakes</p>
+            </div>
+            <div class="race-score premium-race-score">
+                <span>Winner</span>
+                <strong class="elite result-winner-name">Great Blasket (IRE)</strong>
+                <em>8/13F</em>
+            </div>
+        </div>
+
+        <div class="race-intel-grid premium-intel-grid">
+            <div><span>Winner</span><strong>Great Blasket (IRE)</strong></div>
             <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>5</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
@@ -763,15 +1051,19 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <span class="micro-label">Our Opinion</span>
                 <h3>What the result says</h3>
             </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 100/30 in a 5-runner field.</p>
+            <p>The winner was strongly involved in the pace, so this looks like a result where track position mattered. The winner returned 8/13F in a 5-runner field.</p>
         </section>
 
         
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
+    <section class="result-model-review">
+        <div><span class="micro-label">Pre-race Model Review</span><strong>Top pre-race profile missed the frame.</strong></div>
+        <div class="result-model-grid">
+            <div><span>Top model profile</span><strong>Relevant Range</strong><small>Finished 4 | confidence 55.0</small></div>
+            <div><span>Winner model rank</span><strong>2</strong><small>54.0 confidence</small></div>
+            <div><span>Winner alignment</span><strong>2/6</strong><small>Positive evidence layers before the race</small></div>
+        </div>
+    </section>
+    
         
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
@@ -780,9 +1072,9 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <tbody>
             <tr>
                 <td>1</td>
-                <td><strong>Nouvlatiep (FR)</strong></td>
-                <td class="result-time-cell">2:49.96</td>
-                <td>100/30</td>
+                <td><strong>Great Blasket (IRE)</strong></td>
+                <td class="result-time-cell">1:44.20</td>
+                <td>8/13F</td>
                 <td>0</td>
                 <td>--</td>
                 <td>--</td>
@@ -790,554 +1082,40 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         
             <tr>
                 <td>2</td>
-                <td><strong>Name Castle (FR)</strong></td>
-                <td class="result-time-cell">2:50.16</td>
-                <td>6/4F</td>
-                <td>1</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>3</td>
-                <td><strong>Nectar Vergoignan (FR)</strong></td>
-                <td class="result-time-cell">2:50.21</td>
-                <td>7/1</td>
-                <td>1.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>4</td>
-                <td><strong>Nopain Nogain Thom (FR)</strong></td>
-                <td class="result-time-cell">2:50.41</td>
-                <td>5/2</td>
-                <td>2.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>5</td>
-                <td><strong>Naeman De Lagarde (FR)</strong></td>
-                <td class="result-time-cell">2:50.66</td>
-                <td>8/1</td>
-                <td>3.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-    
-    </article>
-    
-    <article class="race-card result-card premium-race-card" data-course="Vichy (FR)" data-race="9:30 | Vichy (FR) | 8f">
-        <div class="race-header premium-race-header">
-            <div>
-                <div class="eyebrow">9:30 | Vichy (FR)</div>
-                <h2>9:30 | Vichy (FR) | 8f</h2>
-                <p class="race-meta">Class not listed | Soft | Prix De Divonne-les-bains</p>
-            </div>
-            <div class="race-score premium-race-score">
-                <span>Winner</span>
-                <strong class="elite result-winner-name">Be My Friend (FR)</strong>
-                <em>4/5F</em>
-            </div>
-        </div>
-
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Be My Friend (FR)</strong></div>
-            <div><span>Rating / TS</span><strong>-- / --</strong></div>
-            <div><span>Field Size</span><strong>9</strong></div>
-            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
-        </div>
-
-        <section class="synopsis premium-snapshot result-opinion">
-            <div>
-                <span class="micro-label">Our Opinion</span>
-                <h3>What the result says</h3>
-            </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 4/5F in a 9-runner field.</p>
-        </section>
-
-        
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
-        
-    <div class="previous-runs result-table-wrap">
-        <strong>Result</strong>
-        <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td><strong>Be My Friend (FR)</strong></td>
-                <td class="result-time-cell">1:44.70</td>
-                <td>4/5F</td>
-                <td>0</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>2</td>
-                <td><strong>Wake Me Up (FR)</strong></td>
-                <td class="result-time-cell">1:45.05</td>
-                <td>8/1</td>
-                <td>1.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>3</td>
-                <td><strong>Takavor (FR)</strong></td>
-                <td class="result-time-cell">1:45.20</td>
-                <td>7/4</td>
-                <td>2.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>4</td>
-                <td><strong>In Space (FR)</strong></td>
-                <td class="result-time-cell">1:45.35</td>
-                <td>14/1</td>
-                <td>3.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>5</td>
-                <td><strong>Jaminus (GB)</strong></td>
-                <td class="result-time-cell">1:45.60</td>
-                <td>33/1</td>
-                <td>4.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>6</td>
-                <td><strong>Le Minot (FR)</strong></td>
-                <td class="result-time-cell">1:46.70</td>
-                <td>25/1</td>
-                <td>10</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>7</td>
-                <td><strong>Rocket League (FR)</strong></td>
-                <td class="result-time-cell">1:46.80</td>
-                <td>25/1</td>
-                <td>10.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>8</td>
-                <td><strong>Fabella (FR)</strong></td>
-                <td class="result-time-cell">1:46.85</td>
-                <td>25/1</td>
-                <td>10.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>9</td>
-                <td><strong>Bisous Sinceres (FR)</strong></td>
-                <td class="result-time-cell">1:49.45</td>
-                <td>33/1</td>
-                <td>23.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-    
-    </article>
-    
-    <article class="race-card result-card premium-race-card" data-course="Vichy (FR)" data-race="10:02 | Vichy (FR) | 8f">
-        <div class="race-header premium-race-header">
-            <div>
-                <div class="eyebrow">10:02 | Vichy (FR)</div>
-                <h2>10:02 | Vichy (FR) | 8f</h2>
-                <p class="race-meta">Class not listed | Soft | Prix Ombrette</p>
-            </div>
-            <div class="race-score premium-race-score">
-                <span>Winner</span>
-                <strong class="elite result-winner-name">Hunder The Moon (FR)</strong>
-                <em>7/4F</em>
-            </div>
-        </div>
-
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Hunder The Moon (FR)</strong></div>
-            <div><span>Rating / TS</span><strong>-- / --</strong></div>
-            <div><span>Field Size</span><strong>7</strong></div>
-            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
-        </div>
-
-        <section class="synopsis premium-snapshot result-opinion">
-            <div>
-                <span class="micro-label">Our Opinion</span>
-                <h3>What the result says</h3>
-            </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 7/4F in a 7-runner field.</p>
-        </section>
-
-        
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
-        
-    <div class="previous-runs result-table-wrap">
-        <strong>Result</strong>
-        <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td><strong>Hunder The Moon (FR)</strong></td>
-                <td class="result-time-cell">1:44.75</td>
-                <td>7/4F</td>
-                <td>0</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>2</td>
-                <td><strong>Feel Well (FR)</strong></td>
-                <td class="result-time-cell">1:44.90</td>
-                <td>15/8</td>
-                <td>0.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>3</td>
-                <td><strong>Grisy April (FR)</strong></td>
-                <td class="result-time-cell">1:45.80</td>
-                <td>13/2</td>
-                <td>5.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>4</td>
-                <td><strong>Gonafoot (FR)</strong></td>
-                <td class="result-time-cell">1:45.90</td>
-                <td>9/1</td>
-                <td>5.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>5</td>
-                <td><strong>Do You Sea (FR)</strong></td>
-                <td class="result-time-cell">1:45.90</td>
+                <td><strong>Theme Park (GB)</strong></td>
+                <td class="result-time-cell">1:44.83</td>
                 <td>9/2</td>
-                <td>5.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>6</td>
-                <td><strong>Liza Chope (FR)</strong></td>
-                <td class="result-time-cell">1:46.40</td>
-                <td>33/1</td>
-                <td>8.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>7</td>
-                <td><strong>Alta Gracias (FR)</strong></td>
-                <td class="result-time-cell">1:46.70</td>
-                <td>18/1</td>
-                <td>9.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-    
-    </article>
-    
-    <article class="race-card result-card premium-race-card" data-course="Vichy (FR)" data-race="10:34 | Vichy (FR) | 7f">
-        <div class="race-header premium-race-header">
-            <div>
-                <div class="eyebrow">10:34 | Vichy (FR)</div>
-                <h2>10:34 | Vichy (FR) | 7f</h2>
-                <p class="race-meta">Class not listed | Soft | Prix De Vice</p>
-            </div>
-            <div class="race-score premium-race-score">
-                <span>Winner</span>
-                <strong class="elite result-winner-name">Danica (FR)</strong>
-                <em>33/1</em>
-            </div>
-        </div>
-
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Danica (FR)</strong></div>
-            <div><span>Rating / TS</span><strong>-- / --</strong></div>
-            <div><span>Field Size</span><strong>9</strong></div>
-            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
-        </div>
-
-        <section class="synopsis premium-snapshot result-opinion">
-            <div>
-                <span class="micro-label">Our Opinion</span>
-                <h3>What the result says</h3>
-            </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 33/1 in a 9-runner field.</p>
-        </section>
-
-        
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
-        
-    <div class="previous-runs result-table-wrap">
-        <strong>Result</strong>
-        <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td><strong>Danica (FR)</strong></td>
-                <td class="result-time-cell">1:28.93</td>
-                <td>33/1</td>
-                <td>0</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>2</td>
-                <td><strong>Shativa (FR)</strong></td>
-                <td class="result-time-cell">1:28.97</td>
-                <td>12/1</td>
-                <td>0.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>3</td>
-                <td><strong>Alinka (FR)</strong></td>
-                <td class="result-time-cell">1:29.38</td>
-                <td>11/2</td>
-                <td>2.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>4</td>
-                <td><strong>Navacerrada (FR)</strong></td>
-                <td class="result-time-cell">1:29.43</td>
-                <td>7/2</td>
-                <td>2.5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>5</td>
-                <td><strong>United Color (IRE)</strong></td>
-                <td class="result-time-cell">1:29.68</td>
-                <td>18/1</td>
                 <td>3.8</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
-                <td>6</td>
-                <td><strong>Hello Vega (IRE)</strong></td>
-                <td class="result-time-cell">1:29.93</td>
-                <td>10/11F</td>
-                <td>5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>7</td>
-                <td><strong>The Black Velvet (FR)</strong></td>
-                <td class="result-time-cell">1:30.28</td>
-                <td>18/1</td>
-                <td>6.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>8</td>
-                <td><strong>Chakilyah (FR)</strong></td>
-                <td class="result-time-cell">1:30.98</td>
-                <td>6/1</td>
-                <td>10.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>9</td>
-                <td><strong>Wana Chope (FR)</strong></td>
-                <td class="result-time-cell">1:31.28</td>
-                <td>50/1</td>
-                <td>11.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-    
-    </article>
-    
-    <article class="race-card result-card premium-race-card" data-course="Vichy (FR)" data-race="11:06 | Vichy (FR) | 9f">
-        <div class="race-header premium-race-header">
-            <div>
-                <div class="eyebrow">11:06 | Vichy (FR)</div>
-                <h2>11:06 | Vichy (FR) | 9f</h2>
-                <p class="race-meta">Class not listed | Soft | Prix Makalu</p>
-            </div>
-            <div class="race-score premium-race-score">
-                <span>Winner</span>
-                <strong class="elite result-winner-name">Azimuts (FR)</strong>
-                <em>4/1</em>
-            </div>
-        </div>
-
-        <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Azimuts (FR)</strong></div>
-            <div><span>Rating / TS</span><strong>-- / --</strong></div>
-            <div><span>Field Size</span><strong>8</strong></div>
-            <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
-        </div>
-
-        <section class="synopsis premium-snapshot result-opinion">
-            <div>
-                <span class="micro-label">Our Opinion</span>
-                <h3>What the result says</h3>
-            </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 4/1 in a 8-runner field.</p>
-        </section>
-
-        
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
-        
-    <div class="previous-runs result-table-wrap">
-        <strong>Result</strong>
-        <table class="rp-table result-table">
-            <thead><tr><th>Pos</th><th>Horse</th><th>Exact Finish Time</th><th>SP</th><th>Beaten</th><th>Rating</th><th>TS</th></tr></thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td><strong>Azimuts (FR)</strong></td>
-                <td class="result-time-cell">1:52.09</td>
-                <td>4/1</td>
-                <td>0</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>2</td>
-                <td><strong>Willower (FR)</strong></td>
-                <td class="result-time-cell">1:53.09</td>
-                <td>2/1</td>
-                <td>5</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
                 <td>3</td>
-                <td><strong>Pearl Spirit (FR)</strong></td>
-                <td class="result-time-cell">1:53.24</td>
-                <td>15/8F</td>
-                <td>5.8</td>
+                <td><strong>Degale (GB)</strong></td>
+                <td class="result-time-cell">1:45.20</td>
+                <td>11/2</td>
+                <td>6</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>4</td>
-                <td><strong>Arabian Fever (FR)</strong></td>
-                <td class="result-time-cell">1:53.74</td>
-                <td>3/1</td>
-                <td>8.2</td>
+                <td><strong>Relevant Range (IRE)</strong></td>
+                <td class="result-time-cell">1:45.41</td>
+                <td>9/1</td>
+                <td>7.2</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>5</td>
-                <td><strong>Lavis (IRE)</strong></td>
-                <td class="result-time-cell">1:54.54</td>
+                <td><strong>Tardaff (GB)</strong></td>
+                <td class="result-time-cell">1:47.58</td>
                 <td>25/1</td>
-                <td>12.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>6</td>
-                <td><strong>Mieux Que Papa (FR)</strong></td>
-                <td class="result-time-cell">1:55.04</td>
-                <td>40/1</td>
-                <td>14.8</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>7</td>
-                <td><strong>Bahia Warana (FR)</strong></td>
-                <td class="result-time-cell">1:55.74</td>
-                <td>33/1</td>
-                <td>18.2</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
-        
-            <tr>
-                <td>8</td>
-                <td><strong>Bronte Sister (FR)</strong></td>
-                <td class="result-time-cell">1:55.79</td>
-                <td>50/1</td>
-                <td>18.5</td>
+                <td>20.2</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
@@ -1347,22 +1125,22 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
     
     </article>
     
-    <article class="race-card result-card premium-race-card" data-course="Vichy (FR)" data-race="11:38 | Vichy (FR) | 10f">
+    <article class="race-card result-card premium-race-card" data-course="Galway (IRE)" data-race="2:45 | Galway (IRE) | 7f">
         <div class="race-header premium-race-header">
             <div>
-                <div class="eyebrow">11:38 | Vichy (FR)</div>
-                <h2>11:38 | Vichy (FR) | 10f</h2>
-                <p class="race-meta">Class not listed | Soft | Prix Gouvernant</p>
+                <div class="eyebrow">2:45 | Galway (IRE)</div>
+                <h2>2:45 | Galway (IRE) | 7f</h2>
+                <p class="race-meta">Class 1 | Yielding To Soft | Arthur Guinness Irish EBF Corrib Fillies Stakes (Listed)</p>
             </div>
             <div class="race-score premium-race-score">
                 <span>Winner</span>
-                <strong class="elite result-winner-name">Australips (FR)</strong>
-                <em>1/1F</em>
+                <strong class="elite result-winner-name">Pivotal Attack (GB)</strong>
+                <em>3/1</em>
             </div>
         </div>
 
         <div class="race-intel-grid premium-intel-grid">
-            <div><span>Winner</span><strong>Australips (FR)</strong></div>
+            <div><span>Winner</span><strong>Pivotal Attack (GB)</strong></div>
             <div><span>Rating / TS</span><strong>-- / --</strong></div>
             <div><span>Field Size</span><strong>9</strong></div>
             <div><span>ForeFurlongs Read</span><strong>Result review</strong></div>
@@ -1373,15 +1151,19 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
                 <span class="micro-label">Our Opinion</span>
                 <h3>What the result says</h3>
             </div>
-            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 1/1F in a 9-runner field.</p>
+            <p>This is a race to review through pace, class and finishing comments rather than the bare result alone. The winner returned 3/1 in a 9-runner field.</p>
         </section>
 
         
-        <section class="result-model-review muted-card">
-            <span class="micro-label">Pre-race Model Review</span>
-            <p>No matching pre-race model snapshot was found for this race.</p>
-        </section>
-        
+    <section class="result-model-review">
+        <div><span class="micro-label">Pre-race Model Review</span><strong>Top pre-race profile missed the frame.</strong></div>
+        <div class="result-model-grid">
+            <div><span>Top model profile</span><strong>Celestial Orbit</strong><small>Finished 6 | confidence 41.8</small></div>
+            <div><span>Winner model rank</span><strong>5</strong><small>33.8 confidence</small></div>
+            <div><span>Winner alignment</span><strong>3/6</strong><small>Positive evidence layers before the race</small></div>
+        </div>
+    </section>
+    
         
     <div class="previous-runs result-table-wrap">
         <strong>Result</strong>
@@ -1390,9 +1172,9 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
             <tbody>
             <tr>
                 <td>1</td>
-                <td><strong>Australips (FR)</strong></td>
-                <td class="result-time-cell">Exact time not supplied</td>
-                <td>1/1F</td>
+                <td><strong>Pivotal Attack (GB)</strong></td>
+                <td class="result-time-cell">1:30.27</td>
+                <td>3/1</td>
                 <td>0</td>
                 <td>--</td>
                 <td>--</td>
@@ -1400,80 +1182,80 @@ body,.page-hero,.content,.panel,.race-card,.horse-card,.brief-card,.pricing-card
         
             <tr>
                 <td>2</td>
-                <td><strong>Jojo Fantaisie (FR)</strong></td>
-                <td class="result-time-cell">Exact time not supplied</td>
-                <td>9/4</td>
-                <td>0.5</td>
+                <td><strong>Meriden (GB)</strong></td>
+                <td class="result-time-cell">1:30.57</td>
+                <td>2/1F</td>
+                <td>1.5</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>3</td>
-                <td><strong>Zelzana (FR)</strong></td>
-                <td class="result-time-cell">Exact time not supplied</td>
-                <td>22/1</td>
-                <td>2.2</td>
+                <td><strong>La Brodeuse (GB)</strong></td>
+                <td class="result-time-cell">1:31.17</td>
+                <td>13/2</td>
+                <td>4.5</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>4</td>
-                <td><strong>Over The Sky (FR)</strong></td>
-                <td class="result-time-cell">Exact time not supplied</td>
-                <td>9/1</td>
-                <td>3</td>
+                <td><strong>Greydreambeliever (IRE)</strong></td>
+                <td class="result-time-cell">1:31.67</td>
+                <td>20/1</td>
+                <td>7</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>5</td>
-                <td><strong>Aleksandrovka (FR)</strong></td>
-                <td class="result-time-cell">Exact time not supplied</td>
-                <td>33/1</td>
-                <td>3</td>
+                <td><strong>Nancy J (IRE)</strong></td>
+                <td class="result-time-cell">1:31.72</td>
+                <td>20/1</td>
+                <td>7.2</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>6</td>
-                <td><strong>Carre De Soie (FR)</strong></td>
-                <td class="result-time-cell">Exact time not supplied</td>
-                <td>50/1</td>
-                <td>3.2</td>
+                <td><strong>Celestial Orbit (GB)</strong></td>
+                <td class="result-time-cell">1:31.77</td>
+                <td>12/1</td>
+                <td>7.5</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>7</td>
-                <td><strong>Halsey (FR)</strong></td>
-                <td class="result-time-cell">Exact time not supplied</td>
-                <td>15/2</td>
-                <td>4.8</td>
+                <td><strong>Noli Timere (IRE)</strong></td>
+                <td class="result-time-cell">1:32.02</td>
+                <td>66/1</td>
+                <td>8.8</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>8</td>
-                <td><strong>Charismatic Gold (IRE)</strong></td>
-                <td class="result-time-cell">Exact time not supplied</td>
-                <td>20/1</td>
-                <td>6.2</td>
+                <td><strong>Black Caviar Gold (IRE)</strong></td>
+                <td class="result-time-cell">1:33.42</td>
+                <td>3/1</td>
+                <td>15.8</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
         
             <tr>
                 <td>9</td>
-                <td><strong>Lightiana (FR)</strong></td>
-                <td class="result-time-cell">Exact time not supplied</td>
-                <td>17/2</td>
-                <td>6.8</td>
+                <td><strong>Goldilocks Cen (GB)</strong></td>
+                <td class="result-time-cell">1:35.82</td>
+                <td>50/1</td>
+                <td>27.8</td>
                 <td>--</td>
                 <td>--</td>
             </tr>
